@@ -1,6 +1,6 @@
 # Trading Bot
 
-Autonomous Claude-powered trading bot for a ~$10,000 Alpaca paper trading account. Trades stocks and ETFs only. Sends all alerts via Telegram.
+Autonomous Claude-powered trading bot for a ~$100,000 Alpaca paper trading account. Trades stocks and ETFs only. Sends all alerts via Telegram.
 
 ## Quick Start
 
