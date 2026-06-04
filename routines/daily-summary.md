@@ -29,15 +29,35 @@ STEP 2 — Pull final state of the day:
   bash scripts/alpaca.sh positions
   bash scripts/alpaca.sh orders
 
-STEP 3 — Compute metrics:
-- Day P&L ($ and %) = today_equity - yesterday_equity
-- Phase cumulative P&L ($ and %) = today_equity - 100000 (starting capital)
+STEP 3 — Build account snapshot table (print to stdout before anything else):
+Extract from the account response and format as:
+
+| Metric            | Value                          |
+|-------------------|-------------------------------|
+| Equity            | $[equity]                     |
+| Cash              | $[cash] ([cash/equity]% idle) |
+| Buying Power      | $[buying_power]               |
+| Day P&L           | ±$[day_pl] (±[day_pl_pct]%)   |
+| Phase P&L         | ±$[equity-100000] (±[pct]%)   |
+| Open Positions    | [N] / 6 max                   |
+| Open Orders       | [N]                           |
+| Daytrade Count    | [daytrade_count] / 3          |
+| Account Status    | [status]                      |
+
+Compute:
+- Day P&L ($) = today_equity - yesterday_equity (from TRADE-LOG tail)
+- Day P&L (%) = day_pl / yesterday_equity * 100
+- Phase P&L ($) = today_equity - 100000
+- Phase P&L (%) = phase_pl / 100000 * 100
+- Cash idle % = cash / equity * 100
+
+STEP 4 — Compute remaining metrics:
 - Trades today (list tickers or "none")
 - Trades this week (running total out of 5)
 - Best position today (unrealized or realized)
 - Worst position today
 
-STEP 4 — Append EOD snapshot to memory/TRADE-LOG.md:
+STEP 5 — Append EOD snapshot to memory/TRADE-LOG.md:
 ### MMM DD — EOD Snapshot (Day N, Weekday)
 **Portfolio:** $X | **Cash:** $X (X%) | **Day P&L:** ±$X (±X%) | **Phase P&L:** ±$X (±X%)
 **Sizing mode today:** [AGGRESSIVE/MODERATE/DEFENSIVE] | **Weekly trades:** N/5
@@ -45,12 +65,20 @@ STEP 4 — Append EOD snapshot to memory/TRADE-LOG.md:
 | Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
 **Notes:** one-paragraph plain-english summary.
 
-STEP 5 — Send ONE Telegram message (always, even on no-trade days):
+STEP 6 — Send ONE Telegram message (always, even on no-trade days):
   bash scripts/telegram.sh "*📈 EOD Summary — $DATE*
 
-*Portfolio:* \$[X] ([±X%] today | [±X%] phase)
-*Cash:* \$[X] ([X%] idle)
-*Trades today:* [list or none]
+*Account Snapshot*
+Equity:         \$[equity]
+Cash:           \$[cash] ([X%] idle)
+Buying Power:   \$[buying_power]
+Day P&L:        [±$X] ([±X%])
+Phase P&L:      [±$X] ([±X%])
+Open Positions: [N]/6
+Open Orders:    [N]
+Daytrade Count: [N]/3
+
+*Trades today:* [list tickers or none]
 *Weekly trades:* [N]/5
 
 *Open positions:*
@@ -63,7 +91,7 @@ STEP 5 — Send ONE Telegram message (always, even on no-trade days):
 *Sizing mode:* [AGGRESSIVE/MODERATE/DEFENSIVE]
 *Tomorrow:* [one-line plan or 'monitoring existing positions']"
 
-STEP 6 — COMMIT AND PUSH (mandatory):
+STEP 7 — COMMIT AND PUSH (mandatory):
   git add memory/TRADE-LOG.md
   git commit -m "EOD snapshot $DATE"
   git push origin main
