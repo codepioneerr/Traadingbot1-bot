@@ -11,7 +11,7 @@ An autonomous Claude-powered trading bot that manages a paper trading account on
 | Broker | Alpaca (paper trading) |
 | Starting capital | $100,000 (Alpaca paper default) |
 | Account type | Paper (simulated, no real money) |
-| PDT status | Subject to PDT rule (< $25k) — max 3 day trades per rolling 5 days |
+| PDT status | NOT subject to PDT — account equity ($100k) is above $25k threshold |
 | Max positions | 6 |
 | Max new trades/week | 5 |
 
@@ -26,7 +26,7 @@ Stocks and ETFs only. Options are strictly prohibited.
 Goals:
 - Validate the workflow end-to-end (pre-market → execution → monitoring → EOD)
 - Confirm Telegram notifications fire correctly
-- Establish baseline P&L tracking from Day 0 ($10,000)
+- Establish baseline P&L tracking from Day 0 ($100,000)
 - Run at least 2 weeks of paper trades before evaluating rule changes
 
 ## Key Constraints

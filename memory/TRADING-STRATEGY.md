@@ -5,10 +5,12 @@ Beat the S&P 500 over the challenge window. Target 5-10% monthly return.
 Stocks AND ETFs — no options, ever.
 
 ## Capital & Constraints
-- Starting capital: ~$10,000
+- Starting capital: $100,000 (Alpaca paper default)
 - Platform: Alpaca (paper trading initially)
 - Instruments: Stocks AND ETFs
-- PDT limit: 3 day trades per 5 rolling days (account < $25k) — CHECK BEFORE EVERY BUY
+- PDT rule: **conditional on live equity, checked every run**
+  - Equity **≥ $25,000** (current): NO day-trade cap — trade freely within other limits
+  - Equity **< $25,000**: max 3 day trades per rolling 5 days — enforce `daytrade_count < 3`
 
 ## Dynamic Position Sizing (based on VIX each morning)
 | VIX Level | Mode | Max per position | Capital deployed | Max positions |
@@ -45,7 +47,7 @@ Use the mix that fits today's market conditions.
 - Sector in momentum?
 - Stop level (7-10% below entry)?
 - Target (minimum 2:1 R:R)?
-- PDT count leaves room?
+- PDT count leaves room? (only applies if equity < $25k)
 - Sizing mode % respected?
 
 ## Buy-Side Gate (all must pass or trade is skipped)
@@ -53,7 +55,7 @@ Use the mix that fits today's market conditions.
 - Trades this week <= 5
 - Position cost <= sizing mode % of equity
 - Position cost <= available cash
-- daytrade_count < 3
+- If equity < $25,000: daytrade_count < 3 (PDT cap — else no cap)
 - Catalyst documented in today's RESEARCH-LOG
 - Instrument is a stock or ETF (not an option)
 
@@ -63,6 +65,40 @@ Use the mix that fits today's market conditions.
 - Up +15%: tighten trailing stop to 7%
 - Up +20%: tighten trailing stop to 5%
 - 2 consecutive failed trades in a sector: exit all positions in that sector
+
+## ORB Strategy (Opening Range Breakout) — PENDING BACKTEST VALIDATION
+
+> ⚠️ This strategy is NOT live yet. It deploys only after `backtest/results/` shows PASS on the out-of-sample realistic pass. See `backtest/evaluate.py`.
+
+### Evidence basis
+QuantConnect replication of Zarattini "stocks in play" study: Sharpe ~2.4 vs ~0.84 SPY, beat benchmark in ~68% of param combos. Edge is in **universe selection** (high relative-volume names with catalysts), not the OR pattern itself. ORB on S&P index has degraded to ~nothing.
+
+### Universe ("stocks in play")
+- Pre-market: rank candidates by relative volume (today vs N-day avg) + require a catalyst (news/earnings/gap)
+- Feed from morning Perplexity research — keep universe wide (dozens of names)
+
+### Opening range
+- Default OR window: first 5 minutes (9:30–9:35 ET)
+- Record OR high (ORH), OR low (ORL), OR width = ORH − ORL
+- OR window is a tunable param (1-min, 5-min, 15-min tested in backtest)
+
+### Entry
+- Long: bar closes above ORH with volume pick-up and price above VWAP
+- Short: bar closes below ORL with volume pick-up and price below VWAP
+- One position per symbol; size by VIX sizing table; spread < 0.5% of price
+
+### Stops
+- Primary stop: opposite side of OR (ORL for longs, ORH for shorts), or ATR-based if OR is tight
+- Catastrophic backstop: -7% hard cut (seatbelt — OR stop should fire first)
+
+### Targets & exits
+1. **15:55 ET EOD flat** — no overnight holds (biggest stagnation fix)
+2. **VWAP/momentum break** — exit runner if price closes below VWAP (longs) / above VWAP (shorts) for N consecutive bars, or breaks 9-EMA
+3. **Failed-breakout re-entry** — if price falls back into OR box for M bars, exit immediately
+4. **Measured move** — take partial (1/2) at ORH + OR_width (longs); trail remainder by rules 2–3
+5. **-7% catastrophic backstop** (rare fallback)
+
+Every close records an **exit-reason** in TRADE-LOG: `target | momentum-trail | failed-breakout | eod-flat | stop`
 
 ## Notification Rules (Telegram)
 - Pre-market: ALWAYS send sector watchlist + VIX/sizing mode
