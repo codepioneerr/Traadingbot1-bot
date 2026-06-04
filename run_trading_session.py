@@ -9,43 +9,48 @@ import argparse
 import os
 import sys
 
+BASE = "/workspace/Traadingbot1-bot"
+SCRIPTS = f"{BASE}/scripts"
+MEMORY = f"{BASE}/memory"
+
 WORKFLOWS = {
     "pre-market": (
-        "Run the pre-market workflow: check VIX and S&P futures via scripts/perplexity.sh, "
-        "determine today's sizing mode per TRADING-STRATEGY.md, identify 3-5 trade candidates, "
-        "update memory/RESEARCH-LOG.md with your findings and sizing mode, "
-        "and send a pre-market Telegram summary via scripts/telegram.sh."
+        f"Run the pre-market workflow: check VIX and S&P futures via {SCRIPTS}/perplexity.sh, "
+        f"determine today's sizing mode per {MEMORY}/TRADING-STRATEGY.md, identify 3-5 trade candidates, "
+        f"update {MEMORY}/RESEARCH-LOG.md with your findings and sizing mode, "
+        f"and send a pre-market Telegram summary via {SCRIPTS}/telegram.sh."
     ),
     "market-open": (
-        "Run the market-open workflow: review today's RESEARCH-LOG trade ideas, "
-        "validate each against live prices via scripts/alpaca.sh, execute approved trades "
-        "with scripts/alpaca.sh buy, place 10% trailing stops immediately after each fill, "
-        "log every trade to memory/TRADE-LOG.md, and send a Telegram notification per trade."
+        f"Run the market-open workflow: review today's {MEMORY}/RESEARCH-LOG.md trade ideas, "
+        f"validate each against live prices via {SCRIPTS}/alpaca.sh, execute approved trades "
+        f"with {SCRIPTS}/alpaca.sh buy, place 10% trailing stops immediately after each fill, "
+        f"log every trade to {MEMORY}/TRADE-LOG.md, and send a Telegram notification per trade."
     ),
     "midday": (
-        "Run the midday workflow: check all open positions via scripts/alpaca.sh positions, "
-        "cut any losers at -7% with scripts/alpaca.sh close, tighten trailing stops for "
-        "positions up >=15% or >=20% per TRADING-STRATEGY.md, scan for new intraday opportunities "
-        "via scripts/perplexity.sh, update TRADE-LOG.md, and send a Telegram midday update."
+        f"Run the midday workflow: check all open positions via {SCRIPTS}/alpaca.sh positions, "
+        f"cut any losers at -7% with {SCRIPTS}/alpaca.sh close, tighten trailing stops for "
+        f"positions up >=15% or >=20% per {MEMORY}/TRADING-STRATEGY.md, scan for new intraday "
+        f"opportunities via {SCRIPTS}/perplexity.sh, update {MEMORY}/TRADE-LOG.md, "
+        f"and send a Telegram midday update."
     ),
     "daily-summary": (
-        "Run the daily-summary workflow: pull EOD account equity and all position P&L via "
-        "scripts/alpaca.sh, compute day P&L vs prior close, append an EOD snapshot to "
-        "memory/TRADE-LOG.md, and send the daily summary Telegram message. "
-        "Even on no-trade days the Telegram summary must fire."
+        f"Run the daily-summary workflow: pull EOD account equity and all position P&L via "
+        f"{SCRIPTS}/alpaca.sh, compute day P&L vs prior close, append an EOD snapshot to "
+        f"{MEMORY}/TRADE-LOG.md, and send the daily summary Telegram message. "
+        f"Even on no-trade days the Telegram summary must fire."
     ),
     "weekly-review": (
-        "Run the weekly-review workflow: compute week P&L and compare vs S&P 500, "
-        "tally trades/win-rate/biggest winner/loser, document lessons learned, "
-        "append the entry to memory/WEEKLY-REVIEW.md, and send the weekly Telegram summary."
+        f"Run the weekly-review workflow: compute week P&L and compare vs S&P 500, "
+        f"tally trades/win-rate/biggest winner/loser, document lessons learned, "
+        f"append the entry to {MEMORY}/WEEKLY-REVIEW.md, and send the weekly Telegram summary."
     ),
     "research": (
-        "Run an ad-hoc research query using scripts/perplexity.sh. "
-        "Report findings and append a timestamped entry to memory/RESEARCH-LOG.md."
+        f"Run an ad-hoc research query using {SCRIPTS}/perplexity.sh. "
+        f"Report findings and append a timestamped entry to {MEMORY}/RESEARCH-LOG.md."
     ),
     "status": (
-        "Run the status workflow: pull current equity, open positions, and open orders "
-        "via scripts/alpaca.sh. Display a concise snapshot — no trades, no writes needed."
+        f"Run the status workflow: pull current equity, open positions, and open orders "
+        f"via {SCRIPTS}/alpaca.sh. Display a concise snapshot — no trades, no writes needed."
     ),
 }
 
@@ -126,16 +131,54 @@ def run_session(workflow: str, query: str | None = None):
     print(f"[tradingbot] Session: {session.id}")
     print(f"[tradingbot] Watch in Console: https://platform.claude.com/workspaces/default/sessions/{session.id}")
 
-    # --- Smoke test: verify Alpaca is reachable before burning tokens ---
+    # --- Step 1: Write credentials into the container's .env ---
+    dotenv_vars = [
+        "ALPACA_API_KEY", "ALPACA_SECRET_KEY", "ALPACA_ENDPOINT", "ALPACA_DATA_ENDPOINT",
+        "PERPLEXITY_API_KEY", "PERPLEXITY_MODEL",
+        "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID",
+        "GETX_API_KEY",
+    ]
+    dotenv_lines = "\n".join(f'{v}={os.environ[v]}' for v in dotenv_vars)
+    dotenv_path = f"{BASE}/.env"
+
+    print(f"[tradingbot] Writing credentials to container {dotenv_path}...")
+    client.beta.sessions.events.send(
+        session_id=session.id,
+        events=[{
+            "type": "user.message",
+            "content": [{"type": "text", "text":
+                f"Write the following content to {dotenv_path} exactly as shown "
+                f"(use bash: printf '...') then confirm the file exists with `ls -la {dotenv_path}`:\n\n"
+                f"{dotenv_lines}"
+            }],
+        }],
+    )
+
+    with client.beta.sessions.events.stream(session_id=session.id) as stream:
+        for event in stream:
+            if event.type == "agent.message":
+                for block in event.content:
+                    if block.type == "text":
+                        print(f"[setup] {block.text.strip()}")
+            elif event.type == "session.status_idle":
+                stop = getattr(event, "stop_reason", None)
+                if stop and getattr(stop, "type", None) == "requires_action":
+                    continue
+                break
+            elif event.type == "session.status_terminated":
+                print("[tradingbot] Session terminated during .env setup.", file=sys.stderr)
+                sys.exit(1)
+
+    # --- Step 2: Smoke test Alpaca ---
     print("[tradingbot] Smoke-testing Alpaca connectivity...")
     client.beta.sessions.events.send(
         session_id=session.id,
         events=[{
             "type": "user.message",
             "content": [{"type": "text", "text":
-                "SMOKE TEST: Run `bash /workspace/scripts/alpaca.sh account` and confirm "
-                "you get a valid account equity response. Reply with just the equity value. "
-                "Do NOT start the main workflow yet."
+                f"SMOKE TEST: Run `bash {SCRIPTS}/alpaca.sh account` and confirm "
+                f"you get a valid account equity response. Reply with just the equity value. "
+                f"Do NOT start the main workflow yet."
             }],
         }],
     )
