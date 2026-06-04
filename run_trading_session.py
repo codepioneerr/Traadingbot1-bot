@@ -66,16 +66,22 @@ REQUIRED_ENV_VARS = [
 
 
 def load_dotenv():
-    """Load .env file from the repo root into os.environ."""
-    env_path = os.path.join(os.path.dirname(__file__), ".env")
-    if not os.path.exists(env_path):
-        return
-    with open(env_path) as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                k, _, v = line.partition("=")
-                os.environ.setdefault(k.strip(), v.strip())
+    """Load .env file from the repo root into os.environ using python-dotenv."""
+    try:
+        from dotenv import load_dotenv as _load
+        env_path = os.path.join(os.path.dirname(__file__), ".env")
+        _load(dotenv_path=env_path, override=False)
+    except ImportError:
+        # Fallback: manual parse if python-dotenv isn't installed
+        env_path = os.path.join(os.path.dirname(__file__), ".env")
+        if not os.path.exists(env_path):
+            return
+        with open(env_path) as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    k, _, v = line.partition("=")
+                    os.environ.setdefault(k.strip(), v.strip())
 
 
 def check_env_vars():
@@ -85,30 +91,6 @@ def check_env_vars():
         sys.exit(1)
 
 
-def build_dotenv_content() -> bytes:
-    """Build .env file content from local environment variables."""
-    trading_vars = [
-        "ALPACA_API_KEY", "ALPACA_SECRET_KEY", "ALPACA_ENDPOINT", "ALPACA_DATA_ENDPOINT",
-        "PERPLEXITY_API_KEY", "PERPLEXITY_MODEL",
-        "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID",
-        "GETX_API_KEY",
-    ]
-    return ("\n".join(f"{v}={os.environ[v]}" for v in trading_vars) + "\n").encode()
-
-
-def upload_dotenv(client: anthropic.Anthropic) -> str:
-    """Upload .env as a Files API resource; return file_id."""
-    file_obj = client.beta.files.upload(
-        file=(".env", build_dotenv_content(), "text/plain"),
-    )
-    return file_obj.id
-
-
-def delete_file(client: anthropic.Anthropic, file_id: str):
-    try:
-        client.beta.files.delete(file_id)
-    except Exception:
-        pass  # best-effort cleanup
 
 
 def run_session(workflow: str, query: str | None = None):
@@ -124,34 +106,22 @@ def run_session(workflow: str, query: str | None = None):
     if workflow == "research" and query:
         kickoff += f" Query: {query}"
 
-    print(f"[tradingbot] Uploading credentials...")
-    dotenv_file_id = upload_dotenv(client)
-
+    import datetime
     print(f"[tradingbot] Creating session for workflow: {workflow}")
-    try:
-        import datetime
-        session = client.beta.sessions.create(
-            agent=agent_id,
-            environment_id=env_id,
-            title=f"TradingBot-Live / {workflow} / {datetime.date.today()}",
-            resources=[
-                {
-                    "type": "github_repository",
-                    "url": "https://github.com/codepioneerr/Traadingbot1-bot",
-                    "authorization_token": github_token,
-                    "mount_path": "/workspace",
-                    "checkout": {"type": "branch", "name": "main"},
-                },
-                {
-                    "type": "file",
-                    "file_id": dotenv_file_id,
-                    "mount_path": "/workspace/.env",
-                },
-            ],
-        )
-    except Exception as e:
-        delete_file(client, dotenv_file_id)
-        raise e
+    session = client.beta.sessions.create(
+        agent=agent_id,
+        environment_id=env_id,
+        title=f"TradingBot-Live / {workflow} / {datetime.date.today()}",
+        resources=[
+            {
+                "type": "github_repository",
+                "url": "https://github.com/codepioneerr/Traadingbot1-bot",
+                "authorization_token": github_token,
+                "mount_path": "/workspace",
+                "checkout": {"type": "branch", "name": "main"},
+            },
+        ],
+    )
 
     print(f"[tradingbot] Session: {session.id}")
     print(f"[tradingbot] Watch in Console: https://platform.claude.com/workspaces/default/sessions/{session.id}")
@@ -185,12 +155,10 @@ def run_session(workflow: str, query: str | None = None):
                 break
             elif event.type == "session.status_terminated":
                 print("[tradingbot] Session terminated during smoke test.", file=sys.stderr)
-                delete_file(client, dotenv_file_id)
                 sys.exit(1)
 
     if not smoke_ok:
         print("[tradingbot] Smoke test failed — aborting.", file=sys.stderr)
-        delete_file(client, dotenv_file_id)
         sys.exit(1)
 
     # --- Main workflow ---
@@ -222,7 +190,6 @@ def run_session(workflow: str, query: str | None = None):
                 break
 
     print(f"\n[tradingbot] Workflow complete.")
-    delete_file(client, dotenv_file_id)
 
 
 def main():
