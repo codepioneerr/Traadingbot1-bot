@@ -187,27 +187,91 @@ async def get_equity_history(_: None = Depends(verify_password)):
 async def get_status(_: None = Depends(verify_password)):
     trade_log = read_memory("TRADE-LOG.md")
     research_log = read_memory("RESEARCH-LOG.md")
-    today = date.today().isoformat()
+    today = date.today()
+    today_iso = today.isoformat()
 
-    pre_market_today = today in research_log
-    eod_today = bool(re.search(rf"Day\s+\d+\s+[—\-]+\s+{re.escape(today)}", trade_log))
+    # --- Routine detection ---
+    pre_market_today = today_iso in research_log
+    eod_today = bool(re.search(rf"Day\s+\d+\s+[—\-]+\s+{re.escape(today_iso)}", trade_log))
 
+    # Last run date for each routine (find most recent date stamp in each log)
+    def last_date_in(text: str) -> Optional[str]:
+        dates = re.findall(r"\d{4}-\d{2}-\d{2}", text)
+        return dates[-1] if dates else None
+
+    last_research_date = last_date_in(research_log)
+    last_eod_date = last_date_in(trade_log)
+
+    # --- Heartbeat: last git commit time ---
+    try:
+        import subprocess as _sp
+        git_result = _sp.run(
+            ["git", "-C", str(REPO_ROOT), "log", "-1", "--format=%ci"],
+            capture_output=True, text=True, timeout=5
+        )
+        last_commit = git_result.stdout.strip() if git_result.returncode == 0 else None
+    except Exception:
+        last_commit = None
+
+    # --- Weekly trade count (count Day entries this week from TRADE-LOG) ---
+    from datetime import timedelta
+    week_start = (today - timedelta(days=today.weekday())).isoformat()  # Monday
+    weekly_trades = len(re.findall(
+        rf"##\s+Day\s+\d+\s+[—\-]+\s+(\d{{4}}-\d{{2}}-\d{{2}})",
+        trade_log
+    ))
+    # Count only entries this week
+    week_entries = [
+        d for d in re.findall(r"##\s+Day\s+\d+\s+[—\-]+\s+(\d{4}-\d{2}-\d{2})", trade_log)
+        if d >= week_start
+    ]
+    weekly_trades = max(0, len(week_entries) - 1)  # subtract baseline day if present
+
+    # --- Backtest ---
     backtest_files = sorted(BACKTEST_RESULTS_DIR.glob("*.json")) if BACKTEST_RESULTS_DIR.exists() else []
     latest_backtest = backtest_files[-1].name if backtest_files else None
+    latest_verdict = None
+    if backtest_files:
+        try:
+            import json as _json
+            result = _json.loads(backtest_files[-1].read_text())
+            latest_verdict = result.get("verdict")
+        except Exception:
+            pass
 
     paused = (MEMORY_DIR / "PAUSE-FLAG.txt").exists()
 
     return {
         "paused": paused,
+        "last_commit": last_commit,
+        "weekly_trades": weekly_trades,
+        "weekly_trades_max": 5,
         "routines": {
-            "pre_market": {"done_today": pre_market_today, "label": "Pre-Market Research"},
-            "market_open": {"done_today": False, "label": "Market Open"},
-            "midday": {"done_today": False, "label": "Midday Check"},
-            "eod": {"done_today": eod_today, "label": "EOD Summary"},
+            "pre_market": {
+                "done_today": pre_market_today,
+                "label": "Pre-Market Research",
+                "last_run": last_research_date,
+            },
+            "market_open": {
+                "done_today": False,
+                "label": "Market Open",
+                "last_run": None,
+            },
+            "midday": {
+                "done_today": False,
+                "label": "Midday Check",
+                "last_run": None,
+            },
+            "eod": {
+                "done_today": eod_today,
+                "label": "EOD Summary",
+                "last_run": last_eod_date,
+            },
         },
         "backtest": {
             "latest_file": latest_backtest,
             "count": len(backtest_files),
+            "verdict": latest_verdict,
         },
     }
 

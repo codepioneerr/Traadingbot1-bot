@@ -231,14 +231,28 @@ def evaluate(
     }
 
     oos_ctx = _build_ctx(oos_bars)
+
+    # Warn if the OOS window is short — Sharpe will be unreliable (< ~20 days)
+    if len(oos_dates) < 20:
+        print(f'  ⚠️  WARNING: OOS window is only {len(oos_dates)} trading days. '
+              f'Sharpe will be 0.0 (requires ≥ 10 daily returns). '
+              f'Use a longer evaluation window for reliable metrics.')
+
     for cost_label, cost_model in [('frictionless', FRICTIONLESS), ('realistic_5bps', REALISTIC_5), ('realistic_10bps', REALISTIC_10)]:
         strat = StrategyClass()
         strat.set_params(best_params)
         eng = BacktestEngine(strat, cost_model=cost_model, starting_equity=starting_equity)
         res = eng.run(oos_bars, ctx_by_date=oos_ctx)
-        # Use daily_equity for time-based metrics (Sharpe, CAGR, drawdown)
-        # fall back to equity_curve if daily_equity is empty
-        curve = res['daily_equity'] if res['daily_equity'] else res['equity_curve']
+
+        # ALWAYS use daily_equity (one point per trading day) for Sharpe/CAGR/drawdown.
+        # NEVER fall back to equity_curve — it is per-bar (per minute), and passing it
+        # to sharpe() overstates annualisation by sqrt(390) ≈ 19.7×, producing
+        # nonsensical results like Sharpe = ±80.
+        if not res['daily_equity']:
+            print(f'  ⚠️  WARNING [{cost_label}]: daily_equity is empty — engine produced '
+                  f'no complete trading days. Scorecard metrics will be zero.')
+        curve = res['daily_equity'] if res['daily_equity'] else [starting_equity]
+
         sc = scorecard(res['trades'], curve, len(oos_dates), label=f'OOS {cost_label}')
         results['passes'][cost_label] = sc
 

@@ -49,9 +49,18 @@ def daily_returns(equity_curve: list[float]) -> list[float]:
 
 
 def sharpe(equity_curve: list[float], risk_free_annual: float = 0.04) -> float:
-    """Annualised Sharpe ratio (daily returns, 252 trading days)."""
+    """
+    Annualised Sharpe ratio, assuming one point per TRADING DAY (252/year).
+
+    IMPORTANT: pass daily_equity, NOT equity_curve.
+    equity_curve is per-bar (per minute); using it here overstates the
+    annualisation by sqrt(390) ≈ 19.7× and produces nonsensical results
+    like Sharpe = ±80.
+
+    Returns 0.0 if fewer than 10 daily returns are available (too noisy).
+    """
     rets = daily_returns(equity_curve)
-    if len(rets) < 2:
+    if len(rets) < 10:                          # guard: need at least ~2 weeks
         return 0.0
     rf_daily = (1 + risk_free_annual) ** (1 / 252) - 1
     excess = [r - rf_daily for r in rets]

@@ -83,13 +83,13 @@ function PasswordGate({ onAuth }) {
 function StatsRow() {
   const { data: account } = useApi('/api/account', 30000)
   const { data: positions } = useApi('/api/positions', 30000)
+  const { data: statusData } = useApi('/api/status', 30000)
 
   const equity = parseFloat(account?.equity ?? 0)
   const lastEq  = parseFloat(account?.last_equity ?? equity)
   const dayPnl  = equity - lastEq
   const dayPct  = lastEq > 0 ? (dayPnl / lastEq) * 100 : 0
   const posCount = Array.isArray(positions) ? positions.length : 0
-  const dtCount  = parseInt(account?.daytrade_count ?? 0)
 
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -114,10 +114,13 @@ function StatsRow() {
         icon={BarChart2}
       />
       <StatCard
-        title="Day Trades Used"
-        value={`${dtCount}/3`}
-        sub="Rolling 5-day window"
-        valueClass={dtCount >= 3 ? 'text-red-400' : dtCount >= 2 ? 'text-yellow-400' : 'text-white'}
+        title="Weekly Trades"
+        value={`${statusData?.weekly_trades ?? '—'}/${statusData?.weekly_trades_max ?? 5}`}
+        sub="New positions this week"
+        valueClass={
+          (statusData?.weekly_trades ?? 0) >= 5 ? 'text-red-400' :
+          (statusData?.weekly_trades ?? 0) >= 4 ? 'text-yellow-400' : 'text-white'
+        }
         icon={Activity}
       />
     </div>
