@@ -6,3 +6,9 @@ __pycache__/
 .claude/settings.local.json
 DAILY-SUMMARY.md
 backtest/cache/
+memory/PAUSE-FLAG.txt
+memory/GOALS.json
+memory/DAILY-NOTES.md
+dashboard/frontend/node_modules/
+dashboard/frontend/dist/
+dashboard/frontend/.env
