@@ -1,14 +1,37 @@
-# Trading Bot — Full Overview
+# Traadingbot1 — Full Project Guide
 
-> Paper trading account | Alpaca | ~$100,000 starting capital | As of June 2026
+> Paper trading account | Alpaca | $100,000 starting capital | Last updated June 5, 2026
+> Repo: `https://github.com/codepioneerr/Traadingbot1-bot`
 
 ---
 
-## What This Bot Does
+## What This Is
 
-Fully autonomous trading bot that researches the market each morning, executes trades at open, monitors positions at midday, and sends you an EOD summary to Telegram — every weekday, no manual intervention needed.
+An autonomous Claude-powered paper trading bot managing a **$100,000 Alpaca paper account**. It runs a structured daily workflow, notifies via Telegram, backtests strategies before deploying them, and exposes a live web dashboard. No real money — paper only.
 
-It uses Claude Code scheduled remote agents (cloud-hosted, fresh repo clone each run) to execute the full daily workflow. All state is persisted to GitHub via git commits so each run picks up where the last left off.
+---
+
+## Repo Structure
+
+```
+Traadingbot1-bot/
+├── .claude/commands/        # 8 local slash commands (manual use)
+├── backtest/                # ORB backtesting engine (~3,700 lines Python)
+│   ├── strategies/orb.py    # Opening Range Breakout strategy
+│   ├── engine.py            # Event-driven backtest loop
+│   ├── evaluate.py          # IS/OOS walk-forward evaluator
+│   ├── run_overnight.py     # nohup-safe long runner
+│   └── results/             # JSON result files
+├── dashboard/
+│   ├── backend/main.py      # FastAPI — 18 endpoints
+│   └── frontend/src/        # React + Tailwind dashboard
+├── memory/                  # All persistent bot state (markdown + JSON)
+├── routines/                # Scheduled remote agent prompts
+├── scripts/                 # Shell wrappers: alpaca.sh, telegram.sh, perplexity.sh
+├── railway.toml             # Railway deployment config (repo root)
+├── CLAUDE.md                # Claude agent instructions
+└── .env                     # Credentials (gitignored)
+```
 
 ---
 
@@ -19,154 +42,223 @@ It uses Claude Code scheduled remote agents (cloud-hosted, fresh repo clone each
 | Platform | Alpaca Paper Trading |
 | Account # | PA32I4MEXBHZ |
 | Starting Capital | $100,000.00 |
-| Instruments | Stocks + ETFs only (options strictly prohibited) |
+| Instruments | Stocks + ETFs only — **no options ever** |
 | Broker endpoint | `https://paper-api.alpaca.markets` |
 | Data endpoint | `https://data.alpaca.markets` |
+| PDT status | Not subject — equity above $25k threshold |
+| Max positions | 6 (4 in DEFENSIVE mode) |
+| Max new trades/week | 5 |
 
 ---
 
 ## Trading Strategy
 
-Full rules live in `memory/TRADING-STRATEGY.md`. Summary:
+Full rules in `memory/TRADING-STRATEGY.md`. Summary below.
 
-### Position Limits
-- Max **6 open positions** at once
-- Max **5 new trades per week**
-- Max **3 day trades per rolling 5 days** (PDT rule — account < $25k)
+### Position Sizing (VIX-based)
 
-### Entry Rules
-- Must have a documented catalyst in today's RESEARCH-LOG
-- Position size determined by VIX-based sizing mode (see below)
-- Bid/ask spread must be < 0.5% of price (liquidity check)
-- Must clear all 7 hard checks before any order is placed
-
-### Sizing Modes (VIX-Driven)
-| VIX | Mode | Max per position | Target deployment |
-|-----|------|-----------------|-------------------|
+| VIX | Mode | Max per position | Capital deployed |
+|-----|------|-----------------|-----------------|
 | < 15 | AGGRESSIVE | 25% | 85–90% |
 | 15–25 | MODERATE | 20% | 75–85% |
-| > 25 | DEFENSIVE | 15% | 60–75% (max 4 positions) |
+| > 25 | DEFENSIVE | 15% | 60–75% (4 max positions) |
 
-### Stop Loss & Exits
-- **10% trailing stop** placed immediately after every fill (GTC)
-- **Hard cut at -7%** — no exceptions, no hope-holding
-- **Tighten trailing stop** when winners run:
-  - ≥ +15% gain → tighten trail to 7%
-  - ≥ +20% gain → tighten trail to 5%
-- Never move a stop lower — only tighten or hold
-- Cut on thesis break even if not at -7% yet
+Sizing mode is set at pre-market and never changed mid-day.
 
-### Order Types
-- Entries: market orders, day TIF
-- Stops: trailing stop GTC (fallback to fixed stop if PDT-blocked)
+### Core Rules
 
----
+- 10% trailing stop placed **immediately** after every fill (GTC order)
+- Hard cut at **-7%** — no exceptions, no averaging down
+- Tighten trail: **7%** at +15%, **5%** at +20% — never move a stop down
+- PDT cap of 3 day-trades/rolling-5-days only applies if equity drops below $25k
+- 2 consecutive failed trades in a sector → exit entire sector
+- Patience > activity — zero trades can be the right answer
 
-## Daily Schedule (EDT — Summer)
+### Entry Checklist (all must pass)
 
-| Time (EDT) | Routine | What Happens |
-|-----------|---------|--------------|
-| 9:00 AM | **Morning** | Pre-market research + wait for open + execute trades |
-| 12:30 PM | **Midday** | Cut losers, tighten stops, thesis check, opportunity scan |
-| 4:05 PM | **EOD** | Daily P&L snapshot + Telegram summary (+ weekly review on Fridays) |
-
-> ⚠️ **DST Note:** These run on EDT (UTC-4) times. When clocks fall back in November, a scheduled reminder (`trig_01LAWThx7wK4KdggHzhj9mw5`) will fire on Nov 2, 2026 and send you the updated cron strings to paste in.
+- Catalyst documented in today's RESEARCH-LOG
+- Sector in momentum
+- Stop level defined (7–10% below entry)
+- Minimum 2:1 R:R target
+- Total positions after fill ≤ 6 (4 in DEFENSIVE)
+- Trades this week ≤ 5
+- Position size ≤ sizing mode % of equity
+- Instrument is a stock or ETF (not an option)
 
 ---
 
-## Scheduled Routines (claude.ai/code/routines)
+## Daily Workflow
 
-| Routine ID | Name | Cron (UTC) | Status |
-|-----------|------|------------|--------|
-| `trig_011SvShqB3ehs4He2753Ko1D` | Morning (Research + Execute) | `0 13 * * 1-5` | ✅ Active |
-| `trig_01J92CubBoHzKJADDfi192sJ` | Midday | `30 16 * * 1-5` | ✅ Active |
-| `trig_019Mj499gRvAscnHdZMWAUjU` | EOD (Summary + Friday Review) | `5 20 * * 1-5` | ✅ Active |
-| `trig_01GEMBKtpH13eD1YBBKBqsfk` | Market Open | `35 13 * * 1-5` | 🚫 Disabled (merged into Morning) |
-| `trig_013ZvKZEr1sM9vUqy7z5LsRR` | Weekly Review | `5 20 * * 5` | 🚫 Disabled (merged into EOD) |
-| `trig_01LAWThx7wK4KdggHzhj9mw5` | DST Reminder | Nov 2 2026 9AM EST | ⏰ One-time |
+Five scheduled routines run as **Claude Code remote agents** (cron). Each routine: verifies env vars → reads memory → acts → writes memory → git commit + push.
 
----
+### Schedule (EDT — Summer)
 
-## How the Morning Routine Works
+| Time (EDT) | Routine ID | File | What it does |
+|-----------|-----------|------|--------------|
+| 9:00 AM | `trig_011SvShqB3ehs4He2753Ko1D` | `routines/pre-market.md` | Perplexity research, VIX, sizing mode, trade ideas → RESEARCH-LOG + Telegram |
+| 9:35 AM | `trig_01GEMBKtpH13eD1YBBKBqsfk` | `routines/market-open.md` | Validate ideas, execute trades, place trailing stops → TRADE-LOG + Telegram |
+| 12:30 PM | `trig_01J92CubBoHzKJADDfi192sJ` | `routines/midday.md` | Cut losers at -7%, tighten stops, thesis check |
+| 4:05 PM | `trig_019Mj499gRvAscnHdZMWAUjU` | `routines/daily-summary.md` | EOD P&L snapshot → TRADE-LOG + Telegram |
+| 4:05 PM Fri | `trig_013ZvKZEr1sM9vUqy7z5LsRR` | `routines/weekly-review.md` | Week metrics vs S&P, lessons → Telegram |
+| Nov 2 2026 | `trig_01LAWThx7wK4KdggHzhj9mw5` | — | One-time DST reminder with updated EST cron strings |
+
+> **DST note:** Crons are set to EDT (UTC-4). They shift 1 hour in November. The one-time reminder fires Nov 2, 2026 with updated strings to paste in.
+
+The same routines are also available as **local slash commands** in `.claude/commands/` for manual use — these read `.env` automatically and skip the git push step.
+
+### How a Morning Run Works
 
 ```
-9:00 AM EDT — Remote agent spins up, clones repo
+9:00 AM — Remote agent spins up, clones repo
     │
-    ├── Phase 1: Pre-Market Research (~25 min)
+    ├── Phase 1: Pre-Market Research
     │   ├── Read TRADING-STRATEGY.md, TRADE-LOG, RESEARCH-LOG
     │   ├── Pull Alpaca account state
-    │   ├── Run 8 Perplexity queries (oil, futures, VIX, catalysts, earnings, econ calendar, sectors)
+    │   ├── Run Perplexity queries (VIX, futures, sectors, catalysts, earnings)
     │   ├── Determine sizing mode from VIX
     │   ├── Write dated entry to RESEARCH-LOG.md
-    │   ├── Send Telegram: sector watch + sizing mode
-    │   └── git commit + push RESEARCH-LOG.md
+    │   ├── Telegram: sector watchlist + sizing mode
+    │   └── git commit + push
     │
-    ├── Phase 2: Wait for Market Open
-    │   └── Sleep loop until 9:30 AM ET
-    │
-    └── Phase 3: Market-Open Execution
+    └── Phase 2: Market-Open Execution (9:35 AM)
         ├── Re-check live quotes + spreads
         ├── Run 7 hard-check rules per trade idea
         ├── Place market orders for approved trades
         ├── Immediately place 10% trailing stops
         ├── Append to TRADE-LOG.md
-        ├── Send Telegram per trade (or silence if no trades)
-        └── git commit + push TRADE-LOG.md (if trades)
-```
-
----
-
-## How the Midday Routine Works
-
-```
-12:30 PM EDT — Remote agent spins up
-    ├── Read TRADING-STRATEGY.md, TRADE-LOG, RESEARCH-LOG
-    ├── Pull positions + orders from Alpaca
-    ├── Cut any position at ≤ -7% unrealized → Telegram alert
-    ├── Tighten trailing stops on winners ≥ +15% or ≥ +20%
-    ├── Thesis check on each position (Perplexity if sharp move)
-    ├── Opportunity scan if capacity exists (flag for tomorrow, no trades)
-    ├── Telegram only if action taken (silent otherwise)
-    └── git commit + push if any memory files changed
-```
-
----
-
-## How the EOD Routine Works
-
-```
-4:05 PM EDT — Remote agent spins up
-    ├── PART 1: Daily Summary (every weekday)
-    │   ├── Read TRADE-LOG for yesterday's equity baseline
-    │   ├── Pull final account state from Alpaca
-    │   ├── Compute Day P&L and Phase P&L
-    │   ├── Append EOD snapshot to TRADE-LOG.md
-    │   ├── Send Telegram EOD summary (always, even on no-trade days)
-    │   └── git commit + push TRADE-LOG.md (mandatory)
-    │
-    └── PART 2: Weekly Review (Fridays only, DOW=5)
-        ├── Read full week from TRADE-LOG + RESEARCH-LOG
-        ├── Run 4 Perplexity queries (S&P return, sectors, next week outlook)
-        ├── Compute win rate, profit factor, bot vs S&P
-        ├── Append full review to WEEKLY-REVIEW.md
-        ├── Update TRADING-STRATEGY.md if rules need changing
-        ├── Send Telegram weekly review summary
+        ├── Telegram per trade (or "no trades" message)
         └── git commit + push
 ```
 
 ---
 
+## Backtest Engine
+
+### Purpose
+
+Validate the **ORB (Opening Range Breakout)** strategy before going live. The strategy is **not live yet** — it deploys only after the out-of-sample realistic pass shows a clear PASS.
+
+### Architecture (`backtest/` — ~3,700 lines)
+
+| File | Role |
+|------|------|
+| `strategies/orb.py` | ORB signal logic — OR window, VWAP filter, ATR stops, EOD flat |
+| `engine.py` | Event-driven bar-by-bar backtest loop |
+| `evaluate.py` | Walk-forward IS/OOS evaluator, grid-searches params, runs 3 passes |
+| `features.py` | VWAP, relative volume, ATR, regime indicators |
+| `regime.py` | VIX-based market regime detection (rolling percentile) |
+| `costs.py` | Realistic friction model (spread, commission, slippage) |
+| `metrics.py` | Sharpe, CAGR, max drawdown, win rate, profit factor |
+| `monte_carlo.py` | Monte Carlo confidence intervals on OOS results |
+| `walk_forward.py` | Expanding-window walk-forward validation |
+| `analysis.py` | Post-run analysis and reporting |
+| `diagnose.py` | Diagnostic tools for debugging strategy behavior |
+| `sensitivity.py` | Param sensitivity / robustness analysis |
+| `run_overnight.py` | nohup-safe long runner for multi-day backtests |
+| `data.py` | Alpaca historical data fetcher with local caching |
+
+### Three Evaluation Passes
+
+Every `evaluate.py` run produces a result JSON with three OOS passes:
+
+1. **Frictionless** — no costs (upper bound)
+2. **Realistic 5bps** — spread + 5bps commission
+3. **Realistic 10bps** — spread + 10bps commission
+
+### Current Results (6 runs in `backtest/results/`)
+
+| File | Period | Key result |
+|------|--------|------------|
+| `orb_analysis_20260604_*` (×2) | Jan–Feb 2024 | OOS frictionless only |
+| `orb_analysis_20260604_221447` | Jan–Feb 2024 | Expanded analysis |
+| `orb_20260605_010607` | **2021–2026 full** | ❌ OOS negative across all passes (Sharpe -1.6 → -1.0) |
+| `orb_20260605_012702` | Jan–Feb 2024 (short) | Abnormal Sharpe (-78) — likely data/lookback issue |
+| `orb_20260605_012941` | Jan–Feb 2024 | ✅ realistic_5bps: Sharpe **2.82**, 57.8% win rate — most promising |
+
+**Status:** The short-window result shows real edge at realistic costs. The full 5-year run is negative, suggesting degradation — likely a universe selection and parameter stability issue. Needs more investigation before going live.
+
+---
+
+## Dashboard
+
+### Stack
+
+- **Backend:** FastAPI (Python) → Railway  
+- **Frontend:** React 18 + Vite + Tailwind CSS → Vercel  
+- **Auth:** Single password via `X-Password` header, stored in `localStorage`  
+- **Refresh:** Every 30 seconds automatically
+
+### Layout
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ TOP BAR: Nick's Trading Hub | Market Status | Clock | Date  │
+├───────────┬──────────────┬──────────────┬───────────────────┤
+│  Equity   │  Day P&L     │  Positions   │  Day Trades Used  │
+├───────────────────────────┬─────────────────────────────────┤
+│ Positions Table           │ Bot Status Panel                 │
+│ + Equity Curve Chart      │ Routine statuses + Backtest bar  │
+├─────────────┬─────────────┬─────────────────────────────────┤
+│ Monthly     │ Recent      │ Quick Controls                   │
+│ Calendar    │ Alerts Feed │ + Daily Quote                    │
+│ (P&L color) │ (10 entries)│                                  │
+├─────────────────────────────────────────────────────────────┤
+│ LIFE HUB (collapsible)                                       │
+│ Goals Tracker | Daily Notes | Upcoming (placeholder)        │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Backend API (18 endpoints)
+
+| Method | Endpoint | Source |
+|--------|----------|--------|
+| GET | `/health` | Static |
+| GET | `/api/ping` | Auth check |
+| GET | `/api/account` | `scripts/alpaca.sh account` |
+| GET | `/api/positions` | `scripts/alpaca.sh positions` |
+| GET | `/api/orders` | `scripts/alpaca.sh orders open` |
+| GET | `/api/equity-history` | Alpaca portfolio history API (5-min bars) |
+| GET | `/api/status` | Reads `memory/` + `backtest/results/` |
+| GET | `/api/backtest` | Latest JSON in `backtest/results/` |
+| GET | `/api/alerts` | `memory/TELEGRAM-LOG.md` (last 10) |
+| GET | `/api/calendar` | Parses `memory/TRADE-LOG.md` |
+| GET | `/api/quote` | 50-quote list, rotates by day-of-year |
+| POST | `/api/pause` | Writes `memory/PAUSE-FLAG.txt` |
+| POST | `/api/resume` | Deletes `memory/PAUSE-FLAG.txt` |
+| POST | `/api/close-all` | Alpaca `DELETE /v2/positions` |
+| GET/POST | `/api/goals` | Reads/writes `memory/GOALS.json` |
+| GET/POST | `/api/notes` | Reads/writes `memory/DAILY-NOTES.md` |
+
+### Frontend Components
+
+| Component | What it shows |
+|-----------|--------------|
+| `TopBar` | Title, live clock, market status dot (pre/open/after/closed), date |
+| `StatCard` | Reusable metric tile |
+| `PositionsPanel` | Positions table (symbol, qty, cost, current, day%, unreal P&L) + equity curve |
+| `BotStatusPanel` | Running/Paused badge, 4 routine status rows, backtest count progress bar |
+| `CalendarPanel` | Monthly grid — green/red by P&L, purple dot on trade days, today highlighted |
+| `AlertsFeed` | Last 10 Telegram log entries, color-coded by type (buy/sell/profit/loss/warning) |
+| `QuickControls` | Refresh, Pause/Resume, View Backtest, Close All (confirm modal), daily quote |
+| `LifeHub` | Collapsible: 3 editable goal bars, daily notes textarea, upcoming placeholder |
+
+---
+
 ## Memory System
 
-All persistent state is in `memory/` — committed to GitHub after every run so the next agent picks it up.
+All persistent state in `memory/` — committed to GitHub after every routine run so each subsequent agent picks up the latest state.
 
-| File | Purpose |
-|------|---------|
-| `memory/TRADING-STRATEGY.md` | Master rules — position limits, sizing table, entry/exit checklist |
-| `memory/TRADE-LOG.md` | Every trade + daily EOD snapshots. Used for P&L tracking |
-| `memory/RESEARCH-LOG.md` | Pre-market research entries. Market context + sizing mode + trade ideas |
-| `memory/WEEKLY-REVIEW.md` | Friday weekly reviews — performance vs S&P, lessons, grade |
-| `memory/PROJECT-CONTEXT.md` | Setup notes, account details, phase info |
+| File | Contents | Status |
+|------|----------|--------|
+| `TRADING-STRATEGY.md` | Master rules — sizing table, entry/exit checklist, ORB spec | Current |
+| `TRADE-LOG.md` | Every trade + daily EOD snapshots | Day 0 baseline only (no live trades yet) |
+| `RESEARCH-LOG.md` | Pre-market research + sizing mode + trade ideas | No entries yet |
+| `WEEKLY-REVIEW.md` | Friday reviews — performance vs S&P, lessons, grade | No entries yet |
+| `PROJECT-CONTEXT.md` | Account details, phase, constraints | Current |
+| `GOALS.json` | 3 personal goals with progress (auto-created by dashboard) | Created |
+| `DAILY-NOTES.md` | Daily freeform notes via dashboard | Created on first save |
+| `PAUSE-FLAG.txt` | Presence = bot paused (gitignored) | Not present = running |
+| `TELEGRAM-LOG.md` | Raw Telegram notification log (feeds dashboard alerts) | Not yet — populates once bot runs |
 
 > **Critical:** If a remote agent run fails before committing, that day's data is lost. The EOD commit is especially important — it provides the equity baseline for the next day's P&L calculation.
 
@@ -174,42 +266,35 @@ All persistent state is in `memory/` — committed to GitHub after every run so 
 
 ## Scripts
 
-| Script | Usage | Notes |
-|--------|-------|-------|
-| `scripts/alpaca.sh` | `bash scripts/alpaca.sh account` | REST wrapper for Alpaca API |
-| | `bash scripts/alpaca.sh positions` | |
-| | `bash scripts/alpaca.sh orders` | |
-| | `bash scripts/alpaca.sh quote AAPL` | |
-| | `bash scripts/alpaca.sh order '{...json...}'` | Place order |
-| | `bash scripts/alpaca.sh close AAPL` | Close position |
-| | `bash scripts/alpaca.sh cancel ORDER_ID` | Cancel open order |
-| `scripts/perplexity.sh` | `bash scripts/perplexity.sh "query"` | Returns text response |
-| `scripts/telegram.sh` | `bash scripts/telegram.sh "message"` | Sends to your chat; falls back to DAILY-SUMMARY.md if creds missing |
+All in `scripts/`, all `chmod +x`, all read `.env` automatically on local runs.
+
+| Script | Key commands |
+|--------|-------------|
+| `alpaca.sh` | `account`, `positions`, `quote <sym>`, `orders [open\|closed\|all]`, `buy <sym> <notional>`, `trailing-stop <sym> <qty> <pct>`, `stop <sym> <qty> <price>`, `close <sym>`, `cancel <order_id>` |
+| `telegram.sh` | Sends a message to your Telegram chat; falls back to `DAILY-SUMMARY.md` if credentials are missing |
+| `perplexity.sh` | Accepts a query string, returns Perplexity research text |
 
 ---
 
 ## Telegram Notifications
 
-You receive alerts for:
-
-| Event | When |
-|-------|------|
+| Event | Trigger |
+|-------|---------|
 | 📊 Pre-market sector watch | Every morning — sectors, VIX, sizing mode |
-| 🚨 Urgent alert | Only if position -7% pre-market or thesis broke overnight |
 | 🟢 Trade executed | Real-time on every buy, with stop/target/thesis |
 | 🔴 Position closed | Immediate on -7% stop or thesis break |
 | ⚡ Stop tightened | When trailing stop is tightened on a winner |
-| 📈 EOD Summary | Every market close — P&L, positions, week count |
-| 📊 Weekly Review | Fridays — week vs S&P, grade, next week sectors |
+| 📈 EOD summary | Every market close — P&L, positions, week count |
+| 📊 Weekly review | Fridays — week vs S&P, grade, next week sectors |
 
-Bot token: in `.env` (local) / exported as env var in remote routines.
+Bot token: in `.env` locally / exported as env var in remote routines  
 Chat ID: `5567513606`
 
 ---
 
 ## Credentials
 
-Stored in `.env` locally (gitignored). Embedded as `export` statements in each remote routine prompt since remote agents don't have access to `.env`.
+Stored in `.env` locally (gitignored). Exported as env vars in each remote routine prompt (remote agents have no `.env` access).
 
 | Variable | Purpose |
 |----------|---------|
@@ -220,24 +305,33 @@ Stored in `.env` locally (gitignored). Embedded as `export` statements in each r
 | `PERPLEXITY_API_KEY` | Market research queries |
 | `PERPLEXITY_MODEL` | `sonar` |
 | `TELEGRAM_BOT_TOKEN` | Notification bot |
-| `TELEGRAM_CHAT_ID` | Your chat ID |
+| `TELEGRAM_CHAT_ID` | `5567513606` |
+| `DASHBOARD_PASSWORD` | Dashboard login (Railway env var) |
+| `FRONTEND_URL` | Vercel URL for CORS (Railway env var) |
+| `REPO_ROOT` | `/app` (Railway env var) |
 
 ---
 
-## Repo
+## Deployment
 
-`https://github.com/codepioneerr/Traadingbot1-bot`
+### Backend → Railway
 
-- `scripts/` — API wrappers
-- `routines/` — Full routine prompts (used by scheduled agents)
-- `.claude/commands/` — Slash commands for manual local runs (read `.env` automatically, skip git push)
-- `memory/` — All persistent state
+Service root: `dashboard/backend/`  
+Start command (from `railway.toml`): `uvicorn main:app --host 0.0.0.0 --port $PORT`  
+Health check: `/health`
+
+### Frontend → Vercel
+
+Build: `npm run build` → output: `dist/`  
+Framework: Vite (auto-detected)  
+Root directory: `dashboard/frontend/`  
+Required env var: `VITE_API_URL=<Railway URL>`
 
 ---
 
-## Manual Commands (Local Use)
+## Manual Slash Commands (Local Use)
 
-Run these in Claude Code for one-off actions. They use `.env` automatically and skip the git push step.
+Run in Claude Code for one-off actions. Read `.env` automatically, skip the git push.
 
 | Command | When to use |
 |---------|------------|
@@ -246,29 +340,53 @@ Run these in Claude Code for one-off actions. They use `.env` automatically and 
 | `/midday` | Manual midday check |
 | `/daily-summary` | Force EOD snapshot |
 | `/weekly-review` | Manual weekly review |
-| `/status` | Quick account snapshot |
+| `/status` | Quick account snapshot (equity, positions, orders, sizing mode) |
 | `/research <query>` | Ad-hoc Perplexity research |
+| `/backtest` | Run a full backtest evaluation |
+
+---
+
+## Current Status
+
+| Layer | Status |
+|-------|--------|
+| Alpaca paper account | ✅ Active — $100,000, no open positions |
+| Trading routines | ⏸ Not yet scheduled — bot hasn't run its first live day |
+| Backtest engine | 🔬 Active — 6 runs completed, short-window shows Sharpe 2.82 at 5bps but full 5-year run is negative |
+| ORB live deployment | ❌ Not yet — pending backtest PASS validation |
+| Dashboard backend | ✅ All 18 endpoints tested and working |
+| Dashboard frontend | ✅ Built and committed — pending Vercel deploy |
+| Railway deployment | 🔧 In progress — `railway.toml` fix pushed, awaiting successful deploy |
+
+---
+
+## What's Next
+
+1. **Finish Railway deploy** — redeploy with the fixed `railway.toml`
+2. **Deploy frontend to Vercel** — set `VITE_API_URL` env var, trigger build
+3. **Schedule routines** — use `/schedule` to register `routines/*.md` as cron agents with required env vars
+4. **Create `memory/TELEGRAM-LOG.md`** — the dashboard alerts feed populates once the bot starts logging there
+5. **Investigate ORB on longer window** — test different universe filters and parameter ranges to understand the 5-year degradation before going live
 
 ---
 
 ## Monitoring & Intervention
 
-**To check status anytime:** Run `/status` in Claude Code — pulls live Alpaca data + reads memory files.
-
-**To override a trade:** Go to `app.alpaca.markets` and cancel/close manually. The next routine run will read the updated positions.
-
-**To pause the bot:** Disable routines at `https://claude.ai/code/routines`.
-
-**If a routine fails silently:** Check `memory/RESEARCH-LOG.md` — if no entry was written for today, the run didn't complete. Also check `DAILY-SUMMARY.md` (Telegram fallback) for any error messages.
-
-**To update trading rules:** Edit `memory/TRADING-STRATEGY.md` directly and commit. The next routine run will read the updated rules.
+| Action | How |
+|--------|-----|
+| Check account status | Run `/status` in Claude Code |
+| Override a trade | Go to `app.alpaca.markets`, cancel/close manually |
+| Pause the bot | Dashboard → Pause Bot, or disable routines at `claude.ai/code/routines` |
+| Update trading rules | Edit `memory/TRADING-STRATEGY.md` and commit — next routine picks it up |
+| If a routine fails silently | Check `memory/RESEARCH-LOG.md` for today's entry; check `DAILY-SUMMARY.md` for Telegram fallback errors |
+| Rotate a credential | Update `.env` locally + update all 3 active routine env vars at `claude.ai/code/routines` |
 
 ---
 
 ## Known Issues & Limitations
 
-- **DST:** Crons are set to EDT (UTC-4). They shift 1 hour in winter. A reminder fires Nov 2, 2026 with the EST cron strings.
-- **PDT Rule:** Bot won't day-trade if `daytrade_count >= 3`. On those days it won't enter new positions that would require same-day exit.
-- **Market holidays:** Routines fire on schedule regardless of market holidays. On non-trading days, Alpaca will return no data and the bot will exit cleanly (no orders placed).
-- **Remote agent context limit:** If a run gets too long (many positions + heavy Perplexity research), it may hit the session token limit. Symptom: no commit for that day.
-- **No `.env` in remote runs:** Credentials are embedded in the routine prompts directly. Rotating a key requires updating all 3 active routines at `https://claude.ai/code/routines`.
+- **DST:** Crons are set to EDT (UTC-4). They shift 1 hour in November. Reminder fires Nov 2, 2026 with EST cron strings.
+- **PDT Rule:** Bot won't day-trade if `daytrade_count >= 3`. On those days it will skip new positions that require same-day exit.
+- **Market holidays:** Routines fire on schedule regardless. On non-trading days Alpaca returns no data and the bot exits cleanly.
+- **Remote agent context limit:** Heavy research days (many positions + many Perplexity calls) can approach session token limits. Symptom: no commit for that day.
+- **No `.env` in remote runs:** Credentials are embedded in routine prompts. Rotating a key requires updating all active routines manually.
