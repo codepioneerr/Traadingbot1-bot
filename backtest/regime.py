@@ -81,11 +81,11 @@ def _compute_adx(bars: list[dict], period: int = 14) -> dict[str, float]:
 
 def _classify_vix(vixy_close: float) -> str:
     """
-    VIXY is a VIX futures ETF. Approximate VIX equivalents:
-    VIXY < 20  ≈ VIX < 15  (low vol)
-    VIXY 20-35 ≈ VIX 15-25 (normal)
-    VIXY > 35  ≈ VIX > 25  (high vol)
-    Thresholds tuned to VIXY price history.
+    VIXY is a VIX futures ETF. Its price decays over time (roll cost),
+    so absolute thresholds are unreliable across multi-year windows.
+    We classify relative to its own trailing 252-day median instead.
+    Thresholds below are for raw VIXY close as a fallback initial estimate;
+    build_regime_map normalises them to percentile bands.
     """
     if vixy_close < 20:
         return 'low'
@@ -93,6 +93,32 @@ def _classify_vix(vixy_close: float) -> str:
         return 'normal'
     else:
         return 'high'
+
+
+def _vixy_percentile_classify(vixy_map: dict[str, float]) -> dict[str, str]:
+    """
+    Classify VIX regime by tercile of VIXY's own 252-day rolling distribution,
+    removing ETF decay bias. Bottom third = low, top third = high.
+    """
+    import statistics
+    dates = sorted(vixy_map)
+    result: dict[str, str] = {}
+    for i, d in enumerate(dates):
+        window = [vixy_map[dd] for dd in dates[max(0, i - 251):i + 1]]
+        v = vixy_map[d]
+        if len(window) < 20:
+            result[d] = _classify_vix(v)   # fall back if window too short
+            continue
+        s = sorted(window)
+        p33 = s[len(s) // 3]
+        p67 = s[2 * len(s) // 3]
+        if v <= p33:
+            result[d] = 'low'
+        elif v <= p67:
+            result[d] = 'normal'
+        else:
+            result[d] = 'high'
+    return result
 
 
 def build_regime_map(
@@ -118,11 +144,12 @@ def build_regime_map(
     except Exception:
         spy_bars = []
 
-    # Build VIXY lookup
+    # Build VIXY lookup and classify by rolling percentile (removes decay bias)
     vixy_map: dict[str, float] = {}
     for b in vixy_bars:
         date_str = b['t'][:10] if isinstance(b['t'], str) else b['t'].strftime('%Y-%m-%d')
         vixy_map[date_str] = b['c']
+    vix_regime_by_date = _vixy_percentile_classify(vixy_map) if vixy_map else {}
 
     # Build ADX lookup
     adx_map = _compute_adx(spy_bars, period=adx_period) if spy_bars else {}
@@ -140,8 +167,11 @@ def build_regime_map(
     for date_str in all_dates:
         vixy_close = vixy_map.get(date_str, 0.0)
         adx = adx_map.get(date_str, 0.0)
+        # Use rolling-percentile classification (decay-resistant) when available
+        vix_label = vix_regime_by_date.get(date_str,
+                        _classify_vix(vixy_close) if vixy_close > 0 else 'unknown')
         regime_map[date_str] = {
-            'vix_regime': _classify_vix(vixy_close) if vixy_close > 0 else 'unknown',
+            'vix_regime': vix_label,
             'trend': 'trending' if adx >= adx_trend_threshold else 'choppy',
             'vixy': vixy_close,
             'adx': adx,

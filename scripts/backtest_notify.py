@@ -161,13 +161,13 @@ if __name__ == '__main__':
 
     repo_root = Path(__file__).parent.parent
     if full_analysis:
-        cmd = [sys.executable, '-m', 'backtest.analysis', strategy, start, end]
+        cmd = [sys.executable, '-u', '-m', 'backtest.analysis', strategy, start, end]
         if quick:
             cmd.append('--quick')
         result_suffix = '_analysis_'
         format_fn = format_analysis_message
     else:
-        cmd = [sys.executable, '-m', 'backtest.evaluate', strategy, start, end]
+        cmd = [sys.executable, '-u', '-m', 'backtest.evaluate', strategy, start, end]
         result_suffix = '_'
         format_fn = format_evaluate_message
 
