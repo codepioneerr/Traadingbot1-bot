@@ -29,6 +29,7 @@ from .regime import build_regime_map, print_regime_table
 from .monte_carlo import monte_carlo, print_mc_summary
 from .sensitivity import slippage_sensitivity, print_sensitivity_table, SLIPPAGE_LEVELS
 from .features import extract_features, train_importance, print_importance_table
+from .events import build_event_map, print_event_table
 
 RESULTS_DIR.mkdir(exist_ok=True)
 
@@ -186,6 +187,7 @@ def run_full_analysis(
     spy_daily = load_spy(start, end, feed=feed)
     regime_map = build_regime_map(start, end, feed=feed)
     print(f'   Regime map: {len(regime_map)} trading days')
+    # Event map built after bar data is loaded (needs bars for gap detection)
 
     # ── Per-universe data load ────────────────────────────────────────────────
     all_bars: dict[str, dict] = {}   # universe_name → bars_by_symbol
@@ -193,6 +195,14 @@ def run_full_analysis(
         print(f'\n📥 Loading {uname} ({len(symbols)} symbols)...')
         bars = _load_universe(uname, symbols, start, end, feed)
         all_bars[uname] = bars
+
+    # ── Build event map (earnings + macro) using large_cap bars ─────────────
+    print(f'\n📥 Building event map (earnings gap detection + macro calendar)...')
+    ref_bars_for_events = all_bars.get('large_cap', {})
+    event_map = build_event_map(ref_bars_for_events, start, end, use_news=True)
+    earnings_days = sum(1 for v in event_map.values() if v.get('is_earnings'))
+    macro_days    = sum(1 for v in event_map.values() if v.get('is_macro'))
+    print(f'   Earnings days: {earnings_days}  |  Macro days: {macro_days}')
 
     # ── Shared IS/OOS split (use large_cap as reference for dates) ───────────
     ref_bars = all_bars.get('large_cap', {})
@@ -308,6 +318,14 @@ def run_full_analysis(
     else:
         regime_sc = {}
 
+    # ── Event-day analysis ────────────────────────────────────────────────────
+    event_sc: dict = {}
+    if all_oos_trades:
+        print(f'\n{"━"*80}')
+        print(f'  EVENT-DAY ANALYSIS  ({len(all_oos_trades)} OOS trades)')
+        print(f'{"━"*80}')
+        event_sc = print_event_table(all_oos_trades, event_map)
+
     # ── Monte Carlo ───────────────────────────────────────────────────────────
     mc_result = None
     if all_oos_trades:
@@ -368,6 +386,7 @@ def run_full_analysis(
             'n_windows': len(wf_result['windows']) if wf_result else 0,
         } if wf_result else None,
         'monte_carlo': mc_result,
+        'event_analysis': event_sc,
         'feature_importance': fi_result,
         'sensitivity': {k: {kk: vv for kk, vv in v.items() if kk != 'exit_reasons'} for k, v in sensitivity.items()},
         'timestamp': datetime.now().isoformat(),

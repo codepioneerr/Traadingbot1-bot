@@ -217,11 +217,11 @@ def train_importance(
         X_arr = np.array(X, dtype=float)
         y_arr = np.array(y)
 
-            clf = RandomForestClassifier(
+        clf = RandomForestClassifier(
             n_estimators=n_estimators,
             oob_score=True,
             max_features='sqrt',
-            min_samples_leaf=max(5, len(X) // 20),  # prevent overfitting on small samples
+            min_samples_leaf=max(5, len(X) // 20),
             random_state=random_state,
             n_jobs=-1,
         )
