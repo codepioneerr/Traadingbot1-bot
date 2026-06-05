@@ -223,7 +223,9 @@ class BacktestEngine:
         if pos is None:
             return
 
-        fill_price = self.cost_model.fill_price(bar['c'], 'sell')
+        # Adverse fill direction: longs sell low, shorts buy-to-cover high
+        close_action = 'sell' if pos.side == 'long' else 'buy'
+        fill_price = self.cost_model.fill_price(bar['c'], close_action)
         qty = sig.qty if sig.qty else pos.qty
 
         if pos.side == 'long':

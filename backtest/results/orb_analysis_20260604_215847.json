@@ -1,0 +1,503 @@
+{
+  "strategy": "orb",
+  "feed": "sip",
+  "start": "2024-01-02",
+  "end": "2024-02-29",
+  "is_end": "2024-02-07",
+  "oos_start": "2024-02-08",
+  "spy_oos": {
+    "total_return": 0.019585808315941478,
+    "sharpe": 2.487267336716441,
+    "max_drawdown": 0.014205905826017542
+  },
+  "best_params_is": {
+    "or_minutes": 15,
+    "n_vwap_bars": 1,
+    "atr_mult": 0.5
+  },
+  "grid": {
+    "('large_cap', 1)": {
+      "label": "large_cap OR=1m",
+      "trade_count": 177,
+      "total_return": 0.007118777085873207,
+      "cagr": 0.10440840873312207,
+      "sharpe": 2.8279109628173953,
+      "max_drawdown": 0.002313367782680981,
+      "win_rate": 0.632768361581921,
+      "profit_factor": 1.242623419353122,
+      "r_distribution": {
+        "mean": 0.5035431101612583,
+        "median": 0.19235135658084498,
+        "p25": -0.14162811980835815,
+        "p75": 0.9066378407740786,
+        "count": 177
+      },
+      "exit_reasons": {
+        "momentum-trail": 130,
+        "target": 42,
+        "failed-breakout": 5
+      },
+      "verdict": "FAIL",
+      "failures": [
+        "Return +0.7% \u2264 SPY +2.0%",
+        "Profit factor 1.24 < 1.3"
+      ],
+      "or_window": 1,
+      "universe": "large_cap"
+    },
+    "('large_cap', 5)": {
+      "label": "large_cap OR=5m",
+      "trade_count": 146,
+      "total_return": 0.00960675165818466,
+      "cagr": 0.14322429982129714,
+      "sharpe": 3.0017737121933865,
+      "max_drawdown": 0.004174516814607741,
+      "win_rate": 0.6095890410958904,
+      "profit_factor": 1.419778144548625,
+      "r_distribution": {
+        "mean": 0.2577336433452614,
+        "median": 0.09398723459115668,
+        "p25": -0.12812521350395212,
+        "p75": 0.40899780730161833,
+        "count": 146
+      },
+      "exit_reasons": {
+        "momentum-trail": 131,
+        "target": 12,
+        "failed-breakout": 3
+      },
+      "verdict": "FAIL",
+      "failures": [
+        "Return +1.0% \u2264 SPY +2.0%"
+      ],
+      "or_window": 5,
+      "universe": "large_cap"
+    },
+    "('large_cap', 15)": {
+      "label": "large_cap OR=15m",
+      "trade_count": 132,
+      "total_return": 0.008398083816585255,
+      "cagr": 0.12421186479063073,
+      "sharpe": 2.518662741746231,
+      "max_drawdown": 0.006004840681254348,
+      "win_rate": 0.5681818181818182,
+      "profit_factor": 1.3670359343552563,
+      "r_distribution": {
+        "mean": 0.08107081643946884,
+        "median": 0.06097037104035924,
+        "p25": -0.1255225021957113,
+        "p75": 0.24891389349327778,
+        "count": 132
+      },
+      "exit_reasons": {
+        "momentum-trail": 127,
+        "eod-flat": 3,
+        "failed-breakout": 2
+      },
+      "verdict": "FAIL",
+      "failures": [
+        "Return +0.8% \u2264 SPY +2.0%"
+      ],
+      "or_window": 15,
+      "universe": "large_cap"
+    },
+    "('small_cap', 1)": {
+      "label": "small_cap OR=1m",
+      "trade_count": 158,
+      "total_return": 0.024698785986119253,
+      "cagr": 0.4071717360679643,
+      "sharpe": 3.4821232513144063,
+      "max_drawdown": 0.013588448000513478,
+      "win_rate": 0.5759493670886076,
+      "profit_factor": 1.3712672143225757,
+      "r_distribution": {
+        "mean": 0.3290233414839603,
+        "median": 0.060882550524748086,
+        "p25": -0.12664350874043234,
+        "p75": 0.5993367848618887,
+        "count": 158
+      },
+      "exit_reasons": {
+        "failed-breakout": 11,
+        "momentum-trail": 109,
+        "target": 38
+      },
+      "verdict": "PASS",
+      "failures": [],
+      "or_window": 1,
+      "universe": "small_cap"
+    },
+    "('small_cap', 5)": {
+      "label": "small_cap OR=5m",
+      "trade_count": 136,
+      "total_return": 0.008894776058745217,
+      "cagr": 0.13198905142328288,
+      "sharpe": 1.6141698891795215,
+      "max_drawdown": 0.008616561193047061,
+      "win_rate": 0.5,
+      "profit_factor": 1.133823362879155,
+      "r_distribution": {
+        "mean": 0.08657825531067051,
+        "median": 0.003436877060829256,
+        "p25": -0.10988347229399748,
+        "p75": 0.24678816972051043,
+        "count": 136
+      },
+      "exit_reasons": {
+        "momentum-trail": 110,
+        "failed-breakout": 8,
+        "target": 17,
+        "eod-flat": 1
+      },
+      "verdict": "FAIL",
+      "failures": [
+        "Return +0.9% \u2264 SPY +2.0%",
+        "Sharpe 1.61 \u2264 SPY 2.49",
+        "Profit factor 1.13 < 1.3"
+      ],
+      "or_window": 5,
+      "universe": "small_cap"
+    },
+    "('small_cap', 15)": {
+      "label": "small_cap OR=15m",
+      "trade_count": 117,
+      "total_return": 0.007764813108173925,
+      "cagr": 0.11436809058060371,
+      "sharpe": 1.3527100843664939,
+      "max_drawdown": 0.008882996342193422,
+      "win_rate": 0.5213675213675214,
+      "profit_factor": 1.1896337397934555,
+      "r_distribution": {
+        "mean": 0.027648112137064116,
+        "median": 0.0048734273742284525,
+        "p25": -0.06355023893942599,
+        "p75": 0.08716161691502002,
+        "count": 117
+      },
+      "exit_reasons": {
+        "momentum-trail": 111,
+        "eod-flat": 2,
+        "failed-breakout": 2,
+        "target": 2
+      },
+      "verdict": "FAIL",
+      "failures": [
+        "Return +0.8% \u2264 SPY +2.0%",
+        "Sharpe 1.35 \u2264 SPY 2.49",
+        "Profit factor 1.19 < 1.3"
+      ],
+      "or_window": 15,
+      "universe": "small_cap"
+    },
+    "('etf', 1)": {
+      "label": "etf OR=1m",
+      "trade_count": 149,
+      "total_return": 0.0016360298369202256,
+      "cagr": 0.023149588883088157,
+      "sharpe": -0.5168704595854616,
+      "max_drawdown": 0.005168046511083749,
+      "win_rate": 0.5906040268456376,
+      "profit_factor": 1.1061687502946793,
+      "r_distribution": {
+        "mean": 2.516780000874906,
+        "median": 0.4839269152878992,
+        "p25": -0.4878375649795978,
+        "p75": 2.134721498238612,
+        "count": 149
+      },
+      "exit_reasons": {
+        "target": 30,
+        "momentum-trail": 115,
+        "failed-breakout": 4
+      },
+      "verdict": "FAIL",
+      "failures": [
+        "Return +0.2% \u2264 SPY +2.0%",
+        "Sharpe -0.52 \u2264 SPY 2.49",
+        "Profit factor 1.11 < 1.3"
+      ],
+      "or_window": 1,
+      "universe": "etf"
+    },
+    "('etf', 5)": {
+      "label": "etf OR=5m",
+      "trade_count": 139,
+      "total_return": 0.006904256118558133,
+      "cagr": 0.10111954714929405,
+      "sharpe": 1.6001827288140027,
+      "max_drawdown": 0.003760610032066839,
+      "win_rate": 0.5971223021582733,
+      "profit_factor": 1.2598208367945498,
+      "r_distribution": {
+        "mean": 1.2785270892351606,
+        "median": 0.4743525201684338,
+        "p25": -0.395892975107361,
+        "p75": 1.8294946097465827,
+        "count": 139
+      },
+      "exit_reasons": {
+        "momentum-trail": 119,
+        "failed-breakout": 1,
+        "target": 19
+      },
+      "verdict": "FAIL",
+      "failures": [
+        "Return +0.7% \u2264 SPY +2.0%",
+        "Sharpe 1.60 \u2264 SPY 2.49",
+        "Profit factor 1.26 < 1.3"
+      ],
+      "or_window": 5,
+      "universe": "etf"
+    },
+    "('etf', 15)": {
+      "label": "etf OR=15m",
+      "trade_count": 124,
+      "total_return": 0.003907088507345663,
+      "cagr": 0.05611033026037937,
+      "sharpe": 0.5618667408389868,
+      "max_drawdown": 0.005340913482113891,
+      "win_rate": 0.5564516129032258,
+      "profit_factor": 1.1773164482206688,
+      "r_distribution": {
+        "mean": 0.7284716187413875,
+        "median": 0.14377098848235564,
+        "p25": -0.25534084778935695,
+        "p75": 1.1129574388185466,
+        "count": 124
+      },
+      "exit_reasons": {
+        "momentum-trail": 115,
+        "failed-breakout": 4,
+        "target": 5
+      },
+      "verdict": "FAIL",
+      "failures": [
+        "Return +0.4% \u2264 SPY +2.0%",
+        "Sharpe 0.56 \u2264 SPY 2.49",
+        "Profit factor 1.18 < 1.3"
+      ],
+      "or_window": 15,
+      "universe": "etf"
+    },
+    "('crypto', 1)": {
+      "label": "crypto OR=1m",
+      "trade_count": 112,
+      "total_return": -0.0014921012561283206,
+      "cagr": -0.020688022513281723,
+      "sharpe": -2.285208699133194,
+      "max_drawdown": 0.006121670768083464,
+      "win_rate": 0.6517857142857143,
+      "profit_factor": 0.8433552144436358,
+      "r_distribution": {
+        "mean": 0.9269410295266566,
+        "median": 0.32915291615693726,
+        "p25": -0.14532844579440163,
+        "p75": 1.0192109327142076,
+        "count": 112
+      },
+      "exit_reasons": {
+        "momentum-trail": 25,
+        "target": 76,
+        "failed-breakout": 10,
+        "eod-flat": 1
+      },
+      "verdict": "FAIL",
+      "failures": [
+        "Return -0.1% \u2264 SPY +2.0%",
+        "Sharpe -2.29 \u2264 SPY 2.49",
+        "Profit factor 0.84 < 1.3"
+      ],
+      "or_window": 1,
+      "universe": "crypto"
+    },
+    "('crypto', 5)": {
+      "label": "crypto OR=5m",
+      "trade_count": 79,
+      "total_return": 0.002681117895555478,
+      "cagr": 0.03819686166574554,
+      "sharpe": 0.029723947603630254,
+      "max_drawdown": 0.006546422764120477,
+      "win_rate": 0.7341772151898734,
+      "profit_factor": 1.1025369499606767,
+      "r_distribution": {
+        "mean": 0.30299489426209875,
+        "median": 0.19534404722734397,
+        "p25": -0.011151834088041369,
+        "p75": 0.739603094083506,
+        "count": 79
+      },
+      "exit_reasons": {
+        "momentum-trail": 18,
+        "failed-breakout": 16,
+        "target": 43,
+        "eod-flat": 2
+      },
+      "verdict": "FAIL",
+      "failures": [
+        "Return +0.3% \u2264 SPY +2.0%",
+        "Sharpe 0.03 \u2264 SPY 2.49",
+        "Profit factor 1.10 < 1.3",
+        "Trade count 79 < 100"
+      ],
+      "or_window": 5,
+      "universe": "crypto"
+    },
+    "('crypto', 15)": {
+      "label": "crypto OR=15m",
+      "trade_count": 90,
+      "total_return": -0.0009257501804506291,
+      "cagr": -0.012882802363801904,
+      "sharpe": -2.0193832672519765,
+      "max_drawdown": 0.008483910127697614,
+      "win_rate": 0.7666666666666667,
+      "profit_factor": 0.8607572769771145,
+      "r_distribution": {
+        "mean": 0.6073373247234238,
+        "median": 0.5461440722635303,
+        "p25": 0.004787458093045649,
+        "p75": 1.1479326680260566,
+        "count": 90
+      },
+      "exit_reasons": {
+        "momentum-trail": 20,
+        "failed-breakout": 13,
+        "eod-flat": 3,
+        "target": 54
+      },
+      "verdict": "FAIL",
+      "failures": [
+        "Return -0.1% \u2264 SPY +2.0%",
+        "Sharpe -2.02 \u2264 SPY 2.49",
+        "Profit factor 0.86 < 1.3",
+        "Trade count 90 < 100"
+      ],
+      "or_window": 15,
+      "universe": "crypto"
+    }
+  },
+  "walk_forward": null,
+  "monte_carlo": {
+    "n_sims": 10000,
+    "n_trades": 132,
+    "starting_equity": 100000,
+    "actual_return": 0.0091,
+    "actual_max_dd": 0.0072,
+    "bootstrap_return_rank_pct": 49.6,
+    "bootstrap_ruin_probability": 0.0,
+    "bootstrap_return_percentiles": {
+      "p5": -0.0012,
+      "p25": 0.0049,
+      "p50": 0.0091,
+      "p75": 0.0132,
+      "p95": 0.0194
+    },
+    "shuffle_dd_actual_rank_pct": 98.7,
+    "shuffle_dd_percentiles": {
+      "p50": 0.0038,
+      "p75": 0.0046,
+      "p95": 0.0061
+    }
+  },
+  "feature_importance": {
+    "importances": {
+      "vix_regime": 0.0,
+      "rel_volume": 0.1385,
+      "gap_pct": 0.1311,
+      "time_of_day_min": 0.1105,
+      "day_of_week": 0.0516,
+      "or_width_pct": 0.5683,
+      "sector": 0.0
+    },
+    "oob_accuracy": 0.8939,
+    "n_trades": 132,
+    "win_rate_actual": 0.568
+  },
+  "sensitivity": {
+    "0bps": {
+      "label": "0bps",
+      "trade_count": 132,
+      "total_return": 0.005629159102611957,
+      "cagr": 0.08175772826578087,
+      "sharpe": 1.8737812855567022,
+      "max_drawdown": 0.004200293402088548,
+      "win_rate": 0.5227272727272727,
+      "profit_factor": 1.3675515135908758,
+      "r_distribution": {
+        "mean": 0.045082192468562814,
+        "median": 0.019976879299541516,
+        "p25": -0.07033997655334863,
+        "p75": 0.12714053310899495,
+        "count": 132
+      }
+    },
+    "5bps": {
+      "label": "5bps",
+      "trade_count": 132,
+      "total_return": 0.008398083816585255,
+      "cagr": 0.12421186479063073,
+      "sharpe": 2.518662741746231,
+      "max_drawdown": 0.006004840681254348,
+      "win_rate": 0.5681818181818182,
+      "profit_factor": 1.3670359343552563,
+      "r_distribution": {
+        "mean": 0.08107081643946884,
+        "median": 0.06097037104035924,
+        "p25": -0.1255225021957113,
+        "p75": 0.24891389349327778,
+        "count": 132
+      }
+    },
+    "10bps": {
+      "label": "10bps",
+      "trade_count": 132,
+      "total_return": 0.01116387926727745,
+      "cagr": 0.16815820364038792,
+      "sharpe": 2.7524521762037537,
+      "max_drawdown": 0.008187908197669166,
+      "win_rate": 0.5681818181818182,
+      "profit_factor": 1.3443122170689668,
+      "r_distribution": {
+        "mean": 0.1322391628900895,
+        "median": 0.10760343003895124,
+        "p25": -0.16996535344205124,
+        "p75": 0.3751922857972076,
+        "count": 132
+      }
+    },
+    "15bps": {
+      "label": "15bps",
+      "trade_count": 132,
+      "total_return": 0.013997518305550995,
+      "cagr": 0.21483274429238564,
+      "sharpe": 2.8714411110974933,
+      "max_drawdown": 0.011011849959979775,
+      "win_rate": 0.553030303030303,
+      "profit_factor": 1.3310146556633629,
+      "r_distribution": {
+        "mean": 0.20271586139461342,
+        "median": 0.1799124811831405,
+        "p25": -0.2362125939698637,
+        "p75": 0.5064129662319989,
+        "count": 132
+      }
+    },
+    "20bps": {
+      "label": "20bps",
+      "trade_count": 132,
+      "total_return": 0.016782248842112185,
+      "cagr": 0.2623837014357482,
+      "sharpe": 2.925934312823925,
+      "max_drawdown": 0.014140434453811508,
+      "win_rate": 0.5681818181818182,
+      "profit_factor": 1.319054761442209,
+      "r_distribution": {
+        "mean": 0.3002786549350119,
+        "median": 0.23344429504845565,
+        "p25": -0.2867934794825731,
+        "p75": 0.6757072594629824,
+        "count": 132
+      }
+    }
+  },
+  "timestamp": "2026-06-04T21:58:47.049180"
+}

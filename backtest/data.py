@@ -137,6 +137,90 @@ def load_spy(start: str, end: str, feed: str | None = None) -> list[dict]:
     return load_bars('SPY', start, end, resolution='1Day', feed=feed)
 
 
+def load_crypto_bars(
+    symbol: str,       # e.g. 'BTC/USD'
+    start: str,
+    end: str,
+    resolution: str = '1Min',
+    use_cache: bool = True,
+) -> list[dict]:
+    """
+    Load minute bars for a crypto pair from Alpaca's crypto endpoint.
+    Note: free-tier crypto bars may have zero volume/VWAP.
+    The symbol is normalized (BTC/USD → BTCUSD) for cache keys.
+    """
+    cache_sym = symbol.replace('/', '')
+    cache_key = hashlib.md5(f'{cache_sym}{start}{end}{resolution}crypto'.encode()).hexdigest()[:12]
+    cache_path = CACHE_DIR / f'{cache_sym}_{start}_{end}_{resolution}_crypto_{cache_key}.json'
+
+    if use_cache and cache_path.exists():
+        with open(cache_path) as f:
+            return json.load(f)
+
+    bars = _fetch_alpaca_crypto_bars(symbol, start, end, resolution)
+
+    if use_cache:
+        with open(cache_path, 'w') as f:
+            json.dump(bars, f)
+
+    return bars
+
+
+def _fetch_alpaca_crypto_bars(symbol, start, end, resolution) -> list[dict]:
+    url = 'https://data.alpaca.markets/v1beta3/crypto/us/bars'
+    headers = _alpaca_headers()
+    bars = []
+    page_token = None
+
+    while True:
+        params = {
+            'symbols': symbol,
+            'timeframe': resolution,
+            'start': f'{start}T13:30:00Z',  # 9:30 ET in UTC
+            'end': f'{end}T20:00:00Z',       # 16:00 ET in UTC
+            'limit': 10000,
+        }
+        if page_token:
+            params['page_token'] = page_token
+
+        resp = requests.get(url, headers=headers, params=params, timeout=30)
+        resp.raise_for_status()
+        data = resp.json()
+
+        for b in data.get('bars', {}).get(symbol, []):
+            vwap = b.get('vw', 0)
+            # Crypto VWAP may be 0 on free tier — fall back to close price
+            bars.append({
+                't': b['t'],
+                'o': b['o'],
+                'h': b['h'],
+                'l': b['l'],
+                'c': b['c'],
+                'v': b.get('v', 0),
+                'vwap': vwap if vwap > 0 else b['c'],
+                'is_crypto': True,
+            })
+
+        page_token = data.get('next_page_token')
+        if not page_token:
+            break
+        time.sleep(0.2)
+
+    return bars
+
+
+# ── Universe definitions ─────────────────────────────────────────────────────
+# These are the asset-class groupings used by evaluate_grid().
+# Symbols chosen for liquidity, multi-year history, and representation of class.
+
+UNIVERSES = {
+    'large_cap': ['AAPL', 'NVDA', 'MSFT', 'TSLA', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'ORCL'],
+    'small_cap': ['SIRI', 'AMC', 'BBBY', 'SPCE', 'MVIS', 'CLOV', 'WKHS', 'RIDE', 'GOEV', 'NKLA'],
+    'etf':       ['QQQ', 'SPY', 'IWM', 'XLK', 'ARKK', 'SOXL', 'TQQQ', 'UVXY', 'GLD', 'TLT'],
+    'crypto':    ['BTC/USD', 'ETH/USD', 'SOL/USD'],
+}
+
+
 def compute_relative_volume(
     symbol: str,
     date_str: str,

@@ -22,7 +22,7 @@ from datetime import datetime
 from pathlib import Path
 
 from .engine import BacktestEngine
-from .data import load_bars, load_spy, detect_feed
+from .data import load_bars, load_spy, load_crypto_bars, detect_feed, UNIVERSES
 from .costs import FRICTIONLESS, REALISTIC_5, REALISTIC_10
 from .metrics import scorecard, print_scorecard, total_return, sharpe, max_drawdown
 
