@@ -101,7 +101,8 @@ def evaluate(
     strategy_name: str,
     start: str,
     end: str,
-    is_split: float = 0.65,   # in-sample fraction
+    is_split: float = 0.80,        # in-sample fraction (default: 80/20)
+    oos_start: str | None = None,  # explicit OOS start date, overrides is_split
     starting_equity: float = 100_000,
     param_grid: dict | None = None,
 ) -> dict:
@@ -157,11 +158,23 @@ def evaluate(
     all_dates = sorted(set(
         _bar_date(b['t']) for bars in bars_by_symbol.values() for b in bars
     ))
-    split_idx = int(len(all_dates) * is_split)
-    is_dates = set(all_dates[:split_idx])
-    oos_dates = set(all_dates[split_idx:])
-    print(f'\n📅 In-sample  : {min(is_dates)} → {max(is_dates)} ({len(is_dates)} days)')
-    print(f'📅 Out-of-sample: {min(oos_dates)} → {max(oos_dates)} ({len(oos_dates)} days)')
+    if oos_start:
+        # Explicit boundary: IS = everything before oos_start, OOS = oos_start onward
+        is_dates  = set(d for d in all_dates if d < oos_start)
+        oos_dates = set(d for d in all_dates if d >= oos_start)
+        split_method = f'explicit boundary (OOS from {oos_start})'
+    else:
+        split_idx = int(len(all_dates) * is_split)
+        is_dates  = set(all_dates[:split_idx])
+        oos_dates = set(all_dates[split_idx:])
+        split_method = f'{is_split:.0%} IS / {1-is_split:.0%} OOS'
+
+    if not is_dates or not oos_dates:
+        raise RuntimeError(f'Split produced empty IS or OOS. Check dates and split parameters.')
+
+    print(f'\n📅 Split method  : {split_method}')
+    print(f'📅 In-sample     : {min(is_dates)} → {max(is_dates)} ({len(is_dates)} trading days)')
+    print(f'📅 Out-of-sample : {min(oos_dates)} → {max(oos_dates)} ({len(oos_dates)} trading days)')
 
     def _filter_bars(bars_dict, date_set):
         return {
@@ -294,11 +307,16 @@ def is_cleared_to_trade(strategy_name: str) -> tuple[bool, str]:
 
 if __name__ == '__main__':
     if len(sys.argv) < 4:
-        print('Usage: python -m backtest.evaluate <strategy> <start> <end>')
-        print('Example: python -m backtest.evaluate orb 2021-01-01 2026-01-01')
+        print('Usage: python -m backtest.evaluate <strategy> <start> <end> [--oos-start YYYY-MM-DD]')
+        print('Example: python -m backtest.evaluate orb 2021-01-04 2026-01-03 --oos-start 2024-01-02')
         sys.exit(1)
 
-    # Default param grid for ORB sweep
+    # Parse optional --oos-start flag
+    _oos_start = None
+    for i, arg in enumerate(sys.argv):
+        if arg == '--oos-start' and i + 1 < len(sys.argv):
+            _oos_start = sys.argv[i + 1]
+
     ORB_PARAM_GRID = {
         'or_minutes': [1, 5, 15],
         'n_vwap_bars': [1, 2, 3],
@@ -309,5 +327,6 @@ if __name__ == '__main__':
         strategy_name=sys.argv[1],
         start=sys.argv[2],
         end=sys.argv[3],
+        oos_start=_oos_start,     # explicit boundary if provided
         param_grid=ORB_PARAM_GRID,
     )

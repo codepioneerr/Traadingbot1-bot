@@ -160,14 +160,23 @@ if __name__ == '__main__':
     )
 
     repo_root = Path(__file__).parent.parent
+    oos_start_flag = None
+    for i, arg in enumerate(sys.argv):
+        if arg == '--oos-start' and i + 1 < len(sys.argv):
+            oos_start_flag = sys.argv[i + 1]
+
     if full_analysis:
         cmd = [sys.executable, '-u', '-m', 'backtest.analysis', strategy, start, end]
         if quick:
             cmd.append('--quick')
+        if oos_start_flag:
+            cmd += ['--oos-start', oos_start_flag]
         result_suffix = '_analysis_'
         format_fn = format_analysis_message
     else:
         cmd = [sys.executable, '-u', '-m', 'backtest.evaluate', strategy, start, end]
+        if oos_start_flag:
+            cmd += ['--oos-start', oos_start_flag]
         result_suffix = '_'
         format_fn = format_evaluate_message
 

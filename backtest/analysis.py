@@ -167,7 +167,8 @@ def run_full_analysis(
     strategy_name: str,
     start: str,
     end: str,
-    is_split: float = 0.65,
+    is_split: float = 0.60,        # default: 60/40 → ~3yr IS / ~2yr OOS for 5yr window
+    oos_start: str | None = None,  # explicit OOS boundary, overrides is_split
     starting_equity: float = 100_000,
     quick: bool = False,
 ) -> dict:
@@ -212,14 +213,25 @@ def run_full_analysis(
     if not all_dates:
         raise RuntimeError('No bar data loaded for large_cap universe')
 
-    split_idx = int(len(all_dates) * is_split)
-    is_dates  = set(all_dates[:split_idx])
-    oos_dates = set(all_dates[split_idx:])
+    if oos_start:
+        is_dates  = set(d for d in all_dates if d < oos_start)
+        oos_dates = set(d for d in all_dates if d >= oos_start)
+        split_method = f'explicit boundary (OOS from {oos_start})'
+    else:
+        split_idx = int(len(all_dates) * is_split)
+        is_dates  = set(all_dates[:split_idx])
+        oos_dates = set(all_dates[split_idx:])
+        split_method = f'{is_split:.0%}/{1-is_split:.0%} IS/OOS'
+
+    if not is_dates or not oos_dates:
+        raise RuntimeError('Split produced empty IS or OOS set. Check dates.')
+
     oos_spy   = [b for b in spy_daily if _bar_date(b) in oos_dates]
     spy_metrics = _spy_benchmark(oos_spy)
 
-    print(f'\n📅 IS:  {min(is_dates)} → {max(is_dates)} ({len(is_dates)} days)')
-    print(f'📅 OOS: {min(oos_dates)} → {max(oos_dates)} ({len(oos_dates)} days)')
+    print(f'\n📅 Split: {split_method}')
+    print(f'📅 IS:    {min(is_dates)} → {max(is_dates)} ({len(is_dates)} trading days)')
+    print(f'📅 OOS:   {min(oos_dates)} → {max(oos_dates)} ({len(oos_dates)} trading days)')
     print(f'📊 SPY OOS: return={spy_metrics["total_return"]:+.1%}  '
           f'sharpe={spy_metrics["sharpe"]:.2f}  maxDD={spy_metrics["max_drawdown"]:.1%}')
 
@@ -403,13 +415,20 @@ def run_full_analysis(
 
 if __name__ == '__main__':
     if len(sys.argv) < 4:
-        print('Usage: python -m backtest.analysis <strategy> <start> <end> [--quick]')
+        print('Usage: python -m backtest.analysis <strategy> <start> <end> [--oos-start YYYY-MM-DD] [--quick]')
+        print('Example: python -m backtest.analysis orb 2021-01-04 2026-01-03 --oos-start 2024-01-02')
         sys.exit(1)
 
     quick_mode = '--quick' in sys.argv
+    _oos_start = None
+    for i, arg in enumerate(sys.argv):
+        if arg == '--oos-start' and i + 1 < len(sys.argv):
+            _oos_start = sys.argv[i + 1]
+
     run_full_analysis(
         strategy_name=sys.argv[1],
         start=sys.argv[2],
+        oos_start=_oos_start,
         end=sys.argv[3],
         quick=quick_mode,
     )
