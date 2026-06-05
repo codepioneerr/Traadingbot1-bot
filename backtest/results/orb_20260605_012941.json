@@ -1,0 +1,94 @@
+{
+  "strategy": "orb",
+  "feed": "sip",
+  "start": "2024-01-02",
+  "end": "2024-02-29",
+  "is_end": "2024-02-07",
+  "oos_start": "2024-02-08",
+  "best_params": {
+    "or_minutes": 15,
+    "n_vwap_bars": 1,
+    "atr_mult": 0.5
+  },
+  "spy_oos": {
+    "total_return": 0.019585808315941478,
+    "sharpe": 2.487267336716441,
+    "max_drawdown": 0.014205905826017542
+  },
+  "passes": {
+    "frictionless": {
+      "label": "OOS frictionless",
+      "trade_count": 147,
+      "total_return": 0.0021672809812500874,
+      "cagr": 0.030773098143846767,
+      "sharpe": -0.4004450215460331,
+      "max_drawdown": 0.002684780215560895,
+      "win_rate": 0.46258503401360546,
+      "profit_factor": 1.1579111409670069,
+      "r_distribution": {
+        "mean": 0.02498857542967614,
+        "median": -0.007042253521130355,
+        "p25": -0.08121827411167705,
+        "p75": 0.07331378299120303,
+        "count": 147
+      },
+      "exit_reasons": {
+        "momentum-trail": 141,
+        "eod-flat": 3,
+        "target": 1,
+        "failed-breakout": 2
+      }
+    },
+    "realistic_5bps": {
+      "label": "OOS realistic_5bps",
+      "trade_count": 147,
+      "total_return": 0.008890152485631044,
+      "cagr": 0.13191642591555475,
+      "sharpe": 2.823779565571985,
+      "max_drawdown": 0.005804001914481402,
+      "win_rate": 0.5782312925170068,
+      "profit_factor": 1.3744376489840107,
+      "r_distribution": {
+        "mean": 0.2502069948125433,
+        "median": 0.0828981710783445,
+        "p25": -0.13195131175343003,
+        "p75": 0.30888751439139367,
+        "count": 147
+      },
+      "exit_reasons": {
+        "momentum-trail": 141,
+        "eod-flat": 3,
+        "target": 1,
+        "failed-breakout": 2
+      }
+    },
+    "realistic_10bps": {
+      "label": "OOS realistic_10bps",
+      "trade_count": 147,
+      "total_return": 0.012280645429969886,
+      "cagr": 0.18635063337603053,
+      "sharpe": 3.1389112336711076,
+      "max_drawdown": 0.0077799961755363285,
+      "win_rate": 0.5782312925170068,
+      "profit_factor": 1.3635634708534285,
+      "r_distribution": {
+        "mean": 0.8316245740443792,
+        "median": 0.11288303698737363,
+        "p25": -0.20041493604085397,
+        "p75": 0.41892212554111385,
+        "count": 147
+      },
+      "exit_reasons": {
+        "momentum-trail": 141,
+        "eod-flat": 3,
+        "target": 1,
+        "failed-breakout": 2
+      }
+    }
+  },
+  "verdict": "FAIL",
+  "timestamp": "2026-06-05T01:29:39.607567",
+  "failures": [
+    "Return +0.9% \u2264 SPY +2.0%"
+  ]
+}

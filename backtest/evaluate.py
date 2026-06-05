@@ -148,8 +148,14 @@ def evaluate(
         raise RuntimeError('No bar data loaded. Check credentials and feed availability.')
 
     # Split timeline into IS / OOS
+    def _bar_date(t) -> str:
+        """Extract YYYY-MM-DD from a bar timestamp (string or datetime)."""
+        if isinstance(t, str):
+            return t[:10]
+        return t.strftime('%Y-%m-%d')
+
     all_dates = sorted(set(
-        b['t'][:10] for bars in bars_by_symbol.values() for b in bars
+        _bar_date(b['t']) for bars in bars_by_symbol.values() for b in bars
     ))
     split_idx = int(len(all_dates) * is_split)
     is_dates = set(all_dates[:split_idx])
@@ -159,15 +165,20 @@ def evaluate(
 
     def _filter_bars(bars_dict, date_set):
         return {
-            sym: [b for b in bars if b['t'][:10] in date_set]
+            sym: [b for b in bars if _bar_date(b['t']) in date_set]
             for sym, bars in bars_dict.items()
         }
+
+    def _build_ctx(bars_dict) -> dict:
+        syms = list(bars_dict.keys())
+        dates = set(_bar_date(b['t']) for bars in bars_dict.values() for b in bars)
+        return {d: {'candidates': syms} for d in dates}
 
     is_bars = _filter_bars(bars_by_symbol, is_dates)
     oos_bars = _filter_bars(bars_by_symbol, oos_dates)
 
     # SPY benchmark for OOS window
-    oos_spy = [b for b in spy_daily if b['t'][:10] in oos_dates]
+    oos_spy = [b for b in spy_daily if _bar_date(b['t']) in oos_dates]
     spy_metrics = _spy_benchmark(oos_spy)
     print(f'\n📊 SPY benchmark (OOS): return={spy_metrics["total_return"]:+.1%}  '
           f'sharpe={spy_metrics["sharpe"]:.2f}  maxDD={spy_metrics["max_drawdown"]:.1%}')
@@ -176,13 +187,15 @@ def evaluate(
     best_params = StrategyClass().params()  # defaults
     if param_grid:
         print(f'\n🔧 In-sample param sweep ({len(_sweep_params(StrategyClass, param_grid))} combos)...')
+        is_ctx = _build_ctx(is_bars)
         best_sharpe = -999
         for params in _sweep_params(StrategyClass, param_grid):
             strat = StrategyClass()
             strat.set_params(params)
             eng = BacktestEngine(strat, cost_model=REALISTIC_5, starting_equity=starting_equity)
-            res = eng.run(is_bars)
-            sc = scorecard(res['trades'], res['equity_curve'], len(is_dates), label='IS sweep')
+            res = eng.run(is_bars, ctx_by_date=is_ctx)
+            curve = res['daily_equity'] if res['daily_equity'] else res['equity_curve']
+            sc = scorecard(res['trades'], curve, len(is_dates), label='IS sweep')
             if sc['sharpe'] > best_sharpe:
                 best_sharpe = sc['sharpe']
                 best_params = params
@@ -201,15 +214,19 @@ def evaluate(
         'spy_oos': spy_metrics,
         'passes': {},
         'verdict': 'FAIL',
-        'timestamp': datetime.utcnow().isoformat(),
+        'timestamp': datetime.now().isoformat(),
     }
 
+    oos_ctx = _build_ctx(oos_bars)
     for cost_label, cost_model in [('frictionless', FRICTIONLESS), ('realistic_5bps', REALISTIC_5), ('realistic_10bps', REALISTIC_10)]:
         strat = StrategyClass()
         strat.set_params(best_params)
         eng = BacktestEngine(strat, cost_model=cost_model, starting_equity=starting_equity)
-        res = eng.run(oos_bars)
-        sc = scorecard(res['trades'], res['equity_curve'], len(oos_dates), label=f'OOS {cost_label}')
+        res = eng.run(oos_bars, ctx_by_date=oos_ctx)
+        # Use daily_equity for time-based metrics (Sharpe, CAGR, drawdown)
+        # fall back to equity_curve if daily_equity is empty
+        curve = res['daily_equity'] if res['daily_equity'] else res['equity_curve']
+        sc = scorecard(res['trades'], curve, len(oos_dates), label=f'OOS {cost_label}')
         results['passes'][cost_label] = sc
 
     # Gate verdict — always on OOS realistic_5bps
@@ -236,7 +253,7 @@ def evaluate(
     print(f'{"━"*60}\n')
 
     # ── Save result ───────────────────────────────────────────────────────────
-    ts = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
+    ts = datetime.now().strftime('%Y%m%d_%H%M%S')
     result_path = RESULTS_DIR / f'{strategy_name}_{ts}.json'
     with open(result_path, 'w') as fp:
         json.dump(results, fp, indent=2, default=str)

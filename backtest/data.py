@@ -99,8 +99,9 @@ def _fetch_alpaca_bars(symbol, start, end, resolution, feed) -> list[dict]:
     while True:
         params = {
             'timeframe': resolution,
-            'start': f'{start}T09:30:00-04:00',
-            'end': f'{end}T16:00:00-04:00',
+            # Use UTC equivalents of 9:30–16:00 ET with a wide window; strategy filters by ET time
+            'start': f'{start}T00:00:00Z',
+            'end': f'{end}T23:59:59Z',
             'feed': feed,
             'limit': 10000,
             'adjustment': 'split',

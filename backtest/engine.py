@@ -42,7 +42,10 @@ class Position:
         self.partial_taken = False
 
     def market_value(self, price: float) -> float:
-        return price * self.qty
+        if self.side == 'long':
+            return price * self.qty
+        # Short: reserved entry_price*qty; mark-to-market = entry + unrealised_pnl
+        return self.entry_price * self.qty + self.unrealised_pnl(price)
 
     def unrealised_pnl(self, price: float) -> float:
         if self.side == 'long':
@@ -85,6 +88,7 @@ class BacktestEngine:
         self.equity_curve: list[float] = [starting_equity]
         self.daily_equity: list[float] = []
         self._per_symbol_state: dict[str, dict] = defaultdict(dict)
+        self._last_price: dict[str, float] = {}  # last known price per symbol
 
     # ── Main entry point ──────────────────────────────────────────────────────
 
@@ -104,7 +108,12 @@ class BacktestEngine:
         all_bars: list[tuple[datetime, str, dict]] = []
         for symbol, bars in bars_by_symbol.items():
             for b in bars:
-                t = datetime.fromisoformat(b['t'].replace('Z', '+00:00'))
+                raw_t = b['t']
+                if isinstance(raw_t, str):
+                    raw_t = raw_t.replace('Z', '+00:00')
+                    t = datetime.fromisoformat(raw_t)
+                else:
+                    t = raw_t
                 all_bars.append((t, symbol, b))
         all_bars.sort(key=lambda x: x[0])
 
@@ -149,12 +158,19 @@ class BacktestEngine:
             signals = self.strategy.on_bar(symbol, bar, state, ctx)
             self._process_signals(signals, symbol, bar, ts)
 
-            # Update equity (mark-to-market)
+            # Track last price for all-position equity mark
+            self._last_price[symbol] = bar['c']
+
+            # Update equity (mark all positions to last known price)
             self.equity = self.cash + sum(
-                p.market_value(bar['c']) for s, p in self.positions.items()
-                if s == symbol
+                p.market_value(self._last_price.get(s, p.entry_price))
+                for s, p in self.positions.items()
             )
             self.equity_curve.append(self.equity)
+
+        # Record last day
+        if current_day is not None:
+            self._record_day_equity(all_bars, current_day)
 
         return {
             'equity_curve': self.equity_curve,
@@ -211,13 +227,12 @@ class BacktestEngine:
         qty = sig.qty if sig.qty else pos.qty
 
         if pos.side == 'long':
-            proceeds = qty * fill_price
             realised = (fill_price - pos.entry_price) * qty
+            self.cash += qty * fill_price
         else:
-            proceeds = qty * pos.entry_price  # return collateral
             realised = (pos.entry_price - fill_price) * qty
-
-        self.cash += abs(proceeds)
+            # Return reserved capital + profit (or minus loss)
+            self.cash += qty * pos.entry_price + realised
 
         self.closed_trades.append({
             'symbol': symbol,
@@ -240,7 +255,7 @@ class BacktestEngine:
             pos.partial_taken = True
 
     def _record_day_equity(self, all_bars, day):
-        # Mark all open positions to last bar of the day
+        # Mark all open positions to last bar of the day (or last known price)
         day_bars: dict[str, float] = {}
         for ts, symbol, bar in all_bars:
             if ts.date() == day:
@@ -248,7 +263,7 @@ class BacktestEngine:
 
         eq = self.cash
         for symbol, pos in self.positions.items():
-            price = day_bars.get(symbol, pos.entry_price)
+            price = day_bars.get(symbol, self._last_price.get(symbol, pos.entry_price))
             eq += pos.market_value(price)
         self.daily_equity.append(eq)
         self.equity = eq

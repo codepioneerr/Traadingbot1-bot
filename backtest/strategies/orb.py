@@ -11,8 +11,28 @@ Tunable params (swept by evaluate.py during in-sample optimisation):
   atr_mult     : ATR-based stop multiplier when OR is tight (0.5-1.5)
   eod_flat_min : minutes before close to force-flat (default 5 → 15:55 ET)
 """
-from datetime import time
+from datetime import time, timezone, timedelta
 from .base import Strategy, Signal
+
+_ET = timezone(timedelta(hours=-5))  # EST; DST offset handled by shifting +1h when applicable
+
+def _bar_et_time(bar_t) -> time:
+    """Convert a bar timestamp (UTC-aware or naive UTC) to Eastern time."""
+    from datetime import datetime
+    if bar_t.tzinfo is None:
+        bar_t = bar_t.replace(tzinfo=timezone.utc)
+    # Use pytz if available for proper DST; otherwise approximate with fixed EST+DST heuristic
+    try:
+        import zoneinfo
+        et = bar_t.astimezone(zoneinfo.ZoneInfo('America/New_York'))
+    except Exception:
+        # Fallback: EDT (UTC-4) Mar second-Sun to Nov first-Sun, else EST (UTC-5)
+        month = bar_t.month
+        if 3 < month < 11 or (month == 3 and bar_t.day >= 8) or (month == 11 and bar_t.day < 7):
+            et = bar_t + timedelta(hours=-4)
+        else:
+            et = bar_t + timedelta(hours=-5)
+    return et.time()
 
 
 class ORBStrategy(Strategy):
@@ -61,7 +81,7 @@ class ORBStrategy(Strategy):
     # ---------- per-bar logic ----------
     def on_bar(self, symbol: str, bar: dict, state: dict, ctx: dict) -> list[Signal]:
         signals = []
-        bar_time: time = bar['t'].time()
+        bar_time: time = _bar_et_time(bar['t'])
         market_open = time(9, 30)
         eod_exit_time = time(15, 60 - self.eod_flat_min)  # 15:55 by default
 
@@ -157,6 +177,10 @@ class ORBStrategy(Strategy):
             return signals
 
         # --- Phase 4: entry signals (no current position) ---
+        # Only one entry per symbol per day — once we've entered and exited, done
+        if state.get('daily_entry_taken'):
+            return signals
+
         # Long breakout: close above ORH, above VWAP, volume picking up
         long_vol_ok = bar['v'] > state.get('avg_vol', bar['v']) * 0.8
         if bar['c'] > orh and bar['c'] > vwap and long_vol_ok:
@@ -165,6 +189,7 @@ class ORBStrategy(Strategy):
             stop_price = min(orl, bar['c'] - min_stop_dist)
             target_price = bar['c'] + or_width  # measured move
 
+            state['daily_entry_taken'] = True
             signals.append(Signal(
                 symbol=symbol,
                 action='buy',
@@ -179,6 +204,7 @@ class ORBStrategy(Strategy):
             stop_price = max(orh, bar['c'] + max_stop_dist)
             target_price = bar['c'] - or_width
 
+            state['daily_entry_taken'] = True
             signals.append(Signal(
                 symbol=symbol,
                 action='short',
