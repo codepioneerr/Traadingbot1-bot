@@ -1,0 +1,9 @@
+[build]
+builder = "NIXPACKS"
+watchPatterns = ["dashboard/backend/**"]
+
+[deploy]
+startCommand = "cd dashboard/backend && pip install -r requirements.txt && uvicorn main:app --host 0.0.0.0 --port $PORT"
+healthcheckPath = "/health"
+healthcheckTimeout = 30
+restartPolicyType = "ON_FAILURE"
