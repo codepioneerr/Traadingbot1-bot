@@ -1,0 +1,52 @@
+{
+  "strategy": "dual_momentum",
+  "start": "2005-01-01",
+  "end": "2026-01-01",
+  "verdict": "PASS",
+  "metrics": {
+    "total_return": 8.561417697579078,
+    "cagr": 0.11303029706114232,
+    "sharpe": 0.6868854803883576,
+    "max_drawdown": 0.3292655487715708,
+    "win_rate": 0.5968379446640316,
+    "n_trades": 68,
+    "n_months": 253,
+    "profit_factor": 1.87946481778068
+  },
+  "spy_benchmark": {
+    "total_return": 7.371563021549047,
+    "cagr": 0.1060365546104407,
+    "sharpe": 0.5775186060646068,
+    "max_drawdown": 0.5289499473687749,
+    "n_months": 253.0
+  },
+  "oos": {
+    "n_months": 37.0,
+    "total_return": 1.6693772240172153,
+    "cagr": 0.37497600452309965,
+    "sharpe": 2.0292091480308447,
+    "max_drawdown": 0.08557144574978354,
+    "profit_factor": 5.066238397080091,
+    "win_rate": 0.7297297297297297
+  },
+  "is": {
+    "n_months": 216.0,
+    "total_return": 2.554303993637061,
+    "cagr": 0.0729944511756273,
+    "sharpe": 0.4563004929920627,
+    "max_drawdown": 0.3292655487715708,
+    "profit_factor": 1.5804360159115403,
+    "win_rate": 0.5740740740740741
+  },
+  "allocation": {
+    "TLT": 24,
+    "IWM": 38,
+    "SPY": 9,
+    "GLD": 57,
+    "QQQ": 85,
+    "SHY": 39
+  },
+  "abs_filter_months": 39,
+  "n_trades": 68,
+  "timestamp": "2026-06-07T20:40:25.304394"
+}

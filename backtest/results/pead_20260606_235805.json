@@ -1,0 +1,43 @@
+{
+  "strategy": "pead",
+  "oos_start": "2024-01-01",
+  "cost_bps": 15.0,
+  "verdict": "FAIL",
+  "oos": {
+    "profit_factor": 0.9944887264544484,
+    "sharpe": -1.1780858889670458,
+    "win_rate": 0.4090909090909091,
+    "total_return": -0.0007215291637064365,
+    "max_drawdown": 0.05816333843869745,
+    "trade_count": 66,
+    "long_pf": 0.8489756625707144,
+    "long_wr": 0.3541666666666667,
+    "long_count": 48,
+    "short_pf": 1.493383553193502,
+    "short_wr": 0.5555555555555556,
+    "short_count": 18
+  },
+  "is": {
+    "profit_factor": 1.4864252053079885,
+    "total_return": 0.11656942740112412,
+    "trade_count": 106
+  },
+  "per_year_oos": {
+    "2024": {
+      "pnl": -1402.9376103474503,
+      "trades": 40,
+      "wins": 16
+    },
+    "2025": {
+      "pnl": 1330.7846939768315,
+      "trades": 26,
+      "wins": 11
+    }
+  },
+  "gate": {
+    "pf": false,
+    "sharpe": false,
+    "year": true
+  },
+  "timestamp": "2026-06-06T23:58:05.393556"
+}

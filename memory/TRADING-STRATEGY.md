@@ -66,39 +66,79 @@ Use the mix that fits today's market conditions.
 - Up +20%: tighten trailing stop to 5%
 - 2 consecutive failed trades in a sector: exit all positions in that sector
 
-## ORB Strategy (Opening Range Breakout) — PENDING BACKTEST VALIDATION
+## ORB Strategy (Opening Range Breakout) — DEPRECATED
 
-> ⚠️ This strategy is NOT live yet. It deploys only after `backtest/results/` shows PASS on the out-of-sample realistic pass. See `backtest/evaluate.py`.
+> ❌ Fully backtested June 2026. Conclusion: no consistent edge on institutional S&P 500 universe. PF 0.59, win rate 46.2%, total return −7.2% over 2021–2026 with realistic 5bps costs. Every calendar year negative. Strategy is retired.
 
-### Evidence basis
-QuantConnect replication of Zarattini "stocks in play" study: Sharpe ~2.4 vs ~0.84 SPY, beat benchmark in ~68% of param combos. Edge is in **universe selection** (high relative-volume names with catalysts), not the OR pattern itself. ORB on S&P index has degraded to ~nothing.
+## PEAD Strategy (Post-Earnings Announcement Drift) — DEPRECATED
 
-### Universe ("stocks in play")
-- Pre-market: rank candidates by relative volume (today vs N-day avg) + require a catalyst (news/earnings/gap)
-- Feed from morning Perplexity research — keep universe wide (dozens of names)
+> ❌ Fully backtested June 2026. Both long-only (PF 0.849, WR 35%) and short-only (8 OOS trades — INSUFFICIENT SAMPLE) variants failed. Earnings universe (92 symbols) too small to reach statistical significance. Variants tested: baseline PEAD, short-only with borrow costs, high-conviction longs (SUE ≥ 15/25%), 1-day momentum, overreaction fade. All failed or had insufficient samples. Strategy family is retired.
 
-### Opening range
-- Default OR window: first 5 minutes (9:30–9:35 ET)
-- Record OR high (ORH), OR low (ORL), OR width = ORH − ORL
-- OR window is a tunable param (1-min, 5-min, 15-min tested in backtest)
+---
 
-### Entry
-- Long: bar closes above ORH with volume pick-up and price above VWAP
-- Short: bar closes below ORL with volume pick-up and price below VWAP
-- One position per symbol; size by VIX sizing table; spread < 0.5% of price
+## Active Strategy: Dual Momentum ETF Rotation — ✅ BACKTEST PASSED (June 2026)
 
-### Stops
-- Primary stop: opposite side of OR (ORL for longs, ORH for shorts), or ATR-based if OR is tight
-- Catastrophic backstop: -7% hard cut (seatbelt — OR stop should fire first)
+> Backtest verdict: PASS. OOS Sharpe 2.03, OOS return +166.9%, max drawdown 32.9%, CAGR +11.30%. See `backtest/results/dual_momentum_*.json`.
 
-### Targets & exits
-1. **15:55 ET EOD flat** — no overnight holds (biggest stagnation fix)
-2. **VWAP/momentum break** — exit runner if price closes below VWAP (longs) / above VWAP (shorts) for N consecutive bars, or breaks 9-EMA
-3. **Failed-breakout re-entry** — if price falls back into OR box for M bars, exit immediately
-4. **Measured move** — take partial (1/2) at ORH + OR_width (longs); trail remainder by rules 2–3
-5. **-7% catastrophic backstop** (rare fallback)
+### Reference
+Gary Antonacci, "Dual Momentum Investing" (2014). Published CAGR ~10-12%, max DD ~17% (through 2013). Our 2005–2026 run matches CAGR (11.30%) and slightly exceeds max DD (32.9%) due to 2022 QQQ bear market, which post-dates Antonacci's published results.
 
-Every close records an **exit-reason** in TRADE-LOG: `target | momentum-trail | failed-breakout | eod-flat | stop`
+### Universe (fixed — 6 assets only)
+| Asset | Role |
+|-------|------|
+| SPY   | US broad equity |
+| QQQ   | US tech/growth |
+| IWM   | US small cap |
+| TLT   | Long-term bonds |
+| GLD   | Gold |
+| SHY   | Cash proxy (absolute momentum fallback) |
+
+### Signal Logic (run once per month, last trading day)
+**Step 1 — Absolute Momentum:**
+- Compute SPY's 12-month price return
+- If SPY 12m return < 0%: hold SHY for next month. Stop.
+- Otherwise: proceed to Step 2.
+
+**Step 2 — Relative Momentum:**
+- Compute 12-month price return for SPY, QQQ, IWM, TLT, GLD
+- Hold the single top-ranked asset for next month
+- No trade if the top asset is unchanged (avoids unnecessary turnover)
+
+### Rebalance Schedule
+- Monthly, on the last trading day of each month
+- Sell current holding, buy new top-ranked asset
+- ~5-6 trades per year on average (not every month triggers a change)
+
+### Backtest Results (2005–2026, $100K starting equity)
+| Metric | Dual Momentum | SPY B&H |
+|--------|--------------|---------|
+| Total Return | +856.1% | +737.2% |
+| CAGR | +11.30% | +10.60% |
+| Sharpe | 0.687 | 0.578 |
+| Max Drawdown | 32.9% | 52.9% |
+| Win Rate (monthly) | 59.7% | — |
+| Final Equity | $956,142 | — |
+
+**IS (2005–2022):** Return +255.4%, Sharpe 0.46, MaxDD 32.9%, PF 1.58
+**OOS (2023–2026):** Return +166.9%, Sharpe 2.03, MaxDD 8.6%, PF 5.07
+
+**Per-Decade:** 2005-10: CAGR +15.7% / 2011-15: +9.1% / 2016-20: +5.6% / 2021-26: +17.3%
+
+**Asset allocation (months):** QQQ 34% | GLD 23% | IWM 15% | SHY 15% (cash) | TLT 9% | SPY 4%
+
+Absolute momentum (SHY) triggered 39 months = 15% of the time.
+
+### Costs
+REALISTIC_5: 5bps slippage each way on rebalance trades only (~10 round-trips/year maximum). Annual cost drag ≈ 0.05% — negligible.
+
+### Known Limitations
+- 12-month lookback = momentum lag during sharp trend reversals (2022 QQQ: held through −32%)
+- No dividends needed (yfinance auto_adjust=True handles dividend-adjusted prices)
+- SHY pays interest — not captured in price return alone (conservative assumption)
+- Monthly rebalancing = PDT-safe (well below 3-day-trade limit)
+
+### Deployment Status
+> ⚠️ NOT YET DEPLOYED. Three deployment steps documented below must be implemented before going live. Strategy passed backtest gate as of June 2026.
 
 ## Notification Rules (Telegram)
 - Pre-market: ALWAYS send sector watchlist + VIX/sizing mode

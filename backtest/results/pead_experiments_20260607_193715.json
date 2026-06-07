@@ -1,0 +1,41 @@
+{
+  "experiment_3": {
+    "experiment": 3,
+    "variants": {
+      "day1": {
+        "label": "Day-1 (aggressive)",
+        "offset": 1,
+        "n_signals": 36,
+        "is_pf": 0.9787126971173615,
+        "oos_pf": 1.06249453759496,
+        "oos_wr": 0.35714285714285715,
+        "oos_n": 14,
+        "oos_tr": 0.0020615402960203937
+      },
+      "day2": {
+        "label": "Day-2 (baseline)",
+        "offset": 2,
+        "n_signals": 24,
+        "is_pf": 1.9869494901588793,
+        "oos_pf": 1.6597446883385296,
+        "oos_wr": 0.625,
+        "oos_n": 8,
+        "oos_tr": 0.007525245706482092
+      },
+      "day3": {
+        "label": "Day-3 (delayed)",
+        "offset": 3,
+        "n_signals": 7,
+        "is_pf": 0.7005295111151691,
+        "oos_pf": 0.0,
+        "oos_wr": 0.0,
+        "oos_n": 1,
+        "oos_tr": -0.011649448213200084
+      }
+    },
+    "best": "day2",
+    "best_pf": 1.6597446883385296,
+    "delta_vs_baseline": 0.0,
+    "meaningful": false
+  }
+}
