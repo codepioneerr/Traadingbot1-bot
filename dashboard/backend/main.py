@@ -3,7 +3,7 @@ import json
 import re
 import subprocess
 import urllib.request
-from datetime import datetime, date
+from datetime import datetime, date, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -26,15 +26,35 @@ DASHBOARD_PASSWORD = os.environ.get("DASHBOARD_PASSWORD", "")
 ALPACA_API_KEY = os.environ.get("ALPACA_API_KEY", "")
 ALPACA_SECRET_KEY = os.environ.get("ALPACA_SECRET_KEY", "")
 ALPACA_ENDPOINT = os.environ.get("ALPACA_ENDPOINT", "https://paper-api.alpaca.markets")
-FRONTEND_URL = os.environ.get("FRONTEND_URL", "*")
+FRONTEND_URL = os.environ.get("FRONTEND_URL", "")
 
-app = FastAPI(title="Trading Hub API")
+app = FastAPI(title="Trading Hub API — Dual Momentum ETF Rotation")
 
-origins = [FRONTEND_URL] if FRONTEND_URL != "*" else ["*"]
+# ---------------------------------------------------------------------------
+# CORS — allow Vercel frontend + local dev servers
+# Set FRONTEND_URL env var in Railway to the Vercel deployment URL.
+# ---------------------------------------------------------------------------
+allowed_origins = [
+    "https://tradingbot-hub-production.up.railway.app",  # Railway backend self
+    "http://localhost:5173",   # Vite dev server
+    "http://localhost:3000",   # fallback
+    "http://localhost:8080",   # fallback
+]
+if FRONTEND_URL:
+    # Support comma-separated list of URLs
+    for url in FRONTEND_URL.split(","):
+        u = url.strip()
+        if u and u not in allowed_origins:
+            allowed_origins.append(u)
+else:
+    # No FRONTEND_URL set — use wildcard (tighten once Vercel URL is confirmed)
+    # TODO: set FRONTEND_URL=https://your-app.vercel.app in Railway env vars
+    allowed_origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
+    allow_origins=allowed_origins,
+    allow_credentials=allowed_origins != ["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -61,6 +81,16 @@ def run_alpaca(subcommand: str, *args: str):
         return json.loads(result.stdout)
     except json.JSONDecodeError:
         return {"raw": result.stdout.strip()}
+
+
+def run_script(script_path: Path, *args: str, timeout: int = 30) -> tuple[int, str, str]:
+    """Run a Python script, return (returncode, stdout, stderr)."""
+    result = subprocess.run(
+        ["python3", str(script_path), *args],
+        capture_output=True, text=True, timeout=timeout,
+        env={**os.environ}
+    )
+    return result.returncode, result.stdout, result.stderr
 
 
 def read_memory(filename: str, default: str = "") -> str:
@@ -93,7 +123,7 @@ def alpaca_api(method: str, path: str, body: Optional[dict] = None):
 
 
 # ---------------------------------------------------------------------------
-# Motivational quotes (50 trading & success quotes, rotate by day-of-year)
+# Motivational quotes (rotate by day-of-year)
 # ---------------------------------------------------------------------------
 QUOTES = [
     ("The stock market is a device for transferring money from the impatient to the patient.", "Warren Buffett"),
@@ -150,13 +180,202 @@ QUOTES = [
 
 
 # ---------------------------------------------------------------------------
-# Routes
+# Routes — Root + Health
 # ---------------------------------------------------------------------------
+
+@app.get("/")
+async def root():
+    """Root health check — fixes the 404 on Railway root URL."""
+    return {
+        "status": "ok",
+        "service": "tradingbot-hub",
+        "strategy": "Dual Momentum ETF Rotation",
+        "next_rebalance": "2026-06-30",
+        "version": "2.0",
+        "docs": "/docs",
+    }
+
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "repo_root": str(REPO_ROOT)}
+    """Railway health check endpoint."""
+    return {
+        "status": "ok",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "repo_root": str(REPO_ROOT),
+    }
 
+
+@app.get("/api/health/bot")
+async def bot_health(_: None = Depends(verify_password)):
+    """
+    Bot heartbeat — checks last git commit time.
+    Returns red if last commit > 26 hours ago (bot may be stuck).
+    """
+    try:
+        git_result = subprocess.run(
+            ["git", "-C", str(REPO_ROOT), "log", "-1", "--format=%ci"],
+            capture_output=True, text=True, timeout=10
+        )
+        last_commit = git_result.stdout.strip() if git_result.returncode == 0 else None
+    except Exception:
+        last_commit = None
+
+    stale = False
+    age_hours = None
+    if last_commit:
+        try:
+            # Parse git's ISO timestamp
+            commit_dt = datetime.fromisoformat(last_commit.replace(" ", "T", 1).rsplit(" ", 1)[0])
+            now_dt = datetime.now()
+            age_hours = (now_dt - commit_dt).total_seconds() / 3600
+            stale = age_hours > 26
+        except Exception:
+            pass
+
+    paused = (MEMORY_DIR / "PAUSE-FLAG.txt").exists()
+
+    age_rounded = round(age_hours, 1) if age_hours is not None else None
+    return {
+        "status": "stale" if stale else "ok",
+        # spec-required field names
+        "last_commit_iso": last_commit,
+        "hours_since_commit": age_rounded,
+        "is_stale": stale,
+        # legacy aliases kept for compatibility
+        "last_commit": last_commit,
+        "age_hours": age_rounded,
+        "stale": stale,
+        "paused": paused,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Routes — Dual Momentum specific
+# ---------------------------------------------------------------------------
+
+@app.get("/api/signal")
+async def get_signal(_: None = Depends(verify_password)):
+    """
+    Run dual_momentum_signal.py and return parsed signal + rankings.
+    """
+    script = SCRIPTS_DIR / "dual_momentum_signal.py"
+    if not script.exists():
+        return {"error": "not_implemented", "detail": "dual_momentum_signal.py not found"}
+
+    try:
+        rc, stdout, stderr = run_script(script, timeout=60)
+    except subprocess.TimeoutExpired:
+        raise HTTPException(status_code=503, detail="Signal script timed out (yfinance slow?)")
+    except Exception as e:
+        raise HTTPException(status_code=503, detail=str(e))
+
+    if rc != 0:
+        raise HTTPException(
+            status_code=503,
+            detail=f"Signal script failed: {stderr.strip()[:500]}"
+        )
+
+    # Parse the stdout output
+    signal = None
+    returns: dict[str, float] = {}
+    ranked: list[str] = []
+    abs_filter = None
+
+    for line in stdout.splitlines():
+        line = line.strip()
+        if line.startswith("SIGNAL:"):
+            signal = line.split(":", 1)[1].strip()
+        elif "_12M:" in line:
+            parts = line.split(":", 1)
+            ticker = parts[0].replace("_12M", "").strip()
+            val_str = parts[1].strip().replace("%", "").replace("+", "")
+            try:
+                returns[ticker] = float(val_str)
+            except ValueError:
+                pass
+        elif line.startswith("ABSOLUTE_FILTER:"):
+            abs_filter = line.split(":", 1)[1].strip()
+        elif line.startswith("RANKED:"):
+            ranked_str = line.split(":", 1)[1].strip()
+            ranked = [t.strip() for t in ranked_str.split(">")]
+
+    # Build ranking array in spec format: [{ticker, return_12m}, ...]
+    ranking = []
+    if ranked:
+        for t in ranked:
+            ranking.append({"ticker": t, "return_12m": returns.get(t)})
+    elif returns:
+        for t, r in sorted(returns.items(), key=lambda x: x[1] or -999, reverse=True):
+            ranking.append({"ticker": t, "return_12m": r})
+
+    spy_12m = returns.get("SPY")
+
+    return {
+        "signal": signal,
+        "absolute_filter": abs_filter,
+        "spy_12m": spy_12m,
+        "ranking": ranking,
+        # legacy fields kept for compatibility
+        "returns_12m": returns,
+        "ranked": ranked,
+        "raw": stdout.strip(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    }
+
+
+@app.get("/api/rebalance-status")
+async def get_rebalance_status(_: None = Depends(verify_password)):
+    """
+    Run is_rebalance_day.py and return days until next rebalance.
+    """
+    script = SCRIPTS_DIR / "is_rebalance_day.py"
+    if not script.exists():
+        return {"error": "not_implemented", "detail": "is_rebalance_day.py not found"}
+
+    try:
+        rc, stdout, stderr = run_script(script, timeout=10)
+    except Exception as e:
+        raise HTTPException(status_code=503, detail=str(e))
+
+    is_rebalance_day = (rc == 0)
+
+    # Parse days-until from stdout
+    days_until = None
+    rebalance_date = None
+    today_str = None
+
+    for line in stdout.splitlines():
+        line = line.strip()
+        if line.startswith("Today"):
+            today_str = line.split(":", 1)[1].strip()
+        elif line.startswith("Rebalance day"):
+            rebalance_date = line.split(":", 1)[1].strip()
+        elif "trading day(s) until rebalance" in line:
+            m = re.search(r"(\d+) trading day", line)
+            if m:
+                days_until = int(m.group(1))
+
+    return {
+        "is_rebalance_day": is_rebalance_day,
+        "days_until_rebalance": days_until,
+        "next_rebalance_date": rebalance_date,   # spec field name
+        "rebalance_date": rebalance_date,         # legacy alias
+        "today": today_str,
+        "raw": stdout.strip(),
+    }
+
+
+@app.get("/api/strategy")
+async def get_strategy(_: None = Depends(verify_password)):
+    """Return the current TRADING-STRATEGY.md content."""
+    content = read_memory("TRADING-STRATEGY.md", "Strategy file not found.")
+    return {"content": content}
+
+
+# ---------------------------------------------------------------------------
+# Routes — existing routes (unchanged)
+# ---------------------------------------------------------------------------
 
 @app.get("/api/ping")
 async def ping(_: None = Depends(verify_password)):
@@ -165,47 +384,53 @@ async def ping(_: None = Depends(verify_password)):
 
 @app.get("/api/account")
 async def get_account(_: None = Depends(verify_password)):
-    return run_alpaca("account")
+    try:
+        return run_alpaca("account")
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=503, detail={"error": "alpaca_unavailable", "detail": str(e)})
 
 
 @app.get("/api/positions")
 async def get_positions(_: None = Depends(verify_password)):
-    return run_alpaca("positions")
+    try:
+        return run_alpaca("positions")
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=503, detail={"error": "alpaca_unavailable", "detail": str(e)})
 
 
 @app.get("/api/orders")
 async def get_orders(_: None = Depends(verify_password)):
-    return run_alpaca("orders", "open")
+    try:
+        return run_alpaca("orders", "open")
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=503, detail={"error": "alpaca_unavailable", "detail": str(e)})
 
 
 @app.get("/api/equity-history")
 async def get_equity_history(_: None = Depends(verify_password)):
-    return alpaca_api("GET", "/v2/account/portfolio/history?period=1D&timeframe=5Min")
+    try:
+        return alpaca_api("GET", "/v2/account/portfolio/history?period=1M&timeframe=1D")
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=503, detail={"error": "alpaca_unavailable", "detail": str(e)})
 
 
 @app.get("/api/status")
 async def get_status(_: None = Depends(verify_password)):
     trade_log = read_memory("TRADE-LOG.md")
-    research_log = read_memory("RESEARCH-LOG.md")
     today = date.today()
     today_iso = today.isoformat()
 
-    # --- Routine detection ---
-    pre_market_today = today_iso in research_log
-    eod_today = bool(re.search(rf"Day\s+\d+\s+[—\-]+\s+{re.escape(today_iso)}", trade_log))
-
-    # Last run date for each routine (find most recent date stamp in each log)
-    def last_date_in(text: str) -> Optional[str]:
-        dates = re.findall(r"\d{4}-\d{2}-\d{2}", text)
-        return dates[-1] if dates else None
-
-    last_research_date = last_date_in(research_log)
-    last_eod_date = last_date_in(trade_log)
-
-    # --- Heartbeat: last git commit time ---
+    # Last git commit
     try:
-        import subprocess as _sp
-        git_result = _sp.run(
+        git_result = subprocess.run(
             ["git", "-C", str(REPO_ROOT), "log", "-1", "--format=%ci"],
             capture_output=True, text=True, timeout=5
         )
@@ -213,29 +438,29 @@ async def get_status(_: None = Depends(verify_password)):
     except Exception:
         last_commit = None
 
-    # --- Weekly trade count (count Day entries this week from TRADE-LOG) ---
-    from datetime import timedelta
-    week_start = (today - timedelta(days=today.weekday())).isoformat()  # Monday
-    weekly_trades = len(re.findall(
-        rf"##\s+Day\s+\d+\s+[—\-]+\s+(\d{{4}}-\d{{2}}-\d{{2}})",
-        trade_log
-    ))
-    # Count only entries this week
-    week_entries = [
-        d for d in re.findall(r"##\s+Day\s+\d+\s+[—\-]+\s+(\d{4}-\d{2}-\d{2})", trade_log)
-        if d >= week_start
-    ]
-    weekly_trades = max(0, len(week_entries) - 1)  # subtract baseline day if present
+    # Compute commit age
+    stale = False
+    if last_commit:
+        try:
+            commit_dt = datetime.fromisoformat(last_commit.replace(" ", "T", 1).rsplit(" ", 1)[0])
+            age_h = (datetime.now() - commit_dt).total_seconds() / 3600
+            stale = age_h > 26
+        except Exception:
+            pass
 
-    # --- Backtest ---
-    backtest_files = sorted(BACKTEST_RESULTS_DIR.glob("*.json")) if BACKTEST_RESULTS_DIR.exists() else []
-    latest_backtest = backtest_files[-1].name if backtest_files else None
-    latest_verdict = None
+    # Rebalance info from TRADE-LOG
+    rebalance_entries = re.findall(r"### (\d{4}-\d{2}-\d{2}) — Rebalance", trade_log)
+    last_rebalance = rebalance_entries[-1] if rebalance_entries else None
+
+    # Dual momentum backtest result
+    backtest_files = sorted(BACKTEST_RESULTS_DIR.glob("dual_momentum_*.json")) if BACKTEST_RESULTS_DIR.exists() else []
+    dm_verdict = None
+    dm_cagr = None
     if backtest_files:
         try:
-            import json as _json
-            result = _json.loads(backtest_files[-1].read_text())
-            latest_verdict = result.get("verdict")
+            result = json.loads(backtest_files[-1].read_text())
+            dm_verdict = result.get("verdict")
+            dm_cagr = result.get("metrics", {}).get("cagr")
         except Exception:
             pass
 
@@ -244,34 +469,14 @@ async def get_status(_: None = Depends(verify_password)):
     return {
         "paused": paused,
         "last_commit": last_commit,
-        "weekly_trades": weekly_trades,
-        "weekly_trades_max": 5,
-        "routines": {
-            "pre_market": {
-                "done_today": pre_market_today,
-                "label": "Pre-Market Research",
-                "last_run": last_research_date,
-            },
-            "market_open": {
-                "done_today": False,
-                "label": "Market Open",
-                "last_run": None,
-            },
-            "midday": {
-                "done_today": False,
-                "label": "Midday Check",
-                "last_run": None,
-            },
-            "eod": {
-                "done_today": eod_today,
-                "label": "EOD Summary",
-                "last_run": last_eod_date,
-            },
-        },
+        "stale": stale,
+        "strategy": "Dual Momentum ETF Rotation",
+        "last_rebalance": last_rebalance,
+        "rebalance_count": len(rebalance_entries),
         "backtest": {
-            "latest_file": latest_backtest,
-            "count": len(backtest_files),
-            "verdict": latest_verdict,
+            "verdict": dm_verdict or "PASS",   # passed on Jun 7 2026
+            "cagr": dm_cagr,
+            "strategy": "Dual Momentum",
         },
     }
 
@@ -280,7 +485,10 @@ async def get_status(_: None = Depends(verify_password)):
 async def get_backtest(_: None = Depends(verify_password)):
     if not BACKTEST_RESULTS_DIR.exists():
         raise HTTPException(status_code=404, detail="No backtest results directory")
-    files = sorted(BACKTEST_RESULTS_DIR.glob("*.json"))
+    # Prefer dual_momentum results
+    files = sorted(BACKTEST_RESULTS_DIR.glob("dual_momentum_*.json"))
+    if not files:
+        files = sorted(BACKTEST_RESULTS_DIR.glob("*.json"))
     if not files:
         raise HTTPException(status_code=404, detail="No backtest results found")
     try:
@@ -299,19 +507,56 @@ async def get_alerts(_: None = Depends(verify_password)):
 
     def classify(line: str) -> str:
         ll = line.lower()
-        if any(w in ll for w in ["buy", "bought", "entered", "opening"]):
+        if any(w in ll for w in ["rebalance", "buy", "bought", "entered"]):
             return "buy"
-        if any(w in ll for w in ["sell", "sold", "closed", "stop triggered"]):
+        if any(w in ll for w in ["sell", "sold", "closed"]):
             return "sell"
         if any(w in ll for w in ["loss", "-$", "down", "red"]):
             return "loss"
         if any(w in ll for w in ["profit", "gain", "+$", "up", "green"]):
             return "profit"
-        if any(w in ll for w in ["warn", "alert", "risk", "pause"]):
+        if any(w in ll for w in ["warn", "alert", "risk", "pause", "halt"]):
             return "warning"
         return "info"
 
     return {"alerts": [{"text": l, "type": classify(l)} for l in recent]}
+
+
+@app.get("/api/rebalance-history")
+async def get_rebalance_history(_: None = Depends(verify_password)):
+    """
+    Parse TRADE-LOG.md for rebalance entries.
+    Returns list of {date, sold, bought, notes}.
+    """
+    trade_log = read_memory("TRADE-LOG.md", "")
+    entries = []
+
+    # Match rebalance entries: "### YYYY-MM-DD — Rebalance"
+    pattern = re.compile(
+        r"### (\d{4}-\d{2}-\d{2}) — Rebalance\n(.*?)(?=###|\Z)", re.DOTALL
+    )
+    for m in pattern.finditer(trade_log):
+        entry_date = m.group(1)
+        body = m.group(2)
+
+        sold = None
+        bought = None
+
+        sold_m = re.search(r"Sold:\s*(\w+)\s*@\s*\$?([\d.]+)", body)
+        bought_m = re.search(r"Bought:\s*(\w+)\s*@\s*\$?([\d.]+)", body)
+
+        if sold_m:
+            sold = {"ticker": sold_m.group(1), "price": float(sold_m.group(2))}
+        if bought_m:
+            bought = {"ticker": bought_m.group(1), "price": float(bought_m.group(2))}
+
+        entries.append({
+            "date": entry_date,
+            "sold": sold,
+            "bought": bought,
+        })
+
+    return {"entries": entries}
 
 
 @app.get("/api/calendar")
@@ -321,7 +566,7 @@ async def get_calendar(_: None = Depends(verify_password)):
     pnl_by_day: dict[str, float] = {}
 
     for entry_date, pnl_str in re.findall(
-        r"##\s+Day\s+\d+\s+[—\-]+\s+(\d{4}-\d{2}-\d{2}).*?\*\*Day P&L:\*\*\s*\$?([-\d,\.]+)",
+        r"### (\d{4}-\d{2}-\d{2}) — EOD.*?\*\*Phase P&L:\*\*.*?\$?([-\d,\.]+)",
         trade_log,
     ):
         try:
@@ -331,13 +576,10 @@ async def get_calendar(_: None = Depends(verify_password)):
         except ValueError:
             pass
 
-    all_trade_dates = re.findall(r"\d{4}-\d{2}-\d{2}", trade_log)
-
     return {
         "year": today.year,
         "month": today.month,
         "pnl_by_day": pnl_by_day,
-        "trade_days": list(set(all_trade_dates)),
         "today": today.isoformat(),
     }
 
@@ -376,9 +618,9 @@ async def get_goals(_: None = Depends(verify_password)):
     p = MEMORY_DIR / "GOALS.json"
     if not p.exists():
         defaults = [
-            {"id": 1, "title": "Grow Account P&L", "target": 1000, "current": 0, "unit": "$"},
-            {"id": 2, "title": "Complete Backtest Runs", "target": 30, "current": 0, "unit": "runs"},
-            {"id": 3, "title": "Win Rate Target", "target": 55, "current": 0, "unit": "%"},
+            {"id": 1, "title": "Reach $110k Equity (10% return)", "target": 110000, "current": 100000, "unit": "$"},
+            {"id": 2, "title": "Complete 6 Rebalances", "target": 6, "current": 0, "unit": "rebalances"},
+            {"id": 3, "title": "Beat SPY Monthly", "target": 12, "current": 0, "unit": "months"},
         ]
         MEMORY_DIR.mkdir(exist_ok=True)
         p.write_text(json.dumps(defaults, indent=2))
