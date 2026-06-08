@@ -147,17 +147,12 @@ function RebalanceCountdownPanel() {
   const apiError = data?.error ? `Backend: ${data.error}` : null
   const isRebalanceDay = data?.is_rebalance_day
   const daysUntil = data?.days_until_rebalance
-  const nextDate = data?.next_rebalance_date
-
-  const formattedDate = nextDate
-    ? (() => {
-        try {
-          return new Date(nextDate + 'T12:00:00').toLocaleDateString('en-US', {
-            month: 'long', day: 'numeric', year: 'numeric'
-          })
-        } catch { return nextDate }
-      })()
-    : null
+  const dateStr = data?.next_rebalance_date
+  const formattedDate = dateStr
+    ? new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
+        month: 'long', day: 'numeric', year: 'numeric'
+      })
+    : 'June 30, 2026'
 
   return (
     <Card>
