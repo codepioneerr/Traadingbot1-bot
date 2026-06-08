@@ -181,9 +181,15 @@ class ORBStrategy(Strategy):
         if state.get('daily_entry_taken'):
             return signals
 
-        # Long breakout: close above ORH, above VWAP, volume picking up
-        long_vol_ok = bar['v'] > state.get('avg_vol', bar['v']) * 0.8
-        if bar['c'] > orh and bar['c'] > vwap and long_vol_ok:
+        # FIX 3: Skip long entries on high-VIX (TRENDING_DOWN) regime days
+        vix_regime = ctx.get('regime', {}).get('vix_regime', 'unknown')
+
+        # FIX 2: avg_vol fallback is None — skip check when data absent (was always-true bug)
+        avg_vol = state.get('avg_vol', None)
+        long_vol_ok = avg_vol is None or bar['v'] > avg_vol * 0.8
+
+        # Long breakout: close above ORH, above VWAP, volume picking up, not high-VIX day
+        if bar['c'] > orh and bar['c'] > vwap and long_vol_ok and vix_regime != 'high':
             # Stop: ORL, or ATR-based if OR is unusually tight
             min_stop_dist = atr * self.atr_mult
             stop_price = min(orl, bar['c'] - min_stop_dist)

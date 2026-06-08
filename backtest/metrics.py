@@ -164,6 +164,90 @@ def scorecard(
     }
 
 
+def annual_sharpe_breakdown(
+    daily_equity: list,
+    active_dates: list,
+    all_dates: list,
+    trades: list,
+    starting_equity: float = 100_000,
+) -> dict:
+    """
+    Year-by-year performance breakdown.
+
+    daily_equity  : one equity snapshot per date in active_dates (engine output).
+                    On days the strategy sat flat, equity is carried forward so
+                    Sharpe annualisation uses the correct 252-day denominator.
+    active_dates  : sorted list of dates the engine processed (sparse subset of all_dates).
+    all_dates     : every trading date in the full backtest window.
+    trades        : closed trade list from engine (for per-year trade stats).
+    starting_equity: initial capital (used to anchor the carry-forward on day 0).
+
+    Returns {year_str: {sharpe, total_return, trade_count, win_rate, profit_factor}}.
+    """
+    from collections import defaultdict
+
+    if not daily_equity or not active_dates:
+        return {}
+
+    # Map active date → recorded equity
+    date_to_eq: dict = {}
+    for i, d in enumerate(active_dates[: len(daily_equity)]):
+        date_to_eq[d] = daily_equity[i]
+
+    # Reconstruct full daily equity — carry forward on flat days
+    full_eq:    list = []
+    full_dates: list = []
+    last_eq = starting_equity
+    for d in all_dates:
+        eq = date_to_eq.get(d, last_eq)
+        full_eq.append(eq)
+        full_dates.append(d)
+        last_eq = eq
+
+    # Group equity by calendar year
+    year_eq: dict = defaultdict(list)
+    for i, d in enumerate(full_dates):
+        year_eq[d[:4]].append(full_eq[i])
+
+    # Group trades by exit year
+    year_trades: dict = defaultdict(list)
+    for t in trades:
+        yr = (t.get('exit_time') or t.get('entry_time', '2000'))[:4]
+        year_trades[yr].append(t)
+
+    result: dict = {}
+    for year in sorted(year_eq):
+        curve = year_eq[year]
+        if len(curve) < 10:
+            continue
+        s  = sharpe(curve)
+        tr = (curve[-1] / curve[0] - 1.0) if curve[0] > 0 else 0.0
+        yt = year_trades.get(year, [])
+        result[year] = {
+            'sharpe':        round(s,  2),
+            'total_return':  round(tr, 4),
+            'trade_count':   len(yt),
+            'win_rate':      round(win_rate(yt),      3) if yt else 0.0,
+            'profit_factor': round(profit_factor(yt), 2) if yt else 0.0,
+        }
+
+    return result
+
+
+def print_annual_breakdown(annual: dict) -> None:
+    """Pretty-print the output of annual_sharpe_breakdown()."""
+    print(f'\n{"─"*65}')
+    print(f'  {"Year":<6} {"Sharpe":>7} {"Return":>8} {"Trades":>7} {"WinRate":>8} {"PF":>6}')
+    print(f'{"─"*65}')
+    for year, m in sorted(annual.items()):
+        icon = '✅' if m['sharpe'] > 0 else '❌'
+        print(
+            f'  {year:<6} {m["sharpe"]:>7.2f} {m["total_return"]:>+8.1%}'
+            f' {m["trade_count"]:>7} {m["win_rate"]:>8.1%} {m["profit_factor"]:>6.2f}  {icon}'
+        )
+    print(f'{"─"*65}')
+
+
 def print_scorecard(sc: dict) -> None:
     label = sc.get('label', '')
     print(f'\n{"═"*60}')

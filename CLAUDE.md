@@ -86,3 +86,28 @@ Always read the relevant memory files before taking any action. Always write bac
 ## Notifications
 
 All Telegram alerts use `scripts/telegram.sh`. The script reads `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` from the environment. If credentials are missing, it falls back to appending messages to `DAILY-SUMMARY.md` locally.
+
+## Strategy Status
+
+### ORB (Opening Range Breakout) — DEPRECATED
+
+Tested exhaustively June 2026. Conclusion: no consistent edge on institutional S&P 500 universe.
+
+Final result — 91-symbol pool, 2021–2026, realistic 5bps costs:
+- 441 qualifying days, 439 trades, PF 0.59, win rate 46.2%, total return −7.2%
+- Every calendar year negative. Frictionless PF 0.95 — the gross signal barely covers costs.
+- The apparent 2022–2023 edge (PF 2.51/2.07) was a statistical artifact of 19–33 trades on a
+  9-symbol tech-only sample, driven by NFLX earnings performance. It does not replicate on
+  the full diversified pool.
+
+All backtest code is preserved in `backtest/` — the engine, cost models, metrics, scanner,
+and annual breakdown functions are reusable for the next strategy.
+
+### Next Strategy — Earnings Momentum (Post-Announcement Drift)
+
+Target: capture the multi-day drift that follows earnings surprises (PEAD).
+Entry: day after earnings announcement if beat + gap > 2% + volume > 1.5× average.
+Hold: 3–10 days (daily bars, not intraday).
+Exit: fixed time stop or trailing stop from entry.
+Universe: same S&P 500 institutional pool + `get_sp500_for_date()` for bias-free membership.
+Data: requires earnings calendar (EPS estimate vs actual) — source TBD.

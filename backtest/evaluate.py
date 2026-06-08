@@ -22,9 +22,10 @@ from datetime import datetime
 from pathlib import Path
 
 from .engine import BacktestEngine
-from .data import load_bars, load_spy, load_crypto_bars, detect_feed, UNIVERSES
+from .data import load_bars, load_spy, load_crypto_bars, detect_feed, UNIVERSES, build_daily_scanner, SP500_INSTITUTIONAL_POOL
 from .costs import FRICTIONLESS, REALISTIC_5, REALISTIC_10
 from .metrics import scorecard, print_scorecard, total_return, sharpe, max_drawdown
+from .regime import build_regime_map
 
 RESULTS_DIR = Path(__file__).parent / 'results'
 RESULTS_DIR.mkdir(exist_ok=True)
@@ -97,6 +98,55 @@ def _sweep_params(strategy_class, param_grid: dict) -> list[dict]:
 
 # ── Main evaluation ───────────────────────────────────────────────────────────
 
+def _compute_rvol_map(bars_by_symbol: dict, lookback_days: int = 20) -> dict:
+    """
+    Compute relative volume for each (date, symbol) from already-loaded bars.
+    RVOL = first-30-min session volume today / avg of prior N days.
+    Returns {date_str: {symbol: rvol_float}}.
+    No extra API calls — uses the bar data already in memory.
+    """
+    from collections import defaultdict
+    from datetime import datetime, timedelta, timezone
+
+    # Accumulate early-session (9:30–10:00 ET) volume per symbol per day
+    sym_daily_vol: dict[str, dict[str, int]] = {}
+    for sym, bars in bars_by_symbol.items():
+        daily: dict[str, int] = defaultdict(int)
+        for b in bars:
+            try:
+                t_str = b['t']
+                t = datetime.fromisoformat(t_str.replace('Z', '+00:00')) if isinstance(t_str, str) else t_str
+                if t.tzinfo is None:
+                    t = t.replace(tzinfo=timezone.utc)
+                # Approximate ET (handles DST: EDT = UTC-4, EST = UTC-5)
+                m = t.month
+                if 3 < m < 11 or (m == 3 and t.day >= 8) or (m == 11 and t.day < 7):
+                    et = t + timedelta(hours=-4)
+                else:
+                    et = t + timedelta(hours=-5)
+                day = et.strftime('%Y-%m-%d')
+                # First 30 min of session: 9:30 to just before 10:00 ET
+                if et.hour == 9 and et.minute >= 30:
+                    daily[day] += b['v']
+            except Exception:
+                continue
+        sym_daily_vol[sym] = dict(daily)
+
+    # Build RVOL: today / rolling avg of prior lookback_days
+    rvol_by_date: dict[str, dict[str, float]] = defaultdict(dict)
+    for sym, daily in sym_daily_vol.items():
+        sorted_dates = sorted(daily)
+        for i, date_str in enumerate(sorted_dates):
+            prior = [daily[d] for d in sorted_dates[max(0, i - lookback_days):i]]
+            if not prior:
+                rvol_by_date[date_str][sym] = 0.0
+                continue
+            avg = sum(prior) / len(prior)
+            rvol_by_date[date_str][sym] = daily[date_str] / avg if avg > 0 else 0.0
+
+    return dict(rvol_by_date)
+
+
 def evaluate(
     strategy_name: str,
     start: str,
@@ -131,9 +181,12 @@ def evaluate(
     if StrategyClass is None:
         raise ValueError(f'Unknown strategy: {strategy_name}. Available: {list(strategy_map.keys())}')
 
-    # For now, use SPY components as a proxy universe (replace with real scanner for production)
-    # A real run should pass a curated list of high-vol symbols
-    DEFAULT_UNIVERSE = ['AAPL', 'NVDA', 'MSFT', 'TSLA', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX', 'SPY']
+    # Institutionally-tradeable S&P 500 pool.
+    # All confirmed S&P 500 members 2021–2026: price > $10, ADV > 5M shares,
+    # tight spreads, no SPAC/meme risk. Scanner applies RVOL ≥ 2.0/2.5 + gap
+    # 1–8% filter so only genuine catalyst days generate trades.
+    # For a full production run, extend this list to 200+ liquid S&P 500 names.
+    DEFAULT_UNIVERSE = SP500_INSTITUTIONAL_POOL
     print(f'📥 Loading minute bars for {len(DEFAULT_UNIVERSE)} symbols...')
     bars_by_symbol: dict[str, list[dict]] = {}
     for sym in DEFAULT_UNIVERSE:
@@ -182,10 +235,45 @@ def evaluate(
             for sym, bars in bars_dict.items()
         }
 
-    def _build_ctx(bars_dict) -> dict:
+    def _build_ctx(bars_dict, rvol_map=None, regime_map=None, scanner=None) -> dict:
         syms = list(bars_dict.keys())
         dates = set(_bar_date(b['t']) for bars in bars_dict.values() for b in bars)
-        return {d: {'candidates': syms} for d in dates}
+        ctx = {}
+        for d in dates:
+            # Scanner output is the candidates list for each day.
+            # Empty list → strategy universe() gets [], returns [] → no trades.
+            if scanner is not None:
+                day_candidates = scanner.get(d, [])
+            else:
+                day_candidates = syms
+            day_ctx: dict = {'candidates': day_candidates}
+            if rvol_map:
+                day_ctx['rel_volume'] = rvol_map.get(d, {})
+            if regime_map:
+                day_ctx['regime'] = regime_map.get(d, {})
+            ctx[d] = day_ctx
+        return ctx
+
+    # FIX 1: Compute RVOL from already-loaded bars (no extra API calls)
+    print('📊 Computing relative volume from loaded bars...')
+    rvol_map = _compute_rvol_map(bars_by_symbol)
+
+    # FIX 3: Build VIX regime map (loads VIXY daily; falls back silently if unavailable)
+    print('📊 Building VIX regime map...')
+    try:
+        regime_map = build_regime_map(start, end, feed=feed)
+        print(f'  Regime map: {len(regime_map)} dates classified')
+    except Exception as e:
+        print(f'  ⚠️  Regime map unavailable ({e}) — regime filter disabled')
+        regime_map = {}
+
+    # Dynamic daily scanner: RVOL ≥ 2.0 + gap ≥ 1% → top-3 "stocks in play" per day
+    print('📡 Running dynamic daily scanner (RVOL ≥ 2.0, gap ≥ 1%)...')
+    scanner = build_daily_scanner(bars_by_symbol, min_rvol=2.0, min_gap_pct=0.01, top_n=3, min_candidates=2)
+    trade_days = sum(1 for v in scanner.values() if v)
+    total_days = len(scanner)
+    print(f'  {trade_days}/{total_days} days have ≥2 qualifying stocks'
+          f'  ({trade_days/total_days:.0%} selectivity)')
 
     is_bars = _filter_bars(bars_by_symbol, is_dates)
     oos_bars = _filter_bars(bars_by_symbol, oos_dates)
@@ -200,7 +288,7 @@ def evaluate(
     best_params = StrategyClass().params()  # defaults
     if param_grid:
         print(f'\n🔧 In-sample param sweep ({len(_sweep_params(StrategyClass, param_grid))} combos)...')
-        is_ctx = _build_ctx(is_bars)
+        is_ctx = _build_ctx(is_bars, rvol_map, regime_map, scanner)
         best_sharpe = -999
         for params in _sweep_params(StrategyClass, param_grid):
             strat = StrategyClass()
@@ -230,7 +318,7 @@ def evaluate(
         'timestamp': datetime.now().isoformat(),
     }
 
-    oos_ctx = _build_ctx(oos_bars)
+    oos_ctx = _build_ctx(oos_bars, rvol_map, regime_map, scanner)
 
     # Warn if the OOS window is short — Sharpe will be unreliable (< ~20 days)
     if len(oos_dates) < 20:

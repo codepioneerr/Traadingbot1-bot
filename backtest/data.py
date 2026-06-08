@@ -1,5 +1,6 @@
 """
 Historical bar loader — Alpaca first, pluggable source.
+Includes get_sp500_for_date() for point-in-time S&P 500 constituent lookup.
 
 WARNING: Alpaca free IEX feed has partial volume and limited intraday history.
 Any backtest result produced from IEX bars is INDICATIVE ONLY.
@@ -219,6 +220,209 @@ UNIVERSES = {
     'etf':       ['QQQ', 'SPY', 'IWM', 'XLK', 'ARKK', 'SOXL', 'TQQQ', 'UVXY', 'GLD', 'TLT'],
     'crypto':    ['BTC/USD', 'ETH/USD', 'SOL/USD'],
 }
+
+
+# ── S&P 500 point-in-time constituent lookup ─────────────────────────────────
+
+_SP500_CSV_PATH = Path(__file__).parent / 'data' / 'sp500_ticker_start_end.csv'
+
+
+def get_sp500_for_date(date_str: str, csv_path: str | None = None) -> list[str]:
+    """
+    Returns the list of S&P 500 ticker symbols that were members on date_str.
+
+    Uses the fja05680/sp500 CSV — a community-maintained, MIT-licensed record
+    of every S&P 500 addition and removal since 1996, updated through Jan 2026.
+    Source: github.com/fja05680/sp500
+
+    Args:
+        date_str  : 'YYYY-MM-DD' — the date to query.
+        csv_path  : path to sp500_ticker_start_end.csv. Defaults to
+                    backtest/data/sp500_ticker_start_end.csv (ships with the repo).
+
+    Returns:
+        Sorted list of ticker strings that were in the S&P 500 on that date.
+
+    Survivorship-bias note:
+        This function returns the ACTUAL index membership on date_str, NOT the
+        current membership. Running the scanner with this output eliminates the
+        survivorship bias that arises from using today's S&P 500 for historical
+        backtests (i.e., back-testing only on stocks that survived to the present).
+
+    Example:
+        >>> get_sp500_for_date('2021-01-04')[:5]
+        ['A', 'AAPL', 'ABBV', 'ABC', 'ABT']
+        >>> 'TSLA' in get_sp500_for_date('2021-01-04')   # added Dec 2020
+        True
+        >>> 'UBER' in get_sp500_for_date('2021-01-04')   # added Oct 2023
+        False
+    """
+    import csv as _csv
+
+    path = Path(csv_path) if csv_path else _SP500_CSV_PATH
+    if not path.exists():
+        raise FileNotFoundError(
+            f'S&P 500 constituent CSV not found at {path}\n'
+            'Download it from github.com/fja05680/sp500:\n'
+            '  curl -o backtest/data/sp500_ticker_start_end.csv \\\n'
+            '    https://raw.githubusercontent.com/fja05680/sp500/master/sp500_ticker_start_end.csv\n'
+            'Or run: python scripts/download_sp500_pool.py'
+        )
+
+    members: set[str] = set()
+    with open(path, newline='', encoding='utf-8') as fh:
+        for row in _csv.DictReader(fh):
+            ticker = row['ticker'].strip()
+            start  = row['start_date'].strip()
+            end    = row['end_date'].strip()
+            if not ticker or not start:
+                continue
+            # Not yet in the index
+            if date_str < start:
+                continue
+            # Already removed from the index (end is populated and before date)
+            if end and date_str > end:
+                continue
+            members.add(ticker)
+
+    return sorted(members)
+
+
+# ── S&P 500 institutional pool ───────────────────────────────────────────────
+# Confirmed S&P 500 members continuously from 2021-01-04 through 2026-01-03.
+# All pass: price > $10, ADV > 5M shares, tight bid-ask spreads, no SPAC/meme risk.
+# Production: pull historical constituent list per year-start to avoid survivorship
+# bias across the full 500. For these 9 stable large-caps bias is negligible.
+SP500_INSTITUTIONAL_POOL = [
+    'AAPL', 'NVDA', 'MSFT', 'TSLA', 'META', 'AMZN', 'GOOGL', 'AMD', 'NFLX',
+]
+
+
+def build_daily_scanner(
+    bars_by_symbol: dict,
+    min_rvol: float = 2.0,
+    min_gap_pct: float = 0.01,
+    max_gap_pct: float = 0.08,             # S&P 500 gaps > 8% = halt/news, untradeable
+    top_n: int = 3,
+    lookback_days: int = 20,
+    min_candidates: int = 2,
+    min_price: float = 10.0,               # eliminates penny-stock / SPAC behaviour
+    min_avg_daily_vol: int = 5_000_000,    # institutional liquidity floor (30-day ADV)
+    rvol_no_catalyst: float = 2.5,         # higher bar on days without a known catalyst
+    catalyst_gap_threshold: float = 0.03,  # gap ≥ 3% proxies for earnings/known catalyst
+) -> dict:
+    """
+    Institutional-grade daily universe scanner.
+
+    Each trading day, scores every symbol in bars_by_symbol by four criteria:
+      1. Price filter  : prior close >= min_price          (no penny/SPAC behaviour)
+      2. Liquidity     : 30-day avg daily vol >= min_avg_daily_vol
+      3. Gap filter    : min_gap_pct <= |open−prior_close|/prior_close <= max_gap_pct
+      4. RVOL gate     : catalyst-aware —
+            gap >= catalyst_gap_threshold (≥3%) proxies for earnings/known catalyst
+              → require RVOL >= min_rvol (2.0)
+            smaller gap (no obvious catalyst)
+              → require RVOL >= rvol_no_catalyst (2.5)
+
+    Returns {date_str: [sym1, sym2, ...]} ranked by RVOL desc, capped at top_n.
+    Returns [] for dates where fewer than min_candidates qualify — sit out today.
+
+    Uses fast string-based UTC parsing; no datetime.fromisoformat per bar.
+    9:30–10:00 ET ≈ 13:30–14:30 UTC (covers both EDT and EST).
+    """
+    from collections import defaultdict
+
+    # ── Pass 1: extract per-symbol daily stats ───────────────────────────────
+    sym_stats: dict = {}
+    for sym, bars in bars_by_symbol.items():
+        daily_open:  dict = {}
+        daily_close: dict = {}
+        early_vol:   dict = defaultdict(int)   # early-session vol for RVOL
+        total_vol:   dict = defaultdict(int)   # full-day vol for ADV filter
+
+        for b in bars:
+            t   = b['t']
+            day = t[:10]
+            h   = int(t[11:13])
+            m   = int(t[14:16])
+            if day not in daily_open:
+                daily_open[day] = b['o']
+            daily_close[day]  = b['c']
+            total_vol[day]   += b['v']
+            if (h == 13 and m >= 30) or (h == 14 and m < 30):
+                early_vol[day] += b['v']
+
+        sym_stats[sym] = {
+            'open':      daily_open,
+            'close':     daily_close,
+            'early_vol': dict(early_vol),
+            'total_vol': dict(total_vol),
+        }
+
+    # ── Pass 2: rolling RVOL and rolling ADV per symbol ─────────────────────
+    all_dates = sorted(set(d for s in sym_stats.values() for d in s['open']))
+    sym_rvol:    dict = {}
+    sym_avg_vol: dict = {}
+
+    for sym, stats in sym_stats.items():
+        ev    = stats['early_vol']
+        tv    = stats['total_vol']
+        sdays = sorted(ev)
+        rvol:    dict = {}
+        avg_vol: dict = {}
+
+        for i, d in enumerate(sdays):
+            window = sdays[max(0, i - lookback_days):i]
+            prior_ev = [ev[dd]      for dd in window]
+            prior_tv = [tv.get(dd, 0) for dd in window]
+            avg_ev   = sum(prior_ev) / len(prior_ev) if prior_ev else 0
+            avg_tv   = sum(prior_tv) / len(prior_tv) if prior_tv else 0
+            rvol[d]    = ev[d] / avg_ev if avg_ev > 0 else 0.0
+            avg_vol[d] = avg_tv
+
+        sym_rvol[sym]    = rvol
+        sym_avg_vol[sym] = avg_vol
+
+    # ── Pass 3: per-day ranked candidate list ────────────────────────────────
+    scanner: dict = {}
+    for i, date in enumerate(all_dates):
+        if i == 0:
+            scanner[date] = []
+            continue
+        prev_date = all_dates[i - 1]
+        qualified = []
+
+        for sym, stats in sym_stats.items():
+            # 1. Price filter — use prior close as proxy for today's price level
+            prior_close = stats['close'].get(prev_date)
+            if prior_close is None or prior_close < min_price:
+                continue
+
+            # 2. Liquidity — rolling ADV
+            if sym_avg_vol[sym].get(date, 0) < min_avg_daily_vol:
+                continue
+
+            # 3. Gap filter — must be in [min_gap_pct, max_gap_pct]
+            today_open = stats['open'].get(date)
+            if today_open is None or prior_close == 0:
+                continue
+            gap = abs(today_open - prior_close) / prior_close
+            if gap < min_gap_pct or gap > max_gap_pct:
+                continue
+
+            # 4. Catalyst-aware RVOL gate
+            rvol_val = sym_rvol[sym].get(date, 0.0)
+            rvol_req = min_rvol if gap >= catalyst_gap_threshold else rvol_no_catalyst
+            if rvol_val < rvol_req:
+                continue
+
+            qualified.append((sym, rvol_val, gap))
+
+        qualified.sort(key=lambda x: x[1], reverse=True)
+        top = [s for s, _, _ in qualified[:top_n]]
+        scanner[date] = top if len(top) >= min_candidates else []
+
+    return scanner
 
 
 def compute_relative_volume(
