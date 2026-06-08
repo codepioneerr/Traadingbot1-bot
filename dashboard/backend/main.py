@@ -13,11 +13,29 @@ from pydantic import BaseModel
 
 # ---------------------------------------------------------------------------
 # Path resolution — works locally and on Railway
-# main.py lives at: <repo>/dashboard/backend/main.py
-# Three .parent calls → repo root
+#
+# Local dev: main.py at <repo>/dashboard/backend/main.py
+#   → REPO_ROOT = <repo>/  (three .parent calls)
+#   → scripts/alpaca.sh at <repo>/scripts/alpaca.sh  ✓
+#
+# Railway (deploys dashboard/backend/ only, main.py at /app/main.py):
+#   → THIS_FILE.parent = /app/  (one level up from /app/main.py)
+#   → scripts/ lives at /app/scripts/  (copied during deploy)
+#   → Set REPO_ROOT=/app in Railway env vars, or rely on the default below
+#
+# The default now uses THIS_FILE.parent so Railway works without env vars.
+# For local dev, set REPO_ROOT to the repo root in your .env or shell.
 # ---------------------------------------------------------------------------
 THIS_FILE = Path(__file__).resolve()
-REPO_ROOT = Path(os.environ.get("REPO_ROOT", THIS_FILE.parent.parent.parent))
+_DEFAULT_ROOT = Path(os.environ.get("REPO_ROOT", ""))
+if _DEFAULT_ROOT and _DEFAULT_ROOT.is_dir():
+    REPO_ROOT = _DEFAULT_ROOT
+elif (THIS_FILE.parent / "scripts").is_dir():
+    # Railway: scripts/ is a sibling of main.py
+    REPO_ROOT = THIS_FILE.parent
+else:
+    # Local dev fallback: three levels up to repo root
+    REPO_ROOT = THIS_FILE.parent.parent.parent
 SCRIPTS_DIR = REPO_ROOT / "scripts"
 MEMORY_DIR = REPO_ROOT / "memory"
 BACKTEST_RESULTS_DIR = REPO_ROOT / "backtest" / "results"
@@ -207,7 +225,7 @@ async def health():
 
 
 @app.get("/api/health/bot")
-async def bot_health(_: None = Depends(verify_password)):
+async def bot_health():
     """
     Bot heartbeat — checks last git commit time.
     Returns red if last commit > 26 hours ago (bot may be stuck).
@@ -255,7 +273,7 @@ async def bot_health(_: None = Depends(verify_password)):
 # ---------------------------------------------------------------------------
 
 @app.get("/api/signal")
-async def get_signal(_: None = Depends(verify_password)):
+async def get_signal():
     """
     Run dual_momentum_signal.py and return parsed signal + rankings.
     """
@@ -325,7 +343,7 @@ async def get_signal(_: None = Depends(verify_password)):
 
 
 @app.get("/api/rebalance-status")
-async def get_rebalance_status(_: None = Depends(verify_password)):
+async def get_rebalance_status():
     """
     Run is_rebalance_day.py and return days until next rebalance.
     """
@@ -367,7 +385,7 @@ async def get_rebalance_status(_: None = Depends(verify_password)):
 
 
 @app.get("/api/strategy")
-async def get_strategy(_: None = Depends(verify_password)):
+async def get_strategy():
     """Return the current TRADING-STRATEGY.md content."""
     content = read_memory("TRADING-STRATEGY.md", "Strategy file not found.")
     return {"content": content}
@@ -423,7 +441,7 @@ async def get_equity_history(_: None = Depends(verify_password)):
 
 
 @app.get("/api/status")
-async def get_status(_: None = Depends(verify_password)):
+async def get_status():
     trade_log = read_memory("TRADE-LOG.md")
     today = date.today()
     today_iso = today.isoformat()
@@ -482,7 +500,7 @@ async def get_status(_: None = Depends(verify_password)):
 
 
 @app.get("/api/backtest")
-async def get_backtest(_: None = Depends(verify_password)):
+async def get_backtest():
     if not BACKTEST_RESULTS_DIR.exists():
         raise HTTPException(status_code=404, detail="No backtest results directory")
     # Prefer dual_momentum results
@@ -585,7 +603,7 @@ async def get_calendar(_: None = Depends(verify_password)):
 
 
 @app.get("/api/quote")
-async def get_quote(_: None = Depends(verify_password)):
+async def get_quote():
     idx = date.today().timetuple().tm_yday % len(QUOTES)
     text, author = QUOTES[idx]
     return {"text": text, "author": author}

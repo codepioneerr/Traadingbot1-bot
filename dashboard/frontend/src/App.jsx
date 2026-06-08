@@ -4,6 +4,13 @@ import TopBar from './components/TopBar'
 import { useApi, apiFetch, getPassword } from './hooks/useApi'
 import { fmt$, fmtPct, pnlColor } from './utils/market'
 
+// If VITE_DASHBOARD_PASSWORD is set in Vercel env vars (not the placeholder),
+// bootstrap localStorage so the PasswordGate is skipped automatically.
+const _envPw = import.meta.env.VITE_DASHBOARD_PASSWORD
+if (_envPw && _envPw !== 'set_in_vercel') {
+  localStorage.setItem('dashboard_password', _envPw)
+}
+
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
@@ -136,6 +143,8 @@ function CurrentPositionPanel() {
 function RebalanceCountdownPanel() {
   const { data, loading, error, refetch } = useApi('/api/rebalance-status', POLL_INTERVAL)
 
+  // Guard against HTTP-200 error responses like {"error": "not_implemented"}
+  const apiError = data?.error ? `Backend: ${data.error}` : null
   const isRebalanceDay = data?.is_rebalance_day
   const daysUntil = data?.days_until_rebalance
   const nextDate = data?.next_rebalance_date
@@ -158,8 +167,8 @@ function RebalanceCountdownPanel() {
           <Skeleton className="h-16 w-28" />
           <Skeleton className="h-4 w-36" />
         </div>
-      ) : error ? (
-        <ErrorState message={error} onRetry={refetch} />
+      ) : (error || apiError) ? (
+        <ErrorState message={error || apiError} onRetry={refetch} />
       ) : isRebalanceDay ? (
         <div className="flex flex-col gap-2 py-2">
           <div className="text-amber-400 text-2xl font-bold animate-pulse">TODAY IS REBALANCE DAY</div>
@@ -191,6 +200,7 @@ function RebalanceCountdownPanel() {
 function SignalPanel() {
   const { data, loading, error, refetch } = useApi('/api/signal', POLL_INTERVAL)
 
+  const signalApiError = data?.error ? `Backend: ${data.error}` : null
   const signal = data?.signal
   const absFilter = data?.absolute_filter
   const spy12m = data?.spy_12m
@@ -215,8 +225,8 @@ function SignalPanel() {
           <Skeleton className="h-5 w-48" />
           {[...Array(6)].map((_, i) => <Skeleton key={i} className="h-5 w-full" />)}
         </div>
-      ) : error ? (
-        <ErrorState message={error} onRetry={refetch} />
+      ) : (error || signalApiError) ? (
+        <ErrorState message={error || signalApiError} onRetry={refetch} />
       ) : (
         <>
           <div className="flex items-center gap-3 flex-wrap">
@@ -437,12 +447,18 @@ function PasswordGate({ onAuth }) {
   const attempt = async () => {
     setLoading(true)
     setError('')
+    localStorage.setItem('dashboard_password', pw)
     try {
-      localStorage.setItem('dashboard_password', pw)
-      await apiFetch('/api/ping')
-      onAuth()
-    } catch {
-      // If backend has no password configured, still let through
+      const res = await apiFetch('/api/ping')
+      // apiFetch returns null on 401 (and fires 'auth-required')
+      if (res === null) {
+        localStorage.removeItem('dashboard_password')
+        setError('Wrong password — try again')
+      } else {
+        onAuth()
+      }
+    } catch (e) {
+      // Network error or backend down — let through since backend enforces auth anyway
       onAuth()
     } finally {
       setLoading(false)

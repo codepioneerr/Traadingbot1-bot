@@ -56,3 +56,36 @@ Background:
 To halt the bot: create PAUSE-FLAG.txt with the reason.
 To resume: delete PAUSE-FLAG.txt.
 risk_check.py checks for this file at startup.
+
+
+## Dashboard Deployment
+
+| Component | URL | Platform |
+|-----------|-----|----------|
+| Frontend | https://traadingbot1-bot.vercel.app | Vercel (auto-deploy on push to main) |
+| Backend API | https://tradingbot-hub-production.up.railway.app | Railway (deploy via `railway up` from dashboard/backend/) |
+
+### Required Environment Variables
+
+**Railway (backend):**
+- `ALPACA_API_KEY`, `ALPACA_SECRET_KEY`, `ALPACA_ENDPOINT` — Alpaca paper trading credentials
+- `DASHBOARD_PASSWORD` — password to protect financial endpoints (/api/account, /api/positions, etc.)
+- `FRONTEND_URL` — Vercel URL for CORS allowlist (e.g. https://traadingbot1-bot.vercel.app)
+
+**Vercel (frontend):**
+- `VITE_API_URL` — Railway backend URL (https://tradingbot-hub-production.up.railway.app)
+- `VITE_DASHBOARD_PASSWORD` — must match DASHBOARD_PASSWORD in Railway; set this in Vercel Settings -> Environment Variables; DO NOT commit the real value to git
+
+### Auth Model
+- Public routes (no auth): /, /health, /api/signal, /api/rebalance-status, /api/health/bot, /api/strategy, /api/status, /api/backtest, /api/quote
+- Protected routes (X-Password header required): /api/account, /api/positions, /api/orders, and all write endpoints
+- Frontend sends X-Password header from localStorage (set by PasswordGate on first visit)
+- If VITE_DASHBOARD_PASSWORD is set in Vercel, the PasswordGate is skipped automatically
+
+### Deploy Steps (backend)
+```bash
+cd dashboard/backend
+railway up
+```
+Note: `railway up` must be run from `dashboard/backend/` — only that directory is deployed.
+The scripts/ subdirectory (alpaca.sh, dual_momentum_signal.py, is_rebalance_day.py) is bundled here.
