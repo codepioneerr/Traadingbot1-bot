@@ -15,3 +15,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Paper trading account initialized. Alpaca paper account defaulted to $100,000 starting capital. No positions open. Bot not yet live — this entry establishes the baseline for P&L tracking.
+
+---
+
+## 2026-06-23 — EOD Snapshot (Tuesday)
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A | **Phase P&L:** N/A
+**Sizing mode today:** N/A (no pre-market run) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran but could not retrieve account data. The remote execution environment's egress policy blocked outbound HTTPS to `paper-api.alpaca.markets:443` and `api.telegram.org:443` (both returned 403 from the proxy gateway). No live account state, positions, or orders could be fetched. Telegram EOD notification was also unable to send. No trades were executed by the bot today. Action required: whitelist `paper-api.alpaca.markets` and `api.telegram.org` in the environment's egress policy so the bot can function.
