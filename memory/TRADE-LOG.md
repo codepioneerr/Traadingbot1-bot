@@ -41,3 +41,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Morning combined pre-market + market-open routine ran at 09:05 ET. API access to `paper-api.alpaca.markets:443` blocked for 2nd consecutive day by proxy egress policy (connect_rejected 403). Telegram also blocked. Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day (rebalance is 2026-06-30). No trades warranted regardless of API status. Bot is idle until June 30.
+
+---
+
+## 2026-06-24 — EOD Snapshot (Wednesday, Day 3 of API blockage)
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A | **Phase P&L:** N/A
+**Sizing mode today:** N/A (Dual Momentum — no VIX sizing) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran. Both `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked by the remote execution environment's egress policy (connect_rejected 403, 3rd consecutive day: Jun 22–24). No account data, positions, or orders could be retrieved. No trades executed today — strategy is Dual Momentum ETF Rotation, which only rebalances monthly; next rebalance is 2026-06-30. Telegram EOD notification could not be sent. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Action required: whitelist `paper-api.alpaca.markets` and `api.telegram.org` in the Claude Code remote execution environment's egress policy before June 30 rebalance date.
