@@ -28,3 +28,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran but could not retrieve account data. The remote execution environment's egress policy blocked outbound HTTPS to `paper-api.alpaca.markets:443` and `api.telegram.org:443` (both returned 403 from the proxy gateway). No live account state, positions, or orders could be fetched. Telegram EOD notification was also unable to send. No trades were executed by the bot today. Action required: whitelist `paper-api.alpaca.markets` and `api.telegram.org` in the environment's egress policy so the bot can function.
+
+---
+
+## 2026-06-24 — Morning Routine (Wednesday)
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-06-30
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran at 09:05 ET. API access to `paper-api.alpaca.markets:443` blocked for 2nd consecutive day by proxy egress policy (connect_rejected 403). Telegram also blocked. Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day (rebalance is 2026-06-30). No trades warranted regardless of API status. Bot is idle until June 30.
