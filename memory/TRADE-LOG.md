@@ -54,3 +54,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran. Both `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked by the remote execution environment's egress policy (connect_rejected 403, 3rd consecutive day: Jun 22–24). No account data, positions, or orders could be retrieved. No trades executed today — strategy is Dual Momentum ETF Rotation, which only rebalances monthly; next rebalance is 2026-06-30. Telegram EOD notification could not be sent. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Action required: whitelist `paper-api.alpaca.markets` and `api.telegram.org` in the Claude Code remote execution environment's egress policy before June 30 rebalance date.
+
+---
+
+## 2026-06-25 — Morning Routine (Thursday)
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-06-30
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran. `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, and `api.telegram.org:443` remain blocked by proxy egress policy (4th consecutive day: Jun 22–25). Market research completed via WebSearch fallback: VIX ~19.13 (MODERATE), S&P futures +0.8% on Micron AI earnings beat, PCE inflation 4.1%. No trade executed — today is NOT a rebalance day. June 30 rebalance is 5 days away; API access must be restored before then for the bot to execute its first trade. Telegram alert could not be sent.
