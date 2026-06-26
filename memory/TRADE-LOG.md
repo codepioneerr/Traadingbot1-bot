@@ -93,3 +93,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Morning combined pre-market + market-open routine ran at 09:05 ET. `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, and `api.telegram.org:443` remain blocked by proxy egress policy (5th consecutive day: Jun 22–26). Market research completed via WebSearch fallback: VIX 18.68 (MODERATE), S&P futures -0.3% on Apple/Microsoft price hike news + AI cost concerns. No trade executed — today is NOT a rebalance day. Rebalance is 2026-06-30 (Tuesday, last trading day of June — 4 days away). **CRITICAL:** API egress must be restored before June 30 for the bot's first-ever trade.
+
+---
+
+## 2026-06-26 — EOD Snapshot (Friday, Week 1, Day 5 of API blockage)
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A | **Phase P&L:** N/A
+**Sizing mode today:** N/A (Dual Momentum — no VIX sizing) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran. `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked by the remote execution environment's proxy egress policy (5th consecutive day: Jun 22–26). No account data, positions, or orders could be retrieved. No trades executed this week — strategy is Dual Momentum ETF Rotation (monthly rebalance only); next rebalance is 2026-06-30 (Tuesday, last trading day of June). The S&P 500 fell ~1.8% this week on AI cost concerns and tech sector rotation; healthcare was the best-performing sector (Bio-Techne +22%, Incyte +15%); technology was worst. Bot effectively sidestepped the drawdown by being in a no-position (idle cash) state, though this was a result of API blockage rather than an intentional signal. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). **CRITICAL:** API access must be restored before June 30 rebalance date.
