@@ -80,3 +80,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran. `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked by the remote execution environment's proxy egress policy (4th consecutive day: Jun 22–25). No account data, positions, or orders could be retrieved. No trades executed today — strategy is Dual Momentum ETF Rotation, which only rebalances monthly; next rebalance is 2026-06-30 (Tuesday). Telegram EOD notification could not be sent — falling back to GitHub commit only. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). **CRITICAL:** API access must be restored before June 30 rebalance date.
+
+---
+
+## 2026-06-26 — Morning Routine (Friday)
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-06-30
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran at 09:05 ET. `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, and `api.telegram.org:443` remain blocked by proxy egress policy (5th consecutive day: Jun 22–26). Market research completed via WebSearch fallback: VIX 18.68 (MODERATE), S&P futures -0.3% on Apple/Microsoft price hike news + AI cost concerns. No trade executed — today is NOT a rebalance day. Rebalance is 2026-06-30 (Tuesday, last trading day of June — 4 days away). **CRITICAL:** API egress must be restored before June 30 for the bot's first-ever trade.
