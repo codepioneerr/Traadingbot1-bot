@@ -119,3 +119,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Morning combined pre-market + market-open routine ran at 09:06 ET. APIs remain blocked (6th trading day: Jun 22–29): Alpaca (exit 1), Perplexity (exit 56), Telegram (403). Market research via WebSearch: S&P futures +0.8% on U.S.-Iran ceasefire progress; WTI oil ~$70/bbl (-4%); VIX ~18.4 (MODERATE). Key events: Alphabet joins Dow today, SpaceX → Nasdaq 100 on Jul 7, Comcast spin-off (+25%), Iridium acquired by Rocket Lab (+22%). No trade today — not a rebalance day. **CRITICAL: REBALANCE IS TOMORROW (June 30).** Preliminary web-search signal suggests IWM (#1 by 12-month return at ~+41.75%). Bot needs API access restored before tomorrow's market open to execute its first-ever trade. Telegram notification could not be sent.
+
+---
+
+## 2026-06-29 — EOD Snapshot (Monday, Day 7 of API blockage) ⚠️ REBALANCE TOMORROW
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A | **Phase P&L:** N/A
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran. `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, and `api.telegram.org:443` remain blocked by the remote execution environment's proxy egress policy (7th consecutive trading day: Jun 22–29; proxy returns connect_rejected 403). No account data, positions, or orders could be retrieved. No trades executed today — strategy is Dual Momentum ETF Rotation, which rebalances monthly; **rebalance is TOMORROW June 30 (last trading day of June)**. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Preliminary signal via web search: IWM is the top-ranked asset by 12-month return (~+41.75%) among SPY/QQQ/IWM/TLT/GLD. Telegram EOD notification could not be sent. **CRITICAL: API egress must be restored before market open tomorrow (June 30) for the bot to execute its first-ever trade.**
