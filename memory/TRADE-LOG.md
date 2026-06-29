@@ -106,3 +106,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran. `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked by the remote execution environment's proxy egress policy (5th consecutive day: Jun 22–26). No account data, positions, or orders could be retrieved. No trades executed this week — strategy is Dual Momentum ETF Rotation (monthly rebalance only); next rebalance is 2026-06-30 (Tuesday, last trading day of June). The S&P 500 fell ~1.8% this week on AI cost concerns and tech sector rotation; healthcare was the best-performing sector (Bio-Techne +22%, Incyte +15%); technology was worst. Bot effectively sidestepped the drawdown by being in a no-position (idle cash) state, though this was a result of API blockage rather than an intentional signal. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). **CRITICAL:** API access must be restored before June 30 rebalance date.
+
+---
+
+## 2026-06-29 — Morning Routine (Monday) ⚠️ REBALANCE TOMORROW
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** TOMORROW 2026-06-30
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran at 09:06 ET. APIs remain blocked (6th trading day: Jun 22–29): Alpaca (exit 1), Perplexity (exit 56), Telegram (403). Market research via WebSearch: S&P futures +0.8% on U.S.-Iran ceasefire progress; WTI oil ~$70/bbl (-4%); VIX ~18.4 (MODERATE). Key events: Alphabet joins Dow today, SpaceX → Nasdaq 100 on Jul 7, Comcast spin-off (+25%), Iridium acquired by Rocket Lab (+22%). No trade today — not a rebalance day. **CRITICAL: REBALANCE IS TOMORROW (June 30).** Preliminary web-search signal suggests IWM (#1 by 12-month return at ~+41.75%). Bot needs API access restored before tomorrow's market open to execute its first-ever trade. Telegram notification could not be sent.
