@@ -145,3 +145,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** **TODAY WAS THE REBALANCE DAY — NO TRADE EXECUTED, BLOCKED BY INFRASTRUCTURE.** Ran full diagnostic: `paper-api.alpaca.markets`, `api.perplexity.ai`, `api.telegram.org`, and Yahoo Finance (`fc.yahoo.com`, via freshly-installed `yfinance`) all returned 403 connect_rejected at the proxy gateway (organization egress policy denial, confirmed via `$HTTPS_PROXY/__agentproxy/status` — not a credentials issue). 9th consecutive trading day of total blockage (Jun 22–30). Could not run the authoritative `dual_momentum_signal.py` (needs Yahoo Finance). WebSearch fallback estimate: SPY 12-month return positive (~+20%, absolute filter passes); ranking IWM (~+42%) > QQQ (~+30%) ≈ GLD (~+32%) > SPY (~+20%) > TLT (~+4.5%) → preliminary signal **BUY IWM**, consistent with prior days' estimate. This is the bot's first scheduled rebalance since Phase 2 deployment and it has now been missed for infrastructure reasons, not a strategy call. Account remains idle in cash (last known equity $100,000.00, baseline 2026-05-09). Telegram notification could not be sent. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts immediately. The next routine run with API access restored must treat this as an overdue rebalance and execute the trade on first opportunity, re-verifying the signal with the authoritative script first.**
+
+---
+
+## 2026-06-30 — EOD Snapshot (Tuesday, Day 10 of API blockage) ⚠️ REBALANCE DAY MISSED
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A | **Phase P&L:** N/A
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran. Re-tested `paper-api.alpaca.markets:443` and `api.telegram.org:443` — both still return 403 connect_rejected at the proxy gateway (confirmed via `$HTTPS_PROXY/__agentproxy/status`, organization egress policy denial, not a credentials issue). 10th consecutive trading day of total blockage (Jun 22–30, inclusive of EOD checks). No account data, positions, or orders could be retrieved. No trade executed today — this was the confirmed monthly rebalance date and it has now been fully missed (both the market-open and EOD checks today found APIs blocked). Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Preliminary WebSearch signal remains BUY IWM (~+42% 12-month return), unconfirmed by the authoritative `dual_momentum_signal.py` script. Telegram EOD notification could not be sent — falling back to GitHub commit only; sent a push notification to the human operator instead since Telegram itself is down. **ACTION REQUIRED, ESCALATING: whitelist `paper-api.alpaca.markets`, `api.perplexity.ai`, `api.telegram.org`, and Yahoo Finance hosts in the remote execution environment's egress policy. The bot has now gone an entire scheduled rebalance day with zero trades, zero data, and zero alerts delivered through its normal channel (Telegram) due to infrastructure, not strategy.**
