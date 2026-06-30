@@ -132,3 +132,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran. `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, and `api.telegram.org:443` remain blocked by the remote execution environment's proxy egress policy (7th consecutive trading day: Jun 22–29; proxy returns connect_rejected 403). No account data, positions, or orders could be retrieved. No trades executed today — strategy is Dual Momentum ETF Rotation, which rebalances monthly; **rebalance is TOMORROW June 30 (last trading day of June)**. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Preliminary signal via web search: IWM is the top-ranked asset by 12-month return (~+41.75%) among SPY/QQQ/IWM/TLT/GLD. Telegram EOD notification could not be sent. **CRITICAL: API egress must be restored before market open tomorrow (June 30) for the bot to execute its first-ever trade.**
+
+---
+
+## 2026-06-30 — REBALANCE DAY MISSED (Tuesday, Day 9 of API blockage)
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Confirmed rebalance day:** YES (`is_rebalance_day.py` exit 0)
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** **TODAY WAS THE REBALANCE DAY — NO TRADE EXECUTED, BLOCKED BY INFRASTRUCTURE.** Ran full diagnostic: `paper-api.alpaca.markets`, `api.perplexity.ai`, `api.telegram.org`, and Yahoo Finance (`fc.yahoo.com`, via freshly-installed `yfinance`) all returned 403 connect_rejected at the proxy gateway (organization egress policy denial, confirmed via `$HTTPS_PROXY/__agentproxy/status` — not a credentials issue). 9th consecutive trading day of total blockage (Jun 22–30). Could not run the authoritative `dual_momentum_signal.py` (needs Yahoo Finance). WebSearch fallback estimate: SPY 12-month return positive (~+20%, absolute filter passes); ranking IWM (~+42%) > QQQ (~+30%) ≈ GLD (~+32%) > SPY (~+20%) > TLT (~+4.5%) → preliminary signal **BUY IWM**, consistent with prior days' estimate. This is the bot's first scheduled rebalance since Phase 2 deployment and it has now been missed for infrastructure reasons, not a strategy call. Account remains idle in cash (last known equity $100,000.00, baseline 2026-05-09). Telegram notification could not be sent. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts immediately. The next routine run with API access restored must treat this as an overdue rebalance and execute the trade on first opportunity, re-verifying the signal with the authoritative script first.**

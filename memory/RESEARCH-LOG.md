@@ -204,3 +204,40 @@ N/A — Dual Momentum uses 100% equity in one asset, no VIX-based sizing.
 Whitelist `paper-api.alpaca.markets` and `api.telegram.org` in the remote execution environment's egress policy. Without this, the bot cannot trade or send alerts.
 
 ---
+
+## 2026-06-30 — REBALANCE DAY (Tuesday) ⚠️ TRADE FAILED — API STILL BLOCKED
+
+**Status:** API BLOCKED — 9th consecutive trading day (Jun 22–30). **TODAY WAS THE REBALANCE DAY** — confirmed via `python3 scripts/is_rebalance_day.py` (exit 0). The bot's first-ever trade could NOT be executed.
+
+### API Access Status — Comprehensive Test
+All outbound egress confirmed blocked by the proxy's organization policy (gateway 403 on CONNECT, not a credential issue):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+- `api.telegram.org:443` → 403 connect_rejected
+- `fc.yahoo.com:443` / Yahoo Finance (via `yfinance`, installed fresh this run) → 403 connect_rejected
+- Confirmed via proxy status endpoint (`$HTTPS_PROXY/__agentproxy/status`): all four hosts logged as `connect_rejected` / "gateway answered 403 to CONNECT (policy denial or upstream failure)". Per proxy README, 403s are organization egress policy denials — not to be retried or routed around.
+- GitHub (git push): available — this commit went through.
+
+### Signal — Computed via WebSearch Fallback (NOT the authoritative script — yfinance also blocked)
+Could not run `scripts/dual_momentum_signal.py` (requires yfinance → Yahoo Finance, blocked). WebSearch estimate of trailing 12-month total returns as of ~June 26–30, 2026:
+
+| Rank | Ticker | ~12M Return |
+|------|--------|-------------|
+| 1 | IWM | ~+42% |
+| 2 | QQQ | ~+30% |
+| 3 | GLD | ~+32% (QQQ/GLD order uncertain, both clearly behind IWM) |
+| 4 | SPY | ~+20% |
+| 5 | TLT | ~+4.5% |
+
+SPY 12-month return positive (~+20%) → absolute filter PASSES. Preliminary signal: **BUY IWM** (consistent with the 2026-06-29 preliminary estimate). This is a web-search approximation only — the authoritative `dual_momentum_signal.py` script must be re-run once Yahoo Finance/Alpaca access is restored, before any trade is placed, since exact ranking could differ from estimate.
+
+### Trade Outcome
+**NO TRADE EXECUTED.** Account state, current holding, and order placement are all unreachable — Alpaca API fully blocked. This is the bot's first scheduled rebalance since deployment (Phase 2 start), and it has now been missed due to infrastructure (proxy egress), not a strategy decision.
+
+### Decision
+**NO TRADE — BLOCKED, NOT A SIGNAL DECISION.** As soon as API access is restored, run `python3 scripts/dual_momentum_signal.py` for the authoritative signal, then execute the BUY immediately (late rebalance, not skipped) and log/notify per `routines/market-open.md`.
+
+### Action Required (human) — CRITICAL, ESCALATING
+**9 consecutive trading days of total egress blockage (Jun 22–30).** This is no longer a "monitor" situation — the bot has now missed its actual rebalance date. Whitelist `paper-api.alpaca.markets`, `api.perplexity.ai`, `api.telegram.org`, and Yahoo Finance hosts (`*.yahoo.com`, `query1.finance.yahoo.com`, `query2.finance.yahoo.com`, `fc.yahoo.com`) in the remote execution environment's egress policy immediately. Once restored, the very next routine run should treat this as an overdue rebalance and execute on its first opportunity.
+
+---
