@@ -171,3 +171,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran. Re-tested `paper-api.alpaca.markets:443` and `api.telegram.org:443` — both still return 403 connect_rejected at the proxy gateway (confirmed via `$HTTPS_PROXY/__agentproxy/status`, organization egress policy denial, not a credentials issue). 10th consecutive trading day of total blockage (Jun 22–30, inclusive of EOD checks). No account data, positions, or orders could be retrieved. No trade executed today — this was the confirmed monthly rebalance date and it has now been fully missed (both the market-open and EOD checks today found APIs blocked). Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Preliminary WebSearch signal remains BUY IWM (~+42% 12-month return), unconfirmed by the authoritative `dual_momentum_signal.py` script. Telegram EOD notification could not be sent — falling back to GitHub commit only; sent a push notification to the human operator instead since Telegram itself is down. **ACTION REQUIRED, ESCALATING: whitelist `paper-api.alpaca.markets`, `api.perplexity.ai`, `api.telegram.org`, and Yahoo Finance hosts in the remote execution environment's egress policy. The bot has now gone an entire scheduled rebalance day with zero trades, zero data, and zero alerts delivered through its normal channel (Telegram) due to infrastructure, not strategy.**
+
+---
+
+## 2026-07-01 — EOD Snapshot (Wednesday, Day 12 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A | **Phase P&L:** N/A
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran. `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked by proxy egress policy — 403 connect_rejected confirmed at 20:06 UTC today (12th consecutive trading day: Jun 22–Jul 1). No account data, positions, or orders could be retrieved. No trades executed today. Strategy is Dual Momentum ETF Rotation; the June 30 rebalance (BUY IWM, preliminary WebSearch signal) was missed due to infrastructure blockage and remains overdue — it must be executed on the next routine run with API access restored, after re-verifying the signal with `python3 scripts/dual_momentum_signal.py`. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). S&P 500 Q2 2026 was the best quarter since the pandemic recovery; market closed today with futures slightly positive at +0.72%. Telegram EOD notification could not be sent (blocked). Next regular rebalance: 2026-07-31.
