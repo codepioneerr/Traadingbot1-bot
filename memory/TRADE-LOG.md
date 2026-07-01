@@ -148,6 +148,19 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-07-01 — Morning Routine (Wednesday) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Overdue rebalance:** BUY IWM (Jun 30 missed) | **Next regular rebalance:** 2026-07-31
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran at 09:07 ET. `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, and `api.telegram.org:443` remain blocked by proxy egress policy (11th consecutive trading day: Jun 22–Jul 1). Market research completed via WebSearch fallback: VIX 17.65 (MODERATE); S&P futures +0.72%; WTI ~$70/bbl; Q2 2026 was best quarter since pandemic. No trade executed — today is NOT a rebalance day (next: Jul 31). Overdue rebalance from June 30 (BUY IWM, preliminary signal) still pending API restoration. ISM Manufacturing PMI (June data) due 10 AM ET today — May was 54%. Telegram sector watch could not be sent (blocked). Telegram notification could not be sent.
+
+---
+
 ## 2026-06-30 — EOD Snapshot (Tuesday, Day 10 of API blockage) ⚠️ REBALANCE DAY MISSED
 
 **Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A | **Phase P&L:** N/A
