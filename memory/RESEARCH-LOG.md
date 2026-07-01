@@ -5,6 +5,78 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-01 — Pre-Market (Wednesday) ⚠️ OVERDUE REBALANCE — APIS STILL BLOCKED
+
+**Status:** API BLOCKED — 11th consecutive trading day (Jun 22–Jul 1). Alpaca, Perplexity, Telegram all blocked by proxy egress policy (connect_rejected 403). Fell back to native WebSearch for market data.
+
+**Strategy:** Dual Momentum ETF Rotation (Antonacci)
+**Universe:** SPY, QQQ, IWM, TLT, GLD, SHY
+**Today's action required:** NONE TODAY — not a rebalance day. Next rebalance: **2026-07-31 (last trading day of July).**
+**Overdue rebalance status:** June 30 rebalance was missed (API blocked). When APIs restore, execute overdue BUY IWM trade immediately after running authoritative `dual_momentum_signal.py`.
+
+### API Access Status
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (11th day blocked)
+- `api.perplexity.ai:443` → HTTP 000 (blocked, empty response despite exit 0)
+- `api.telegram.org:443` → HTTP 000 (blocked)
+- GitHub MCP: available (used for git push)
+
+### Account State
+Could not retrieve — API blocked. Last known: no open positions, $100,000.00 equity (baseline 2026-05-09). Account has been idle since inception due to consecutive API blockage preventing the June 30 rebalance.
+
+### Market Context (via WebSearch fallback — July 1, 2026)
+- **VIX:** 17.65 (June 30 close); June range 15.18–23.34, June avg 16.41 → **MODERATE** (15–25)
+- **S&P 500 futures:** +0.72% premarket; sentiment mixed — "slipping after best quarter since 2020"
+- **Q2 2026 performance:** Best quarterly return for US equities since pandemic (2020) — Nasdaq +1.52% and S&P +0.79% on final day of Q2 (June 30)
+- **Oil:** WTI ~$70/bbl; Brent ~$72.25/bbl (-0.96%); Iran-US peace talks in Doha ongoing; oil -24.74% past month
+- **Key catalysts today:**
+  - ISM Manufacturing PMI (June data) due 10:00 AM ET today — May was 54% (highest since May 2022, expansionary)
+  - ~12 earnings reports scheduled, no identified major pre-market movers
+  - SpaceX joining Nasdaq-100 effective July 7 — bullish for QQQ
+- **Leading sectors (Q2/recent):** Semiconductors (runaway leader), Energy, Defense, Industrials, Information Technology
+- **Lagging sectors:** Commercial REITs, Consumer Discretionary, Utilities, Communications
+- **Geopolitical:** Iran-US peace negotiations progressing in Doha; oil supply risk declining
+
+### Sizing Mode
+N/A — Dual Momentum uses 100% equity in one asset, no VIX-based sizing. For reference: VIX 17.65 → would be MODERATE under old strategy.
+
+### Dual Momentum Signal — Preliminary (via WebSearch, NOT authoritative script)
+**SPY absolute filter:** SPY 12-month est. ~+20% → PASS (positive) → proceed to ranking
+
+| Ticker | Est. 12-Month Return | YTD Return | Rank |
+|--------|---------------------|-----------|------|
+| IWM    | ~+42%               | +19.22%   | #1 ← likely signal |
+| GLD    | ~+32%               | unknown   | #2 |
+| QQQ    | ~+30%               | unknown   | #3 |
+| SPY    | ~+20%               | +9.07%    | #4 |
+| TLT    | ~+4.5%              | unknown   | #5 |
+
+**Preliminary signal: IWM** (US small cap) — consistent with prior estimates (Jun 25–30).
+⚠️ Must re-verify with `python3 scripts/dual_momentum_signal.py` before executing the overdue rebalance.
+
+### Rebalance Calendar
+- **OVERDUE:** June 30 rebalance missed — execute BUY IWM on first available day with API access
+- **Next regular rebalance:** 2026-07-31 (last trading day of July)
+- Action when APIs restore: run signal script → verify IWM still #1 → BUY IWM (100% equity)
+- Expected trade: buy_qty = floor($100,000 / IWM_ask_price)
+
+### Trade Ideas
+None for today — Dual Momentum is monthly-only. No intraday or discretionary action warranted.
+
+### Risk Factors
+- Persistent API blockage (11 days) — overdue rebalance compounds with each day of delay
+- IWM signal could theoretically shift between now and when APIs restore (unlikely given +42% 12m lead)
+- SpaceX Nasdaq-100 inclusion (July 7) could temporarily boost QQQ — may not be sufficient to overtake IWM
+- Iran peace talks could accelerate, further weakening oil, potentially benefiting TLT or SHY
+- ISM PMI result today (10 AM) — if below 50 (contraction), may weigh on IWM (small-cap cyclicals)
+
+### Decision
+**NO TRADE** — APIs blocked; not a rebalance day. Monitor for API restoration.
+
+### Action Required (human) — CRITICAL, DAY 11
+**11 consecutive trading days of total egress blockage (Jun 22–Jul 1).** Whitelist `paper-api.alpaca.markets`, `api.perplexity.ai`, `api.telegram.org`, and Yahoo Finance hosts in the remote execution environment's egress policy. The June 30 rebalance trade has now been overdue for 1+ business day. The bot's first-ever trade is pending — execute on next available session with API access.
+
+---
+
 ## 2026-06-29 — Pre-Market (Monday) ⚠️ REBALANCE TOMORROW
 
 **Status:** API BLOCKED — 6th trading day (Jun 22–29). Perplexity, Alpaca, Telegram all blocked by proxy egress policy. Fell back to native WebSearch for market data.
