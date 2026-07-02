@@ -197,3 +197,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Morning combined pre-market + market-open routine ran at ~09:05 ET. APIs remain blocked (12th consecutive trading day: Jun 22–Jul 2): Alpaca (403), Perplexity (403), Telegram (403). yfinance module not installed — signal script cannot run. Market research via WebSearch: VIX 16.59 (Jul 1 close, MODERATE), S&P futures ES −1.31% / NQ −2.60% (broad tech selloff), WTI oil $67.95/bbl (lowest since Feb 27, US-Iran peace progress), ADP +98K (below consensus), June NFP + Warsh Fed speech due today. Today is NOT a rebalance day (next: July 31). Preliminary Dual Momentum signal still points to IWM (#1 est. 12m ~+41.75%). Telegram notification could not be sent. No trades executed.
+
+---
+
+## 2026-07-02 — EOD Snapshot (Thursday, Day 13 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A | **Phase P&L:** N/A
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-07-02, Thursday). `paper-api.alpaca.markets:443` remains blocked — proxy returned 403 connect_rejected at 20:05 UTC today (confirmed via `$HTTPS_PROXY/__agentproxy/status`; Day 13 of blockage spanning Jun 22–Jul 2). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31). Overdue rebalance from Jun 30 (preliminary signal: BUY IWM ~+42% 12m, absolute filter passes) remains pending API restoration — must re-verify with `python3 scripts/dual_momentum_signal.py` before placing any order. Today's macro: Jun NFP report + Warsh Fed speech were due; VIX ~16.59 (MODERATE). Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent (api.telegram.org:443 also blocked). GitHub commit/push successful as the only live channel. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in the remote execution environment's egress policy.**
