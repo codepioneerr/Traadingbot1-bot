@@ -184,3 +184,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran. `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked by proxy egress policy — 403 connect_rejected confirmed at 20:06 UTC today (12th consecutive trading day: Jun 22–Jul 1). No account data, positions, or orders could be retrieved. No trades executed today. Strategy is Dual Momentum ETF Rotation; the June 30 rebalance (BUY IWM, preliminary WebSearch signal) was missed due to infrastructure blockage and remains overdue — it must be executed on the next routine run with API access restored, after re-verifying the signal with `python3 scripts/dual_momentum_signal.py`. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). S&P 500 Q2 2026 was the best quarter since the pandemic recovery; market closed today with futures slightly positive at +0.72%. Telegram EOD notification could not be sent (blocked). Next regular rebalance: 2026-07-31.
+
+---
+
+## 2026-07-02 — Morning Routine (Thursday)
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (20 trading days)
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran at ~09:05 ET. APIs remain blocked (12th consecutive trading day: Jun 22–Jul 2): Alpaca (403), Perplexity (403), Telegram (403). yfinance module not installed — signal script cannot run. Market research via WebSearch: VIX 16.59 (Jul 1 close, MODERATE), S&P futures ES −1.31% / NQ −2.60% (broad tech selloff), WTI oil $67.95/bbl (lowest since Feb 27, US-Iran peace progress), ADP +98K (below consensus), June NFP + Warsh Fed speech due today. Today is NOT a rebalance day (next: July 31). Preliminary Dual Momentum signal still points to IWM (#1 est. 12m ~+41.75%). Telegram notification could not be sent. No trades executed.
