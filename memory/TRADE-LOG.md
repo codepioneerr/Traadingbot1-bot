@@ -210,3 +210,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran (2026-07-02, Thursday). `paper-api.alpaca.markets:443` remains blocked — proxy returned 403 connect_rejected at 20:05 UTC today (confirmed via `$HTTPS_PROXY/__agentproxy/status`; Day 13 of blockage spanning Jun 22–Jul 2). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31). Overdue rebalance from Jun 30 (preliminary signal: BUY IWM ~+42% 12m, absolute filter passes) remains pending API restoration — must re-verify with `python3 scripts/dual_momentum_signal.py` before placing any order. Today's macro: Jun NFP report + Warsh Fed speech were due; VIX ~16.59 (MODERATE). Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent (api.telegram.org:443 also blocked). GitHub commit/push successful as the only live channel. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in the remote execution environment's egress policy.**
+
+---
+
+## 2026-07-03 — Morning Routine (Friday) — MARKET CLOSED (Independence Day observed)
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran. US markets FULLY CLOSED today — Independence Day (July 4) falls on Saturday, observed on Friday July 3. Half-day was Thursday July 2 (1 PM ET close). Markets reopen Monday July 6. APIs remain blocked (Day 14: Jun 22–Jul 3): Alpaca (403), Perplexity (403), Telegram (403) — confirmed via `$HTTPS_PROXY/__agentproxy/status`. No account data retrievable. No trades executed — today is both a holiday AND not a rebalance day (next: July 31). Market context via WebSearch: VIX 16.15 at July 2 close (MODERATE); S&P 500 closed flat at 7,483 on July 2; Dow hit ATH at 52,900 (+1.14% on rotation away from tech); Nasdaq-100 −1.61% (tech selloff); June NFP miss (57K vs 113K expected) quiets rate-hike pressure. Preliminary Dual Momentum signal still IWM (~+41.75% estimated 12m return, absolute filter passes). Overdue rebalance from June 30 (BUY IWM) still pending API restoration + signal re-verification via `dual_momentum_signal.py`. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). **Next routine run: Monday July 6 (market reopens). If APIs restored by then, execute overdue IWM buy after re-verifying signal.**

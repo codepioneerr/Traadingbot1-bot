@@ -5,6 +5,51 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-03 — Pre-Market (Friday) — MARKET CLOSED (Holiday)
+
+**Status:** API BLOCKED — Day 14 of blockage (Jun 22–Jul 3). Alpaca, Perplexity, Telegram all blocked by proxy egress (403 connect_rejected). WebSearch fallback used.
+
+**Market Status:** US stock markets (NYSE, Nasdaq) FULLY CLOSED today — July 4 (Independence Day) falls on Saturday, so the holiday is observed on Friday July 3. The half-day close was Thursday July 2 at 1 PM ET. Markets reopen Monday July 6.
+
+### Market Context (via WebSearch — data as of July 2 close)
+
+| Indicator | Value | Note |
+|-----------|-------|------|
+| VIX | ~16.15 | Down 2.65% from prev day; MODERATE (15–25 range) |
+| S&P 500 | 7,483.24 | Essentially flat on July 2 (+0.01); Dow hit ATH (+1.14%) |
+| Nasdaq-100 | — | −1.61% on July 2 (tech selloff) |
+| WTI oil | ~$67.95/bbl | Near 2026 lows |
+| June NFP | 57K | Massive miss vs 113K consensus; prior months revised −74K total |
+| Unemployment | 4.2% | Labor force participation fell to 61.5% (lowest since Mar 2021) |
+
+### Key Macro Events (since last entry)
+- **June NFP Miss (released July 2):** Only 57K jobs vs 113K expected. Weak labor market quiets Fed rate-hike talk. Market reaction: Dow +1.14% (rotation to defensives/value), QQQ −1.61% (risk-off for growth), S&P flat.
+- **Dow at all-time high:** 52,900.07 on July 2 — rotation from tech into cyclicals/value on soft jobs data.
+- **Fed implications:** Weak NFP reduces probability of rate hikes; potentially positive for TLT (bonds) and GLD (gold) but not reflected yet in 12-month rankings.
+
+### Sizing Mode
+**MODERATE** — VIX 16.15 (15–25 range). Strategy is Dual Momentum (100% in single asset), VIX-based sizing is NOT applicable. Included for legacy reference only.
+
+### Dual Momentum Signal (WebSearch estimate, NOT authoritative)
+- SPY absolute filter: PASSES (12m return ~+25.67% > 0%)
+- Estimated ranking: IWM (~+41.75%) > GLD/QQQ > SPY (~+25.67%) > TLT (~+4.5%)
+- Preliminary signal: **IWM** — consistent across all estimates since June 22
+- Authoritative signal CANNOT be run — `dual_momentum_signal.py` requires yfinance, which requires Yahoo Finance (blocked)
+
+### Trade Ideas
+None — market closed (holiday). Strategy is monthly rebalance only. Next scheduled: 2026-07-31.
+
+**Overdue rebalance from June 30 (BUY IWM) still pending API restoration.** When APIs are unblocked, re-run `python3 scripts/dual_momentum_signal.py` before placing any order.
+
+### Decision
+**NO TRADE — market closed (holiday). APIs still blocked (Day 14).**
+
+### Action Required
+1. Whitelist `paper-api.alpaca.markets`, `api.perplexity.ai`, `api.telegram.org`, and Yahoo Finance hosts in remote execution environment egress policy.
+2. On first routine run with API access restored (Monday July 6 or later): re-verify signal with authoritative script, then execute overdue IWM buy.
+
+---
+
 ## 2026-07-02 — Pre-Market (Thursday)
 
 **Status:** API BLOCKED — 9th trading day (Jun 22–Jul 2). Alpaca, Perplexity, Telegram all blocked by proxy egress (403). WebSearch fallback used. yfinance unavailable (module missing).
