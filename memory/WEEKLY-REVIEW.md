@@ -7,6 +7,73 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## Week ending 2026-07-03 — Weekly Review #2
+
+### Portfolio Stats
+
+| Metric | Value |
+|--------|-------|
+| Portfolio (EOW) | $100,000.00 (last known — API blocked) |
+| Week return | 0% (idle cash, APIs blocked all week) |
+| S&P 500 week return | ~flat (+0.0%–+0.3% est.) — abbreviated 3-day week (Jun 30 / Jul 1 / Jul 2 half-day; Jul 3 closed) |
+| Bot vs S&P | ~0% vs S&P (both essentially flat; bot held no position) |
+| Phase P&L | $0.00 / 0.00% |
+| Trades this week | 0 (W:0 / L:0 / Open:0) |
+| Win rate | N/A |
+| Profit factor | N/A |
+| Best trade | None |
+| Worst trade | None |
+| Sizing mode | N/A (Dual Momentum — monthly rebalance only) |
+
+### Closed Trades This Week
+
+None — bot idle all week; APIs blocked; critical June 30 rebalance missed for the second consecutive week.
+
+### Open Positions (EOW)
+
+None — account is in all-cash state. Overdue BUY IWM signal pending API restoration.
+
+### Market Context (WebSearch — Perplexity blocked)
+
+- **S&P 500:** ~flat for the abbreviated week; closed at ~7,483 on Jul 2 (last trading day)
+- **Dow Jones:** Hit all-time high at 52,900 (+1.14% on Jul 2) — rotation away from tech into value/cyclicals
+- **Nasdaq-100:** −1.61% on Jul 2 — tech selloff (AI cost/spending concerns persist)
+- **VIX:** 16.15 at Jul 2 close — MODERATE; slightly improved from prior week
+- **June NFP:** 57K vs 113K expected — significant miss, quieted rate-hike pressure; dollar weakened
+- **Macro theme:** Growth slowdown signals (weak NFP) offset by Dow ATH driven by value/cyclical rotation; Q2 2026 confirmed best quarter since pandemic recovery
+- **July 3:** Full market close (Independence Day observed). Markets reopen July 6.
+
+### What Worked
+
+- State persistence via git continued to function correctly across all API-blocked days
+- WebSearch fallback tracked market context (VIX, macro data, sector performance) adequately
+- Bot correctly identified and logged the overdue rebalance for execution once APIs restore
+- Dual Momentum strategy is unchanged and structurally sound — IWM signal has been consistent across multiple estimation passes for 2+ weeks
+
+### What Didn't Work
+
+- **API egress STILL blocked** — 15 consecutive trading days (Jun 22–Jul 3): Alpaca, Perplexity, and Telegram all unreachable (HTTP 000 / proxy 403)
+- **June 30 rebalance was missed** — the bot's only scheduled monthly action could not execute; second consecutive week of total trading inactivity due to infrastructure failure
+- **No Telegram notifications sent** — user has received zero mobile alerts in 3 weeks
+- **No live equity data** — impossible to verify paper account state; all figures are estimates from Day 0 baseline
+- **No Perplexity research** — weekly sector scan and momentum research could not run; WebSearch fallback insufficient for signal computation
+
+### Key Lessons
+
+1. **15 days of blockage confirms this is a systemic configuration issue, not a transient failure.** The proxy egress policy is a hard whitelist; without explicit host whitelisting, the bot has zero external API access.
+2. **Monthly rebalance strategy is resilient to multi-day blockage in most months**, but the one action day per month is the critical exception — missing June 30 means sitting in cash instead of the top-momentum ETF for the entire month.
+3. **The overdue rebalance creates a decision on July 6:** execute the June 30 signal immediately (late is better than never, and signal is unconfirmed) or wait until July 31 (next scheduled rebalance). Current plan: execute immediately after re-verifying via `dual_momentum_signal.py`.
+
+### Strategy Adjustments
+
+No rule changes — Dual Momentum rules are correct and tested. Operational prerequisite only: restore API egress. On first restored access (July 6): run `python3 scripts/dual_momentum_signal.py`, confirm IWM signal, place BUY IWM at market open, confirm fill, notify Telegram.
+
+### Grade: **D** (Infrastructure Failure — Critical Action Missed)
+
+Rationale: The June 30 rebalance — the bot's only scheduled action for the entire month — was missed for the second straight week due to proxy egress blockage. Core function (trade execution, notifications, live data) has been inoperative for 15 consecutive trading days. The abbreviated holiday week and flat market limit the P&L cost so far, but the grade cannot improve until APIs are restored and the overdue trade is executed.
+
+---
+
 ## Week ending 2026-06-27 — Weekly Review #1
 
 ### Portfolio Stats
