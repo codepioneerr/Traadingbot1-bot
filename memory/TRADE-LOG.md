@@ -250,3 +250,16 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran. US markets were FULLY CLOSED today — Independence Day (July 4) falls on Saturday, observed on Friday July 3. Markets reopen Monday July 6. APIs remain blocked for the 15th consecutive trading day (Jun 22–Jul 3): Alpaca returned HTTP 000, Telegram returned HTTP 000 — proxy egress policy still blocking all outbound HTTPS to these hosts (confirmed via `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — market was closed and today is not a rebalance day (next: July 31). Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Overdue rebalance from June 30 (preliminary signal: BUY IWM, ~+41.75% estimated 12m return, absolute filter passes) remains pending API restoration and signal re-verification via `python3 scripts/dual_momentum_signal.py`. Telegram EOD notification could not be sent (HTTP 000). **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts immediately. Monday July 6 is the first opportunity to execute the overdue rebalance — must run `dual_momentum_signal.py` first and verify signal before placing any order.**
+
+---
+
+## 2026-07-06 — EOD Snapshot (Monday, Day 17 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A | **Phase P&L:** N/A
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-07-06, Monday — first trading day after July 4 holiday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (confirmed via `$HTTPS_PROXY/__agentproxy/status`; Day 17 of blockage spanning Jun 22–Jul 6). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31). Overdue rebalance from Jun 30 (preliminary signal: BUY IWM, absolute filter passes) remains pending API restoration — must re-verify with `python3 scripts/dual_momentum_signal.py` before placing any order. Today's market via WebSearch: S&P 500 +0.68% (SPY ~$748.30), Nasdaq/tech surged post-holiday, VIX 15.97 (MODERATE), IWM ~$297–300 range. Dual Momentum signal still points to IWM as #1 momentum ETF (~+38.7% 12m). Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; falling back to DAILY-SUMMARY.md. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in the remote execution environment's egress policy. 17 consecutive trading days blocked.**
