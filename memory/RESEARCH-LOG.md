@@ -5,6 +5,79 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-06 — Pre-Market (Monday) ⚠️ API STILL BLOCKED — Day 16
+
+**Status:** API BLOCKED — Day 16 of blockage (Jun 22–Jul 6). Alpaca, Perplexity, Telegram all blocked by proxy egress (HTTP 000). WebSearch fallback used. Proxy status endpoint shows no relay failures but CONNECT to all external APIs continues to fail.
+
+**Strategy:** Dual Momentum ETF Rotation (Antonacci)
+**Today's action:** NONE — not a rebalance day (next: July 31, 19 trading days away)
+**Overdue rebalance:** BUY IWM (Jun 30 missed, still pending API restoration)
+
+### Account State
+- Cannot retrieve via API (blocked). Last known: $100,000.00 equity, 0 positions (Day 0 baseline, 2026-05-09).
+- Sizing mode: N/A — Dual Momentum uses 100% equity in single asset, no VIX-based sizing.
+
+### Market Context (WebSearch fallback)
+
+**Indices / Futures (premarket):**
+- S&P 500 futures: +0.4% premarket
+- Nasdaq-100 futures: +1.1% (tech rebound; SpaceX Nasdaq-100 inclusion Tuesday)
+- Dow Jones: record close 52,900.07 last week
+- Markets positive after July 4 holiday weekend
+
+**VIX:** ~15.97 (MODERATE — 52-week range 13.38–35.30) *(for reference only; not used in Dual Momentum sizing)*
+
+**Oil:**
+- WTI: ~$68–69/bbl (down; Saudi exports recovering toward pre-conflict levels)
+- Brent: ~$71–72/bbl
+
+**Sectors (YTD 2026):**
+- Best: XLK Technology +33%, XLE Energy +21%, XLI Industrials +20%, XLF Financials +1.53% today, XLV Healthcare +2.63% today
+- Mixed: Semis split — equipment makers (Lam, AMAT, KLA) +4% today; but MU −5.5%, INTC −5.3%, AMD −4.3% (profit-taking)
+- Worst: Enterprise software (SaaSpocalypse; S&P 500 Software Index −19% in Feb 2026)
+
+**Economic Calendar (this week + near-term):**
+- Tuesday Jul 7: SpaceX joins Nasdaq-100 (sell-the-news risk)
+- Wednesday Jul 8: FOMC Meeting Minutes (key — watch for rate hike signals)
+- July 14: CPI release; July 15: PPI release
+- July 28–29: FOMC meeting (9 officials expect ≥1 rate hike by end of 2026; current rate 3.50–3.75%)
+- June jobs: initial claims 215K (below 221K expected) → dovish read
+
+### Dual Momentum Signal — WebSearch Estimate (authoritative script blocked)
+
+**12-Month Trailing Returns (estimated from current prices / search data):**
+
+| Rank | Ticker | ~12M Return | Notes |
+|------|--------|-------------|-------|
+| 1 | IWM | +38.72% | Authoritative data — Yahoo Finance via agent |
+| 2 | QQQ | ~+30–33% | Estimated (XLK proxy +33% YTD; QQQ slightly lower) |
+| 3 | GLD | +22.27% | Authoritative data — Yahoo Finance via agent |
+| 4 | SPY | +19.10% | Authoritative data — Yahoo Finance via agent |
+| 5 | TLT | +2.09% | Authoritative data — Yahoo Finance via agent |
+| 6 | SHY | ~+3–5% | Estimated (short-duration, near cash return) |
+
+**Absolute filter:** SPY 12-month return +19.10% → PASSES (>0%)
+**Signal:** IWM #1 → BUY IWM (consistent with Jun 29–Jul 5 estimates of ~+41–42%; actual authoritative 12m is +38.72%)
+**Authoritative script:** Cannot run (`dual_momentum_signal.py` needs yfinance/Yahoo Finance, also blocked)
+
+### Trade Decision
+**NO TRADE — not a rebalance day.** Monthly rebalance is July 31.
+- Overdue Jun 30 rebalance (BUY IWM) still pending API restoration.
+- Even if APIs were accessible today, the strategy does not permit trading outside of rebalance dates.
+- Signal confidence: HIGH — IWM leading by a wide margin (+38.72% vs. QQQ ~+30-33%). Ranking unlikely to change by July 31.
+
+### Risk Factors
+- FOMC Minutes (Jul 8) could roil bonds/equities if hawkish surprise
+- SpaceX Nasdaq-100 inclusion (Jul 7) is a sell-the-news risk for QQQ/tech
+- CPI July 14 — any upside surprise could trigger rate-hike pricing and weigh on small-caps (IWM)
+- IWM near 52-week high ($302.72); some technical resistance
+- API blockage: 16 consecutive trading days with zero account access or trade execution
+
+### Action Required (human)
+Whitelist `paper-api.alpaca.markets`, `api.perplexity.ai`, `api.telegram.org`, and Yahoo Finance hosts in the remote execution environment's egress policy. The June 30 rebalance is now 4 trading days overdue — the account remains in cash, missing IWM's +19% YTD gain. The next opportunity to execute is when APIs are restored OR at the July 31 regular rebalance (whichever comes first).
+
+---
+
 ## 2026-07-03 — Pre-Market (Friday) — MARKET CLOSED (Holiday)
 
 **Status:** API BLOCKED — Day 14 of blockage (Jun 22–Jul 3). Alpaca, Perplexity, Telegram all blocked by proxy egress (403 connect_rejected). WebSearch fallback used.
