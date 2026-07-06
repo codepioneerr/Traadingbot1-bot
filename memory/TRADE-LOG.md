@@ -213,6 +213,20 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-07-06 — Morning Routine (Monday) ⚠️ API STILL BLOCKED — Day 16
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (19 trading days)
+**Overdue rebalance:** BUY IWM (Jun 30 missed) — signal confirmed via WebSearch, pending API restoration
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran at ~09:07 ET. Markets reopened today after Independence Day holiday (July 4, observed July 3). Alpaca API, Perplexity, and Telegram remain blocked (HTTP 000 — proxy egress policy, day 16: Jun 22–Jul 6). No account data retrievable. No trade executed — today is NOT a rebalance day (next: July 31). Strategy is Dual Momentum ETF Rotation; no intraday action permitted outside of monthly rebalance. Dual Momentum signal via WebSearch: IWM 12-month +38.72% (#1), QQQ est. ~+30-33% (#2), GLD +22.27% (#3), SPY +19.10% (#4), TLT +2.09% (#5) — SPY absolute filter passes → signal remains BUY IWM. This is authoritative Yahoo Finance data retrieved via WebSearch agent (not the `dual_momentum_signal.py` script, still blocked). VIX 15.97 (MODERATE), S&P futures +0.40%, Nasdaq futures +1.10%. Telegram sector watch could not be sent (blocked); fell back to DAILY-SUMMARY.md. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). **API blockage is now 16 consecutive trading days — the account has missed IWM's +19% YTD gain since the Jun 30 rebalance.**
+
+---
+
 ## 2026-07-03 — Morning Routine (Friday) — MARKET CLOSED (Independence Day observed)
 
 **Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A
