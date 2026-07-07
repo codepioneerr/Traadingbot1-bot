@@ -5,6 +5,58 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-07 — Morning Routine (Tuesday) ⚠️ API STILL BLOCKED — Day 18
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (18 trading days)
+**Overdue rebalance:** BUY IWM (Jun 30 missed, pending API restoration)
+**API Status:** Alpaca, Perplexity, Telegram — ALL BLOCKED (403 connect_rejected via proxy egress policy, Day 18: Jun 22–Jul 7)
+
+### Account State
+Could not retrieve — Alpaca API blocked. Last known: $100,000.00 (Day 0 baseline, 2026-05-09). No positions held.
+
+### Market Context (WebSearch fallback)
+- **VIX:** 15.88 → MODERATE (irrelevant to this strategy — 100% equity, no VIX sizing)
+- **S&P 500 futures:** −0.25% (chip stocks pressured by Samsung Q2 disappointment, Asian selloff)
+- **WTI crude:** $68.99/bbl (+0.64%); **Brent:** ~$72/bbl (near 4-month lows; OPEC raising quotas)
+- **10-year Treasury yield:** ~4.49% (rising on Persian Gulf shipping attack reports)
+- **S&P 500 close (Jul 6):** 7,537.43 (+0.72%); **Dow:** 53,055.91 (record close)
+- **Notable movers:** Rivian +7%+ (Q2 deliveries beat), TeraWulf +16%+ (Anthropic 20-yr data center deal)
+- **Upcoming events:** PepsiCo earnings (Thu), Delta Air Lines (Fri), EIA crude inventories, Consumer Credit
+
+### Dual Momentum Signal (WebSearch estimate — NOT authoritative; run `dual_momentum_signal.py` on API restore)
+SPY 12-month return: **+24.27%** → Absolute filter PASSES (equity momentum positive)
+
+| Rank | Ticker | Est. 12M Return |
+|------|--------|----------------|
+| 1 | IWM | +34.78% |
+| 2 | QQQ | +29.86% |
+| 3 | GLD | ~+22–32% (conflicting sources) |
+| 4 | SPY | +24.27% |
+| 5 | TLT | +2.09% |
+| 6 | SHY | ~+4–5% (cash proxy) |
+
+**Preliminary signal: BUY IWM** — consistent with prior weeks. Must re-verify with authoritative script before executing.
+
+### Sizing Mode
+N/A — Dual Momentum uses 100% equity in one asset. No VIX-based sizing. No intraday stops.
+
+### Trade Ideas
+None — strategy is monthly-only (next rebalance: 2026-07-31). No intraday action warranted.
+Overdue IWM buy (from Jun 30) must be executed ASAP on API restoration — verify signal first.
+
+### Decision
+**NO TRADE** — not a rebalance day. Strategy holds cash until API restored + rebalance confirmed.
+
+### Action Required (human) — Day 18 ESCALATION
+Whitelist in remote execution environment egress policy:
+- `paper-api.alpaca.markets` (Alpaca trading + data)
+- `api.perplexity.ai` (research)
+- `api.telegram.org` (alerts)
+- Yahoo Finance hosts (`query1.finance.yahoo.com`, `query2.finance.yahoo.com`)
+The overdue IWM rebalance has now been pending 5 trading days since Jun 30.
+
+---
+
 ## 2026-07-06 — Pre-Market (Monday) ⚠️ API STILL BLOCKED — Day 16
 
 **Status:** API BLOCKED — Day 16 of blockage (Jun 22–Jul 6). Alpaca, Perplexity, Telegram all blocked by proxy egress (HTTP 000). WebSearch fallback used. Proxy status endpoint shows no relay failures but CONNECT to all external APIs continues to fail.
