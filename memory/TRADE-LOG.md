@@ -276,3 +276,23 @@ Format: append only — never edit past entries.
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran (2026-07-07, Tuesday). `paper-api.alpaca.markets:443` remains blocked — proxy returned 403 connect_rejected (confirmed via `$HTTPS_PROXY/__agentproxy/status`; Day 18 of blockage spanning Jun 22–Jul 7). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31). Overdue rebalance from Jun 30 (preliminary signal: BUY IWM, absolute filter passes) remains pending API restoration. Today's market via WebSearch: S&P 500 ~7,537 area, VIX ~15.57–15.87 (MODERATE), IWM trading at $298.90 (range $297.62–$300.41, +22.1% YTD, +41% 12m). Dual Momentum signal continues to favor IWM as #1 momentum ETF — the account has now missed 18 trading days of IWM's gains (+41% 12m). Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; falling back to DAILY-SUMMARY.md. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in the remote execution environment's egress policy. 18 consecutive trading days blocked.**
+
+---
+
+## 2026-07-08 — Morning Routine (Wednesday, Day 19 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (17 trading days)
+**Overdue rebalance:** BUY IWM (Jun 30 missed) — signal re-confirmed via WebSearch
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran (2026-07-08, Wednesday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 19 of blockage spanning Jun 22–Jul 8). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31). Overdue rebalance from Jun 30 (preliminary signal: BUY IWM) remains pending API restoration.
+
+**Today's macro (via WebSearch):** US-Iran ceasefire collapsed — WTI crude +6.2% to $74.79/bbl, Brent +6.1% to $78.66/bbl; VIX 16.36 (+5.07%, MODERATE); ES futures +0.48%, NQ +1.10%; tech/semis under premarket pressure (NVDA -1.7%); FOMC minutes (first under Chair Warsh) due today. IWM last close ~$295.52.
+
+**Dual Momentum signal (WebSearch est.):** IWM +40.4% 12m (#1) > GLD +32.18% > QQQ +30.58% > SPY ~+20% > TLT <+5%. SPY absolute filter passes. Signal: BUY IWM (consistent with prior 8 sessions). Must re-verify via `dual_momentum_signal.py` before placing.
+
+Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in egress policy. 19 consecutive trading days blocked.**

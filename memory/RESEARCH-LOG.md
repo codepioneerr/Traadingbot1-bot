@@ -527,3 +527,64 @@ SPY 12-month return positive (~+20%) → absolute filter PASSES. Preliminary sig
 **9 consecutive trading days of total egress blockage (Jun 22–30).** This is no longer a "monitor" situation — the bot has now missed its actual rebalance date. Whitelist `paper-api.alpaca.markets`, `api.perplexity.ai`, `api.telegram.org`, and Yahoo Finance hosts (`*.yahoo.com`, `query1.finance.yahoo.com`, `query2.finance.yahoo.com`, `fc.yahoo.com`) in the remote execution environment's egress policy immediately. Once restored, the very next routine run should treat this as an overdue rebalance and execute on its first opportunity.
 
 ---
+
+## 2026-07-08 — Morning Research (Wednesday) ⚠️ API STILL BLOCKED — Day 19
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (17 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed via WebSearch below
+
+### API Access Status
+All outbound egress confirmed blocked (Day 19: Jun 22–Jul 8):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch)
+
+**VIX:** 16.36 (+5.07% intraday) → **Sizing mode: MODERATE** (if applicable)
+
+**S&P 500 / Nasdaq Futures:**
+- ES (S&P 500 E-Mini): +0.48%
+- NQ (Nasdaq-100 E-Mini): +1.10%
+- Note: Futures tumbled sharply early on US-Iran ceasefire collapse before partial recovery
+
+**Oil / Macro Shock:** WTI crude +6.2% to $74.79/bbl; Brent +6.1% to $78.66/bbl — US-Iran ceasefire declared "over" by Trump after fresh strikes. This is the dominant risk driver today.
+
+**Tech Pressure:** AI/semis under pressure — NVDA -1.7%, IBM -3.3%, PLTR -3.1%, AMZN -1.7% premarket. Samsung weak guidance cited.
+
+**Key Economic Events Today:**
+- FOMC Minutes (June meeting, first under Chair Kevin Warsh) — key rate-cut signal watch
+- EIA Crude Oil Inventories (elevated importance given oil spike)
+- MBA Mortgage Applications
+- No CPI or jobs data today
+
+**IWM Last Close:** ~$295.52 (Jul 7); 52-week range $212.34–$302.72; YTD outperforming S&P 500
+
+### Dual Momentum Signal Estimate (via WebSearch — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+39–40% est. | 52w low $212.34 → $295.52 = ~+39.2% price + ~1.2% div ≈ +40.4% |
+| 2 | GLD | +32.18% | Confirmed via FinanceCharts |
+| 3 | QQQ | +30.58% | Confirmed via FinanceCharts |
+| 4 | SPY | ~+18–22% est. | Absolute filter: PASSES (positive) |
+| 5 | TLT | <+5% est. | Under pressure with rates/oil uncertainty |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (same as previous 8 sessions) — absolute filter passes, IWM #1.
+*Must re-verify with `python3 scripts/dual_momentum_signal.py` before any trade, once API restored.*
+
+### Today's Action
+**NOT a rebalance day.** Next scheduled rebalance: 2026-07-31. No trades. No intraday action permitted by strategy.
+
+**Overdue rebalance note:** The June 30 rebalance was missed due to API blockage. As soon as APIs are restored, run `dual_momentum_signal.py` → if IWM still #1, BUY IWM immediately. Do not wait for July 31.
+
+### Risk Notes
+- US-Iran geopolitical escalation: crude oil spike is inflationary, risk-off. VIX rising.
+- FOMC minutes (Warsh, first meeting): hawkish surprise could pressure both equities and TLT.
+- IWM is small-cap/domestic — tends to be more sensitive to domestic risk-off shocks. Watch for IWM pullback.
+- This does NOT change the monthly signal; do not exit early.
+
+### Decision
+**NO TRADE** — not rebalance day. Strategy permits no intraday or discretionary action.
