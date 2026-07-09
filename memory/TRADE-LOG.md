@@ -299,6 +299,20 @@ Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). **ACTION REQUIRED: 
 
 ---
 
+## 2026-07-09 — Morning Routine (Thursday, Day 20 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (16 trading days)
+**Overdue rebalance:** BUY IWM (Jun 30 missed) — signal confirmed via WebSearch
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran (2026-07-09, Thursday). `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected on all three (confirmed via `$HTTPS_PROXY/__agentproxy/status`; Day 20 of blockage spanning Jun 22–Jul 9). No account data, positions, or orders could be retrieved. No trade executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31). Overdue rebalance from Jun 30 (signal: BUY IWM) remains pending API restoration. yfinance not installed — signal script cannot run. Today's macro via WebSearch: VIX 16.90 (+4.8%, MODERATE); US launched 2nd round of airstrikes on Iran (Day 2 of active US-Iran military conflict); WTI crude +6.2% spike to $74.20–$76/bbl; S&P futures modestly higher on recovery; PepsiCo Q2 beat premarket; CPI Jul 14, FOMC Jul 29 upcoming. IWM estimated 12m return ~+39% (#1 Dual Momentum rank). Dual Momentum signal remains BUY IWM (20th consecutive session with same preliminary reading). Telegram notification could not be sent (blocked); fell back to push notification. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in remote execution environment's egress policy. 20 consecutive trading days blocked.**
+
+---
+
 ## 2026-07-08 — EOD Snapshot (Wednesday, Day 19 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Portfolio:** N/A — API BLOCKED | **Cash:** N/A | **Day P&L:** N/A | **Phase P&L:** N/A

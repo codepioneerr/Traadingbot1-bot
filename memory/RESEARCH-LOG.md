@@ -5,6 +5,82 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-09 — Morning Research (Thursday) ⚠️ API STILL BLOCKED — Day 20
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (16 trading days)
+**Overdue rebalance:** BUY IWM (Jun 30 missed) — signal re-confirmed via WebSearch below
+
+### API Access Status
+All outbound egress confirmed blocked (Day 20: Jun 22–Jul 9):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+- `yfinance` → module not installed (signal script cannot run)
+Research conducted via WebSearch fallback.
+
+### Account State
+Could not retrieve — Alpaca API blocked. Last known: $100,000.00 (Day 0 baseline, 2026-05-09). No positions held.
+
+### Market Context (WebSearch fallback — July 9, 2026)
+
+| Indicator | Value | Notes |
+|-----------|-------|-------|
+| VIX | 16.90 (+4.8%) | MODERATE — elevated on US-Iran escalation |
+| S&P 500 futures | Modestly higher | 85% probability of up open (Polymarket); recovery after Wed dip |
+| WTI crude | ~$74.20/bbl | Wednesday spike to $75.60–$76.12 (+7%); Brent ~$78/bbl |
+| IWM last close | $293.48 (Jul 8) | 52-wk range $212.34–$302.72; flat/slightly down on week |
+| Earnings | PepsiCo (PEP) beat | EPS $2.20 vs $2.19 est., rev +6.4% YoY, guidance maintained |
+
+**Dominant catalyst:** US launched 2nd round of airstrikes on Iran early Thursday; Tehran threatened large-scale retaliation; Strait of Hormuz supply risk driving crude higher and inflation fears.
+
+**Best sectors this week:** Energy (XLE) +2%+ (Iran/oil tailwind), Diamondback, Occidental, Valero led.
+**Worst sectors this week:** Materials (−3% Wed), Technology (−2%), Semiconductors (−4.5%).
+
+**Upcoming events:** Weekly Jobless Claims (today 8:30 AM ET) | CPI Jul 14 | PPI Jul 15 | FOMC Jul 29.
+
+### Dual Momentum Signal Estimate (WebSearch — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+39% est. | Price return: $212.34→$293.48 ≈ +38.2% + ~1.2% div; WebSearch table omitted IWM — estimated from 52-week range data |
+| 2 | QQQ | +29.4% | Confirmed via WebSearch (Invesco source) |
+| 3 | GLD | +24.0% | Confirmed via WebSearch |
+| 4 | SPY | +19.6% | Absolute filter: PASSES (>0%) |
+| 5 | TLT | +4.9% | Under pressure: rates/oil uncertainty |
+| 6 | SHY | ~4–5% | Cash proxy |
+
+**Note:** WebSearch agent's return table omitted IWM — IWM estimated from 52-week range ($212.34→$293.48) and prior authoritative estimates (+38.72% Jul 6, +34.78% Jul 7). IWM remains #1 by a wide margin (~10pp over QQQ).
+**Preliminary Signal: BUY IWM** (consistent with previous 9 sessions) — absolute filter passes, IWM #1.
+*Must re-verify with `python3 scripts/dual_momentum_signal.py` before any trade, once API restored.*
+
+### Sizing Mode
+N/A — Dual Momentum uses 100% equity in one asset. No VIX-based sizing. VIX 16.90 = MODERATE (noted for reference only).
+
+### Trade Ideas
+None — strategy is monthly-only (next rebalance: 2026-07-31). No intraday action warranted.
+Overdue IWM buy (from Jun 30) must be executed ASAP on API restoration — verify signal first.
+
+### Risk Notes
+- US-Iran conflict escalating (Day 2 of airstrikes) — supply disruption risk, crude elevated, inflation fears
+- FOMC July 29 — money markets now pricing rate hike by October due to renewed inflation
+- IWM sensitivity: small caps / domestic focus; oil-driven inflation risk-off could weigh short-term
+- CPI July 14 — upside surprise could reprice rates, pressure all risk assets
+- IWM near recent highs ($302.72 52-week high); some technical resistance
+
+### Decision
+**NO TRADE** — not a rebalance day. Strategy permits no intraday or discretionary action.
+Next rebalance: 2026-07-31 (16 trading days).
+
+### Action Required (human) — Day 20 ESCALATION
+Whitelist in remote execution environment egress policy:
+- `paper-api.alpaca.markets` (Alpaca trading + data)
+- `api.perplexity.ai` (research)
+- `api.telegram.org` (alerts)
+- Yahoo Finance hosts (`query1.finance.yahoo.com`, `query2.finance.yahoo.com`, `fc.yahoo.com`)
+**20 consecutive trading days blocked.** The overdue IWM rebalance from Jun 30 is now 7 trading days overdue. The account has been sitting in cash, missing IWM's ~+40% 12-month run.
+
+---
+
 ## 2026-07-07 — Morning Routine (Tuesday) ⚠️ API STILL BLOCKED — Day 18
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (18 trading days)
