@@ -7,6 +7,100 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## Week ending 2026-07-10 — Weekly Review #3 ⚠️ API BLOCKED (Day 23)
+
+### Portfolio Stats
+
+| Metric | Value |
+|--------|-------|
+| Portfolio (EOW) | $100,000.00 (last known — API blocked all week) |
+| Week return | 0% (idle cash, no positions, APIs blocked) |
+| S&P 500 week return | ~+0.8% (7,484 est. Jul 3 close → 7,543.64 Jul 10 close) |
+| Bot vs S&P | −0.8% (underperformed — zero exposure while S&P gained) |
+| Phase P&L | $0.00 / 0.00% (from $100,000 baseline May 9, 2026) |
+| Trades this week | 0 (W:0 / L:0 / Open:0) |
+| Win rate | N/A |
+| Profit factor | N/A |
+| Best trade | None |
+| Worst trade | None |
+| Sizing mode | N/A (Dual Momentum — monthly rebalance only) |
+
+### Closed Trades This Week
+
+None — bot idle all week; APIs blocked; overdue Jun 30 rebalance (BUY IWM) still pending.
+
+### Open Positions
+
+None — 100% cash ($100,000.00).
+
+### Market Summary (week ending Jul 10, 2026)
+
+- **S&P 500:** ~+0.8% to 7,543.64 (breadth poor — 9 of 11 sectors negative; gains concentrated in tech)
+- **Nasdaq:** +1.3% to 26,206.89 (Meta +6% on week; NVDA +3% Friday recovery)
+- **Dow:** +0.3% to 52,478.41
+- **VIX:** 15.40 (MODERATE; down from 16.90 high on Thursday)
+- **IWM (Russell 2000):** $295.85 (range $293–$298; 12m return ~+40.5%)
+
+### Sector Performance (week ending Jul 10)
+
+| Rank | Sector | ETF | Weekly Return |
+|------|--------|-----|--------------|
+| 1 | Energy | XLE | +1.8% (Iran geopolitics, oil spike) |
+| 2 | Technology | XLK | +1.2% (AI names recovered Fri) |
+| — | — | — | — (9 of 11 negative) |
+| 10 | Financials | XLF | −1.9% |
+| 11 | Materials | XLB | −2.6% |
+| 11 | Consumer Discretionary | XLY | −1.8% |
+
+### Dual Momentum Signal
+
+BUY IWM — 22nd consecutive session with same signal. IWM ~+40.5% 12m (#1 rank); SPY ~+20% (absolute filter passes). Signal unchanged since Jun 30 rebalance window. Must re-verify with `dual_momentum_signal.py` once APIs restored before placing any trade.
+
+### What Worked This Week
+
+- Monthly timing discipline preserved — no discretionary trades attempted despite market movement
+- Daily documentation of market conditions maintained via WebSearch fallback
+- IWM signal consistency confirmed (22 consecutive sessions, signal stable)
+- Geopolitical risk (US-Iran escalation) did not derail the medium-term momentum signal
+- Friday's tech rally (NVDA +3%, Meta +6%) validated momentum staying in growth/tech/small-cap
+
+### What Didn't Work This Week
+
+- API blockage continues (Day 23) — critical June 30 rebalance still missed; IWM moved from ~$295 to $295.85 (essentially flat this week, but +40.5% YoY)
+- Zero P&L contribution — account sitting at $100k baseline while IWM has +40.5% 12m momentum
+- S&P breadth poor (9/11 sectors negative) — good for momentum (tech concentrated) but only tech/energy worked
+- No Telegram notifications reached user for 3rd consecutive week — communication channel broken
+- Bot has now missed 4+ weeks of the Jun 30 IWM rebalance window due to infra blockage
+
+### Key Lessons
+
+1. **Infrastructure dependency is strategy risk.** A single proxy egress policy blocks the entire bot for 23 days — this is the dominant risk factor right now, outweighing any market risk.
+2. **Momentum signal persistence.** IWM has held #1 rank for 22 consecutive sessions — the Dual Momentum signal is remarkably stable. When APIs restore, execute immediately.
+3. **Tech concentration vs. breadth divergence.** S&P up 0.8% with 9/11 sectors negative signals fragile breadth — good for large-cap momentum (SPY), potentially headwind for IWM (small-caps lag in narrow rallies).
+4. **Earnings season starting.** Major bank earnings week of Jul 14 (JPM, BAC, C, WFC, GS) + CPI data will be the dominant market drivers. Could create volatility but unlikely to change monthly Dual Momentum signal.
+
+### Top Sectors / ETFs for Next Week (Jul 13–17)
+
+1. **Financials (XLF, KBE)** — Earnings catalysts: JPM, BAC, WFC, C, GS all reporting Tuesday Jul 14; MS, BLK Wednesday. Could swing sharply on guidance.
+2. **Technology (XLK, QQQ)** — Meta's best week since early 2024 (+6%), NVDA recovery; AI capex narrative intact. Momentum leader.
+3. **Energy (XLE)** — US-Iran conflict ongoing; WTI still elevated (~$74/bbl). Geopolitical premium persists.
+
+### Key Events Next Week (Jul 13–17, 2026)
+
+- **Tuesday Jul 14:** Q2 earnings — JPMorgan Chase, Wells Fargo, Bank of America, Citigroup, Goldman Sachs; US June CPI expected
+- **Wednesday Jul 15:** Morgan Stanley, BlackRock earnings; US PPI expected; Bank of Canada rate decision
+- **Note:** FOMC meeting Jul 29 — next major Fed catalyst
+
+### Adjustments for Next Week
+
+No strategy changes — Dual Momentum ETF Rotation is on schedule (next rebalance Jul 31). Primary action: resolve API blockage (whitelist `paper-api.alpaca.markets`, `api.telegram.org`, `api.perplexity.ai`, and `query1.finance.yahoo.com` in remote execution egress policy). Once restored: run `dual_momentum_signal.py` → if IWM still #1 (expected) → BUY IWM immediately (overdue rebalance).
+
+### Overall Grade: **D**
+
+**Rationale:** Strategy itself is sound — Dual Momentum monthly timing is correct and the signal is consistent. However, the bot has now missed 23 consecutive trading days of operation due to an unresolved infrastructure blockage. The June 30 rebalance (BUY IWM) was missed and remains pending. While the strategy is monthly and this week saw no rebalance date, the cumulative operational failure across 4+ weeks of blockage is a D-level outcome. No trades, no live data, no Telegram alerts. The only saving grace: IWM's trajectory this week was essentially flat (+0.3%), limiting the opportunity cost this specific week.
+
+---
+
 ## Week ending 2026-07-03 — Weekly Review #2
 
 ### Portfolio Stats

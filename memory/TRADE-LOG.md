@@ -354,3 +354,18 @@ Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). **ACTION REQUIRED: 
 **Today's macro (via WebSearch):** VIX 16.07 (MODERATE, ↓ from 16.90 yesterday); ES futures +0.2%, NQ -0.2%, Dow +0.2% — markets diverging; SK Hynix (SKHY) IPO listing today on Nasdaq ($26.5B raised at $149/ADS, largest-ever US listing by foreign company); semis -11.4% in July; tech momentum trade under pressure; IWM last close ~$293.48 (Jul 8); SPY 12m ~+20.42%, IWM 12m ~+34.78% (absolute filter passes, IWM still #1 Dual Momentum rank).
 
 Dual Momentum signal: BUY IWM (22nd consecutive session with same preliminary reading). Must re-verify via `dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in remote execution environment's egress policy. 22 consecutive trading days blocked.**
+
+---
+
+## 2026-07-10 — EOD Snapshot (Friday, Day 23 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0 / 0% | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-07-10, Friday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 23 of blockage spanning Jun 22–Jul 10; confirmed via `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31, 15 trading days). Overdue rebalance from Jun 30 (signal: BUY IWM, absolute filter passes) remains pending API restoration.
+
+**Today's market close (via WebSearch):** S&P 500 +0.8% to 7,543.64; Nasdaq +1.3% to 26,206.89; Dow +0.3% to 52,478.41. VIX 15.40 (MODERATE, ↓ from 16.07 premarket). IWM closed at $295.85 (range $293.62–$298.21, prev close $297.24). 9 of 11 S&P sectors negative — tech dominated gains (NVDA, Meta). Week was broadly +~0.8–1% for S&P 500. Dual Momentum signal: BUY IWM (#1 rank, ~40.5% 12m; absolute filter passes). Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in remote execution environment's egress policy. 23 consecutive trading days blocked.**
