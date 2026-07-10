@@ -3,6 +3,73 @@
 Daily pre-market research entries. Each entry records market context, sizing mode, and trade ideas for that day.
 Format: prepend new entries at the top (most recent first).
 
+## 2026-07-10 — Morning Research (Friday) ⚠️ API STILL BLOCKED — Day 22
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (15 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed via WebSearch
+
+### API Access Status
+All outbound egress confirmed blocked (Day 22: Jun 22–Jul 10):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial, confirmed via `$HTTPS_PROXY/__agentproxy/status` at 13:05 UTC)
+- `api.telegram.org:443` → blocked (no output from curl)
+- `api.perplexity.ai:443` → blocked (no output from curl)
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch)
+
+**VIX:** 16.07 (opened 16.58, intraday range 15.93–17.27) → **Sizing mode: MODERATE** (if applicable)
+
+**S&P 500 / Index Futures:**
+- ES (S&P 500 E-Mini): ~+0.2%
+- NQ (Nasdaq-100 E-Mini): ~−0.2%
+- Dow futures: +0.2%
+- Markets diverging ahead of SK Hynix mega-IPO
+
+**Key Catalyst Today — SK Hynix IPO (SKHY):**
+- $26.5B raised at $149/ADS — largest-ever US listing by a foreign company (beats Alibaba's $25B in 2014)
+- Debuting on Nasdaq today as a test for AI trade / HBM chip demand
+- SK Hynix holds >50% of HBM market; net income Q1 2026: $26.6B; Q2 earnings Jul 22
+- SpaceX ($85.7B, Jun 2026) is the only larger recent listing globally
+- NQ futures slipping slightly as semiconductor momentum cools vs. earlier July
+
+**Sector Momentum (week of Jul 6–10):**
+- **Top:** Technology (weekly leader despite early-July wobble), Industrials, Real Estate; Financials and Healthcare entering "improving" quadrant
+- **Avoid:** Energy, Utilities (slipped in rankings); Momentum ETF itself -6.6% in July through Thu; semis -11.4% in July
+- Note: Market-wide rotation occurring — high-momentum tech/AI trade under pressure
+
+**Economic Events Today:** No major data releases (CPI Jul 14, FOMC Jul 29)
+
+### Dual Momentum Signal Estimate (via WebSearch — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+34.78% | WebSearch data (PortfoliosLab); down slightly from ~+40% prior estimates |
+| 2 | GLD | ~+32% est. | Prior confirmed; no update today |
+| 3 | QQQ | ~+29–31% est. | Under early-July pressure from semis; prior est. +30.58% |
+| 4 | SPY | ~+20.42% | Absolute filter: PASSES (positive) |
+| 5 | TLT | <+5% est. | Rates/oil headwind |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (Day 22 consecutive with same reading) — absolute filter passes, IWM #1.
+*IWM last known price: ~$293.48 (Jul 8 close). Must re-verify with `python3 scripts/dual_momentum_signal.py` before any trade once API restored.*
+
+### Today's Action
+**NOT a rebalance day.** Next scheduled rebalance: 2026-07-31. No trades. No intraday action permitted by strategy.
+
+**Overdue rebalance note:** June 30 rebalance still pending API restoration. As soon as APIs are restored, run `dual_momentum_signal.py` → if IWM still #1, BUY IWM immediately. Do not wait for Jul 31.
+
+### Risk Notes
+- SK Hynix IPO (SKHY) listing today: AI trade test — success supports IWM sentiment; weak debut could amplify tech/semi rotation
+- Strait of Hormuz watch: oil supply risk remains elevated from US-Iran conflict (Day 3+)
+- VIX 16.07 (MODERATE) — down slightly from yesterday's 16.90; markets stabilizing
+- Momentum trade broadly under pressure in early July — relevant for IWM long-term thesis monitoring
+- Bond yields stubbornly high (noted in futures commentary) — headwind for growth stocks, mixed for IWM
+
+### Decision
+**NO TRADE** — not rebalance day. Strategy permits no intraday or discretionary action. API blocked anyway.
+
+---
+
 ---
 
 ## 2026-07-09 — Morning Research (Thursday) ⚠️ API STILL BLOCKED — Day 20
