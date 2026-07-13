@@ -671,6 +671,76 @@ SPY 12-month return positive (~+20%) → absolute filter PASSES. Preliminary sig
 
 ---
 
+## 2026-07-13 — Morning Research (Monday) ⚠️ API STILL BLOCKED — Day 24
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (13 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed below
+
+### API Access Status
+All outbound egress confirmed blocked (Day 24: Jun 22–Jul 13):
+- `paper-api.alpaca.markets:443` → HTTP 000 (connection failed)
+- `api.telegram.org:443` → HTTP 000 (connection failed)
+- `api.perplexity.ai:443` → HTTP 000 (connection failed)
+Proxy status: no recent relay failures, but egress policy continues to block financial/external APIs.
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch)
+
+**VIX:** ~15.03 (↓ ~5.1% from Friday) → **Sizing mode: N/A (Dual Momentum — no VIX sizing)**
+
+**S&P 500 Futures Premarket:**
+- ES: ~−0.3% to −0.4% premarket
+- Risk-off tone on US-Iran escalation over the weekend
+- US renewed strikes near Strait of Hormuz; Iran declared ceasefire over, claimed to close the strait (contested by USCENTCOM)
+
+**Oil / Macro Shock:**
+- WTI crude: ~$73.15/bbl (+2.4%)
+- Brent crude: ~$78.85–$79.12/bbl (+3.7–4.2%)
+- Dominant geopolitical driver today
+
+**Sector Rotation:**
+- Top: Energy (XLE), Health Care, Consumer Staples (defensive rotation)
+- Worst: Technology (XLK), Industrials, Consumer Discretionary (risk-off)
+
+**Key Events This Week:**
+- **July 14 (tomorrow):** CPI 8:30 AM ET — last major inflation read before Jul 28-29 FOMC; Fed Chair Warsh testifies to House Financial Services 10 AM ET
+- **July 15:** PPI
+- Q2 earnings season begins in earnest: JPM, BAC, GS, WFC, C, NFLX this week; 24% EPS growth consensus
+
+**Earnings Today (Jul 13 pre-market):** Fastenal (FAST) — industrial bellwether
+
+**IWM Price:** ~$295.99 premarket (prev close $297.24)
+
+### Dual Momentum Signal (via WebSearch — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+42–44% | Multiple sources; ~42.9% as of Jul 3 |
+| 2 | GLD | ~+23% | Gold resilient on geopolitical risk |
+| 3 | SPY | ~+22% | ~21.97% trailing 12m |
+| 4 | QQQ | ~+18–20% | Tech has underperformed small caps over 12m |
+| 5 | TLT | ~+3–5% | Laggard; bonds under rate/inflation pressure |
+
+**SPY 12m: +22% → Absolute filter PASSES**
+**Preliminary Signal: BUY IWM** (24th consecutive session with same preliminary reading)
+*Must re-verify with `python3 scripts/dual_momentum_signal.py` before any trade, once API restored.*
+
+### Overdue Rebalance Note
+June 30 rebalance missed (Day 8 of blockage). As soon as Alpaca API is accessible, run `dual_momentum_signal.py` — if IWM still #1, BUY IWM immediately (overdue rebalance, not a new discretionary trade). Do not wait for July 31.
+
+### Risk Factors
+- US-Iran active military conflict: crude oil spike is inflationary, risk-off. CPI tomorrow makes this particularly sensitive.
+- Strait of Hormuz closure (even partial/threatened): sustained oil shock could pressure broader equities
+- CPI (Jul 14) surprise in either direction: hot CPI → hawkish Warsh → rate-cut expectations pared → bond/equity pressure; cold CPI → relief rally
+- IWM ~$296 at premarket — small caps may underperform in geopolitical risk-off environment today
+
+### Decision
+**NO TRADE** — not a rebalance day. APIs blocked — no trades possible regardless. Strategy permits no intraday or discretionary action between monthly rebalances.
+
+**Account Snapshot:** $100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked for 24 days)
+
+---
+
 ## 2026-07-08 — Morning Research (Wednesday) ⚠️ API STILL BLOCKED — Day 19
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (17 trading days)
