@@ -369,3 +369,18 @@ Dual Momentum signal: BUY IWM (22nd consecutive session with same preliminary re
 **Notes:** EOD routine ran (2026-07-10, Friday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 23 of blockage spanning Jun 22–Jul 10; confirmed via `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31, 15 trading days). Overdue rebalance from Jun 30 (signal: BUY IWM, absolute filter passes) remains pending API restoration.
 
 **Today's market close (via WebSearch):** S&P 500 +0.8% to 7,543.64; Nasdaq +1.3% to 26,206.89; Dow +0.3% to 52,478.41. VIX 15.40 (MODERATE, ↓ from 16.07 premarket). IWM closed at $295.85 (range $293.62–$298.21, prev close $297.24). 9 of 11 S&P sectors negative — tech dominated gains (NVDA, Meta). Week was broadly +~0.8–1% for S&P 500. Dual Momentum signal: BUY IWM (#1 rank, ~40.5% 12m; absolute filter passes). Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in remote execution environment's egress policy. 23 consecutive trading days blocked.**
+
+---
+
+## 2026-07-13 — EOD Snapshot (Monday, Day 24 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-07-13, Monday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 24 of blockage spanning Jun 22–Jul 13; confirmed via `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31, ~13 trading days). Overdue rebalance from Jun 30 (signal: BUY IWM, absolute filter passes) remains pending API restoration.
+
+**Today's market close (via WebSearch):** S&P 500 −0.8%; Nasdaq −1.6%; Dow −0.3%. VIX ~16.59 (MODERATE, +10.4% on day). US-Iran military tensions escalating — WTI crude surging; AI/chip stocks under pressure (SK Hynix, Samsung Electronics). Energy stocks partially cushioned Dow losses. Risk-off day. IWM est. close ~$293–$295 range (small-caps mixed). Dual Momentum signal still favors IWM as #1 rank; absolute filter (SPY 12m positive) continues to pass. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in remote execution environment's egress policy. 24 consecutive trading days blocked.**
