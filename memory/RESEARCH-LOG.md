@@ -3,6 +3,87 @@
 Daily pre-market research entries. Each entry records market context, sizing mode, and trade ideas for that day.
 Format: prepend new entries at the top (most recent first).
 
+---
+
+## 2026-07-14 — Morning Research (Tuesday, Day 25 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (12 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed via WebSearch below
+
+### API Access Status
+All outbound egress confirmed blocked (Day 25: Jun 22–Jul 14):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch)
+
+**VIX:** 15.35 (−3.09% intraday, range 14.96–16.06) → **Sizing mode: MODERATE** (VIX 15–25)
+
+**S&P 500 / Futures:**
+- Pre-CPI: flat to −0.2%, traders cautious ahead of 8:30am ET print
+- Post-CPI: dovish surprise should be a positive catalyst at open
+
+**CPI June 2026 (Released 8:30am ET today — MASSIVE DOVISH BEAT):**
+
+| Metric | Expected | Actual |
+|--------|----------|--------|
+| Headline MoM | −0.2% | **−0.4%** |
+| Headline YoY | 3.8% | **3.5%** |
+| Core MoM | +0.2% | **0.0%** |
+| Core YoY | 2.9% | **2.6%** |
+
+Energy fell 5.7% in June (US-Iran interim deal → gasoline plunged). Largest single-month headline drop since April 2020. Core flat MoM — the number the Fed watches most closely. Rate-cut odds for Jul 28–29 FOMC meeting surging.
+
+**Oil:** WTI ~$79.50/bbl (+2% today) — bouncing off lows post-Iran deal. Still elevated but war premium removed.
+
+**Key Events Today:**
+- CPI June 2026 print (above — major dovish beat)
+- Fed Chair Warsh testifying before House Financial Services Committee (first Humphrey-Hawkins appearance as Chair) — "hinge point in history"; watch for any pushback on rate cuts
+- Big bank Q2 earnings: JPM ($6.14 EPS vs $5.85 exp; $58.02B rev vs $50.19B exp — huge beat), WFC, GS, BAC, C — broadly beating
+
+**Sectors this week (through Jul 10):**
+- Best: Basic Materials +0.84%, Technology +0.76%, Consumer Discretionary +0.75%, Energy +0.66%, Financials +0.38%
+- Worst: Healthcare −1.20%, Capital Goods −0.04%
+- Note: Financials should surge today on bank earnings beats + CPI rate-cut catalyst
+
+**IWM last close (Jul 13):** $295.99 | 52-week range: $212.34–$302.72
+
+### Dual Momentum Signal Estimate (via WebSearch — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+39–41% est. | Near 52-week high $302.72; SPY absolute filter passes |
+| 2 | GLD | ~+32–33% est. | Gold resilient on geopolitical uncertainty |
+| 3 | QQQ | ~+30–32% est. | Tech momentum intact |
+| 4 | SPY | ~+20–22% est. | Absolute filter: PASSES (positive) |
+| 5 | TLT | Low single-digits | Pressure from rates uncertainty |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (25th consecutive session with same preliminary reading)
+*CPI beat reinforces IWM signal — small-caps historically outperform when rate-cut expectations surge.*
+*Must re-verify with `python3 scripts/dual_momentum_signal.py` before any trade, once API restored.*
+
+### Risk Factors
+- Warsh hawkish pushback risk: if he emphasizes tariff inflation or refuses to validate July rate cut, market reverses
+- US-Iran: interim deal fragile — any breakdown re-spikes oil and crushes the CPI narrative
+- Earnings execution risk: bank beats are priced in → any micro-miss on guidance could cap upside
+- IWM near 52-week high ($302.72) — entering at these levels when/if rebalance executes
+
+### Today's Action
+**NOT a rebalance day.** Next scheduled rebalance: 2026-07-31. No trades. No intraday action permitted by strategy.
+
+**Overdue rebalance note:** The June 30 rebalance was missed due to API blockage. As soon as APIs are restored, run `dual_momentum_signal.py` → if IWM still #1, BUY IWM immediately. Do not wait for July 31. CPI dovish beat strengthens the case for IWM momentum continuing.
+
+**SPY 12m: ~+20–22% → Absolute filter PASSES**
+**Preliminary Signal: BUY IWM** (25th consecutive session with same preliminary reading)
+
+### Decision
+**NO TRADE** — not rebalance day. APIs blocked — no trades possible regardless. Strategy permits no intraday or discretionary action between monthly rebalances.
+
+**Account Snapshot:** $100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked for 25 days)
+
 ## 2026-07-10 — Morning Research (Friday) ⚠️ API STILL BLOCKED — Day 22
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (15 trading days)
