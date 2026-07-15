@@ -5,6 +5,89 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-15 — Morning Research (Wednesday) ⚠️ API STILL BLOCKED — Day 26
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (12 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed via WebSearch below
+
+### API Access Status
+All outbound egress still blocked (Day 26: Jun 22 – Jul 15):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Account data unavailable. Research conducted via WebSearch fallback.
+
+### Account Snapshot (last known)
+- **Equity:** $100,000.00 (Day 0 baseline, 2026-05-09 — API blocked 26 trading days)
+- **Cash:** $100,000.00 (100% — no position taken; overdue IWM rebalance pending)
+- **Positions:** 0 (awaiting API restoration)
+
+### Market Context (via WebSearch — July 15, 2026)
+
+**VIX:** ~16.50 (closed Jul 14 at 16.50, -3.85% day; 30d range 14.96–20.72) → **Sizing mode: MODERATE** (N/A for Dual Momentum — noted for awareness only)
+
+**S&P 500 / Nasdaq Futures (premarket):**
+- ES (S&P 500): +0.2%
+- NQ (Nasdaq-100): +0.5%
+- Drivers: Cool inflation data, ASML raised AI outlook, PayPal +20% on $53B acquisition rumor
+
+**Oil:**
+- **WTI:** ~$78.08/bbl
+- **Brent:** ~$84.73–$85.92/bbl (1-month high, +19% from pre-conflict level)
+- Context: US-Iran active military conflict — Day 3 of US airstrikes; Iran retaliated hitting 2 supertankers in Strait of Hormuz; US military escorts keeping ~8.5M bbl/day flowing
+
+**Earnings Today (BMO):**
+- ASML (+3% premarket) — beat, raised AI-driven 2026 revenue forecast
+- BLK (BlackRock) — +3.8% premarket, earnings beat
+- JNJ, MS, PGR, BNY, PNC, KMI, UAL, JBHT
+
+**Economic Events Today:**
+- June PPI & Core PPI (8:30 AM ET) — key inflation read post-CPI
+- Fed Chair Warsh — Senate Banking Committee testimony (10:00 AM ET)
+- Fed Beige Book — releasing today
+- Retail Sales & Jobless Claims due Jul 16
+
+**Premarket Movers:**
+- PYPL +20% ($53B acquisition offer from Stripe/Advent at $60.50/share)
+- BABA +6% (Apple Intelligence China regulatory approval)
+- PNR -20.7% (slashed Q2/FY guidance, CFO resigned)
+- ELV -8.3%
+
+**S&P 500 Sector Performance (current week):**
+- Best: Communications (+4.9%), Financials (+3.5%), Consumer Discretionary (+2.3%), Health Care (+2.2%)
+- Worst: Utilities (-1.1%), Energy (-1.0%), Real Estate (-0.8%)
+
+### IWM / Dual Momentum Signal Estimate (via WebSearch — NOT authoritative script)
+
+| Rank | Ticker | Est 12M Total Return | Notes |
+|------|--------|---------------------|-------|
+| 1 | IWM | ~+39–41% | Current ~$294.64; 52w low $212.34; YTD +22% — best year since 1991 |
+| 2 | GLD | ~+32% | Gold elevated on geopolitical/inflation bid |
+| 3 | QQQ | ~+30% | Tech slightly underperforming vs SPY on oil/geopolitical pressure |
+| 4 | SPY | ~+20–22% | Absolute filter: PASSES (positive) |
+| 5 | TLT | Low single digit | Rate/oil uncertainty; under pressure |
+| — | SHY | ~+4–5% | Cash proxy |
+
+**SPY 12m: ~+20-22% → Absolute filter PASSES**
+**Preliminary Signal: BUY IWM** (26th consecutive session with same preliminary reading)
+*Must re-verify with `python3 scripts/dual_momentum_signal.py` before any trade, once API restored.*
+
+### Overdue Rebalance Note
+June 30 rebalance missed (Day 8 of blockage). As soon as Alpaca API is accessible, run `dual_momentum_signal.py` — if IWM still #1, BUY IWM immediately (overdue rebalance, not a new discretionary trade). Do not wait for July 31.
+
+### Risk Factors
+- **US-Iran active military conflict (Day 3):** Straight of Hormuz partially disrupted; crude +19% from pre-conflict levels; inflationary, risk-off
+- **PPI data (today):** Post-CPI hot print could revive rate hike fears despite June CPI beat
+- **Fed Chair Warsh testimony (10 AM ET):** Hawkish surprise could pressure both equities and TLT
+- **Oil elevated at $78-85/bbl:** Energy input costs rising broadly; consumer staples and transportation headwind
+- **IWM near all-time high ($302.72):** Small caps sensitive to domestic risk-off; geopolitical escalation could drive pullback from ATH
+- **Stripe/PayPal deal uncertainty:** M&A speculation, may not close; if denied, sharp reversal
+
+### Decision
+**NO TRADE** — not a rebalance day. Strategy permits no intraday or discretionary action between monthly rebalances. APIs still blocked regardless — no trades possible. Next rebalance: 2026-07-31.
+
+---
+
 ## 2026-07-14 — Morning Research (Tuesday, Day 25 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (12 trading days)
