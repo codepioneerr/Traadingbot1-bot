@@ -5,6 +5,88 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-16 — Morning Research (Thursday) ⚠️ API STILL BLOCKED — Day 27
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (~11 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed via WebSearch below
+
+### API Access Status
+All outbound egress confirmed blocked (Day 27: Jun 22–Jul 16):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback. Proxy status confirmed via `$HTTPS_PROXY/__agentproxy/status`.
+
+### Market Context (via WebSearch — 9:06 AM ET)
+
+**VIX:** 16.26 (range 15.88–16.57 today) → **Sizing mode: MODERATE** (15–25; up to 20% per position if applicable)
+
+**S&P 500 / Nasdaq Futures (premarket):**
+- S&P 500 prev close: 7,572.40 (+0.40% Wed); futures -0.4% premarket Thursday
+- Nasdaq 100 futures: -1.0% — semiconductor pressure leading decline
+- Driver: TSMC (TSM) reported record Q2 ($40.2B revenue, profit +77% YOY, beat all estimates) BUT stock down in premarket on elevated capex guidance and margin concerns; dragging semiconductor sector
+
+**Oil:**
+- Brent: $84.63/bbl (-0.37% today; +6.39% past month; +21.74% YOY)
+- WTI: ~$78–80/bbl range; ongoing Middle East geopolitical tension
+
+**Major Earnings Today (July 16):**
+- TSMC (TSM): Beat — $40.2B revenue, profit +77% YOY; stock DOWN on capex/margins → semi weakness
+- Netflix (NFLX): After market close
+- UnitedHealth Group (UNH): Reporting today
+- GE Aerospace (GE): Reporting today
+- Abbott Laboratories (ABT): Reporting today
+
+**Economic Data Today:**
+- Retail Sales: Forecast +0.2% (prev +0.9%) — consumer spending slowdown expected
+- Initial Jobless Claims: 4-week avg prev 218.75K — labor market health check
+- Philadelphia Fed Manufacturing Index: prev Business Conditions 50.2, New Orders 27.3, Prices Paid 53.20
+- Note: PPI for July not released until Aug 13; June PPI: +5.5% YOY
+
+**Sector Performance This Week:**
+- **Top performers:** Defense/Aerospace (AeroVironment +30% past week, defense ETFs hitting ATH), Technology (partially recovering from early July -4.8% selloff; XLK +~2% this week; Lam Research, Applied Materials, KLA each +4%)
+- **Underperformers today:** Semiconductors (TSMC capex concerns), Energy (lagged Q2, down 13% large caps in Q2)
+
+### IWM / Dual Momentum Signal Estimate (via WebSearch — NOT authoritative script)
+
+**IWM last close (Jul 15):** High $297.14 / Low $294.16; premarket ~$299.82 indicated
+**IWM 52-week range:** $212.34–$302.72
+
+| Rank | Ticker | ~12M Total Return Est. | Notes |
+|------|--------|----------------------|-------|
+| 1 | IWM | ~+41% est. | From ~$212 low to ~$295+ current ≈ +39% price + div |
+| 2 | GLD | ~+32% est. | Gold has been strong; geopolitical tailwind |
+| 3 | QQQ | ~+30% est. | Tech recovery continuing |
+| 4 | SPY | ~+22% est. | Absolute filter: PASSES (SPY 12m positive) |
+| 5 | TLT | <+5% est. | Rate uncertainty |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (27th consecutive session with same preliminary reading)
+*Must re-verify with `python3 scripts/dual_momentum_signal.py` before any trade, once API restored.*
+
+### SPY 12m Return Check
+**SPY 12m: est. +22% → Absolute filter PASSES**
+
+### Today's Action
+**NOT a rebalance day.** Next scheduled rebalance: 2026-07-31. No trades permitted by strategy.
+
+**Overdue rebalance note:** June 30 rebalance missed (Day 27 of API blockage). As soon as APIs are restored, run `dual_momentum_signal.py` → if IWM still #1, BUY IWM immediately. Do not wait for July 31.
+
+### Risk Factors
+- TSMC capex/margin concerns: semiconductor pressure today; Nasdaq futures -1%; tech sector volatile
+- Middle East tensions (US-Iran): oil elevated at ~$79–84/bbl; inflation risk persists
+- Retail Sales expected weak (+0.2% vs prev +0.9%): consumer spending slowdown potential
+- IWM now trading at ~$299 premarket — approaching 52-week high $302.72; watch for resistance
+- Netflix earnings after close: could drive significant market move in either direction
+
+### Decision
+**NO TRADE** — not a rebalance day. APIs blocked (Day 27) — no trades possible regardless.
+Strategy permits no intraday or discretionary action between monthly rebalances.
+
+**Account Snapshot:** $100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked for 27 days)
+
+---
+
 ## 2026-07-15 — Morning Research (Wednesday) ⚠️ API STILL BLOCKED — Day 26
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (12 trading days)
