@@ -432,3 +432,18 @@ Dual Momentum signal: BUY IWM (22nd consecutive session with same preliminary re
 **Today's macro (via WebSearch):** VIX 16.26 (MODERATE, range 15.88–16.57); S&P 500 futures -0.4%, Nasdaq 100 futures -1.0% — TSMC earnings drag (record Q2 beat: $40.2B revenue, profit +77% YOY, but DOWN on capex/margin concerns). Brent crude $84.63/bbl (-0.37%), WTI ~$79/bbl — Middle East tensions ongoing. Retail Sales (forecast +0.2% vs prev +0.9%), Jobless Claims, Philly Fed on deck. Netflix earnings after close. Defense/Aerospace and Tech leading sectors this week; semis under pressure today. IWM premarket ~$299.82 (prev close high $297.14 Jul 15), approaching 52-week high $302.72.
 
 Dual Momentum signal: BUY IWM (27th consecutive session same preliminary reading; SPY 12m est. +22% — absolute filter passes, IWM still #1 momentum rank). Must re-verify via `dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in remote execution environment's egress policy. 27 consecutive trading days blocked.**
+
+---
+
+## 2026-07-16 — EOD Snapshot (Thursday, Day 27 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-07-16, Thursday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 27 of blockage spanning Jun 22–Jul 16; confirmed via `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31, ~11 trading days). Overdue rebalance from Jun 30 (signal: BUY IWM, absolute filter passes) remains pending API restoration.
+
+**Today's market close (via WebSearch):** S&P 500 −0.35% to 7,545; Nasdaq −0.77% to 26,057; Dow +0.14% to 52,731. VIX 15.67 (MODERATE, down ~5% from 16.50 — calming despite risk-off). TSMC Q2 beat (revenue +33.7% to $40.2B, net profit +77.4% to $22.4B, Q3 guidance above estimates) but shares fell 4.6% on capex hike to $60–64B for 2026; semiconductor ETF (SMH) −2.2%; Arm −4%, SKHynix (Seoul) −11%, Intel −2.8%. IWM/Russell 2000 +0.38% (domestic small-caps outperformed on day — diverged from tech). Netflix earnings reported after close (results pending at time of routine). Dual Momentum signal: BUY IWM (27th consecutive session, same preliminary reading; SPY 12m positive — absolute filter passes, IWM still #1 rank). Must re-verify via `dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in remote execution environment's egress policy. 27 consecutive trading days blocked.**
