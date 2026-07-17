@@ -7,6 +7,113 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## Week ending 2026-07-17 — Weekly Review #4 ⚠️ API BLOCKED (Day 29)
+
+### Portfolio Summary
+
+| Metric | Value |
+|--------|-------|
+| Portfolio (EOW) | $100,000.00 (last known — API blocked) |
+| Cash | $100,000.00 (100%) |
+| Week P&L | $0.00 / 0.00% (no positions) |
+| Phase P&L (since May 9) | $0.00 / 0.00% |
+| S&P 500 weekly return | −1.5%+ |
+| Bot vs S&P delta | +~1.5% (inadvertent outperformance — flat vs down market) |
+| Trades this week | 0 |
+| W/L/Open | 0/0/0 |
+| Win rate | N/A |
+| Profit factor | N/A |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Sizing mode (this week) | N/A — Dual Momentum monthly rebalance only |
+
+### Week in Review (Jul 14–17, 2026)
+
+**Strategy:** Dual Momentum ETF Rotation — monthly rebalance only. No intraday or discretionary trades permitted. No rebalance day this week (next: Jul 31).
+
+**API blockage status:** Day 29 (Jun 22 – Jul 17). `paper-api.alpaca.markets`, `api.telegram.org`, and `api.perplexity.ai` all returning 403 connect_rejected at proxy. Perplexity research substituted with WebSearch. Telegram substituted with push notifications.
+
+### Market Context (Jul 14–17)
+
+- **S&P 500:** −1.5%+ for week; closed Friday ~7,470 (−1.0% on day)
+- **Nasdaq:** −1.4% Friday; underperformer all week
+- **VIX:** 17.76 Friday close (MODERATE but elevated; +6.5% on Friday alone)
+- **Semiconductors (SOX):** Entered bear market; −17% for July; worst weekly loss since early April. Driven by: China's Moonshot AI model launch (capex sustainability fears), TSMC $60–64B capex hike, Netflix guidance miss (Q3 revenue $12.86B vs $13B expected)
+- **IWM (Russell 2000):** $293.49 Friday close (−0.71% Friday, slight outperformance vs large-cap tech)
+- **Best sectors this week:** Consumer Staples (+2.9%), Healthcare (+2.2%), Transportation
+- **Worst sectors this week:** Technology (−2.3% just on Jul 16), Semiconductors (bear market), Communication Services
+- **Oil:** Brent ~$85.95/bbl (elevated; Middle East/Iran risk persists)
+- **Netflix:** Plunged on guidance miss after hours Jul 16; dragged consumer discretionary
+
+### Closed Trades This Week
+
+None — bot held no positions all week (API blocked; no rebalance day).
+
+### Open Positions (EOW)
+
+None — account is 100% cash pending API restoration and overdue Jun 30 rebalance.
+
+### Dual Momentum Signal (29th consecutive session: BUY IWM)
+
+| Rank | Ticker | ~12M Return (est.) | Status |
+|------|--------|-------------------|--------|
+| 1 | IWM | ~+39–40% | **Signal: BUY** |
+| 2 | GLD | ~+30–32% | Hold |
+| 3 | QQQ | ~+28–31% | Hold |
+| 4 | SPY | ~+21% | Absolute filter: PASSES |
+| 5 | TLT | <+5% | Below threshold |
+| — | SHY | ~+4–5% | Cash proxy |
+
+Signal unchanged for 29 sessions. Must re-verify with `python3 scripts/dual_momentum_signal.py` once API restored. Next rebalance: **Jul 31** (~10 trading days).
+
+### What Worked
+
+- **Inadvertent defensive posture:** Bot holding 100% cash meant zero exposure to the −1.5% weekly loss in S&P 500 and −17% July semiconductor rout — beat market by ~1.5% this week purely by being blocked from trading
+- **WebSearch fallback continues to deliver:** Market close data, sector performance, and macro context obtained every session despite Perplexity blockage
+- **git persistence is robust:** EOD and morning snapshots committed and pushed daily; full state recoverable from any fresh clone
+- **Push notifications replacing Telegram:** User received daily status updates via push notification tool throughout the blockage
+
+### What Didn't Work
+
+- **API blockage persists — Day 29:** `paper-api.alpaca.markets`, `api.telegram.org`, and `api.perplexity.ai` all blocked. Jun 30 rebalance (BUY IWM) remains unexecuted
+- **No live account equity:** Impossible to verify paper account value, confirm $100K starting balance, or detect any drift
+- **Telegram silent all week:** Mobile push notifications are a poor substitute — no rich formatting, no position-level detail for the user
+- **Jun 30 overdue rebalance: 17 trading days delayed:** IWM has performed well; cost of missing entry is real opportunity cost even in paper trading
+- **Semiconductor sell-off is a potential signal risk:** If semis drag IWM (small-cap heavy in tech) sharply enough before Jul 31, the momentum ranking could shift. Bot cannot monitor live
+
+### Key Lessons
+
+1. **The egress whitelist is the #1 blocker.** Four weeks of operation with zero trades is entirely an infrastructure problem, not a strategy problem. Single required action: whitelist `paper-api.alpaca.markets`, `api.telegram.org`, `api.perplexity.ai`, and `finance.yahoo.com` in the remote execution environment network policy.
+2. **Monthly rebalance strategies are forgiving of brief blockages** — a weekly or daily strategy would have missed many more signals. Dual Momentum's monthly cadence kept the structural damage limited.
+3. **Semi sell-off as a momentum rotation indicator:** If technology/semiconductors continue to underperform through Jul 31, QQQ could drop in momentum ranking and IWM could strengthen further. Bot's signal is likely robust but should be verified before executing.
+4. **Oil risk:** Brent at ~$86/bbl with Middle East tensions is stagflationary. Historically pressures SPY while IWM can be mixed. Watch if oil sustains above $90.
+
+### Top Sectors / ETFs for Next Week (Jul 20–24)
+
+1. **Healthcare (XLV)** — Defensive rotation underway; outperforming amid tech/semi rout. Not in bot's universe but context for market tone.
+2. **Financials** — Heavy earnings week (COF, GM, DHR, HAL, IBM, TSLA Tue; GE, CMCSA, ALK). Potential volatility; financials holding up well.
+3. **Energy** — Oil elevated; energy sector outperforming on geopolitical risk.
+4. **Tech (bounce watch)** — Semi bear market is oversold; potential mean reversion but uncertainty high ahead of MSFT (Jul 28) and AAPL (Jul 30) earnings.
+
+*Note: Bot's tradeable universe is fixed: SPY, QQQ, IWM, TLT, GLD, SHY. No action until Jul 31 rebalance.*
+
+### Key Events Next Week (Jul 21–25)
+
+- **Earnings:** GM, DHR, HAL, 3M, COF, IBM, **TSLA** (Tue after close), TXN, GE, ALK — biggest earnings week of Q2 season
+- **Economic:** Leading Index M/M (Mon 10am ET), API/EIA inventory data (oil impact)
+- **Macro watch:** Federal Reserve speakers; oil trajectory; semiconductor recovery attempt
+- **Farnborough Airshow** (Jul 20–23): Aerospace/defense orders announcements
+
+### Strategy Adjustments
+
+None. Dual Momentum rules remain sound. Operational prerequisite unchanged: restore API egress.
+
+### Grade: **C** (Incomplete — operational failure, not strategy failure)
+
+Rationale: Bot was flat while the market fell 1.5% — technically outperformed. However, this was entirely accidental (API blocked, not a signal-driven defensive posture). Four consecutive weeks of zero trading capability, zero live data, and zero Telegram notifications means the bot is not fulfilling its core function. Once APIs are restored the grade can recover immediately; the strategy itself is sound and well-positioned for the Jul 31 rebalance.
+
+---
+
 ## Week ending 2026-07-10 — Weekly Review #3 ⚠️ API BLOCKED (Day 23)
 
 ### Portfolio Stats

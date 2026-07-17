@@ -467,3 +467,20 @@ Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram sector wat
 **Notes:** EOD routine ran (2026-07-16, Thursday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 27 of blockage spanning Jun 22–Jul 16; confirmed via `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31, ~11 trading days). Overdue rebalance from Jun 30 (signal: BUY IWM, absolute filter passes) remains pending API restoration.
 
 **Today's market close (via WebSearch):** S&P 500 −0.35% to 7,545; Nasdaq −0.77% to 26,057; Dow +0.14% to 52,731. VIX 15.67 (MODERATE, down ~5% from 16.50 — calming despite risk-off). TSMC Q2 beat (revenue +33.7% to $40.2B, net profit +77.4% to $22.4B, Q3 guidance above estimates) but shares fell 4.6% on capex hike to $60–64B for 2026; semiconductor ETF (SMH) −2.2%; Arm −4%, SKHynix (Seoul) −11%, Intel −2.8%. IWM/Russell 2000 +0.38% (domestic small-caps outperformed on day — diverged from tech). Netflix earnings reported after close (results pending at time of routine). Dual Momentum signal: BUY IWM (27th consecutive session, same preliminary reading; SPY 12m positive — absolute filter passes, IWM still #1 rank). Must re-verify via `dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in remote execution environment's egress policy. 27 consecutive trading days blocked.**
+
+---
+
+## 2026-07-17 — EOD Snapshot (Friday, Day 29 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-07-17, Friday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 29 of blockage spanning Jun 22–Jul 17; confirmed via `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31, ~10 trading days remaining).
+
+**Today's market close (via WebSearch):** S&P 500 −1.0% (weekly loss >1.5%); Nasdaq −1.4%; markets posted weekly losses as semiconductors entered bear market territory (SOX −17% for July, worst weekly loss since early April). VIX 17.76 (MODERATE, +6.5% from 16.73 morning read — fear elevated on chip rout). Netflix plunged (guidance miss after Q2 beat). IWM closed $293.49 (prev close $295.59, −0.71%; week range $291.65–$296.13). Key drivers: China's Moonshot AI model launch (AI capex sustainability fears), TSMC capex hike to $60–64B spooking investors, oil spike (Brent +2%), Netflix guidance miss. Best sector (week): Consumer Staples, Healthcare. Worst: Technology, Semiconductors.
+
+Dual Momentum signal: BUY IWM (29th consecutive session same preliminary reading; IWM ~12m return est. +39–40%, #1 vs GLD/QQQ/SPY; absolute filter passes — SPY 12m est. +21%). Must re-verify with `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in remote execution environment's egress policy. 29 consecutive trading days blocked. July 31 rebalance ~10 trading days away.**
