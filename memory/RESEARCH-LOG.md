@@ -5,6 +5,81 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-17 — Morning Research (Friday) ⚠️ API STILL BLOCKED — Day 28
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (~10 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed via WebSearch below
+
+### API Access Status
+All outbound egress confirmed blocked (Day 28: Jun 22–Jul 17):
+- `paper-api.alpaca.markets:443` → HTTP 000 / exit 56 (connection failed — proxy policy denial)
+- `api.telegram.org:443` → HTTP 000 (connection failed)
+- `api.perplexity.ai:443` → HTTP 000 (connection failed)
+Research conducted via WebSearch fallback. Proxy status confirmed via `$HTTPS_PROXY/__agentproxy/status`.
+
+### Market Context (via WebSearch — 9:05 AM ET)
+
+**VIX:** 16.73 (Jul 16 close, +6.76% on day; intraday spike to 17.40 on Jul 13) → **Sizing mode: MODERATE** (15–25; N/A for Dual Momentum — noted for awareness only)
+
+**S&P 500 Futures (premarket):**
+- ES (S&P 500): −0.8%; SPY -0.94% at $743.70 premarket
+- NQ (Nasdaq-100): harder hit by Netflix + semiconductor weakness
+- Driver: Netflix (NFLX) -8.9% premarket after Q2 miss on Q3 revenue guidance ($12.86B vs $13B expected); semiconductor sector continuing multi-day rout (Chinese AI startup Moonshot new model launch → chip headwind)
+
+**Oil:**
+- Brent: $85.95/bbl (+2.04%); at 5:50 AM ET reported at $86.09/bbl — elevated (~$16 above 1-year ago)
+- WTI: estimated ~$80–82/bbl (Brent spread typically $5–6); US-Iran tensions ongoing
+- Context: oil elevated on Middle East geopolitical risk
+
+**Major Catalysts Today (July 17):**
+- **Netflix (NFLX) -8.9% premarket:** Q2 in-line ($12.56B rev, +13.4% YOY, EPS $0.80 vs $0.79 est) BUT Q3 guidance weak ($12.86B vs $13B est); shares hit 52-week low. Drag on Nasdaq.
+- **Semiconductor sector rout:** Chinese AI startup Moonshot new model → AI demand fears for chips; semis down multi-day; SMH ETF -70% from its +70% YTD high implied reversal pressure
+- **Economic data due today:** June housing starts, June building permits, June industrial production, July preliminary UMich consumer sentiment
+- **Earnings today:** Travelers (TRV), Truist Financial (TFC), Fifth Third Bancorp (FITB)
+
+**Sector Performance (week Jul 13–17):**
+- **Top performers:** Consumer Staples/Non-Cyclical (+2.99%), Transportation (+2.16%), Healthcare (+1.73%), Services (+1.34%), Utilities (+0.61%) — defensive rotation week
+- **Worst performers:** Technology (−1.46%), Basic Materials (−1.42%), Capital Goods (−1.25%), Conglomerates (−0.68%)
+- **Context:** Geopolitical tensions (US-Iran), chip rout from Chinese AI competition, Netflix miss all driving risk-off and tech selloff this week
+
+### Dual Momentum Signal Estimate (via WebSearch — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+39–44% | Multiple WebSearch sources: FinanceCharts ~+39.4%, GuruFocus 44.19%, estimated avg ~+41%; IWM trading ~$296 |
+| 2 | GLD | ~+30–32% est. | Gold resilient on geopolitical risk; elevated Brent supports |
+| 3 | QQQ | ~+28–31% est. | Tech weakness this week may narrow vs GLD |
+| 4 | SPY | ~+20–22% est. | Absolute filter: PASSES (SPY 12m positive, +21.9% est.) |
+| 5 | TLT | <+5% est. | Rate uncertainty, oil-driven inflation pressure |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**SPY 12m: ~+20–22% → Absolute filter PASSES**
+**Preliminary Signal: BUY IWM** (28th consecutive session with same preliminary reading)
+*Must re-verify with `python3 scripts/dual_momentum_signal.py` before any trade, once API restored.*
+
+### Today's Action
+**NOT a rebalance day.** Next scheduled rebalance: 2026-07-31 (~10 trading days). No trades permitted by strategy.
+
+**Overdue rebalance note:** June 30 rebalance missed (Day 28 of API blockage). As soon as APIs are restored, run `dual_momentum_signal.py` → if IWM still #1, BUY IWM immediately. Do not wait for July 31. IWM ~$296 — still well below its 52-week high of $302.72, reasonable entry window remains open.
+
+### Risk Factors
+- Netflix weak guidance: Q3 revenue miss dragging Nasdaq/tech premarket; could spread to sentiment
+- Semiconductor rout continuing: Chinese AI startup Moonshot model → demand-reduction narrative for US chip stocks; risk of further VIX spike
+- Oil elevated at $86 Brent / ~$81 WTI: US-Iran tensions ongoing; inflation risk persists, may delay rate cuts
+- VIX 16.73 and rising from 15.67 low (Jul 16) → market stress building into week-end
+- IWM (small-cap) sensitivity: geopolitical risk-off and rising oil/rates headwind for domestic small-caps
+- FOMC Jul 28-29: rate decision looming; no cut consensus yet given oil-driven inflation
+
+### Decision
+**NO TRADE** — not a rebalance day. APIs blocked (Day 28) — no trades possible regardless.
+Strategy permits no intraday or discretionary action between monthly rebalances.
+
+**Account Snapshot:** $100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked for 28 days)
+
+---
+
+---
+
 ## 2026-07-16 — Morning Research (Thursday) ⚠️ API STILL BLOCKED — Day 27
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (~11 trading days)

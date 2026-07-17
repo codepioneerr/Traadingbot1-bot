@@ -435,6 +435,26 @@ Dual Momentum signal: BUY IWM (27th consecutive session same preliminary reading
 
 ---
 
+## 2026-07-17 — Morning Routine (Friday, Day 28 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (~10 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed via WebSearch
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran (2026-07-17, Friday). `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, and `api.telegram.org:443` remain blocked — proxy returned HTTP 000 / exit 56 on all three (Day 28 of blockage spanning Jun 22–Jul 17). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31, ~10 trading days). Overdue rebalance from Jun 30 (signal: BUY IWM) remains pending API restoration.
+
+**Today's macro (via WebSearch):** VIX 16.73 (MODERATE, +6.76% Jul 16 close; spiked to 17.40 on Jul 13); S&P 500 futures −0.8%, Nasdaq harder hit; Netflix (NFLX) −8.9% premarket (Q2 in-line but Q3 revenue guidance $12.86B vs $13B expected — shares hit 52-week low); semiconductor sector rout continued on Chinese AI startup Moonshot model launch; Brent crude $85.95/bbl (+2.04%), WTI est. ~$81/bbl; week's best sectors: Consumer Staples (+2.99%), Transportation (+2.16%), Healthcare (+1.73%); worst: Technology (−1.46%), Basic Materials (−1.42%).
+
+**Dual Momentum signal (WebSearch est.):** IWM ~+39–44% 12m (#1) > GLD ~+30–32% > QQQ ~+28–31% > SPY ~+21.9% (absolute filter PASSES) > TLT <+5%. Signal remains BUY IWM (28th consecutive session). Must re-verify via `dual_momentum_signal.py` before any trade once API restored.
+
+Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram sector watch could not be sent (blocked); push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in remote execution environment's egress policy. 28 consecutive trading days blocked. July 31 rebalance is ~10 trading days away.**
+
+---
+
 ## 2026-07-16 — EOD Snapshot (Thursday, Day 27 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
