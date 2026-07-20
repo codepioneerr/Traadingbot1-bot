@@ -5,6 +5,89 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-20 — Morning Research (Monday) ⚠️ API STILL BLOCKED — Day 30+
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (9 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed via WebSearch below
+
+### API Access Status
+All outbound egress confirmed blocked (Day 30+: Jun 22–Jul 20):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback. Proxy status confirmed via curl test.
+
+### Account State
+Cannot retrieve — Alpaca API blocked. Last known: $100,000.00 (Day 0 baseline, 2026-05-09). No positions held.
+
+### Market Context (via WebSearch — July 20, 2026)
+
+**VIX:** ~16.18 (mild pullback from Friday's spike above 18) → **Sizing mode: MODERATE** (15–25; N/A for Dual Momentum — noted for awareness only)
+
+**S&P 500 / Nasdaq Futures (premarket):**
+- ES (S&P 500): +0.5%
+- NQ (Nasdaq-100): +1.0%
+- Dow: +203 pts (+0.4%)
+- Driver: Bullish open on Trump "Iran is 'Very, Very Badly Damaged'" comment; market interpreted as slightly de-escalatory; chipmaker strength
+
+**Oil:**
+- WTI: $84.85/bbl (+~3% overnight; up ~14% for the week of Jul 14-18)
+- Brent: $90.78/bbl (+~3% overnight; hit $88.10 on Jul 17, pushed higher Sunday night)
+- Context: US-Iran war continuing — 9th consecutive night of US strikes on Iran; Strait of Hormuz supply disruption risk elevated; oil spiked ~14% last week
+
+**Sectors (week of July 14–18 performance):**
+- **Top performers:** Energy (best sector — only major sector to advance on the week), Transport Infrastructure (+5.84%), Consumer Conglomerates/Defensives (+5.00%), Oil & Gas (+2.12%)
+- **Worst performers:** Technology / Semiconductors (Philadelphia Semiconductor Index entered bear market territory — down 20%+ from June peak), AI Infrastructure (AI capex ROI skepticism), Taiwan Semiconductor (TSM) -7.3% on the week
+
+**Major Catalysts Today (July 20):**
+- US-Iran: 9th consecutive night of strikes; 17 US service members killed total since conflict began; Trump "badly damaged" comment driving futures higher
+- Earnings: Domino's (DPZ), AMC, 42 total reports today
+- Week ahead: Alphabet (GOOG) + Tesla (TSLA) Wednesday Jul 22; Intel (INTC) Thursday; AXP Friday; peak earnings volume week
+
+**Major News Since Friday July 17:**
+1. US resumed Iran strikes — 9th consecutive night, new service member killed
+2. Tech selloff deepened — China's Moonshot "Kimi K3" AI model sparks fresh AI capex ROI fears
+3. Philly Semiconductor Index in bear market — -20%+ from June peak
+4. S&P 500 -1.6% for week ending Jul 18 (first weekly loss in ~3 months); Dow -406 pts; Nasdaq -1.4%
+5. Oil +14% in one week (WTI ~$84.85, Brent ~$90.78)
+6. Rotation into defensives and energy strongly underway
+
+### Dual Momentum Signal Estimate (via WebSearch — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+34.78% | Last close $293.36 (Jul 17); 12m from ~$212 low; small-caps leading |
+| 2 | QQQ | ~+27–31% est. | Tech has pulled back; multiple sources: 27.28%–31.25% |
+| 3 | GLD | ~+23.13% | Gold resilient on geopolitical/inflation bid |
+| 4 | SPY | ~+21.66% | **Absolute filter: PASSES (positive ~+21.7%)** |
+| 5 | TLT | ~+3.81% | Bonds lagging; rate/oil inflation pressure |
+| — | SHY | ~+4–5% | Cash proxy |
+
+**SPY 12m: ~+21.7% → Absolute filter PASSES**
+**Preliminary Signal: BUY IWM** (30th+ consecutive session with same preliminary reading)
+*Must re-verify with `python3 scripts/dual_momentum_signal.py` before any trade, once API restored.*
+
+### Today's Action
+**NOT a rebalance day.** Next scheduled rebalance: 2026-07-31 (9 trading days). No trades permitted by strategy.
+
+**Overdue rebalance note:** June 30 rebalance missed (API blockage now 30+ consecutive trading days). As soon as Alpaca API is accessible, run `dual_momentum_signal.py` — if IWM still #1, BUY IWM immediately (overdue rebalance). Do not wait for July 31.
+
+**Critical context:** IWM at $293.36 vs entry would have been ~$285-290 on Jun 30 — the account has missed approximately +1-3% upside from the Jun 30 signal. However, IWM still leads all ETFs by a wide margin and the July 31 rebalance can still execute.
+
+### Risk Factors
+- **US-Iran active military conflict (9th night of strikes):** Strait of Hormuz disruption risk; oil at $84-91/bbl — inflationary, could delay Fed rate cuts; FOMC Jul 28-29 looming
+- **Tech/semiconductor bear market:** Philly Semi -20% from peak; AI capex ROI debate intensifying; Tesla + Alphabet earnings Wednesday (major volatility risk)
+- **IWM/small-cap sensitivity:** Domestic small-caps sensitive to rising oil/input costs and risk-off; geopolitical escalation could weigh further
+- **IWM entering below recent highs:** Last close $293.36 vs 52-week high $302.72 — some technical resistance but well off top
+- **FOMC July 28-29:** No consensus on rate cuts; June CPI 3.5% still above target; hawkish surprise risk
+
+### Decision
+**NO TRADE** — not a rebalance day. APIs blocked — no trades possible regardless. Strategy permits no intraday or discretionary action between monthly rebalances.
+
+**Account Snapshot:** $100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked 30+ consecutive trading days)
+
+---
+
 ## 2026-07-17 — Morning Research (Friday) ⚠️ API STILL BLOCKED — Day 28
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (~10 trading days)
