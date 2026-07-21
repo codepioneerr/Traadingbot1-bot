@@ -5,6 +5,81 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-21 — Morning Research (Tuesday) ⚠️ API STILL BLOCKED — Day 32
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (8 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed via WebSearch
+
+### API Access Status
+All outbound egress confirmed blocked (Day 32: Jun 22–Jul 21):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch)
+
+**VIX:** 18.44 (range 18.40–18.94, opened 18.90) → **Sizing mode: MODERATE** (15–25 band)
+
+**S&P 500 Futures (premarket):**
+- ES (S&P 500): +0.45% — chip stocks reviving, peace-talk hopes for US-Iran
+- QQQ: +1.38% premarket at $705.68
+- SPY: +0.56% premarket at $746.28
+- Note: S&P 500 fell -1.0% last week (tech/semi rout), Nasdaq -1.4%
+
+**Oil:**
+- WTI Crude: $82.43/bbl (-0.06%)
+- Brent Crude: ~$88.56–89.93/bbl (still elevated; ~$20.50 above one year ago)
+- Oil spiked ~+14% past week on US-Iran strikes; slight pullback today on peace-talk reports
+
+**Key Catalysts Today:**
+- Chip-stock revival: SOXQ (Philly Semiconductor ETF) +4.27% premarket — semis entered bear market (-20%+ from June peak) last week; now rebounding
+- Iran peace-talk reports lifting risk sentiment broadly
+- 73 companies reporting earnings today (BFC before open); heavy week ahead
+- GOOG + TSLA earnings Wednesday July 22 — high-volatility event
+- FOMC July 28–29 upcoming (first rate decision under Chair Warsh)
+- China tech rally: KWEB +13% in July; Alibaba +27% on Apple Intelligence/Qwen AI news
+
+**Sectors (week of July 20):**
+- Best: Energy +3.7% | Real Estate +1.4% | Financials +0.1%
+- Worst: Technology -4%+ (semiconductor bear market)
+
+**Year-to-date best sector:** Energy (benefiting from Iran/oil shock)
+
+### Dual Momentum Signal Estimate (via WebSearch — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | +34.78% | Confirmed FinanceCharts; $293.36 Fri close |
+| 2 | QQQ | ~+27–31% est. | Premarket +1.38% |
+| 3 | GLD | ~+23–32% est. | Iran/oil backdrop supportive |
+| 4 | SPY | +20.42% | Absolute filter: PASSES (positive) |
+| 5 | TLT | <+5% est. | Rate pressure; bonds weak |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**SPY 12m: +20.42% → Absolute filter PASSES**
+**Preliminary Signal: BUY IWM** (32nd consecutive session with same preliminary reading)
+*Must re-verify with `python3 scripts/dual_momentum_signal.py` before any trade once API restored.*
+
+### Rebalance Status
+- `python3 scripts/is_rebalance_day.py` → NOT rebalance day. Next: Friday July 31, 2026 (8 trading days).
+- Overdue rebalance from June 30 still pending API restoration. As soon as Alpaca accessible: run `dual_momentum_signal.py` → if IWM still #1, BUY IWM immediately.
+
+### Risk Factors
+- US-Iran military conflict ongoing — oil spike inflationary; peace-talk hopes today but fragile
+- Semiconductor sector in technical bear market (-20%); IWM has tech/small-cap exposure
+- GOOG + TSLA earnings Wednesday Jul 22 — potential volatility spike
+- FOMC Jul 28–29: first Warsh rate decision; any hawkish surprise pressures equities
+- High VIX (18.44) — moderately elevated fear; watch for reversal if peace talks collapse
+- APIs blocked 32 consecutive days — unable to trade regardless of signals
+
+### Decision
+**NO TRADE** — not a rebalance day (next: July 31). Strategy permits no intraday or discretionary action between monthly rebalances. APIs blocked — no trades possible regardless.
+
+**Account Snapshot:** $100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked since Jun 22)
+
+---
+
 ## 2026-07-20 — Morning Research (Monday) ⚠️ API STILL BLOCKED — Day 30+
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (9 trading days)
