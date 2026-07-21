@@ -541,3 +541,20 @@ Dual Momentum signal: BUY IWM (31st consecutive session same preliminary reading
 Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in remote execution environment's egress policy. 32 consecutive trading days blocked. July 31 rebalance is 8 trading days away.**
 
 ---
+
+## 2026-07-21 — EOD Snapshot (Tuesday, Day 33 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-07-21, Tuesday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 33 of blockage spanning Jun 22–Jul 21; confirmed via `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31, 8 trading days remaining). Overdue rebalance from Jun 30 (signal: BUY IWM) remains pending API restoration.
+
+**Today's market close (via WebSearch):** S&P 500 +0.9%; Nasdaq +1.3%; Dow +0.7%; IWM/Russell 2000 +1.29% (~$296.12, up from $292.35 Mon close). VIX 16.89 (MODERATE, down 9.4% from ~18.64 — fear easing). Semiconductor stocks led gains: SMH +4%, chipmakers broadly +2-3% as sector bounced hard from bear market lows. ~88% of 66 S&P 500 reporters beat EPS estimates. GM beat pre-market; GOOG+TSLA earnings due tomorrow (Jul 22) — high volatility risk. US-Iran tensions ongoing but ceasefire talks reported (oil eased). FOMC Jul 28–29 upcoming.
+
+Dual Momentum signal: BUY IWM (33rd consecutive session; IWM est. ~+37–40% 12m #1; absolute filter PASSES — SPY +20%+ 12m). IWM closed ~$296.12 (+1.29%). Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram, and Yahoo Finance hosts in remote execution environment's egress policy. 33 consecutive trading days blocked. July 31 rebalance is 8 trading days away.**
+
+---
