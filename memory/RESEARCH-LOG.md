@@ -5,6 +5,70 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-22 — Morning Pre-Market Research (Wednesday, Day 34 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (7 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed 34th consecutive session
+**APIs:** paper-api.alpaca.markets + api.perplexity.ai + api.telegram.org — ALL 403 blocked (Day 34: Jun 22–Jul 22)
+
+**Account Snapshot (last known):**
+- Equity: $100,000.00 | Cash: $100,000.00 | Buying Power: $100,000.00 | Daytrade count: 0
+- Positions: None | Orders: None
+
+**Market Context (via WebSearch — Perplexity blocked):**
+- VIX: **17.54** (+2.87%) — range 17.22–18.78; VIX futures 18.58 open → MODERATE; ticking up into mega earnings
+- ES futures: **−0.20 to −0.33%** premarket — cautious ahead of GOOG/TSLA/IBM after close
+- WTI: ~**$84.29/bbl** (Jul 21 close); Brent: **$88–90** range (Jul 21), possible $95+ intraday (Night 11 US-Iran strikes)
+- National gas avg: **$4.00/gal** — first time above $4 since spring; Iran oil war premium
+- IWM last close: **$296.13** (+1.1%, Jul 21); premarket est. ~$295 (mild ES drag)
+- Best sectors (week of Jul 20): Energy (XLE) **+3.7%**, Communications (XLC), Technology (XLK — semis rebound)
+- Worst sectors: Industrials (XLI) **−1.9%**, Health Care (XLV) **−1.0%**
+
+**Sizing mode:** N/A — Dual Momentum uses 100% single-asset, no VIX sizing. VIX 17.54 = MODERATE (context only).
+
+**Key Events Today:**
+- EARNINGS (after close): **GOOGL** (EPS est. $2.89, Rev $116.84B, Cloud +63%), **TSLA** (EPS est. $0.50), **IBM** (EPS est. $3.02 — prelim miss pre-announced)
+- Options implied vol: **86%** on TSLA/GOOG — extreme event risk; expect large moves tomorrow AM
+- EIA Crude Oil Inventories: 9:30 AM ET (forecast −1.5M bbls, prev −1.692M)
+- Jobless Claims: Tomorrow Thu Jul 23, 12:30 PM ET (est. 212K)
+- **FOMC: Jul 28-29** — 75–79.5% probability HOLD; Chair Warsh "prices too high" (hawkish lean); committee split on potential hike
+- **US-Iran Night 11** — fresh overnight strikes on Iran; Fordow (underground nuclear site) escalation under consideration; Iran retaliating in Gulf/Jordan; ceasefire talks via Pakistan back-channel
+
+**Dual Momentum Signal Estimate (via WebSearch — NOT authoritative, yfinance not installed):**
+
+| Rank | Ticker | ~12M Est. Return | Notes |
+|------|--------|-----------------|-------|
+| 1 | **IWM** | ~+37–40% | $296.13 close, 52w low $212.34; 34th consecutive session as #1 |
+| 2 | QQQ | ~+27–31% | Tech under pressure from semis selloff; bounce this week |
+| 3 | GLD | ~+23–32% | Iran war bid; elevated geopolitical premium |
+| 4 | SPY | ~+20–22% | Absolute filter PASSES (positive) |
+| 5 | TLT | ~+3–5% | Hawkish Warsh drag; oil inflation pressure |
+| — | SHY | ~+4–5% | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (34th consecutive session) — absolute filter passes, IWM #1.
+*Must re-verify with `python3 scripts/dual_momentum_signal.py` before any trade once API restored.*
+
+**Risk Factors:**
+- Iran escalation to Fordow: Brent could spike $95–100+, VIX 25+, broad equity selloff
+- GOOG/TSLA earnings miss: NQ/QQQ drag could affect all momentum assets overnight
+- FOMC Jul 28-29 hawkish surprise: Warsh rate hike risk (~20–25% tail) — would pressure IWM and TLT
+- Strait of Hormuz closure threat: sustained oil shock, inflationary, risk-off
+- Momentum factor historically weak in July (avg −5%); technical vulnerability
+
+**Trade Ideas (reference only — NOT actionable today, not rebalance day):**
+1. **IWM** — Dual Momentum signal target (#1 ranked, 34th consecutive session). Entry when APIs restored + dual_momentum_signal.py confirms. ~337 shares at $296 = ~$99,712 (100% equity).
+2. XLE energy ETF — NOT in strategy universe. Energy +3.7% on oil war premium. Monitor only.
+3. GOOG/TSLA post-earnings plays — NOT in strategy universe. Observe for macro signal only.
+
+**Decision: NO TRADE** — not a rebalance day. APIs blocked regardless.
+Next action: Jul 31 rebalance — run `dual_momentum_signal.py` + execute overdue IWM buy if confirmed.
+**ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts. 34 consecutive trading days blocked. Jul 31 rebalance 7 days away.**
+
+---
+
+---
+
 ## 2026-07-21 — Morning Research (Tuesday) ⚠️ API STILL BLOCKED — Day 32
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (8 trading days)
