@@ -1344,3 +1344,75 @@ Research conducted via WebSearch fallback.
 
 ### Decision
 **NO TRADE** — not rebalance day. Strategy permits no intraday or discretionary action.
+
+---
+
+## 2026-07-23 — Morning Research (Thursday, Day 35 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (6 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed 35th consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 35: Jun 22–Jul 23):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback. Proxy status: no recent relay failures logged — blockage is policy-based, not infrastructure failure.
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch)
+
+**VIX:** 18.65 (Jul 21 close; likely higher today given GOOG/TSLA miss + oil spike) → **Sizing mode: MODERATE** (N/A — monthly strategy)
+
+**S&P 500 Futures (premarket):** ES (ESU26) −0.42%; SPY −0.25% at $745.57 — futures dragged lower by GOOGL/TSLA post-earnings selling
+
+**Oil — BIG MOVE:** WTI $88.17 (+1.54%); **Brent $98.44–98.49 (+4.6%)** — highest since late May. Trump threatened additional strikes on Iran + reports of tanker attacks off Saudi coast. Hormuz closure risk elevated. WTI has now risen ~14–19% in ~10 days (from ~$74–75 on Jul 8 → $88+).
+
+**Overnight Catalysts — GOOG/TSLA Earnings (reported after Jul 22 close):**
+- **TSLA**: Revenue $28.24B (+26% YoY, beat); EPS $0.33 vs $0.50 est. (miss -34%); net income −5%; shares −7% premarket
+- **GOOGL**: Revenue $119.8B vs $116.9B est. (beat, +24% YoY); Google Cloud +82% YoY; but capex guidance raised to $205B (Wall Street paused); shares −5% premarket
+- Combined drag: large-cap tech pulling futures into the red
+
+**Economic Calendar Today (Jul 23):**
+- Weekly Initial Jobless Claims (8:30 AM ET) — claims recently fell to lowest since mid-May; consensus benign
+- New Home Sales — secondary data point
+- FOMC meeting: Jul 28–29 (first Warsh decision; ~77% HOLD probability) — next week
+
+**Sector Performance This Week (week of Jul 20):**
+- Top: Communications (XLC) +est.; Technology (XLK) +est.; Industrials (XLI) leading YTD
+- Weak today: TSLA/GOOGL drag on XLC and XLK; big-cap tech headwind
+
+### Dual Momentum Signal (WebSearch estimate — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+34.78% est. | Same reading from FinanceCharts Jul 21 |
+| 2 | QQQ | ~+27–31% est. | TSLA/GOOGL miss may not materially shift 12m return |
+| 3 | GLD | ~+23–32% est. | Oil/Iran spike supports gold near-term |
+| 4 | SPY | ~+20–22% est. | Absolute filter: PASSES (positive 12m) |
+| 5 | TLT | <+5% est. | Under pressure: Iran + FOMC uncertainty |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (35th consecutive session same reading)
+Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored.
+
+### Pre-Rebalance Note (Jul 31 — 6 trading days)
+July 31 rebalance is approaching. As soon as Alpaca API is accessible:
+1. Run `python3 scripts/dual_momentum_signal.py` — authoritative signal
+2. If IWM still #1: BUY IWM at 100% of equity (execute overdue rebalance + scheduled Jul 31 rebalance in one trade)
+3. `buy_qty = floor(equity / ask_price)`; no trailing stop per strategy
+4. Log trade + send Telegram
+
+### Risk Factors
+- **Oil shock escalating**: Brent nearly $100/bbl on Iran/Hormuz risk. Sustained high oil = inflationary pressure = hawkish Warsh signal = equity headwind. IWM (small-cap, domestic) more vulnerable to fuel-cost pressures than large-cap
+- **GOOG/TSLA miss**: Capex spending ($205B GOOGL) raising investor concern about AI ROI; TSLA EPS miss significant. Large-cap tech headwind may rotate into small-caps near-term (mixed for IWM)
+- **FOMC Jul 28–29**: First Warsh decision under elevated inflation/oil environment. Hawkish surprise would hurt both equities and TLT; benign = relief rally
+- **VIX likely 19–21 range**: GOOG/TSLA selling + oil spike = VIX probably above Jul 21 close of 18.65 at open today
+
+### Decision
+**NO TRADE** — not a rebalance day (July 31 is next). Strategy permits no intraday or discretionary action between monthly rebalances. APIs still blocked — no trades possible regardless.
+
+**ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 35 consecutive trading days blocked. July 31 rebalance 6 trading days away.**
