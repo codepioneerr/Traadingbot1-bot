@@ -613,3 +613,20 @@ Dual Momentum signal: BUY IWM (34th consecutive session; IWM $293.61 Jul 22 clos
 **Today's macro (via WebSearch):** Brent oil surged to $98.44–98.49 (+4.6%) — Trump threatened more Iran strikes + reports of tanker attacks off Saudi coast; WTI $88.17 (+1.54%). ES futures −0.42% premarket. TSLA EPS miss ($0.33 vs $0.50 est., −7% premarket), GOOGL down 5% on $205B capex raise despite revenue beat. VIX ~18.65 (Jul 21), likely higher today. Jobless claims + new home sales today; FOMC Jul 28–29 (first Warsh decision, ~77% HOLD). Best sectors this week: XLC (Communications), XLK (Technology), XLI (Industrials YTD). IWM small-cap may underperform in geopolitical risk-off/oil shock environment.
 
 Dual Momentum signal (35th consecutive session): IWM ~+34.78% 12m #1 > QQQ > GLD > SPY +20-22% (absolute filter PASSES) > TLT. Must re-verify via `dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). **Telegram could not be sent — api.telegram.org:443 blocked; push notification sent instead. ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts. 35 consecutive trading days blocked. July 31 rebalance 6 trading days away.**
+
+---
+
+## 2026-07-23 — EOD Snapshot (Thursday, Day 35 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-07-23, Thursday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 35 of blockage spanning Jun 22–Jul 23; confirmed via `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31, 5 trading days remaining). Overdue rebalance from Jun 30 (signal: BUY IWM) remains pending API restoration.
+
+**Today's market close (via WebSearch):** S&P 500 ~7,498.96 (approx. −0.1%); Nasdaq Composite −2.2% (GOOG/TSLA capex/EPS miss pressure); Dow −507 pts (−1%); **IWM $293.79 (approx. +0.06% from $293.61 Jul 22 close — essentially flat)**. VIX ~16.64 (intraday reading 2:25 PM ET; MODERATE). Risk-off tone driven by: (1) Brent oil surging to ~$98–99/bbl on Iran tanker attacks + Hormuz fears; (2) GOOGL $205B capex raise rattling AI ROI thesis; (3) TSLA EPS $0.33 vs $0.50 estimate; (4) FOMC Jul 28–29 looming (first Warsh decision, ~77% HOLD). Mega-cap tech dragged Nasdaq; small-caps (IWM) outperformed relatively on the session.
+
+Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m return est. +35–37% #1; absolute filter PASSES — SPY ~+20–22% 12m). Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 35 consecutive trading days blocked. July 31 rebalance 5 trading days away.**
