@@ -654,3 +654,22 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 - **FOMC Jul 28–29:** First Warsh decision (3 trading days away); ~77% HOLD expected; $100 Brent adds hawkish pressure. High vol potential heading into weekend.
 
 **Dual Momentum signal:** BUY IWM (36th consecutive session; IWM last known $293.79, ~12m return est. +34.78% #1; absolute filter PASSES — SPY ~+20.42% 12m). Brent $100 is new variable — does not change the monthly signal. Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Telegram sector-watch notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts. 36 consecutive trading days blocked. July 31 rebalance 4 trading days away. FOMC Jul 28–29 is highest-risk event before rebalance.**
+
+---
+
+## 2026-07-24 — EOD Snapshot (Friday, Day 36 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-07-24, Friday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 36 of blockage spanning Jun 22–Jul 24; confirmed via curl and `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31, 5 calendar days / 4 trading days remaining).
+
+**Today's market close (via WebSearch — APIs blocked):** S&P 500 +0.05% to ~7,412 (recovering from Thu's −1.2% drop to 7,408.30, its worst session since Jun 23); Nasdaq −0.6% (chip sell-off, GOOGL/TSLA capex/EPS pressure continuing); Dow +235 pts (+0.5%) supported by AXP/industrials. **IWM (Russell 2000)** ~$292–294 est. (Russell 2000 Index −0.33% on day; midday read $293.51 per search; was $293.79 Thu close). VIX eased from Thu highs (~18.70) but remains elevated. Oil slightly pulled back from $100.40 Brent peak — easing inflation fears helped Dow. AXP reported strong Q2 EPS ($4.40 beat), supporting financials.
+
+**Weekly recap (Jul 21–24):** S&P 500 weekly return approximately −0.7 to −0.8% (prior Fri close ~7,470 → today ~7,412). Mon Jul 21 opened strong (+1.2% semis/chips surge, S&P reclaimed 7,500); Tue–Thu gave it all back on GOOGL/TSLA miss, $100 Brent oil, FOMC anxiety. Net: down week. IWM essentially flat for the week (~$293.49 last Fri → ~$292–294 this Fri). Bot: 0% return (100% cash throughout).
+
+**Dual Momentum signal:** BUY IWM (36th consecutive session; IWM ~$292–294, ~12m return est. +34% #1; absolute filter PASSES — SPY ~+20% 12m). Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 36 consecutive trading days blocked. July 31 rebalance is NEXT THURSDAY — 4 trading days away. FOMC Jul 28–29 (Warsh) is the critical event before rebalance.**
