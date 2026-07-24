@@ -5,6 +5,80 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-24 — Morning Pre-Market Research (Friday, Day 36 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (4 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed 36th consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 36: Jun 22–Jul 24):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (confirmed 13:05 UTC today via proxy status)
+- `api.telegram.org:443` → blocked (policy denial)
+- `api.perplexity.ai:443` → blocked (policy denial)
+Research conducted via WebSearch fallback (Perplexity blocked).
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch)
+
+**VIX:** 18.70 (Jul 23 close; intraday range 17.32–20.31) → **Sizing mode: MODERATE** (N/A — monthly strategy; note VIX spiked toward 20 during Thursday session before closing 18.70)
+
+**S&P 500 Futures (premarket Friday):** +0.11–0.20% — recovering from Thursday's worst single-day drop in a month (GOOG/TSLA AI capex/EPS miss + oil spike fears). Polymarket: 66% probability market opens higher Friday. AXP and VZ earnings due before open.
+
+**Oil — BREAKING $100 BRENT:**
+- **WTI:** $91.77–92.36/bbl (+6.37% Thursday — massive single-day surge)
+- **Brent:** $100.40/bbl — broke the psychologically significant $100/bbl threshold
+- Context: +30% from pre-conflict levels (pre-July 8 ~$74-75 WTI). Iran tanker attacks + Trump escalation threats driving Hormuz closure premium. Major inflationary signal.
+
+**Today's Major Earnings (before market open Jul 24):**
+- **American Express (AXP):** EPS est. $4.40 / Rev est. $19.66B — consumer spending health barometer
+- **Verizon (VZ):** EPS est. $1.27 / Rev est. $35.33B
+- **Charter Communications (CHTR):** EPS est. $10.19 / Rev est. $13.53B
+- **HCA Healthcare (HCA):** EPS est. $7.41 / Rev est. $19.37B
+- **SLB:** Oil services — highly relevant given Brent $100+
+
+**Sector Performance This Week (week of Jul 20–24):**
+- Top: Communications (XLC), Technology (XLK — semis rebounding from bear market), Industrials (17 stocks hitting 52-week highs Thu Jul 24)
+- Weak: Energy (XLE) lagging despite oil spike (equity energy stocks underperforming raw commodity); Consumer Discretionary (XLY), Healthcare (XLV) weakest YTD
+
+### Dual Momentum Signal (WebSearch — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+34.78% | FinanceCharts confirmed (same reading 36 sessions) |
+| 2 | GLD | ~+32% est. | Oil/Iran spike boosts gold; updated est. |
+| 3 | QQQ | ~+27–31% est. | GOOG/TSLA capex concern may modestly drag 12m |
+| 4 | SPY | ~+20.42% | Absolute filter: PASSES (positive 12m) |
+| 5 | TLT | <+5% est. | Oil inflation + Warsh hawkish risk = pressure |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (36th consecutive session). Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored.
+
+### Pre-Rebalance Note (Jul 31 — 4 trading days)
+**CRITICAL:** July 31 rebalance is NEXT THURSDAY. Only 4 trading days remain (Mon 28, Tue 29, Wed 30, Thu 31). FOMC decision is Mon Jul 28–Tue Jul 29 (first Warsh meeting; ~77% HOLD). If Warsh surprises hawkish, could alter market landscape before rebalance. Oil at $100 Brent is a new variable. Still expect IWM #1 signal but must verify with script on July 31.
+
+### Risk Factors
+- **Brent $100+ (Hormuz risk):** Sustained triple-digit oil = inflation shock → Fed forced hawkish = equity headwind. IWM (domestic small-cap) disproportionately hurt by fuel costs and higher rates.
+- **FOMC Jul 28–29 (Warsh, first meeting):** ~77% HOLD expected; but $100 Brent creates pressure for hawkish signal. Surprise = high vol. Coincides with 3 days before rebalance.
+- **AI capex concern:** GOOGL $205B + TSLA EPS miss raised ROI questions. Large-cap tech headwind could rotate INTO small-caps (near-term bullish for IWM) or trigger broader risk-off (bearish).
+- **VIX range 17.32–20.31 intraday:** Elevated but not extreme. Warsh decision + oil could push VIX through 20 next week.
+- **This does NOT change the monthly signal:** No exits, no stops, no discretionary action. Hold cash and await July 31.
+
+### Decision
+**NO TRADE** — not a rebalance day. Strategy permits no intraday or discretionary action between monthly rebalances. APIs still blocked — no trades possible regardless. HOLD 100% cash until July 31 rebalance.
+
+**ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 36 consecutive trading days blocked. July 31 rebalance 4 trading days away.**
+
+---
+
+## 2026-07-23 — Morning Pre-Market Research (Thursday, Day 35 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+*(see TRADE-LOG.md for full notes — research appended there due to same-session logging)*
+
+---
+
 ## 2026-07-22 — Morning Pre-Market Research (Wednesday, Day 34 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A

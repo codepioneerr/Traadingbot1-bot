@@ -630,3 +630,27 @@ Dual Momentum signal (35th consecutive session): IWM ~+34.78% 12m #1 > QQQ > GLD
 **Today's market close (via WebSearch):** S&P 500 ~7,498.96 (approx. −0.1%); Nasdaq Composite −2.2% (GOOG/TSLA capex/EPS miss pressure); Dow −507 pts (−1%); **IWM $293.79 (approx. +0.06% from $293.61 Jul 22 close — essentially flat)**. VIX ~16.64 (intraday reading 2:25 PM ET; MODERATE). Risk-off tone driven by: (1) Brent oil surging to ~$98–99/bbl on Iran tanker attacks + Hormuz fears; (2) GOOGL $205B capex raise rattling AI ROI thesis; (3) TSLA EPS $0.33 vs $0.50 estimate; (4) FOMC Jul 28–29 looming (first Warsh decision, ~77% HOLD). Mega-cap tech dragged Nasdaq; small-caps (IWM) outperformed relatively on the session.
 
 Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m return est. +35–37% #1; absolute filter PASSES — SPY ~+20–22% 12m). Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 35 consecutive trading days blocked. July 31 rebalance 5 trading days away.**
+
+---
+
+## 2026-07-24 — Morning Routine (Friday, Day 36 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (4 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed 36th consecutive session
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran (2026-07-24, Friday). `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected on all three (Day 36 of blockage spanning Jun 22–Jul 24; Alpaca CONNECT rejected confirmed 13:05 UTC via `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31, 4 trading days remaining). Overdue rebalance from Jun 30 (signal: BUY IWM) remains pending API restoration.
+
+**Today's macro (via WebSearch — Perplexity blocked):**
+- **VIX:** 18.70 (Jul 23 close; intraday range 17.32–20.31; MODERATE). Thursday saw worst S&P 500 single-day in a month.
+- **S&P 500 futures premarket:** +0.11–0.20% Friday — recovering from Thursday selloff. Polymarket 66% chance opens higher.
+- **Oil — MAJOR ESCALATION:** **Brent $100.40/bbl** (broke $100 threshold); **WTI $91.77–92.36/bbl** (+6.37% Thursday). Prices +30% from pre-conflict levels (pre-Jul 8). Iran tanker attack reports + Trump escalation threats driving Hormuz premium.
+- **Today's major earnings (before open):** American Express (AXP, est. $4.40 EPS — consumer spending barometer), Verizon (VZ), Charter (CHTR), HCA Healthcare (HCA), SLB (oil services — relevance given $100 Brent).
+- **Top sectors this week:** Communications (XLC), Technology (XLK — semis rebounding), Industrials (17 S&P 500 stocks hit 52-week highs Thursday). Weak: Energy equity (XLE underperforming raw oil), Consumer Discretionary (XLY), Healthcare (XLV) weakest YTD.
+- **FOMC Jul 28–29:** First Warsh decision (3 trading days away); ~77% HOLD expected; $100 Brent adds hawkish pressure. High vol potential heading into weekend.
+
+**Dual Momentum signal:** BUY IWM (36th consecutive session; IWM last known $293.79, ~12m return est. +34.78% #1; absolute filter PASSES — SPY ~+20.42% 12m). Brent $100 is new variable — does not change the monthly signal. Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Telegram sector-watch notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts. 36 consecutive trading days blocked. July 31 rebalance 4 trading days away. FOMC Jul 28–29 is highest-risk event before rebalance.**
