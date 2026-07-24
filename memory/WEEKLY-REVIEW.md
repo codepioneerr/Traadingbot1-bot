@@ -7,6 +7,112 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## Week ending 2026-07-24 — Weekly Review #5 ⚠️ API BLOCKED (Day 36)
+
+### Portfolio Summary
+
+| Metric | Value |
+|--------|-------|
+| Portfolio (EOW) | $100,000.00 (last known — API blocked) |
+| Cash | $100,000.00 (100%) |
+| Week P&L | $0.00 / 0.00% (no positions) |
+| Phase P&L (since May 9) | $0.00 / 0.00% |
+| S&P 500 weekly return | ~−0.7 to −0.8% (est. 7,470 → ~7,412) |
+| Bot vs S&P delta | +~0.7% (inadvertent outperformance — flat vs down market) |
+| Trades this week | 0 |
+| W/L/Open | 0/0/0 |
+| Win rate | N/A |
+| Profit factor | N/A |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Sizing mode (this week) | N/A — Dual Momentum monthly rebalance only |
+
+### Week in Review (Jul 21–24, 2026)
+
+**Strategy:** Dual Momentum ETF Rotation — monthly rebalance only. No intraday or discretionary trades permitted. No rebalance day this week (next: Jul 31 — 4 trading days away).
+
+**API blockage status:** Day 36 (Jun 22 – Jul 24). `paper-api.alpaca.markets`, `api.telegram.org`, and `api.perplexity.ai` all returning 403 connect_rejected at proxy. Perplexity research substituted with WebSearch. Telegram substituted with push notifications.
+
+### Market Context (Jul 21–24)
+
+- **S&P 500:** ~−0.7% for week; Mon Jul 21 surged +1.2%+ (chip/semi recovery), then Tue–Thu gave all back on GOOGL $205B capex shock, TSLA EPS miss ($0.33 vs $0.50 est.), and $100 Brent oil; Thu −1.2% (worst session since Jun 23); Fri +0.05% modest recovery
+- **Nasdaq:** −0.6% Friday; net weekly loser dragged by Mag-7 rotation
+- **Dow:** +235 pts Friday (AXP Q2 beat + industrials); net week mixed
+- **VIX:** 18.70 Thu close; range 17.32–20.31 Thu intraday; MODERATE-ELEVATED. VIX was ~16.6 midweek before spiking
+- **IWM (Russell 2000):** ~$292–294 Friday (essentially flat for the week from $293.49 prior Friday close; small-cap domestic names less exposed to tech capex/GOOGL impact)
+- **Oil — MAJOR ESCALATION:** Brent broke $100/bbl ($100.40 Thu) on Iran tanker attacks + Trump threats; WTI $91.77–92.36 (+6.37% Thu). Eased slightly Friday but remains elevated. +30% from pre-conflict (pre-Jul 8) levels
+- **Best sectors this week:** Technology/Semiconductors (Mon surge — Micron +12.6%, Intel +8%, SOX +4%); Industrials (17 S&P 500 stocks hit 52-week highs); Financials (AXP beat)
+- **Worst sectors this week:** Consumer Discretionary (TSLA -7% Wed), Communications (GOOGL -5% capex shock), Consumer Staples; Healthcare weakest YTD
+- **Key macro:** FOMC Jul 28–29 looming (first Warsh decision, ~77% HOLD); Employment Cost Index Jul 31; Apple earnings ~Jul 30; Amazon ~Jul 31
+
+### Closed Trades This Week
+
+None — bot held no positions all week (API blocked; no rebalance day).
+
+### Open Positions (EOW)
+
+None — account is 100% cash pending API restoration and overdue Jun 30 rebalance (Buy IWM).
+
+### Dual Momentum Signal (36th consecutive session: BUY IWM)
+
+| Rank | Ticker | ~12M Return (est.) | Status |
+|------|--------|-------------------|--------|
+| 1 | IWM | ~+34–36% | **Signal: BUY** |
+| 2 | QQQ | ~+27–31% | Hold |
+| 3 | GLD | ~+23–32% | Hold (oil spike supports gold) |
+| 4 | SPY | ~+20–22% | Absolute filter: PASSES |
+| 5 | TLT | <+5% | Below threshold |
+| — | SHY | ~+4–5% | Cash proxy |
+
+Signal unchanged for 36 sessions. IWM slightly softened 12m return estimate vs prior weeks as semis/tech headwinds reduce small-cap momentum margin. Must re-verify with `python3 scripts/dual_momentum_signal.py` before executing. **Next rebalance: Jul 31 (4 trading days).**
+
+### What Worked
+
+- **Inadvertent cash protection:** 100% cash avoided the −0.7% weekly S&P loss and all of GOOGL/TSLA single-stock drawdowns; inadvertently beat market by ~0.7% this week
+- **IWM held up vs large-cap tech:** Small-cap domestic thesis (IWM) outperformed Nasdaq this week — validates momentum signal direction even amid tech headwinds
+- **WebSearch fallback remains effective:** Market close data, sector performance, oil dynamics, earnings results all captured daily despite Perplexity and Alpaca blockage
+- **git persistence fully operational:** Every routine committed and pushed; full session state recoverable from any fresh clone
+- **Push notifications delivering daily status:** User receiving daily updates via push notification tool throughout the blockage
+
+### What Didn't Work
+
+- **API blockage persists — Day 36:** `paper-api.alpaca.markets`, `api.telegram.org`, and `api.perplexity.ai` all blocked. Jun 30 rebalance (BUY IWM) remains unexecuted for 18 trading days
+- **No live account data:** Cannot verify paper account value, confirm $100K balance is intact, or see any paper P&L
+- **Telegram silent for 36 sessions:** User is not receiving the rich formatted Telegram summaries the strategy was designed to produce; mobile push notifications are a degraded fallback
+- **FOMC + $100 oil creates execution timing risk:** Next rebalance (Jul 31) follows FOMC (Jul 29) by only 1 day. A hawkish Warsh surprise or Brent staying above $100 could compress IWM at the exact moment the bot tries to buy
+
+### Key Lessons
+
+1. **Jul 31 rebalance is the next critical execution gate.** Six weeks of missed opportunity cost is pending. If API is still blocked on Jul 31, document the exact time of blockage confirmation, note IWM price, and record the signal formally — so the overdue rebalance can be executed retroactively once access is restored.
+2. **Oil at $100 is a macro regime shift.** Brent crossing $100 on Iran Hormuz risk is stagflationary: hawkish Fed pressure, consumer spending squeeze, but domestic small-caps (IWM) may be mixed vs export-heavy large-caps. Monitor whether this shifts IWM's 12m momentum ranking.
+3. **FOMC timing risk is real.** Warsh's Jul 29 decision (one day before rebalance) is the highest single-day vol risk. If Warsh is hawkish (rate hike signal), IWM could gap down significantly. Strategy has no mechanism to defer the rebalance — must execute on Jul 31 regardless.
+4. **GOOGL $205B capex raised AI ROI concerns that spilled into small-caps.** Large-cap AI capex anxiety is now a market-wide narrative. IWM held up relatively well this week but is not immune.
+5. **Whitelist action is still the #1 blocker.** Six consecutive weeks of zero trades is entirely infrastructure. Nothing in the market or strategy warrants inaction.
+
+### Top Sectors / ETFs for Next Week (Jul 28–Aug 1)
+
+1. **Financials (XLF)** — AXP beat is a positive consumer spending signal; FOMC decision could unlock financials if Warsh signals cuts ahead; bank earnings were strong. Key for market tone.
+2. **Technology (XLK) / Semiconductors (SMH)** — AAPL earnings ~Jul 30 is the week's pivotal event; if beat + forward guidance holds, could reverse the GOOGL/TSLA capex anxiety and re-energize semis. Mon surge showed latent demand.
+3. **Energy (XLE)** — Brent $100+ means energy producers are printing cash. Near-term support from Iran/Hormuz premium. SLB Q2 beat Friday supports services. Watch for diplomatic de-escalation as the risk.
+4. **IWM (small-cap)** — Dual Momentum rebalance target Jul 31. Post-FOMC clarity (HOLD expected) could give small-caps a lift; domestic revenue exposure insulates from oil-driven inflation vs multinationals.
+
+*Bot's tradeable universe is fixed: SPY, QQQ, IWM, TLT, GLD, SHY. Jul 31 rebalance is the only permitted action (execute IWM buy at 100% equity if API restored).*
+
+### Key Events Next Week (Jul 28–Aug 1)
+
+- **FOMC Jul 28–29:** Rate decision 2:00 PM ET Jul 29 + Warsh press conference 2:30 PM ET. First Warsh decision. ~77% HOLD probability. $100 Brent adds hawkish pressure. Highest vol event of the week.
+- **Earnings:** Apple (AAPL, ~Jul 30), Amazon (AMZN, ~Jul 30–31), Microsoft (MSFT, ~Jul 28), Meta (META, ~Jul 29) — remaining Magnificent 7 all reporting
+- **Economic:** Consumer Confidence Tue Jul 28; Employment Cost Index (ECI) Fri Jul 31 (inflation signal); GDP prelim estimate possible
+- **Jul 31 Dual Momentum rebalance:** Bot's most important date since May 9 baseline. Signal: BUY IWM. Execute if API restored.
+
+### Strategy Adjustments
+
+None. Dual Momentum rules unchanged. Only prerequisite remains: restore API egress to `paper-api.alpaca.markets`, `api.telegram.org`, and `api.perplexity.ai`.
+
+### Grade: **D** *(infrastructure failure, 6th consecutive week — market insight maintained, zero execution)*
+
+---
+
 ## Week ending 2026-07-17 — Weekly Review #4 ⚠️ API BLOCKED (Day 29)
 
 ### Portfolio Summary
