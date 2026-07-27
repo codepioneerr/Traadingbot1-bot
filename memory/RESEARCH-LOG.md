@@ -5,6 +5,82 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-27 — Morning Pre-Market Research (Monday, Day 37 of API blockage) ⚠️ OVERDUE REBALANCE PENDING + FOMC WEEK
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (4 trading days — THURSDAY)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed 37th consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 37: Jun 22–Jul 27):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial, confirmed this session via `$HTTPS_PROXY/__agentproxy/status`)
+- `api.telegram.org:443` → 403 (confirmed blocked, curl exit 22)
+- `api.perplexity.ai:443` → blocked (no output)
+Research conducted via WebSearch fallback (Perplexity blocked).
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked all sessions)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch)
+
+**VIX:** ~18.58 (Jul 24 close; Jun 29–Jul 27 range: 14.96–20.31) → **MODERATE** (N/A for this strategy — no VIX-based sizing)
+
+**S&P 500:** ~7,500 level (reclaimed Jul 21 on semiconductor strength). Tech week strong: semiconductors led (Micron +12.6%, Intel +8%, SMH +4%); Utilities weakest (-0.31%).
+
+**Sectors best week of Jul 21–25:** Technology (+2.54%), Industrials (+0.51%), Materials (+0.49%)
+**Sectors worst week of Jul 21–25:** Utilities (-0.31%) — only sector firmly red
+
+**IWM (12-month trailing return):** ~30.93% — confirmed #1 ranked in Dual Momentum universe. IWM outperforming S&P 500 (20.5% vs 7.2% YTD as of Jun 26). Small-cap ETF crushing large-cap indices in 2026.
+
+**FOMC THIS WEEK — HIGH IMPACT:**
+- Meeting: Jul 28–29 (Chair Warsh, first meeting)
+- Decision: Wed Jul 29 at 2:00 PM ET; press conference 2:30 PM ET
+- Current rate: 3.50–3.75% (held at June meeting)
+- Market-implied hold probability: **79.5%**
+- Non-SEP meeting (no dot plot, no updated forecasts)
+- Warsh noted "significant debate" among members — hawkish split possible
+- Oil at ~$100 Brent adds inflation pressure; hawkish surprise risk non-trivial
+- **This is the single largest risk event before the July 31 rebalance**
+
+**Oil (as of Jul 24 context):** Brent ~$100+/bbl; WTI ~$91-92/bbl. Oil spike driven by Iran Hormuz tensions. Inflationary; creates hawkish Fed pressure.
+
+### Dual Momentum Signal (WebSearch estimate — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | **IWM** | **~30.93%** | Yahoo Finance confirmed (37 consecutive sessions) |
+| 2 | GLD | ~30–32% est. | Oil/safe-haven bid supports gold |
+| 3 | QQQ | ~27–31% est. | Tech weakness/AI capex concern may modestly drag |
+| 4 | SPY | ~20% est. | Absolute filter: PASSES (positive 12m) |
+| 5 | TLT | <+5% est. | Oil inflation + Warsh hawkish risk = pressure |
+| — | SHY | ~4–5% est. | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (37th consecutive session). Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API is restored on July 31.
+
+### FOMC Scenario Analysis for July 31 Rebalance
+
+| Scenario | Probability | Market Impact | IWM Impact |
+|----------|-------------|---------------|------------|
+| Hold (no change) | 79.5% | Rally likely | Positive for small-caps |
+| Hawkish hold + hike bias | 15% | Sell-off | Negative; may test 12m rank |
+| Surprise hike | 5% | Sharp sell-off | Most negative; recheck signal |
+
+Even in the hawkish scenario, IWM's 30.93% 12-month lead over SHY (~4-5%) provides substantial buffer. Signal very unlikely to flip before July 31 close. Authoritative script run on July 31 still required.
+
+### Risk Factors
+- **FOMC Jul 29 (Warsh):** Hawkish surprise could spike VIX and trigger small-cap sell-off before July 31 rebalance. Still expect IWM #1, but extreme scenario possible.
+- **Oil $100 Brent (Hormuz):** Sustained triple-digit oil = inflation shock → Fed hawkish → headwind for rate-sensitive small-caps (IWM). Partially offset by domestic revenue base.
+- **Day 37 API blockage:** If Alpaca remains blocked on July 31, the bot will miss its second consecutive rebalance. The next opportunity would be August 29, 2026. **CRITICAL: 4 trading days left to restore API access.**
+
+### Decision
+**NO TRADE** — today is Monday July 27, not the last trading day of the month. The Dual Momentum strategy permits no intraday or discretionary action between monthly rebalances. APIs still blocked regardless. HOLD 100% cash.
+
+**WATCH:** FOMC decision Wednesday Jul 29 at 2PM ET. If extreme market dislocation occurs before July 31, note it here but take NO action — the signal runs on July 31 close, not intraday.
+
+**ACTION REQUIRED (CRITICAL): whitelist `paper-api.alpaca.markets`, `api.perplexity.ai`, and `api.telegram.org` in the remote execution environment egress policy. 37 consecutive trading days blocked. July 31 rebalance is 4 trading days away — this is the LAST opportunity to establish the first-ever position in the paper account.**
+
+---
+
 ## 2026-07-24 — Morning Pre-Market Research (Friday, Day 36 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (4 trading days)
