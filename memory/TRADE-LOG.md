@@ -673,3 +673,20 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 **Weekly recap (Jul 21–24):** S&P 500 weekly return approximately −0.7 to −0.8% (prior Fri close ~7,470 → today ~7,412). Mon Jul 21 opened strong (+1.2% semis/chips surge, S&P reclaimed 7,500); Tue–Thu gave it all back on GOOGL/TSLA miss, $100 Brent oil, FOMC anxiety. Net: down week. IWM essentially flat for the week (~$293.49 last Fri → ~$292–294 this Fri). Bot: 0% return (100% cash throughout).
 
 **Dual Momentum signal:** BUY IWM (36th consecutive session; IWM ~$292–294, ~12m return est. +34% #1; absolute filter PASSES — SPY ~+20% 12m). Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 36 consecutive trading days blocked. July 31 rebalance is NEXT THURSDAY — 4 trading days away. FOMC Jul 28–29 (Warsh) is the critical event before rebalance.**
+
+---
+
+## 2026-07-27 — EOD Snapshot (Monday, Day 37 of API blockage) ⚠️ REBALANCE IN 4 TRADING DAYS
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-07-27, Monday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 37 of blockage spanning Jun 22–Jul 27; confirmed via `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: **2026-07-31, 4 trading days remaining**).
+
+**Today's market close (via WebSearch — APIs blocked):** S&P 500 ~7,454 (+0.57%); **IWM ~$292.32** (up from $291.17 prev close, ~+0.4%); **VIX ~17.76** (−4.42% — MODERATE, easing pre-FOMC). Positive risk-on tone to open the week. Key event: **FOMC decision TOMORROW (Jul 28–29, first Warsh decision)** — markets pricing ~77% HOLD; hawkish surprise or dovish surprise possible given Brent oil $100+ backdrop. Russell 2000 outperforming slightly on the session.
+
+**Dual Momentum signal:** BUY IWM (37th consecutive session; IWM ~$292.32, ~12m return est. +34–35% #1; absolute filter PASSES — SPY ~+20% 12m). Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 37 consecutive trading days blocked. July 31 rebalance is THIS THURSDAY — 4 trading days away. FOMC Jul 28–29 (Warsh) is critical event before rebalance.**
