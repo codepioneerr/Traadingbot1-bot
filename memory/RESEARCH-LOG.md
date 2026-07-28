@@ -5,6 +5,77 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-28 — Morning Pre-Market Research (Tuesday, Day 38 of API blockage) ⚠️ FOMC DAY 1 | REBALANCE IN 3 DAYS
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (3 trading days — THURSDAY)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed 38th consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 38: Jun 22–Jul 28):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+- `api.telegram.org:443` → 403 connect_rejected
+
+No account data, positions, or orders retrievable. Market data sourced from WebSearch (fallback).
+
+### Account Snapshot (last known)
+- **Equity:** $100,000.00 (Day 0 baseline, 2026-05-09 — API blocked since Jun 22)
+- **Cash:** $100,000.00 (100% — no positions)
+- **Positions:** None (awaiting July 31 rebalance)
+- **Open orders:** Unknown (API blocked)
+
+### Market Context (via WebSearch — Perplexity blocked)
+
+**VIX:** ~17.76 (down from 18.58 prior close) → **MODERATE** (not applicable to Dual Momentum sizing, logged for context)
+
+**S&P 500:** Mixed session — Dow futures +0.6%, Nasdaq futures −1.0%. FOMC Day 1 (decision TOMORROW July 29 at 2:00 PM ET). Blended Q2 2026 earnings growth rate: 37.9% (on track for best quarter since Q3 2021).
+
+**IWM:** ~$293.30 (up from $292.32 prior close; 52-week range $212.34–$302.72) — small caps outperforming large-cap tech on chip selloff day.
+
+**Oil (MAJOR REVERSAL):** Brent $86.58 (−1.54%); WTI $83.90 — Iran "good talks" with Trump easing geopolitical supply premium. Brent down from $100.40 peak (Jul 24) by ~14%. Energy stocks CVX, XOM down ~3%; DVN −4%. Inflation pressure from oil easing materially.
+
+**FOMC:** No decision today. Two-day meeting July 28–29; decision tomorrow July 29 at 2:00 PM ET (Warsh press conference 2:30 PM ET). First Warsh decision as Fed Chair. Market pricing: 62% hold at 3.50–3.75%, 38% hike to 3.75–4.00%. September hike odds risen to 82%. Warsh has stated "no tolerance for persistently elevated inflation."
+
+**Chip selloff (dominant theme):** AI capex ROI doubts deepening. SK Hynix −14%, Samsung −13% (Kospi); SOXX (semiconductor ETF) −3.9%. Sandisk (SNDK) dropping premarket. KO beat EPS ($0.97 vs $0.93 est.), raised guidance (+3%); Baker Hughes (BKR) +2%. Big Tech week: Meta, MSFT, AMZN, AAPL reporting Wed–Thu.
+
+**Top sectors this week:** Information Technology (YTD leader despite today's chip weakness), Communication Services, Financials (largest upward revenue revisions). Lagging: Energy (oil giving back), Consumer Discretionary.
+
+### Dual Momentum Signal (WebSearch estimate — script blocked by yfinance/API)
+
+| Rank | Ticker | ~12M Total Return Est. | Notes |
+|------|--------|----------------------|-------|
+| 1 | IWM | ~+34–36% est. | $293.30; up from $292.32; small-caps resilient vs chips |
+| 2 | QQQ | ~+27–30% est. | Chip selloff pressure today; FOMC uncertainty |
+| 3 | GLD | ~+22–26% est. | Iran easing = gold premium slightly reduced |
+| 4 | SPY | ~+20–22% est. | Absolute filter: PASSES (positive 12m) |
+| 5 | TLT | <+5% est. | Under pressure: potential Sep hike priced at 82% |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (38th consecutive session same reading)
+Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored.
+
+### Pre-Rebalance Note (July 31 — 3 trading days)
+Critical window: July 31 is the scheduled rebalance day AND the overdue June 30 rebalance. Both collapse into one trade at open July 31.
+
+**Key risks before rebalance:**
+1. **FOMC tomorrow (Jul 29):** 38% chance of surprise hike to 3.75–4% → hawkish shock → equity selloff → could hurt IWM but does NOT change the monthly signal (signal is mechanical, price-based)
+2. **Big Tech earnings (Meta, MSFT, AMZN, AAPL Wed–Thu):** If AI capex fears accelerate, could drag all equities including IWM
+3. **Chip selloff:** IWM has significant small/mid-cap tech/semiconductor exposure; could underperform if selloff deepens
+4. **Oil reversal:** Brent down from $100→$87 — reduces inflationary pressure; net positive for equities and FOMC hold probability
+
+### Decision
+**NO TRADE** — not a rebalance day (July 31 is next). Strategy permits no intraday or discretionary action. APIs still blocked — no trades possible regardless.
+
+Rebalance plan for July 31:
+1. Run `python3 scripts/dual_momentum_signal.py` → verify IWM #1 (requires yfinance/API access)
+2. If IWM still #1: market-buy IWM at 100% of equity; `buy_qty = floor(equity / ask_price)`
+3. No trailing stop per strategy rules
+4. Log to TRADE-LOG.md + send Telegram
+
+**ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 38 consecutive trading days blocked. July 31 rebalance 3 trading days away. FOMC decision TOMORROW July 29 at 2:00 PM ET — highest volatility risk before rebalance.**
+
+---
+
 ## 2026-07-27 — Morning Pre-Market Research (Monday, Day 37 of API blockage) ⚠️ OVERDUE REBALANCE PENDING + FOMC WEEK
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (4 trading days — THURSDAY)

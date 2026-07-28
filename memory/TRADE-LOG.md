@@ -690,3 +690,28 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 **Today's market close (via WebSearch — APIs blocked):** S&P 500 ~7,454 (+0.57%); **IWM ~$292.32** (up from $291.17 prev close, ~+0.4%); **VIX ~17.76** (−4.42% — MODERATE, easing pre-FOMC). Positive risk-on tone to open the week. Key event: **FOMC decision TOMORROW (Jul 28–29, first Warsh decision)** — markets pricing ~77% HOLD; hawkish surprise or dovish surprise possible given Brent oil $100+ backdrop. Russell 2000 outperforming slightly on the session.
 
 **Dual Momentum signal:** BUY IWM (37th consecutive session; IWM ~$292.32, ~12m return est. +34–35% #1; absolute filter PASSES — SPY ~+20% 12m). Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 37 consecutive trading days blocked. July 31 rebalance is THIS THURSDAY — 4 trading days away. FOMC Jul 28–29 (Warsh) is critical event before rebalance.**
+
+---
+
+## 2026-07-28 — Morning Routine (Tuesday, Day 38 of API blockage) ⚠️ FOMC DAY 1 | REBALANCE IN 3 TRADING DAYS
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (3 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed 38th consecutive session
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran (2026-07-28, Tuesday). `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected on all three (Day 38 of blockage spanning Jun 22–Jul 28; confirmed via `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: 2026-07-31, 3 trading days remaining). Overdue rebalance from Jun 30 (signal: BUY IWM) remains pending API restoration.
+
+**Today's macro (via WebSearch — Perplexity blocked):**
+- **VIX:** ~17.76 (down from 18.58 prior close; MODERATE). Declining fear despite chip selloff.
+- **S&P 500:** Mixed — Dow futures +0.6%, Nasdaq futures −1.0%. Chip selloff (SOXX −3.9%; SK Hynix −14%, Samsung −13% on Kospi). KO +3% (EPS beat, guidance raised). Blended Q2 earnings growth rate 37.9% — on track for best quarter since Q3 2021.
+- **IWM:** ~$293.30 (up from $292.32 prior close) — small-caps holding up vs large-cap tech.
+- **Oil (major reversal):** Brent $86.58 (−1.54%); WTI $83.90 — Trump "good talks" with Iran easing geopolitical supply premium. Brent down from $100.40 peak (Jul 24) by ~14%. Energy stocks CVX, XOM −3%.
+- **FOMC DAY 1 (NO DECISION TODAY):** Decision tomorrow July 29 at 2:00 PM ET (Warsh press conference 2:30 PM ET). Market pricing: 62% hold at 3.50–3.75%, 38% hike to 3.75–4.00%. September hike probability risen to 82%.
+- **Big Tech earnings this week:** Meta, MSFT, AMZN, AAPL report Wed–Thu — will define market direction through rebalance date.
+- **Top sectors:** Information Technology (YTD leader), Communication Services, Financials. Lagging: Energy (oil reversal), Semiconductors.
+
+**Dual Momentum signal:** BUY IWM (38th consecutive session; IWM ~$293.30, ~12m return est. +34–36% #1; absolute filter PASSES — SPY ~+20% 12m). Script blocked (yfinance unavailable). Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 38 consecutive trading days blocked. July 31 rebalance 3 trading days away. FOMC decision TOMORROW July 29 at 2:00 PM ET — largest volatility risk before rebalance.**
