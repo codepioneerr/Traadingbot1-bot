@@ -5,6 +5,89 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-29 — Morning Research (Wednesday, Day 39 of API blockage) ⚠️ FOMC DECISION DAY | REBALANCE TOMORROW + 1
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (2 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed 39th consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 39: Jun 22–Jul 29):
+- `paper-api.alpaca.markets:443` → 000 (connection refused — proxy policy denial)
+- `api.telegram.org:443` → 000 (connection refused)
+- `api.perplexity.ai:443` → blocked (not tested separately; pattern consistent)
+Research conducted via WebSearch fallback. Proxy status: no recent relay failures logged — blockage is policy-based, not infrastructure failure. **Rebalance Jul 31 is 2 trading days away — API access now CRITICAL.**
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch — Perplexity blocked)
+
+**VIX:** 18.32 (−1.88% today; opened 18.96) → **Sizing mode: MODERATE** (N/A — monthly strategy only)
+
+**S&P 500 Futures (premarket):** +0.18–0.20% (futures at 7,480.25; range 7,448.50–7,484.50). Polymarket 70% probability opens higher. Market cautiously optimistic ahead of FOMC HOLD + Big Tech earnings.
+
+**Oil:** Brent $89.53/bbl (+$0.45 vs yesterday); WTI ~$83–86 est. Continued decline from $100.40 peak (Jul 24) — Iran talks progressing. Energy premium fading.
+
+**IWM:** $293.37 (range $290.38–$293.77 today; 52-week range $212.34–$302.72). Small-caps stable pre-market.
+
+**FOMC Decision — TODAY at 2:00 PM ET (Warsh, press conference 2:30 PM ET):**
+- Consensus: ~75%+ HOLD at 3.50–3.75% (5th consecutive hold; 2nd Warsh decision)
+- Warsh known for less forward guidance — hawkish surprise risk elevated by Iran/oil residual inflation
+- HOLD → modest relief rally. HIKE → sharp multi-day selloff; IWM most sensitive (domestic, rate-sensitive small-caps)
+
+**Big Tech Earnings TONIGHT (after close):**
+- MSFT: Q4 FY2026 — EPS est. $4.22–4.24, revenue est. $87.5–87.67B. FY2027 capex disclosed $255–260B (above $190B FY2026 — AI spending scrutiny high). Report after close.
+- META: Q2 FY2026 — EPS est. $7.18–7.24, revenue est. $60.22B (+27% YoY). AI capex under scrutiny (market growing skeptical of AI spending ROI).
+- AMZN + AAPL report tomorrow (Jul 30) after close.
+
+**Sector Performance This Week (Jul 25–29):**
+- **Top:** Energy (+3.7% wk of Jul 20–26 on Iran spike, now fading); Healthcare, Utilities, Defense/Aerospace (ITA at all-time high), Consumer Staples — rotation into defensives
+- **Worst:** Technology (−4%+ wk of Jul 20–26); Semiconductors (deepening selloff — Chinese chip-making breakthrough reports; Sandisk −11% Monday; Nasdaq near correction)
+
+### Dual Momentum Signal (WebSearch estimate — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+34–36% est. | IWM $293.37 today; 52w low $212.34 |
+| 2 | QQQ | ~+25–28% est. | Semis/tech drag weighing on 12m |
+| 3 | GLD | ~+23–28% est. | Oil/Iran premium fading; gold holding |
+| 4 | SPY | ~+20–22% est. | Absolute filter: PASSES |
+| 5 | TLT | <+5% est. | Rate-sensitive; FOMC risk today |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (39th consecutive session — same reading)
+CRITICAL: Must re-verify via `python3 scripts/dual_momentum_signal.py` before ANY trade on Jul 31.
+
+### Pre-Rebalance Note (Jul 31 — 2 trading days)
+- Jul 31 rebalance is THIS THURSDAY — 2 trading days away
+- TONIGHT: FOMC decision + MSFT/META earnings = major volatility potential before rebalance
+- TOMORROW: AMZN + AAPL earnings (after close Jul 30) + IWM price will move on FOMC + tech result
+- Authoritative signal required on Jul 31 morning before executing
+
+### Trade Ideas (Informational Only — Strategy Does Not Allow Discretionary Trades)
+N/A — Dual Momentum is 100% rules-based monthly rebalance. No discretionary trades permitted between rebalance dates regardless of conditions. These are noted for context only.
+
+1. **IWM** — overdue rebalance signal (Jun 30 + Jul 31); buy 100% equity on Jul 31 once signal confirmed via script and API accessible. Entry: market open Jul 31. No stop (per strategy). Target: hold ~1 month.
+2. No other ideas — strategy allows only one position at a time.
+
+### Risk Factors
+- **FOMC today at 2:00 PM ET**: Hawkish surprise = equity selloff; would not change monthly signal but could affect IWM entry price on Jul 31 by 1–3%
+- **MSFT/META earnings tonight**: Big Tech miss = Nasdaq correction risk; IWM could gap down tomorrow if sentiment breaks
+- **Semis deepening**: SOXX near correction; contagion risk to small-caps if panic selling spreads
+- **China chip-making news**: Escalating — structural headwind for semiconductor ETFs and growth exposure
+- **Oil fading**: Brent $89.53 down from $100.40 peak; if Iran deal materializes → removes inflation tail risk → mildly bullish for equities and HOLD scenario
+
+### Decision
+**NO TRADE** — not a rebalance day. Jul 31 is the scheduled rebalance. Strategy prohibits any intraday or discretionary action. APIs remain blocked regardless.
+
+**Sizing mode:** MODERATE (VIX 18.32) — N/A for this strategy.
+
+**ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 39 consecutive trading days blocked. July 31 rebalance THIS THURSDAY — 2 trading days away. FOMC + MSFT/META earnings today are highest-volatility events before rebalance.**
+
+
+---
+
 ## 2026-07-28 — Morning Pre-Market Research (Tuesday, Day 38 of API blockage) ⚠️ FOMC DAY 1 | REBALANCE IN 3 DAYS
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (3 trading days — THURSDAY)
