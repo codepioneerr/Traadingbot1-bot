@@ -761,3 +761,33 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 **FOMC critical event:** Decision TOMORROW July 29 at 2:00 PM ET (Warsh). CME FedWatch: ~62% HOLD, ~38% HIKE (fastest repricing in recent memory — up from 10.7% hold odds on Jul 15). Hawkish surprise would hurt both equities and small-caps; benign hold = relief rally. IWM/small-caps particularly sensitive to rate path given domestic revenue exposure.
 
 **Dual Momentum signal:** BUY IWM (38th consecutive session; IWM ~$293.19, ~12m return est. +34–36% #1; absolute filter PASSES — SPY ~+20% 12m). Script blocked (yfinance unavailable). Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 38 consecutive trading days blocked. July 31 rebalance THIS THURSDAY — 3 trading days away. FOMC tomorrow is highest-risk event before rebalance.**
+
+---
+
+## 2026-07-29 — EOD Snapshot (Wednesday, Day 39 of API blockage) ⚠️ REBALANCE IN 2 TRADING DAYS | FOMC HAWKISH HOLD
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (unchanged — cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-07-29, Wednesday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 39 of blockage spanning Jun 22–Jul 29; confirmed via curl and `$HTTPS_PROXY/__agentproxy/status`). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: **2026-07-31, 2 trading days remaining**).
+
+**Today's market close (via WebSearch — APIs blocked):**
+- **FOMC Decision:** Fed HELD at 3.50–3.75% (5th consecutive hold, hawkish tone). **3 of 12 FOMC members dissented, voting for a 25bp hike.** Warsh press conference at 2:30 PM ET — signaled rates could be "falling behind" on inflation.
+- **S&P 500:** −1.5% to approx. 7,302 (from 7,413.18 prior close)
+- **Dow:** −1,152 points (−2.2%) — worst single-day decline since April 2025
+- **Nasdaq:** −1.7% (chip sell-off continued; SK Hynix, Samsung AI-supply fears)
+- **IWM (Russell 2000):** Russell 2000 −10.16 pts to ~2,930 (est. IWM ~$292.15); small-caps relatively more resilient than large-cap (-0.35% vs S&P -1.5%)
+- **VIX:** ~20–22 est. (elevated; prior close 18.58; major selloff implies VIX spike)
+- **10Y yield:** +6 bps → above 4.66%
+- **30Y yield:** +10 bps → above 5.2% (highest since 2007) — key driver of equity selloff
+- **Oil:** Rose amid renewed Middle East tensions (Brent est. $87–88, partial reversal of recent decline from $100.40 peak)
+
+**FOMC interpretation:** Hawkish hold = worst of both worlds for equities. Fed not cutting (no relief rally) AND 3 dissents signal next move could be a hike. Rising long-duration yields (30Y at 5.2%) compress equity multiples, hurt growth/tech. Small-caps (IWM) held up better intraday as domestic revenue base limits direct P&L impact of rate path, but rising borrowing costs are a medium-term headwind.
+
+**Dual Momentum signal:** BUY IWM (39th consecutive session; IWM ~$292.15 est., ~12m return est. +33–35% #1; absolute filter PASSES — SPY ~+18–19% 12m despite today's drop). Rising yields reduce TLT attractiveness further, do not change IWM ranking. Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead.
+
+**CRITICAL TIMING:** July 31 rebalance is THIS FRIDAY — 2 trading days away. If APIs are still blocked on Friday, the June 30 overdue rebalance (BUY IWM) extends to a missed 2nd consecutive month. IWM ~$292.15 today vs ~$275 (late-May est.) — overdue rebalance represents significant opportunity cost. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 39 consecutive trading days blocked.**
