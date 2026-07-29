@@ -5,6 +5,33 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-07-29 — Morning Routine (Wednesday, Day 39 of API blockage) ⚠️ FOMC DECISION DAY | REBALANCE IN 2 TRADING DAYS
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (2 trading days)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed 39th consecutive session
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran (2026-07-29, Wednesday). `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, and `api.telegram.org:443` remain blocked — proxy returned empty body / 000 on all three (Day 39 of blockage spanning Jun 22–Jul 29; Alpaca returns "Expecting value" JSON parse error confirming empty response). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; next scheduled: **2026-07-31, 2 trading days remaining**). Overdue rebalance from Jun 30 (signal: BUY IWM) remains pending API restoration.
+
+**Today's macro (via WebSearch — Perplexity blocked):**
+- **VIX:** 18.32 (−1.88% today; opened 18.96) → **MODERATE**. Fear easing pre-FOMC.
+- **S&P 500 futures premarket:** +0.18–0.20% (futures 7,480.25). Polymarket 70% probability opens higher. Cautious optimism ahead of FOMC HOLD + Big Tech earnings.
+- **Oil:** Brent $89.53/bbl (+$0.45 vs yesterday). Down from $100.40 peak (Jul 24) as Iran talks progress. WTI ~$83–86 est.
+- **IWM:** $293.37 (range $290.38–$293.77 today; 52-week range $212.34–$302.72). Small-caps stable pre-market.
+- **FOMC DECISION TODAY at 2:00 PM ET** (Warsh press conference 2:30 PM ET): ~75%+ HOLD at 3.50–3.75% expected (5th consecutive hold; 2nd Warsh decision). Hawkish surprise = equity selloff.
+- **Big Tech earnings AFTER CLOSE tonight:** MSFT (EPS est. $4.22–4.24, rev $87.5B, FY2027 capex $255–260B) + META (EPS est. $7.18–7.24, rev $60.22B +27%). Both report after close. AMZN + AAPL tomorrow.
+- **Top sectors this week:** Healthcare/Defensives, Energy (fading from $100 Brent), Aerospace/Defense (ITA all-time high).
+- **Worst sectors this week:** Technology (−4%+), Semiconductors (Chinese chip breakthrough; Sandisk −11% Monday; Nasdaq near correction).
+
+**Dual Momentum signal:** BUY IWM (39th consecutive session; IWM $293.37, ~12m return est. +34–36% #1; absolute filter PASSES — SPY ~+20% 12m). Script blocked (yfinance unavailable via proxy). Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored. Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 39 consecutive trading days blocked. July 31 rebalance THIS THURSDAY — 2 trading days away. FOMC today is highest-risk event before rebalance.**
+
+
+---
+
 ## Day 0 — 2026-05-09 (Baseline)
 
 **Portfolio:** $100,000.00 | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
