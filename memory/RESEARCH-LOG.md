@@ -5,6 +5,104 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-30 — Morning Research (Thursday, Day 40 of API blockage) ⚠️ REBALANCE TOMORROW
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (TOMORROW — last trading day of July)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed 40th consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 40: Jun 22–Jul 30):
+- `paper-api.alpaca.markets:443` → HTTP 000 (no connection)
+- `api.telegram.org:443` → HTTP 000 (no connection)
+- `api.perplexity.ai:443` → HTTP 000 (no connection)
+Research conducted via WebSearch fallback. Proxy status: `selective: false`, no recent relay failures logged — blockage is policy-based, not infrastructure failure.
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch — Perplexity blocked)
+
+**VIX:** 20.66 (Jul 29 close — spiked from 18.27 open on FOMC hawkish hold; range 17.45–20.88)
+→ **Sizing mode: MODERATE** (VIX 15-25) — N/A for Dual Momentum strategy
+
+**S&P 500 Futures (premarket Jul 30):** +0.4–0.7% rebound (MSFT Azure surge +8-10% driving tech bid; recovery from yesterday's −1.5% post-FOMC selloff)
+
+**IWM (Russell 2000):** $293.37 (Jul 29 close); 52W range $212.34–$302.72; 1Y return ~31.11% — **#1 rank in universe**
+
+**Oil:** Brent ~$90.04 (−0.78% today); earlier $92.65 premarket. Down significantly from $100.40 peak (Jul 24) — Iran/Middle East tensions partially easing but still elevated vs $86 July floor.
+
+**GDP Q2 2026 Advance Estimate (8:30 AM ET today):** +1.5% annualized (vs Q1 +2.1%) — decelerating but positive; soft landing narrative intact. Consumer spending and investment positive contributors; government spending drag.
+
+**Core PCE (today):** Forecast 0.2% (prior 0.3%) — inflation easing marginally.
+
+**Initial Jobless Claims:** Released today 8:30 AM ET — labor market monitor.
+
+### Major Earnings Today (Jul 30)
+- **Mastercard (MA)** — BMO; financials, payments
+- **Shell (SHEL)** — BMO; energy
+- **Bristol-Myers Squibb (BMY)** — BMO; healthcare/pharma
+- **Altria (MO)** — BMO; consumer staples
+- **Anheuser-Busch InBev (BUD)** — BMO; consumer staples
+- 326 total earnings reports scheduled today
+
+### Yesterday's Key Earnings (Jul 29 — informing today)
+- **Microsoft (MSFT):** Azure +43%, exceeded $100B revenue milestone; $365 Copilot 30M paid seats; +8-10% premarket — AI capex paying off ✅
+- **Meta (META):** Revenue $60.8B (+28% YoY, beat) but free cash flow collapsed 91%; guidance disappointing; −9% premarket — AI capex NOT paying off ❌
+
+### Sector Performance
+**Top momentum sectors:**
+1. **Technology (XLK)** — MSFT Azure surge; Semiconductors (Sandisk +858% YTD, AMD +156%); AI infrastructure spending confirmed productive
+2. **Healthcare (XLV)** — Defensive bid post-FOMC; BMY reporting today
+3. **Financials (XLF)** — Mastercard reporting today; AXP strong Q2 prior week
+
+**Avoid today:**
+- **Communication Services (XLC)** — Meta −9% drag; AI capex scrutiny
+- **Energy (XLE)** — Oil reverting from $100 peak; geopolitical premium unwinding
+
+### Dual Momentum Signal (WebSearch estimate — script cannot run, yfinance unavailable)
+
+| Rank | Ticker | ~12M Total Return | Signal |
+|------|--------|-------------------|--------|
+| 1 | **IWM** | ~+31.11% | ✅ **BUY** |
+| 2 | QQQ | ~+27–31% est. | — |
+| 3 | GLD | ~+23–28% est. | — |
+| 4 | SPY | ~+17.27% | Absolute filter: PASSES |
+| 5 | TLT | <+5% est. (yield headwind) | — |
+| — | SHY | ~+4–5% | — |
+
+**Signal: BUY IWM** (40th consecutive session — unchanged since Jun 30)
+Must re-verify via `python3 scripts/dual_momentum_signal.py` before executing tomorrow.
+
+### Pre-Rebalance Alert — JULY 31 IS TOMORROW
+This is the **critical preparation day**. The bot must execute the overdue IWM rebalance (originally due Jun 30) tomorrow (July 31 = last trading day of July).
+
+**Tomorrow's execution plan (if Alpaca API unblocks):**
+1. Run `python3 scripts/dual_momentum_signal.py` → confirm IWM is still #1
+2. Get account equity: `bash scripts/alpaca.sh account`
+3. Get IWM ask price: `bash scripts/alpaca.sh quote IWM`
+4. Calculate: `buy_qty = floor(equity / ask_price)`
+5. Execute: `bash scripts/alpaca.sh order '{"symbol":"IWM","qty":"N","side":"buy","type":"market","time_in_force":"day"}'`
+6. **NO TRAILING STOP** — Dual Momentum strategy; protection via monthly rebalance only
+7. Log to TRADE-LOG.md, send Telegram, git commit/push
+
+**If Alpaca still blocked tomorrow:** Document as 41st consecutive session blocked; overdue rebalance extends to 2nd consecutive missed month.
+
+### Risk Factors
+- **Rising long-duration yields:** 30Y yield above 5.2% (highest since 2007) — equity multiple compression risk; particular headwind for growth assets
+- **FOMC hawkish overhang:** 3 dissents voting for hike; next hike probability 82% by September — elevated cost of capital
+- **GDP deceleration:** 1.5% Q2 vs 2.1% Q1 — slowing economy could hurt small-cap (IWM) revenue
+- **Meta capex squeeze:** AI spending concerns spreading; if IWM has significant tech exposure this could weigh
+- **Oil partially elevated:** Brent $90+ still above 6-month average — inflationary pressure supporting hawkish Fed stance
+- **API blockage risk:** If Alpaca remains blocked on Jul 31, this will be a 2nd missed consecutive rebalance month (Jun 30 + Jul 31 both missed)
+
+### Decision
+**NO TRADE TODAY** — not rebalance day (script confirms: 1 trading day remaining until Jul 31).
+**EXECUTE TOMORROW (Jul 31):** BUY IWM at 100% of equity if API accessible and signal re-confirmed.
+**ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 40 consecutive trading days blocked. July 31 rebalance is TOMORROW.**
+
+---
+
 ## 2026-07-29 — Morning Research (Wednesday, Day 39 of API blockage) ⚠️ FOMC DECISION DAY | REBALANCE TOMORROW + 1
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (2 trading days)

@@ -5,6 +5,43 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-07-30 — Morning Routine (Thursday, Day 40 of API blockage) ⚠️ REBALANCE TOMORROW (Jul 31)
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (TOMORROW — 1 trading day)
+**Overdue rebalance:** BUY IWM (June 30 missed) — signal re-confirmed 40th consecutive session
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined pre-market + market-open routine ran (2026-07-30, Thursday). `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, and `api.telegram.org:443` remain blocked — HTTP 000 / 403 on all three (Day 40 of blockage spanning Jun 22–Jul 30). No account data, positions, or orders could be retrieved. No trades executed — not rebalance day; strategy permits no intraday or discretionary action between monthly rebalances.
+
+**Today's macro (via WebSearch — Perplexity blocked):**
+- **VIX:** 20.66 (Jul 29 close; range 17.45–20.88; FOMC hawkish hold spike) → MODERATE zone
+- **S&P 500 Futures:** +0.4–0.7% premarket — MSFT Azure surge (+8-10%) leading tech rebound after yesterday's −1.5% FOMC drop
+- **IWM:** $293.37 (Jul 29 close); 52W range $212.34–$302.72; 1Y return ~+31.11% — #1 in universe
+- **Oil:** Brent ~$90.04 (−0.78%), down from $100.40 peak (Jul 24) — geopolitical premium fading
+- **GDP Q2 2026:** +1.5% annualized advance estimate (vs Q1 +2.1%); released today 8:30 AM ET
+- **Core PCE:** Forecast 0.2% (prior 0.3%); Initial Jobless Claims also released today
+- **Meta (META):** −9% premarket — FCF collapsed 91%, AI capex concerns; AI spending split in Big Tech
+- **MSFT:** +8-10% premarket — Azure $100B milestone, AI capex productive; 30M Copilot paid seats
+
+**Dual Momentum signal:** BUY IWM (40th consecutive session; IWM ~$293.37, ~12m return +31.11% #1; absolute filter PASSES — SPY ~+17.27% 12m). Script blocked (yfinance unavailable). Must re-verify via `python3 scripts/dual_momentum_signal.py` before executing tomorrow's rebalance.
+
+**CRITICAL — TOMORROW IS REBALANCE DAY (Jul 31, last trading day of July):**
+If Alpaca API is accessible tomorrow:
+1. `python3 scripts/dual_momentum_signal.py` — confirm IWM still #1
+2. `bash scripts/alpaca.sh account` → get equity
+3. `bash scripts/alpaca.sh quote IWM` → get ask
+4. `buy_qty = floor(equity / ask_price)` → full 100% deployment
+5. Market buy IWM, NO trailing stop per strategy
+6. Log + Telegram + git commit/push
+
+Telegram sector watch could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 40 consecutive trading days blocked. July 31 rebalance is TOMORROW — do NOT miss a 2nd consecutive monthly rebalance.**
+
+---
+
 ## 2026-07-29 — Morning Routine (Wednesday, Day 39 of API blockage) ⚠️ FOMC DECISION DAY | REBALANCE IN 2 TRADING DAYS
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A
