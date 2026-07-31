@@ -5,6 +5,112 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## Week ending 2026-07-31 — Weekly Review #6 ⚠️ API BLOCKED (Day 41) | 2ND CONSECUTIVE MISSED REBALANCE
+
+### Portfolio Summary
+
+| Metric | Value |
+|--------|-------|
+| Portfolio (EOW) | $100,000.00 (last known — API blocked) |
+| Cash | $100,000.00 (100%) |
+| Week P&L | $0.00 / 0.00% (no positions) |
+| Phase P&L (since May 9) | $0.00 / 0.00% |
+| S&P 500 weekly return | ~+1.25% (est. 7,412 → 7,505) |
+| Bot vs S&P delta | −1.25% (underperformed — market rallied while bot held cash) |
+| Trades this week | 0 |
+| W/L/Open | 0/0/0 |
+| Win rate | N/A |
+| Profit factor | N/A |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Sizing mode (this week) | N/A — Dual Momentum monthly rebalance only |
+
+### Week in Review (Jul 27–31, 2026)
+
+**Strategy:** Dual Momentum ETF Rotation — monthly rebalance only. **Jul 31 was the scheduled rebalance date (BUY IWM).** APIs remain blocked — trade could not execute. This is the 2nd consecutive missed rebalance (Jun 30 + Jul 31). Cumulative opportunity cost: IWM Jun 30 est. ~$274 → Jul 31 $292.59 = **~+6.8% (~$6,800 on $100K unrealized forgone gain).**
+
+**API blockage status:** Day 41 (Jun 22 – Jul 31). `paper-api.alpaca.markets`, `api.telegram.org`, and `api.perplexity.ai` all returning 403 connect_rejected at proxy. Perplexity research substituted with WebSearch. Telegram substituted with push notifications.
+
+### Market Context (Jul 27–31)
+
+- **Monday Jul 27:** S&P 500 +0.21% to 7,428.78; IWM est. ~$292.32 (+0.40%); VIX ~17.76 — calm pre-FOMC open
+- **Tuesday Jul 28:** Defensive sectors led (Consumer Staples +3.64%, Healthcare +2.21%); Technology −1.73%; pre-FOMC positioning; S&P roughly flat
+- **Wednesday Jul 29 (FOMC):** S&P 500 **−1.5% to ~7,302** — Fed held at 3.50–3.75% but 3 of 12 FOMC members dissented voting for a 25bp hike; Warsh tone hawkish; 30Y yield +10bps to 5.2% (highest since 2007); Dow −1,152 pts worst session since Apr 2025; VIX est. ~20+ (spike)
+- **Thursday Jul 30:** S&P 500 **+1.67% to 7,437.63** (Nasdaq +2.78%, Dow +1.19%); **MSFT surged +15.5%** (Azure +36%, Q2 EPS massive beat); fully reversed FOMC selloff; AMZN earnings after close; IWM est. ~$290.61 (+0.70%); VIX declining
+- **Friday Jul 31 (Rebalance Day):** S&P 500 **+0.91% to ~7,505**; **AMZN +14.99%** (Q2 EPS $5.75 vs $1.81 est., AWS +36.7%); Dow 4th straight winning month; IWM **$292.59** (+0.68%); **VIX 16.21** (LOW-MODERATE — fear subsided)
+- **Best sectors this week:** Technology (XLK +3.07% Thu, MSFT/AMZN mega-beats), Consumer Discretionary (Amazon surge), Energy (XLE +2.22%)
+- **Worst sectors this week:** Utilities, Consumer Staples (rotation out of defensives as fear eased after FOMC), Capital Goods −2.40% (week's weakest session Jul 28)
+- **Key macro drivers:** FOMC hawkish hold with 3 dissenters; 30Y yield to 5.2%; MSFT Q2 beat; AMZN Q2 record beat; oil partially recovered; Brent ~$87–88
+
+### Closed Trades This Week
+
+None — bot held no positions (API blocked; overdue Jun 30 + scheduled Jul 31 rebalances both unexecuted).
+
+### Open Positions (EOW)
+
+None — account is 100% cash. **Dual Momentum signal: BUY IWM (41st consecutive session).**
+
+### Dual Momentum Signal (41st consecutive session: BUY IWM)
+
+| Rank | Ticker | ~12M Return (est.) | Status |
+|------|--------|-------------------|--------|
+| 1 | IWM | ~+34–36% | **Signal: BUY (OVERDUE — Jun 30 + Jul 31 missed)** |
+| 2 | QQQ | ~+27–32% | Hold |
+| 3 | GLD | ~+22–30% | Hold |
+| 4 | SPY | ~+18–21% | Absolute filter: PASSES |
+| 5 | TLT | <+5% | Below threshold |
+| — | SHY | ~+4–5% | Cash proxy |
+
+Signal remains BUY IWM. IWM's 12-month return maintained #1 ranking despite tech earnings lifting QQQ this week. Must re-verify with `python3 scripts/dual_momentum_signal.py` once API/yfinance access restored. **Next scheduled rebalance: Aug 31. Will execute IWM buy at FIRST available API access in August (not deferred to month-end for overdue positions).**
+
+### What Worked
+
+- **Cash inadvertently protected against FOMC spike:** Wed Jul 29 S&P −1.5% selloff on hawkish FOMC; being in cash meant no drawdown on the worst day of the week
+- **Market recovered strongly:** MSFT +15.5% Thu + AMZN +14.99% Fri drove a powerful earnings-season recovery; week ended +1.25% despite FOMC midweek shock
+- **WebSearch fallback effective:** Daily market context, earnings results, VIX levels, and sector performance all captured without Perplexity or Alpaca APIs
+- **git persistence fully operational:** All EOD entries committed and pushed; full state recoverable from any fresh clone
+- **IWM held up through FOMC volatility:** Closed at $292.59 vs ~$292 prior Friday — essentially flat week, resilient against large-cap rate sensitivity
+
+### What Didn't Work
+
+- **2ND CONSECUTIVE MISSED REBALANCE:** July 31 was the scheduled buy date. API blockage (Day 41) prevented the IWM purchase. Combined with Jun 30 miss, bot has now missed **two consecutive monthly signals** — a structural failure with $6,800+ estimated opportunity cost
+- **API blockage persists without resolution:** 41 consecutive trading days. No progress toward egress whitelist. The sole remaining action item continues to block the bot's core function
+- **Telegram silent for 41 sessions:** User receiving push notifications only; no rich formatted mobile Telegram summaries
+- **Outperformed last week, underperformed this week:** When markets fall (prior weeks), cash outperforms. When markets rally +1.25% (this week), cash underperforms — the asymmetry of sitting out is compounding
+- **yfinance not installed:** Cannot run `scripts/dual_momentum_signal.py` even if Yahoo Finance were accessible — pip install needed
+
+### Key Lessons
+
+1. **Two consecutive missed rebalances is the new critical threshold.** Jun 30 + Jul 31 = missed the full IWM rally from ~$274 to $292.59 (+6.8%). A third miss (Aug 31) would be ~3 months of Dual Momentum signal ignored — the strategy's value is entirely in execution, not signal generation.
+2. **FOMC dissenters (3 of 12 voting for a hike) are the dominant macro risk into August.** Warsh's hawkish posture + 30Y yield at 5.2% creates a ceiling on equity multiples. IWM (small-cap, domestic revenue) is simultaneously more resilient to trade/tariff risk but more vulnerable to small-business borrowing costs.
+3. **Earnings season (MSFT +15.5%, AMZN +14.99%) demonstrated the power of mega-cap beats.** QQQ/Nasdaq may narrow the momentum gap with IWM in next month's signal computation — worth monitoring before Aug 31 rebalance.
+4. **VIX collapsing from ~20+ (FOMC day) to 16.21 (Fri) in 2 days shows market resilience.** Earnings optimism overwhelmed rate anxiety. Low VIX entering August suggests complacency risk before Jobs Report (Aug 7).
+5. **yfinance needs to be installed.** Add `pip install yfinance` to session-start hook so the dual momentum signal script can actually run once APIs are accessible.
+
+### Top Sectors / ETFs for Next Week (Aug 3–7)
+
+1. **Technology (XLK) / Semiconductors (MTUM/SMH)** — MSFT/AMZN earnings momentum; AI infrastructure spending ($25B AMZN AI run rate) extends the semis trade; watch for further upside re-rating
+2. **Materials (XLB)** — Structural demand for industrial metals; US manufacturing activity improving; positive earnings momentum; highlighted by State Street as a top pick for Q3
+3. **Healthcare/Biotech (XLV/IBB)** — AI drug discovery acceleration; defensive quality in high-yield environment; held up well during FOMC selloff
+4. **Small-caps (IWM)** — Dual Momentum #1 signal; post-FOMC clarity (hold confirmed, no surprise hike) removes near-term rate shock risk; VIX 16 = calm entry environment; domestic revenue insulates from any trade escalation
+
+*Bot's tradeable universe: SPY, QQQ, IWM, TLT, GLD, SHY. Next rebalance: Aug 31. Execute IWM buy at FIRST available API access in August.*
+
+### Key Events Next Week (Aug 3–7)
+
+- **ISM Manufacturing PMI — Mon Aug 3 10:00 ET:** Barometer for industrial recovery; strong reading supports Materials/Industrials momentum
+- **JOLTS Job Openings — Tue Aug 4:** Labor market health; tight labor = continued wage inflation pressure on Warsh's hawkish stance
+- **International Trade / Advance Goods Trade Balance — Tue Aug 4:** Trade deficit data; tariff impact indicator
+- **Jobs Report (NFP) — Fri Aug 7:** The week's pivotal macro event; strong print reinforces hawkish FOMC trajectory; weak print could revive cut speculation and lift equities
+
+### Strategy Adjustments
+
+No changes to Dual Momentum rules. One operational note added: overdue rebalance signals should be executed at **first available API access** in the following month, not deferred to the next scheduled month-end. This ensures the Jun 30 overdue signal is executed as soon as August API access is restored, without waiting for Aug 31.
+
+### Grade: **D** *(infrastructure failure, 7th consecutive week — 2nd consecutive missed rebalance, $6,800+ opportunity cost accruing, market insight maintained)*
+
+---
+
 ---
 
 ## Week ending 2026-07-24 — Weekly Review #5 ⚠️ API BLOCKED (Day 36)
