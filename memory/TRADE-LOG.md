@@ -5,6 +5,43 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-07-31 — REBALANCE DAY Morning (Friday, Day 40 of API blockage) 🚨 2ND CONSECUTIVE MISSED REBALANCE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined morning pre-market + market-open routine ran (2026-07-31, Friday — REBALANCE DAY). `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, `api.telegram.org:443`, and Yahoo Finance (yfinance) remain blocked — proxy returned 403 connect_rejected on all (Day 40 of blockage spanning Jun 22–Jul 31). **THIS IS THE SECOND CONSECUTIVE MISSED REBALANCE** (June 30 was first).
+
+**Market open status (9:05 AM ET — pre-open):** Market opens 9:30 AM ET. Routine running pre-market.
+
+**Market context (via WebSearch — all APIs blocked):**
+- **VIX:** 17.09 (MODERATE)
+- **S&P 500 futures:** +0.48% / +35 pts (Amazon beat recovery)
+- **Nasdaq futures:** +1.11% (Amazon strong; Apple -7.8% partially offsets)
+- **IWM:** ~$290.61 (Jul 30 close); premarket est. ~$291
+- **GLD:** ~$377.12 (Jul 30 close); 52-wk range $302.86–$509.70
+- **SPY:** ~$738.09 (Jul 30 close); 12m return confirmed +17.09%
+- **TLT:** ~$82.72; 10Y yield 4.657% (post-FOMC hawkish hold)
+- **FOMC:** Held 3.50–3.75%, 9-3 vote (3 dissenters wanted +25bp), Warsh "September finely balanced"
+- **GDP Q2:** +1.5% (miss), Core PCE +3.3% — stagflation dynamics
+- **ECI Q2 (today):** Private wages +3.3% YoY; real wages -0.4% (losing purchasing power)
+
+**Dual Momentum signal (manual — script blocked):**
+- SPY 12m: +17.09% (confirmed) — absolute filter: PASS
+- IWM 12m: ~+30-32% est. (disputed: one source 12.3%, another 31%; 40 sessions history shows IWM #1)
+- Estimated ranking: IWM > QQQ > GLD > SPY > SHY > TLT
+- **Signal: BUY IWM** (40th consecutive session — cannot execute)
+
+**No trade executed** — Alpaca API blocked. Rebalance cannot proceed. Opportunity cost continues to accumulate (IWM ~$275 late-May → $291 today = ~+5.8% uncaptured return on $100K = ~$5,800 missed).
+
+**ACTION REQUIRED:** Whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in remote execution environment egress policy. Next rebalance window: **August 31, 2026**. If blocked again on Aug 31, 3 consecutive months of missed rebalances.
+
+---
+
 ## 2026-07-30 — EOD Snapshot (Thursday, Day 40 of API blockage) ⚠️ REBALANCE TOMORROW (Jul 31) | MSFT SURGE DAY
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%

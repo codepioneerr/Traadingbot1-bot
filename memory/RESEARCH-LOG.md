@@ -5,6 +5,97 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-07-31 — REBALANCE DAY Morning Research (Friday, Day 40 of API blockage) 🚨 REBALANCE MISSED AGAIN
+
+**Strategy:** Dual Momentum ETF Rotation | **This IS the rebalance day (last trading day of July 2026)**
+**Overdue rebalance:** BUY IWM (June 30 missed — now July 31 missed; 40th consecutive session blocked)
+
+### API Access Status
+All outbound egress confirmed blocked (Day 40: Jun 22–Jul 31):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+- `finance.yahoo.com` (yfinance) → 403 connect_rejected
+Research conducted via WebSearch fallback. Signal determined manually from web data.
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked for 40 days)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch — July 31, 2026)
+
+**VIX:** 17.09 → **Sizing mode: N/A** (Dual Momentum — monthly rebalance only, no VIX sizing)
+
+**S&P 500 futures (premarket):** +0.48% / +35 pts — recovering from FOMC selloff on Amazon earnings beat
+
+**Nasdaq futures:** +1.11% — Amazon strong; Apple fell 7.8% post-earnings (guidance miss) but Amazon more than offsets
+
+**Key ETF prices:**
+- SPY: ~$738 (Jul 30 close: $738.09) | 52-wk range: $619.29–$760.40
+- IWM: ~$291 (Jul 30 close: $290.61)
+- GLD: ~$377 (Jul 30 close: $377.12) | 52-wk range: $302.86–$509.70
+- TLT: ~$82.72 (under pressure — 10Y yield 4.657%)
+- QQQ: ~$662 (Jul 29 close: $661.73; premarket +1.1%)
+
+**FOMC aftermath (Jul 29 decision):**
+- Fed HELD at 3.50–3.75% (5th consecutive hold) — 9-3 vote, 3 dissenters wanted +25bp hike
+- Most fractured vote since September 2016 (Hammack, Kashkari, Logan dissented)
+- Warsh: "September hike finely balanced" — 10Y yield +5bps to 4.657%
+- S&P 500 -0.6%, Dow -840pts, 2Y yield -4bps (inversion steepened)
+- By today (Jul 31): recovering on earnings; futures back in green
+
+**Economic data (released Jul 30):**
+- Q2 GDP: +1.5% annualized (miss vs +1.8% est.; below Q1's +2.1%)
+- Core PCE June: +3.3% YoY (down from 3.41% May — cooling but still well above 2% target)
+- Headline PCE: +3.7% YoY (down from 4.1%); energy -5.9% MoM
+
+**Economic data today (Jul 31):**
+- ECI Q2: civilian workers +0.9% QoQ; private wages +3.3% YoY; real wages -0.4% (workers losing purchasing power)
+- Chicago PMI July and Michigan Sentiment Final still pending at routine run time
+
+**Sector performance (week of Jul 28–31):**
+- Top: Consumer Staples (+1.5%), Consumer Discretionary (+1.3%), Communication Services (+1.3%)
+- Worst: Energy (XLE) -2.1% (Iran ceasefire reduced oil premium), Utilities -1.3%, Info Tech -0.9%
+- 7 of 11 sectors positive on the week
+
+### Dual Momentum Signal (Manual — Script Blocked)
+
+| Rank | Ticker | ~12M Return (estimated) | Source / Notes |
+|------|--------|------------------------|----------------|
+| 1 | IWM | ~+30–32% est. | Confirmed #1 for 40 sessions; Jul 30 close $290.61; conflict: one source 12.3%, another 31% |
+| 2 | QQQ | ~+25–28% est. | Amazon beat; Apple miss partially offsets; premarket +1.1% |
+| 3 | GLD | ~+25% est. | 52-wk range $302.86–$509.70; elevated gold on macro uncertainty |
+| 4 | SPY | +17.09% | **CONFIRMED** — absolute filter: PASS (positive 12m) |
+| 5 | TLT | Negative–low est. | 10Y yield 4.657%; under sustained pressure from FOMC hawkish hold |
+| 6 | SHY | ~+4–5% est. | Cash proxy; stable |
+
+**Preliminary Signal: BUY IWM** (40th consecutive session — same reading)
+Note: IWM 12m return disputed (12.3% vs 31% in different sources). If 12.3% is correct, SPY (+17.09%) would rank above IWM — signal would shift to BUY SPY. Confidence: MODERATE (cannot verify authoritatively without yfinance/Alpaca data). Prior 39 sessions consistently showed IWM #1 by large margin (+34-36%).
+
+### Rebalance Status — MISSED (July 31)
+
+**This is now the SECOND CONSECUTIVE MISSED REBALANCE:**
+- June 30, 2026: Missed — API blocked (Day 1 of blockage)
+- July 31, 2026: Missed — API still blocked (Day 40 of blockage)
+
+**Opportunity cost:**
+- IWM was ~$275 in late May 2026 when strategy was deployed (baseline)
+- IWM today ~$291 — estimated +$1,600 unrealized gain (~1.6%) had the trade executed on Jun 30
+
+**Next rebalance window:** August 31, 2026 (last trading day of August). API access must be restored before then.
+
+### Risk Factors
+- **September FOMC hike risk**: 3 dissenters + Warsh "finely balanced" comment raises rate risk for equities and IWM
+- **GDP slowdown**: +1.5% Q2 GDP (miss) combined with sticky Core PCE (3.3%) = stagflation risk
+- **Apple miss**: Guidance miss +7.8% drop signals consumer tech weakness
+- **IWM vs. SPY ranking uncertainty**: If IWM's 12m return is actually 12.3% (not 31%), SPY ranks above IWM and the signal changes. Must verify when API restored.
+
+### Decision
+**NO TRADE** — Alpaca API blocked (Day 40). Cannot execute rebalance regardless of signal confirmation.
+**ACTION REQUIRED:** Whitelist `paper-api.alpaca.markets:443` in remote execution environment egress policy. July 31 rebalance now MISSED. Next window: August 31, 2026.
+
+---
+
 ## 2026-07-30 — Morning Research (Thursday, Day 40 of API blockage) ⚠️ REBALANCE TOMORROW
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (TOMORROW — last trading day of July)
