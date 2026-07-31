@@ -894,23 +894,6 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 
 ---
 
-## 2026-07-30 — EOD Snapshot (Thursday, Day 40 of API blockage) ⚠️ REBALANCE TOMORROW (Jul 31)
-
-**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (unchanged — cash only) | **Phase P&L:** $0.00 / 0.00%
-**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
-
-| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
-|--------|------|--------|-------|-------|---------|----------------|------|
-| — | — | — | — | — | — | — | — |
-
-**Notes:** EOD routine did not run 2026-07-30 (Thursday) — backfilled in Fri Jul 31 combined routine. `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 40 of blockage spanning Jun 22–Jul 30). No account data, positions, or orders could be retrieved. No trades executed — strategy is Dual Momentum ETF Rotation (monthly rebalance only; **REBALANCE DATE IS TOMORROW: 2026-07-31**).
-
-**Today's market close (via WebSearch — APIs blocked):** S&P 500 **+1.67% to 7,437.63** (Nasdaq +2.78%, Dow +1.19%); **MSFT surged +15.5%** (massive Q2 beat: Azure cloud +36%; AI revenue accelerating — biggest single-session market cap gain in recent memory, recovered all of Wednesday's FOMC selloff). IWM est. **~$290.61** (+0.70%). VIX declining to est. ~17.0–18.0, recovering from FOMC spike. Big recovery day after Wednesday's hawkish-hold -1.5% selloff. AMZN reporting Q2 earnings after close — results will define Friday's open.
-
-**Dual Momentum signal:** BUY IWM (40th consecutive session; IWM ~$290.61 est.; 12m return still #1 among strategy universe; absolute filter PASSES — SPY ~+18–20% 12m). Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **July 31 rebalance is TOMORROW — Day 40 of blockage. Bot must buy IWM at open tomorrow; cannot execute without API access. ACTION REQUIRED.**
-
----
-
 ## 2026-07-31 — EOD Snapshot (Friday, Day 41 of API blockage) ⚠️ JULY 31 REBALANCE MISSED — 2ND CONSECUTIVE
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (unchanged — cash only) | **Phase P&L:** $0.00 / 0.00%
