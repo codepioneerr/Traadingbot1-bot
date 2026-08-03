@@ -5,6 +5,72 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-03 — Morning Research (Monday, Day 42 of API blockage) ⚠️ OVERDUE REBALANCE PENDING — 2ND CONSECUTIVE MISS
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (last trading day of August)
+**Overdue rebalance:** BUY IWM (Jun 30 + Jul 31 both missed) — signal re-confirmed 42nd consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 42: Jun 22–Aug 3):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback. Proxy status: no recent relay failures — blockage is policy-based.
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch — Perplexity blocked)
+
+**VIX:** ~15.99 (Jul 31 close); range Jul 3–Aug 3: high 20.88, low 14.96, avg 17.16 → **LOW-MODERATE** (improving; FOMC spike fully dissipated)
+
+**S&P 500 Futures (premarket):** Climbing; 86% prediction-market probability of Up open. Dow futures up, oil sliding on renewed Iran talks.
+
+**Market Catalysts Today:**
+- **Iran talks resumed:** Trump announced new US-Iran talks today after calling off strikes → Brent/WTI falling from peak → risk-on, anti-inflationary
+- **Earnings season momentum:** ~300 of S&P 500 companies reported; ~85% beat estimates; aggregate profit growth tracking +47% — on pace for one of strongest quarters in years
+- **AMZN +14.99%** last Friday (Q2 EPS $5.75 vs $1.81 est.; AWS +36.7%; CapEx $220B) — mega-cap tech strong
+- **Palantir (PLTR)** reports after bell today; AMD, MCD, DIS this week
+- **Economic calendar:** JOLTS (Tue), weekly jobless claims (Thu), July Jobs Report (Fri, most important)
+- **Ferguson Enterprises (FERG)** +7.7% premarket joining S&P 500 index
+
+**Key ETF Levels:**
+- IWM: ~$293.38 (open ~$293.56; intraday range today: $287.83–$294.50)
+- GLD: ~$369.40 (Jul 31); 52-wk range $302.86–$509.70; down sharply from peak on oil/Iran de-escalation
+- SPY/QQQ: Rising in premarket on strong earnings + oil decline
+
+### Dual Momentum Signal (WebSearch estimates — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | **IWM** | **+43.63%** | FinanceCharts TTM confirmed; clear #1 |
+| 2 | GLD | ~+22.1% | Gold 12m still positive; recent selloff doesn't change 12m |
+| 3 | QQQ | ~+19.47% | FinanceCharts TTM |
+| 4 | SPY | ~+18–20% | Absolute filter: PASSES (12m > 0%) |
+| 5 | TLT | Negative | Hawkish FOMC + rising yields pressure bonds |
+| — | SHY | ~+4–5% | Cash proxy; absolute filter safety valve |
+
+**Absolute filter:** SPY 12m > 0% → PASSES
+**Signal: BUY IWM** (42nd consecutive session — unchanged since Jun 30)
+Must re-verify via `python3 scripts/dual_momentum_signal.py` once API/yfinance accessible.
+
+### Risk Factors
+- **API blockage continues (Day 42):** Cannot execute overdue rebalance. Opportunity cost: IWM ~$274 (Jun 30 est.) → $293.38 (Aug 3) ≈ **+7.1% foregone** on $100K position (~$7,100 opportunity cost).
+- **Jobs report Friday (Aug 7):** Strongest near-term risk event. Strong jobs = hawkish pressure on rates; weak jobs = recession fear. Either extreme could cause volatility.
+- **Iran/oil tail risk:** While talks resumed today reducing oil, any breakdown → oil spike → inflationary → hawkish Warsh (Fed) → equity headwind. IWM (small-cap domestic) exposed via borrowing costs.
+- **Warsh Fed posture:** 3 dissents at Jul 29 FOMC; next hike probability elevated. Rising long-duration yields (30Y > 5.2%) remain a medium-term headwind for equities despite today's relief.
+- **Gold weakening:** GLD down ~27.1% over 6 months (from $509.70 peak) — de-escalation of geopolitical premium. Does not change IWM ranking.
+
+### Decision
+**NO TRADE** — not a rebalance day (next: Aug 31). Strategy permits no intraday or discretionary action.
+**CANNOT EXECUTE** — Alpaca API blocked (Day 42; 403 CONNECT rejected). Overdue rebalance (BUY IWM) pending API restoration.
+**Overdue action:** BUY IWM at 100% of equity at first available Alpaca API access (do not wait for Aug 31 — overdue trades execute at earliest opportunity).
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment's egress policy. 42 consecutive trading days blocked. Jun 30 + Jul 31 rebalances missed (~$7,100 opportunity cost). Overdue BUY IWM pending.**
+
+---
+
 ## 2026-07-31 — REBALANCE DAY Morning Research (Friday, Day 40 of API blockage) 🚨 REBALANCE MISSED AGAIN
 
 **Strategy:** Dual Momentum ETF Rotation | **This IS the rebalance day (last trading day of July 2026)**
