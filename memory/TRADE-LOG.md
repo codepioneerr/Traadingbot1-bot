@@ -936,4 +936,21 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 
 **Overdue rebalance status:** Jun 30 + Jul 31 both missed. Cumulative opportunity cost: IWM ~$274 (Jun 30 est.) → $293.38 (Aug 3) ≈ **+7.1% foregone** (~$7,100). **Overdue BUY IWM to be executed at first available Alpaca API access — do not wait for Aug 31 rebalance.** Next scheduled rebalance: Aug 31, 2026.
 
+---
+
+## 2026-08-03 — EOD Snapshot (Monday, Day 43 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-08-03, Monday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 43 of blockage spanning Jun 22–Aug 3). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (next: Aug 31, or overdue execution at first API access). Portfolio remains all-cash at last known $100,000.00.
+
+**Today's market close (via WebSearch — APIs blocked):** S&P 500 **+1.46% to 7,599.30** (strong risk-on open; oil slid on Iran talk resumption; broad rally led by small-caps). **IWM closed ~$296.12** (+1.69% from prior close $291.20 on Jul 31). **VIX closed at 15.79** (LOW — fear subdued, risk appetite strong). Monday session was bullish across the board.
+
+**Dual Momentum signal:** BUY IWM (43rd consecutive session; IWM ~$296.12; 12m return #1 ~+44–46%; absolute filter PASSES). Overdue rebalances: Jun 30 + Jul 31 both missed. **Cumulative opportunity cost: IWM ~$274 (Jun 30 est.) → $296.12 (Aug 3 close) ≈ +8.1% foregone (~$8,100).** Last known equity: $100,000.00 (Day 0 baseline, 2026-05-09). Telegram EOD notification could not be sent — api.telegram.org:443 blocked; push notification sent instead. **ACTION REQUIRED: whitelist Alpaca, Perplexity, Telegram hosts. 43 consecutive trading days blocked. 2 missed rebalances.**
+
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts. 42 consecutive trading days blocked. 2 missed rebalances.**
