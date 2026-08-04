@@ -5,6 +5,34 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-08-04 — Morning Routine (Tuesday, Day 43 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-28 est. (last trading day of August)
+**Overdue rebalance:** BUY IWM (Jun 30 + Jul 31 missed) — signal re-confirmed 43rd session
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined pre-market + market-open routine ran (2026-08-04, Tuesday). `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` remain blocked — HTTP 403/000 connection rejected (Day 43 of blockage spanning Jun 22–Aug 4). No account data retrievable; portfolio assumed unchanged at $100,000.00 cash.
+
+**Market context (via WebSearch):**
+- VIX: ~15.99 (Jul 31 close; LOW-MODERATE)
+- S&P 500 futures: +0.21–0.30% premarket (bullish; Palantir +16%, Iran talks)
+- WTI oil: $76.66, -4.58% (Iran de-escalation)
+- IWM: $296.22 prior close (+1.72% Aug 3); TTM return ~+34–44%
+- SPY TTM: +19.50% → absolute filter PASSES
+- Key events: ISM Services 10 AM, Composite PMI 9:45 AM; AMD/SpaceX after bell; Jobs Report Fri Aug 7
+
+**Dual Momentum signal:** BUY IWM (43rd consecutive session; TTM ~+34–44%, clear #1). No trade — not rebalance day. Cannot execute — Alpaca blocked.
+
+**Opportunity cost update:** IWM ~$274 (Jun 30 est.) → $296.22 (Aug 3) ≈ +8.1% foregone (~$8,100 on $100K position).
+
+**ACTION REQUIRED:** Whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`. 43 consecutive trading days blocked.
+
+---
+
 ## 2026-07-31 — REBALANCE DAY Morning (Friday, Day 40 of API blockage) 🚨 2ND CONSECUTIVE MISSED REBALANCE
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%

@@ -5,6 +5,75 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-04 — Morning Research (Tuesday, Day 43 of API blockage) ⚠️ OVERDUE REBALANCE PENDING — 2ND CONSECUTIVE MISS
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-28 or 08-31 (last trading day of August)
+**Overdue rebalance:** BUY IWM (Jun 30 + Jul 31 both missed) — signal re-confirmed 43rd consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 43: Jun 22–Aug 4):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 000 connection failed
+- `api.perplexity.ai:443` → 000 connection failed
+Research conducted via WebSearch fallback. No change from Day 42.
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch — Perplexity blocked)
+
+**VIX:** ~15.99 (Jul 31 close; LOW-MODERATE — improving trend, sub-16 for first time in weeks)
+
+**S&P 500 Futures (premarket):** +0.21–0.30% | 77% Polymarket probability of higher open. Sentiment lifted by Palantir +16% post-earnings, Iran-US talks progressing (Oman-brokered), and AI capex confidence restored.
+
+**WTI Oil:** $76.66/bbl, -4.58% — Iran risk premium unwinding on paused strike + Strait of Hormuz negotiations. Anti-inflationary, supportive for equities.
+
+**Key Earnings Today:**
+- **Pre-market:** CAT, MCD, PFE, MRK, BP, MPC, SPOT, TM, APO, DD, IDXX — large diversified slate
+- **After bell:** AMD, SpaceX (first-ever public earnings), PLTR already +16% premarket from overnight beat
+- **Palantir (PLTR):** Blowout earnings + raised guidance → +16% to ~$145.90 premarket
+
+**Economic Calendar:**
+- 9:45 AM ET: US Composite PMI Final (~55.2 flash)
+- 10:00 AM ET: ISM Services Index (prior: 64.1)
+- Week ahead: JOLTS (Wed), Weekly Claims (Thu), **July Jobs Report (Fri Aug 7 — key risk event)**
+
+**ETF Levels:**
+- IWM: $296.22 prior close (+1.72% Aug 3); 52-wk range $218.24–$302.72
+- GLD: $371.62 (Aug 3 close); Iran de-escalation → gold risk-premium fading
+- SPY: ~+19.50% TTM | Absolute filter: **PASSES** (>>0%)
+
+### Dual Momentum Signal (WebSearch estimates — authoritative script blocked)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | **IWM** | **+34–44%** | FinanceCharts/Yahoo TTM range; clear #1 |
+| 2 | QQQ | ~+20–22% est. | Tech strong on AI capex confidence |
+| 3 | SPY | ~+19.50% | Absolute filter: PASSES |
+| 4 | GLD | ~+18–22% est. | Gold weakening from $509 peak; Iran de-escalation |
+| 5 | TLT | Negative | Hawkish FOMC + 30Y >5.2% pressure |
+| — | SHY | ~+4–5% | Cash proxy; safety valve |
+
+**Absolute filter:** SPY TTM +19.50% >> 0% → **PASSES**
+**Signal: BUY IWM** (43rd consecutive session — unchanged since Jun 30)
+
+### Risk Factors
+- **API blockage continues (Day 43):** Cannot execute overdue rebalance. Opportunity cost: IWM ~$274 (Jun 30 est.) → $296.22 (Aug 3) ≈ **+8.1% foregone** (~$8,100 on $100K position).
+- **Jobs Report Friday (Aug 7):** Key risk event. Strong surprise → hawkish Fed pressure; weak surprise → recession fear. Either extreme → volatility spike.
+- **Warsh Fed:** 3 FOMC dissenters at Jul 29 meeting wanted +25bp. Elevated rate hike risk if ISM Services stays elevated (prior 64.1 is very hot).
+- **Iran/oil tail risk:** Any breakdown in Oman negotiations → oil spike → inflation → hawkish → equity headwind, especially IWM (small-cap borrowing cost sensitivity).
+- **IWM near 52-wk high:** $296.22 approaching $302.72 52-wk high. Not a concern for monthly strategy but potential for resistance.
+
+### Decision
+**NO TRADE** — not a rebalance day (next: last trading day of August 2026, est. Aug 28).
+**CANNOT EXECUTE** — Alpaca API blocked (Day 43; 403 CONNECT rejected). Overdue rebalance (BUY IWM) pending API restoration.
+**Overdue action:** BUY IWM at 100% of equity at first available Alpaca API access, before Aug 31 rebalance day.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts. 43 consecutive trading days blocked. Jun 30 + Jul 31 rebalances missed (~$8,100 opportunity cost).**
+
+---
+
 ## 2026-08-03 — Morning Research (Monday, Day 42 of API blockage) ⚠️ OVERDUE REBALANCE PENDING — 2ND CONSECUTIVE MISS
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (last trading day of August)
