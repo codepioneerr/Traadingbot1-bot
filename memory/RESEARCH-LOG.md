@@ -1975,6 +1975,79 @@ Research conducted via WebSearch fallback.
 
 ---
 
+## 2026-08-06 — Morning Research (Thursday, Day 45 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (18 trading days)
+**Overdue rebalances:** BUY IWM (Jun 30 + Jul 31 both missed) — signal re-confirmed 45th consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 45: Jun 22–Aug 6):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback.
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch — 9:13 AM ET premarket)
+
+**VIX:** 16.15 (opening) / 15.81 (Aug 5 close); daily range 15.48–18.43 → **Sizing mode: MODERATE** (N/A — monthly strategy, no VIX-based sizing)
+
+**S&P 500 Futures:** +0.08% (SPY +0.22% premarket); Polymarket: 69% probability higher open
+
+**Oil:** WTI $75.10/bbl; Brent $78.72 — declining on US-Iran peace deal optimism (down from $88/$98 peak in late July). Iran deal imminent per reports; oil falling = reduced inflation risk = equity positive
+
+**Today's Earnings (Aug 6):**
+- WBD (before open) — results due
+- COP (before open) — results due
+- PTON: **−15% premarket** — beat Q4 estimates but issued disappointing revenue guidance
+- SpaceX IPO lockup: **$101B shares eligible** → SpaceX −14% (lockup-related selloff, not fundamental)
+- ABNB, LYFT, NET: after close
+- Fiserv: **−12%** — cut full-year EPS forecast ($7.20–7.40 vs prior $8.00–8.30)
+
+**Sector Performance This Week (Aug 4–6):**
+- **Leaders:** Technology (+5%+), Industrials, Communication Services (only sectors beating S&P 500)
+- **Laggards:** Energy (oil declining), Healthcare (some weakness)
+
+**Dual Momentum Universe — 12-Month Returns (WebSearch, ~Aug 6 est.):**
+
+| Rank | Ticker | Est. 12M Return | Notes |
+|------|--------|-----------------|-------|
+| 1 | IWM | **+44.19%** | FinanceCharts TTM data; clear #1 |
+| 2 | GLD | **+19.70%** | Up +4.1% today ($374→$389); still well below IWM |
+| 3 | QQQ | ~+19–25% est. | Prev close $723.85; tech strong this week |
+| 4 | SPY | ~+18–20% est. | Positive → absolute filter **PASSES** |
+| 5 | TLT | <+5% est. | Rising rates environment; underperforming |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Notable:** GLD surged +4.1% today (to $389.64; 52-week range $305.19–$509.70; YTD −5.42%). Despite today's spike, GLD TTM return (+19.70%) is 24.5pp below IWM (+44.19%). Signal unchanged.
+
+**Dual Momentum Signal:** **BUY IWM** (45th consecutive session; IWM ~$302.43 premarket open from Aug 5 close $299.77; 12m return +44.19% clear #1; absolute filter PASSES — SPY 12m positive ~+18–20%).
+
+### Trade Ideas
+*(for context only — no discretionary trades permitted by this strategy)*
+
+1. **BUY IWM** — overdue rebalance. Execute 100% equity at first Alpaca API access. `buy_qty = floor(equity / ask_price)`. No trailing stop per strategy rules.
+2. No additional ideas. Dual Momentum holds one asset only.
+
+### Risk Factors
+- **GLD spike (+4.1%):** Gold surging — could signal geopolitical hedging or dollar weakness. Monitor whether GLD's 12m momentum closes the gap on IWM. Unlikely to flip signal before Aug 31 rebalance.
+- **SpaceX lockup:** $101B flood of shares may create broad risk-off if sentiment deteriorates.
+- **VIX 16.15:** Low-moderate — not elevated enough to warrant concern.
+- **Iran deal:** If concluded, oil falls further → lower inflation → bullish for equities and especially IWM (domestic small-cap).
+- **Busy earnings week:** PTON/Fiserv disappointments absorbed without broad damage — market resilient.
+
+### Decision
+**NO TRADE** — Alpaca API blocked (Day 45). Strategy permits no intraday or discretionary action. Overdue BUY IWM pending at first API access. Next scheduled rebalance: Aug 31, 2026.
+
+**Cumulative opportunity cost:** IWM $274 (Jun 30 est.) → $302.43 (Aug 6 premarket) ≈ **+10.4% foregone** (~$10,400 on $100K).
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 45 consecutive trading days blocked. 2 missed rebalances.**
+
+---
+
 ## 2026-07-23 — Morning Research (Thursday, Day 35 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-07-31 (6 trading days)
