@@ -5,6 +5,92 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## Week ending 2026-08-07 — Weekly Review #7 ⚠️ API BLOCKED (Day 47) | 3RD CONSECUTIVE WEEK UNABLE TO EXECUTE
+
+### Portfolio Summary
+
+| Metric | Value |
+|--------|-------|
+| Portfolio (EOW) | $100,000.00 (last known — API blocked) |
+| Cash | $100,000.00 (100%) |
+| Week P&L | $0.00 / 0.00% (no positions) |
+| Phase P&L (since May 9) | $0.00 / 0.00% |
+| S&P 500 weekly return | +2.73% (7,505 → 7,709.96) |
+| IWM weekly return | +3.13% ($292.59 → $301.76) |
+| Bot vs S&P delta | −2.73% (underperformed — market rallied while bot held cash) |
+| Trades this week | 0 |
+| W/L/Open | 0/0/0 |
+| Win rate | N/A |
+| Profit factor | N/A |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Sizing mode (this week) | N/A — Dual Momentum monthly rebalance only |
+
+### Week in Review (Aug 3–7, 2026)
+
+**Strategy:** Dual Momentum ETF Rotation — monthly rebalance only. No rebalance this week (next: Aug 31, 2026). APIs remain blocked — no trades possible regardless.
+
+**API blockage status:** Day 47 (Jun 22 – Aug 7). `paper-api.alpaca.markets`, `api.telegram.org`, and `api.perplexity.ai` all returning 403 connect_rejected at proxy. Perplexity research substituted with WebSearch. Telegram substituted with push notifications.
+
+**Cumulative opportunity cost:** IWM ~$274 (Jun 30 est.) → $301.76 (Aug 7) ≈ **+10.1% foregone (~$10,100 on $100K)**. Two missed rebalances (Jun 30 + Jul 31).
+
+### Market Context (Aug 3–7)
+
+- **Monday Aug 3:** S&P 500 +1.46% to 7,599.30; IWM ~$296.12 (+1.69%); VIX 15.79 — strong risk-on open; AMZN +14.99% from Friday's earnings surge continuing
+- **Tuesday Aug 4:** S&P 500 **+1.8% to 7,736.52 (NEW ALL-TIME HIGH)**; IWM ~$298.60; VIX ~15.5 — Palantir +17% on AI earnings beat; all three major indexes at record highs
+- **Wednesday Aug 5:** EOD routine missed — no snapshot logged
+- **Thursday Aug 6:** S&P 500 −0.17% to 7,723.55; IWM ~$299.11; VIX 15.34 — mild profit-taking after ATH; treasury yields rose; Dow snapped its record streak
+- **Friday Aug 7:** S&P 500 −0.18% to **7,709.96**; IWM **$301.76**; VIX **15.15** — July jobs report: −23K jobs (vs. expected gains); unemployment 4.1%; markets interpreted as dovish (Fed holds); Nasdaq +~1.3% on the day; week closed as best since April
+- **Best sector this week:** Technology (XLK) +5.5% — chip stocks rebounded; AI earnings theme intact (Palantir, MSFT, AMZN all beat prior weeks)
+- **Worst sector this week:** Energy (XLE) — Iran negotiation optimism drove oil lower, reducing energy tailwinds
+- **Key macro drivers:** S&P new ATH on Aug 4; dovish jobs miss; Iran peace talks reducing oil shock; earnings season 85%+ beat rate
+
+### Closed Trades This Week
+
+None — bot held no positions (API blocked; no rebalance day this week).
+
+### Open Positions (EOW)
+
+None — account is all-cash pending API access to execute overdue rebalances (IWM BUY at first available Alpaca session).
+
+### What Worked
+
+- Market context tracking via WebSearch fallback continued functioning despite API blockage
+- State persistence via git commits maintained — no data lost across fresh session restarts
+- Dual Momentum signal remains robust and consistent (BUY IWM, 47th consecutive signal day)
+- Strategy's monthly cadence limits damage from blockage — only rebalance days require API access
+
+### What Didn't Work
+
+- **API egress still blocked (Day 47):** `paper-api.alpaca.markets`, `api.telegram.org`, `api.perplexity.ai` all blocked — bot cannot trade, notify, or research
+- **Telegram notifications:** 47 consecutive days of mobile alerts undeliverable — user receiving only Claude Code push notifications
+- **No live account data:** All equity/position values estimated from last known state ($100K, 2026-05-09)
+- **Cumulative missed opportunity:** IWM +10.1% since Jun 30 rebalance date — $10,100 foregone on $100K
+- **Aug 5 routine missed:** No EOD snapshot logged for Wednesday
+
+### Key Lessons
+
+1. **Egress policy must be updated immediately.** 47 trading days blocked across 3 missed rebalance windows represents material, compounding opportunity cost.
+2. **Dual Momentum signal was correct:** IWM up 10%+ since Jun 30 signal — strategy worked, execution was the failure point.
+3. **Push notification fallback is functional but incomplete:** User receives alerts but no Telegram mobile message with full trade/summary details.
+
+### Sector Observations and Next Week Outlook
+
+- **Small Caps (IWM):** +3.13% this week, outperforming S&P; dovish jobs data disproportionately benefits rate-sensitive small caps; Dual Momentum signal: BUY IWM (47 consecutive days, #1 12m momentum)
+- **Technology (XLK):** Led the week (+5.5%); AI earnings theme intact; relevant as QQQ is bot's #3 ranked asset (IWM still #1)
+- **Energy (XLE):** Weakest sector; Iran talks reducing oil price risk — mild inflation relief, positive for growth equities
+- **Key events next week (Aug 10–14):** CPI inflation report is the primary driver — benign = continued rally, hot = renewed rate-hike fears; JPMorgan/Goldman/Netflix earnings; NFIB Small Business Optimism (Aug 11); DA Davidson SmallCap Conference (Aug 10–11); Keybanc Technology Leadership Forum (Aug 9–11)
+
+### Strategy Adjustments for Next Week
+
+No rule changes. **Operational requirement unchanged:** restore API egress to `paper-api.alpaca.markets`, `api.telegram.org`, `api.perplexity.ai`. Without this, Aug 31 rebalance will also be missed — making it a 4th consecutive rebalance failure and cumulative opportunity cost potentially exceeding $12,000+.
+
+### Grade: **D** (Incomplete — operational blockage)
+
+Rationale: Strong market week (+2.73% S&P, +3.13% IWM, ATH on Aug 4). Dual Momentum strategy signaled correctly and consistently (BUY IWM). Bot completely unable to execute its core function for 47 consecutive trading days. Three consecutive weeks of underperformance vs. market purely due to infrastructure failure. Cumulative opportunity cost ~$10,100. Strategy grade would be A if infrastructure were functional.
+
+---
+
 ## Week ending 2026-07-31 — Weekly Review #6 ⚠️ API BLOCKED (Day 41) | 2ND CONSECUTIVE MISSED REBALANCE
 
 ### Portfolio Summary
