@@ -1066,3 +1066,28 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 **Tomorrow (Friday Aug 7):** Weekly review routine will run. Market closed slightly down today; IWM resilient. If APIs become accessible, execute overdue IWM buy immediately.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 46 consecutive trading days blocked. 2 missed rebalances (~$9,160 opportunity cost and growing).**
+
+---
+
+## 2026-08-07 — EOD Snapshot (Friday, Day 47 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD + Weekly Review routine ran (2026-08-07, Friday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 47 of blockage spanning Jun 22–Aug 7). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (next scheduled: Aug 31, or overdue execution at first API access). Portfolio remains all-cash at last known $100,000.00.
+
+**Today's market close (via WebSearch — APIs blocked):**
+- **S&P 500:** −0.18% to **7,709.96** (weekly close +2.73% — best week since April; mild Friday pullback after strong 4-day run)
+- **Key driver:** July jobs report surprised: −23,000 jobs (vs. expected gains); unemployment ticked down to 4.1%; markets rallied on dovish interpretation — Fed less likely to need rate hikes; Nasdaq +5% for the week on chip-stock rebound
+- **IWM (Russell 2000):** ~**$301.76** (+0.89% from $299.11 Aug 6 close; weekly +3.13% from $292.59 Jul 31 close) — small-caps outperformed this week
+- **VIX:** **15.15** (LOW — down 4.17% on the day; fear subdued; risk appetite strong)
+
+**Dual Momentum signal:** BUY IWM (47th consecutive session; IWM ~$301.76; 12m return #1 ~+46–48%; absolute filter PASSES — SPY 12m strongly positive). Must re-verify via `python3 scripts/dual_momentum_signal.py` once APIs accessible.
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. Cumulative opportunity cost: IWM ~$274 (Jun 30 est.) → $301.76 (Aug 7) ≈ **+10.1% foregone** (~$10,100 on $100K). **Overdue BUY IWM to be executed at first available Alpaca API access — do not wait for Aug 31 rebalance.** Next scheduled rebalance: Aug 31, 2026.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 47 consecutive trading days blocked. 2 missed rebalances (~$10,100 opportunity cost and growing).**
