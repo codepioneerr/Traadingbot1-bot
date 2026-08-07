@@ -5,6 +5,35 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-08-07 — Morning Snapshot (Friday, Day 47 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined routine ran (2026-08-07, Friday). `paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 47 of blockage spanning Jun 22–Aug 7). No account data or positions retrievable. No trades executed.
+
+**Market context (WebSearch fallback):**
+- **VIX:** ~15.15 (LOW-MODERATE; subdued despite jobs shock)
+- **S&P 500 futures:** +0.13% (modest positive; rate-cut hopes outweigh jobs miss)
+- **IWM:** ~$298.25 (day range $297.95–$301.38; near 52-week high $303.06) — small-caps positive
+- **GLD:** $384.96 (SURGING — opened +$10.80; gold at $4,383/oz on rate-cut bets)
+- **July Jobs Report: -23,000** (massive miss vs +83K est.) — first monthly job loss in months; September rate cut near-certain; Fed was 9-3 split on Jul 29 hold
+- **Earnings:** Atlassian +31% premarket, Cloudflare +16% — AI/cloud earnings season strong
+- **Oil:** WTI ~$77.75–$78.75; Brent ~$82.15 (-0.41%) — easing
+- **Best sectors this week:** Communications (XLC), Technology (XLK) | **Worst:** Energy (XLE)
+
+**Dual Momentum signal:** BUY IWM (47th consecutive session; IWM ~$298.25; 12m return ~+35–45% still #1). **KEY WATCH:** GLD surging on rate-cut thesis — 12m return approaching 24–27%; may challenge IWM for #1 at Aug 31 rebalance. Absolute filter PASSES (SPY 12m strongly positive). Must re-verify via `python3 scripts/dual_momentum_signal.py` once APIs accessible.
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. Cumulative opportunity cost: IWM ~$274 (Jun 30 est.) → $298.25 (Aug 7) ≈ **+8.85% foregone** (~$8,850). **Overdue BUY IWM to be executed at first available Alpaca API access — do not wait for Aug 31 rebalance.** Next scheduled rebalance: Aug 31, 2026.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 47 consecutive trading days blocked. 2 missed rebalances. SIGNAL WATCH: GLD 12m return surging — Aug 31 signal may shift to GLD.**
+
+---
+
 ## 2026-08-04 — Morning Routine (Tuesday, Day 43 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A

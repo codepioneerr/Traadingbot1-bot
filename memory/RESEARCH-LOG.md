@@ -5,6 +5,89 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-07 — Morning Research (Friday, Day 47 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31
+**Overdue rebalance:** BUY IWM (Jun 30 + Jul 31 missed) — signal re-confirmed 47th consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 47: Jun 22–Aug 7):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback.
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch — APIs blocked)
+
+**July Jobs Report (Primary Catalyst Today):**
+- Nonfarm Payrolls: **-23,000** (MASSIVE MISS vs +83,000 consensus) — first monthly job loss in months
+- Unemployment rate: 4.1% | Average hourly earnings: +3.2% YoY | Participation: 61.4% (5-yr low)
+- Biggest losses: local gov education (-50K), retail (-19K); temporary layoffs +153K → 921K
+- Market reaction: BULLISH for equities (rate-cut bets surging); September cut probability rising sharply
+
+**VIX:** ~15.15 (LOW-MODERATE; well contained despite jobs shock; 52-week range 13.38–35.30)
+→ **Sizing mode: MODERATE** (N/A for Dual Momentum strategy — 100% in one asset, monthly rebalance only)
+
+**S&P 500 Futures:** E-Mini +0.13% to ~7,749; modest positive open despite jobs miss; rate-cut hope is bullish
+
+**Oil:** WTI ~$77.75–$78.75/bbl | Brent ~$82.15/bbl (−0.41%) — falling on demand concerns / Iran talk rumors
+
+**ETF Prices Today (premarket/intraday):**
+| Ticker | Price | Notes |
+|--------|-------|-------|
+| IWM | ~$298.25 | Day range $297.95–$301.38; 52wk high $303.06 |
+| GLD | $384.96 | Opened +$10.80 from $374.16 close; gold at $4,383/oz (rate-cut surge!) |
+| QQQ | $714.65 | Strong — Atlassian +31%, Cloudflare +16% premarket catalysts |
+| SPY | ~$770 | Prior close $770.23; futures flat/mild positive |
+
+**Earnings Catalysts Today:**
+- **Atlassian (TEAM):** +31% premarket — EPS $1.87 vs $1.50 est.; cloud revenue +31% YoY; $250M buyback
+- **Cloudflare (NET):** +16.2% to $330.51 — revenue $696M, +36% YoY; raised guidance
+- **The Trade Desk (TTD):** Down after-hours (results mixed)
+
+**Sector Performance (Week of Aug 4–7):**
+- **Best:** Communications (XLC), Technology (XLK) — AI earnings tailwind
+- **Worst:** Energy (XLE) — negative YTD; oil sliding
+
+**Fed:** Rate held at 3.50–3.75% (Jul 29, 9-3 split); next decision September — weak jobs makes September cut nearly certain.
+
+### Dual Momentum Signal (WebSearch estimate — NOT authoritative script)
+
+**IMPORTANT NEW DEVELOPMENT:** Gold surged to $4,383/oz today on jobs-miss/rate-cut thesis. GLD now at $384.96 (was ~$374 yesterday). 12m GLD return may now be approaching 25–27%.
+
+| Rank | Ticker | ~12M Return Est. | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+35–45% | Still #1 per prior sessions; ~$219.74 52-wk low → $298.25 now |
+| 2 | GLD | ~+24–27% | SURGING on jobs miss → rate cut thesis; up ~+2.9% today alone |
+| 3 | QQQ | ~+24–27% | Tech earnings strong; may challenge GLD for #2 |
+| 4 | SPY | ~+18–20% | Absolute filter: PASSES (positive) |
+| 5 | TLT | Unknown | Likely positive as rates expected to fall; bonds rallying |
+| — | SHY | ~+4–5% | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (47th consecutive session same reading)
+Script unavailable (yfinance not installed; Yahoo Finance blocked). Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored.
+
+**Note on GLD:** Gold's surge today warrants watching — if GLD 12m return overtakes IWM, the Aug 31 rebalance signal may shift to GLD. This is NOT yet confirmed; IWM maintains #1 position by estimated margin.
+
+### Risk Factors
+- **Jobs shocker:** -23K payrolls is historic miss — could signal recession onset or statistical noise (seasonal adjustment). If recession confirmed → flight to quality → GLD/TLT may outperform IWM
+- **Rate cut path:** September cut now near-certain; aggressive cuts would favor gold and growth equities; IWM should benefit from lower rates
+- **Gold surge:** GLD nearing 12m return that competes with IWM; rebalance signal may shift at Aug 31
+- **VIX 15.15:** Contained fear — no circuit breaker conditions triggered
+
+### Decision
+**NO TRADE** — APIs blocked (Day 47). Strategy permits no intraday or discretionary action. Overdue BUY IWM pending at first Alpaca API access. Next scheduled rebalance: Aug 31, 2026.
+
+**Cumulative opportunity cost:** IWM ~$274 (Jun 30 est.) → $298.25 (Aug 7) ≈ **+8.85% foregone** (~$8,850 on $100K). GLD opportunity tracking: now at $384.96 vs ~$369 (Jul 31) — gold position also missed.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 47 consecutive trading days blocked. 2 missed rebalances (~$8,850 opportunity cost). REBALANCE SIGNAL RISK: GLD surging on jobs miss — Aug 31 signal may shift from IWM to GLD.**
+
+---
+
 ## 2026-08-04 — Morning Research (Tuesday, Day 43 of API blockage) ⚠️ OVERDUE REBALANCE PENDING — 2ND CONSECUTIVE MISS
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-28 or 08-31 (last trading day of August)
