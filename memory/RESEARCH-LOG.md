@@ -5,6 +5,76 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-10 — Morning Research (Monday, Day 49 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31
+**Overdue rebalance:** BUY IWM (Jun 30 + Jul 31 missed) — signal re-confirmed 49th consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 49: Jun 22–Aug 10):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected (proxy policy denial)
+- `api.perplexity.ai:443` → 403 connect_rejected (proxy policy denial)
+Research conducted via WebSearch fallback. Account data unavailable (last known: $100,000.00 all-cash).
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** ~14.9–15.45 (LOW, up ~3.7% on day; market calm) → Strategy sizing mode: N/A (Dual Momentum)
+
+**S&P 500 Futures (premarket):** +0.6% — leaning higher; soft July jobs data (NFP -23K last Friday) driving dovish Fed expectations; 10-yr yield ~4.60%
+
+**IWM (Russell 2000):** ~$301.56 | Range: $299.80–$302.03 | 52-wk range: $219.81–$303.06 (near 52-week high)
+
+**SPY 12-month return:** +23.66% (positive → absolute momentum filter PASSES)
+
+**Oil:** WTI ~$79.30/bbl (+1.43%); Brent ~$83.55/bbl — eased significantly from July spike ($88 WTI / $98 Brent); Hormuz risk persists but diminished
+
+**Top sectors this week:** Materials (XLB) +1.5%, Consumer Discretionary (XLY) +1.3%, Technology (XLK) +1.3%, Communications (XLC). 8 of 11 sectors positive. Laggard: Energy (XLE) -1.2%.
+
+**Economic calendar this week:**
+- Today (Mon Aug 10): Employment Trends (Jul)
+- **Wed Aug 13: US CPI** (key event — could move markets significantly)
+- Thu Aug 14: US PPI
+- Fri Aug 15: Retail Sales + UoM Consumer Sentiment
+
+### Dual Momentum Signal (WebSearch estimate — script unavailable, yfinance blocked)
+
+| Rank | Ticker | ~12M Return | Notes |
+|------|--------|-------------|-------|
+| 1 | **IWM** | ~+37% est. | $219.81 → $301.56 = +37.2% (52-wk range implies) |
+| 2 | SPY | +23.66% | Absolute filter: PASSES |
+| 3 | QQQ | ~+28–32% est. | Tech rally ongoing |
+| 4 | GLD | ~+25–30% est. | Oil/Iran tail risk supports gold |
+| 5 | TLT | ~+3–5% est. | Rate pressure ongoing |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Signal: BUY IWM** (49th consecutive session — unchanged since Jun 22)
+Must re-verify via `python3 scripts/dual_momentum_signal.py` before executing once API restored.
+
+### Account Snapshot
+$100,000.00 (last known Day 0 baseline — API blocked; no live data available)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Overdue Rebalance Status
+- Jun 30 + Jul 31 rebalances both missed
+- Cumulative opportunity cost: IWM ~$274 (Jun 30 est.) → $301.56 (Aug 10) ≈ **+10.1% foregone** (~$10,100 on $100K)
+- IWM near 52-week high ($303.06); near-term CPI risk (Wed Aug 13) could move markets
+- **Execute BUY IWM immediately at first available Alpaca API access; do not wait for Aug 31 rebalance**
+- CPI Wednesday: could be risk event; if Alpaca becomes accessible before CPI, still execute per strategy rules (no discretionary exits between rebalances)
+
+### Risk Factors
+- **US CPI Wednesday Aug 13**: Key macro event. Hot CPI → hawkish re-pricing → rate spike → equities sell-off risk, especially small-caps (IWM). But strategy rules say hold regardless.
+- **Oil spike moderating**: WTI $79 vs $88 peak — inflationary pressure from oil easing; positive for equities
+- **VIX low (~15)**: Risk appetite strong; S&P 500 at/near ATH; IWM at 52-wk high
+- **Geopolitical (Hormuz)**: Ongoing but risk premium fading as oil retreats
+
+### Decision
+**NO TRADE** — APIs blocked (Day 49). Strategy only rebalances monthly. Even if APIs were accessible, Aug 10 is not a rebalance day (Aug 31 is next scheduled). However, overdue BUY IWM must execute at first API access.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 49 consecutive trading days blocked. 2 missed rebalances (~$10,100 opportunity cost).**
+
+---
+
 ## 2026-08-07 — Morning Research (Friday, Day 47 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31
