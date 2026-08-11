@@ -5,6 +5,81 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-11 — Morning Research (Tuesday, Day 50 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (14 trading days)
+**Overdue rebalance:** BUY IWM (June 30 + July 31 missed) — signal re-confirmed 50th consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 50: Jun 22–Aug 11):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback. `python3 scripts/dual_momentum_signal.py` → fails (yfinance not installed; Yahoo Finance blocked). `python3 scripts/is_rebalance_day.py` → confirmed NOT rebalance day; 14 trading days until Aug 31.
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch)
+
+**VIX:** 15.55 (+0.58%) → **Sizing mode: MODERATE** (N/A — monthly strategy; VIX 15–25 band)
+One-month range: 14.77–20.88; fear subdued, risk appetite healthy.
+
+**S&P 500 Futures (premarket):** E-mini +0.1% near 7,787; Nasdaq futures +0.4%; markets modestly bid on dovish jobs data.
+
+**Oil:**
+- WTI: $81.99/bbl (−0.17%)
+- Brent: $87.90/bbl
+- Geopolitical bid sustained (US-Iran tensions, Hormuz risk) but easing slightly today.
+
+**Today's Catalysts (Aug 11):**
+- Earnings: CoreWeave (CRWV), Super Micro Computer (SMCI), Cardinal Health
+- No major economic data today
+- **Key risk: July CPI Wednesday Aug 12** (consensus +0.2% headline, +0.3% core MoM) — single most important event of the week
+- Thursday Aug 13: PPI; AMAT/Cisco earnings
+- Friday Aug 14: Retail Sales
+- July payrolls −23,000 (shock contraction, wage growth slowest in 5 years) → fully dovish Fed narrative; ~56% probability Fed holds Sept 16
+
+**Top Sectors This Week:**
+1. Communications (XLC) — AI/tech earnings tailwind
+2. Technology (XLK) — chip rebound (Nvidia +2.33% Mon)
+3. Industrials (XLI) — YTD leader
+
+**Worst Sectors This Week:**
+- Energy (XLE) — oil pullback from recent highs
+- Healthcare (XLV), Consumer Discretionary (XLY) — YTD laggards
+
+### Dual Momentum Signal (WebSearch estimate — NOT authoritative; script unavailable)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+46–48% est. | IWM $301.56 (Aug 10 close); 52-wk range $219.81–$303.06 |
+| 2 | QQQ | ~+27–31% est. | Tech rebound; Nasdaq +0.4% premarket |
+| 3 | GLD | ~+25–30% est. | Iran/oil geopolitical bid supporting gold |
+| 4 | SPY | ~+21–23% est. | Absolute filter: PASSES (strongly positive 12m) |
+| 5 | TLT | <+5% est. | Rate environment mixed; 10-yr at 4.64% |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (50th consecutive session; same reading since June 22)
+
+### Risk Factors
+- **CPI Wednesday** is the key risk: hot print could revive rate-hike bets and weigh on IWM (rate-sensitive small-caps)
+- **Oil geopolitics**: Hormuz closure risk subsiding slightly but WTI/Brent remain elevated; domestic small-caps (IWM) more exposed to fuel cost pressures
+- **SMCI/CRWV earnings**: AI-infrastructure results could swing tech/growth sentiment broadly
+- **VIX 15.55**: LOW-MODERATE — markets complacent ahead of CPI; volatility could spike Wed
+
+### Decision
+**NO TRADE** — Not a rebalance day (Aug 31, 14 trading days away). APIs also blocked (Day 50). No discretionary action permitted between monthly rebalances under Dual Momentum strategy.
+
+**Cumulative opportunity cost:** IWM ~$274 (Jun 30 est.) → $301.56 (Aug 10 close) ≈ **+10.1% foregone** (~$10,100 on $100K).
+**Overdue BUY IWM to be executed at first Alpaca API access (once unblocked) — do not wait for Aug 31.**
+**Next scheduled rebalance: Aug 31, 2026 (14 trading days).**
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 50 consecutive trading days blocked. 2 missed rebalances (~$10,100 opportunity cost).**
+
+---
+
 ## 2026-08-10 — Morning Research (Monday, Day 49 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31

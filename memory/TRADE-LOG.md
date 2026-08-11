@@ -5,6 +5,19 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-08-11 — Morning Snapshot (Tuesday, Day 50 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (14 trading days)
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran (2026-08-11, Tuesday). All APIs blocked Day 50 (Jun 22–Aug 11). No trades — not a rebalance day (Aug 31). IWM $301.56 (Aug 10 close). VIX 15.55. S&P futures +0.1%. Key risk: CPI Wednesday Aug 12. Signal: BUY IWM (50th consecutive session). Overdue rebalance pending first API access. Opportunity cost ~+10.1% (~$10,100) since Jun 30.
+
+---
+
 ## 2026-08-07 — Morning Snapshot (Friday, Day 47 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
