@@ -5,6 +5,78 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-12 — Morning Research (Wednesday, Day 50 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Strategy:** Dual Momentum ETF Rotation | **Next scheduled rebalance:** 2026-08-31 (last trading day of August)
+**Overdue rebalance:** BUY IWM (Jun 30 + Jul 31 missed) — signal re-confirmed Day 50
+
+### API Access Status
+All outbound egress confirmed blocked (Day 50: Jun 22 – Aug 12):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial) — confirmed at 13:09–13:10 UTC today
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback. Proxy status: `selective: false`, `standalone: false` — policy denial at gateway level.
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch — Perplexity blocked)
+
+**VIX:** 15.28 (LOW — stable, easing; risk appetite broadly positive)
+→ Sizing mode: N/A (Dual Momentum ETF rotation — monthly rebalance only, no VIX sizing)
+
+**S&P 500 Futures (premarket):** +0.4% after July CPI came in inline — Dow futures +0.2%, Nasdaq-100 +0.8%
+
+**July CPI (released 8:30 AM ET today):**
+- Headline: +0.1% MoM (after −0.4% in June) | +3.4% YoY (vs. 3.5% prior, in line with estimates)
+- Core CPI: +0.2% MoM | +2.5% YoY
+- Shelter +0.1%, Food +0.1% — inflation continuing to cool but slowly
+- Market reaction: Stocks futures drifted higher; ~50/50 odds of Warsh Sept hike; broadly benign
+
+**Oil:** WTI ~$82.25/bbl | Brent ~$91.60/bbl (−$0.94 from prior day) — Iran/Hormuz tension keeping oil elevated but slight pullback today
+
+**IWM (Russell 2000):** ~$301.03 (range $300.15–$301.99) — small-caps consolidating, holding 300+ level
+
+**Earnings catalysts today:** CoreWeave (CRWV) +18% on inline results; Super Micro Computer (SMCI) +9% on earnings beat — AI/cloud names driving Nasdaq higher
+
+**Sector performance this week (Aug 11 week):**
+- Top: Technology (XLK) +1.25%; Communications (XLC) — AI/semiconductors driving; SMCI, CRWV leading
+- Weak: Energy (XLE) −1.16% — despite elevated oil prices, energy stocks lagging; sector negative YTD
+
+### Dual Momentum Signal (WebSearch estimate — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return Est. | Notes |
+|------|--------|------------------------|-------|
+| 1 | IWM | ~+46–48% | 50th consecutive session at #1 |
+| 2 | QQQ | ~+28–32% | AI/semi rally helping |
+| 3 | GLD | ~+24–28% | Oil/Iran geopolitical bid |
+| 4 | SPY | ~+21–23% | Absolute filter: PASSES (strongly positive) |
+| 5 | TLT | ~+3–6% | Pressure from elevated rates + Iran risk |
+| — | SHY | ~+4–5% | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (50th consecutive session same reading)
+Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored.
+
+### Overdue Rebalance Status
+Jun 30 + Jul 31 both missed due to API blockage.
+Cumulative opportunity cost: IWM ~$274 (Jun 30 est.) → $301.03 (Aug 12) ≈ **+9.9% foregone** (~$9,900 on $100K).
+**Overdue BUY IWM to be executed at first available Alpaca API access — do not wait for Aug 31 rebalance.**
+
+### Risk Factors
+- **Oil elevated ($91.60 Brent):** Iran/Hormuz risk ongoing — sustained high oil = inflationary = hawkish Fed headwind; mixed for IWM (domestic small-caps, domestic demand but fuel-cost exposure)
+- **Fed rate hike risk:** 50/50 odds for Sept hike post-CPI. If Warsh hikes → equity headwind, especially small-caps (IWM more rate-sensitive than SPY/QQQ)
+- **CPI inline = no surprise relief:** Inflation cooling but not quickly; Fed unlikely to cut before Q4 2026 at earliest
+- **Geopolitical (US-Iran):** No resolution to Hormuz standoff — ongoing tail risk for energy prices and equity volatility
+
+### Decision
+**NO TRADE** — APIs blocked (Day 50). Strategy permits no intraday or discretionary action. Not a rebalance day (next: Aug 31). Overdue BUY IWM pending at first API access (run `python3 scripts/dual_momentum_signal.py` to confirm, then execute).
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 50 consecutive trading days blocked. 2 missed rebalances (~$9,900 opportunity cost).**
+
+
+---
+
 ## 2026-08-11 — Morning Research (Tuesday, Day 50 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (14 trading days)
