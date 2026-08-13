@@ -5,6 +5,71 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-13 — Pre-Market Research (Thursday, Day 51 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+### API / Connectivity Status
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (Day 51; Jun 22–Aug 13)
+- `api.telegram.org:443` → 403 connect_rejected (blocked same period)
+- `api.perplexity.ai:443` → 403 connect_rejected (blocked same period)
+- Research conducted via WebSearch fallback. Telegram falls back to DAILY-SUMMARY.md.
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** 14.68 (−3.93% on the day; range 14.66–15.42; open 15.29) → **LOW** → Sizing mode: AGGRESSIVE (N/A — Dual Momentum monthly strategy only)
+
+**S&P 500 Futures (premarket):** +0.2% (ES futures slightly positive; markets digesting tame July CPI from Wed, now awaiting July PPI at 8:30 AM ET)
+
+**Oil:** Not separately researched today — Iran/Hormuz situation ongoing (Brent was ~$83–85 range as of Aug 12 close)
+
+**Key Catalysts Today (Aug 13):**
+- **July PPI (8:30 AM ET)** — core PPI exp. +0.3% MoM (up from +0.2% June). Upside surprise would complicate the CPI-relief narrative from Wed. This is the main macro event of the day.
+- **Cisco (CSCO)** — reported Wed Aug 12 after close; dropped ~6% pre-market despite AI-driven profit jump (margin compression + profit-taking). Not a strategy holding.
+- **Applied Materials (AMAT)** — reports today after close (4:30 PM ET); most consequential AI semiconductor earnings this week; read on wafer fab equipment demand cycle.
+
+**Broader context:**
+- July CPI (Wed) came in tame (headline +3.4% YoY, core +2.5% YoY, monthly +0.1%) → Fed likely holds in September
+- Markets near all-time highs; S&P 500 ~7,748 (Aug 12 close)
+- Small-caps (IWM) showing resilience vs large-cap tech; VIX subdued
+
+### Dual Momentum Signal (WebSearch estimate — NOT authoritative script)
+
+Absolute filter: SPY 12m return ≈ +21.49% > 0% → **PASSES**
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | **IWM** | **+36.90%** | Small-cap leader; signal unchanged |
+| 2 | SPY | +21.49% | US broad market |
+| 3 | GLD | +19.70% | Gold; Iran/geopolitical support |
+| 4 | QQQ | +19.47% | Large-cap tech; Cisco/AMAT drag |
+| 5 | TLT | +2.25% | Long bonds; rate uncertainty |
+| — | SHY | ~+5.00% | Cash proxy |
+
+**Signal: BUY IWM** (51st consecutive session same reading; must re-verify via `python3 scripts/dual_momentum_signal.py` before executing)
+
+### Overdue Rebalance Status
+- Jun 30, 2026 rebalance: MISSED (API blocked)
+- Jul 31, 2026 rebalance: MISSED (API blocked)
+- Cumulative opportunity cost: IWM ~$274 (Jun 30 est.) → ~$301 (Aug 13 est.) ≈ **+9.8–10% foregone** (~$9,800–10,000 on $100K)
+- **Execute overdue IWM buy at first Alpaca API access — do not wait for Aug 31**
+- Next scheduled rebalance: Aug 31, 2026
+
+### Risk Factors
+- **PPI upside risk**: Hot PPI today would dent rate-cut expectations; potential equity selloff
+- **AMAT guidance**: If semiconductor capex cycle weakens, tech/growth headwind (may benefit IWM relative to QQQ near-term)
+- **Iran/Hormuz**: Oil elevated; inflationary pressure persisting
+- **API blockage**: Day 51 — every day blocked increases opportunity cost (~$100–200/day on $100K foregone IWM gain)
+
+### Decision
+**NO TRADE** — not a rebalance day (next: Aug 31, 2026). APIs still blocked — no trades possible regardless. Signal unchanged: BUY IWM.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in egress policy. 51 consecutive trading days blocked. 2 missed rebalances (~$10,000 opportunity cost and growing daily).**
+
+---
+
 ## 2026-08-12 — Morning Research (Wednesday, Day 50 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Strategy:** Dual Momentum ETF Rotation | **Next scheduled rebalance:** 2026-08-31 (last trading day of August)
