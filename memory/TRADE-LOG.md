@@ -1213,3 +1213,30 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 **Tomorrow (Fri Aug 14):** Possible consumer sentiment data. AMAT guidance read from tonight's earnings. Iran/Hormuz situation ongoing. IWM Dual Momentum signal unchanged.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 51 consecutive trading days blocked. 2 missed rebalances (~$9,900 opportunity cost and growing daily).**
+
+---
+
+## 2026-08-13 — EOD Snapshot (Thursday, Day 51 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-08-13, Thursday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 51 of blockage spanning Jun 22–Aug 13). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (next scheduled: Aug 31, or overdue execution at first API access). Portfolio remains all-cash at last known $100,000.00.
+
+**Today's market close (via WebSearch — APIs blocked):**
+- **S&P 500:** +0.65% to a NEW ALL-TIME RECORD above **7,800** (approx 7,799) — stocks rallied on cool July PPI (unchanged MoM, below expectations), driving the index to its first-ever close above 7,800; Nasdaq +0.81%; Dow +0.13%
+- **Key drivers:** July PPI flat (0.0% MoM) — much cooler than expected — reinforced Fed hold narrative; oil dropped >2% (Brent $87.07, WTI $81.25) as Iran/Hormuz fears eased; Meta, Micron, Netflix led Nasdaq gains; Applied Materials (AMAT) reports after close
+- **IWM (Russell 2000):** ~**$304.50 est.** (Russell 2000 hit record high ~3,067; IWM day range $302.72–$305.05; record close for small-caps)
+- **VIX:** ~**13.7** (LOW; dropped ~4.45% from ~14.40 close; 7-month low; near lowest levels of 2026 — market euphoria on cool PPI + record S&P)
+
+**Dual Momentum signal:** BUY IWM (51st consecutive session; IWM ~$304.50 est.; 12m return #1 ~+37-38%; absolute filter PASSES — SPY 12m strongly positive). Must re-verify via `python3 scripts/dual_momentum_signal.py` once APIs accessible.
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. Cumulative opportunity cost: IWM ~$274 (Jun 30 est.) → ~$304.50 (Aug 13 est.) ≈ **+11.1% foregone** (~$11,100 on $100K). **Overdue BUY IWM to be executed at first available Alpaca API access — do not wait for Aug 31 rebalance.** Next scheduled rebalance: Aug 31, 2026.
+
+**Tomorrow (Fri Aug 14):** Weekly review day. Key catalysts: AMAT earnings guidance (after close tonight — semiconductor capex signal); consumer sentiment possible; markets at record highs with low VIX — momentum environment. IWM Dual Momentum signal unchanged.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 51 consecutive trading days blocked. 2 missed rebalances (~$11,100 opportunity cost and growing daily).**
