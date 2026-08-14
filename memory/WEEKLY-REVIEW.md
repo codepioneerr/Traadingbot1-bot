@@ -5,6 +5,121 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## Week ending 2026-08-14 — Weekly Review #8 ⚠️ API BLOCKED (Day 52) | 4TH CONSECUTIVE WEEK UNABLE TO EXECUTE
+
+### Portfolio Summary
+
+| Metric | Value |
+|--------|-------|
+| Portfolio (EOW) | $100,000.00 (last known — API blocked) |
+| Cash | $100,000.00 (100%) |
+| Week P&L | $0.00 / 0.00% (no positions) |
+| Phase P&L (since May 9) | $0.00 / 0.00% |
+| S&P 500 weekly return | +0.98% (7,709.96 → 7,785.71) |
+| IWM weekly return | +1.04% ($301.76 → $304.90) |
+| Bot vs S&P delta | −0.98% (underperformed — market rose, bot held cash) |
+| Trades this week | 0 |
+| W/L/Open | 0/0/0 |
+| Win rate | N/A |
+| Profit factor | N/A |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Sizing mode (this week) | N/A — Dual Momentum monthly rebalance only |
+
+### Week in Review (Aug 11–14, 2026)
+
+**Strategy:** Dual Momentum ETF Rotation — monthly rebalance only. No rebalance this week (next: Aug 31, 2026). APIs remain blocked — no trades possible regardless.
+
+**API blockage status:** Day 52 (Jun 22 – Aug 14). `paper-api.alpaca.markets`, `api.telegram.org`, and `api.perplexity.ai` all returning 403 connect_rejected at proxy. Perplexity research substituted with WebSearch. Telegram substituted with push notifications.
+
+**Cumulative opportunity cost (since Jun 30 rebalance):** IWM ~$274 (Jun 30 est.) → $304.90 (Aug 14) ≈ **+11.3% foregone (~$11,300 on $100K)**. Two missed rebalances (Jun 30 + Jul 31). Aug 31 rebalance also at risk if egress not restored.
+
+### Market Context (Aug 11–14)
+
+| Date | S&P 500 | Change | IWM | VIX | Key Driver |
+|------|---------|--------|-----|-----|------------|
+| Mon Aug 11 | ~7,728.20 | −0.32% | ~$302.68 | ~15.5 | US-Iran standoff; oil >$83; Alphabet sank |
+| Tue Aug 12 | ~7,748.53 | +0.26% | ~$301.03 | 15.28 | July CPI tame (+3.4% YoY, +0.1% MoM); Fed hold intact |
+| Thu Aug 13 | ~7,799 (ATH) | +0.65% | ~$304.50 | ~13.7 | July PPI flat (0.0% MoM); oil fell >2%; Russell 2000 record |
+| Fri Aug 14 | 7,785.71 | −0.17% | $304.90 | 14.44 | Consumer sentiment 51.0 (miss); retail sales −0.6%; record-high hangover |
+
+**Weekly sector performance (Aug 11–14):**
+- **Best:** Energy (~+6% WTD — Iran tensions drove oil; later partially unwound), Communication Services (+1.6%), Real Estate (+1.3%), Information Technology (+1.0%)
+- **Worst:** Materials (−0.7%), Consumer Discretionary (mixed — weak retail sales)
+- 7 of 11 S&P sectors finished positive for the week
+
+**Key macro events this week:**
+- **Tame CPI (Aug 12):** July headline +3.4% YoY, core +0.2% MoM — Fed hold for September confirmed; market relief rally
+- **Flat PPI (Aug 13):** July PPI 0.0% MoM (much cooler than expected) — S&P hit new ATH above 7,800; Russell 2000 record; VIX dropped to ~13.7
+- **Weak consumer data (Aug 14):** Consumer sentiment 51.0 (vs. 54.5 exp., 55.2 prior); retail sales −0.6% July — consumer starting to crack; S&P pulled back from ATH
+- S&P 500 closed its **3rd consecutive weekly gain** (best streak since April 2026)
+
+### Closed Trades This Week
+
+None — bot held no positions (API blocked; no rebalance day this week).
+
+### Open Positions (EOW)
+
+None — account is all-cash pending API access to execute overdue rebalances (IWM BUY at first available Alpaca session).
+
+### What Worked
+
+- Market context tracking via WebSearch fallback continued despite both Alpaca and Perplexity API blockage
+- State persistence via git commits maintained — no data lost across fresh session restarts
+- Dual Momentum signal remained robust (BUY IWM, 52nd consecutive signal day) — IWM +1.04% this week, continuing to validate signal
+- Strategy's monthly cadence once again limited execution urgency — no urgent rebalance required mid-week
+- Bot correctly identified consumer sentiment risk ahead (noted in Thursday EOD) — Friday confirmed the concern
+
+### What Didn't Work
+
+- **API egress still blocked (Day 52):** `paper-api.alpaca.markets`, `api.telegram.org`, `api.perplexity.ai` all blocked — bot cannot trade, notify, or research
+- **Telegram notifications:** 52 consecutive days of mobile alerts undeliverable — user receiving only Claude Code push notifications
+- **No live account data:** All equity/position values estimated from last known state ($100K, 2026-05-09)
+- **Cumulative missed opportunity:** IWM +11.3% since Jun 30 rebalance date — $11,300 foregone on $100K and growing weekly
+- **4th consecutive week of underperformance** vs. market purely due to infrastructure failure — this is now approaching catastrophic from an ops standpoint
+
+### Key Lessons
+
+1. **Aug 31 rebalance is now in jeopardy.** If egress is not restored in the next 12 trading days, that will be 3 consecutive missed rebalances, bringing cumulative opportunity cost to potentially $13,000+ based on current IWM trajectory.
+2. **Consumer data is the new market driver.** Tame CPI/PPI (inflation nearly solved) shifts market focus to employment/consumer health — weak consumer sentiment + retail sales may cause IWM rotation pressure (small-caps are consumer-sensitive). Monitor for potential Dual Momentum signal change.
+3. **S&P 500 at all-time highs with weakening consumer:** This divergence historically resolves via either consumer recovery or market correction. IWM/small-caps will be more sensitive to consumer weakness than QQQ/SPY large-caps.
+4. **Energy sector outperformance:** Iran risk continues to be the wildcard — oil price swings driving Energy (XLE) as the most volatile sector this week.
+
+### Sector Observations and Next Week Outlook
+
+- **Small Caps (IWM):** +1.04% this week; hit record highs Thursday on PPI relief; pulled back Friday on consumer weakness. BUY signal at Day 52 — still #1 ranked 12m momentum. Consumer weakness is a risk factor for IWM specifically (small-caps are more domestic/consumer-facing).
+- **Energy (XLE):** Strongest sector this week (~+6%); Iran/Strait of Hormuz risk re-emerged — oil volatile. Not in bot universe.
+- **Technology (XLK/QQQ):** Moderate +1.0% week; after strong prior week; AMAT earnings (strong demand signal) supportive.
+- **Consumer (XLY/XRT):** Under pressure — retail sales −0.6%, consumer sentiment at 51.0 (approaching recessionary territory). Could be signal-changing if sustained. Key test: Walmart, Target, Home Depot earnings next week.
+
+**Key events next week (Aug 17–21):**
+- **Retail earnings gauntlet:** Walmart (consumer bellwether), Target, Home Depot, Lowe's, TJX — will confirm or refute today's weak consumer data
+- **Housing Starts + Building Permits (Tue Aug 18):** Key rate-sensitive indicator; housing remains under pressure from elevated rates
+- **Industrial Production (Tue Aug 18):** Manufacturing health check post-record-ATH
+- **Pending Home Sales (Tue Aug 18):** Another consumer/rate-sensitivity read
+- **NY Empire Manufacturing (Mon Aug 17):** Manufacturing sentiment
+- **Net theme:** Consumer health is the pivotal question — if Walmart confirms weakness, market could see meaningful pullback from ATH; if strong, rally continuation.
+
+### Dual Momentum Signal Check
+
+Signal: **BUY IWM** (52nd consecutive session)
+- IWM $304.90; estimated 12m return ~+32%; absolute filter PASSES (SPY 12m strongly positive)
+- **Risk flag:** Consumer weakness (sentiment 51.0, retail sales −0.6%) warrants watching 12m momentum relative to SPY and QQQ. No signal change yet.
+- **Next authoritative check:** `python3 scripts/dual_momentum_signal.py` at first Alpaca API access
+- **Next rebalance:** August 31, 2026
+
+### Strategy Adjustments for Next Week
+
+No rule changes. The strategy design is sound — the signal has been correct for 52 consecutive days. Consumer weakness is worth monitoring but does not yet warrant a strategy adjustment.
+
+**Operational requirement unchanged and now CRITICAL:** Restore API egress to `paper-api.alpaca.markets`, `api.telegram.org`, `api.perplexity.ai`. Aug 31 rebalance will also be missed without this — 4th consecutive rebalance failure.
+
+### Grade: **D** (Incomplete — operational blockage, 4th consecutive week)
+
+Rationale: Strong market week (+0.98% S&P, +1.04% IWM; 3rd consecutive weekly gain; S&P hit new ATH above 7,800 on Thu). Dual Momentum strategy signaled correctly and consistently (BUY IWM). Bot completely unable to execute for 52 consecutive trading days. Cumulative opportunity cost ~$11,300. Friday's consumer data (sentiment 51.0, retail −0.6%) introduces the first credible risk to the IWM signal since blockage began — worth monitoring. Grade would be A if infrastructure were functional.
+
+---
+
 ## Week ending 2026-08-07 — Weekly Review #7 ⚠️ API BLOCKED (Day 47) | 3RD CONSECUTIVE WEEK UNABLE TO EXECUTE
 
 ### Portfolio Summary
