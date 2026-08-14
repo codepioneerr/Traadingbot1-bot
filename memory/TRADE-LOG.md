@@ -1253,3 +1253,39 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 **Tomorrow (Fri Aug 14):** Weekly review day. Key catalysts: AMAT earnings guidance (after close tonight — semiconductor capex signal); consumer sentiment possible; markets at record highs with low VIX — momentum environment. IWM Dual Momentum signal unchanged.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 51 consecutive trading days blocked. 2 missed rebalances (~$11,100 opportunity cost and growing daily).**
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 51 consecutive trading days blocked. 2 missed rebalances (~$11,100 opportunity cost and growing daily).**
+
+---
+
+## 2026-08-14 — EOD Snapshot (Friday, Day 52 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-08-14, Friday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 52 of blockage spanning Jun 22–Aug 14). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (next scheduled: Aug 31, or overdue execution at first API access). Portfolio remains all-cash at last known $100,000.00.
+
+**Today's market close (via WebSearch — APIs blocked):**
+- **S&P 500:** −0.17% to **7,785.71** — stocks pulled back from record highs as consumer sentiment collapsed to 51.0 (vs. 54.5 expected, from 55.2 prior) and July retail sales fell 0.6%; Nasdaq lower; Dow slipped; still capped its 3rd consecutive weekly gain
+- **Key drivers today:** University of Michigan consumer sentiment August preliminary: 51.0 (sharply below 54.5 forecast and 55.2 prior) — consumers citing inflation and weak business conditions; July retail sales −0.6% MoM; Reddit (RDDT) +14% on strong ad results; Applied Materials (AMAT) strong semiconductor demand signal from prior evening
+- **IWM (Russell 2000):** **$304.90** (intraday range $302.74–$305.18; +1.04% for the week)
+- **VIX:** **14.44** (LOW; slightly elevated from Thursday ~13.7; consumer data sparked mild fear uptick but broadly subdued)
+
+**Weekly wrap (Aug 11–14):**
+- S&P 500: 7,709.96 → 7,785.71 = **+0.98%** (3rd consecutive weekly gain)
+- IWM: $301.76 → $304.90 = **+1.04%** (small-caps in line with large-caps)
+- Best sectors: Energy (+~6% WTD), Communication Services (+1.6%), Real Estate (+1.3%), IT (+1.0%)
+- Worst sector: Materials (−0.7%)
+- Key events: Tame CPI (Tue), flat PPI (Thu), weak consumer sentiment + retail sales (Fri)
+
+**Dual Momentum signal:** BUY IWM (52nd consecutive session; IWM $304.90; 12m return est. ~+32%; absolute filter PASSES — SPY 12m strongly positive). Must re-verify via `python3 scripts/dual_momentum_signal.py` once APIs accessible.
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. Cumulative opportunity cost: IWM ~$274 (Jun 30 est.) → $304.90 (Aug 14) ≈ **+11.3% foregone** (~$11,300 on $100K). **Overdue BUY IWM to be executed at first available Alpaca API access — do not wait for Aug 31 rebalance.** Next scheduled rebalance: Aug 31, 2026.
+
+**Next week (Aug 17–21):** Major retail earnings (Walmart, Target, Home Depot, Lowe's, TJX) — consumer health check after weak sentiment/retail data today. Economic: Housing Starts (Tue), Industrial Production (Tue), Pending Home Sales (Tue). Consumer weakness theme may weigh on discretionary/retail. Small-caps (IWM) will be sensitive to consumer outlook — monitor for signal change. Dual Momentum rebalance: Aug 31.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 52 consecutive trading days blocked. 2 missed rebalances (~$11,300 opportunity cost and growing daily).**
