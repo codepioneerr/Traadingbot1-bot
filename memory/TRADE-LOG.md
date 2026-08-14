@@ -5,6 +5,19 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-08-14 — Morning Snapshot (Friday, Day 52 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (12 trading days)
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning combined routine ran (2026-08-14, Friday). All APIs blocked Day 52 (Jun 22–Aug 14). No trades — not a rebalance day (next: Aug 31). IWM ~$302.95 (Aug 13 close). VIX 14.63 (LOW). S&P 500 futures +0.1%. Key events today: July Retail Sales (8:30 AM), U of Michigan Consumer Sentiment (Aug Prelim, exp 54.1). GLD pulled back to ~$399 from $405. Cool CPI + PPI this week — disinflation intact. Signal: BUY IWM (52nd consecutive session). Overdue rebalance pending first API access. Opportunity cost ~+10.6% (~$10,600) since Jun 30.
+
+---
+
 ## 2026-08-11 — Morning Snapshot (Tuesday, Day 50 of API blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%

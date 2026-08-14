@@ -5,6 +5,78 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-14 — Pre-Market Research (Friday, Day 52 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+### API / Connectivity Status
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (Day 52; Jun 22–Aug 14)
+- `api.telegram.org:443` → 403 connect_rejected (blocked same period)
+- `api.perplexity.ai:443` → 403 connect_rejected (blocked same period)
+- Research conducted via WebSearch fallback. Telegram falls back to DAILY-SUMMARY.md.
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** 14.63 (Aug 14; range 14.39–14.80; open 14.68; prior day 14.68) → **LOW** → Sizing mode: AGGRESSIVE (N/A — Dual Momentum monthly strategy only)
+
+**S&P 500 Futures (premarket):** +0.1% (flat-to-positive bias; S&P 500 closed at record high Thursday; ES futures slight uptick after cool CPI + PPI week; mixed heading into retail sales print)
+
+**IWM (Russell 2000):** ~$302.95 (Aug 13 close; range $302.80–$305.05)
+
+**GLD (Gold):** ~$398.96 (Aug 13 close; pulled back from $404.92 prior close; day range $398.28–$402.58; 52-wk range $305.19–$509.70)
+
+**Key Catalysts Today (Aug 14):**
+- **July Retail Sales (8:30 AM ET):** Headline exp. +0.3% MoM (prior +0.2%); Core ex-autos exp. +0.2% MoM (reversal from -0.2% prior) — key consumer spending read
+- **U of Michigan Consumer Sentiment (Aug Prelim):** Exp. 54.1 (down from 55.2 prior); 1-year inflation expectations exp. 4.2% (unchanged)
+- **Business Inventories:** Prior +0.3% — inventory accumulation read
+- **Jackson Hole context:** Today's data is Fed Chair's final key print before Aug 28 keynote — markets watching closely for policy signals
+- **AMAT (Applied Materials):** Reported Thu after close — key semiconductor capex cycle read (AI wafer fab demand); results impact QQQ/SMH
+
+**Broader context:**
+- July CPI (Wed Aug 13) came in tame → Fed likely holds in September; rate-cut expectations moderate
+- July PPI (Thu Aug 13) also cooler than expected → continued disinflation narrative intact
+- S&P 500 near all-time highs (~7,748 area); IWM resilient at $302–305 range
+- Best ETF sectors this week: Metals/Mining (XME +15%), Cloud Computing (WCLD +11%), Video Games (NERD +11%), Healthcare (XLV — strong inflows)
+- Avoid: Energy (XLE — lagging on lower WTI; Iranian de-escalation thesis)
+
+### Dual Momentum Signal (WebSearch estimate — NOT authoritative script)
+
+Absolute filter: SPY 12M total return ≈ +22.52% > 0% → **PASSES**
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | **IWM** | **~+37%** | Small-cap leader; unchanged; ~$303 vs ~$222 Aug 2025 est. |
+| 2 | SPY | +22.52% | Confirmed via WebSearch |
+| 3 | GLD | ~+19–20% | Pulled back to ~$399; 52-wk range reflects significant run |
+| 4 | QQQ | ~+18–20% | Large-cap tech |
+| 5 | TLT | ~+2–4% | Long bonds; rate uncertainty |
+| — | SHY | ~+5% | Cash proxy |
+
+**Signal: BUY IWM** (52nd consecutive session; must re-verify via `python3 scripts/dual_momentum_signal.py` before executing)
+
+### Overdue Rebalance Status
+- Jun 30, 2026 rebalance: MISSED (API blocked)
+- Jul 31, 2026 rebalance: MISSED (API blocked)
+- Cumulative opportunity cost: IWM ~$274 (Jun 30 est.) → ~$303 (Aug 14) ≈ **+10.6% foregone** (~$10,600 on $100K)
+- **Execute overdue IWM buy at first Alpaca API access — do not wait for Aug 31**
+- Next scheduled rebalance: Aug 31, 2026
+
+### Risk Factors
+- **Retail sales miss**: Weak consumer spending read could trigger equity pullback; IWM (small-cap, domestic-focused) more vulnerable than SPY/QQQ
+- **Consumer sentiment**: Prelim at 54.1 expected (down from 55.2) — elevated inflation expectations (4.2%) could complicate Fed narrative
+- **GLD pullback**: Gold retreating from $405→$399; if rate-cut bets unwind (hot retail data), GLD could fall further and potentially lose its #2 rank momentum edge
+- **Jackson Hole risk**: Any hawkish lean from Powell on Aug 28 would be a significant headwind for IWM
+- **API blockage**: Day 52 — opportunity cost growing (~$100–200/day on $100K foregone IWM position)
+
+### Decision
+**NO TRADE** — not a rebalance day (next: Aug 31, 2026). APIs still blocked — no trades possible regardless. Signal unchanged: **BUY IWM** (52nd consecutive session).
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in egress policy. 52 consecutive trading days blocked. 2 missed rebalances (~$10,600 opportunity cost and growing daily).**
+
+---
+
 ## 2026-08-13 — Pre-Market Research (Thursday, Day 51 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 ### API / Connectivity Status
