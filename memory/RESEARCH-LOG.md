@@ -5,6 +5,82 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-17 — Pre-Market Research (Monday, Day 53 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (10 trading days)
+**Overdue rebalance:** BUY IWM (Jun 30 + Jul 31 both missed) — signal re-confirmed for 53rd consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 53: Jun 22–Aug 17):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback. Telegram fallback: DAILY-SUMMARY.md
+
+### Account Snapshot (last known — API blocked)
+$100,000.00 | Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch — fallback)
+
+**VIX:** ~14.25 (prev close); today's range 14.18–14.72 — 2026 year-to-date LOW. Fear subdued; low volatility continues following tame CPI + PPI prints.
+→ **Sizing mode: AGGRESSIVE** (VIX < 15 — N/A for Dual Momentum strategy)
+
+**S&P 500 Futures (premarket):** +0.1% — muted open; markets cautiously optimistic ahead of major retail earnings week. S&P 500 at record highs (~7,786) entering this week.
+
+**Oil:** WTI $82.77/bbl; Brent $88.31/bbl (−0.24%). Iran/Hormuz tensions have eased from peak; oil pulling back from recent highs (~$98+ Brent on Jul 23). Gasoline still ~$1/gal above pre-Iran-war levels — inflationary drag on consumers.
+
+**Economic Calendar Today (Aug 17):** No major US data releases Monday.
+
+**Key Events This Week:**
+- **Aug 18 — Home Depot (HD) earnings:** Consumer/housing health check
+- **Aug 19 — Target (TGT) + Lowe's (LOW) earnings:** Discretionary vs. value consumer
+- **Aug 20 — Walmart (WMT) earnings:** Bellwether consumer spend
+- **Aug 20 — FOMC minutes (Jul 28–29 meeting):** First Warsh meeting minutes — tone on rate path critical
+- **Aug 22 — Flash PMIs:** Global manufacturing/services snapshot
+
+**Leading Sectors (momentum):**
+1. Energy (XLE) — +41.7% 12m; cyclical + Iran risk premium
+2. Healthcare (XLV) — "Confirmed Leader" status; defensive rotation
+3. Consumer Staples (XLP) — Defensive; benefiting from rotation out of tech
+4. Industrials (XLI) — Strong YTD; infrastructure spend theme
+
+**Lagging / Avoid:**
+- Technology (XLK) — "Lagging" quadrant; AI ROI scrutiny + GOOGL/TSLA capex miss hangover
+- Consumer Discretionary (XLY) — One of only 2 S&P sectors negative YTD; high oil drag
+- Communications (XLC) — Lagging; GOOGL weight
+
+**Consumer Backdrop:** University of Michigan Consumer Sentiment 51.0 (Aug preliminary — vs. 54.5 exp); July Retail Sales −0.6% MoM. Weak consumer data last Friday = risk for retail earnings this week.
+
+### Dual Momentum Signal (WebSearch estimate — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | **IWM** | ~**+36.9%** | Confirmed via FinanceCharts; IWM $304.90 (Aug 14) |
+| 2 | SPY | ~+21.5% | Absolute filter: PASSES (positive 12m) |
+| 3 | QQQ | ~+20–25% est. | Lagging vs IWM; AI capex overhang |
+| 4 | GLD | ~+15–20% est. | Oil/Iran spike supports; range-bound now |
+| 5 | TLT | <+5% est. | Pressure from Iran + FOMC uncertainty |
+| — | SHY | ~+4–5% | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (53rd consecutive session; IWM ~$305 est.)
+Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored.
+
+### Risk Factors
+- **Retail earnings risk:** Weak consumer sentiment + retail sales data sets low bar but also signals genuine consumer stress. If HD/WMT guidance is poor → small-cap IWM vulnerable (consumer-heavy)
+- **FOMC minutes (Wed):** Warsh tone on rate path — hawkish surprise would hurt equities broadly
+- **Oil still elevated:** Brent $88/bbl despite pullback; persistent inflation drag on consumers and small-cap profitability
+- **Tech lagging:** Not a risk for IWM directly, but signals broader rotation that could reverse
+- **VIX at 2026 low:** Complacency risk — any negative catalyst from retail week could spike VIX rapidly
+
+### Decision
+**NO TRADE** — not a rebalance day (Aug 31 is next scheduled). Strategy permits no intraday or discretionary action. APIs still blocked — no trades possible regardless.
+
+**Cumulative opportunity cost:** IWM ~$274 (Jun 30 est.) → ~$305 (Aug 17 est.) ≈ **+11.3% foregone** (~$11,300 on $100K). Overdue BUY IWM to be executed at first available Alpaca API access.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 53 consecutive trading days blocked. 2 missed rebalances (~$11,300 opportunity cost and growing daily).**
+
+---
+
 ## 2026-08-14 — Pre-Market Research (Friday, Day 52 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 ### API / Connectivity Status
