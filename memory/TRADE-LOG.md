@@ -1374,3 +1374,30 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 **This week's watch:** Retail mega-earnings (HD today, TGT/LOW Wed, WMT Thu) — consumer health signal critical for IWM (small-cap, consumer-exposed). Weak HD guidance this morning could challenge IWM's #1 momentum ranking by Aug 31. FOMC minutes Wed — Warsh rate-path tone. Jackson Hole (late Aug) is the bigger macro event.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 55 consecutive trading days blocked. 2 missed rebalances (~$10,900 opportunity cost and growing daily).**
+
+---
+
+## 2026-08-18 — EOD Snapshot (Tuesday, Day 55 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-08-18, Tuesday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 55 of blockage spanning Jun 22–Aug 18). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (next scheduled: Aug 31; overdue BUY IWM pending API access since Jun 30).
+
+**Today's market close (via WebSearch — APIs blocked):**
+- **S&P 500:** −0.54% to **7,703** — broad selloff driven by chip stock weakness, elevated oil prices, and rising bond yields; Nasdaq led losses at −1.3%
+- **IWM (Russell 2000):** **$301.06** (prev close $304.06; −0.99% day) — small-caps underperformed
+- **VIX:** **15.71** (+3.42% on the day; up from ~14.56 prev close) — volatility rising but still LOW range historically
+- **HD earnings:** Home Depot Q2 results (BMO) in focus; rest of retail earnings week continues (TGT/LOW/FOMC minutes Wed, WMT Thu)
+
+**Dual Momentum signal:** BUY IWM (55th consecutive session; IWM $301.06; 12m return still #1 despite today's pullback; absolute filter PASSES — SPY 12m strongly positive). Must re-verify via `python3 scripts/dual_momentum_signal.py` once APIs accessible.
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. Cumulative opportunity cost: IWM ~$274 (Jun 30 est.) → $301.06 (Aug 18 close) ≈ **+9.9% foregone** (~$9,900 on $100K). **Overdue BUY IWM to be executed at first available Alpaca API access — do not wait for Aug 31 rebalance.** Next scheduled rebalance: Aug 31, 2026.
+
+**This week remaining:** TGT/LOW/FOMC minutes (Wed), WMT/Philly Fed (Thu), Flash PMIs (Fri) — retail earnings + FOMC tone critical for IWM outlook. Rising VIX (15.71) and IWM declining are risks to momentum ranking ahead of Aug 31 rebalance.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 55 consecutive trading days blocked. 2 missed rebalances (~$9,900 opportunity cost).**
