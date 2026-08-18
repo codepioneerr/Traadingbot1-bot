@@ -5,6 +5,81 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-18 — Pre-Market Research (Tuesday, Day 55 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (9 trading days)
+**Overdue rebalance:** BUY IWM (Jun 30 + Jul 31 missed) — signal re-confirmed 55th consecutive session
+
+### API Access Status
+All outbound egress confirmed blocked (Day 55: Jun 22–Aug 18):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected (assumed; same policy)
+Research conducted via WebSearch fallback. Proxy status: policy-based blockage persists.
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** 14.25 (Aug 18) → **Sizing mode would be: AGGRESSIVE** (VIX < 15; N/A — monthly strategy)
+
+**S&P 500 Futures (premarket Aug 18):** −0.41% — futures lower as Wall Street digests geopolitical risks (Iran/Lebanon tensions, Hormuz), rising bond yields, and cautious outlook ahead of HD earnings. Polymarket: only 27% chance of higher open. S&P 500 at ~7,778 (near all-time highs set last week).
+
+**Oil:** WTI ~$82-83/bbl; Brent $90.97/bbl (+0.11%) — elevated due to continued Iran/Lebanon fighting, vessel attacks in Strait of Hormuz; stalled US-Iran negotiations. Supply risk premium elevated.
+
+**Key Catalysts Today (Aug 18, Tuesday):**
+- **Home Depot (HD) earnings — BMO (6:00 AM ET):** Fiscal Q2 results; consensus EPS $4.71–$4.73 on ~$47B revenue (vs $4.68 prior year). Consumer housing activity proxy — critical signal for IWM (small-cap, consumer-exposed).
+- **ADP Weekly Employment (8:15 AM ET):** Labor market read. Benign claims recently.
+- **Geopolitics:** Renewed Lebanon fighting + Iran/US ceasefire breakdown → oil/risk-off pressure. Polymarket heavily bearish for today's session.
+
+**This Week's Calendar:**
+- Tue Aug 18: HD earnings BMO; ADP data
+- Wed Aug 19: TGT, LOW earnings; FOMC minutes
+- Thu Aug 20: WMT earnings; Philly Fed
+- Fri Aug 21: Flash PMIs; end of retail earnings week
+
+**Sector Performance (week to date):**
+- Top: Communications (XLC), Technology (XLK)
+- Lagging: Energy (XLE) negative WTD; Consumer Discretionary (XLY), Healthcare (XLV) worst YTD
+- Note: S&P 500 equal-weight (RSP) still below Oct 2024 high — rally is not broad-based
+
+### Dual Momentum Signal (WebSearch estimate — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+36–38% est. | Russell 2000; $304 area; 55th consecutive #1 reading |
+| 2 | QQQ | ~+27–31% est. | Tech/growth; near highs |
+| 3 | GLD | ~+25–30% est. | Supported by geopolitical/oil tension |
+| 4 | SPY | ~+21–23% est. | Absolute filter: PASSES (strongly positive 12m) |
+| 5 | TLT | ~+3–5% est. | Bond headwinds; Warsh hawkish tone |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (55th consecutive session; must re-verify via `python3 scripts/dual_momentum_signal.py` once API restored)
+
+### Risk Factors
+- **Consumer weakness:** July retail sales −0.6%; Michigan sentiment 51.0 (Aug prelim) — well below expectations. HD earnings this morning will be the first hard data point. Weak guidance could challenge IWM's momentum.
+- **Geopolitical escalation:** Iran/Lebanon/Hormuz → oil elevated, risk appetite suppressed. Sustained pressure = inflationary = Warsh hawkish signal.
+- **Breadth divergence:** New SPX all-time highs not confirmed by RSP (equal-weight) — narrow leadership, large-cap tech driving. Negative for small-cap IWM if rotation reverses.
+- **FOMC minutes (Wed):** Warsh rate-path signal. Jackson Hole (late Aug) is the bigger event.
+- **VIX at 14.25 = complacency:** Options pricing in very little risk. Contrarian risk of vol spike on negative surprise.
+
+### Trade Ideas (Dual Momentum universe only)
+**NO NEW TRADES TODAY — not a rebalance day (next: Aug 31, 2026)**
+
+Overdue action pending API access:
+1. **BUY IWM** — overdue from Jun 30 + Jul 31. Buy at 100% of equity. `buy_qty = floor(equity / ask_price)`. No trailing stop (strategy design). Estimated IWM ~$304–$305 range as of this writing.
+
+### Decision
+**NO TRADE** — Not a rebalance day. Dual Momentum strategy only rebalances on the last trading day of each month (next: Aug 31). APIs remain blocked — no orders possible regardless. Overdue BUY IWM still pending first API access.
+
+**Cumulative opportunity cost:** IWM ~$274 (Jun 30 est.) → ~$304 (Aug 18 est.) ≈ **+10.9% foregone** (~$10,900 on $100K).
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 55 consecutive trading days blocked. 2 missed rebalances (~$10,900 opportunity cost and growing daily).**
+
+---
+
 ## 2026-08-17 — Pre-Market Research (Monday, Day 53 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (10 trading days)
