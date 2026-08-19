@@ -1431,3 +1431,31 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 **FOMC minutes (2:00 PM ET today):** Three dissents (Logan, Hammack, Kashkari) argued for 25bps hike at Jul 28-29 meeting. Market already aware; Sept hike odds low at ~31%. Minutes likely backward-looking vs post-July data — minimal market impact expected unless minutes reveal broader committee hawkishness.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 56 consecutive trading days blocked. 2 missed rebalances (~$9,600 opportunity cost).**
+
+---
+
+## 2026-08-19 — EOD Snapshot (Wednesday, Day 57 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-08-19, Wednesday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 57 of blockage spanning Jun 22–Aug 19). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (next scheduled: Aug 31; overdue BUY IWM pending API access since Jun 30).
+
+**Today's market close (via WebSearch — APIs blocked):**
+- **S&P 500:** **7,715** (+0.31%) — modest gains; FOMC minutes (2 PM ET) showed 9-3 hold vote at Jul 28-29 meeting with 3 dissents for hike; market interpreted as broadly expected, no shock
+- **VIX:** **15.84** (unchanged from prev close) — LOW volatility, would imply AGGRESSIVE sizing if active
+- **IWM (Russell 2000):** **~$297** (est. −1.30% from $301.06; small-caps underperformed large-caps today)
+- **Russell 2000 Index:** ~3,017.89 (−1.30% day)
+- **Key catalyst:** FOMC minutes confirmed 3 dissents (Logan, Hammack, Kashkari) for hike — Sept hike odds ~31% remain low; minutes backward-looking vs post-July data. TGT beat BMO (+5% full-year guidance); LOW earnings; WMT Thu
+
+**Dual Momentum signal:** BUY IWM (57th consecutive session; IWM ~$297 est.; 12m return still #1 despite recent pullback; absolute filter PASSES — SPY 12m +20%+, strongly positive). Must re-verify via `python3 scripts/dual_momentum_signal.py` once APIs accessible.
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. Cumulative opportunity cost: IWM ~$274 (Jun 30 est.) → ~$297 (Aug 19 est.) ≈ **+8.4% foregone** (~$8,400 on $100K). **Overdue BUY IWM to be executed at first available Alpaca API access.** Next scheduled rebalance: Aug 31, 2026.
+
+**Tomorrow (Thu Aug 20):** WMT Q2 earnings BMO (key consumer health signal); Philly Fed; jobless claims. IWM −1.30% today could pressure 12m momentum ranking ahead of Aug 31 rebalance. Monitor.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 57 consecutive trading days blocked. 2 missed rebalances (~$8,400 opportunity cost).**
