@@ -5,6 +5,70 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-19 — Morning Research (Wednesday, Day 56 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (8 trading days)
+**Overdue rebalance:** BUY IWM (Jun 30 + Jul 31 missed) — signal re-confirmed 56th consecutive session
+
+### API Access Status
+All outbound egress confirmed STILL BLOCKED (Day 56: Jun 22–Aug 19):
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy denial)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback.
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked since Jun 22)
+Cash: 100% | Positions: 0 | Open orders: 0
+
+### Market Context (via WebSearch)
+
+**VIX:** ~15.84 (Aug 18 close); dipped to 14.20 on Aug 15 (2026 YTD low); today likely 15-16 range → **Sizing mode: MODERATE** (N/A — monthly strategy)
+
+**S&P 500 Futures (premarket):** +0.50% (ESU26 at ~7,717.50; opening 7,704.00) — positive open as TGT beat and FOMC minutes anticipated
+
+**Oil — Elevated:** WTI ~$82.43/bbl (Aug 17); **Brent $91.52/bbl (+0.55%)** — no US/Iran ceasefire; Hormuz supply risk premium persisting; Brent climbing toward $92
+
+**Key catalysts today (Aug 19):**
+- **Target (TGT) BMO:** Beat estimates; raised full-year guidance by 1pp to +5% net sales growth — positive consumer signal, supports IWM thesis
+- **Lowe's (LOW) BMO:** Stepped into earnings spotlight alongside TGT; full results pending
+- **FOMC Minutes 2:00 PM ET:** July 28-29 meeting minutes — 9-3 hold vote (three dissents for 25bps hike — Logan, Hammack, Kashkari); rates at 3.50-3.75%; market pricing ~31% chance of September hike (down from ~67% three weeks ago due to softer inflation/labor data)
+
+**Sector performance this week:**
+- Top: Communications (XLC), Technology (XLK) — tech recovering from GOOG/TSLA miss last week
+- Lagging: Energy (XLE, negative YTD), Consumer Discretionary (XLY), Healthcare (XLV)
+
+### Dual Momentum Signal (WebSearch estimate — NOT authoritative script)
+
+| Rank | Ticker | ~12M Total Return | Notes |
+|------|--------|-------------------|-------|
+| 1 | IWM | ~+33.07% | 52-week range $223.69–$305.18; today ~$300.23 |
+| 2 | SPY | ~+20.62% | Absolute filter: PASSES (positive) |
+| 3 | QQQ | ~+25–28% est. | Tech recovering but still below IWM |
+| 4 | GLD | ~+20–25% est. | Oil/Iran tension supportive |
+| 5 | TLT | ~+3–5% est. | Under pressure from hawkish dissents |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (56th consecutive session)
+Must re-verify via `python3 scripts/dual_momentum_signal.py` before any trade once API restored.
+
+### FOMC Minutes Risk Assessment
+Minutes will reveal extent of hawkish dissent discussion. Three dissents (Logan, Hammack, Kashkari) were for 25bps hike. If minutes show broader committee leaning hawkish → bond yields rise → IWM headwind (small-caps rate-sensitive). However market already pricing only 31% hike probability — minutes likely backward-looking relative to post-July data. Net impact: NEUTRAL to MILD POSITIVE (relief that Sept hike odds remain contained).
+
+### Risk Factors
+- **Brent approaching $92**: sustained oil inflation could force Fed hand; hawkish Sept meeting would hurt IWM
+- **IWM declining from recent highs**: $305.18 (52-week high) → $300.23 today — small pullback, still #1 in 12m momentum; must monitor
+- **VIX uptick from 14.20 (Aug 15) to 15.84 (Aug 18)**: volatility rising but still in MODERATE zone; acceptable
+- **Aug 31 rebalance critical**: If IWM drops significantly or another asset overtakes it, signal could shift by month-end
+
+### Decision
+**NO TRADE** — not a rebalance day. Dual Momentum strategy only rebalances on last trading day of each month (Aug 31, 2026). Alpaca APIs still blocked. Overdue BUY IWM pending at first API access.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 56 consecutive trading days blocked. 2 missed rebalances (~$9,900+ opportunity cost and growing).**
+
+
+---
+
 ## 2026-08-18 — Pre-Market Research (Tuesday, Day 55 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (9 trading days)
