@@ -1488,3 +1488,35 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 **Countdown to Aug 31 rebalance:** 11 calendar days, ~8 trading days.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 58 consecutive trading days blocked. 2 missed rebalances (~$9,000–$11,000 opportunity cost). CRITICAL — Aug 31 rebalance must not be missed.**
+
+---
+
+## 2026-08-20 — EOD Snapshot (Thursday, Day 59 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-08-20, Thursday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 59 of blockage spanning Jun 22–Aug 20). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (not a rebalance day; next scheduled: Aug 31, 2026; overdue BUY IWM pending API access since Jun 30).
+
+**Today's market close (via WebSearch — APIs blocked):**
+- **S&P 500:** ~7,655 (−0.5% to −0.69%) — broad selloff; Treasury intervention to suppress long yields failed as yields rebound; dollar liquidity/inflation concerns weigh
+- **Nasdaq 100:** −~1.0% — tech led declines
+- **VIX:** ~15.8 (below 16; rising from recent lows) — LOW volatility still, though VIX futures pricing move above 20
+- **IWM (Russell 2000):** ~$297–300 (est.; underperforming large-caps; no close data retrieved)
+- **WMT (Walmart) Q2 Earnings:** Revenue BEAT; EPS BEAT; BUT US same-store sales +2.6% vs +3.8% est. — WMT −9% on day; consumer spending fatigue from high gas prices
+- **Economic data:** Jobless Claims ~210K (vs prior 209K; labor market stable); Philly Fed 24.1 (vs prior 41.4 — significant manufacturing slowdown)
+- **Bond yields:** Rising across the curve — long rates rebounding after Treasury intervention; inflationary backdrop pressuring equities
+
+**Dual Momentum signal:** BUY IWM (59th consecutive session; IWM ~$297–300 est.; 12m return estimated #1 ~+9–10%; absolute filter PASSES — SPY 12m strongly positive). ⚠️ Must verify via `python3 scripts/dual_momentum_signal.py` before Aug 31 rebalance — IWM pullback and QQQ resilience may be narrowing ranking margin.
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. IWM ~$274 (Jun 30 est.) → ~$297–300 (Aug 20) ≈ **+8.4–9.5% foregone** (~$8,400–$9,500 on $100K). **Overdue BUY IWM to be executed at first available Alpaca API access.** Next scheduled rebalance: Aug 31, 2026.
+
+**Countdown to Aug 31 rebalance:** 11 calendar days, ~7 trading days.
+
+**Tomorrow (Fri Aug 21):** Flash PMIs (Manufacturing + Services) — key leading indicator for economy. Watch IWM vs QQQ 12m rankings as Aug 31 rebalance approaches.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 59 consecutive trading days blocked. 2 missed rebalances (~$8,400–$9,500 opportunity cost). CRITICAL — Aug 31 rebalance must not be missed.**
