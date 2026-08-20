@@ -1459,3 +1459,32 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 **Tomorrow (Thu Aug 20):** WMT Q2 earnings BMO (key consumer health signal); Philly Fed; jobless claims. IWM −1.30% today could pressure 12m momentum ranking ahead of Aug 31 rebalance. Monitor.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 57 consecutive trading days blocked. 2 missed rebalances (~$8,400 opportunity cost).**
+
+---
+
+## 2026-08-20 — Market-Open Check (Thursday, Day 58 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined pre-market + market-open routine ran (2026-08-20, Thursday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 58 of blockage spanning Jun 22–Aug 20). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (not a rebalance day; next scheduled: Aug 31, 2026; overdue BUY IWM pending API access since Jun 30).
+
+**Today's market context (via WebSearch — APIs blocked):**
+- **VIX:** ~14.89 (opened 15.92; 2026 YTD low 14.2 on Aug 15) → AGGRESSIVE sizing would apply if strategy were active
+- **S&P 500 Futures (premarket):** +0.16% at 7,717.50 — modest positive open expected
+- **Oil:** WTI ~$84.01–$84.92/bbl; Brent ~$93.01–$95.40/bbl — elevated (Iran/Hormuz risk)
+- **WMT Q2 Earnings (BMO):** Revenue $187.9B BEAT (+5.9% YoY); EPS $0.81 BEAT (+9.3% vs est.); BUT Q3 guidance MISSED −1.4%; full-year EPS guidance below consensus → WMT stock −5.9% premarket to ~$107.62
+- **IWM (Russell 2000):** ~$300–$305 range (pulled back from ~$305 mid-Aug; 2026 YTD range $223–$305)
+- **Economic releases:** Philly Fed + Weekly Jobless Claims (prev 209K) at 8:30 AM ET
+
+**Dual Momentum signal:** BUY IWM (58th consecutive session; 12m return still estimated #1 ~+9–10%; absolute filter PASSES — SPY 12m strongly positive). ⚠️ Must re-verify via `python3 scripts/dual_momentum_signal.py` before Aug 31 — IWM pullback may be narrowing margin vs QQQ.
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. IWM ~$274 (Jun 30 est.) → ~$300–305 (Aug 20) ≈ **+9–11% foregone** (~$9,000–$11,000 on $100K). **Overdue BUY IWM to be executed at first available Alpaca API access — do not wait for Aug 31.** Next scheduled rebalance: Aug 31, 2026.
+
+**Countdown to Aug 31 rebalance:** 11 calendar days, ~8 trading days.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 58 consecutive trading days blocked. 2 missed rebalances (~$9,000–$11,000 opportunity cost). CRITICAL — Aug 31 rebalance must not be missed.**
