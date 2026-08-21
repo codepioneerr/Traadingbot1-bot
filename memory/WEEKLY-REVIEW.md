@@ -766,3 +766,92 @@ None to the strategy itself. Operational prerequisite: restore API egress. No ru
 ### Grade: **C** (Incomplete)
 
 Rationale: Bot was operational in terms of logging and research, and the strategy technically sidestepped a down week. However, it could not execute its core function (trade, notify, fetch live data) for 5 consecutive days. An incomplete operational setup prevents a higher grade. If API access is restored before June 30, the grade for next week can recover to A/B.
+
+---
+
+## Weekly Review — Week ending 2026-08-21 (Week 13 of API Blockage)
+
+### Week Stats
+
+| Metric | Value |
+|--------|-------|
+| Week dates | Aug 17–21, 2026 |
+| Portfolio (EOW) | $100,000.00 (last known; API blocked) |
+| Week return | $0.00 / 0.00% (all-cash; no trades) |
+| Phase return | $0.00 / 0.00% |
+| S&P 500 week (est.) | ~−0.5% to −1.0% (Mon–Thu drag; partial Friday recovery) |
+| Bot vs S&P | +0.5–1.0% (outperformed by staying in cash — unintentional) |
+| Trades this week | 0 (W:0 / L:0 / open:0) |
+| Win rate | N/A |
+| Profit factor | N/A |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Sizing mode | N/A (Dual Momentum — no intra-month sizing) |
+| API blockage | Day 54 (Mon) → Day 61 (Fri EOD); 61 consecutive trading days total |
+
+### Closed Trades This Week
+
+None — API blocked; no trades possible. Dual Momentum strategy rebalances monthly only (next: Aug 31, 2026).
+
+### Open Positions (EOW)
+
+None — account is 100% cash since inception. Two missed rebalances (Jun 30, Jul 31) due to API blockage.
+
+### S&P 500 Weekly Performance (WebSearch estimates — Perplexity blocked)
+
+- **Week Aug 17–21:** S&P 500 estimated ~−0.5% to −1.0% net
+  - Mon Aug 17: Mixed/flat (no specific data available)
+  - Tue Aug 18: IWM −0.99%, Nasdaq weak, mixed
+  - Wed Aug 19: IWM −1.3%, broader selloff; AI spending concerns
+  - Thu Aug 20: S&P −0.5% to −0.69%; Nasdaq −1.0%; WMT −9% on guidance miss; VIX ~15.8
+  - Fri Aug 21: S&P +0.4% (recovery day; Nasdaq snapping 5-day slide)
+- **Best sector (est.):** Gold/precious metals (GLD +1.62%+ Fri; Iran risk hedge); Healthcare (defensive)
+- **Worst sector (est.):** Consumer Discretionary (WMT guidance miss), Technology (AI capex concerns)
+
+### Top Momentum Sectors / ETFs for Next Week (Aug 24–28)
+
+1. **Gold / GLD** — Iran/Hormuz geopolitical risk + dollar pressured by high yields; gold at $420–425; if IWM 12m rank drops, GLD becomes Aug 31 rebalance target
+2. **Technology / QQQ** — Snapped 5-day losing streak Friday; AI infrastructure demand intact; semis resilient
+3. **Small-caps / IWM** — Underperformed this week; still likely #1 12m momentum; rate-sensitive but August pullback may create entry value at rebalance
+
+*(Note: Bot universe is SPY, QQQ, IWM, TLT, GLD, SHY only — no individual stocks or sector ETFs tradeable)*
+
+### Key Economic Events Next Week (Aug 24–28)
+
+- **Aug 25 (Mon):** New Home Sales (Jun)
+- **Aug 26 (Tue):** Consumer Confidence; S&P/Case-Shiller Home Prices
+- **Aug 27 (Wed):** GDP Q2 2026 revision (prior +2.4%)
+- **Aug 28 (Thu):** Flash PMIs (Manufacturing + Services); Personal Income & Spending; PCE Price Index (key inflation read — FOMC Sep 16 input)
+- **Aug 29 (Fri):** Chicago PMI; U of Mich. Sentiment final
+
+### What Worked
+
+- **Cash preservation:** Staying 100% cash while S&P lost an estimated 0.5–1% — bot "outperformed" passively (unintentional but positive outcome)
+- **State persistence:** All 5 EOD routines committed and pushed successfully via git — memory intact across daily fresh clones
+- **WebSearch fallback:** Market context documented for every trading day despite full API blockage
+- **Pre-market + market-open routines:** Ran successfully every day, confirming Dual Momentum signal (IWM or GLD) and documenting market conditions
+
+### What Didn't Work
+
+- **API egress remains blocked — Day 61:** `paper-api.alpaca.markets`, `api.telegram.org`, `api.perplexity.ai` all returning 403 connect_rejected for 13th consecutive week. Bot cannot trade, receive live data, or send Telegram notifications.
+- **No Telegram notifications sent all week:** User received zero mobile alerts — the bot's primary communication channel is fully silenced.
+- **Perplexity blocked:** Cannot run authoritative weekly research. All market data sourced from WebSearch estimates — lower confidence.
+- **Aug 31 rebalance at growing risk:** With 7 trading days remaining, the critical first-ever trade still cannot execute. Two missed rebalances = ~$8,800 opportunity cost on $100K.
+- **Dual Momentum signal uncertainty:** GLD's strong performance (Iran risk) is challenging IWM's estimated 12m #1 rank. Cannot verify via `dual_momentum_signal.py` until Alpaca API is restored.
+
+### Key Lessons
+
+1. **The Aug 31 rebalance is now 7 trading days away — this is the critical deadline.** If egress is not restored by Aug 29 (last trading day before Aug 31), the bot will miss its third consecutive monthly rebalance. At $100K account size, the opportunity cost compounds rapidly.
+2. **GLD is emerging as a viable alternative to IWM** for the Aug 31 allocation — Iran sanctions risk + gold's sustained strength (up significantly YTD) may flip the 12m momentum ranking. The authoritative script must run on Aug 31 before trading.
+3. **No strategy rules need adjustment** — Dual Momentum mechanics are sound. The problem is purely operational: egress policy must be updated in the Claude Code web environment settings before Aug 31.
+
+### Strategy Adjustments
+
+None to Dual Momentum rules. Operational prerequisite remains: restore egress to:
+- `paper-api.alpaca.markets` (Alpaca trading)
+- `api.telegram.org` (notifications)
+- `api.perplexity.ai` (research)
+
+### Grade: **C** (Incomplete — 13th consecutive incomplete week)
+
+Rationale: Bot continues to log and preserve state correctly, but cannot execute its core trading and notification functions. The S&P underperformance this week means cash "outperformed" in a narrow sense, but this is coincidental. Real grade depends on restoring API access by Aug 31. Third missed rebalance would be a critical operational failure.
