@@ -1520,3 +1520,36 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 **Tomorrow (Fri Aug 21):** Flash PMIs (Manufacturing + Services) — key leading indicator for economy. Watch IWM vs QQQ 12m rankings as Aug 31 rebalance approaches.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 59 consecutive trading days blocked. 2 missed rebalances (~$8,400–$9,500 opportunity cost). CRITICAL — Aug 31 rebalance must not be missed.**
+
+---
+
+## 2026-08-21 — Market-Open Check (Friday, Day 60 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined pre-market + market-open routine ran (2026-08-21, Friday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 60 of blockage spanning Jun 22–Aug 21). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (not a rebalance day; next scheduled: Aug 31, 2026; overdue BUY IWM/GLD pending API access since Jun 30).
+
+**Today's market context (via WebSearch — APIs blocked):**
+- **VIX:** ~15.87–16.01 (MODERATE 15–25) — slight uptick from 15.84; volatility subdued
+- **S&P 500 Futures (premarket):** +0.4% — positive open expected; Nasdaq 100 looking to snap 5-day losing streak
+- **Oil:** WTI ~$85.81–$87.50/bbl; Brent ~$93.86–$95.29/bbl — elevated on Iran/Hormuz; Treasury Sec. Bessent warning "toughest sanctions in history"
+- **Bond yields:** 10-year 4.71%; 30-year ~5.25% — elevated, pressuring equity valuations
+- **GLD:** $422.00 (+1.62% premarket) — Gold surging as Iran geopolitical risk hedge
+- **IWM:** ~$297–299 est. (flat from $297.66 Aug 20 close) — small-caps lagging large-caps on rate sensitivity
+- **QQQ:** $714.47 (+0.5% premarket) — Nasdaq bouncing after 5-day slide
+- **Economic releases:** Light today — no major US data; Flash PMIs week of Aug 28; FOMC Sept 16
+
+**Dual Momentum signal:** IWM or GLD — UNCERTAIN (60th consecutive session of API blockage; GLD +1.62% today may be challenging IWM's #1 12m ranking; authoritative script blocked). SPY absolute filter: PASSES (12m strongly positive). Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance.
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. IWM ~$274 (Jun 30 est.) → ~$298 (Aug 21) ≈ **+8.8% foregone** (~$8,800 on $100K). **Overdue BUY (IWM or GLD — TBD by Aug 31 signal) to be executed at first available Alpaca API access.** Next scheduled rebalance: Aug 31, 2026.
+
+**Countdown to Aug 31 rebalance:** 10 calendar days, ~7 trading days.
+
+**Weekend:** No market action. Next routine: Monday Aug 24 pre-market. Key week ahead: housing data, consumer confidence, GDP, and personal income/spending Aug 24–28.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 60 consecutive trading days blocked. 2 missed rebalances (~$8,800 opportunity cost). CRITICAL — Aug 31 rebalance is 7 trading days away.**

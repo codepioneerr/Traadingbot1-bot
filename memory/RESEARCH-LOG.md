@@ -5,6 +5,79 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-21 — Pre-Market Research (Friday, Day 60 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 60)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block, Day 60)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** ~15.87–16.01 (MODERATE zone 15–25) — slight uptick from 15.84 yesterday; volatility subdued but elevated vs prior week lows (~14.2 on Aug 15)
+
+**S&P 500 Futures (premarket):** +0.4% — Nasdaq 100 looking to snap 5-day losing streak; rebound conditional on bond yields stabilizing
+
+**Oil:** WTI ~$85.81–$87.50/bbl; Brent ~$93.86–$95.29/bbl — elevated, rising on Iran/Hormuz risk; U.S. Treasury Sec. Bessent warns "toughest sanctions in history" on Iran
+
+**Bond yields:** 10-year at 4.71%; 30-year near 5.25% — elevated, pressuring equity valuations especially growth/tech
+
+**Key ETF prices (premarket, Aug 21 2026):**
+| Ticker | Price | Day Chg |
+|--------|-------|---------|
+| SPY | $765.06 | +0.32% |
+| QQQ | $714.47 | +0.50% |
+| GLD | $422.00 | +1.62% ← Gold rallying hard (Iran safe haven) |
+| TLT | $82.51 | +0.21% |
+| IWM | ~$297–299 est. | flat/slight uptick from $297.66 close |
+| SHY | ~$83–84 est. | minimal move |
+
+**Economic Calendar today (Aug 21):** Light — no major US releases. Canada Retail Sales (8:30 AM). Flash PMIs not until Aug 28 week. Next major catalyst: FOMC Sept 16.
+
+**Key theme:** Nasdaq 5-day losing streak driven by elevated long yields (4.71% 10Y) + high oil ($87+ WTI) raising inflation concerns. Gold surging as geopolitical risk hedge. Small-caps (IWM) underperforming vs large-cap on rate sensitivity.
+
+### Dual Momentum Signal (WebSearch estimate — authoritative script blocked)
+
+| Rank (est.) | Ticker | Est. 12M Return | Notes |
+|-------------|--------|----------------|-------|
+| 1 | GLD | ~+20–25% est. | Gold $422 vs ~$340–350 yr-ago; Iran bid |
+| 2 | IWM | ~+9–10% est. | $297.66 close vs ~$270–275 yr-ago |
+| 3 | QQQ | ~+20–25% est. | Big-tech YTD strong, 5-day pullback |
+| 4 | SPY | ~+18–20% est. | Absolute filter: PASSES (strongly positive) |
+| 5 | TLT | ~+0–3% est. | Bonds weak under rate pressure |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+⚠️ NOTE: Ranking is highly uncertain due to API blockage. GLD's sharp +1.62% premarket move today could be altering 12m rankings significantly. IWM vs QQQ margin narrows on continued small-cap underperformance. Must run `python3 scripts/dual_momentum_signal.py` before Aug 31 rebalance (10 calendar days / ~7 trading days away).
+
+**Preliminary Signal: IWM or GLD** — uncertain; authoritative script verification required at Aug 31 rebalance.
+
+### Sizing Mode
+N/A — Dual Momentum strategy has no VIX-based sizing. 100% of equity in one asset. No trailing stops.
+
+### Trade Ideas
+None — this strategy does not take discretionary or intra-month trades. Today is NOT a rebalance day (Aug 31 is next). No action warranted.
+
+### Risk Factors
+- **Iran/Hormuz escalation**: Brent near $95. Sustained oil above $90 is inflationary — supports hawkish Fed trajectory. Equity headwind, Gold tailwind.
+- **GLD 12m ranking shift**: Gold +1.62% today on Iran risk. If this holds, GLD could overtake IWM as #1 12m ranked asset by Aug 31 — a potential signal flip. Monitor.
+- **Nasdaq 5-day losing streak**: Tech underperforming on yield pressure. QQQ 12m return advantage over IWM may be narrowing as IWM recovers.
+- **Bond yields near highs**: 10Y at 4.71%, 30Y near 5.25%. Equities historically struggle above 4.5% 10Y. Valuation compression risk for QQQ particularly.
+- **60+ days of missed API access**: Two rebalances missed (Jun 30, Jul 31). Cumulative opportunity cost on IWM: ~$274 (Jun 30) → ~$298 (Aug 21) ≈ +8.8% foregone (~$8,800 on $100K).
+
+### Decision
+**NO TRADE** — not a rebalance day (Aug 31 is next, ~7 trading days). Strategy permits no intraday or discretionary action between monthly rebalances. APIs still blocked — no trades possible regardless.
+
+**CRITICAL: Aug 31 rebalance must not be missed. Whitelist required before then.**
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 60 consecutive trading days blocked. 2 missed rebalances (~$8,800 opportunity cost). CRITICAL — Aug 31 rebalance is 7 trading days away.**
+
+---
+
+---
+
 ## 2026-08-19 — Morning Research (Wednesday, Day 56 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (8 trading days)
