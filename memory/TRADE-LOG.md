@@ -1618,3 +1618,30 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 **Countdown to Aug 31 rebalance:** 10 calendar days, ~7 trading days.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 61 consecutive trading days blocked. 2 missed rebalances (~$8,800 opportunity cost). Aug 31 rebalance is 7 trading days away — CRITICAL.**
+
+---
+
+## 2026-08-24 — EOD Snapshot (Monday, Day 62 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-08-24, Monday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 62 of blockage spanning Jun 22–Aug 24). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (not a rebalance day; next scheduled: Aug 31, 2026).
+
+**Today's market close (WebSearch — APIs blocked):**
+- **VIX:** 15.85 (+4.76%) — MODERATE; rising slightly on Iran sanctions news
+- **S&P 500:** −0.3%; Dow +0.3%; Nasdaq −0.8% — mixed, chip weakness pressured tech
+- **Russell 2000 / IWM:** Russell 3,017.87 (+0.85%); IWM est. ~$302 — small-caps outperforming today
+- **GLD:** Gold ~$4,708/oz (+0.60%); GLD est. ~$470 — gold continuing higher
+- **Key event:** Treasury Sec. Bessent announced "Operation Economic Outcast" (expanded Iran sanctions); Jackson Hole converging
+- **Bond yields:** 10-year elevated; continuing rate pressure on equity multiples
+
+**Dual Momentum signal:** IWM or GLD — UNCERTAIN (62nd consecutive session; authoritative script blocked). IWM +0.85% today; GLD +0.60%. SPY absolute filter: PASSES. Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance.
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. IWM ~$274 (Jun 30 est.) → ~$302 (Aug 24) ≈ **+10.2% foregone**. Next scheduled: Aug 31, 2026 (5 trading days).
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 62 consecutive trading days blocked. 2 missed rebalances (~$10,200 opportunity cost on IWM). Aug 31 rebalance is 5 trading days away — CRITICAL.**
