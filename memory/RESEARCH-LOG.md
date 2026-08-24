@@ -5,6 +5,77 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-24 — Pre-Market Research (Monday, Day 63 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 63)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → blocked (403 connect_rejected, proxy policy)
+     `api.telegram.org:443` → blocked (403)
+     `api.perplexity.ai:443` → blocked (empty response)
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** 15.81 (Aug 24) → **MODERATE** sizing mode (VIX 15–25) — N/A for Dual Momentum strategy
+
+**S&P 500:** 7,661 (−0.18% Aug 24 close); Futures were +0.4% premarket but 10-year yield near 4.74% (20-month high) capped gains
+
+**Oil:** WTI $85.65/bbl (−1.62%); Brent $93.09/bbl (−1.38%) — both pulling back as investors await Iran sanctions details from Washington
+
+**ETF Prices (as of Aug 21 — most recent available):**
+- IWM: $299.96 (+0.77%)
+- QQQ: $713.44 (+0.35%)
+- GLD: $423.36 (+1.95%)
+- SPY: ~$765 est. (from 7,661 S&P level)
+
+**Big Week Ahead — Key Catalysts:**
+- **Aug 25:** Consumer Confidence, July new home sales; Earnings: BMO, DKS, INTU, ZM
+- **Aug 26 (CRITICAL):** PCE + core PCE (Fed's preferred inflation measure); GDP Q2 2nd estimate; Durable orders; **NVDA earnings** (massive AI/tech catalyst); Earnings: CRM, CRWD, WSM, HPQ, OKTA
+- **Aug 27–29:** **Jackson Hole Symposium** — Fed Chair Kevin Warsh speaks Friday; most anticipated macro event of August
+
+**Sector Performance (partial — as of Aug 21):**
+- Leading: Real Estate (+0.41% Aug 24), Technology (XLK historically strong)
+- Lagging: Conglomerates (−3.12%), Retail (−2.82%), Healthcare (−2.09%) prior week
+
+### Dual Momentum Signal (WebSearch estimate — authoritative script requires Alpaca API)
+
+| Rank | Ticker | Est. 12M Total Return | Notes |
+|------|--------|----------------------|-------|
+| 1 | IWM | ~+9–10% est. | $274 (Aug 2025 est.) → ~$299 (Aug 2026); small-caps still #1 by 12m |
+| 2 | GLD | ~+18–20% est. | Gold strong on Iran risk + rate pressure; possibly challenging IWM for #1 |
+| 3 | QQQ | ~+25–30% est. | Tech strong but 12m return depends on Aug 2025 base; NVDA earnings key |
+| 4 | SPY | ~+18–20% est. | Absolute filter: PASSES (strongly positive) |
+| 5 | TLT | ~+2–5% est. | Bonds lagging under elevated rate pressure (10-yr 4.74%) |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+⚠️ NOTE: QQQ vs IWM vs GLD 12m ranking is UNCERTAIN — must run `python3 scripts/dual_momentum_signal.py` once API restored before Aug 31 rebalance. GLD has surged strongly; if GLD's 12m return exceeds IWM, signal flips to GLD.
+
+**Preliminary Signal: BUY IWM** (subject to authoritative script verification at Aug 31 rebalance)
+
+### Sizing Mode
+N/A — Dual Momentum has no VIX-based sizing. 100% of equity in one asset.
+
+### Trade Ideas
+None — this strategy does not take discretionary or intra-month trades.
+
+### Risk Factors
+- **NVDA earnings (Aug 26):** Massive catalyst for QQQ and broader market. A beat = tech rally; miss = further tech selling. QQQ's 12m return sensitive to this.
+- **Jackson Hole (Aug 29):** Fed Chair Warsh speech. Any hawkish surprise (higher-for-longer or rate hike signal) could spike VIX and pressure equities and TLT simultaneously. If VIX spikes above 25, strategy sizing mode becomes moot (strategy doesn't use it) but market volatility could alter 12m rankings.
+- **PCE data (Aug 26):** Key inflation print before Aug 31 rebalance. Hot PCE = hawkish Warsh at Jackson Hole = further equity pressure; cold PCE = dovish pivot speculation = rally.
+- **Oil at $85–93/bbl:** Elevated; Iran sanctions risk still active despite daily pullback. Inflationary backdrop supports gold (GLD) — could push GLD's 12m rank above IWM.
+- **10-year yield 4.74%:** Near 20-month high. Rate sensitivity hurting IWM (small-caps) more than large-caps; also hammers TLT. GLD performing as stagflation hedge.
+- **63 days of missed API access:** Two rebalances missed (Jun 30, Jul 31). Cumulative opportunity cost ~$8,800 on $100K.
+
+### Decision
+**NO TRADE** — not a rebalance day (Aug 31 is next, ~5 trading days). Strategy permits no intraday or discretionary action between monthly rebalances. APIs still blocked — no trades possible regardless.
+
+**Critical week:** PCE + NVDA + Jackson Hole all converge before Aug 31 rebalance. Signal could shift depending on outcomes. Must run authoritative script on Aug 31.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 63 consecutive trading days blocked. 2 missed rebalances (~$8,800 opportunity cost). Aug 31 rebalance is 5 trading days away — CRITICAL.**
+
+---
+
 ## 2026-08-21 — Pre-Market Research (Friday, Day 60 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 ### Account Snapshot
