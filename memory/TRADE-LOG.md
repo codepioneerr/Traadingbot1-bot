@@ -5,6 +5,40 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-08-24 — Market-Open Check (Monday, Day 63 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined pre-market + market-open routine ran (2026-08-24, Monday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 63 of blockage spanning Jun 22–Aug 24). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (not a rebalance day; next scheduled: Aug 31, 2026; overdue BUY (IWM or GLD — TBD) pending API access since Jun 30).
+
+**Today's market context (via WebSearch — APIs blocked):**
+- **VIX:** 15.81 → MODERATE (15–25); consistent with recent 15.5–16 range
+- **S&P 500:** 7,661 (−0.18%); Futures were +0.4% premarket but 10-yr yield 4.74% capped gains
+- **Oil:** WTI $85.65/bbl (−1.62%); Brent $93.09/bbl (−1.38%) — both easing on Iran sanctions anticipation
+- **IWM:** ~$299.96 (Aug 21 close); small-caps still range-bound vs large-caps
+- **QQQ:** ~$713.44 (Aug 21); tech under pressure ahead of NVDA (Aug 26)
+- **GLD:** ~$423.36 (Aug 21); gold holding strength on Iran risk + stagflation hedge
+
+**Big week ahead (before Aug 31 rebalance):**
+- **Aug 26:** PCE + core PCE (Fed's preferred inflation measure) + **NVDA earnings** (huge AI catalyst)
+- **Aug 29:** **Jackson Hole Symposium** — Fed Chair Warsh speech (most anticipated macro event)
+- **Aug 31:** DUAL MOMENTUM REBALANCE — must run `python3 scripts/dual_momentum_signal.py`
+
+**Dual Momentum signal:** IWM or GLD — UNCERTAIN (must run authoritative script). GLD competing with IWM for #1 12m rank. SPY absolute filter: PASSES.
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. Next scheduled: Aug 31, 2026 (5 trading days).
+
+**Countdown to Aug 31 rebalance:** 7 calendar days, ~5 trading days.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 63 consecutive trading days blocked. 2 missed rebalances (~$8,800 opportunity cost). Aug 31 rebalance is 5 trading days away — CRITICAL.**
+
+---
+
 ## 2026-08-14 — Morning Snapshot (Friday, Day 52 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** N/A | **Phase P&L:** $0.00 / 0.00%
