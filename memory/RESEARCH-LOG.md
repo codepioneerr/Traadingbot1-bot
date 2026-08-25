@@ -5,6 +5,70 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-25 — Pre-Market Research (Tuesday, Day 63 of API Blockage) ⚠️ SIGNAL CHANGE ALERT
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+### API Status
+`paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, `api.telegram.org:443` — all blocked (proxy 403 connect_rejected, Day 63, Jun 22–Aug 25). Perplexity fallback: WebSearch. Telegram fallback: DAILY-SUMMARY.md.
+
+### Market Context (WebSearch — APIs blocked)
+
+**VIX:** 15.85 (+4.76%) → MODERATE (15–25 range) — N/A for Dual Momentum sizing
+**S&P 500 Futures (premarket):** +0.2% — cautiously positive open expected
+**WTI Crude:** ~$82.51/bbl (-2.95%); **Brent:** ~$90.21/bbl — oil pulling back despite Iran sanctions
+**IWM (Russell 2000):** ~$298.78 (Aug 24 close)
+**QQQ (Nasdaq 100):** ~$705.16 — pulling back ahead of Nvidia earnings
+**GLD (Gold ETF):** ~$428.80 | **12-month return: +30.27%** — strongest 12m return in universe
+
+### ⚠️ SIGNAL CHANGE ALERT — GLD NOW LIKELY #1
+
+| Rank | Ticker | Est. 12M Return | Source |
+|------|--------|----------------|--------|
+| 1 | **GLD** | **+30.27%** | Confirmed (WebSearch / Investing.com 52wk data) |
+| 2 | QQQ | ~+26.9% est. | $555.60 → $705.16 est. |
+| 3 | SPY | ~+18–20% est. | WebSearch est. |
+| 4 | IWM | ~+8.9% est. | $274 → $298.78 est. |
+| 5 | TLT | ~−5% est. | Rate pressure |
+| 6 | SHY | ~+4–5% est. | Cash proxy |
+
+**SPY absolute filter:** PASSES (12m strongly positive) → proceed to relative ranking.
+**Preliminary Signal: BUY GLD** — replaces prior IWM assumption. GLD 12m +30.27% substantially outranks IWM +8.9%.
+⚠️ Must verify with `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance using actual Alpaca price data.
+
+### Key Catalysts This Week
+
+- **Nvidia earnings (Wed Aug 26):** Rubin chip outlook + AI capex commentary — major market mover. High repricing risk for QQQ/SPY.
+- **Jackson Hole symposium (Thu–Sat Aug 27–29):** Fed Chair Kevin Warsh keynote Friday Aug 28 — his FIRST Jackson Hole. Warsh is hawkish-leaning; significant bond and equity repricing risk. Watch TLT and GLD reactions.
+- **Consumer Confidence & New Home Sales (today, 10 AM ET):** Key read on consumer and housing health.
+- **PCE inflation (later this week):** Key Fed gauge ahead of Sep FOMC.
+
+### Sectors
+
+**Leading MTD:** Healthcare (+7.1%), Financials, Consumer Staples (+1.4%) — 8 of 11 S&P sectors positive in August
+**Lagging today:** Info Technology (-1.3% intraday); Energy (Iran sanctions partially offset by demand concerns)
+
+### Risk Factors for Aug 31 Rebalance
+
+1. **Nvidia earnings surprise (Wed):** A big miss could crater QQQ/SPY and boost GLD further, reinforcing GLD signal. A massive beat could compress GLD's lead.
+2. **Warsh hawkish pivot (Fri Aug 28):** Rate-sensitivity risk for IWM; could boost GLD as inflation hedge.
+3. **PCE data:** If hot, supports GLD; if cool, may support equities over gold.
+4. **IWM underperformance:** IWM has lagged large-caps; +8.9% est. vs GLD +30.27% — gap is wide enough that signal is unlikely to flip back to IWM barring dramatic moves.
+
+### Sizing Mode
+N/A — Dual Momentum strategy holds 100% equity in one asset, no VIX-based sizing, no stops.
+
+### Trade Ideas
+None — no intra-month discretionary trades. Strategy only rebalances on last trading day of each month.
+
+### Decision
+**NO TRADE** — Today is Aug 25 (not a rebalance day). Rebalance day: Aug 31, 2026 (4 trading days away). Must restore API access by Aug 31 to execute rebalance.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram in egress policy. Day 63 of blockage. 2 missed rebalances (Jun 30, Jul 31). Aug 31 rebalance is 4 trading days away — CRITICAL. Signal has likely changed from IWM to GLD.**
+
+---
+
 ## 2026-08-24 — Pre-Market Research (Monday, Day 63 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 ### Account Snapshot
