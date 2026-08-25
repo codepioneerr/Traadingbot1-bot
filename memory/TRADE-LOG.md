@@ -1678,3 +1678,30 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 **Countdown to Aug 31 rebalance:** 6 calendar days, ~4 trading days.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 63 consecutive trading days blocked. 2 missed rebalances. GLD 12m +30.27% now likely the correct signal. Aug 31 rebalance is 4 trading days away — CRITICAL.**
+
+---
+
+## 2026-08-25 — EOD Snapshot (Tuesday, Day 63 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-08-25, Tuesday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 63 of blockage spanning Jun 22–Aug 25). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (next scheduled: Aug 31, 2026; overdue BUY pending API access since Jun 30).
+
+**Today's market close (WebSearch — APIs blocked):**
+- **S&P 500:** 7,652.86 (−0.3%); tech worst performers, consumer staples + financials leading
+- **VIX:** 15.85 (+4.76%) — MODERATE; elevated ahead of Nvidia earnings (Wed Aug 26) + Jackson Hole (Thu–Sat Aug 27–29)
+- **IWM / Russell 2000:** 3,004.32 (+0.31%) — small-caps slight outperformance vs large-cap today
+- **GLD:** ~$428–430 est. (GLD closed $426.69 on Aug 24; gold continued elevated on Iran/Hormuz risk + dollar weakness)
+- **Key events tomorrow:** Nvidia earnings (Aug 26) — high market-moving potential
+- **Key events this week:** Jackson Hole (Aug 27–29), Fed Chair Warsh keynote (Aug 28), PCE inflation
+
+**Dual Momentum signal:** Preliminary BUY GLD (12m +30.27% vs IWM ~+8.9%). Must run authoritative script Aug 31.
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. Next: Aug 31, 2026 (4 trading days). Preliminary signal: GLD.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 63 consecutive trading days blocked. 2 missed rebalances (~$10,000+ opportunity cost). Aug 31 rebalance is 4 trading days away — CRITICAL.**
