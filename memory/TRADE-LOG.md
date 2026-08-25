@@ -1645,3 +1645,36 @@ Dual Momentum signal: BUY IWM (35th consecutive session; IWM $293.79, ~12m retur
 **Overdue rebalance status:** Jun 30 + Jul 31 both missed. IWM ~$274 (Jun 30 est.) → ~$302 (Aug 24) ≈ **+10.2% foregone**. Next scheduled: Aug 31, 2026 (5 trading days).
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 62 consecutive trading days blocked. 2 missed rebalances (~$10,200 opportunity cost on IWM). Aug 31 rebalance is 5 trading days away — CRITICAL.**
+
+---
+
+## 2026-08-25 — Market-Open Check (Tuesday, Day 63 of API Blockage) ⚠️ SIGNAL CHANGE ALERT
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined pre-market + market-open routine ran (2026-08-25, Tuesday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 63 of blockage spanning Jun 22–Aug 25). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (not a rebalance day; next scheduled: Aug 31, 2026; overdue BUY pending API access since Jun 30).
+
+**Today's market context (via WebSearch — APIs blocked):**
+- **VIX:** 15.85 (+4.76%) — MODERATE (15–25); rising ahead of Nvidia earnings + Jackson Hole
+- **S&P 500 Futures (premarket):** +0.2% — cautiously positive open
+- **Oil:** WTI ~$82.51/bbl (-2.95%); Brent ~$90.21/bbl — pulling back despite Iran sanctions
+- **IWM:** ~$298.78 — small-caps consolidating
+- **QQQ:** ~$705.16 — pulling back ahead of Nvidia earnings (Wed Aug 26)
+- **GLD:** ~$428.80 | **12-month return: +30.27%** — confirmed strongest 12m return in universe
+- **Key events today:** Consumer Confidence + New Home Sales (10 AM ET), S&P/Case-Shiller
+- **Key events this week:** Nvidia earnings (Wed Aug 26), Jackson Hole (Thu–Sat Aug 27–29), Fed Chair Warsh keynote (Fri Aug 28), PCE inflation
+
+**⚠️ SIGNAL CHANGE ALERT — Dual Momentum:**
+GLD 12m return confirmed at +30.27% (WebSearch). IWM 12m return est. ~+8.9% (~$274→$298.78). GLD substantially outranks IWM. Previous assumption of BUY IWM is likely incorrect. **Preliminary signal for Aug 31 rebalance: BUY GLD.**
+Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confirm with authoritative Alpaca price data.
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. Now likely GLD (not IWM) is the correct signal. Next scheduled: Aug 31, 2026 (4 trading days).
+
+**Countdown to Aug 31 rebalance:** 6 calendar days, ~4 trading days.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 63 consecutive trading days blocked. 2 missed rebalances. GLD 12m +30.27% now likely the correct signal. Aug 31 rebalance is 4 trading days away — CRITICAL.**
