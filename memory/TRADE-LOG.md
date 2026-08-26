@@ -5,6 +5,33 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-08-26 — Market-Open Check (Wednesday, Day 65 of API Blockage) ⚠️ NVDA EARNINGS DAY | REBALANCE IN 3 TRADING DAYS
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (3 trading days)
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined pre-market + market-open routine ran (2026-08-26, Wednesday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 65 of blockage spanning Jun 22–Aug 26). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly; Aug 31 is the next scheduled rebalance (3 trading days).
+
+**Today's market context (via WebSearch — APIs blocked):**
+- **VIX:** ~15.13 (Aug 21 close) → MODERATE (15–25)
+- **S&P 500 Futures:** −0.1% premarket (PCE sticky + NVDA overhang)
+- **Core PCE (July, 8:30 AM):** +3.3% YoY — in-line, sticky; modestly GLD-bullish
+- **WTI Crude:** ~$80.78/bbl (−1.92%)
+- **GLD:** ~$427.00 | Gold spot ~$4,675–$4,716/oz
+- **QQQ premarket:** ~$711.64 (−0.4%)
+- **NVDA earnings:** After close today; EPS est $2.09, Revenue est $92.07B — biggest market event of the week
+- **Jackson Hole:** Warsh speaks Friday Aug 28 ~10 AM ET; ~1-in-3 odds Sep rate hike; hawkish lean
+
+**Signal:** Preliminary BUY GLD — GLD 12m +30%+ vs IWM +9%; dominant rank confirmed. Must verify with authoritative signal script on Aug 31.
+
+**Countdown to Aug 31 rebalance:** 3 trading days. CRITICAL — API access needed to execute.
+
+---
+
 ## 2026-08-24 — Market-Open Check (Monday, Day 63 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%

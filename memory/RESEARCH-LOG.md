@@ -5,6 +5,67 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-26 — Pre-Market Research (Wednesday, Day 65 of API Blockage) ⚠️ NVDA EARNINGS + PCE DAY | AUG 31 REBALANCE IN 5 DAYS
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Phase P&L:** $0.00 / 0.00%
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (3 trading days)
+
+### API Status
+`paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, `api.telegram.org:443` — all blocked (proxy 403 connect_rejected, Day 65, Jun 22–Aug 26). Perplexity fallback: WebSearch. Telegram fallback: DAILY-SUMMARY.md.
+
+### Market Context (WebSearch — APIs blocked)
+
+**VIX:** ~15.13 (Aug 21 close); likely 15–16 range today → MODERATE (15–25) — N/A for Dual Momentum sizing
+**S&P 500 Futures (premarket):** −0.1% — muted; PCE sticky, NVDA earnings overhang
+**Core PCE (July, released 8:30 AM today):** +3.3% YoY — in line with expectations, UNCHANGED from prior month → "sticky" inflation narrative intact
+**WTI Crude:** ~$80.78/bbl (−1.92%) — easing; Iran secondary sanctions less aggressive than feared
+**Brent Crude:** implied ~$88/bbl (−1.5% est.)
+**GLD (SPDR Gold Shares):** ~$427.00 | Gold spot/Dec futures: ~$4,675–$4,716/oz (pulled back from morning high); 52-week range $310.31–$509.70
+**QQQ (Nasdaq 100):** ~$711.64 premarket (−0.4%) — lagging ahead of NVDA
+**IWM (Russell 2000):** ~$298 est. (small-caps flat/soft)
+**SPY (S&P 500):** near prior close; futures −0.1%
+
+### Key Catalysts Today
+
+1. **PCE Inflation (8:30 AM — RELEASED):** July core PCE +3.3% YoY — sticky, in-line. Not market-moving enough to drive equities materially. Modestly bullish for GLD (persistent inflation = gold demand).
+2. **NVDA Earnings (after close ~4:20 PM ET):** Q2 FY2027 report. Analyst consensus: EPS $2.09 (nearly double YoY), Revenue $92.07B. 58/61 analyst Buy/Strong Buy. Result is the biggest single market event this week — will drive QQQ/SPY direction Thursday.
+3. **Jackson Hole Symposium (Aug 27–29):** Fed Chair Kevin Warsh speaks Friday Aug 28 ~10:00 AM ET (his FIRST Jackson Hole). Markets pricing ~1-in-3 odds September rate hike. Warsh described as hawkish-leaning; framework review ongoing. "Says as little as possible" per historical playbook — but surprise hawkish tone = bond selloff + GLD support.
+
+### Dual Momentum Signal Update (Aug 26 estimate)
+
+| Rank | Ticker | Est. 12M Return | Status |
+|------|--------|----------------|--------|
+| 1 | **GLD** | **+30%+ est.** | Confirmed dominant; gold near $4,675 vs ~$3,600 a year ago |
+| 2 | QQQ | ~+27% est. | NVDA earnings could shift |
+| 3 | SPY | ~+18–20% est. | |
+| 4 | IWM | ~+9% est. | Small-cap lag persistent |
+| 5 | TLT | ~−5% est. | Rate pressure |
+| 6 | SHY | ~+4–5% est. | Cash proxy |
+
+**SPY absolute filter:** PASSES (strongly positive 12m)
+**Preliminary Signal: BUY GLD** — consistent with Aug 25 assessment. GLD's lead (~+30% vs IWM ~+9%) is wide; NVDA earnings result could narrow QQQ gap but unlikely to overtake GLD.
+⚠️ Authoritative signal requires `python3 scripts/dual_momentum_signal.py` on Aug 31 with live Alpaca price data.
+
+### Risk Factors Before Aug 31 Rebalance
+
+1. **NVDA massive beat (tonight):** Could spike QQQ; if QQQ 12m return surges to ~+30%+, may challenge GLD for #1. Monitor Friday.
+2. **Warsh hawkish surprise (Fri Aug 28):** Rate hike signal = equity pressure, GLD bullish. Neutral = status quo.
+3. **Sticky PCE → Sep rate hike risk:** Probability ~33%; higher rates weigh on IWM more than GLD.
+4. **GLD position already strong:** At $427, GLD still well below 52wk high ($509.70) — upside intact.
+
+### Sizing Mode
+N/A — Dual Momentum holds 100% equity in one asset, no VIX-based sizing, no stops, no intraday exits. Next action is Aug 31 rebalance only.
+
+### Decision
+**HOLD (no trade today)** — Not a rebalance day. Monitoring NVDA earnings and Jackson Hole for any signal changes.
+
+### Action Required
+- **Aug 31:** Run `python3 scripts/dual_momentum_signal.py` + execute rebalance if signal ≠ current holding (currently cash, buying GLD pending API access)
+- **CRITICAL:** API access needed by Aug 31. 3 missed rebalances total (Jun 30, Jul 31, now approaching Aug 31).
+
+
+---
+
 ## 2026-08-25 — Pre-Market Research (Tuesday, Day 63 of API Blockage) ⚠️ SIGNAL CHANGE ALERT
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Phase P&L:** $0.00 / 0.00%
