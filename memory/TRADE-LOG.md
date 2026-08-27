@@ -5,6 +5,31 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-08-27 — Market-Open Check (Thursday, Day 66 of API Blockage) ⚠️ POST-NVDA BEAT | WARSH SPEECH TOMORROW | REBALANCE IN 2 TRADING DAYS
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (2 trading days)
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined pre-market + market-open routine ran (2026-08-27, Thursday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 66 of blockage spanning Jun 22–Aug 27). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly; Aug 31 is the next scheduled rebalance (2 trading days).
+
+**Today's market context (via WebSearch — APIs blocked):**
+- **VIX:** 15.13 (−5.50%) → MODERATE (15–25)
+- **S&P 500:** Closed +0.42% at 7,673.04 | Dow +0.83% | Nasdaq +0.39%
+- **WTI Crude:** ~$82/bbl | **Brent:** $86.93/bbl (−1.03%)
+- **GLD:** ~$421.70 est | Gold Dec futures ~$4,650/oz — pulling back ahead of Warsh speech
+- **NVDA Earnings (Aug 26 AH — MASSIVE BEAT):** EPS $2.22 (vs $2.09 est), Rev $96.2B (vs $92.07B est, +106% YoY), Guidance $108B (+2% vs $104.2B est) — NVDA +5% AH; QQQ/Nasdaq lifted
+- **Jackson Hole:** Warsh first keynote TOMORROW Aug 28 10 AM ET — rate hike odds ~33%; hawkish tone = equity pressure, GLD support
+
+**Signal:** Preliminary BUY GLD — GLD 12m ~+31% vs QQQ ~+27-28% (NVDA beat narrows gap slightly but GLD lead maintained). Must verify with authoritative signal script on Aug 31.
+
+**Countdown to Aug 31 rebalance:** 2 trading days. CRITICAL — API access needed to execute rebalance.
+
+---
+
 ## 2026-08-26 — Market-Open Check (Wednesday, Day 65 of API Blockage) ⚠️ NVDA EARNINGS DAY | REBALANCE IN 3 TRADING DAYS
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%

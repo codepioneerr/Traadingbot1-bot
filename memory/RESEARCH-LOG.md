@@ -5,6 +5,73 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-27 — Pre-Market Research (Thursday, Day 66 of API Blockage) ⚠️ POST-NVDA EARNINGS | WARSH SPEECH TOMORROW | AUG 31 REBALANCE IN 2 TRADING DAYS
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Phase P&L:** $0.00 / 0.00%
+**Strategy:** Dual Momentum ETF Rotation | **Next rebalance:** 2026-08-31 (2 trading days)
+
+### API Status
+`paper-api.alpaca.markets:443`, `api.perplexity.ai:443`, `api.telegram.org:443` — all blocked (proxy 403 connect_rejected, Day 66, Jun 22–Aug 27). Perplexity fallback: WebSearch. Telegram fallback: DAILY-SUMMARY.md.
+
+### Market Context (WebSearch — APIs blocked)
+
+**VIX:** 15.13 (−5.50% today) → MODERATE (15–25) — N/A for Dual Momentum sizing
+**S&P 500:** Closed +0.42% at 7,673.04 (Dow +0.83%, Nasdaq +0.39%)
+**WTI Crude:** ~$82/bbl | **Brent:** $86.93/bbl (−1.03%) — Iran sanctions less aggressive than feared
+**GLD (SPDR Gold Shares):** ~$421.70 (Aug 25 est) | Gold Dec futures ~$4,650/oz (−0.1% Thu open) — pulling back ahead of Warsh speech
+**QQQ (Nasdaq 100):** ~$710–715 est — lifted by NVDA beat
+**IWM (Russell 2000):** ~$298–300 est — lagging large caps
+**SPY (S&P 500):** ~7,673 close — modestly positive
+
+### Key Catalysts Today / This Week
+
+1. **NVDA Q2 FY2027 Earnings (reported Aug 26 AH — MASSIVE BEAT):**
+   - EPS: $2.22 (beat $2.09 est, nearly double YoY)
+   - Revenue: $96.2B (beat $92.07B est, +106% YoY)
+   - Guidance: $108B next quarter (+2%, beat $104.2B est)
+   - After-hours: +~5% | Data center revenue +116.6% YoY to $89.02B
+   - Amazon Web Services buying 2M Nvidia GPUs + Vera CPU
+   - Impact: QQQ/Nasdaq bid; moderately positive for SPY
+2. **Jackson Hole Symposium (Aug 27–29):**
+   - **Fed Chair Kevin Warsh keynote TOMORROW (Aug 28, 10 AM ET) — his FIRST as Chair**
+   - Theme: "Financial Innovation: Implications for Payments and Policy"
+   - Markets pricing ~1-in-3 odds Sep rate hike; Warsh viewed as hawkish-leaning
+   - Risk: Hawkish tone = equity pressure, bond selloff, GLD support
+3. **Oil:** WTI ~$82/bbl — easing on Iran sanctions being less aggressive than feared
+
+### Dual Momentum Signal Update (Aug 27 estimate)
+
+| Rank | Ticker | Est. 12M Return | Notes |
+|------|--------|----------------|-------|
+| 1 | **GLD** | **~+31% est.** | Gold ~$4,650/oz vs ~$3,550 a year ago |
+| 2 | QQQ | ~+27–28% est. | NVDA beat narrows gap slightly but insufficient |
+| 3 | SPY | ~+18–20% est. | |
+| 4 | IWM | ~+9% est. | Small-cap persistent lag |
+| 5 | TLT | ~−5% est. | Rate pressure |
+| 6 | SHY | ~+4–5% est. | Cash proxy |
+
+**SPY absolute filter:** PASSES (strongly positive 12m)
+**Preliminary Signal: BUY GLD** — GLD's ~31% lead over QQQ ~28% is maintained despite NVDA surge. Signal unchanged. Must verify with `python3 scripts/dual_momentum_signal.py` on Aug 31.
+
+### Risk Factors Before Aug 31 Rebalance
+
+1. **Warsh hawkish surprise (Tomorrow, Aug 28 10 AM ET):** Rate hike signal could spike rates, weigh on QQQ/IWM, be bullish for GLD — could widen GLD's lead.
+2. **NVDA further re-rating:** +5% AH adds to QQQ 12m, but unlikely to close a ~3–4pp gap vs GLD.
+3. **GLD pullback risk:** If Warsh signals rate hike pause ended, gold could dip short-term — but 12m return would still lead.
+
+### Sizing Mode
+N/A — Dual Momentum holds 100% equity in one asset, no VIX-based sizing, no stops, no intraday exits.
+
+### Decision
+**HOLD (no trade today)** — Not a rebalance day. Rebalance is Aug 31 (2 trading days). Signal continues to point to BUY GLD. Warsh speech tomorrow is a key monitoring event.
+
+### Action Required
+- **Aug 31 CRITICAL:** Run `python3 scripts/dual_momentum_signal.py` + execute rebalance (BUY GLD expected). API access essential.
+- Monitor Warsh speech Aug 28 for any signal impact on GLD vs QQQ ranking.
+- **4 missed rebalances total** (Jun 30, Jul 31, Aug 31 approaching) if APIs remain blocked.
+
+---
+
 ## 2026-08-26 — Pre-Market Research (Wednesday, Day 65 of API Blockage) ⚠️ NVDA EARNINGS + PCE DAY | AUG 31 REBALANCE IN 5 DAYS
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Phase P&L:** $0.00 / 0.00%
