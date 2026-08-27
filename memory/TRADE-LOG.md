@@ -1785,3 +1785,36 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 **Tomorrow:** Jackson Hole symposium begins (Aug 27–29). Fed Chair Warsh keynote Friday Aug 28. Watch for hawkish/dovish signals. Nvidia reaction in pre-market will set tech tone. Monitor GLD vs IWM 12m for Aug 31 rebalance signal.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 64 consecutive trading days blocked. 2 missed rebalances. Aug 31 rebalance is 3 trading days away — CRITICAL.**
+
+---
+
+## 2026-08-27 — EOD Snapshot (Thursday, Day 65 of API Blockage) ⚠️ OVERDUE REBALANCE PENDING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-08-27, Thursday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned empty response / 403 connect_rejected (Day 65 of blockage spanning Jun 22–Aug 27). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (not a rebalance day; next scheduled: Aug 31, 2026; overdue BUY pending API access since Jun 30).
+
+**Today's market close (WebSearch — APIs blocked):**
+- **S&P 500:** +0.7% — Nvidia earnings beat, Salesforce (CRM) + CrowdStrike (CRWD) rallied; AI/tech optimism
+- **Nasdaq:** +1.5% — tech-heavy outperformance on post-Nvidia-earnings relief rally
+- **VIX:** 14.46 (−4.92%) — transitioning toward LOW range; Jackson Hole uncertainty fading pre-Warsh speech
+- **GLD:** $422.12 (+0.19%) — gold steady, slight pullback from week's highs
+- **IWM (Russell 2000):** ~$299 est. (Aug 26 close: $298.93) — small-caps range-bound
+- **Key event tomorrow (Aug 28):** Fed Chair Kevin Warsh keynote at Jackson Hole — critical policy signal for rates direction
+
+**Dual Momentum signal update:**
+- GLD 12m return: ~+30% (strong); IWM 12m return: ~+9.1% (~$274→$299)
+- GLD substantially outranks IWM → Preliminary signal: **BUY GLD** on Aug 31
+- Must run `python3 scripts/dual_momentum_signal.py` on Aug 31 for authoritative confirmation
+- Jackson Hole / Warsh speech tomorrow could move both GLD and IWM; monitor for signal changes
+
+**Overdue rebalance status:** Jun 30 + Jul 31 both missed. Next: Aug 31, 2026 (2 trading days). Preliminary signal: BUY GLD.
+
+**Tomorrow:** Jackson Hole Day 2 — Fed Chair Warsh keynote. Watch for hawkish/dovish signals on rate path. GLD likely to move on Warsh's comments (dollar/rate-sensitive). Aug 31 rebalance is Monday — CRITICAL that APIs are accessible by then.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 65 consecutive trading days blocked. 2 missed rebalances. Aug 31 rebalance is 2 trading days away — CRITICAL.**
