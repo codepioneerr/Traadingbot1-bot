@@ -5,6 +5,69 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## 2026-08-28 — Pre-Market Research (Friday, Day 66 of API Blockage) ⚠️ WARSH JACKSON HOLE SPEECH TODAY 10AM ET | AUG 31 REBALANCE TOMORROW | SIGNAL CORRECTION: BUY IWM (NOT GLD)
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Phase P&L:** $0.00 / 0.00%
+
+### API / Connectivity Status
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (Day 66; Jun 22–Aug 28)
+- `api.telegram.org:443` → 403 connect_rejected
+- `api.perplexity.ai:443` → 403 connect_rejected
+- Research conducted via **WebSearch fallback** (all data approximate; authoritative script requires Alpaca API)
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** 14.51 (−4.60% from yesterday 15.19) → Borderline **AGGRESSIVE/MODERATE** (< 15 = AGGRESSIVE). N/A for Dual Momentum.
+
+**S&P 500 Futures (premarket):** +0.1%; Dow futures +92pts (+0.2%); Nasdaq-100 futures −0.1%. Mixed/flat — market waiting on Warsh speech at 10 AM ET.
+
+**Key Event — Warsh Jackson Hole Keynote (10 AM ET today):** First Jackson Hole speech as Fed Chair. Market pricing ~1-in-3 odds of September rate hike. Warsh reputation as hawk; 69% of fund managers expect neutral tone. Fed holding rate at 3.50–3.75%. Bond market stressed: 30-year yield near 19-year high; Treasury market intervention fizzled 48h ago. Speech outcome will move GLD, TLT, and broad equity.
+
+**Oil:** WTI ~$84–85/bbl; Brent ~$93–95/bbl — elevated on Iran/Hormuz tensions.
+
+**GLD (Aug 27 close):** $423.77 (range $420.51–$424.95 on Aug 27)
+
+### ⚠️ SIGNAL CORRECTION — Aug 31 Rebalance
+
+Previous routines estimated IWM 12m return at ~+9% (wrong — was using ~$274 as Aug 2025 price). Correct data from WebSearch:
+
+| Rank | Ticker | Est. 12M Total Return (TTM) | Source |
+|------|--------|----------------------------|--------|
+| **1** | **IWM** | **~+33–38%** ($224.38 Aug 2025 → $299.96 Aug 2026) | Pluang/MacroTrends |
+| 2 | QQQ | ~+24–26% | FinanceCharts/Yahoo |
+| 3 | SPY | ~+20.57% | FinanceCharts |
+| 4 | GLD | ~+19.70% | FinanceCharts |
+| 5 | SHY | ~+4–5% est. | cash proxy |
+| 6 | TLT | −0.53% | FinanceCharts |
+
+**Absolute filter (SPY 12m):** +20.57% > 0% → PASSES ✓
+**Relative ranking #1: IWM** (~+33–38%)
+
+**⚠️ PRELIMINARY SIGNAL: BUY IWM on Aug 31** (CORRECTION from prior GLD assumption)
+- Prior bots used IWM Aug 2025 price ~$274 → $299 = +9.1% (WRONG)
+- Actual Aug 2025 IWM price: ~$224; Aug 2026: ~$300 = ~+33–34%
+- IWM clearly leads GLD (+19.7%) and QQQ (+24–26%) on 12m return
+- Must run `python3 scripts/dual_momentum_signal.py` on Aug 31 for authoritative confirmation
+
+### Sizing Mode
+N/A — Dual Momentum strategy has no VIX-based sizing. 100% equity in single asset. No trailing stops.
+
+### Trade Ideas
+None — strategy does not permit discretionary or intra-month trades.
+
+### Risk Factors
+- **Warsh speech (today 10 AM ET):** Hawkish surprise → bonds/GLD/IWM all potentially down; dovish → risk rally. IWM is most rate-sensitive. However, 12m return lead (~33–38%) is so large that even a bad day for IWM today is unlikely to change the signal.
+- **APIs still blocked (Day 66):** Aug 31 rebalance requires Alpaca. If APIs still blocked Monday, third consecutive missed rebalance.
+- **TLT negative:** Rate environment hostile to long bonds; SHY (cash) marginally positive. Neither close to IWM.
+- **Cumulative cost:** 66 trading days at cash = ~$8,000–$11,000 estimated opportunity cost on $100K portfolio.
+
+### Decision
+**NO TRADE today** — not a rebalance day (Aug 31 is Monday). Strategy permits no intraday action.
+
+**ACTION REQUIRED (CRITICAL):** Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy before Aug 31. Day 66 of blockage. Third rebalance at risk. **Aug 31 rebalance signal: BUY IWM (corrected from GLD).**
+
+---
+
 ## 2026-08-27 — Pre-Market Research (Thursday, Day 66 of API Blockage) ⚠️ POST-NVDA EARNINGS | WARSH SPEECH TOMORROW | AUG 31 REBALANCE IN 2 TRADING DAYS
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Phase P&L:** $0.00 / 0.00%
