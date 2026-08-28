@@ -1818,3 +1818,42 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 **Tomorrow:** Jackson Hole Day 2 — Fed Chair Warsh keynote. Watch for hawkish/dovish signals on rate path. GLD likely to move on Warsh's comments (dollar/rate-sensitive). Aug 31 rebalance is Monday — CRITICAL that APIs are accessible by then.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 65 consecutive trading days blocked. 2 missed rebalances. Aug 31 rebalance is 2 trading days away — CRITICAL.**
+
+---
+
+## 2026-08-28 — EOD Snapshot (Friday, Day 66 of API Blockage) ⚠️ WARSH HAWKISH | AUG 31 REBALANCE 1 TRADING DAY AWAY
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran (2026-08-28, Friday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 66 of blockage spanning Jun 22–Aug 28). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (next: Aug 31, 2026 — 1 trading day away, CRITICAL).
+
+**Today's market close (WebSearch — APIs blocked):**
+- **S&P 500:** ~7,705 est. (−0.3% on Warsh hawkish speech; week overall positive — set all-time highs during week)
+- **VIX:** ~16.0 est. (MODERATE; rate hike bets jumped from ~35% → 57-60% for September FOMC post-Warsh)
+- **Nasdaq:** −0.5% (tech/rate-sensitive stocks pressured by hike bets)
+- **GLD:** $422.86 close (resilient; up +0.35% vs prior day despite hawkish Warsh; daily high $422.93, low $420.79)
+- **IWM:** ~$297-299 est. (slight decline; small caps most exposed to rate hike risk)
+- **Gold spot:** $4,631.50/oz
+- **Key event:** Fed Chair Warsh Jackson Hole keynote (10 AM ET). Hawkish: "inflation running too high," refused forward guidance. September rate hike odds jumped to 57-60% per CME FedWatch (from ~35% pre-speech). S&P fell 0.3%, Dow roughly flat, Nasdaq −0.5%. Week sectors: XLC + XLK best; XLE worst.
+
+**Dual Momentum signal update (Aug 31 rebalance — TOMORROW):**
+- **GLD 12m return:** ~+30% (GLD $422.86 vs est. ~$325 Aug 2025; maintained despite Warsh hawkishness)
+- **IWM 12m return:** ~+9.1% (IWM ~$298 vs est. ~$274 Aug 2025)
+- **Warsh rate-hike impact:** Higher rate bets → stronger dollar → mild GLD headwind, LARGER IWM headwind (more rate-sensitive). Signal likely strengthens in GLD's favor.
+- **Signal: BUY GLD** — must verify via `python3 scripts/dual_momentum_signal.py` before Aug 31 open.
+- **Execution plan:** ~234 shares GLD @ ~$422 ≈ $98,748 (98.75% of $100K equity); no trailing stop (Dual Momentum rules).
+
+**Overdue rebalance status:** Jun 30 + Jul 31 + (imminent) Aug 31 — 3rd rebalance at risk. Cumulative opportunity cost: ~$10,000+ on $100K.
+
+**Monday Aug 31 action plan:**
+1. Verify egress to paper-api.alpaca.markets is unblocked
+2. Run `python3 scripts/dual_momentum_signal.py` (authoritative 12m return calculation)
+3. Execute BUY GLD (or BUY IWM if signal flips) at market open
+4. Send Telegram notification with position details
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 66 consecutive trading days blocked. 2 missed rebalances. Aug 31 rebalance is TOMORROW — FINAL DEADLINE.**
