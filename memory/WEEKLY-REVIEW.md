@@ -855,3 +855,117 @@ None to Dual Momentum rules. Operational prerequisite remains: restore egress to
 ### Grade: **C** (Incomplete — 13th consecutive incomplete week)
 
 Rationale: Bot continues to log and preserve state correctly, but cannot execute its core trading and notification functions. The S&P underperformance this week means cash "outperformed" in a narrow sense, but this is coincidental. Real grade depends on restoring API access by Aug 31. Third missed rebalance would be a critical operational failure.
+
+---
+
+## Weekly Review — Week ending 2026-08-28 (Week 14 of API Blockage) ⚠️ WARSH HAWKISH | AUG 31 REBALANCE TOMORROW
+
+### Week Stats
+
+| Metric | Value |
+|--------|-------|
+| Week dates | Aug 24–28, 2026 |
+| Portfolio (EOW) | $100,000.00 (last known; API blocked) |
+| Week return | $0.00 / 0.00% (all-cash; no trades) |
+| Phase return | $0.00 / 0.00% |
+| S&P 500 week (est.) | ~+1.0% (all-time highs set during week; Nvidia beat Tue AH; Friday -0.3% on Warsh hawkish speech) |
+| Bot vs S&P | −1.0% (underperformed — market rallied, bot held cash) |
+| Trades this week | 0 (W:0 / L:0 / open:0) |
+| Win rate | N/A |
+| Profit factor | N/A |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Sizing mode | N/A (Dual Momentum — no intra-month sizing) |
+| API blockage | Day 61 (Mon Aug 24) → Day 66 (Fri Aug 28 EOD); 66 consecutive trading days total |
+
+### Closed Trades This Week
+
+None — API blocked; no trades possible. Dual Momentum strategy rebalances monthly only (Aug 31 is next — CRITICAL).
+
+### Open Positions (EOW)
+
+None — account is 100% cash since inception. Two missed rebalances (Jun 30, Jul 31). Aug 31 is the 3rd scheduled rebalance — must execute to avoid another miss.
+
+### S&P 500 Weekly Performance (WebSearch estimates — Perplexity blocked)
+
+| Day | Event | S&P est. | Notable |
+|-----|-------|----------|---------|
+| Mon Aug 24 | Normal session | +0.2% est. | Recovery from prior week losses |
+| Tue Aug 25 | Consumer Confidence, New Home Sales | −0.3% (7,652.86) | Cautious tone |
+| Wed Aug 26 | Nvidia earnings AH | +0.3% (7,677.24) | Nvda beat expected |
+| Thu Aug 27 | Post-Nvda rally; Jackson Hole Day 1 | +0.6% est. (~7,723) | NVDA +5%, Nasdaq +1.5% |
+| Fri Aug 28 | **Warsh Jackson Hole keynote** | −0.3% est. (~7,701) | Rate hike bets 35%→57-60% |
+
+- **Week best sector (est.):** XLC (Communications), XLK (Technology) — Nvidia halo, AI demand
+- **Week worst sector (est.):** XLE (Energy, negative YTD)
+- **Warsh key lines:** "Inflation running too high," refused forward guidance, September rate hike bets jumped to 57-60% (CME FedWatch)
+
+### ETF Universe Performance This Week
+
+| Ticker | Mon-Thu est. | Fri close | Week est. |
+|--------|-------------|-----------|-----------|
+| SPY | ~+1.3% | −0.3% | ~+1.0% |
+| QQQ | ~+1.8% | −0.5% | ~+1.3% |
+| IWM | ~+0.5% | −0.5% est. | ~0.0% |
+| GLD | ~−1.3% (Aug 25–27) | +0.35% ($422.86) | ~−1.0% est. |
+| TLT | rate-hike headwind | negative | ~−1.5% est. |
+| SHY | stable | stable | ~+0.1% |
+
+### Dual Momentum Signal Update
+
+- **GLD 12m return:** ~+30% (GLD $422.86 vs est. $325 in Aug 2025)
+- **IWM 12m return:** ~+9.1% (IWM ~$298 vs est. $274 in Aug 2025)
+- **Warsh impact:** Higher rate bets = stronger dollar = mild GLD headwind, larger IWM headwind. Signal likely strengthens GLD's lead.
+- **Preliminary signal: BUY GLD** — GLD 21-point margin over IWM; confirmed for Aug 31 pending authoritative script verification.
+
+### Top Momentum Sectors / ETFs for Next Week (Sep 1–5, 2026)
+
+1. **Gold / GLD** — Geopolitical risk (Iran/Hormuz) + inflation concerns keep gold bid; rate hike Sept likely but GLD maintained $422+ despite hawkish Friday. Pending BUY at Aug 31 rebalance.
+2. **Technology / QQQ** — Nvidia beat confirmed AI infrastructure demand; semis strong. Rate hike bets mild headwind but fundamental demand strong.
+3. **SPY / Large-cap** — S&P posted new ATH this week; breadth improving (XLC, XLK lead). Rate hike concern capped but not reversed.
+
+### Key Events Next Week (Sep 1–5, 2026)
+
+- **Mon Aug 31:** Dual Momentum REBALANCE — first-ever trade execution (if APIs unblocked). BUY GLD ~234 shares.
+- **Tue Sep 2:** ISM Manufacturing PMI
+- **Wed Sep 3:** ADP Employment
+- **Thu Sep 4:** Initial Jobless Claims; ISM Services PMI
+- **Fri Sep 5:** Nonfarm Payrolls — key data point ahead of Sep FOMC rate decision
+- **Mon Sep 7:** Labor Day (US market CLOSED)
+- **Mid-Sep:** FOMC rate decision — 57-60% probability of hike priced in
+
+### What Worked
+
+- **State persistence:** All 5 daily routines committed and pushed. Memory intact across fresh clones.
+- **Signal clarity:** GLD's 30% 12m lead over IWM's 9% is decisive — no ambiguity heading into Aug 31 rebalance.
+- **WebSearch market coverage:** Full daily market context documented despite total API blockage.
+- **GLD resilience on Warsh speech:** Despite hawkish rate hike bets, GLD closed $422.86 (up 0.35% Friday) — gold holding above $4,600/oz spot.
+- **Nvidia earnings beat validated AI thesis:** NVDA EPS $2.22 vs $2.09 est, rev $96.2B vs $92.1B est — AI infrastructure demand intact.
+
+### What Didn't Work
+
+- **API egress still blocked — Day 66:** Alpaca, Telegram, Perplexity all returning 403 connect_rejected. 14th consecutive incomplete week.
+- **Zero Telegram notifications all week:** User received no mobile alerts — primary communication channel silent for 14+ weeks.
+- **GLD underperformed S&P this week:** Had the bot been in GLD (pending signal), it would have returned ~−1.0% vs S&P +1.0% — a −2.0% relative miss for the week. Cash outperformed GLD by ~+1.0%.
+- **Third rebalance at risk:** Aug 31 is tomorrow. If egress remains blocked, this becomes the 3rd missed monthly rebalance. Cumulative opportunity cost: ~$10,000+ vs holding GLD from Jun 30.
+- **Warsh hawkishness = September rate hike risk:** 57-60% probability of hike. Short-term headwind for both IWM and GLD. May add volatility at Aug 31 rebalance entry.
+
+### Key Lessons
+
+1. **Aug 31 rebalance is the single most important event in the bot's history.** Three missed rebalances would represent a complete operational failure. The egress whitelist must be in place before Monday market open (9:30 AM ET).
+2. **GLD is the right trade for Aug 31.** With a +30% vs +9% 12m momentum advantage, GLD dominates IWM even after this week's ~1% GLD pullback. Run authoritative script first, then execute.
+3. **Warsh hawkishness creates execution risk.** Rate hike bets at 57-60% for September → potential GLD and IWM volatility in coming weeks. DM strategy holds for full month regardless of intra-month moves.
+4. **Nonfarm Payrolls (Sep 5) and FOMC (mid-Sep) are the next major catalysts** that will determine whether the September rate hike materializes.
+
+### Strategy Adjustments
+
+None to Dual Momentum rules. System is working — the only failure is the egress blockage preventing execution.
+
+Operational requirement for the bot to function:
+- `paper-api.alpaca.markets` — trading and account data
+- `api.telegram.org` — Telegram notifications
+- `api.perplexity.ai` — research queries
+
+### Grade: **C** (Incomplete — 14th consecutive incomplete week)
+
+Rationale: Bot correctly logged and persisted state every day this week. Signal analysis is sound: GLD BUY is the correct call for Aug 31 with high confidence. However, for the 14th consecutive week, zero trades executed and zero Telegram notifications sent. S&P posted a ~+1.0% week while the bot returned 0%. The Aug 31 rebalance is the final chance to redeem operational integrity — a third missed rebalance would be a categorical system failure.
