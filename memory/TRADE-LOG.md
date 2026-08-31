@@ -44,6 +44,19 @@ Signal calculation (WebSearch fallback):
 
 ---
 
+## 2026-08-31 — EOD Snapshot (Monday, Day 67 of API Blockage) ❌ 3RD CONSECUTIVE MISSED REBALANCE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum monthly) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-08-31 (Monday). APIs remain blocked for Day 67 — paper-api.alpaca.markets and api.telegram.org both returning 403 connect_rejected via egress proxy. No account data retrievable; no trades possible. Today was the critical Aug 31 monthly rebalance day — the 3rd consecutive missed rebalance (Jun 30, Jul 31, Aug 31). Authoritative dual momentum signal script could not run; WebSearch fallback calculated **BUY QQQ** (QQQ 12m +24.83% > GLD ~+17.9% > SPY ~+19.2% > IWM +7.9% > TLT -7%). Market closed: S&P 500 −0.3% to 7,711.76; VIX 14.43 (LOW); GLD dropped 3.8% to $406.58 (gold retreating post-Jackson Hole hawkish Warsh speech); IWM −1.35% to $295.75; XLK +3.2% (tech outperformed). Estimated cumulative opportunity cost of missed rebalances: ~$20,000+ on $100K (QQQ TTM +24.83%). Telegram notification blocked; PushNotification sent. Next rebalance: Sep 30, 2026.
+
+---
+
 ## 2026-08-27 — Market-Open Check (Thursday, Day 66 of API Blockage) ⚠️ POST-NVDA BEAT | WARSH SPEECH TOMORROW | REBALANCE IN 2 TRADING DAYS
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
