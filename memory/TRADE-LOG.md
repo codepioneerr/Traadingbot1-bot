@@ -5,6 +5,45 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-08-31 — MONTHLY REBALANCE DAY — MISSED (Day 67 of API Blockage) ❌ CRITICAL
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Stop | Day Chg | Unrealized P&L | Notes |
+|--------|------|--------|-------|------|---------|----------------|-------|
+| — | — | — | — | — | — | — | API BLOCKED |
+
+**REBALANCE SIGNAL: BUY QQQ** (manually calculated — authoritative script could not run)
+
+Signal calculation (WebSearch fallback):
+- SPY 12m: ~+19.2% → ABSOLUTE FILTER PASS
+- QQQ 12m: **+24.83%** (confirmed TTM total return) → RANKED #1
+- GLD 12m: ~+17.9% (gold $3,473/oz end Aug 2025 → $4,090/oz now, GLD $347→$409)
+- IWM 12m: ~+7.9% ($274 → $295.75)
+- TLT 12m: ~-7% (near 52-week low $82.83)
+**Signal: BUY QQQ** (change from preliminary GLD estimate — year-ago GLD recalculated from gold spot data)
+
+**Trade intended:**
+- BUY QQQ: 139 shares @ market (~$716.43) = ~$99,584 (99.6% of equity)
+- No trailing stop (Dual Momentum strategy rules)
+
+**EXECUTION FAILED:** Alpaca paper-api.alpaca.markets:443 blocked by remote execution environment egress proxy (403 connect_rejected). Day 67 of consecutive blockage (Jun 22–Aug 31, 2026).
+
+**Market context:**
+- VIX Futures: 17.30 (MODERATE); risk-off on US-Iran military escalation (US struck Iranian rocket launchers over weekend)
+- Oil: +2% at open; inflationary pressure
+- Warsh hawkish (Sep FOMC hike odds: 57-60%)
+- S&P 500: ~7,700 level; QQQ ~$716-718
+- Telegram also blocked; notification via PushNotification only
+
+**Missed rebalances: Jun 30, Jul 31, Aug 31 (3 consecutive). Next: Sep 30, 2026.**
+**Cumulative opportunity cost (est.): ~$20,000+ on $100K account (QQQ TTM +24.83%).**
+
+**ACTION REQUIRED:** Whitelist paper-api.alpaca.markets and api.telegram.org in cloud environment egress policy.
+
+---
+
 ## 2026-08-27 — Market-Open Check (Thursday, Day 66 of API Blockage) ⚠️ POST-NVDA BEAT | WARSH SPEECH TOMORROW | REBALANCE IN 2 TRADING DAYS
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%

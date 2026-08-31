@@ -1,7 +1,90 @@
 # Research Log
 
 Daily pre-market research entries. Each entry records market context, sizing mode, and trade ideas for that day.
-Format: prepend new entries at the top (most recent first).
+Format: prepend new entries at the top (most recent first)
+
+---
+
+## 2026-08-31 — Pre-Market Research (Monday) ⚠️ REBALANCE DAY — ALPACA API BLOCKED (Day 67)
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 67)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block, Day 67)
+     `api.telegram.org:443` → 403 connect_rejected
+     `query2.finance.yahoo.com:443` → 403 connect_rejected (yfinance blocked too)
+Research conducted via WebSearch fallback. Signal calculated manually.
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX Futures:** 17.30 (opened 17.08; range 17.08–17.43) → **MODERATE** sizing mode (VIX 15-25), N/A for Dual Momentum strategy
+
+**S&P 500 Futures:** Fell on escalation of US-Iran conflict (US military struck Iranian rocket launchers targeting Strait of Hormuz over weekend). S&P futures negative in premarket — continuation of Fri −0.3% close after Warsh hawkish Jackson Hole remarks.
+
+**Oil:** Crude up +2% at open on Iran/Strait of Hormuz escalation. Inflationary pressure rising.
+
+**Market macro context:**
+- US-Iran escalation (US military strike on Iranian rocket launchers, Sunday Aug 30) → risk-off pressures
+- Fed Chair Warsh Jackson Hole (Fri Aug 29): hawkish, inflation "still too high," refused forward guidance → Sep FOMC rate hike odds at 57-60% (CME FedWatch)
+- Gold (GLD): resilient despite hawkish Warsh; slightly down from week highs but firm on geopolitical bid
+- Tech (QQQ): under dual headwind of rate hike bets + Iran escalation → moderate risk-off
+- Small-caps (IWM): most vulnerable to rate hike (domestic, rate-sensitive); opened $299.70 → fell to $295.75
+
+### Dual Momentum Signal — REBALANCE DAY (Monthly, Aug 31, 2026)
+
+**Authoritative script failed:** `python3 scripts/dual_momentum_signal.py` → yfinance blocked by proxy. Yahoo Finance also blocked. Signal calculated manually from WebSearch.
+
+| Ticker | Est. Price Aug 29 2025 | Current Price Aug 31 2026 | Est. 12M Return | Source |
+|--------|------------------------|--------------------------|-----------------|--------|
+| SPY    | ~$646 (S&P 500: 6,460.26) | ~$769-771 | ~+19.2% | S&P close Aug 29, 2025 confirmed |
+| QQQ    | ~$572 (implied)        | ~$716-718  | **+24.83%** | Confirmed: Morningstar/FinanceCharts TTM |
+| IWM    | ~$274 (research est.)  | $295.75    | ~+7.9%  | Research log est. / today's search |
+| TLT    | ~$88-90 (est.)         | $82.83     | ~-7%    | TLT near 52-wk low; YTD −2.14% |
+| GLD    | ~$347 (gold $3,473/oz end Aug 2025) | $409.23 | ~+17.9% | Gold Aug 2025 open $3,286→close $3,473/oz |
+| SHY    | ~$80 (est.)            | ~$82 (est.)| ~+2.5%  | T-bill proxy, minimal return |
+
+**ABSOLUTE FILTER:** SPY 12m return ≈ +19.2% → POSITIVE → Proceed to ranking.
+
+**RANKING (by 12m total return):**
+1. **QQQ: +24.83%** ← WINNER
+2. SPY: ~+19.2%
+3. GLD: ~+17.9%
+4. IWM: ~+7.9%
+5. TLT: ~-7%
+
+⚠️ **SIGNAL CHANGE FROM PRELIMINARY:** Previous research entries (Aug 26-28) estimated GLD at #1 (+30%). Updated data shows:
+- GLD year-ago was ~$347 (gold spot $3,473/oz end Aug 2025), not $325 as estimated
+- GLD today at $409 = +17.9% 12m return, ranking #3
+- QQQ TTM return confirmed at +24.83% (authoritative data)
+- Signal is **BUY QQQ**, not GLD
+
+### Sizing Mode
+N/A — Dual Momentum strategy: 100% of equity in one asset. No VIX-based sizing. No trailing stops.
+
+### Trade Plan
+- **Signal: BUY QQQ**
+- Qty: floor($100,000 / ~$716.43) = **139 shares**
+- Estimated cost: 139 × $716.43 = **$99,583.77** (~99.6% of equity)
+- No trailing stop (Dual Momentum rules)
+- Expected entry: market open, market order, day TIF
+
+### Risk Factors
+- **US-Iran military escalation**: US struck Iranian rocket launchers Sun Aug 30. Strait of Hormuz closure risk. QQQ (tech-heavy) sensitive to risk-off flows.
+- **Rate hike risk**: 57-60% probability of Sep FOMC hike after Warsh. Nasdaq/QQQ rate-sensitive.
+- **Oil up +2%**: Inflationary tailwind → supports hawkish Fed → QQQ headwind.
+- **Manual signal calculation**: Cannot run authoritative dual_momentum_signal.py (yfinance blocked). TTM QQQ return of +24.83% is from a reliable financial source; gold year-ago price calculated from commodity futures data. GLD vs QQQ ranking appears robust even with ±5% error on year-ago prices.
+
+### Decision
+**REBALANCE: BUY QQQ** — This IS the monthly rebalance day (last trading day of August). Signal is QQQ.
+
+**EXECUTION BLOCKED**: Alpaca API (paper-api.alpaca.markets:443) rejected by egress proxy — 67 consecutive trading days blocked (Jun 22–Aug 31, 2026). Trade could not be placed. This is the 3rd consecutive missed monthly rebalance (Jun 30, Jul 31, Aug 31).
+
+**CUMULATIVE IMPACT (estimated):**
+- If QQQ was bought Jun 30 at ~$600 → now $716 = +19.3% gain = ~$19,300 opportunity cost
+- 3 missed rebalances with no position in a bull market (QQQ +24.83% TTM)
+- Account stuck at $100,000 cash while signal has been to be in QQQ/GLD all summer
+
+**ACTION REQUIRED:** Whitelist `paper-api.alpaca.markets:443` and `api.telegram.org:443` in remote execution environment egress policy. 67 consecutive trading days blocked. 3 missed rebalances. **CRITICAL.**.
 
 ---
 
