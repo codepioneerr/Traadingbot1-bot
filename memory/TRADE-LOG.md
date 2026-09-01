@@ -5,6 +5,19 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-09-01 — EOD Snapshot (Tuesday, Day 68 of API Blockage)
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum monthly) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-01 (Tuesday). APIs remain blocked for Day 68 — paper-api.alpaca.markets and api.telegram.org both returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Sep 1, 2026). No account data, positions, or orders retrievable; no trades possible. Not a rebalance day (next: Sep 30, 2026). Market closed: S&P 500 −0.3% to 7,686.14; Dow −0.7% (−374 pts) to 53,185.90; Nasdaq −0.1% to 26,370.89; VIX ~14.9 (LOW, but intraday highs ~16); XLK −1.6% (tech underperformed); oil elevated at $90/bbl Brent on Iran/Hormuz tensions + Warsh hawkish Sep rate-hike bets (57-60%). Global bond sell-off drove yields higher, weighing on equities. Dual Momentum signal: QQQ vs GLD close race — QQQ 12m ~+24-25%; GLD 12m ~+25-27% (GLD $408 vs $422 Aug 28 level). Telegram fallback to DAILY-SUMMARY.md. Next rebalance: Sep 30, 2026.
+
+---
+
 ## 2026-08-31 — MONTHLY REBALANCE DAY — MISSED (Day 67 of API Blockage) ❌ CRITICAL
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 / 0.00% (cash only) | **Phase P&L:** $0.00 / 0.00%
