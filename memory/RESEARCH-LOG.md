@@ -5,6 +5,71 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-01 — Pre-Market Research ⚠️ API BLOCKED (Day 67) | AUG 31 REBALANCE MISSED (3rd)
+
+**APIs blocked:** `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`, Yahoo Finance — all 403 connect_rejected. Fallback: WebSearch.
+
+### Account Snapshot (last known — API blocked)
+- **Equity:** $100,000.00 (cash, 100%)
+- **Positions:** None (all cash since Jun 22 blockage)
+- **Orders:** None
+- **Missed rebalances:** Jun 30, Jul 31, Aug 31 (3rd missed — CRITICAL)
+
+### Market Context (WebSearch)
+
+**VIX:** 14.92 → Sizing mode: N/A (Dual Momentum; but LOW range — below 15)
+**S&P 500 futures:** −0.5% premarket — uncertainty on US-Iran war resumption + Fed rate-hike fears
+**Oil:** Brent ~$90/barrel (US-Israel-Iran hot war resumed Sunday Aug 30; US launched fresh strikes)
+**Gold (GLD):** ~$408.42 (52-week range $320.24–$509.70; down from $422.86 on Aug 28 — unusual weakness despite geopolitical risk, likely Warsh-driven dollar strength + Sep 1 seasonality)
+**Sectors leading:** XLK (Tech), XLC (Communications) — Nvidia-driven
+**Sectors lagging:** XLE (Energy, despite oil spike — supply chain risk), XLY (Consumer Discretionary), XLRE (Real Estate — rate pressure)
+
+**Economic Calendar today:**
+- 8:45 AM ET: Manufacturing PMI (prev 53.2, forecast 53.2)
+- 10:00 AM ET: ISM Manufacturing PMI
+- 10:00 AM ET: JOLTS Job Openings
+
+**Key macro risk:** Fed Chair Warsh hawkish Jackson Hole speech (Aug 28) raised September rate hike odds to 57-60%. Oil at $90 + elevated inflation → hawkish pressure continues.
+
+### Rebalance Status
+- **Today:** Sep 1, 2026 — NOT a rebalance day
+- **Next rebalance:** Sep 30, 2026 (20 trading days)
+- **Missed rebalances:** Jun 30, Jul 31, Aug 31 — 3 consecutive misses due to API blockage
+
+### Dual Momentum Signal Estimate (WebSearch only — NOT authoritative)
+SPY absolute filter: SPY 12m return ~+18–20% → PASSES (positive) → proceed to ranking.
+
+| Rank | Ticker | Est. 12m Return | Notes |
+|------|--------|----------------|-------|
+| 1 | QQQ | ~+24–25% | WebSearch confirmed: 12m TTM ~+24.4–25.4% |
+| 2 | GLD | ~+25–27% | Est. $320 Sep-25 → $408 Sep-26; may rank 1 or 2 |
+| 3 | SPY | ~+18–20% | Broad market positive |
+| 4 | IWM | ~+7–8% | $274 Aug-25 → $294 Sep-26 |
+| 5 | TLT | Negative est. | Bonds under rate pressure |
+| — | SHY | ~+4–5% | Cash proxy |
+
+**Preliminary signal: QQQ or GLD (too close to call from WebSearch; authoritative script needed)**
+GLD has dropped ~$14 from Aug 28 close ($422.86 → $408.42) — if this drop is sustained into Sep 30, QQQ likely takes the lead.
+
+### Trade Ideas
+**NONE** — Dual Momentum strategy: no discretionary trades, no intra-month action. Next rebalance: Sep 30, 2026.
+
+### Sizing Mode
+N/A — 100% equity in one asset, no VIX sizing.
+
+### Risk Factors
+1. **US-Iran war resumed Aug 30** — oil spike to $90 → inflation pressure → hawkish Fed → rate hike bets elevated
+2. **GLD weakening** ($408 vs $423 Aug 28) — dollar strength offsetting safe-haven bid; could flip signal from GLD to QQQ by Sep 30
+3. **ISM + JOLTS today** — strong data → more rate hike pressure → market volatility
+4. **Three missed rebalances** — portfolio all-cash while preliminary signal is QQQ/GLD; significant opportunity cost
+
+### Decision
+**NO TRADE** — Not a rebalance day. Next scheduled: Sep 30, 2026. Alpaca API blocked regardless.
+
+**ACTION REQUIRED: Whitelist Alpaca/Perplexity/Telegram/Yahoo in egress policy. 3rd consecutive missed rebalance (Jun 30, Jul 31, Aug 31). Next opportunity: Sep 30, 2026.**
+
+---
+
 ## 2026-08-31 — Pre-Market Research (Monday) ⚠️ REBALANCE DAY — ALPACA API BLOCKED (Day 67)
 
 ### Account Snapshot
