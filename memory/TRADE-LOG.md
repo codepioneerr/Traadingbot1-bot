@@ -1922,3 +1922,18 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 4. Send Telegram notification with position details
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 66 consecutive trading days blocked. 2 missed rebalances. Aug 31 rebalance is TOMORROW — FINAL DEADLINE.**
+
+---
+
+## 2026-09-02 — EOD Snapshot (Wednesday, Day 69 of API Blockage)
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum monthly) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-02 (Wednesday). APIs remain blocked for Day 69 — paper-api.alpaca.markets and api.telegram.org both unreachable via egress proxy (blockage spanning Jun 22–Sep 2, 2026). Perplexity API also blocked. No account data, positions, or orders retrievable; no trades possible. Not a rebalance day (next monthly rebalance: Sep 30, 2026). Yesterday (Sep 1) portfolio was $100,000.00 cash — no change expected today. Dual Momentum signal unchanged: QQQ likely leading (12m ~+24-25%), though GLD is competitive (~+17-27% depending on reference date). Must verify authoritatively on Sep 30. Telegram fallback to DAILY-SUMMARY.md.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 69 consecutive trading days blocked. 3 missed rebalances (Jun 30, Jul 31, Aug 31). Next: Sep 30, 2026.**
