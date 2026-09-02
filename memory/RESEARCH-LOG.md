@@ -5,6 +5,74 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-02 — Pre-Market Research ⚠️ API BLOCKED (Day 68) | AUG 31 REBALANCE MISSED | IRAN ESCALATION
+
+**APIs blocked:** `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` — all 403 connect_rejected (egress proxy policy). Fallback: WebSearch.
+
+### Account Snapshot (last known — API blocked)
+- **Equity:** $100,000.00 (cash, 100%)
+- **Positions:** None (all cash since Jun 22 blockage)
+- **Orders:** None
+- **Missed rebalances:** Jun 30, Jul 31, Aug 31 (3 consecutive — CRITICAL)
+
+### Market Context (WebSearch)
+
+**VIX:** 16.34 (+9.52%) → Sizing mode: N/A (Dual Momentum); MODERATE range (15–25)
+**S&P 500 futures:** 7,638.25 (−0.06%) — stocks mixed; bond yields surging on oil/inflation fears
+**Oil:** WTI ~$91/bbl (+5.2% overnight — biggest gain in 5 weeks); Brent ~$95 — 3rd consecutive session of gains
+**Catalyst:** US strikes against Iran (retaliation for Strait of Hormuz mine-laying + earlier military base attack). Trump warned of further strikes if Tehran responds. Oil disruption fears escalating.
+**Gold (GLD):** ~$408.42 (Sep 1 close; 52-week range $320.24–$509.70; down ~$14 from Aug 28 peak of $422.86 — Warsh hawkishness + dollar strength offsetting safe-haven bid)
+**IWM:** $295.75 (Aug 31 close; 52-week range $228.90–$305.18 — small-caps under pressure from rate hike bets)
+**Bond yields:** Rising globally — traders pricing in sustained high oil = inflation = hawkish Fed path
+**Sectors leading:** XLE (Energy — oil spike), XLK (Tech, tentative)
+**Sectors lagging:** XLY (Consumer Discretionary), XLRE (Real Estate), IWM/small-caps (rate-sensitive)
+
+**Economic Calendar today:**
+- 8:30 AM ET: ADP Employment Report
+- 8:30 AM ET: Initial Jobless Claims
+- 10:00 AM ET: ISM Services PMI
+
+### Rebalance Status
+- **Today:** Sep 2, 2026 — NOT a rebalance day
+- **Next rebalance:** Sep 30, 2026 (~20 trading days)
+- **Missed rebalances:** Jun 30, Jul 31, Aug 31 — 3 consecutive misses; cumulative opportunity cost ~$10,000+ on $100K
+- **Aug 31 status:** Rebalance missed again — Alpaca API still blocked on Aug 31
+
+### Dual Momentum Signal Estimate (WebSearch — NOT authoritative; script requires API)
+SPY absolute filter: SPY 12m return strongly positive → PASSES → proceed to ranking.
+
+| Rank | Ticker | Est. 12m Return | Notes |
+|------|--------|----------------|-------|
+| 1 | GLD | ~+25–27% | $320 Sep-25 → $408 Sep-26; Iran/gold bid may reclaim vs QQQ |
+| 2 | QQQ | ~+24–25% | Big-tech strong; rate hike risk headwind |
+| 3 | SPY | ~+18–20% | Broad market positive |
+| 4 | IWM | ~+7–8% | $274 Aug-25 → $296 Sep-26; most rate-sensitive |
+| 5 | TLT | Negative est. | Bonds crushed under rate pressure |
+| — | SHY | ~+4–5% | Cash proxy |
+
+**Preliminary signal: GLD or QQQ (too close; GLD gap may narrow further if oil/Iran risk drives flight to safety)**
+**Authoritative signal requires `python3 scripts/dual_momentum_signal.py` — blocked until API restored**
+
+### Trade Ideas
+**NONE** — Dual Momentum: no discretionary trades, no intra-month action. Next rebalance: Sep 30, 2026.
+
+### Sizing Mode
+N/A — 100% equity in one asset, no VIX sizing.
+
+### Risk Factors
+- **Iran/Hormuz escalation (MAJOR):** Strait of Hormuz = 20% of world oil supply. Sustained closure = persistent oil spike = inflation = rate hike pressure = equity headwind, especially small-caps/rate-sensitive
+- **VIX surge (+9.52% to 16.34):** Fear rising — market pricing more volatility; September historically weak seasonality
+- **Dollar strength:** Warsh hawkishness + safe-haven flows → stronger USD → GLD headwind
+- **Rate hike probability:** Sep FOMC rate hike odds ~57-60% post-Warsh. Bond yields rising = multiple compression for equities
+- **GLD vs QQQ signal uncertainty:** GLD dropped $14 from Aug 28 peak; QQQ holding better tech bid. Signal could swing either way by Sep 30
+
+### Decision
+**NO TRADE** — Not a rebalance day. Strategy permits no intra-month discretionary action. APIs still blocked.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in egress policy. 68 consecutive trading days blocked. 3 missed rebalances. Next rebalance: Sep 30, 2026.**
+
+---
+
 ## 2026-09-01 — Pre-Market Research ⚠️ API BLOCKED (Day 67) | AUG 31 REBALANCE MISSED (3rd)
 
 **APIs blocked:** `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`, Yahoo Finance — all 403 connect_rejected. Fallback: WebSearch.
