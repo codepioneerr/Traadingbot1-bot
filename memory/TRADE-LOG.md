@@ -5,6 +5,21 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-09-03 — EOD Snapshot (Thursday, Day 70 of API Blockage)
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)**
+**Sizing mode today:** N/A (Dual Momentum monthly) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-03 (Thursday). APIs remain blocked for Day 70 — paper-api.alpaca.markets and api.telegram.org both unreachable via egress proxy (403 connect_rejected; blockage spanning Jun 22–Sep 3, 2026). No account data, positions, or orders retrievable; no trades possible. Not a rebalance day (next monthly rebalance: Sep 30, 2026). Portfolio remains $100,000.00 cash — no change. Dual Momentum strategy: preliminary signal QQQ or GLD (close; must verify authoritatively Sep 30 via dual_momentum_signal.py). Friday Sep 4 = NFP report — major market event. No adjustments possible while APIs are blocked. Telegram fallback to DAILY-SUMMARY.md.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 70 consecutive trading days blocked. 3 missed rebalances (Jun 30, Jul 31, Aug 31). Next: Sep 30, 2026.**
+
+---
+
 ## 2026-09-03 — Pre-Market Check (Thursday, Day 69 of API Blockage)
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
