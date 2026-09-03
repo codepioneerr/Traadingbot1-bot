@@ -5,6 +5,19 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-09-03 — Pre-Market Check (Thursday, Day 69 of API Blockage)
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum monthly) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Pre-market routine ran 2026-09-03 (Thursday). APIs remain blocked for Day 69 — paper-api.alpaca.markets, api.telegram.org, api.perplexity.ai all returning 403 connect_rejected via egress proxy. No account data, positions, or orders retrievable; no trades possible. Not a rebalance day (next: Sep 30, 2026). Market context (WebSearch): VIX 15.2 (−6.99%, traders pricing out hawkish Fed surprise); S&P 500 futures −0.05% (mixed); WTI $90.63 / Brent $95.25 (oil easing from 3-session surge on Trump de-escalation signals); ADP Aug jobs +38K (miss vs 47K — labor market softening); NFP tomorrow Sep 4. Sectors leading Q3: Energy (+22%), Healthcare, Financials. QQQ ~$708 (Sep 2 close), GLD ~$408. Dual Momentum preliminary signal: QQQ or GLD (too close; next authoritative signal Sep 30). Next rebalance: Sep 30, 2026 (19 trading days).
+
+---
+
 ## 2026-09-01 — EOD Snapshot (Tuesday, Day 68 of API Blockage)
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)

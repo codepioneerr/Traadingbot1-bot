@@ -5,6 +5,75 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-03 — Pre-Market Research ⚠️ API BLOCKED (Day 69) | LABOR MARKET SOFTENING | IRAN CEASEFIRE SIGNALS
+
+**APIs blocked:** `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` — all 403 connect_rejected (egress proxy policy, Day 69 consecutive). Fallback: WebSearch.
+
+### Account Snapshot (last known — API blocked)
+- **Equity:** $100,000.00 (cash, 100%)
+- **Positions:** None (all cash since Jun 22 blockage)
+- **Orders:** None
+- **Missed rebalances:** Jun 30, Jul 31, Aug 31 (3 consecutive — CRITICAL)
+
+### Market Context (WebSearch)
+
+**VIX:** 15.2 (−6.98%) → Sizing mode: N/A (Dual Momentum); MODERATE (just inside 15–25 band)
+- Traders interpreting VIX drop as market pricing out Fed hawkish surprise at Sep FOMC
+**S&P 500 futures:** −0.05% premarket — mixed, slightly negative; 41% odds of higher open (prediction markets)
+**Oil:** WTI $90.63 (−0.4%), Brent ~$95.25 (−0.4%) — still elevated but pulling back from 3-session surge (+9% WTI over Mon–Wed)
+- Iran/Hormuz crisis: US struck Iranian positions Aug 31 (retaliation for mine-laying + shipping attacks); Trump signaled further strikes "would be short-lived" → de-escalation rhetoric softening oil but Strait of Hormuz risk remains
+**Gold (GLD):** ~$408 (Sep 2 close); 52-week range $320.24–$509.70
+**QQQ:** ~$708 (Sep 2 close); 52-week range $555.60–$748.65
+**Economic data (today):**
+- ISM Services PMI (10:00 AM ET)
+- NFP due tomorrow (Sep 4, 8:30 AM ET) — key for Sep FOMC decision
+- ADP (Sep 2, released): +38K jobs (Aug) — miss vs 47K forecast; labor market softening; manufacturing −17K, professional services −16K
+**Sectors leading (Q3 to date):** Energy (+22%), Healthcare, Financial Services, Basic Materials
+**Sectors lagging (Q3 to date):** Industrials (−7%), Consumer Discretionary, Real Estate, Small-caps (rate-sensitive)
+**Key earnings/catalysts today:** NVDA +0.6% premarket ($225.72); broad tech tentatively higher on rate-cut optimism from weak ADP
+
+### Rebalance Status
+- **Today:** Sep 3, 2026 (Thursday) — NOT a rebalance day
+- **Next rebalance:** Sep 30, 2026 (~19 trading days)
+- **Missed rebalances:** Jun 30, Jul 31, Aug 31 — 3 consecutive misses
+
+### Dual Momentum Signal Estimate (WebSearch — NOT authoritative; script requires Alpaca API)
+SPY absolute filter: SPY 12m strongly positive → PASSES → proceed to ranking.
+
+| Rank | Ticker | Est. 12m Return | Notes |
+|------|--------|----------------|-------|
+| 1 | QQQ | ~+24–27% | $708 vs ~$555 a year ago; big-tech bid holding |
+| 1 | GLD | ~+25–27% | $408 vs ~$320 a year ago; Iran safe-haven + gold bull |
+| 3 | SPY | ~+18–20% | Broad market positive |
+| 4 | IWM | ~+7–9% | Small-caps under pressure; rate-sensitive |
+| 5 | TLT | Negative est. | Bonds crushed by elevated rates |
+| — | SHY | ~+4–5% | Cash proxy |
+
+**Preliminary signal: QQQ or GLD (too close to call — near statistical tie)**
+- QQQ has slight edge if tech bid holds through NFP/Sep FOMC
+- GLD may regain top slot if Iran risk re-escalates or labor data spooks market
+**Authoritative signal requires `python3 scripts/dual_momentum_signal.py` — blocked until API restored**
+
+### Trade Ideas
+**NONE** — Dual Momentum: no discretionary trades, no intra-month action. Next rebalance: Sep 30, 2026.
+
+### Sizing Mode
+N/A — 100% equity in one asset, no VIX sizing.
+
+### Risk Factors
+- **Iran/Hormuz (ongoing, partially de-escalating):** Trump rhetoric shifting but crisis not resolved; Brent near $95 = persistent inflation risk
+- **Labor market softening:** ADP +38K miss → NFP tomorrow could catalyze Sep FOMC rate cut pricing → equity positive; or reveal structural weakness → equity negative
+- **September seasonality:** Historically the weakest month for equities
+- **VIX at 15.2:** Just above the 15 threshold into MODERATE zone; any shock = rapid re-rating
+- **API blockage:** Day 69 — approaching Aug 31 rebalance miss anniversary; Sep 30 rebalance is the critical next window
+
+### Decision
+**NO TRADE** — Not a rebalance day. Dual Momentum strategy permits no intra-month discretionary action.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in egress policy. 69 consecutive trading days blocked. 3 missed rebalances. Cumulative opportunity cost ~$20,000+ on $100K. NEXT CRITICAL DATE: Sep 30, 2026 (rebalance day).**
+
+---
+
 ## 2026-09-02 — Pre-Market Research ⚠️ API BLOCKED (Day 68) | AUG 31 REBALANCE MISSED | IRAN ESCALATION
 
 **APIs blocked:** `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` — all 403 connect_rejected (egress proxy policy). Fallback: WebSearch.
