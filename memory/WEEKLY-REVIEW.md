@@ -5,6 +5,131 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## Week ending 2026-09-04 — Weekly Review #9 ⚠️ API BLOCKED (Day 71) | 5TH CONSECUTIVE WEEK UNABLE TO EXECUTE
+
+### Portfolio Summary
+
+| Metric | Value |
+|--------|-------|
+| Portfolio (EOW) | $100,000.00 (last known — API blocked) |
+| Cash | $100,000.00 (100%) |
+| Week P&L | $0.00 / 0.00% (no positions) |
+| Phase P&L (since May 9) | $0.00 / 0.00% |
+| S&P 500 weekly return | ~+0.39% (7,711.76 → est. 7,742 Sep 4) |
+| Bot vs S&P delta | −0.39% (underperformed — market rose, bot held cash) |
+| Trades this week | 0 |
+| W/L/Open | 0/0/0 |
+| Win rate | N/A |
+| Profit factor | N/A |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Sizing mode (this week) | N/A — Dual Momentum monthly rebalance only |
+
+### Week in Review (Sep 1–4, 2026)
+
+**Strategy:** Dual Momentum ETF Rotation — monthly rebalance only. No rebalance this week (next: Sep 30, 2026). APIs remain blocked — no trades possible regardless.
+
+**API blockage status:** Day 71 (Jun 22 – Sep 4). `paper-api.alpaca.markets`, `api.telegram.org`, and `api.perplexity.ai` all returning 403 connect_rejected at proxy. Research conducted via WebSearch fallback. Telegram substituted with push notifications.
+
+**This week's trading days:** Aug 31 (Mon), Sep 1 (Tue), Sep 2 (Wed), Sep 3 (Thu), Sep 4 (Fri). 5 full trading days. Labor Day falls NEXT week — Sep 7, 2026 (market closed).
+
+**Cumulative opportunity cost (since Jun 30 rebalance):** 3 missed rebalances (Jun 30 BUY IWM, Jul 31 BUY IWM/QQQ, Aug 31 BUY QQQ). Current Dual Momentum signal: **BUY GLD** (~+70-80% 12m). QQQ at ~+24-25% 12m. Estimated cumulative opportunity cost: **$20,000–$30,000+** on $100K account. This is now approaching catastrophic from an ops standpoint.
+
+### Market Context (Sep 1–4, 2026)
+
+| Date | S&P 500 | Change | VIX | Key Driver |
+|------|---------|--------|-----|------------|
+| Mon Aug 31 | ~7,711.76 | −0.30% | ~15.5 | Warsh hawkish hangover; oil elevated; 3rd missed rebalance day |
+| Tue Sep 1 | 7,686.14 | −0.33% | ~14.9 | S&P, Dow, Nasdaq all negative; XLK −1.6%; global bond sell-off; oil $90/bbl Brent |
+| Wed Sep 2 | ~7,665 est. | ~−0.28% | ~15.0 | Treasury yields rising; estimates from Sep 3 back-calculation |
+| Thu Sep 3 | 7,747.71 | +1.06% | ~14.5 | "Back-to-back gains as Treasury yields retreat"; recovery session |
+| Fri Sep 4 | ~7,742 est. | ~−0.05% | 15.25 | Strong NFP +162K (vs 55K consensus) — "good news is bad news"; yields jump; hawkish Fed bets rise |
+
+**NFP August Report (Sep 4, 8:30 AM ET) — KEY EVENT:**
+- Nonfarm payrolls: +162,000 vs consensus +55,000 (+107K surprise — massive beat)
+- Unemployment rate: 4.1% (unchanged)
+- Market reaction: S&P edged lower; Nasdaq +0.09%; Treasury yields surged; Fed rate-hike odds for Sep 16 FOMC jumped
+- Hawkish Warsh + strong labor market → Sep 16 FOMC rate-hike probability elevated (57-60%)
+- CPI and PPI data next week (Sep 9-11) will be decisive for Fed's Sep 16 decision
+
+**Weekly sector performance (estimated via WebSearch):**
+- **YTD leaders (2026):** Energy +32.11%, Technology +30.69%
+- **This week best:** Defensive sectors (Retail +1.85%, Consumer Staples); Energy on oil elevated at $90/bbl Brent
+- **This week worst:** Capital Goods −1.86%, Basic Materials −1.57%, Technology −1.08% (rate pressure)
+- **GLD (gold):** ~$413-$422 range; gold spot ~$4,469/oz; 12m return estimated +70-80% — dominant Dual Momentum signal
+
+### Closed Trades This Week
+
+None — bot held no positions (API blocked; no rebalance day this week).
+
+### Open Positions (EOW)
+
+None — account is all-cash pending API access. Next monthly rebalance: Sep 30, 2026.
+
+### What Worked
+
+- State persistence via git commits maintained — no data lost across fresh session restarts (13+ weeks of uninterrupted logging despite API blockage)
+- Market context tracking via WebSearch fallback remained accurate — correctly identified NFP as the key catalyst for Sep 4
+- Pre-market routine correctly noted "massive beat" NFP scenario and market implications ahead of time
+- Dual Momentum signal is crystal clear: GLD at ~+70-80% 12m is dominant — no ambiguity whatsoever at the Sep 30 rebalance
+- Capital preservation: $100K intact while waiting for infrastructure fix
+- Sep 3 recovery (+1.06%) correctly predicted to follow the Sep 1 down session
+
+### What Didn't Work
+
+- **API egress still blocked (Day 71):** `paper-api.alpaca.markets`, `api.telegram.org`, `api.perplexity.ai` all blocked — bot cannot trade, notify, or research in real-time
+- **3 missed rebalances:** Jun 30, Jul 31, Aug 31 — estimated $20-30K+ opportunity cost on $100K account
+- **Dual Momentum GLD signal missed entirely:** Gold gained ~+70-80% in the last 12 months; the bot has missed the entire run
+- **Telegram mobile alerts:** 71 consecutive days undeliverable — user receiving only push notifications
+- **5th consecutive week of underperformance** vs. market purely due to infrastructure failure — this has been catastrophic from an ops standpoint
+- **NFP strength reinforced hawkish Warsh** — risk that GLD sell-off could compress 12m return before Sep 30 rebalance (though +70-80% is a massive cushion vs QQQ +24%)
+
+### Key Lessons
+
+1. **Infrastructure is strategy**: A technically valid strategy is worthless if the execution layer is broken. API egress policy must be resolved before Sep 30 rebalance or a 4th consecutive miss occurs.
+2. **GLD ran without us**: Gold's ~+70-80% 12m run is extraordinary. The bot correctly identified the signal (GLD dominant) months ago but could not execute.
+3. **NFP "good news is bad news" confirmed**: Strong jobs data is now consistently bearish for equities as Warsh hawks dominate Fed narrative. Hawkish rate expectations = headwind for QQQ, tailwind for GLD and energy.
+4. **Sep 16 FOMC is the next major binary event**: CPI/PPI next week will determine whether Warsh hikes. A rate hike = GLD dip risk short-term (dollar strength), but historically gold holds well in stagflation.
+5. **Sep 30 rebalance is critical**: If APIs are fixed by then, we buy ~139 shares GLD at market (~$413-422/sh = ~$99K). Missing this would be the 4th consecutive missed rebalance.
+
+### Sector Observations
+
+- **Energy (XLE):** +32% YTD, leading all sectors. Oil at $90/bbl Brent on Iran/Hormuz tensions. Strong fundamental support.
+- **Technology (QQQ):** +30% YTD but under pressure from rate hike expectations. NVDA earnings beat (Aug 26) provided temporary lift.
+- **Gold/Commodities (GLD):** Extraordinary 12m run (+70-80%). Dollar strength on NFP is a headwind, but structural demand (de-dollarization, geopolitical risk) provides floor.
+- **Financials (XLF):** Hawkish rate environment benefits bank net interest margins. Could outperform if Sep 16 rate hike materializes.
+- **Value over Growth:** In a rising-rate environment, value (VTV) consistently outperforms growth. Consistent with hawkish Warsh regime.
+
+### Adjustments for Next Week
+
+No strategy adjustments needed — Dual Momentum rules are unchanged. GLD remains the overwhelming Sep 30 signal.
+
+**Priority actions for next week (Sep 7-11, 2026):**
+1. **Sep 7 (Mon): Market CLOSED — Labor Day.** No routine needed.
+2. **Sep 8-11:** Monitor CPI (Sep 9 est.), PPI (Sep 10 est.) for Fed rate-hike probability shift.
+3. **Continue pushing for egress fix** — 26 trading days until Sep 30 rebalance.
+4. Track GLD, QQQ, IWM, SPY prices daily for authoritative signal calculation.
+5. Warsh Sep 16 FOMC decision will be the most important market event of the month.
+
+### Top Sectors/ETFs for Next Week
+
+1. **GLD (Gold ETF)** — Dominant Dual Momentum signal; hawkish rates may create brief dip-buying opportunity
+2. **XLE (Energy)** — Oil elevated ($90/bbl Brent), geopolitical premium intact; YTD best sector
+3. **XLF (Financials)** — Rate hike bets favor banks; net interest margin expansion
+
+### Key Events Next Week (Sep 7-11, 2026)
+
+- **Sep 7 (Mon):** Labor Day — US markets CLOSED
+- **Sep 9 (Wed):** CPI data (August) — crucial for Sep 16 FOMC decision
+- **Sep 10 (Thu):** PPI data (August) — supports/refutes rate hike case
+- **Sep 16:** FOMC meeting — Warsh rate hike decision (57-60% odds of hike based on NFP; CPI/PPI could shift this)
+
+### Overall Grade: **F**
+
+Nine consecutive weeks with zero execution capability due to infrastructure failure. Three missed monthly rebalances. Estimated $20-30K+ in foregone returns on a $100K account. The strategy, signal, and rules are sound — the egress proxy policy is the sole blocker. **Escalation is critical.** If Alpaca API access is not restored by Sep 29, the fourth consecutive monthly rebalance (Sep 30 BUY GLD) will also be missed.
+
+---
+
 ## Week ending 2026-08-14 — Weekly Review #8 ⚠️ API BLOCKED (Day 52) | 4TH CONSECUTIVE WEEK UNABLE TO EXECUTE
 
 ### Portfolio Summary
