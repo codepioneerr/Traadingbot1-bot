@@ -5,6 +5,21 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-09-04 — EOD Snapshot (Friday, Day 71 of API Blockage)
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)**
+**Sizing mode today:** N/A (Dual Momentum monthly) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-04 (Friday). APIs remain blocked for Day 71 — paper-api.alpaca.markets and api.telegram.org both unreachable via egress proxy (403 connect_rejected; blockage spanning Jun 22–Sep 4, 2026). No account data, positions, or orders retrievable; no trades possible. Market context (WebSearch): Strong NFP report released 8:30 AM ET — +162K jobs vs consensus +55K (massive beat); unemployment 4.1% unchanged. "Good news is bad news" scenario — stocks edged slightly lower as Treasury yields rose and Fed rate-hike odds for Sep 16 FOMC jumped. S&P 500 −0.05% (est. ~7,742 close, from Sep 3's 7,747.71). Week performance: S&P 500 +0.39% (7,711.76 prior Friday → 7,742 est. today). VIX 15.25 (MODERATE). Dual Momentum signal: GLD dominant at ~+70-80% 12m; Sep 30 rebalance is the next execution opportunity. FOMC Sep 16 — Warsh rate-hike decision; CPI/PPI data next week critical. Telegram fallback to DAILY-SUMMARY.md.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 71 consecutive trading days blocked. 3 missed rebalances (Jun 30, Jul 31, Aug 31). Next: Sep 30, 2026.**
+
+---
+
 ## 2026-09-03 — EOD Snapshot (Thursday, Day 70 of API Blockage)
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)**
