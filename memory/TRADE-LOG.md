@@ -1965,3 +1965,24 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 **Notes:** EOD routine ran 2026-09-02 (Wednesday). APIs remain blocked for Day 69 — paper-api.alpaca.markets and api.telegram.org both unreachable via egress proxy (blockage spanning Jun 22–Sep 2, 2026). Perplexity API also blocked. No account data, positions, or orders retrievable; no trades possible. Not a rebalance day (next monthly rebalance: Sep 30, 2026). Yesterday (Sep 1) portfolio was $100,000.00 cash — no change expected today. Dual Momentum signal unchanged: QQQ likely leading (12m ~+24-25%), though GLD is competitive (~+17-27% depending on reference date). Must verify authoritatively on Sep 30. Telegram fallback to DAILY-SUMMARY.md.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 69 consecutive trading days blocked. 3 missed rebalances (Jun 30, Jul 31, Aug 31). Next: Sep 30, 2026.**
+
+---
+
+## 2026-09-04 — Pre-Market Snapshot (Friday, Day 71 of API Blockage)
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Pre-market routine ran 2026-09-04 (Friday). APIs remain blocked Day 71 — paper-api.alpaca.markets, api.telegram.org, api.perplexity.ai all connect_rejected via egress proxy (blockage spanning Jun 22–Sep 4, 2026). No account data retrievable; no trades possible. Not a rebalance day (next: Sep 30, 2026).
+
+**Key macro:** August NFP +162,000 vs +55,000 consensus — massive labor beat. Unemployment 4.1% steady. VIX 15.25 (MODERATE). S&P futures +0.1%, Nasdaq futures +0.5% pre-market. Gold ~$4,469/oz (−0.23%). Strong jobs data reinforces hawkish Warsh/Fed stance; Sep FOMC rate decision in ~2 weeks.
+
+**Dual Momentum signal (estimated):** BUY GLD — GLD 12m return ~+70–80% vs QQQ ~+24–25% vs IWM ~+9–10%. Must verify via script on Sep 30.
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30 CRITICAL.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts. 71 consecutive trading days blocked.**

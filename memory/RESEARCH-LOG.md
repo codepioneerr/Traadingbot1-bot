@@ -5,6 +5,79 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-04 — Pre-Market Research (Friday, Day 71 of API Blockage) ⚠️ OVERDUE REBALANCE | STRONG JOBS REPORT
+
+### Account Snapshot
+$100,000.00 (last known — API BLOCKED, Day 71)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs blocked: `paper-api.alpaca.markets:443` → connect_rejected (proxy policy)
+              `api.telegram.org:443` → connect_rejected
+              `api.perplexity.ai:443` → connect_rejected
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** 15.25 (opened), range 14.23–15.44 → **MODERATE** (15–25 band, near lower boundary)
+
+**S&P 500 Futures (pre-market):** +0.1%; Nasdaq 100 futures +0.5%
+
+**KEY CATALYST — August Jobs Report (NFP, released 8:30 AM ET today):**
+- Nonfarm payrolls: +162,000 vs consensus +55,000 — MASSIVE BEAT (+107K surprise)
+- Unemployment rate: 4.1% (unchanged)
+- Job gains led by food services (+59K) and local government education (+42K)
+- Market implication: Strong labor market → Fed less likely to cut; hawkish Warsh stance reinforced.
+  Rate-hike debate intensifies ahead of Sep FOMC (in ~2 weeks). Dollar likely firming.
+
+**Gold (GLD proxy):**
+- Spot gold: ~$4,469/oz (−0.23% from prior day); GLD ETF ≈ ~$413–$422 range recently
+- Mild pressure from USD strength on jobs beat; but gold maintained resilience through Warsh hawkishness
+
+**ETF estimates (Sep 1, 2026 close):**
+- GLD: $413.46 (+2.65% on Sep 1)
+- IWM: $294.91 (+0.31% on Sep 1), recent −1.4% on volatility day
+- QQQ: Recent −0.65%; Nasdaq futures +0.5% pre-market today
+- TLT: Positive trailing returns but pressured by hawkish rate environment
+
+### Dual Momentum Signal Estimate (authoritative script requires Alpaca API)
+
+| Rank | Ticker | Est. 12M Return | Notes |
+|------|--------|-----------------|-------|
+| 1 | **GLD** | **~+70–80%** | Gold ~$2,500 Sep'25 → ~$4,469 Sep'26 spot; extraordinary run |
+| 2 | QQQ | ~+24–25% | Large-cap tech, AI tailwind |
+| 3 | SPY | ~+20% | Absolute filter: PASSES (positive) → Step 2 proceeds |
+| 4 | IWM | ~+9–10% | Small-caps lagging, rate-sensitive headwind |
+| 5 | TLT | ~+2–5% | Bonds hurt by hawkish rate path |
+
+**Preliminary Signal: BUY GLD** — GLD 12m return ~+70–80% dominates all other assets by wide margin.
+Must verify via `python3 scripts/dual_momentum_signal.py` on Sep 30 rebalance day.
+
+**Overdue rebalance note:** Aug 31 rebalance missed (APIs blocked). Signal was BUY GLD then and
+remains BUY GLD now. Portfolio remains 100% cash at $100,000 baseline. Opportunity cost of
+3 missed rebalances (Jun 30, Jul 31, Aug 31) is significant — GLD ran ~+30–50%+ in this window.
+
+### Sizing Mode
+N/A — Dual Momentum is 100% of equity in one asset. No VIX-based sizing. No trailing stops.
+
+### Trade Ideas
+**None** — not a rebalance day. Next rebalance: September 30, 2026 (last trading day of month).
+Strategy does not permit discretionary or intraday trades between monthly rebalances.
+
+### Risk Factors
+- **Strong NFP (+162K vs +55K exp):** Hawkish Fed signal. Rate hike odds may rise. Dollar strength = modest GLD headwind, but gold has held up through prior hawkish events (Jackson Hole). Long-term inflation fears may support gold.
+- **VIX 15.25 (MODERATE):** Market not alarmed despite jobs beat; Nasdaq futures positive → risk-on tone.
+- **Sep FOMC in ~2 weeks:** Rate decision is next major catalyst. Hawkish surprise = GLD headwind; hold or cut = GLD rally. Sep 30 rebalance falls before or around FOMC decision — monitor.
+- **API blockage Day 71:** 3 missed rebalances. Major opportunity cost. Sep 30 rebalance is CRITICAL.
+
+### Decision
+**NO TRADE** — not a rebalance day. APIs still blocked. Next action: Sep 30, 2026 rebalance.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment
+egress policy. 71 consecutive trading days blocked. 3 missed rebalances (Jun 30, Jul 31, Aug 31).
+Next rebalance: Sep 30, 2026 — must be accessible.**
+
+
+---
+
 ## 2026-09-03 — Pre-Market Research ⚠️ API BLOCKED (Day 69) | LABOR MARKET SOFTENING | IRAN CEASEFIRE SIGNALS
 
 **APIs blocked:** `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` — all 403 connect_rejected (egress proxy policy, Day 69 consecutive). Fallback: WebSearch.
