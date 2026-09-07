@@ -5,6 +5,21 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-09-07 — EOD Snapshot (Monday, Labor Day — Day 72 of API Blockage) 🏛️ MARKET CLOSED
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (market closed) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum monthly) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-07 (Monday, Labor Day). US markets closed — federal holiday. APIs remain blocked (Day 72): paper-api.alpaca.markets, api.telegram.org, api.perplexity.ai all returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Sep 7, 2026). No account data retrievable; no trades possible. Portfolio: $100,000.00 cash, unchanged. Last market close (Sep 5): S&P 500 7,718.60 (−0.38%), VIX 14.53 (LOW/MODERATE boundary), GLD ~$4,477. Dual Momentum preliminary signal: BUY GLD (~+70–80% 12m vs QQQ ~+24–25% vs IWM ~+9–10%). Next rebalance: Sep 30, 2026 (17 trading days). FOMC Sep 16 (Warsh rate decision) is the key macro event this week — markets reopen Tuesday Sep 8. Telegram fallback to DAILY-SUMMARY.md.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 72 consecutive trading days blocked. 3 missed rebalances (Jun 30, Jul 31, Aug 31). Next: Sep 30, 2026.**
+
+---
+
 ## 2026-09-07 — Market Holiday (Monday, Day 72 of API Blockage) 🏛️ LABOR DAY
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (market closed) | **Phase P&L:** $0.00 (0.00%)
