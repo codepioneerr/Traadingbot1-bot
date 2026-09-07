@@ -5,6 +5,19 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-09-07 — Market Holiday (Monday, Day 72 of API Blockage) 🏛️ LABOR DAY
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (market closed) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum monthly) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Labor Day — US markets closed. Routine ran but no trading action possible (holiday + APIs blocked Day 72). Last S&P 500 close Sep 5: 7,718.60 (−0.38%); VIX 14.53 (LOW/MODERATE boundary); GLD spot gold ~$4,477. Dual Momentum preliminary signal remains BUY GLD. Next rebalance: Sep 30, 2026 (17 trading days). APIs still blocked: paper-api.alpaca.markets, api.telegram.org, api.perplexity.ai all returning 403 connect_rejected via egress proxy. ACTION REQUIRED: Whitelist these hosts.
+
+---
+
 ## 2026-09-04 — EOD Snapshot (Friday, Day 71 of API Blockage)
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)**

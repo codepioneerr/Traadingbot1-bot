@@ -5,6 +5,55 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-07 — Market Holiday Check (Monday, Day 72 of API Blockage) 🏛️ LABOR DAY — MARKET CLOSED
+
+### Account Snapshot
+$100,000.00 (last known — API BLOCKED, Day 72)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs blocked: `paper-api.alpaca.markets:443` → connect_rejected (proxy policy)
+              `api.telegram.org:443` → connect_rejected
+              `api.perplexity.ai:443` → connect_rejected
+Research conducted via WebSearch fallback.
+
+### Market Status
+**US MARKET HOLIDAY — Labor Day, September 7, 2026.**
+NYSE and Nasdaq CLOSED. Reopens Tuesday, Sep 8, 2026 at 9:30 AM ET.
+No trading possible today (holiday + APIs blocked).
+
+### Last Close Context (Friday Sep 5, 2026 — WebSearch)
+
+**VIX:** 14.53 (+1.47%) → **LOW** (just below 15 boundary; near MODERATE zone)
+**S&P 500:** 7,718.60 (−0.38% Friday; week +0.1%)
+**Gold Spot (Sep 5):** $4,476.60 | **GLD ETF est.:** ~$410–$420 range
+**Week summary:** S&P 500 range-bound, ~1% below all-time highs. Energy, microcaps, and Asian equities led. Large-cap tech underperformed Friday.
+
+### Dual Momentum Signal Update
+SPY 12m absolute filter: PASS (positive)
+Preliminary ranking by 12m return:
+| Rank | Ticker | Est. 12M Return | Notes |
+|------|--------|-----------------|-------|
+| 1 | **GLD** | **~+70–80%** | Gold $4,476/oz vs ~$2,500/oz Sep 2025; extraordinary run |
+| 2 | QQQ | ~+24–25% | Large-cap tech momentum |
+| 3 | SPY | ~+20% | Absolute filter passes |
+| 4 | IWM | ~+9–10% | Small-caps lagging |
+| 5 | TLT | ~+2–5% | Pressured by hawkish rate environment |
+
+**Preliminary Signal: BUY GLD** — dominant by wide margin. Authoritative script runs Sep 30.
+**Next rebalance: September 30, 2026** (17 trading days away).
+
+### Action Today
+HOLD (cash). No rebalance day. Market closed. APIs blocked. Nothing to execute.
+
+### Critical Flags
+- ⚠️ Day 72 of API blockage — 3 missed rebalances (Jun 30, Jul 31, Aug 31)
+- 🎯 Sep 30 is next authoritative signal + execution day
+- 📋 ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram in egress policy
+
+### Sizing Mode
+N/A — Dual Momentum: 100% equity in one asset. No VIX-based sizing. No stops.
+
+---
+
 ## 2026-09-04 — Pre-Market Research (Friday, Day 71 of API Blockage) ⚠️ OVERDUE REBALANCE | STRONG JOBS REPORT
 
 ### Account Snapshot
