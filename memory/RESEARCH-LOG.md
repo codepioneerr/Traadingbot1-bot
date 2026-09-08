@@ -5,6 +5,68 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-08 — Pre-Market Research (Monday, Day 77 of API Blockage) ⚠️ APIS BLOCKED
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 77)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → connect_rejected (proxy policy block, Day 77)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → connect_rejected (exit 56)
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** 15.75 (opened 15.02; 52-week range 13.38–35.30) → **MODERATE** sizing mode (VIX 15–25), N/A for Dual Momentum strategy
+
+**S&P 500 Futures (premarket):** −0.25% (−19.25 pts), last ~7,702 — Dow futures down 300+ pts; Nasdaq futures slightly up
+
+**Oil:** Brent crude ~$98/bbl — Middle East tensions elevated; WTI tracking higher
+
+**10-Year Treasury Yield:** 4.80% — hawkish backdrop; rate-sensitive sectors under pressure
+
+**Sector momentum (week):**
+- Leading: Technology (XLK score 78.0, B+); AI/semiconductor strength; QQQ/VGT +21% YTD
+- Lagging: Energy (XLE) despite oil spike (geopolitical not demand-driven); Real estate (rate-sensitive); Bonds (TLT under pressure at 4.80% yield)
+
+**Key macro:** Middle East tensions driving oil spike; 10yr yield at 4.80% hawkish; S&P slightly red premarket; Dow notably weak (−300 pts futures)
+
+### Dual Momentum Signal (WebSearch estimate — authoritative script blocked)
+
+| Rank | Ticker | Est. 12M Total Return | Notes |
+|------|--------|----------------------|-------|
+| 1 | IWM | ~+33.07% | Russell 2000 small-cap leading |
+| 2 | QQQ | ~+23.69% | Nasdaq-100 tech/growth |
+| 3 | SPY | ~+20.62% | Absolute filter: PASSES (positive 12m) |
+| 4 | GLD | ~+19.70–25.99% | Wide estimate range; gold strong on geopolitics |
+| 5 | TLT | est. < +5% | Bonds lagging under 4.80% yield pressure |
+| — | SHY | ~+4–5% | Cash proxy |
+
+**Preliminary Signal: BUY IWM** (consistent with prior estimates through Sep 4)
+Must verify via `python3 scripts/dual_momentum_signal.py` before Sep 30 rebalance.
+
+### Sizing Mode
+N/A — Dual Momentum strategy: 100% equity in one asset, no VIX sizing, no trailing stops.
+
+### Trade Ideas
+None — Dual Momentum takes no discretionary or intra-month trades.
+
+### Risk Factors
+- **Middle East oil spike**: Brent ~$98/bbl; sustained high oil = inflationary pressure = hawkish Fed
+- **Dow −300 pts premarket**: Large-cap value selling off; growth (Nasdaq) outperforming relatively
+- **VIX 15.75 (MODERATE)**: Slightly elevated vs recent; mild uncertainty
+- **4.80% 10yr yield**: Headwind for rate-sensitive assets; TLT and SHY remain poor momentum candidates
+- **Day 77 of API blockage**: 3 missed rebalances (Jun 30, Jul 31, Aug 31). Next: Sep 30 — CRITICAL
+- **GLD rank uncertainty**: Wide estimate range (19–26%); could flip vs IWM if gold surges on Middle East
+
+### Decision
+**NO TRADE** — not a rebalance day (Sep 30 is next, 16 trading days away). Dual Momentum strategy permits no intraday or discretionary action between monthly rebalances. APIs still blocked — no trades possible regardless.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 77 consecutive trading days blocked. 3 missed rebalances. NEXT REBALANCE: Sep 30, 2026 — CRITICAL.**
+
+
+---
+
 ## 2026-09-07 — Market Holiday Check (Monday, Day 72 of API Blockage) 🏛️ LABOR DAY — MARKET CLOSED
 
 ### Account Snapshot
