@@ -5,6 +5,25 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-09-08 — EOD Snapshot (Tuesday, Day 73 of API Blockage) ⚠️ FIRST TRADING DAY POST-LABOR DAY
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum monthly) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-08 (Tuesday — first trading day after Labor Day). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 73 of blockage spanning Jun 22–Sep 8, 2026). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (next: Sep 30, 2026). Portfolio presumed $100,000 cash, unchanged from last known state.
+
+**Market context (estimated):** Post-Labor Day return. Markets typically see increased volume on first day back. Sep FOMC meeting approaching (~Sep 17). Warsh hawkish stance remains dominant narrative. Rate-hike odds elevated (~57-60%). Dual Momentum signal: GLD estimated leader at ~+70-80% 12m return vs QQQ ~+24-25% vs IWM ~+9-10%. Must verify authoritatively via `python3 scripts/dual_momentum_signal.py` on Sep 30.
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed. Next: Sep 30, 2026 — CRITICAL.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 73 consecutive trading days blocked. 3 missed rebalances (Jun 30, Jul 31, Aug 31). Next: Sep 30, 2026.**
+
+---
+
 ## 2026-09-07 — EOD Snapshot (Monday, Labor Day — Day 72 of API Blockage) 🏛️ MARKET CLOSED
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (market closed) | **Phase P&L:** $0.00 (0.00%)
