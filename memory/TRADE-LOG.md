@@ -5,6 +5,36 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-09-09 — EOD Snapshot (Wednesday, Day 74 of API Blockage) ⚠️ S&P DOWN 0.58% | FOMC SEP 17 APPROACHING
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum monthly) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-09 (Wednesday). `paper-api.alpaca.markets:443` and `api.telegram.org:443` remain blocked — proxy returned 403 connect_rejected (Day 74 of blockage spanning Jun 22–Sep 9, 2026). No account data, positions, or orders could be retrieved. No trades executed — Dual Momentum strategy only rebalances monthly (next: Sep 30, 2026). Portfolio presumed $100,000 cash, unchanged from last known state.
+
+**Today's market close (WebSearch — APIs blocked):**
+- **S&P 500:** ~7,629 (−0.58% day — markets lower on rising volatility and macro uncertainty heading into FOMC)
+- **VIX:** ~15.50 (+5.3% — MODERATE; elevated, markets cautious pre-FOMC Sep 17)
+- **GLD:** $398.85 (range $398.48–$404.60; gold pulling back amid dollar strength on rate-hike bets)
+- **IWM:** $294.67 (range $294.26–$296.10; small-caps under pressure — most rate-sensitive)
+- **Nasdaq:** lower, leading declines on the day
+
+**Key macro context:** FOMC Sep 17 (8 days away). Warsh hawkish stance dominant. Rate-hike odds ~57-60% (elevated, per CME FedWatch). Broad selling pressure; volatility rising. Small-caps and rate-sensitive sectors most exposed.
+
+**Dual Momentum signal:** BUY GLD (estimated ~+70–80% 12m vs QQQ ~+24–25% vs IWM ~+9–10%). Must verify authoritatively via `python3 scripts/dual_momentum_signal.py` on Sep 30. Gold pullback today ($398.85 vs recent $422+) reduces GLD's 12m advantage slightly but signal likely intact.
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed. Next: Sep 30, 2026 — CRITICAL (16 trading days away).
+
+**Tomorrow:** FOMC countdown continues (7 days). Watch for pre-FOMC positioning. GLD likely range-bound or mildly weak on rate-hike bets. No action until Sep 30 rebalance.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 74 consecutive trading days blocked. 3 missed rebalances (Jun 30, Jul 31, Aug 31). Next: Sep 30, 2026.**
+
+---
+
 ## 2026-09-08 — EOD Snapshot (Tuesday, Day 73 of API Blockage) ⚠️ FIRST TRADING DAY POST-LABOR DAY
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
