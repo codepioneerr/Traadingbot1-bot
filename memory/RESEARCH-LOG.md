@@ -5,6 +5,79 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-09 — Pre-Market Research (Tuesday, Day 79 of API Blockage)
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Sizing Mode:** N/A (Dual Momentum — monthly rebalance only)
+
+### Account State
+- Alpaca API: BLOCKED (paper-api.alpaca.markets:443 → 403 connect_rejected — Day 79, Jun 22–Sep 9, 2026)
+- Perplexity API: BLOCKED (api.perplexity.ai:443 → 403 connect_rejected)
+- Telegram API: BLOCKED (api.telegram.org:443 → 403 connect_rejected)
+- All data sourced via WebSearch fallback. Telegram fallback → DAILY-SUMMARY.md.
+
+### Market Context (WebSearch — Sep 9, 2026)
+
+**VIX:** ~15.72–16.34 (up ~2.75% from prior close) → MODERATE range (15–25)
+**S&P 500 Futures (ES):** ~7,690.50, +0.13% — cautiously bullish open
+**Brent crude:** surging toward $100/bbl — U.S.-Iran military exchanges + Saudi oil facility attacks
+**10Y Treasury yield:** ~4.79% (near Nov 2023 highs; TLT under pressure)
+
+### ETF Prices (Sep 9)
+
+| Ticker | Price | Notes |
+|--------|-------|-------|
+| SPY | ~$766.93 | S&P 500 |
+| QQQ | ~$718.61 | Nasdaq-100 |
+| IWM | ~$294.67 | Russell 2000 |
+| GLD | ~$398.85 | Gold (intraday range: $398.48–$404.60) |
+| TLT | ~$82.20 | 20yr Treasury (10Y yield ~4.79%) |
+| SHY | ~cash | T-bills |
+
+### Key Macro Events
+- **Today (Sep 9):** Unit Labor Costs report at 10:00 AM ET
+- **FOMC quiet period** in effect since Sep 5 (meeting Sep 15–16, decision Sep 16 2:00 PM ET)
+- **Sep 11 (Thu):** PPI release
+- **Sep 12 (Fri):** CPI release — critical for FOMC decision
+- **Sep FOMC rate hike odds:** ~57% chance of +25bp hike (current rate: 3.50–3.75%)
+- Fed Governor Waller (Sep 3) signaled rate hike may be appropriate
+- Hot August NFP (+162K vs +55K est.) driving hawkish expectations
+
+### Dual Momentum Signal (Estimated — Script Requires Alpaca API)
+
+| Rank | Ticker | Est. 12M Return | Notes |
+|------|--------|----------------|-------|
+| 1 | GLD | ~+65–75% | Gold elevated on Iran/oil geopolitics; still strong 12m |
+| 2 | QQQ | ~+38–42% | Tech holding; slightly revised upward from prior est. |
+| 3 | SPY | ~+32–35% | Broad market solid |
+| 4 | IWM | ~+28–35% | Small-caps: 52w low $228.90, near-high $305.18; range mid |
+| 5 | TLT | ~-10 to -14% | Bonds crushed by rate hike cycle |
+| — | SHY | ~+4–5% | Cash proxy |
+
+**Absolute filter:** SPY 12m strongly positive → PASS
+**Preliminary signal: BUY GLD** (high confidence — GLD ~+65–75% substantially leads all others)
+**Next authoritative verification:** Sep 30, 2026 (monthly rebalance day)
+
+⚠️ Note: GLD declined from Aug peak (~$422) to current ~$398. Still well above Sep 2025 levels. Signal direction unchanged.
+
+### Risk Factors
+- **Iran/U.S. military escalation + $100 Brent:** Stagflationary risk; GLD supportive (geopolitical hedge), headwind for equities + IWM
+- **Sep 16 FOMC (57% hike odds):** Rate hike would strengthen dollar, create GLD headwind, compress IWM further
+- **CPI/PPI this week (Sep 11–12):** Hot print → amplifies rate hike expectations → GLD vs USD tension
+- **U.S.-Canada trade tensions:** Additional macro headwind for equities
+- **Day 79 API blockage:** Sep 30 rebalance in 15 trading days — CRITICAL that Alpaca/Telegram are accessible by then
+
+### Trade Ideas
+None — Dual Momentum does not take discretionary or intra-month trades. Only monthly rebalance permitted.
+
+### Decision
+**NO TRADE** — not a rebalance day. Next rebalance: **Sep 30, 2026 (15 trading days away).**
+APIs blocked — no orders possible regardless. Preliminary signal: **BUY GLD**.
+
+**ACTION REQUIRED: Whitelist Alpaca (paper-api.alpaca.markets), Perplexity (api.perplexity.ai), Telegram (api.telegram.org) in remote execution environment egress policy. Day 79 of blockage. 3 missed rebalances (Jun 30, Jul 31, Aug 31). Sep 30 rebalance is CRITICAL.**
+
+
+---
+
 ## 2026-09-08 — Pre-Market Research (Monday, Day 77 of API Blockage) ⚠️ APIS BLOCKED
 
 ### Account Snapshot
