@@ -2078,3 +2078,29 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 **Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30 CRITICAL.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts. 71 consecutive trading days blocked.**
+
+---
+
+## 2026-09-10 — EOD Snapshot (Thursday, Day 74 of API Blockage)
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-10 (Thursday). APIs remain blocked Day 74 — paper-api.alpaca.markets and api.telegram.org both connect_rejected via egress proxy (blockage spanning Jun 22–Sep 10, 2026). No account data, positions, or orders retrievable; no trades possible. Not a rebalance day (next monthly rebalance: Sep 30, 2026). Portfolio remains $100,000.00 cash — no change expected.
+
+**Today's market close (WebSearch — APIs blocked):**
+- **S&P 500:** 7,591.75 (−0.58%) — declined on rising bond yields and surging oil prices
+- **VIX:** 16.46 (MODERATE — slightly elevated)
+- **Brent Oil:** Above $100/barrel — highest since July 2026 (Iran/geopolitical risk)
+- **GLD (est.):** ~$398–406 range (declining from ~$422 peak; oil surge supporting gold partially offset by higher yields)
+- **Key drivers:** Bond yields jumped, oil surged above $100, pressure on risk assets; Dow, S&P 500, and Nasdaq all extended losses
+
+**Dual Momentum signal (estimated):** BUY GLD — GLD 12m return still well ahead of IWM/QQQ despite recent pullback. Must verify via `python3 scripts/dual_momentum_signal.py` on Sep 30.
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30, 2026 CRITICAL.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 74 consecutive trading days blocked.**
