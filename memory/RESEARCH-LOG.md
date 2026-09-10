@@ -5,6 +5,95 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-10 — Pre-Market Research (Thursday, Day ~77 of API Blockage) ⚠️ FOMC NEXT WEEK | GLD PULLBACK
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline 2026-05-09; API blocked Day ~77)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → blocked (empty response)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → blocked (empty response)
+Research conducted via WebSearch fallback (Day ~77 consecutive).
+
+### Market Context (via WebSearch — all APIs blocked)
+
+**VIX:** 14.53 (+1.47%) → **AGGRESSIVE** mode (VIX < 15); N/A for Dual Momentum (no VIX sizing in this strategy)
+
+**S&P 500 Futures (pre-market ~9 AM ET):** +0.49% at ~7,659 — E-mini ESU26 range 7,644–7,660
+
+**GLD (SPDR Gold Shares):** $398.85 close Sep 9 — notable ~5.5% pullback from recent highs (~$422–423 in Aug). Significant drop into FOMC week.
+
+**IWM (Russell 2000):** ~$290.64 (down ~−1.37% recent session) — small-caps under pressure
+
+**TLT (Long-term Bonds):** $82.37 (+0.51%) — slight recovery on potential FOMC pause expectations
+
+**QQQ (Nasdaq):** Data unavailable for Sep 10; 12m return still estimated ~+24–27%
+
+**Oil:** Not retrieved — ongoing Iran/Hormuz geopolitical risk presumed elevated
+
+### Economic Calendar — Key Events Today & Upcoming
+
+| Date | Event | Notes |
+|------|-------|-------|
+| Sep 10 (today) 8:30 AM ET | **PPI Inflation** | Final major supply-side print before FOMC |
+| Sep 11 (tomorrow) | **CPI Inflation** | Critical inflation report before Fed decision |
+| Sep 15–16 | **FOMC Meeting + Rate Decision** | Warsh press conference Sep 16 at 2:30 PM ET |
+
+FOMC decision in 6 days — huge macro risk event. Markets pricing in potential rate hold or hike given hawkish Warsh stance (57–60% Sep hike odds as of Aug 28 Jackson Hole).
+
+### Sector Momentum
+
+**Top momentum sectors this week:**
+1. **XLK (Technology)** — +1.5% week, leading S&P 500; AI/semi theme intact
+2. **XLC (Communications)** — strong alongside tech; XLC/XLK correlation high
+3. **XLF (Financials)** — steady; rate-sensitive but banks benefit from higher-for-longer
+
+**Avoid/weak:**
+- **XLY (Consumer Discretionary)** — worst YTD sector; consumer spending concerns
+- **XLE (Energy)** — lagging despite elevated oil; geopolitical risk premium baked in
+
+### Dual Momentum Signal Assessment (WebSearch estimate — authoritative script requires Alpaca API)
+
+**Absolute filter (Step 1):** SPY 12m return — strongly positive (S&P 500 at ~7,659 vs ~6,100 est. Sep 2025). PASSES → proceed to relative ranking.
+
+| Rank (est.) | Ticker | Est. 12M Return | Notes |
+|-------------|--------|-----------------|-------|
+| 1 | **GLD** | ~+23% est. | $398.85 (Sep 9) vs est. ~$323 (Sep 2025); PULLBACK from Aug highs but still leading |
+| 2 | QQQ | ~+24–27% est. | Very close to GLD — ranking uncertain |
+| 3 | SPY | ~+18–20% est. | S&P absolute filter: PASSES |
+| 4 | IWM | ~+9–10% est. | $290 vs ~$265 est. Sep 2025 |
+| 5 | TLT | −3 to +3% est. | Bonds under long-run pressure |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+⚠️ **CRITICAL NOTE:** GLD pullback from ~$422 → ~$399 (−5.5%) narrows the gap vs QQQ. The 12m GLD vs QQQ ranking is now UNCERTAIN — could be very close. Must run `python3 scripts/dual_momentum_signal.py` on Sep 30 for authoritative determination.
+
+**FOMC impact on signal:** If FOMC Sep 16 is hawkish (rate hike): stronger dollar → GLD headwind → QQQ may overtake GLD as #1. If FOMC holds: GLD likely recovers and remains #1. Signal uncertainty elevated going into Sep 30 rebalance.
+
+**Preliminary Signal: BUY GLD** (subject to authoritative script; QQQ may overtake if further GLD decline)
+
+### Sizing Mode
+N/A — Dual Momentum strategy has no VIX-based sizing. 100% of equity in one asset. No trailing stops.
+
+### Trade Ideas
+None — this strategy does not take discretionary or intra-month trades. Next rebalance: **Sep 30, 2026** (20 calendar days away).
+
+### Risk Factors
+- **FOMC Sep 15–16 (6 days):** Warsh hawkish bias; rate hike would pressure GLD and tighten already-close GLD vs QQQ ranking. Most significant near-term risk to signal.
+- **PPI today + CPI tomorrow:** Hot prints → more hawkish FOMC odds → GLD headwind. Cool prints → GLD may recover ~$405–415 range.
+- **GLD 5.5% pullback:** Narrows GLD advantage over QQQ in 12m momentum race. If GLD falls below ~$380 by Sep 30, QQQ likely becomes #1.
+- **VIX slightly elevated (+1.47%):** Modest risk-off tilt heading into macro-heavy week. Not alarming at 14.53, but watch for spike if PPI/CPI hot.
+- **APIs blocked Day ~77:** Three missed rebalances (Jun 30, Jul 31, Aug 31). Cumulative opportunity cost vs deployed GLD position: estimate $8,000–$15,000 depending on entry price. **Sep 30 is the critical deadline.**
+
+### Decision
+**NO TRADE** — not a rebalance day (Sep 30 is next). Dual Momentum strategy permits no intraday or discretionary action between monthly rebalances. APIs blocked — no trades possible regardless.
+
+**Monitor:** Watch CPI tomorrow and FOMC Sep 16 for impact on GLD vs QQQ 12m race. If GLD continues falling hard (−10%+ more), the Sep 30 signal could flip to QQQ.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. ~77 consecutive trading days blocked. 3 missed rebalances. Sep 30 rebalance is 20 days away — CRITICAL.**
+
+
+---
+
 ## 2026-09-09 — Pre-Market Research (Tuesday, Day 79 of API Blockage)
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Sizing Mode:** N/A (Dual Momentum — monthly rebalance only)
