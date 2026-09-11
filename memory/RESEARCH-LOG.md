@@ -5,6 +5,75 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-11 — Pre-Market Research (Friday, Day 75 of API Blockage) ⚠️ CPI DAY
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 75)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** ~18.82 (jumped +8.38%; 28-session high) → **MODERATE** sizing mode (VIX 15–25), N/A for Dual Momentum strategy
+
+**S&P 500 Futures (premarket):** +0.56% (~+42.25 pts to 7,641) — bouncing after 4 consecutive down sessions; Oracle (ORCL) +7% post-earnings giving AI trade a boost
+
+**Oil:** WTI $102.59 (+0.11%); Brent $106.11 (−1.41%) — off peak of ~$108/$104 from earlier this week; still above $100 on Iran/Hormuz geopolitical risk
+
+**Gold / GLD:** GLD ~$396.36 (range $395.31–$402.44) — off August peak of ~$422; gold under mild pressure from higher yields but still strong 12m return
+
+**August 2026 CPI (released 8:30 AM ET today):**
+- Headline: +0.4% MoM; **+3.4% YoY** (as expected)
+- Core: +0.3% MoM; +2.4% YoY (inline with estimate)
+- Implication: Fed rate hike of 25 bps next week near-certain (FOMC Sep 16–17); fed funds rate moving from 3.5–3.75% → 3.75–4.0%
+- Market reaction: Futures bounced — priced in already; no shock
+
+**Sectors this week (leading):** Energy (XLE), Consumer Staples (XLP), Industrials (XLI), Materials (XLB)
+**Sectors this week (lagging/weakening):** Technology (XLK) — in weakening quadrant but showing early recovery signs; Real Estate; Rate-sensitive sectors
+
+**Key event:** FOMC meeting Sep 16–17 — 25 bps hike expected; CPI today confirms trajectory
+
+### Dual Momentum Signal (WebSearch estimate — authoritative script blocked)
+
+| Rank | Ticker | Est. 12M Total Return | Notes |
+|------|--------|----------------------|-------|
+| 1 | GLD | ~+25–27% est. | ~$396 vs ~$315 (Sep 2025 est.) |
+| 2 | SPY | ~+20–25% est. | S&P 500 ~7,641 vs ~$6,100 est. (Sep 2025) |
+| 3 | QQQ | ~+18–22% est. | Tech pullback from peak; recent 4-day decline |
+| 4 | IWM | ~+9–11% est. | Small-cap; rate-sensitive, underperforming |
+| 5 | TLT | ~−5% est. | Bonds crushed by rate hikes |
+| — | SHY | ~+5% est. | Cash proxy |
+
+**Absolute filter:** SPY 12m >> 0% → PASSES. Proceed to relative ranking.
+**Preliminary Signal: BUY GLD** — GLD leads estimated 12m return, boosted by inflation + geopolitical bid; QQQ/SPY close but trailing.
+⚠️ UNCERTAINTY: Must verify via `python3 scripts/dual_momentum_signal.py` on Sep 30 (next rebalance day). Oil at $102+ and 3.4% CPI could push gold higher; alternatively, rising real yields if Fed hikes aggressively could weigh on GLD.
+
+### Sizing Mode
+N/A — Dual Momentum: 100% equity in one asset. No VIX-based sizing. No trailing stops. No intraday trades.
+
+### Trade Ideas
+None — not a rebalance day. Next rebalance: **Sep 30, 2026** (19 calendar days away).
+Strategy permits ZERO discretionary or intra-month action.
+
+### Risk Factors
+- **Fed hike next week (Sep 16–17):** 25 bps near-certain. Higher real yields = mild headwind for GLD; equity volatility around announcement likely
+- **Oil $102+ (Iran/Hormuz):** Sustained above $100 = inflationary, supports hawkish Fed. Energy (XLE) benefits; consumer/tech headwind
+- **VIX 18.82 (28-session high):** Elevated uncertainty; CPI + oil shock + FOMC combo driving vol
+- **4-day S&P decline through Sep 10:** Brent/yields spike caused 4 consecutive losses; today bouncing on CPI in-line
+- **Sep 30 rebalance CRITICAL:** 4th consecutive rebalance at risk if API blockage continues; 3 already missed (Jun 30, Jul 31, Aug 31)
+- **Overdue action cost:** ~$25–30K estimated opportunity cost on $100K from missed GLD allocation since Jun 30
+
+### Decision
+**NO TRADE** — Not a rebalance day (Sep 30 is next). Dual Momentum strategy strictly prohibits intra-month action. APIs blocked regardless.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 75 consecutive trading days blocked. 3 missed rebalances (Jun 30, Jul 31, Aug 31). Next: Sep 30, 2026 — CRITICAL.**
+
+
+---
+
 ## 2026-09-10 — Pre-Market Research (Thursday, Day ~77 of API Blockage) ⚠️ FOMC NEXT WEEK | GLD PULLBACK
 
 ### Account Snapshot
