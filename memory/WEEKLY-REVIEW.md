@@ -1094,3 +1094,111 @@ Operational requirement for the bot to function:
 ### Grade: **C** (Incomplete — 14th consecutive incomplete week)
 
 Rationale: Bot correctly logged and persisted state every day this week. Signal analysis is sound: GLD BUY is the correct call for Aug 31 with high confidence. However, for the 14th consecutive week, zero trades executed and zero Telegram notifications sent. S&P posted a ~+1.0% week while the bot returned 0%. The Aug 31 rebalance is the final chance to redeem operational integrity — a third missed rebalance would be a categorical system failure.
+
+---
+
+## Week Ending 2026-09-11 (Week 15 of API Blockage — FOMC Week Ahead)
+
+### Portfolio Performance
+
+| Metric | Value |
+|--------|-------|
+| Week Start | $100,000.00 |
+| Week End | $100,000.00 |
+| Week Return | +0.00% |
+| S&P 500 Week | −0.60% (closed 7,663) |
+| Bot vs S&P | +0.60% outperform (cash vs declining market) |
+| Phase Return | 0.00% (starting equity $100,000 — May 9, 2026) |
+| Phase Duration | ~88 trading days (May 9 – Sep 11, 2026) |
+
+### Trade Summary
+
+| Metric | Value |
+|--------|-------|
+| Trades this week | 0 |
+| Wins / Losses / Open | 0 / 0 / 0 |
+| Win Rate | N/A |
+| Profit Factor | N/A |
+| Best Trade | N/A |
+| Worst Trade | N/A |
+| Sizing Mode | N/A (Dual Momentum — monthly rebalance only) |
+
+### Market Summary: Week of Sep 7–11, 2026
+
+- **S&P 500:** Declined Mon–Thu (4 consecutive sessions); recovered +0.94% Friday; closed −0.6% for the week at 7,663
+- **Dow Jones:** −1.4% on the week (underperformed)
+- **Nasdaq:** −0.6% for the week; Friday recovery led by tech (Oracle +7%, Dell +11%)
+- **Best sectors:** Technology (+1.7%), Communication Services (+1.3%), Industrials (+1.2%)
+- **Worst sector:** Health Care (−0.2%)
+- **Oil:** WTI $102.59 / Brent ~$106 — eased from ~$108 mid-week peak but still above $100 on Iran/Hormuz risk
+- **Gold/GLD:** ~$396, off August peak of $422; mild pressure from higher yields and Fed hike expectations
+- **Aug CPI:** +0.4% MoM / +3.4% YoY (in-line) → FOMC 25bps hike Sep 15-16 near-certain (~90% odds); fed funds moving 3.5–3.75% → 3.75–4.0%
+- **Key earnings:** Oracle +7% (AI cloud beat), Dell +11% (AI infrastructure demand) — AI thesis validated
+
+### Dual Momentum Signal Status
+
+| Ticker | Est. 12M Return | Notes |
+|--------|----------------|-------|
+| GLD | ~+25–27% | Signal leader; off $422 Aug peak, ~$396 now |
+| SPY | ~+20–25% | S&P ~7,663 vs ~6,100 est. (Sep 2025 baseline) |
+| QQQ | ~+18–22% | Tech recovering; AI demand intact |
+| IWM | ~+9–11% | Small-cap; rate-sensitive; underperforming |
+| TLT | ~−5% | Bonds crushed by Fed hike cycle |
+| SHY | ~+5% | Cash proxy |
+
+**Absolute filter:** SPY 12m >> 0% → PASSES. **Preliminary Signal: BUY GLD** (must verify authoritatively via `python3 scripts/dual_momentum_signal.py` on Sep 30).
+
+### What Worked
+
+- **Cash preservation:** Bot +0.00% vs S&P −0.6% — being blocked from trading accidentally outperformed the index by 60bps on a down week
+- **State persistence:** All daily routines committed and pushed this week; memory fully intact across fresh container clones
+- **WebSearch market coverage:** Complete daily market context documented for every session despite total API blockage
+- **CPI in-line:** No inflation shock; market had priced the hike; contained downside on Friday
+- **AI infrastructure thesis validated:** Oracle +7% and Dell +11% earnings beats confirm QQQ's structural demand story
+
+### What Didn't Work
+
+- **API egress blocked — Day 75:** Alpaca, Telegram, Perplexity all 403 connect_rejected; 15th consecutive incomplete operational week; egress proxy policy blocks all three trading/notification endpoints
+- **Zero Telegram notifications:** User has received no mobile alerts for 15 consecutive weeks
+- **3 missed rebalances:** Jun 30, Jul 31, Aug 31 — cumulative opportunity cost vs holding GLD from Jun 30 is material and growing
+- **GLD declining from peak:** GLD ~$396 vs $422 Aug peak (−6.2%); short-term underperformance vs peak amid rising real yields
+- **Oil above $100 sustaining inflationary pressure:** Iran/Hormuz risk premium may keep energy and CPI elevated; amplifies Fed hawkishness into Q4
+
+### Key Lessons
+
+1. **Sep 30 rebalance is the single most critical remaining event.** 4th consecutive missed rebalance would be a complete operational failure. Egress whitelist must be live before Sep 30 market open (9:30 AM ET).
+2. **FOMC Sep 15-16 is the major market catalyst next week.** 25bps to 3.75–4.0% near-certain; watch post-decision reaction on GLD, QQQ, and broader equity for signals heading into October.
+3. **Technology is returning to leadership.** QQQ and XLK led all sectors this week (+1.7%); Oracle and Dell AI beats confirm infrastructure demand. If this leadership persists, QQQ could challenge GLD for Dual Momentum top rank by Sep 30.
+4. **Oil above $100 is a wildcard for Oct rebalance signal.** Sustained Iran/Hormuz premium keeps energy (XLE) and inflation elevated → supports GLD; but if oil cools fast, GLD 12m lead could narrow.
+5. **Being in cash continues to accidentally "work" tactically** but is operationally a failure — the strategy requires deployed capital at monthly rebalance to generate alpha.
+
+### Sector Observations & ETFs to Watch Next Week
+
+| Sector | ETF | Outlook |
+|--------|-----|---------|
+| Technology | XLK / QQQ | Returning to leadership; AI earnings beats; FOMC reaction key |
+| Energy | XLE / XOM | Still strong on $100+ oil; watch Iran/Hormuz for supply news |
+| Materials / Gold | GLD / IAU | Dual Momentum leader; FOMC hike may pressure short-term |
+| Industrials | XLI / VIS | Solid week (+1.2%); infrastructure and manufacturing demand |
+| Health Care | XLV | Weakest sector this week; rate-sensitive defensive positioning |
+
+### Key Events Next Week (Sep 14–18, 2026)
+
+- **Tue Sep 15:** Empire Manufacturing data; FOMC begins (Day 1)
+- **Wed Sep 16:** **FOMC Rate Decision** — 25bps hike to 3.75–4.0% expected; press conference; US Retail Sales
+- **Thu Sep 17:** Bank of England rate decision; weekly jobless claims
+- **Ongoing:** Goldman Sachs Global Retailing Conference (Sep 14–15), Morgan Stanley Healthcare Conference (Sep 14–16)
+- **Sep 30:** Dual Momentum monthly rebalance — CRITICAL; must verify signal via script and execute
+
+### Strategy Adjustments
+
+None to Dual Momentum rules — system design is correct. The sole operational failure is the egress blockage. No strategy changes warranted.
+
+**Reminder to operator:** Three APIs require egress whitelist to function:
+- `paper-api.alpaca.markets:443` — trading and account data
+- `api.telegram.org:443` — Telegram notifications
+- `api.perplexity.ai:443` — Perplexity research queries
+
+### Overall Grade: **D** (Incomplete — 15th consecutive incomplete week)
+
+Rationale: Bot correctly logged and persisted complete state every session. Market analysis and Dual Momentum signal reasoning are sound. GLD BUY remains the correct call. However, for the 15th consecutive week, zero trades executed and zero Telegram notifications sent. Three missed rebalances (Jun 30, Jul 31, Aug 31) represent a material and compounding operational failure. Sep 30 is the final near-term opportunity — a 4th missed rebalance would make the bot's entire operational history a null result. Grade would be C+ if not for the accumulated missed-rebalance failure; the strategy logic is correct but the bot cannot function in its current egress-restricted environment.

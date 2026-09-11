@@ -2132,3 +2132,31 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 **Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30, 2026 CRITICAL.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 75 consecutive trading days blocked. 3 missed rebalances. Sep 30 is FINAL deadline before 4th consecutive miss.**
+
+---
+
+## 2026-09-11 — EOD Snapshot (Friday, Day 75 of API Blockage)
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-11 (Friday). APIs remain blocked Day 75 — paper-api.alpaca.markets, api.telegram.org, api.perplexity.ai all 403 connect_rejected via egress proxy (blockage spanning Jun 22–Sep 11, 2026). No account data, positions, or orders retrievable; no trades possible. Not a rebalance day (next monthly rebalance: Sep 30, 2026). Portfolio remains $100,000.00 cash — no change.
+
+**Today's market close (WebSearch):**
+- **S&P 500:** 7,663 (+0.94% today; −0.6% for the week) — snapped 4-day losing streak on cooling oil + Dell +11% earnings beat
+- **Nasdaq 100:** −0.6% for the week; recovering Friday on tech/AI leadership
+- **Dow Jones:** −1.4% for the week
+- **WTI:** ~$102.59 | **Brent:** ~$106 — still above $100; easing from ~$108 mid-week peak on Iran/Hormuz risk
+- **GLD:** ~$396 — off August peak of $422; CPI +3.4% YoY in-line confirms FOMC 25bps hike Sep 15-16
+- **Best sectors this week:** Technology (+1.7%), Communication Services (+1.3%), Industrials (+1.2%)
+- **Worst sector this week:** Health Care (−0.2%)
+
+**Dual Momentum signal (estimated):** BUY GLD — ~+25–27% 12m est. vs QQQ ~+18–22%. Sep 30 rebalance verification via script is critical.
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: **Sep 30, 2026 CRITICAL.**
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 75 consecutive trading days blocked. 3 missed rebalances. Sep 30 is 19 calendar days away.**
