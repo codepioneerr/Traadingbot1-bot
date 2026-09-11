@@ -2104,3 +2104,31 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 **Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30, 2026 CRITICAL.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 74 consecutive trading days blocked.**
+
+---
+
+## 2026-09-11 — Pre-Market + Market-Open Snapshot (Friday, Day 75 of API Blockage)
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Pre-market + market-open routine ran 2026-09-11 (Friday). APIs remain blocked Day 75 — paper-api.alpaca.markets, api.telegram.org, api.perplexity.ai all connect_rejected via egress proxy (blockage spanning Jun 22–Sep 11, 2026). No account data, positions, or orders retrievable; no trades possible. Not a rebalance day (next monthly rebalance: Sep 30, 2026). Dual Momentum strategy strictly prohibits intra-month discretionary action.
+
+**Today's market (WebSearch — APIs blocked):**
+- **S&P 500 futures:** +0.56% (~7,641) — bouncing after 4-day decline; CPI in-line, Oracle +7%
+- **VIX:** ~18.82 (MODERATE — 28-session high, +8.38%)
+- **WTI:** $102.59 (+0.11%) | **Brent:** $106.11 (−1.41%) — above $100 on Iran/Hormuz risk
+- **GLD:** ~$396.36 (range $395.31–$402.44) — off $422 Aug peak
+- **CPI Aug 2026:** +0.4% MoM / +3.4% YoY — Fed hike 25bps Sep 16-17 near-certain
+- **Sectors leading:** Energy (XLE), Consumer Staples (XLP), Industrials (XLI)
+- **Sectors lagging:** Technology (XLK), Real Estate (XLRE)
+
+**Dual Momentum signal (estimated):** BUY GLD — ~+25-27% 12m est. vs QQQ ~+18-22% vs IWM ~+9-11%. Must verify via `python3 scripts/dual_momentum_signal.py` on Sep 30.
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30, 2026 CRITICAL.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 75 consecutive trading days blocked. 3 missed rebalances. Sep 30 is FINAL deadline before 4th consecutive miss.**
