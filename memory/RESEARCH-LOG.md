@@ -5,6 +5,91 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-14 — Pre-Market Research (Monday, Day 76+ of API Blockage) ⚠️ FOMC THIS WEEK | OIL SURGE
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline 2026-05-09; API blocked Day 76+)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback. Telegram fallback: DAILY-SUMMARY.md
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** ~16.34 (Sep 11 close: 15.84, −11.2% from prior day's 17.84) → **MODERATE** sizing mode (VIX 15–25)
+N/A for Dual Momentum strategy (no VIX-based sizing)
+
+**S&P 500 Futures (premarket 4 AM ET):** −0.60% (~−45 pts). Catalyst: Anthropic CEO Dario Amodei called for slowing AI development over the weekend → tech selloff. Nasdaq futures −1.5%, Dow −0.2%, Russell 2000 −0.3%.
+
+**Oil — MAJOR MOVE:**
+- WTI: $102.52 (+2.47% on the day)
+- Brent: $108.34 (+3.56%) — Saudi Arabia shut a major crude pipeline following drone attacks disrupting a key Hormuz bypass route
+- Oil up ~19% over past month (Brent); persistent above $100 = inflationary; hawkish Fed ammunition
+
+**Gold / GLD:**
+- GLD open: ~$402.16 (range $398.95–$402.58)
+- 12-month return: ~+29% (PortfoliosLab data)
+- Gold supported by inflation + geopolitical bid; mild rate-hike headwind from higher real yields
+
+**FOMC — THIS WEEK:**
+- Meeting: Sep 15–16, 2026 (Mon–Tue); Decision Sep 16 at 2:00 PM ET
+- 25bp hike probability: ~83% (CME FedWatch ~56–83% range across sources; consensus: hike)
+- Current target: 3.50–3.75% → expected: 3.75–4.00%
+- Chair Warsh hawkish; 3 regional Fed presidents dissented July 29 in favor of a hike
+- Trigger: persistent 3.4% CPI (Aug), oil supply shock, energy prices above $100
+
+**Sectors (week of Sep 8–12, 2026):**
+- Leading: Energy (XLE) — +47.7% YTD; oil rally on Saudi/Iran pipeline attacks
+- Leading: Technology (XLK) — +33% YTD but under pressure today (AI slowdown narrative)
+- Lagging: Rate-sensitive (real estate, utilities) — rate hike expectations
+- Lagging: Nasdaq/QQQ — AI development concerns (Amodei weekend comments)
+
+### Dual Momentum Signal Update (WebSearch estimate — authoritative script blocked)
+
+**New data point:** IWM 12M trailing return ~33% vs GLD ~29% vs SPY ~21%
+
+| Rank | Ticker | Est. 12M Total Return | Notes |
+|------|--------|----------------------|-------|
+| 1 | IWM | ~33% (new high estimate) | Small cap outperformed; may be recent data-dependent |
+| 2 | GLD | ~29% | Gold bull run on inflation/geopolitics |
+| 3 | SPY | ~21% | S&P 500 broad market |
+| 4 | QQQ | ~18–22% est. | Tech pullback today on AI concerns |
+| 5 | TLT | ~−5% est. | Bonds crushed by rate hike cycle |
+| — | SHY | ~+5% est. | Cash proxy |
+
+**⚠️ SIGNAL UNCERTAINTY:** IWM may now lead GLD on 12M basis. This could shift Sep 30 rebalance from GLD → IWM. Must verify authoritatively via `python3 scripts/dual_momentum_signal.py` on Sep 30.
+
+**Absolute filter:** SPY 12M >> 0% → PASSES. Proceed to relative ranking.
+**Preliminary Signal (REVISED):** IWM or GLD — too close to call without the script. GLD previously leading; IWM now challenging.
+
+### Sizing Mode
+N/A — Dual Momentum: 100% equity in one asset. No VIX-based sizing. No stops. No intraday trades.
+
+### Trade Ideas
+None — not a rebalance day. Next rebalance: **Sep 30, 2026** (11 trading days away).
+Strategy permits ZERO discretionary or intra-month action.
+
+### Risk Factors
+- **FOMC Sep 16 (Tuesday):** 25bp hike near-certain. Rate goes to 3.75–4.00%. Markets may sell on the hike but rally on "one and done" language if Warsh signals a pause.
+- **Oil Surge (Brent $108):** Saudi pipeline attack. If sustained, adds to CPI → more hikes. Positive for GLD (inflation hedge); negative for IWM (rate-sensitive small caps).
+- **AI Development Slowdown Narrative:** Amodei comments hurt Nasdaq/QQQ premarket −1.5%. Could shift 12M momentum if tech corrects significantly before Sep 30.
+- **VIX 16.34:** MODERATE zone. Elevated on FOMC uncertainty + oil shock.
+- **Sep 30 rebalance CRITICAL:** 4th consecutive rebalance at risk if API blockage continues (Jun 30, Jul 31, Aug 31 all missed). ~$25–30K estimated opportunity cost from missed GLD allocation.
+- **Signal uncertainty:** IWM now challenging GLD for #1. Energy (XLE up 47.7% YTD) not in universe but shows inflationary environment that benefits GLD.
+
+### Decision
+**NO TRADE** — Not a rebalance day (Sep 30, 2026 is next). Dual Momentum strategy strictly prohibits intra-month action. APIs blocked regardless.
+
+**Key watch for Sep 30:**
+1. Run `python3 scripts/dual_momentum_signal.py` to get authoritative signal (IWM vs GLD race)
+2. FOMC outcome (hike or hold) will affect 12M returns for rate-sensitive assets (IWM, TLT)
+3. Oil/geopolitical situation — if Brent stays $108+, inflationary pressure → GLD support
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 76+ consecutive trading days blocked. 3 missed rebalances (Jun 30, Jul 31, Aug 31). Next: Sep 30, 2026 — CRITICAL (11 trading days).**
+
+---
+
 ## 2026-09-11 — Pre-Market Research (Friday, Day 75 of API Blockage) ⚠️ CPI DAY
 
 ### Account Snapshot
