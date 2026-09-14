@@ -5,6 +5,32 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-09-14 — Market-Open Snapshot (Monday, Day 76+ of API Blockage) ⚠️ FOMC THIS WEEK | OIL SURGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 | **Phase P&L:** $0.00 (0.00%)
+**Strategy:** Dual Momentum ETF Rotation | **Trades today:** 0 (not a rebalance day)
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Market-open routine ran 2026-09-14 (Monday). All APIs remain blocked (Day 76+): `paper-api.alpaca.markets`, `api.telegram.org`, `api.perplexity.ai` all returning 403 connect_rejected via egress proxy. No account data retrievable. NO TRADE — Dual Momentum strategy only rebalances monthly; next rebalance Sep 30, 2026 (11 trading days).
+
+**Market context at open (WebSearch):**
+- S&P 500 futures: −0.60% premarket (Anthropic CEO AI slowdown comments → Nasdaq −1.5%)
+- VIX: ~16.34 (MODERATE — FOMC uncertainty + oil shock)
+- Oil: WTI $102.52, Brent $108.34 (+3.56%) — Saudi pipeline drone attack
+- GLD: $402.16 open | ~+29% TTM
+- FOMC Sep 15-16 meeting; 25bp hike ~83% probability; decision Sep 16 at 2:00 PM ET
+
+**Dual Momentum signal update:** IWM may now lead GLD (~33% vs ~29% TTM). Must verify Sep 30 via `python3 scripts/dual_momentum_signal.py`. Fed hike outcome on Sep 16 will affect IWM (rate-sensitive) vs GLD (inflation hedge) relative ranking.
+
+**Tomorrow:** FOMC day 1 (Sep 15). Day before Fed decision — expect elevated volatility.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 76+ consecutive trading days blocked. 3 missed rebalances (Jun 30, Jul 31, Aug 31). Next: Sep 30, 2026 — CRITICAL (11 trading days).**
+
+---
+
 ## 2026-09-09 — EOD Snapshot (Wednesday, Day 74 of API Blockage) ⚠️ S&P DOWN 0.58% | FOMC SEP 17 APPROACHING
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
