@@ -5,6 +5,70 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-15 — Pre-Market Research (Tuesday, Day 77 of API Blockage) ⚠️ FOMC DAY 1
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 77)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** 17.62 (opened +11.24% from prior 15.84 close; elevated on FOMC anxiety + oil surge) → **MODERATE** sizing mode (VIX 15–25), N/A for Dual Momentum strategy
+
+**S&P 500 Futures (premarket):** −0.30% — market cautious on FOMC Day 1, rising oil, refinery concerns. 32% chance of positive open.
+
+**Oil:** WTI $102.69 | Brent $107.46 (+3.56%) — Iran/Middle East tensions driving surge. Persistent above-$100 oil is inflationary.
+
+**GLD:** ~$394.19 (Sep 14 close) — off $422 Aug peak; ~+28% TTM estimated.
+
+**FOMC:** Day 1 of Sep 15–16 meeting. Decision Sep 16, 2:00 PM ET. ~90% probability of 25bps hike. Markets pricing in hawkish posture given oil inflation + CPI +3.4% YoY.
+
+**Earnings this week:** No major BMO reports today (Sep 15). Quiet on corporate news.
+
+**Best sectors this week:** Energy (XLE), Communication Services (XLC) — benefiting from oil surge and AI spend narrative.
+
+**Worst sector this week:** Health Care (XLV, −3.5%+) — rate sensitivity and sector rotation.
+
+### Dual Momentum Signal (WebSearch estimate — authoritative script blocked)
+
+SPY absolute filter: PASSES (S&P 500 strongly positive YTD; 12m well above 0%).
+
+| Rank | Ticker | Est. 12M Total Return | Notes |
+|------|--------|----------------------|-------|
+| 1 | GLD | ~+28–32% est. | $394 vs ~$308 Sep 2025; strong gold bid |
+| 2 | QQQ | ~+18–22% est. | Tech/AI secular tailwind |
+| 3 | IWM | ~+9–11% est. | Small-cap lagging |
+| 4 | SPY | ~+18–20% est. | Broad market solid |
+| 5 | TLT | ~+1–3% est. | Bonds hurt by rate hike cycle |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+**Preliminary Signal: BUY GLD** — unchanged from prior weeks. Must verify via `python3 scripts/dual_momentum_signal.py` on Sep 30.
+
+### Sizing Mode
+N/A — Dual Momentum strategy uses 100% equity in one asset. No VIX-based sizing. No trailing stops. Monthly rebalance only.
+
+### Trade Ideas
+None — strategy prohibits intra-month discretionary action.
+
+### Risk Factors
+- **FOMC volatility**: Decision Sep 16 at 2:00 PM ET. Hawkish surprise = equity selloff, bond selloff, dollar spike. Could briefly spike VIX > 20.
+- **Oil above $107 Brent**: Inflationary; supports hawkish Fed. GLD may remain supported but equities under pressure.
+- **VIX jump +11%**: Elevated fear going into FOMC Day 1. Risk-off tone.
+- **3 overdue rebalances**: Jun 30, Jul 31, Aug 31 all missed due to API blockage. Sep 30 is CRITICAL — if missed, 4 consecutive months without executing strategy = strategy failure mode.
+- **GLD pullback risk**: Off $422 peak by ~$28 (−6.6%). If oil eases post-FOMC and yields spike on hike, gold may face selling pressure.
+
+### Decision
+**NO TRADE** — not a rebalance day (Sep 30, 2026 is next monthly rebalance, 11 trading days away). Dual Momentum strategy prohibits intra-month discretionary action. APIs also blocked — no trades possible regardless.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 77 consecutive trading days blocked. 3 missed rebalances. Sep 30 is CRITICAL deadline (11 trading days).**
+
+
+---
+
 ## 2026-09-14 — Pre-Market Research (Monday, Day 76+ of API Blockage) ⚠️ FOMC THIS WEEK | OIL SURGE
 
 ### Account Snapshot

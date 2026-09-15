@@ -2215,3 +2215,29 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 **Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30, 2026 — **CRITICAL (11 trading days).**
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 76 consecutive trading days blocked. 3 missed rebalances. Sep 30 is 16 calendar days away.**
+
+## 2026-09-15 — Pre-Market + Market-Open Snapshot (Tuesday, Day 77 of API Blockage) ⚠️ FOMC DAY 1
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Pre-market + market-open routine ran 2026-09-15 (Tuesday, FOMC Day 1). All APIs remain blocked (Day 77): `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` all returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Sep 15, 2026). No account data, positions, or orders retrievable. Portfolio remains $100,000 cash — unchanged since last confirmed state. No trades executed; Dual Momentum strategy prohibits intra-month discretionary action. Next rebalance: Sep 30, 2026 (11 trading days).
+
+**Today's market context (APIs blocked — WebSearch fallback):**
+- S&P 500 futures: −0.30% premarket — cautious on FOMC Day 1 (decision Sep 16, 2:00 PM ET)
+- VIX: 17.62 (opened +11.24% from 15.84; elevated pre-FOMC; MODERATE mode)
+- Oil: WTI $102.69 | Brent $107.46 (+3.56%) — Iran/Middle East tensions; above $100 for weeks
+- GLD: ~$394.19 (Sep 14 close); ~+28–32% TTM est. → Dual Momentum signal: BUY GLD
+- FOMC: 25bps hike ~90% probability; decision Sep 16 — elevated vol likely
+- Best sectors this week: Energy (XLE), Communication Services (XLC)
+- Worst sector: Health Care (XLV, −3.5%+)
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30, 2026 — **CRITICAL (11 trading days).**
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 77 consecutive trading days blocked. 3 missed rebalances. Sep 30 is the absolute deadline before 4th consecutive miss.**
+
+---
