@@ -2241,3 +2241,32 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 77 consecutive trading days blocked. 3 missed rebalances. Sep 30 is the absolute deadline before 4th consecutive miss.**
 
 ---
+
+## 2026-09-15 — EOD Snapshot (Tuesday, Day 77 of API Blockage) ⚠️ FOMC DAY 1
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-15 (Tuesday, FOMC Day 1). All APIs remain blocked (Day 77): `paper-api.alpaca.markets:443` and `api.telegram.org:443` both returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Sep 15, 2026). No account data, positions, or orders retrievable. Portfolio remains $100,000 cash — unchanged since last confirmed state. No trades executed; Dual Momentum strategy prohibits intra-month discretionary action. Next rebalance: Sep 30, 2026 (11 trading days).
+
+**Today's market close (APIs blocked — WebSearch fallback):**
+- **S&P 500:** −0.45% (est. close ~7,585) | **Dow:** −0.64% | **Nasdaq:** −0.80%
+- **10Y Treasury yield:** 5.02% — highest since 2007, surpassing the 2023 peak; major headwind for equities
+- **VIX:** ~17–18 (MODERATE; elevated pre-FOMC)
+- **Oil:** WTI/Brent above $100 — Iran/Middle East risk persists; inflationary pressure
+- **Driver:** FOMC Day 1 nerves + 10Y yield spike + spillover from Anthropic CEO AI safety commentary (Nasdaq −0.80%)
+- **Dual Momentum signal (est.):** BUY GLD — ~+28–32% 12m est.; must verify via script on Sep 30
+
+**Key upcoming events:**
+- **Sep 16 (Wed):** FOMC Decision 2:00 PM ET + Powell press conference — 25bps hike ~90% probability; elevated volatility likely
+- **Sep 30 (Tue):** Monthly rebalance — CRITICAL (15 calendar days away; 4th consecutive miss if blocked)
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30, 2026 — **CRITICAL.**
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 77 consecutive trading days blocked. 3 missed rebalances. Sep 30 is 15 calendar days away — absolute deadline.**
+
+---
