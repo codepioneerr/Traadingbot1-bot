@@ -5,6 +5,95 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-16 — Pre-Market + Market-Open (Wednesday, Day 78 of API Blockage) ⚠️ FOMC DECISION DAY
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+**ET Time at run:** ~9:05 AM ET (pre-market; market opens 9:30 AM ET)
+
+### API Status
+- `paper-api.alpaca.markets:443` → 403 connect_rejected (Day 78 of blockage)
+- `api.perplexity.ai:443` → blocked (Day 78)
+- `api.telegram.org:443` → blocked (Day 78)
+- Research conducted via WebSearch fallback. Telegram fallback: DAILY-SUMMARY.md
+
+### Account Snapshot (last known — API blocked)
+| Field | Value |
+|-------|-------|
+| Equity | $100,000.00 (est.) |
+| Cash | $100,000.00 (100%) |
+| Positions | 0 (no positions) |
+| Open orders | 0 |
+
+### Market Context (WebSearch — APIs blocked)
+
+**VIX:** ~17.10 (Sep 15 close, +8% from 15.84; FOMC volatility expected today) → **MODERATE** sizing mode (N/A for Dual Momentum)
+
+**S&P 500 Futures (premarket Sep 16):** +0.3% (7,717–7,722 range); Dow +161pts (+0.3%); Nasdaq-100 +0.5%
+- Futures bounced after Sep 15 selloff (S&P −0.45%, Nasdaq −0.80% yesterday)
+- Intraday: SPY −1.54% to $729.46, QQQ −2.04% to $661.73 (likely post-market data)
+
+**FOMC (CRITICAL — Today, 2:00 PM ET):**
+- 25bps rate hike to 3.75%–4.00% — 93% probability (CME FedWatch)
+- First hike since 2023; driven by: Iran/energy shock, inflation above target, solid jobs market
+- Current rate: 3.50%–3.75% (held since Dec 2025, Chair Warsh)
+- Hawkish Jackson Hole speech (Aug 28) + solid Aug jobs report → hike priced in
+- Note: Headline CPI falling (3.4% Jul) argues for patience — any dovish surprise could spark rally
+- Press conference: 2:30 PM ET; dot plot released → elevated vol expected all afternoon
+- 10Y Treasury yield: 5.02% (record high since 2007, hit Sep 15) — major headwind for equities
+
+**Oil:**
+- WTI: $104.68/bbl (−1.09% today)
+- Brent: ~$109.21 (Sep 15 close) → still well above $100 on Iran/Hormuz tensions
+- Saudi East-West pipeline drone attack → supply disruption → persistent inflationary pressure
+
+**Dual Momentum Universe Prices (estimated):**
+| Ticker | Price (est.) | 12M Return (est.) | Notes |
+|--------|-------------|-------------------|-------|
+| GLD | $394.15 | +28–32% | Gold bid on Iran/safe-haven; 52-wk range $333–510 |
+| QQQ | $661.73 | +20–25% | AI rally fading; down 2.04% today; 10Y yield headwind |
+| SPY | $729.46 | +18–20% | Down 1.54% today; FOMC sell-the-news risk |
+| IWM | ~$296 (est.) | +10–15% | Small-caps lagging; rate-sensitive; underperforming |
+| TLT | ~$82 (est.) | −10 to −15% | Bonds crushed; 10Y at 5.02% = historic headwind |
+| SHY | ~$81 (est.) | +4–5% | Cash proxy; benefits from higher short rates |
+
+**Preliminary Dual Momentum Signal: BUY GLD**
+- Absolute filter: SPY 12m strongly positive (>+18%) → PASS (do not default to SHY)
+- Relative ranking: GLD #1 at ~+28–32% 12m TTM
+- ⚠️ Must verify with `python3 scripts/dual_momentum_signal.py` on Sep 30 (needs Alpaca API)
+
+**Best sectors YTD (Sep 2026):** Energy +47.7% (XLE), Technology (XLK), Communication Services (XLC)
+**Worst sectors YTD:** Consumer Discretionary −5.0% (XLY), Real Estate (rate-sensitive)
+**Week momentum leaders:** Energy (XLE), Communications (XLC)
+
+### Sizing Mode
+N/A — Dual Momentum strategy has no VIX-based sizing. 100% equity in one asset. No trailing stops. No intra-month discretionary trades.
+
+### Trade Ideas
+**NONE** — This strategy does not take discretionary or intra-month trades.
+- Not a rebalance day (next: Sep 30, 2026 — 10 trading days away)
+- APIs blocked regardless — no orders executable
+
+### Risk Factors
+1. **FOMC hike + hawkish dot plot**: 25bps hike virtually certain; if dot plot shows 50bps path, equities could sell hard. GLD may catch a bid (inflation hedge) or drop (higher real rates). Elevated vol 2–4 PM ET.
+2. **10Y yield at 5.02%**: Historic level suppressing equities and gold. If yield spikes further on hike, GLD 12m return lead over QQQ could compress.
+3. **Oil persistently above $100**: Iran/Hormuz risk keeps inflation elevated → supports hawkish Fed stance → rate risk for all risk assets.
+4. **4th consecutive missed rebalance approaching**: If APIs remain blocked through Sep 30, strategy misses 4th month. Cumulative opportunity cost growing.
+5. **SPY/QQQ intraday weakness**: Both down 1.5–2% today — FOMC sell-the-news pattern common. Portfolio is 100% cash so no exposure, but watching for Sep 30 entry signal.
+
+### Market-Open Execution
+**NO TRADES EXECUTED.**
+- Reason 1: Not a rebalance day (Dual Momentum rebalances only on last trading day of month)
+- Reason 2: Alpaca API blocked — no orders executable regardless
+- Reason 3: FOMC Decision Day (2:00 PM ET) — even if rebalance, would wait for post-announcement clarity
+
+### Decision
+**HOLD (100% cash) — NO TRADE**
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. Day 78 of blockage. 3 missed rebalances. Next rebalance: Sep 30, 2026 — ABSOLUTE DEADLINE (10 trading days).**
+
+---
+
 ## 2026-09-15 — Pre-Market Research (Tuesday, Day 77 of API Blockage) ⚠️ FOMC DAY 1
 
 ### Account Snapshot

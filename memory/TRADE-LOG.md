@@ -2270,3 +2270,32 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 77 consecutive trading days blocked. 3 missed rebalances. Sep 30 is 15 calendar days away — absolute deadline.**
 
 ---
+
+## 2026-09-16 — Pre-Market + Market-Open Snapshot (Wednesday, Day 78 of API Blockage) ⚠️ FOMC DECISION DAY
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Pre-market + market-open routine ran 2026-09-16 (Wednesday, FOMC Day 2 — Decision Day). All APIs remain blocked (Day 78): `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` all returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Sep 16, 2026). No account data, positions, or orders retrievable. Portfolio remains $100,000 cash — unchanged since last confirmed state. No trades executed; Dual Momentum strategy prohibits intra-month discretionary action. Next rebalance: Sep 30, 2026 (10 trading days).
+
+**Today's market context (APIs blocked — WebSearch fallback):**
+- S&P 500 futures: +0.3% premarket; intraday SPY −1.54%, QQQ −2.04% (FOMC nerves/sell-the-news risk)
+- VIX: ~17.10 (Sep 15 close; elevated pre-decision; MODERATE mode)
+- Oil: WTI $104.68 (−1.09%), Brent ~$109 — Iran/Hormuz tensions; above $100 for weeks
+- GLD: ~$394.15 (flat premarket); ~+28–32% TTM est. → Dual Momentum signal: BUY GLD
+- FOMC: 25bps hike to 3.75%–4.00% — 93% probability; decision 2:00 PM ET + dot plot + Powell presser
+- 10Y Treasury: 5.02% (record since 2007) — equity headwind
+- Best sectors YTD: Energy (+47.7%), Technology, Communications
+- Worst sectors YTD: Consumer Discretionary (−5.0%), Real Estate
+
+**Preliminary Dual Momentum signal (est.):** BUY GLD — ~+28–32% 12m TTM; must verify via script on Sep 30.
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30, 2026 — **CRITICAL (10 trading days).**
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 78 consecutive trading days blocked. 3 missed rebalances. Sep 30 is the absolute deadline before 4th consecutive miss.**
+
+---
