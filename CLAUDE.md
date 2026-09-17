@@ -27,13 +27,35 @@ Required variables:
 
 All scripts read `.env` automatically when run locally. When run as a remote routine (scheduled agent), credentials must be exported as process environment variables instead — `.env` will not be present in that context.
 
+## Network Requirements (remote routines)
+
+Scheduled runs go through a policy-enforcing egress proxy. These hosts must be
+allowed by the environment's network policy or **every routine is a no-op**:
+
+| Host | Used by |
+|------|---------|
+| `paper-api.alpaca.markets:443` | account, positions, orders, trades |
+| `data.alpaca.markets:443` | quotes, momentum signal |
+| `api.telegram.org:443` | all notifications |
+| `api.perplexity.ai:443` | research |
+
+A denial surfaces as `curl: (56) CONNECT tunnel failed, response 403`. This is
+an organization policy decision — it cannot be fixed from inside a session and
+must not be routed around. Diagnose with:
+
+    curl -sS "$HTTPS_PROXY/__agentproxy/status"
+
+Fix by allowing the hosts in the environment's network policy:
+https://code.claude.com/docs/en/claude-code-on-the-web
+
 ## Scripts
 
 | Script | Purpose |
 |--------|---------|
 | `scripts/alpaca.sh` | Alpaca REST API wrapper — account, positions, orders, buy, trailing-stop, close, cancel |
 | `scripts/perplexity.sh` | Perplexity research query wrapper — accepts a query string, returns text |
-| `scripts/telegram.sh` | Sends a Telegram message; falls back to writing `DAILY-SUMMARY.md` if credentials are absent |
+| `scripts/telegram.sh` | Sends a Telegram message; falls back to writing `DAILY-SUMMARY.md` if credentials are absent **or the send fails** |
+| `scripts/persist.sh` | Commits and pushes memory files; reattaches a detached HEAD to `main` first, retries with backoff |
 
 All scripts are `chmod +x`. Run them directly: `bash scripts/alpaca.sh account`.
 

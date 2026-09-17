@@ -119,9 +119,12 @@ Next rebalance: [date of last trading day this month]"
 STEP 7 — COMMIT AND PUSH (only if TRADE-LOG changed)
 ═══════════════════════════════════════════════════════
   If STEP 5 executed:
-    git add memory/TRADE-LOG.md
-    git commit -m "rebalance $DATE: [CURRENT_HOLDING] → $SIGNAL"
-    git push origin main
-    On push failure: git pull --rebase origin main && git push origin main
+    bash scripts/persist.sh "rebalance $DATE: [CURRENT_HOLDING] → $SIGNAL" memory/TRADE-LOG.md
+
+    Use persist.sh — do NOT hand-roll `git add/commit/push origin main`. A
+    scheduled run can start on a detached HEAD, where `git push origin main`
+    pushes the stale branch, reports success, and silently strands the commit.
+    persist.sh reattaches HEAD to main first and retries the push with backoff.
+    If it exits non-zero the rebalance record did NOT persist — report that.
 
   If no trade: skip commit.

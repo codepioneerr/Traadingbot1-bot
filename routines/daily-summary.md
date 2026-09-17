@@ -77,7 +77,10 @@ vs SPY same period:  [±spy_comparison]%
 ═══════════════════════════════════════════════════════
 STEP 6 — COMMIT AND PUSH (mandatory)
 ═══════════════════════════════════════════════════════
-  git add memory/TRADE-LOG.md
-  git commit -m "EOD snapshot $DATE"
-  git push origin main
-  On push failure: git pull --rebase origin main && git push origin main
+  bash scripts/persist.sh "EOD snapshot $DATE" memory/TRADE-LOG.md
+
+  Use persist.sh — do NOT hand-roll `git add/commit/push origin main`. A
+  scheduled run can start on a detached HEAD, where `git push origin main`
+  pushes the stale branch, reports success, and silently strands the commit.
+  persist.sh reattaches HEAD to main first and retries the push with backoff.
+  If it exits non-zero the state did NOT persist — report that.

@@ -84,7 +84,10 @@ STEP 5 — Send ONE Telegram message
 ═══════════════════════════════════════════════════════
 STEP 6 — COMMIT AND PUSH (mandatory)
 ═══════════════════════════════════════════════════════
-  git add memory/WEEKLY-REVIEW.md memory/TRADE-LOG.md
-  git commit -m "weekly review $DATE"
-  git push origin main
-  On push failure: git pull --rebase origin main && git push origin main
+  bash scripts/persist.sh "weekly review $DATE" memory/WEEKLY-REVIEW.md memory/TRADE-LOG.md
+
+  Use persist.sh — do NOT hand-roll `git add/commit/push origin main`. A
+  scheduled run can start on a detached HEAD, where `git push origin main`
+  pushes the stale branch, reports success, and silently strands the commit.
+  persist.sh reattaches HEAD to main first and retries the push with backoff.
+  If it exits non-zero the review did NOT persist — report that.

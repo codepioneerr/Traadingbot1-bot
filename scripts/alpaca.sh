@@ -31,12 +31,23 @@ DATA_BASE="${ALPACA_DATA_ENDPOINT:-https://data.alpaca.markets}"
 api() {
   local method="$1" path="$2" body="${3:-}"
   local url="${BASE}${path}"
-  local args=(-s -X "$method"
+  local args=(-sS -X "$method"
     -H "APCA-API-KEY-ID: ${ALPACA_API_KEY}"
     -H "APCA-API-SECRET-KEY: ${ALPACA_SECRET_KEY}"
     -H "Content-Type: application/json")
   [[ -n "$body" ]] && args+=(-d "$body")
-  curl "${args[@]}" "$url"
+  local out rc=0
+  # '|| rc=$?' is required: under `set -e` a bare failing assignment aborts the
+  # subshell before the exit code can be inspected.
+  out="$(curl "${args[@]}" "$url" 2>&1)" || rc=$?
+  # Without this an empty body from a failed request reaches json.tool and
+  # surfaces as a parse error, hiding the real network/auth cause.
+  if (( rc != 0 )); then
+    echo "ERROR: Alpaca request failed (curl exit $rc): $method $path" >&2
+    echo "$out" >&2
+    return 1
+  fi
+  printf '%s' "$out"
 }
 
 subcommand="${1:-}"

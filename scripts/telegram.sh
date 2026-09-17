@@ -50,9 +50,17 @@ print(json.dumps({
 }))
 " "$TELEGRAM_CHAT_ID" "$msg")"
 
-curl -fsS -X POST \
+# A send failure must never lose the message: fall back to the local file so the
+# alert survives, and keep exit 0 so the calling routine still completes.
+if send_err="$(curl -fsS -X POST \
   "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
   -H "Content-Type: application/json" \
-  -d "$payload"
-
-echo
+  -d "$payload" 2>&1)"; then
+  echo "$send_err"
+  echo
+else
+  printf "\n---\n## %s (fallback — Telegram send failed)\n%s\n\n> send error: %s\n" \
+    "$stamp" "$msg" "$send_err" >> "$FALLBACK"
+  echo "[telegram fallback] send FAILED, appended to DAILY-SUMMARY.md" >&2
+  echo "[telegram fallback] $send_err" >&2
+fi
