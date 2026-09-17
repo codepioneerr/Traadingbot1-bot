@@ -5,6 +5,78 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-17 — Pre-Market Research (Thursday, Day 79 of API Blockage) ⚠️ POST-FOMC HIKE
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API BLOCKED Day 79)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → 403 connect_rejected (empty response)
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** 17.20 (range 16.79–18.03; prev close 17.10; +0.58%) → **MODERATE** sizing mode (VIX 15–25)
+N/A for Dual Momentum strategy — no VIX-based sizing used
+
+**S&P 500 Futures (premarket):** ESU26 +0.49% at 7,662.50 (range 7,654.50–7,668.00)
+
+**Oil:** WTI $102.13 (−0.29%), Brent $105.81 — Saudi East-West pipeline attack fears eased; still above $100
+
+**FOMC (Sep 15–16 — CONCLUDED):**
+- 25bps hike confirmed Sep 16 → federal funds rate target now 3.75%–4.00%
+- First rate hike since 2023; driven by persistent inflation + elevated energy prices
+- Next FOMC meeting: Oct 27–28, 2026
+- Market reaction yesterday: Dow −0.75%, S&P mixed, Nasdaq held
+
+**Economic calendar today (Sep 17):**
+- US Industrial Production MoM: forecast −0.2% (reflecting slower industrial activity)
+- No major Fed speakers scheduled
+
+**Sector performance this week:**
+- **Leading:** Technology (+1.5%), Health Care, Financials, Energy
+- **Lagging:** Consumer Discretionary, Real Estate (rate-sensitive; hit hardest by FOMC hike)
+
+### Dual Momentum Signal (estimated — authoritative script requires Alpaca API)
+
+| Rank | Ticker | Est. 12M Total Return | Notes |
+|------|--------|----------------------|-------|
+| 1 | **IWM** | ~+33.07% | Small-caps had strong run; leading TTM |
+| 2 | SPY | ~+20.62% | Absolute filter: PASSES (+positive) |
+| 3 | GLD | ~+18.20–19.70% | Gold bid on Iran/geopolitical risk |
+| 4 | QQQ | ~unknown | Est. similar to SPY or slightly above |
+| 5 | TLT | ~negative | Rate hike environment; bonds underperform |
+| — | SHY | ~+4–5% | Cash proxy |
+
+**SPY absolute filter: PASSES** (~+20.62% > 0%) → proceed to relative ranking
+**Preliminary Signal: BUY IWM** — highest estimated 12m return (~+33.07%)
+
+⚠️ IMPORTANT: Must verify via `python3 scripts/dual_momentum_signal.py` on Sep 30 before rebalancing.
+Previous Aug 20 estimate also pointed to IWM; consistent reading.
+
+### Sizing Mode
+N/A — Dual Momentum holds 100% equity in one asset. No VIX-based sizing. No trailing stops.
+
+### Trade Ideas
+None — Dual Momentum strategy takes no discretionary or intra-month trades.
+Next rebalance: **Sep 30, 2026** (9 trading days away).
+
+### Risk Factors
+- **Post-FOMC: rate hike environment** — 25bps hike to 3.75%–4.00% confirmed. Hawkish signaling of further hikes; headwind for growth and rate-sensitive assets (TLT, QQQ, IWM to some extent)
+- **Oil above $100** — WTI $102.13, Brent $105.81. Saudi pipeline attack fears easing but Iran/Hormuz risk persists. Inflationary pressure supports further Fed tightening
+- **IWM sensitivity to rates** — Small-caps more exposed to cost-of-capital increases. Post-FOMC, IWM 12m lead may narrow if selloff accelerates
+- **API blockage Day 79** — 3 missed rebalances (Jun 30, Jul 31, Aug 31). Sep 30 is 9 trading days away; 4th consecutive miss is critical risk
+- **Industrial production softening** — Forecast −0.2% MoM suggests manufacturing slowdown underway
+
+### Decision
+**NO TRADE** — not a rebalance day. Next rebalance: Sep 30, 2026. Strategy permits no intraday or discretionary action between monthly rebalances. APIs blocked — no trades possible regardless.
+
+**⚠️ CRITICAL: ACTION REQUIRED — Whitelist Alpaca, Perplexity, and Telegram hosts in remote execution environment egress policy. 79 consecutive trading days blocked. 3 missed rebalances. Sep 30 is absolute deadline (9 trading days).**
+
+
+---
+
 ## 2026-09-16 — Pre-Market + Market-Open (Wednesday, Day 78 of API Blockage) ⚠️ FOMC DECISION DAY
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Phase P&L:** $0.00 (0.00%)
