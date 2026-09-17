@@ -2324,3 +2324,32 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 78 consecutive trading days blocked. 3 missed rebalances. Sep 30 is the absolute deadline before 4th consecutive miss.**
 
 ---
+
+## 2026-09-17 — Market-Open Snapshot (Thursday, Day 79 of API Blockage)
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Pre-market + market-open routine ran 2026-09-17 (Thursday, post-FOMC). All APIs remain blocked (Day 79): `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` all returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Sep 17, 2026). No account data, positions, or orders retrievable. Portfolio remains $100,000 cash — unchanged since last confirmed state. No trades executed; Dual Momentum strategy prohibits intra-month discretionary action. Next rebalance: Sep 30, 2026 (9 trading days).
+
+**Rule check (market-open):**
+- Rebalance day? NO — Sep 30 is next rebalance. No order permitted.
+- API accessible? NO — Alpaca 403 connect_rejected. No order possible.
+- Result: **NO TRADE** (double-confirmed: strategy rule + API blockage)
+
+**Today's market open context (via WebSearch fallback):**
+- **S&P 500 Futures:** +0.49% premarket (ESU26 7,662.50) — modest relief rally post-FOMC
+- **VIX:** 17.20 (range 16.79–18.03; MODERATE)
+- **Oil:** WTI $102.13 (−0.29%), Brent $105.81 — Saudi pipeline attack fears eased slightly
+- **FOMC:** 25bps hike confirmed Sep 16 → 3.75%–4.00%. Next meeting: Oct 27–28.
+- **Dual Momentum est. signal:** BUY IWM (~+33.07% 12m TTM) — must verify on Sep 30
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30, 2026 — **CRITICAL (9 trading days).**
+
+**⚠️ ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 79 consecutive trading days blocked. 3 missed rebalances. Sep 30 is the absolute deadline before 4th consecutive miss.**
+
+---
