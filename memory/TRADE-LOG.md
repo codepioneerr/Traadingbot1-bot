@@ -5,6 +5,36 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-09-18 — Market-Open Snapshot (Friday, Day 80 of API Blockage) ⚠️ POST-FOMC RELIEF
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Pre-market + market-open routine ran 2026-09-18 (Friday, Day 80 of API blockage, post-FOMC). All APIs remain blocked: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` all returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Sep 18, 2026). No account data, positions, or orders retrievable. Portfolio remains $100,000 cash — unchanged since last confirmed state. No trades executed; Dual Momentum strategy prohibits intra-month discretionary action. Next rebalance: Sep 30, 2026 (8 trading days).
+
+**Rule check (market-open):**
+- Rebalance day? NO — Sep 30 is next rebalance. No order permitted.
+- API accessible? NO — Alpaca 403 connect_rejected. No order possible.
+- Result: **NO TRADE** (double-confirmed: strategy rule + API blockage)
+
+**Today's market context (APIs blocked — WebSearch fallback):**
+- **S&P 500 Futures:** ~+0.10–+0.20% premarket — post-FOMC relief after 3-session losing streak
+- **VIX:** 14.53 (prev close 15.44, opened 14.15) — sharp drop from 17.25 (Sep 17); fear easing post-FOMC
+- **Oil:** WTI $100.05 (−1.9%), Brent $104.33 — Saudi crude supply easing; Saudi-Houthi strikes ongoing
+- **FOMC:** 25bps hike confirmed Sep 16 → 3.75%–4.00%. Next meeting: Oct 27–28
+- **10Y Treasury:** ~5.0% — elevated; equity valuation headwind persists
+- **Dual Momentum est. signal:** BUY IWM (~+33.07% 12m TTM) — must verify Sep 30 via script
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30, 2026 — **CRITICAL (8 trading days).**
+
+**⚠️ ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 80 consecutive trading days blocked. 3 missed rebalances. Sep 30 is the absolute deadline before 4th consecutive miss.**
+
+---
+
 ## 2026-09-14 — Market-Open Snapshot (Monday, Day 76+ of API Blockage) ⚠️ FOMC THIS WEEK | OIL SURGE
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 | **Phase P&L:** $0.00 (0.00%)

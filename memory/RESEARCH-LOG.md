@@ -5,6 +5,92 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-18 — Pre-Market Research (Friday, Day 80 of API Blockage) ⚠️ APIS STILL BLOCKED
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API BLOCKED Day 80)
+Cash: 100% (est.) | Positions: 0 | Open orders: 0
+APIs blocked: `paper-api.alpaca.markets:443` → 403 connect_rejected (org policy)
+              `api.telegram.org:443` → 403 connect_rejected
+              `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback (Perplexity unavailable).
+
+### Market Context (WebSearch fallback — APIs blocked)
+
+**VIX:** ~14.53 (prev close 15.44; opened 14.15; Sep 18 range ~14.15–15.44) → **AGGRESSIVE** sizing (VIX < 15)
+  - Significant drop from 17.25 (Sep 17 close) — post-FOMC relief, oil pullback reducing fear
+  - N/A for Dual Momentum strategy — no VIX-based sizing
+
+**S&P 500 Futures (premarket):** Modest positive ~+0.10–+0.20% (ESU26) — relief after 3-day losing streak
+  - Post-FOMC digest: 25bps hike (to 3.75%–4.00%) confirmed Sep 16, market absorbing
+  - AI data center capex boom continues to underpin tech/growth sentiment
+
+**Oil:** WTI $100.05 (−1.9%), Brent $104.33
+  - Saudi–Houthi strikes ongoing but Saudi crude supply easing; WTI pulling back from $102–105 range
+  - Still elevated ($100+) on Iran/Hormuz risk — inflationary pressure persists
+
+**Earnings (Sep 18):** Very light — Progressive Corp (PGR) August earnings release only
+  - No major market-moving earnings expected today
+
+**Economic Calendar (Sep 18):** Quiet — Fed decision already delivered Sep 16
+  - Advance Retail Sales (Aug) released Sep 16; no major data expected today
+  - Next major catalyst: Oct 27–28 FOMC meeting
+
+**10Y Treasury:** ~4.9–5.0% (elevated under FOMC 3.75%–4.00% regime; equity headwind persists)
+
+### Sector Performance This Week (Sep 14–18)
+**Best this week:**
+1. Technology / Communications — AI data center capex boom; resilient despite rate headwinds
+2. Consumer Discretionary (+0.46%) — selective consumer strength; WMT beat Q2 revenue
+3. Healthcare (+0.24%) — defensive rotation bid post-FOMC
+
+**Worst this week:**
+- Energy (−3.34%) — WTI pulling back from recent highs despite YTD still +47.7%; Saudi supply easing
+- Financial (−1.25%) — rate sensitivity; higher-for-longer Fed signals; margin compression fears
+- Transportation (−1.55%) — energy cost pressures, slowing macro fears
+
+### Dual Momentum Signal (WebSearch estimate — authoritative script requires Alpaca API)
+
+| Rank | Ticker | Est. 12M Total Return | Status |
+|------|--------|----------------------|--------|
+| 1 | IWM | ~+33.07% | LEADER (preliminary) |
+| 2 | QQQ | ~+25–30% | 2nd |
+| 3 | SPY | ~+20.62% | Absolute filter: **PASSES** |
+| 4 | GLD | ~+28–32% est. | 3rd (gold bid on Iran risk) |
+| 5 | TLT | ~+2–5% est. | Lagging under rate pressure |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+⚠️ IWM 12m return (33.07%) and SPY absolute filter (positive) both confirmed via WebSearch.
+Authoritative ranking requires `python3 scripts/dual_momentum_signal.py` — blocked until API restored.
+
+**Preliminary Signal: BUY IWM** (unchanged from prior entries; 80th consecutive session)
+
+### Sizing Mode
+N/A — Dual Momentum only rebalances monthly. No VIX-based sizing or stops.
+
+### Trade Ideas
+None — strategy does not permit intra-month discretionary trades.
+Next rebalance: **Sep 30, 2026** (8 trading days away — CRITICAL, 4th consecutive rebalance missed if APIs remain blocked).
+
+### Risk Factors
+- **API blockage Day 80**: 3 missed rebalances (Jun 30, Jul 31, Aug 31). Sep 30 approaching in 8 sessions.
+- **Oil persistent $100+**: Iran/Hormuz ongoing. Even with today's WTI pullback (-1.9%), elevated oil = Fed staying hawkish = equity headwind
+- **Rate environment**: 10Y ~5.0%, Fed 3.75%–4.00%, no cuts signaled. High-rate regime compresses valuations
+- **IWM concentration risk**: 100% single ETF when deployed. Small-caps especially sensitive to rate burden on small companies
+- **Sep 30 deadline**: If APIs remain blocked, 4th consecutive monthly rebalance will be missed. Cumulative opportunity cost ~$10,000+ on $100K
+
+### Decision
+**NO TRADE** — Sep 18 is NOT a rebalance day (Sep 30 is next, 8 trading days).
+Strategy strictly prohibits intra-month action regardless. APIs also blocked (trade physically impossible).
+
+**⚠️ CRITICAL ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in egress policy by Sep 30:**
+- `paper-api.alpaca.markets:443`
+- `api.perplexity.ai:443`
+- `api.telegram.org:443`
+80 consecutive trading days blocked. 3 missed rebalances. **Sep 30 is the absolute deadline.**
+
+---
+
 ## 2026-09-17 — Pre-Market Research (Thursday, Day 79 of API Blockage) ⚠️ POST-FOMC HIKE
 
 ### Account Snapshot
