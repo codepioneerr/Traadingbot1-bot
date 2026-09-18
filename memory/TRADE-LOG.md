@@ -2408,3 +2408,33 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 **⚠️ ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 79 consecutive trading days blocked. 3 missed rebalances. Sep 30 is the absolute deadline before 4th consecutive miss.**
 
 ---
+
+---
+
+## 2026-09-18 — EOD Snapshot (Friday, Day 80 of API Blockage) ⚠️ FOMC AFTERMATH / VIX RELIEF
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-18 (Friday, Day 80 of API blockage, Week 16 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` all returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Sep 18, 2026). No account data, positions, or orders retrievable. Portfolio remains $100,000 cash, unchanged from starting equity — no trades executed since inception. Dual Momentum strategy prohibits intra-month discretionary action; only monthly rebalance on Sep 30 can change positions.
+
+**Today's market context (APIs blocked — WebSearch fallback):**
+- **S&P 500:** Post-FOMC relief Friday; markets recovered after 3-session FOMC-week selloff
+- **VIX:** 14.53 (prev Thu close 15.44; peaked ~17.25 mid-week on FOMC nerves) — sharp fear easing; market relief post-decision
+- **Oil:** WTI $100.05 (−1.9%), Brent $104.33 — Saudi supply slightly easing; Hormuz risk persists above $100
+- **FOMC:** 25bps hike CONFIRMED Sep 16 → Fed Funds 3.75%–4.00%. Next meeting Oct 27–28. Additional hike forecasted before year-end.
+- **10Y Treasury:** ~5.0% — elevated; equity valuation headwind but relief rally on FOMC certainty
+- **Week in review:** S&P 500 approx. −0.3% to −0.5% on FOMC week (down Mon–Wed, partial recovery Thu–Fri); Nasdaq slightly outperformed; Dow underperformed
+
+**Dual Momentum signal estimate (Oct 1 rebalance — CRITICAL):**
+- Authoritative script (`dual_momentum_signal.py`) requires Alpaca API — cannot run until egress restored
+- Best estimate: BUY IWM (~+33% 12m TTM) or BUY GLD (~+25–27% 12m TTM) — script will resolve ranking
+- Sep 30, 2026 is the ABSOLUTE DEADLINE for 4th consecutive monthly rebalance
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30, 2026 — **CRITICAL (8 trading days).**
+
+**⚠️ ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 80 consecutive trading days blocked. 3 missed rebalances. Sep 30 is the absolute deadline before 4th consecutive miss.**

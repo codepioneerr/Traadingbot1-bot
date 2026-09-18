@@ -1202,3 +1202,130 @@ None to Dual Momentum rules — system design is correct. The sole operational f
 ### Overall Grade: **D** (Incomplete — 15th consecutive incomplete week)
 
 Rationale: Bot correctly logged and persisted complete state every session. Market analysis and Dual Momentum signal reasoning are sound. GLD BUY remains the correct call. However, for the 15th consecutive week, zero trades executed and zero Telegram notifications sent. Three missed rebalances (Jun 30, Jul 31, Aug 31) represent a material and compounding operational failure. Sep 30 is the final near-term opportunity — a 4th missed rebalance would make the bot's entire operational history a null result. Grade would be C+ if not for the accumulated missed-rebalance failure; the strategy logic is correct but the bot cannot function in its current egress-restricted environment.
+
+---
+
+## Weekly Review — Week of Sep 14–18, 2026 (16th Consecutive Incomplete Week)
+
+### Performance Summary
+
+| Metric | Bot | S&P 500 | Delta |
+|--------|-----|---------|-------|
+| Week Return | 0.00% | ~−0.5% est. | +0.5% (accidentally flat) |
+| Phase Return (since Jun 22) | 0.00% | +est. varies | N/A (no baseline) |
+| Current Equity | $100,000 (est.) | — | — |
+| Trades | 0 | — | — |
+| Win Rate | N/A | — | — |
+| Profit Factor | N/A | — | — |
+
+> All equity figures are last-known estimates — Alpaca API blocked since Jun 22.
+
+### Closed Trades This Week
+
+None — no trades executed (API blocked + not a rebalance week).
+
+### Open Positions
+
+None — 100% cash since inception.
+
+### Key Event: FOMC Rate Decision — Sep 16, 2026
+
+The defining event of the week was the Federal Reserve's September rate decision:
+- **Decision:** +25bps to 3.75%–4.00% (93% probability pre-meeting; unanimous)
+- **Market reaction:** Sell-the-news on Wed; mild relief rally Thu–Fri as traders re-priced certainty
+- **VIX path:** 17.25 (Mon/Tue peak) → 15.44 (Thu) → 14.53 (Fri) — sharp fear easing by week-end
+- **S&P 500:** Approximately −0.3% to −0.5% for the week on net; FOMC vol compressed post-decision
+- **Oil:** WTI pulled back slightly to ~$100 from $104–105 highs; Saudi supply normalization
+- **Fed forward guidance:** Fed Chair Warsh signaled persistent inflation risk; one additional hike likely before year-end (Nov or Dec)
+
+### Market Summary: Week of Sep 14–18, 2026
+
+- **S&P 500:** ~−0.3% to −0.5% on FOMC week (estimated; exact data unavailable — APIs blocked)
+- **Dow Jones:** Underperformed on FOMC Wednesday selloff
+- **Nasdaq:** Resilient; AI/tech names recovered Thu–Fri; slight outperformance vs Dow
+- **VIX:** Started elevated ~17.25 (FOMC nerves); closed ~14.53 (post-FOMC relief)
+- **Oil:** WTI ~$100–105 range; Brent ~$104–107; Iran/Hormuz tensions keeping floor above $100
+- **Gold/GLD:** ~$394–396; mild pressure from 5%+ 10Y yield but geopolitical bid intact
+- **10Y Treasury:** ~5.0%+ (elevated since 2007 equivalent) — headwind for equities, tailwind for bonds if rate cycle nears peak
+
+### Dual Momentum Signal Status
+
+| Ticker | Est. 12M Return | Signal Status |
+|--------|----------------|--------------|
+| IWM | ~+33% est. | Candidate #1 (UNVERIFIED) |
+| GLD | ~+25–27% est. | Candidate #2 (UNVERIFIED) |
+| QQQ | ~+22–25% est. | Candidate #3 |
+| SPY | ~+20–22% est. | Absolute filter: PASSES |
+| TLT | ~−3% to −5% | Below cash proxy |
+| SHY | ~+5% | Cash proxy baseline |
+
+**Authoritative signal:** Requires `python3 scripts/dual_momentum_signal.py` via Alpaca API — cannot run until egress restored. Sep 30 rebalance is CRITICAL.
+
+### What Worked
+
+- **Cash in FOMC week:** Bot 0.00% vs S&P ~−0.5% — being blocked from trading again accidentally "worked" on a net-down week (thin silver lining)
+- **State persistence fully intact:** All 5 daily routines (Mon–Fri) committed and pushed successfully; memory complete across fresh container clones
+- **FOMC thesis played out as expected:** 25bps hike confirmed; sell-the-news on Wed; relief Friday — all noted in pre-market research
+- **VIX returned to complacency range:** 14.53 close signals markets have digested the rate path; less uncertainty heading into Oct
+- **Oil pulled back:** WTI ~$100 from $105 highs; mild deflation of energy/inflation concerns; helpful for GLD vs cash comparison
+
+### What Didn't Work
+
+- **API egress blocked — Day 80:** Alpaca, Telegram, Perplexity all 403 connect_rejected; 16th consecutive incomplete operational week
+- **Zero Telegram notifications:** User has received NO mobile alerts for 16 consecutive weeks (since Jun 22, 2026)
+- **3 missed monthly rebalances:** Jun 30, Jul 31, Aug 31 all missed — cumulative opportunity cost material and compounding
+- **Sep 30 deadline is 8 trading days away:** Failure to whitelist before Sep 30 market open means 4th consecutive missed rebalance and complete operational failure since inception
+- **Perplexity research blocked:** Cannot run authoritative Dual Momentum queries; cannot verify IWM vs GLD ranking for Sep 30 rebalance
+- **FOMC tightening creating equity headwind:** 3.75–4.00% Fed Funds + 5% 10Y yield constrains equity upside; cash in Alpaca paper account earns nothing (no sweep rate on paper accounts)
+
+### Key Lessons
+
+1. **Sep 30 is the single most critical event in this bot's entire history.** A 4th consecutive missed rebalance makes the project a complete null result since inception. Egress whitelist must be live before Sep 30, 9:30 AM ET. This is not a monitoring note — it is an emergency.
+2. **FOMC uncertainty drives VIX; certainty deflates it.** VIX went 17.25 → 14.53 in 48 hours post-decision. This is textbook; the market fears uncertainty more than rate hikes per se.
+3. **Fed tightening cycle may be nearing terminal.** One more hike likely (Nov or Dec) but the end is in sight. When the cycle peaks, growth assets (QQQ, IWM) could re-rate sharply higher; Dual Momentum will capture this.
+4. **GLD holding $390–400 despite 5% yields** is surprisingly resilient. Iran/Hormuz geopolitical risk provides a floor; if this persists, GLD could maintain top Dual Momentum rank vs IWM through year-end.
+5. **Post-FOMC volatility relief often creates short-term momentum.** Sectors that lagged during FOMC uncertainty (tech, small-cap) often outperform in the 2–3 weeks post-decision. This is context for Oct rebalance signal.
+
+### Sector Observations & ETFs to Watch Next Week (Sep 21–25, 2026)
+
+| Sector | ETF | Outlook |
+|--------|-----|---------|
+| Technology | XLK / QQQ | Post-FOMC relief candidate; AI demand intact; watch for 5%+ 10Y yield impact |
+| Small Cap | IWM | Rate-sensitive but potential post-FOMC bounce; Dual Momentum top candidate |
+| Materials / Gold | GLD / IAU | Geopolitical bid maintains floor; 5% real yield headwind persists |
+| Energy | XLE / XOM | WTI ~$100 floor on Iran risk; Saudi normalization could cap upside |
+| Real Estate | VNQ | Most rate-sensitive; avoid in 5%+ yield environment |
+
+### Key Events Next Week (Sep 21–25, 2026)
+
+- **Mon Sep 21:** Fed officials speaking (post-FOMC interpretation window); any guidance on Nov hike timing
+- **Tue Sep 22:** Consumer Confidence, Richmond Fed Manufacturing
+- **Wed Sep 23:** Existing Home Sales
+- **Thu Sep 24:** Weekly Jobless Claims; New Home Sales
+- **Fri Sep 25:** Fed Chair Warsh speaking (market-moving risk)
+- **Ongoing:** Sep 30 rebalance countdown (7–8 trading days)
+
+### Strategy Adjustments
+
+None to Dual Momentum rules — strategy logic remains correct. Sole operational failure is egress blockage.
+
+**Sep 30 rebalance preparation checklist (must complete BEFORE Sep 30):**
+1. ☐ Whitelist `paper-api.alpaca.markets:443` in egress policy
+2. ☐ Whitelist `api.telegram.org:443` in egress policy
+3. ☐ Whitelist `api.perplexity.ai:443` in egress policy
+4. ☐ Run `python3 scripts/dual_momentum_signal.py` on Sep 30 to get authoritative signal
+5. ☐ Execute rebalance trade (BUY signal winner, full position)
+6. ☐ Place trailing stop immediately after fill
+7. ☐ Send Telegram confirmation
+
+**Reminder to operator:** Three APIs require egress whitelist to function:
+- `paper-api.alpaca.markets:443` — trading and account data
+- `api.telegram.org:443` — Telegram notifications  
+- `api.perplexity.ai:443` — Perplexity research queries
+
+Fix at: https://code.claude.com/docs/en/claude-code-on-the-web
+
+### Overall Grade: **D** (Incomplete — 16th consecutive incomplete week)
+
+Rationale: Routine execution and state persistence remain perfect — all 5 daily snapshots documented with market context and committed successfully. FOMC week coverage was thorough and predictions accurate. However, 80 consecutive trading days of API blockage means zero trades, zero Telegram notifications, and 3 missed rebalances. The Sep 30 deadline makes this week the last before a 4th consecutive operational failure. Until egress is restored, the bot's grade cannot improve regardless of strategy quality. The strategy is sound; the environment is broken.
+
