@@ -5,6 +5,79 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-21 — Pre-Market Research (Monday, Day 81 of API Blockage) ⚠️ REBALANCE IN 7 TRADING DAYS
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 81)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block, Day 81)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** 14.93 (open 14.96, +0.81%) → **AGGRESSIVE** sizing mode (VIX < 15); N/A for Dual Momentum strategy
+
+**S&P 500 Futures (premarket):** +0.70% (+54.25 pts to ~7,766) — bulls taking control into Monday open; Nasdaq 100 +0.8%
+
+**Oil:** WTI $97.56/bbl (−2.73%), Brent ~$101–104/bbl est. — falling 4th straight session (longest streak in 3 months); Middle East tension easing slightly; supply fears receding
+
+**10Y Treasury:** ~4.94% — elevated; rate headwind persists but market still grinding higher
+
+**US Manufacturing:** August output −0.3%, capacity utilization 75.7% — soft factory data; not alarming but confirms industrial deceleration
+
+**Week Ahead — Fed Speakers (10 appearances):**
+- Wall Street watching for signals on post-September hike path (Fed funds at 3.75%–4.00%)
+- Hawkish tone = risk-off; dovish pause signal = relief rally catalyst
+- September FOMC minutes due later in week — elevated focus
+
+**Earnings This Week:**
+- Light earnings week; Tuesday has 11 reports; no mega-cap catalysts
+
+**Sector Performance:**
+- **Leading (weekly):** XLC (Communications) +, XLK (Technology) +
+- **Leading (YTD):** XLE (+47.7% — energy), XLK (#2 — tech/AI)
+- **Lagging (weekly):** XLE — pulling back despite YTD leadership
+- **Worst (YTD):** XLY (Consumer Discretionary −5.0%)
+- **Dual Momentum universe context:** QQQ (tech) likely outperforming short-term; IWM (small-cap) mixed given soft manufacturing
+
+### Dual Momentum Signal (WebSearch estimate — authoritative script requires Alpaca API)
+
+| Rank | Ticker | Est. 12M Total Return | Notes |
+|------|--------|----------------------|-------|
+| 1 | QQQ | ~+28–32% est. | AI/tech rally; XLK leading YTD |
+| 2 | IWM | ~+10–12% est. | Small-caps, domestic bias; soft manufacturing headwind |
+| 3 | GLD | ~+22–26% est. | Gold bid on Middle East risk; Iran tensions persist |
+| 4 | SPY | ~+20–22% est. | Absolute filter: PASSES (strongly positive) |
+| 5 | TLT | ~+2–5% est. | Bonds under rate pressure at 4.94% 10Y |
+| — | SHY | ~+4–5% est. | Cash proxy |
+
+⚠️ NOTE: Rankings are estimates only — authoritative `dual_momentum_signal.py` requires Alpaca API. QQQ vs IWM #1 rank is particularly uncertain given recent crosscurrents (tech leading but small-cap domestic skew). Must run script on Sep 30.
+
+**Preliminary Signal: BUY QQQ or IWM** — script will determine final ranking on Sep 30.
+
+### Sizing Mode
+N/A — Dual Momentum strategy has no VIX-based sizing. 100% of equity in one asset. No trailing stops.
+
+### Trade Ideas
+None — this strategy does not take discretionary or intra-month trades. Current position: 100% cash ($100,000).
+
+### Risk Factors
+- **Fed speaker risk (10 appearances this week):** Hawkish tone could pressure equities; any pause signal = relief rally. Critical for IWM (rate-sensitive small-caps)
+- **Oil pullback accelerating (WTI −2.73%):** WTI below $98 softens inflationary pressure — marginally positive for equities and Fed flexibility
+- **10Y at 4.94%:** Still elevated. QQQ (growth/tech) sensitive to rate compression; TLT likely to remain laggard
+- **Soft manufacturing data:** US industrial deceleration may weigh on IWM more than large-cap indices
+- **VIX 14.93 (near AGGRESSIVE threshold):** Markets feeling calm — risk is complacency before Oct FOMC (Oct 27–28)
+- **Sep 30 rebalance (7 trading days):** CRITICAL — 4th missed rebalance if APIs still blocked
+
+### Decision
+**NO TRADE** — not a rebalance day (Sep 30, 2026 is the last trading day of September — 7 trading days away). Dual Momentum strategy permits NO intra-month discretionary action. APIs still blocked — no trades possible regardless.
+
+**ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 81 consecutive trading days blocked. 3 missed rebalances (Jun 30, Jul 31, Aug 31). Sep 30, 2026 is the CRITICAL deadline — 4th consecutive miss would further compound opportunity cost.**
+
+---
+
 ## 2026-09-18 — Pre-Market Research (Friday, Day 80 of API Blockage) ⚠️ APIS STILL BLOCKED
 
 ### Account Snapshot
