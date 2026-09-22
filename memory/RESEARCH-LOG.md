@@ -5,6 +5,70 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-22 — Pre-Market Research (Tuesday, Day 82 of API Blockage) ⚠️ CRITICAL: Sep 30 Rebalance in 6 Trading Days
+
+### Account Snapshot (API BLOCKED — last known state)
+- **Portfolio:** $100,000.00 cash (100%) — unchanged since inception
+- **Positions:** None
+- **Open Orders:** None
+- **API status:** `paper-api.alpaca.markets:443` → 403 connect_rejected (Day 82 of egress blockage spanning Jun 22–Sep 22, 2026)
+- **Telegram:** `api.telegram.org:443` → 403 connect_rejected (falling back to RESEARCH-LOG)
+- **Perplexity:** `api.perplexity.ai:443` → 403 connect_rejected (falling back to WebSearch)
+
+### Market Context (WebSearch fallback — APIs blocked)
+
+**VIX:** ~14.67–14.95 (borderline AGGRESSIVE/MODERATE boundary at 15; for reference only — Dual Momentum uses no VIX sizing)
+
+**S&P 500 Futures:** ~flat / −0.01% premarket — mixed open. Polymarket: 53% chance positive open. Context: AI-led rally Monday, Tuesday near-flat consolidation.
+
+**Oil:** WTI $93.18/bbl, Brent $101.51/bbl — elevated; Iran/Hormuz tensions persist; down from Sep 17 highs (~$102–106).
+
+**Economic Calendar (week of Sep 21–25):**
+- Light data week; no major CPI/PPI/FOMC
+- 10 Federal Reserve speakers this week — markets parsing rate path signals post-Sep FOMC
+- Earnings today: AZO (AutoZone), KBH (KB Home)
+- Technology breakout underway; oil and yield pullback supporting equity bid
+
+**Sector Momentum:**
+- Leading this week: XLC (Communications), XLK (Technology) — AI/tech rally continues
+- Leading YTD 2026: XLE (Energy, +47.7%), XLK (Technology)
+- Lagging: Real Estate (rate pressure), Consumer Discretionary (cautious spending forward)
+
+### Dual Momentum Signal Estimate (Sep 30 Rebalance — CRITICAL, 6 Trading Days)
+
+**SPY absolute filter:** +20.62% 12m return → **PASSES** (>0%) — proceed to relative ranking
+
+| Rank | Ticker | Est. 12M Total Return | Notes |
+|------|--------|-----------------------|-------|
+| 1 | **IWM** | ~+33.07% | Small-cap leading; YTD +22.47% |
+| 2 | QQQ | ~+21.8% | Big-tech strength |
+| 3 | SPY | ~+20.62% | Absolute filter asset |
+| 4 | GLD | ~+18–20% | Iran/gold bid; YTD −5.4% (2026 pullback) |
+| 5 | TLT | est. negative/flat | Rate pressure continues; 10Y ~5% |
+| — | SHY | ~+4–5% | Cash proxy, not competitive |
+
+⚠️ **Preliminary Signal: BUY IWM** (consistent reading since ~Aug 20). Authoritative script (`python3 scripts/dual_momentum_signal.py`) requires Alpaca API — must run on Sep 30 once egress restored or immediately if APIs unblock before then.
+
+### Sizing Mode
+**N/A** — Dual Momentum strategy has no VIX-based sizing. 100% of equity deployed in one asset at rebalance. No trailing stops.
+
+### Trade Ideas
+**None** — Strategy prohibits discretionary intra-month trades. Only monthly rebalance signal permitted.
+
+### Risk Factors
+- **Sep 30 critical deadline:** 4th consecutive missed rebalance if APIs still blocked. 3 already missed (Jun 30, Jul 31, Aug 31). Cumulative opportunity cost material on $100K.
+- **IWM ranking stability:** IWM still leading at +33% vs QQQ +21.8%. Gap is substantial — ranking flip unlikely but must verify with authoritative script.
+- **GLD YTD weakness:** Despite strong 12m return, GLD down −5.4% YTD 2026. Momentum may be fading. Still ranks 4th — no threat to IWM at #1.
+- **Oil elevated ($93–101):** Persistent Hormuz risk. Inflationary. Hawkish Fed persists.
+- **10 Fed speakers this week:** Rate path uncertainty; potential for short-term volatility.
+
+### Decision
+**NO TRADE** — Not a rebalance day (Sep 30 is next, 6 trading days). Strategy prohibits discretionary intra-month action. APIs still blocked (Day 82) — no trades possible regardless of strategy rules.
+
+**⚠️ CRITICAL ACTION REQUIRED: Whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in remote execution environment egress policy. 82 consecutive trading days blocked. 3 missed rebalances. Sep 30, 2026 is the ABSOLUTE DEADLINE before 4th consecutive miss. Fix at: https://code.claude.com/docs/en/claude-code-on-the-web**
+
+---
+
 ## 2026-09-21 — Pre-Market Research (Monday, Day 81 of API Blockage) ⚠️ REBALANCE IN 7 TRADING DAYS
 
 ### Account Snapshot
