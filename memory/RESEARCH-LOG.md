@@ -5,6 +5,76 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-23 — Pre-Market Research (Wednesday, Day 83 of API Blockage) ⚠️ SEP 30 REBALANCE IN 5 DAYS
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 83)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback (Perplexity blocked).
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** ~14.21 (−4.44% from prior close) → **AGGRESSIVE** sizing mode (VIX < 15), N/A for Dual Momentum strategy
+
+**S&P 500 Futures (premarket):** ~+0.12% — minor recovery after 3 consecutive sessions of losses; initial weakness on Trump UNGA speech threatening to "annihilate" Iran, partially recovered. SPY ~$772.48 premarket (−0.12% earlier), ESU26 +0.12%.
+
+**Oil:**
+- WTI: ~$88.72–$90.50/bbl
+- Brent: ~$98.47/bbl (−1.87% from Sep 22 close) — dipping below $100 for first time in recent weeks; slight relief
+
+**Key macro:**
+- No major data releases identified for Sep 23
+- Next FOMC: Oct 27–28, 2026
+- Fed Funds rate: 3.75%–4.00% (25bps hike Sep 16)
+- 10Y Treasury: ~5.0% — elevated; equity valuation headwind
+
+**Sectors this week (Sep 16–20, 2026):**
+- Leading: Energy (+3.7%), Financials (+2.4%), Communications (XLC)
+- Improving: Technology (XLK) — picking up relative momentum
+- Lagging: Consumer Discretionary — worst YTD
+
+**Geopolitical:** Trump threatened to "annihilate" Iran at UNGA; Hormuz risk persists but Brent breaking below $100 suggests some tension relief. S&P 500 still sits ~0.44% off record highs.
+
+### Dual Momentum Signal (WebSearch estimate — authoritative script requires Alpaca API)
+
+Absolute filter: SPY 12-month return strongly positive → PASS (proceed to ranking)
+
+| Rank | Ticker | Est. 12M Total Return | Notes |
+|------|--------|----------------------|-------|
+| 1 | IWM or GLD | ~+30–35% | Must verify with script |
+| 2 | QQQ | ~+20–25% | Big-tech resilient |
+| 3 | SPY | ~+18–20% | Absolute filter: PASSES |
+| 4 | GLD or IWM | ~+25–30% | Ranking IWM vs GLD uncertain |
+| 5 | TLT | ~+2–5% | Bonds lagging under rate pressure |
+| — | SHY | ~+4–5% | Cash proxy |
+
+⚠️ NOTE: Authoritative `dual_momentum_signal.py` requires Alpaca data API — cannot run until egress restored. IWM vs GLD rank is the key uncertainty.
+
+**Preliminary Signal: BUY IWM or BUY GLD** (must verify Sep 30 with script)
+
+### Sizing Mode
+N/A — Dual Momentum strategy: 100% equity in one asset, no VIX-based sizing, no trailing stops.
+
+### Trade Ideas
+None — strategy does not permit discretionary or intra-month trades.
+
+### Risk Factors
+- **Iran/UNGA escalation**: Trump "annihilate" threat at UN General Assembly; if military action materializes, oil would spike sharply, VIX would jump, equities sell off. Primary risk to any Q3/Q4 momentum.
+- **Oil relief**: Brent dipping below $100 is positive for inflation outlook, but remains elevated. WTI $88–90 suggests domestic supply improving.
+- **Rate environment**: 10Y at ~5%, Fed Funds 3.75–4%. Further hike at Oct 27–28 FOMC possible. IWM (small-cap) more rate-sensitive than GLD.
+- **FOMC uncertainty**: No data releases today. Market in "wait and watch" mode on Oct meeting.
+- **83 days of missed API access**: Jun 30, Jul 31, Aug 31 rebalances all missed — 3 consecutive missed rebalances. Cumulative opportunity cost ~$10,000–$15,000 on $100K.
+
+### Decision
+**NO TRADE** — not a rebalance day (Sep 30 is next, 5 trading days). Strategy permits no intraday or discretionary action between monthly rebalances. APIs still blocked — no trades possible regardless.
+
+**⚠️ CRITICAL: Sep 30, 2026 is the ABSOLUTE DEADLINE — 5 trading days. Must whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy to execute the Sep 30 rebalance. 83 consecutive trading days blocked. 3 missed rebalances.**
+
+---
+
 ## 2026-09-22 — Pre-Market Research (Tuesday, Day 82 of API Blockage) ⚠️ CRITICAL: Sep 30 Rebalance in 6 Trading Days
 
 ### Account Snapshot (API BLOCKED — last known state)
