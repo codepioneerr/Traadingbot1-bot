@@ -5,6 +5,54 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-24 — Pre-Market Research (Thursday, Day 86 of API Blockage) ⚠️ SEP 30 REBALANCE IN 4 DAYS
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 86)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback (all external APIs blocked).
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** 15.18 (up on day, reflecting increased demand for downside protection) → **MODERATE** sizing mode (VIX 15-25), N/A for Dual Momentum strategy
+
+**S&P 500 Futures (premarket):** +0.49% (ESU26) — recovering from overnight losses; 10Y T-note yield ~4.79%. Major indexes finished lower yesterday.
+
+**Oil:**
+- WTI: ~$92.71/bbl
+- Brent: ~$101.61/bbl (~+2.4% prior session) — elevated on Middle East geopolitical tensions (Trump-Iran UN speech, Iran president responding at UNGA)
+
+**Key macro events today (Sep 24):**
+- Initial Jobless Claims (8:30 AM ET)
+- New Residential Sales (10:00 AM ET)
+- No CPI, FOMC, or major earnings catalysts today
+- Next FOMC: Oct 27–28 (policymakers signaling possible additional hike after 3.75%–4.00% Sep decision)
+
+**Sector performance this week:**
+- Top: Conglomerates (+0.87%), Consumer Discretionary (+0.46%), Healthcare (+0.24%); Energy YTD leader (+47.7%)
+- Weak: Energy (−3.34% WoW despite YTD strength), Transportation (−1.55%), Financials (−1.25%)
+
+**Key catalysts:**
+- Fed hawkish: USD at 2-month high, gold at weekly low
+- Middle East: Trump/Iran UN confrontation; geopolitical premium in crude
+- US-China: Trump/Xi meeting imminent; trade talks key focus
+
+### Rebalance Status
+- Today: NOT a rebalance day
+- Next rebalance: **Sep 30, 2026** (last trading day of September — **4 trading days**)
+- Overdue rebalances: Jun 30, Jul 31, Aug 31 — all missed due to API blockage
+- Estimated signal (unverified — API blocked): IWM likely #1 12-month momentum
+- CRITICAL: Sep 30 must not be missed — 4th consecutive miss would be unacceptable
+
+### Decision: **HOLD** (Not rebalance day — Dual Momentum prohibits intra-month trading)
+
+### Trade Ideas: N/A (Dual Momentum — monthly rebalance only; next opportunity Sep 30)
+
+---
+
 ## 2026-09-23 — Pre-Market Research (Wednesday, Day 83 of API Blockage) ⚠️ SEP 30 REBALANCE IN 5 DAYS
 
 ### Account Snapshot

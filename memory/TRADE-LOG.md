@@ -5,6 +5,34 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-09-24 — Market-Open Snapshot (Thursday, Day 86 of API Blockage) ⚠️ SEP 30 REBALANCE IN 4 DAYS
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Pre-market + market-open routine ran 2026-09-24 (Thursday, Day 86 of API blockage). All APIs remain blocked: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Sep 24, 2026). No account data, positions, or orders retrievable. Portfolio remains $100,000 cash — unchanged since last confirmed state. No trades executed; Dual Momentum strategy prohibits intra-month discretionary action. Next rebalance: Sep 30, 2026 (4 trading days).
+
+**Rule check (market-open):**
+- Rebalance day? NO — Sep 30 is next rebalance. No order permitted.
+- API accessible? NO — Alpaca 403 connect_rejected. No order possible.
+- Result: **NO TRADE** (double-confirmed: strategy rule + API blockage)
+
+**Today's market context (APIs blocked — WebSearch fallback):**
+- **VIX:** 15.18 (up, MODERATE range) — increased demand for downside protection; all 3 major indexes lower yesterday
+- **S&P 500 Futures:** +0.49% premarket (ESU26) — recovering; 10Y yield ~4.79%
+- **Oil:** WTI $92.71, Brent $101.61 — elevated on Middle East tensions (Trump-Iran UNGA confrontation)
+- **Events today:** Initial Jobless Claims (8:30 AM), New Home Sales (10:00 AM) — no major catalysts
+- **Fed:** Hawkish posture; USD at 2-month high; Oct 27-28 next FOMC
+- **Sectors:** Conglomerates/DiscretionaryHealthcare leading; Energy/Transportation/Financials lagging this week
+
+**⚠️ CRITICAL ACTION REQUIRED: Sep 30 rebalance is 4 trading days away. This will be the 4th consecutive missed rebalance if APIs are not unblocked. Whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in remote execution environment egress policy NOW.**
+
+---
+
 ## 2026-09-18 — Market-Open Snapshot (Friday, Day 80 of API Blockage) ⚠️ POST-FOMC RELIEF
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
