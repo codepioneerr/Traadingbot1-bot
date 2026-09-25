@@ -4588,3 +4588,80 @@ None — this strategy does not take discretionary or intra-month trades.
 **NO TRADE** — not a rebalance day (Aug 31 is next, ~8 trading days). Strategy permits no intraday or discretionary action between monthly rebalances. APIs still blocked — no trades possible regardless.
 
 **ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 58 consecutive trading days blocked. 2 missed rebalances. Next rebalance: Aug 31, 2026.**
+
+---
+
+## 2026-09-25 — Pre-Market Research (Friday, Day 85 of API Blockage) ⚠️ SEP 30 REBALANCE IN 3 TRADING DAYS
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 85)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block, Day 85)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** ~15.67 (Sep 24 close; Sep 25 estimated 15-16) → **MODERATE** sizing mode (VIX 15-25); N/A for Dual Momentum
+
+**S&P 500 Futures (premarket):** +0.24% (+19 pts to 7,786) — modest green open expected
+- 10Y Treasury yield: 5.19% (17-year high) | 30Y: 5.47% — elevated rates continue
+
+**Oil:** WTI ~$93.05/bbl; Brent ~$105.54/bbl
+- Iran-aligned Houthi militants launched missiles toward Saudi cities; US/Iran negotiators exploring naval blockade deal
+- Elevated oil = persistent inflation tailwind; Fed hawkishness risk
+
+**Notable Catalysts:**
+- GOOGL/SpaceX joint venture announced — custom AI chips testing in orbit (GOOGL slightly higher)
+- Anthropic $11.6B, 7-year deal with Akamai for CPU workloads (AKAM +20% premarket)
+- 10Y/30Y yields at multi-year highs — equity valuation headwind
+
+**Economic Calendar (Sep 25, 2026):**
+- 8:30 AM ET: Advance Durable Goods
+- 10:00 AM ET: Michigan Consumer Survey (Final)
+- 12:45 PM: NY Fed Staff Nowcast
+- Next FOMC: Oct 27–28 (last meeting Sep 15–16; minutes out Oct 7)
+
+**Sector Performance (week of Sep 21, 2026):**
+- Best: Technology (+4.8%), Industrials (+1.0%)
+- Worst: Energy (−4.2%), Utilities (−3.8%)
+- YTD 2026 leader: Energy (XLE) +47.7%
+
+### Dual Momentum Signal Estimate (Sep 30 rebalance — CRITICAL)
+
+SPY 12m absolute filter: **PASSES** (~+20% TTM → strongly positive)
+
+| Rank | Ticker | Est. 12M Total Return | Confidence | Notes |
+|------|--------|----------------------|------------|-------|
+| 1? | QQQ | ~+26.3% | Medium | QQQ outperformed SPY YTD per search |
+| 2? | IWM | ~+25.5% | Medium | TTM ~25.52% per search |
+| 3? | GLD | ~+25–30%? | Low | No direct data — gold elevated on oil/geopolit risk |
+| 4 | SPY | ~+20.2% | Medium | Absolute filter passes |
+| 5 | TLT | Negative/flat | Medium | High yields (5.19% 10Y) = TLT headwind |
+| — | SHY | ~+5% | N/A | Cash proxy — not in running |
+
+⚠️ Rankings are ESTIMATES — QQQ vs IWM vs GLD top-3 ordering is uncertain without authoritative script.
+Must run `python3 scripts/dual_momentum_signal.py` on Sep 30 with live Alpaca API data.
+
+### Sizing Mode
+N/A — Dual Momentum strategy: 100% equity in one asset, no VIX sizing, no trailing stops.
+
+### Trade Ideas
+**NONE** — strategy prohibits discretionary/intra-month trades. Only action permitted: monthly rebalance.
+
+### Risk Factors
+- **Sep 30 rebalance in 3 trading days (CRITICAL)**: 4th consecutive miss if APIs remain blocked
+- **Overdue rebalances**: Jun 30, Jul 31, Aug 31 — all missed due to API blockage (Day 85 today)
+- **Elevated Treasury yields (10Y 5.19%)**: Headwind for equities and TLT specifically
+- **Oil at $93-105/bbl + geopolitical risk**: Inflationary, hawkish Fed implication; GLD may benefit
+- **QQQ vs IWM ranking uncertain**: Close 12m returns (~26% vs ~25.5%) — could flip signal
+
+### Decision
+**NO TRADE** — not a rebalance day (Sep 30, 2026 is next). Strategy prohibits any intra-month discretionary action.
+
+**⚠️ CRITICAL: Sep 30, 2026 is 3 trading days away — absolute deadline for monthly rebalance.**
+**Whitelist required NOW: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`**
+**85 consecutive trading days blocked. 3 missed rebalances. Action required at: https://code.claude.com/docs/en/claude-code-on-the-web**
+
+---
