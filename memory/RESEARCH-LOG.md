@@ -5,6 +5,78 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-28 — Pre-Market Research (Monday, Day 86 of API Blockage) ⚠️ SEP 30 REBALANCE IN 2 TRADING DAYS
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 86)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block, Day 86)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → exit 56 (blocked)
+Research conducted via WebSearch fallback.
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** 14.87 (−5.1%) → **AGGRESSIVE** sizing mode (VIX < 15); N/A for Dual Momentum strategy
+
+**S&P 500 Futures (premarket):** Mixed — initially futures up ~+0.47%; early weakness on oil spike
+- 10Y Treasury yield: above 5.0% — elevated rates continue to pressure rate-sensitive equities
+
+**Oil:** WTI ~$94.10–$95.20/bbl (+2–3%); Brent ~$106.89–$108.83/bbl (+2.5–3%)
+- Catalyst: President Trump rejected Iranian conditional peace proposal aimed at reopening Strait of Hormuz
+- Oil spike on supply disruption fears → inflationary, hawkish Fed implication
+
+**Sectors (week ending Sep 26):**
+- Best: Technology +3.1% (XLK +3.6%), Healthcare +1.57%; AI momentum strong, growth +2.33% week
+- Worst: Energy −3.07%, Utilities −3.04% (elevated yields headwind)
+
+**Notable Catalysts:**
+- Iran/US diplomatic failure → Strait of Hormuz risk → oil spike
+- University of Michigan consumer sentiment 48.1 (near historic lows), 1Y inflation expectation 4.6%
+- AI/tech momentum continuing (QQQ outperformance)
+
+### Dual Momentum Signal Estimate (Sep 30 rebalance — CRITICAL, 2 trading days)
+
+SPY 12m absolute filter: **PASSES** (~+20% TTM → strongly positive)
+
+| Rank | Ticker | Est. 12M Total Return | Confidence | Notes |
+|------|--------|----------------------|------------|-------|
+| 1? | QQQ | ~+26–28% | Medium | Tech momentum, AI rally, growth +2.33% week |
+| 2? | IWM | ~+25.5% | Medium | Small cap, slightly below QQQ |
+| 3? | GLD | ~+25–30%? | Low | Gold elevated on oil/geopolit risk; no direct data |
+| 4 | SPY | ~+20% | Medium | Absolute filter passes |
+| 5 | TLT | Negative/flat | High | 10Y yield >5% → TLT heavily suppressed |
+| — | SHY | ~+5% | N/A | Cash proxy — not in running |
+
+⚠️ Rankings remain ESTIMATES — QQQ vs IWM vs GLD top ordering uncertain without live API.
+Must run `python3 scripts/dual_momentum_signal.py` on Sep 30 with live Alpaca data.
+
+### Sizing Mode
+N/A — Dual Momentum strategy: 100% equity in one asset, no VIX sizing, no trailing stops.
+
+### Trade Ideas
+**NONE** — strategy prohibits discretionary/intra-month trades. Only action permitted: monthly rebalance.
+
+### Risk Factors
+- **Sep 30 rebalance in 2 trading days (CRITICAL)**: 4th consecutive miss if APIs remain blocked on Sep 30
+- **Oil spike on Iran/US breakdown**: WTI +3%, Brent +2.7% → inflation concern, possible Fed hawkishness
+- **10Y yield >5%**: Headwind for TLT (confirms SHY or equity ETF as signal, not bonds)
+- **Consumer sentiment 48.1**: Near historic lows — consumer stress building
+- **QQQ vs IWM vs GLD ranking**: Still uncertain, close 12m returns — must verify with script Sep 30
+
+### Decision
+**NO TRADE** — not a rebalance day (Sep 30, 2026 is next). Strategy prohibits any intra-month discretionary action.
+
+**🚨 CRITICAL (2 trading days): Sep 30 rebalance REQUIRES live Alpaca API access.**
+**All APIs blocked since Jun 22, 2026 (Day 86). 3 missed rebalances: Jun 30, Jul 31, Aug 31.**
+**Whitelist required: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`**
+**https://code.claude.com/docs/en/claude-code-on-the-web**
+
+---
+
+
+---
+
 ## 2026-09-24 — Pre-Market Research (Thursday, Day 86 of API Blockage) ⚠️ SEP 30 REBALANCE IN 4 DAYS
 
 ### Account Snapshot
