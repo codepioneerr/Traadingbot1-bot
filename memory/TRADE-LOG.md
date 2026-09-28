@@ -2578,3 +2578,22 @@ Must run `python3 scripts/dual_momentum_signal.py` at Aug 31 rebalance to confir
 **⚠️ ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 85 consecutive trading days blocked. 3 missed rebalances. Sep 30 is the absolute deadline before 4th consecutive miss.**
 
 ---
+
+## 2026-09-28 — EOD Snapshot (Monday, Day 86 of API Blockage) ⚠️ WEEK 18 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-28 (Monday, Day 86 of API blockage, Week 18 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` all returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Sep 28, 2026). No account data, positions, or orders retrievable. Portfolio remains $100,000 cash, unchanged from starting equity — no trades executed since inception. Dual Momentum strategy prohibits intra-month discretionary action; only monthly rebalance on Sep 30 can change positions.
+
+**🚨 CRITICAL: Sep 30, 2026 is NOW 2 TRADING DAYS AWAY (Tue Sep 29, Wed Sep 30). This is the ABSOLUTE DEADLINE for the Dual Momentum monthly rebalance. A 4th consecutive missed rebalance (Jun 30, Jul 31, Aug 31 all missed) would make the project a complete null result since inception. The egress whitelist MUST be live before Sep 30, 9:30 AM ET.**
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30, 2026 — **CRITICAL (2 trading days).**
+
+**⚠️ ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 86 consecutive trading days blocked. 3 missed rebalances. Sep 30 is the absolute deadline before 4th consecutive miss.**
+
+---
