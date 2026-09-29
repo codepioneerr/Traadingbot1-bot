@@ -4737,3 +4737,77 @@ N/A — Dual Momentum strategy: 100% equity in one asset, no VIX sizing, no trai
 **85 consecutive trading days blocked. 3 missed rebalances. Action required at: https://code.claude.com/docs/en/claude-code-on-the-web**
 
 ---
+
+## 2026-09-29 — Pre-Market Research (Tuesday, Day 87 of API Blockage) ⚠️ SEP 30 REBALANCE TOMORROW
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 87)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block, Day 87)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → 403 connect_rejected (empty response)
+Research conducted via WebSearch fallback (Perplexity unavailable).
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** ~16.17 (up 8.75% on day per Saxo Bank Options Brief Sep 29) → **MODERATE** sizing mode (N/A for Dual Momentum)
+
+**S&P 500 Futures (premarket Sep 29):** ~+0.01% (7,746 futures; mixed — Nasdaq +0.4%, S&P/Dow slightly lower)
+- US stock futures modest gains as investors await key economic data (PCE on Sep 30)
+- Mixed open expected: Dow/SPX slightly down, Nasdaq higher
+
+**Notable Catalysts:**
+- Trump dismisses Iran sanction relief as "hoax" — geopolitical risk elevated; oil tailwind
+- Key economic data ahead: PCE inflation (Sep 30 AM — coincides with rebalance day)
+- Treasury yields remain elevated (10Y ~4.9%, up sharply from Oct 2025 ~4.0%)
+
+**Sector Performance:**
+- YTD leaders: Semiconductors (PSI +90.4% YTD), AI/Cybersecurity (AIVC, HACK)
+- Momentum ETF (VFMO) +18.5% YTD vs SPY +10.9% YTD
+
+### Dual Momentum Signal Estimate (Sep 30 rebalance — TOMORROW, CRITICAL)
+
+**Absolute filter (SPY 12m return):** PASSES → S&P 500 ~+10.9% YTD, positive TTM → proceed to ranking
+
+**12-Month TTM Returns (estimates from WebSearch — not authoritative):**
+
+| Rank | Ticker | Est. TTM Total Return | Source / Confidence |
+|------|--------|-----------------------|---------------------|
+| 1 | QQQ | ~24-26% | Yahoo Finance / PortfolioLab — Medium |
+| 2 | IWM | ~18-25.5% | Conflicting sources (Jun vs Sep data) — Low |
+| 3 | SPY | ~+10.9% YTD / ~+20% TTM? | Medium |
+| 4 | GLD | ~14-20% | FinanceCharts TTM ~19.7% — Medium |
+| 5 | TLT | -7.5% to -0.5% | Negative — High confidence |
+
+⚠️ **Rankings are estimates** — QQQ appears to be #1 (~24-26% TTM), but IWM and SPY vs GLD are uncertain.
+Must run `python3 scripts/dual_momentum_signal.py` on Sep 30 with live Alpaca API data to confirm.
+Best current estimate: **SIGNAL = QQQ** for October.
+
+### Sizing Mode
+N/A — Dual Momentum: 100% equity in one asset, no VIX sizing, no stops.
+
+### Trade Ideas
+**NONE** — strategy prohibits discretionary/intra-month trades. Only action permitted: monthly rebalance on Sep 30.
+
+### Risk Factors
+- **🚨 CRITICAL: Sep 30, 2026 is TOMORROW** — absolute deadline for 4th monthly rebalance
+  - Jun 30, Jul 31, Aug 31, Sep 30 — ALL will be missed if API blockage not resolved
+  - 87 consecutive trading days blocked; no trades since inception
+- **PCE data Sep 30** — coincides with rebalance, potential volatility at open; plan to execute after data settles
+- **Elevated Treasury yields (10Y ~4.9%)** — negative for TLT (confirms TLT excluded from signal)
+- **QQQ vs IWM close** — both ~25% TTM, ranking uncertain without authoritative script
+- **VIX 16.17** — moderate but elevated +8.75% today, some market stress
+
+### Decision
+**NO TRADE TODAY** — not a rebalance day. Sep 30 is the rebalance day.
+
+**🚨 CRITICAL TOMORROW (Sep 30):** Whitelist APIs before 9:30 AM ET to execute first trade since inception:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+See: https://code.claude.com/docs/en/claude-code-on-the-web
+
+**87 consecutive trading days blocked. 3 overdue rebalances. Sep 30 = last chance before 4th consecutive miss.**
+
+---
