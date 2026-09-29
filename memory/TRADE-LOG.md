@@ -2624,3 +2624,31 @@ A 4th consecutive missed rebalance (Jun 30, Jul 31, Aug 31, Sep 30) would make t
 **⚠️ ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 87 consecutive trading days blocked. 3 missed rebalances. Sep 30 is the absolute deadline before 4th consecutive miss.**
 
 ---
+
+---
+
+## 2026-09-29 — EOD Snapshot (Tuesday, Day 87 of API Blockage) ⚠️ WEEK 18 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-29 (Tuesday, Day 87 of API blockage, Week 18 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` all returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Sep 29, 2026). No account data, positions, or orders retrievable. Portfolio remains $100,000 cash, unchanged from starting equity — no trades executed since inception. Dual Momentum strategy prohibits intra-month discretionary action; only monthly rebalance on Sep 30 can change positions.
+
+**🚨 CRITICAL: Sep 30, 2026 is TOMORROW — ABSOLUTE DEADLINE for the Sep monthly rebalance.**
+A 4th consecutive missed rebalance (Jun 30, Jul 31, Aug 31, Sep 30) would make the project a null result since inception. The egress whitelist MUST be live before Sep 30, 9:30 AM ET.
+
+**Dual Momentum signal estimate (Sep 30 — TOMORROW):**
+- Best estimate: **QQQ** (TTM ~24-26%, highest among universe)
+- IWM close second (~18-25.5%, conflicting data)
+- TLT negative (-7.5%), excluded
+- Must run `python3 scripts/dual_momentum_signal.py` on Sep 30 with live API to confirm
+- Action: BUY QQQ (or whichever script confirms as #1) — 100% of equity
+
+**Overdue rebalances:** Jun 30, Jul 31, Aug 31 — all missed due to API blockage. Next: Sep 30, 2026 — **CRITICAL (TOMORROW).**
+
+**⚠️ ACTION REQUIRED: Whitelist Alpaca, Perplexity, Telegram hosts in remote execution environment egress policy. 87 consecutive trading days blocked. 3 missed rebalances. Sep 30 is the absolute deadline before 4th consecutive miss.**
+
