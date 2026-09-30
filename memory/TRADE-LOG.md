@@ -2693,3 +2693,17 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 2. Install yfinance: `pip install yfinance`
 3. See: https://code.claude.com/docs/en/claude-code-on-the-web
 4. Next rebalance: October 30, 2026 (last trading day of October)
+
+---
+
+## 2026-09-30 — EOD Snapshot (Wednesday, Day 88 of API Blockage) ⚠️ WEEK 18 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-09-30 (Wednesday, Day 88 of API blockage, Week 18 of blockage). Sep 30 was the mandatory monthly Dual Momentum rebalance day — the 4th consecutive missed rebalance (Jun 30, Jul 31, Aug 31, Sep 30 all missed). All APIs remain blocked: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` all returning 403 connect_rejected via egress proxy. Portfolio: $100,000 cash, no positions, no trades since inception. Estimated opportunity cost of full blockage: ~-$10,000 vs QQQ strategy target (QQQ +~10% Q3 2026). Next mandatory rebalance: **October 30, 2026**. Action required: whitelist the three API hosts in the environment egress policy.
+
