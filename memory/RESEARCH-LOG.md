@@ -5,6 +5,88 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-09-30 — Pre-Market Research (Wednesday, Day 88 of API Blockage) ⚠️ SEPTEMBER REBALANCE DAY — 4th CONSECUTIVE MISS
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 88)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block, Day 88)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback (Perplexity unavailable).
+Rebalance script (`dual_momentum_signal.py`) fails: requires `yfinance` (not installed) + Alpaca API (blocked).
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** ~16.04 → **MODERATE** sizing mode (N/A for Dual Momentum)
+
+**S&P 500 Futures (premarket Sep 30):** +0.34% (+26.50 pts) — bounced on cooler PCE print
+- PCE released 8:30 AM ET: Core PCE +3.0% YoY vs +3.3% expected (bullish surprise)
+- Prior session (Sep 29): SPX closed 7,670.84 (-0.2%), Dow 51,349.92 (-0.3%)
+- End-of-quarter institutional rebalancing flows active today
+
+**Notable Catalysts:**
+- **PCE inflation (Aug 2026):** Core 3.0% YoY vs 3.3% expected — primary bullish catalyst
+- **30-year Treasury yields near 2002 highs** — ongoing drag on equities, TLT deeply negative
+- **HPE +4.34%** on AI infrastructure deal announcement
+- **Q3 2026 quarter-end rebalancing** — institutional flows in play
+
+### Dual Momentum Signal — September 30, 2026 (Authoritative Web Research)
+
+**Absolute filter (SPY 12m return):** PASSES → SPY +16.4-18.5% TTM (positive) → proceed to ranking
+
+**12-Month TTM Returns (via WebSearch — authoritative sources, yfinance unavailable):**
+
+| Rank | Ticker | Est. TTM Total Return | Confidence |
+|------|--------|-----------------------|------------|
+| **1** | **QQQ** | **+23.83% to +26.03%** | **HIGH — multiple sources agree** |
+| 2 | GLD | +19.70% | HIGH |
+| 3 | IWM | +19.03% | HIGH |
+| 4 | SPY | +16.39% to +18.48% | HIGH |
+| 5 | SHY | +1.37% to +2.78% | HIGH |
+| 6 | TLT | -7.51% | HIGH (negative, excluded) |
+
+**⚠️ SIGNAL = QQQ** — Nasdaq-100 leads by ~4-7 percentage points over GLD/IWM.
+Cannot run authoritative script (yfinance missing, Alpaca API blocked). WebSearch consensus is unambiguous.
+
+**REQUIRED TRADE (BLOCKED):**
+- Close: nothing (currently 100% cash)
+- Buy: QQQ — 100% of equity (~$100,000 / QQQ ask price ≈ 556-560 shares)
+- No stop (Dual Momentum: holds through drawdowns, monthly exit only)
+- Telegram notification: BLOCKED
+
+### Sizing Mode
+N/A — Dual Momentum: 100% equity in one asset, no VIX sizing, no stops.
+
+### Risk Factors
+- **🚨 4TH CONSECUTIVE MISSED REBALANCE** — Jun 30, Jul 31, Aug 29, Sep 30 all missed
+- **APIs blocked Day 88** — egress policy blocking all three required hosts
+- **yfinance not installed** — signal script cannot run even if Alpaca restored
+- **PCE cool print** — constructive macro backdrop, QQQ signal even stronger
+- **QQQ lead is clear** — +23-26% TTM vs #2 GLD at +19.7% — no ambiguity in signal
+
+### Decision
+**TRADE REQUIRED: BUY QQQ (100% equity) — BLOCKED by API policy**
+
+This is the 4th consecutive missed monthly rebalance. The project remains at $100,000 cash (100% SHY equivalent) since inception on 2026-05-09. The Dual Momentum strategy has been unable to execute any trade for 88 consecutive trading days.
+
+**Action required to unblock:**
+1. Whitelist `paper-api.alpaca.markets:443` in environment egress policy
+2. Whitelist `api.telegram.org:443`
+3. Whitelist `api.perplexity.ai:443`
+4. Install `yfinance` package: `pip install yfinance`
+5. See: https://code.claude.com/docs/en/claude-code-on-the-web
+
+**Estimated missed return (Jun 30–Sep 30, if fully invested in QQQ):**
+- QQQ at Jun 30, 2026 close: ~$490 (est.)
+- QQQ at Sep 30, 2026: ~$540 (est.)
+- Missed gain: ~+10.2% (~+$10,200 on $100k)
+- Account sitting in cash earns ~SHY yield (~2.8% TTM / ~0.7% for 3 months)
+
+**⚠️ CRITICAL: All future routines will continue failing until egress policy is updated.**
+
+---
+
 ## 2026-09-28 — Pre-Market Research (Monday, Day 86 of API Blockage) ⚠️ SEP 30 REBALANCE IN 2 TRADING DAYS
 
 ### Account Snapshot
