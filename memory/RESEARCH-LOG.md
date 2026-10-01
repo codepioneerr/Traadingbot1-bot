@@ -5,6 +5,68 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-01 — Pre-Market Research (Thursday, Day 89 of API Blockage) ⚠️ NOT REBALANCE DAY — NEXT: OCT 30
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 89)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block, Day 89)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback (Perplexity unavailable).
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** ~16.34 → **MODERATE** sizing mode (N/A for Dual Momentum — monthly rebalance only)
+
+**S&P 500 (Oct 1):** 7,696 (+0.58% on day); Nasdaq +0.24%; Dow −0.86% — mixed open
+
+**12-Month TTM Returns (via WebSearch — estimates, not authoritative script):**
+
+| Rank | Ticker | Est. TTM Total Return | Note |
+|------|--------|-----------------------|------|
+| 1 | QQQ | +26.03% | Invesco QQQ — WebSearch |
+| 2 | GLD | +24.51% | SPDR Gold — as of Sep 4 |
+| 3 | IWM | +19.03% | iShares Russell 2000 |
+| 4 | SPY | +18.48% | SPDR S&P 500 |
+| 5 | TLT | −1.44% | iShares 20+ Yr Treasury |
+
+**Absolute filter (SPY 12m):** +18.48% → PASSES (positive) → signal = QQQ (#1)
+⚠️ Rankings are WebSearch estimates — `dual_momentum_signal.py` still fails (no yfinance module)
+
+### Strategy Status
+- **NOT a rebalance day.** `is_rebalance_day.py` confirmed: next rebalance = **October 30, 2026** (21 trading days)
+- Sep 30 rebalance was MISSED (4th consecutive miss: Jun 30, Jul 31, Aug 31, Sep 30)
+- No intra-month action permitted by strategy
+- Oct 1 is Day 1 of October — strategy holds current position (cash/SHY equivalent) until Oct 30
+
+### Dual Momentum Signal Estimate (for October)
+- Signal: **QQQ** (QQQ +26.03% > GLD +24.51% — margin is narrower than prior months)
+- Secondary: GLD is gaining ground — monitor closely for October 30 ranking
+- SPY absolute filter: PASSES (positive)
+- Required trade on Oct 30: BUY QQQ (100% equity, ~556 shares @ ~$540 est.)
+
+### Trade Ideas
+**NONE** — strategy prohibits discretionary/intra-month trades. Wait for October 30 rebalance.
+
+### Risk Factors
+- **Day 89 of API blockage** — all 3 required APIs still returning 403 (Alpaca, Telegram, Perplexity)
+- **5 missed rebalance opportunities** (May 30, Jun 30, Jul 31, Aug 31, Sep 30 — all missed)
+- **GLD closing gap on QQQ** — TTM spread only ~1.5pp; ranking could flip by Oct 30
+- **yfinance not installed** — signal script cannot run authoritatively even if Alpaca API were live
+- **VIX 16.34** — moderate; equity momentum intact, no defensive rotation triggered
+
+### Decision
+**NO TRADE** — not a rebalance day. Next mandatory action: October 30, 2026 rebalance.
+
+**⚠️ ACTION REQUIRED TO EXECUTE OCT 30 REBALANCE:**
+1. Whitelist in egress policy: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`
+2. Install yfinance: `pip install yfinance`
+3. See: https://code.claude.com/docs/en/claude-code-on-the-web
+**89 consecutive trading days blocked. 4 missed rebalances. Oct 30 = next deadline.**
+
+---
+
 ## 2026-09-30 — Pre-Market Research (Wednesday, Day 88 of API Blockage) ⚠️ SEPTEMBER REBALANCE DAY — 4th CONSECUTIVE MISS
 
 ### Account Snapshot

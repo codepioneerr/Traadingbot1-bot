@@ -2707,3 +2707,22 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 
 **Notes:** EOD routine ran 2026-09-30 (Wednesday, Day 88 of API blockage, Week 18 of blockage). Sep 30 was the mandatory monthly Dual Momentum rebalance day — the 4th consecutive missed rebalance (Jun 30, Jul 31, Aug 31, Sep 30 all missed). All APIs remain blocked: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` all returning 403 connect_rejected via egress proxy. Portfolio: $100,000 cash, no positions, no trades since inception. Estimated opportunity cost of full blockage: ~-$10,000 vs QQQ strategy target (QQQ +~10% Q3 2026). Next mandatory rebalance: **October 30, 2026**. Action required: whitelist the three API hosts in the environment egress policy.
 
+
+---
+
+## 2026-10-01 — Morning Snapshot (Thursday, Day 89 of API Blockage) ⚠️ WEEK 19 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran 2026-10-01 (Thursday, Day 89 of API blockage, Week 19 of blockage). This is NOT a rebalance day — next rebalance is October 30, 2026 per `is_rebalance_day.py`. All APIs remain blocked: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` all returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Oct 1, 2026). Portfolio: $100,000 cash, no positions, no trades since inception.
+
+**Sep 30 rebalance post-mortem:** 4th consecutive miss (Jun 30, Jul 31, Aug 31, Sep 30). WebSearch consensus signal for October: **QQQ** (+26.03% TTM, #1 in universe; GLD close at +24.51%).
+
+**Market data (Oct 1, via WebSearch):** VIX 16.34 | S&P 500: 7,696 (+0.58%) | Mixed: Nasdaq +0.24%, Dow −0.86%
+
+**Next mandatory rebalance: October 30, 2026** (21 trading days). Action required before that date: whitelist 3 API hosts in egress policy + install yfinance.
