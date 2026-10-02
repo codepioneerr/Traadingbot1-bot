@@ -5,6 +5,83 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-02 — Pre-Market Research (Friday, Day 90 of API Blockage) ⚠️ NOT REBALANCE DAY — NEXT: OCT 30 | 🔁 SIGNAL SHIFT ALERT: IWM NOW LEADS
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 90)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block, Day 90)
+     `api.telegram.org:443` → 403 connect_rejected
+     `api.perplexity.ai:443` → 403 connect_rejected
+Research conducted via WebSearch fallback (all three APIs blocked).
+`dual_momentum_signal.py` fails: requires `yfinance` (not installed) + Alpaca API (blocked).
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** ~15.58 (−4.94%, −0.81) → **MODERATE** (15–25 range) | N/A for Dual Momentum — no VIX sizing in this strategy
+
+**S&P 500 Futures (premarket):** **+0.8%** — surging on weak September NFP
+- September NFP: Actual came in significantly below consensus (~90–100K expected); market reacted sharply bullish
+- Fed rate-hike odds for October FOMC: collapsed from ~64% → **~16%** (huge dovish repricing)
+- 10-Year Treasury yield: **5.18%** (falling sharply post-NFP)
+
+**Oil:** WTI $92.63/bbl (−0.26%) | Brent $99.68/bbl (−2.57%) — both declining on reduced geopolitical fears and softer demand outlook
+
+**Sectors (week ending Oct 2):**
+- **Best:** Energy +1.11%, Conglomerates +0.36%
+- **Worst:** Basic Materials −1.80%, Retail −1.30%, Healthcare −1.22%, Financial −1.18%
+
+**Key Macro Catalyst:** September NFP miss → Fed rate-hike bets pared sharply → bonds rally, yields fall → **small caps (IWM) benefit most** from declining rate-hike probability
+
+### ⚠️ DUAL MOMENTUM SIGNAL SHIFT — Oct 30 Rebalance (20 trading days away)
+
+SPY 12m absolute filter: **PASSES** (+24.27% TTM → strongly positive) → proceed to ranking
+
+| Rank | Ticker | Est. 12M TTM Return | Confidence | Notes |
+|------|--------|---------------------|------------|-------|
+| **1** | **IWM** | **+39.16%** | MEDIUM | WebSearch — Russell 2000 / small cap; surging on NFP miss + rate repricing |
+| 2 | QQQ | +35.82% | MEDIUM | WebSearch — Nasdaq-100 |
+| 3 | SPY | +24.27% | MEDIUM | WebSearch — S&P 500 |
+| 4? | GLD | ~+17–32% | LOW | Wide range in sources; gold has benefited from flight-to-safety |
+| 5 | TLT | ~−6% to −9% | MEDIUM | Long-term bonds deeply negative (10Y yield >5%) |
+| — | SHY | ~+5% | N/A | Cash proxy — not in ranking |
+
+**⚠️ SIGNAL SHIFT ALERT:** IWM now leads at +39.16% TTM vs QQQ +35.82%. This reverses prior months' signal (QQQ had led at ~+24–26%). The NFP miss and rate-hike repricing today are the likely catalyst — small caps benefit the most from lower-rate expectations.
+
+**All TTM figures are WebSearch estimates** — must confirm with `python3 scripts/dual_momentum_signal.py` on Oct 30 (requires Alpaca API + yfinance, both currently unavailable).
+
+### Strategy Status
+- **NOT a rebalance day.** `is_rebalance_day.py` confirmed: next rebalance = **October 30, 2026** (20 trading days)
+- **5th consecutive missed rebalance** (May 30, Jun 30, Jul 31, Aug 31, Sep 30 — all missed due to API blockage)
+- Strategy: hold 100% cash (SHY equivalent) through intra-month period; no action permitted
+- No stops, no intraday exits — monthly signal only
+
+### Trade Ideas
+**NONE** — Dual Momentum strategy prohibits discretionary intra-month trades.
+
+### Sizing Mode
+**N/A** — Dual Momentum: 100% equity in one asset at month-end signal. No VIX sizing. No position limits.
+
+### Risk Factors
+- **Day 90 of API blockage** — all 3 required APIs blocked (Alpaca, Telegram, Perplexity)
+- **yfinance not installed** — signal script cannot run even if Alpaca were restored
+- **6th missed rebalance risk:** Oct 30 will fail unless APIs are unblocked in next 20 trading days
+- **Signal uncertainty:** IWM vs QQQ spread (~3.3pp) is narrower than it appears; gold (GLD) data is highly uncertain; ranking could still shift by Oct 30
+- **Rate environment:** 10Y yield at 5.18% is deeply negative for TLT; GLD could benefit from softer rate expectations post-NFP
+
+### Decision
+**NO TRADE** — not a rebalance day. Next mandatory action: **October 30, 2026** rebalance.
+
+**⚠️ WATCH: Signal has potentially shifted from QQQ → IWM. Monitor closely over next 20 trading days. Authoritative signal requires `dual_momentum_signal.py` on Oct 30.**
+
+**⚠️ CRITICAL ACTION REQUIRED TO EXECUTE OCT 30 REBALANCE:**
+1. Whitelist in egress policy: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`
+2. Install yfinance: `pip install yfinance`
+3. See: https://code.claude.com/docs/en/claude-code-on-the-web
+**90 consecutive trading days blocked. 5 missed rebalances. Oct 30 = next deadline (20 trading days).**
+
+---
+
 ## 2026-10-01 — Pre-Market Research (Thursday, Day 89 of API Blockage) ⚠️ NOT REBALANCE DAY — NEXT: OCT 30
 
 ### Account Snapshot
