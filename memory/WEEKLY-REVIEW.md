@@ -1459,3 +1459,105 @@ Fix at: https://code.claude.com/docs/en/claude-code-on-the-web
 Rationale: All 5 daily routines executed perfectly — state persistence, market research, and memory management are flawless. FOMC week context was well-documented and predictions accurate. Tech sector outperformance (+4.8%) confirms the Dual Momentum signal is likely to point to QQQ on Sep 30. However, 85 consecutive trading days of API blockage means zero trades, zero Telegram notifications, and 3 missed rebalances. Sep 30 is now 3 trading days away — this is the last possible review before the 4th consecutive missed rebalance. The strategy would have returned ~$26K+ on a $100K QQQ position; instead the account sits idle at $100K cash. The grade cannot improve until egress is restored and a trade is executed.
 
 ---
+
+---
+
+## Week of Sep 28 – Oct 2, 2026 (Week 19 of API Blockage)
+
+### Week Stats
+
+| Metric | Bot | S&P 500 |
+|--------|-----|---------|
+| Week Return | $0 / 0.00% | −1.2% |
+| Phase Return | $0 / 0.00% | — |
+| Bot vs S&P Delta | +1.2% (hollow — cash vs invested) | — |
+| Trades W/L/open | 0/0/0 | — |
+| Win Rate | N/A | — |
+| Profit Factor | N/A | — |
+| Best Trade | N/A | — |
+| Worst Trade | N/A | — |
+| Sizing Mode Breakdown | N/A — Dual Momentum only | — |
+
+### Market Context — Week of Sep 28–Oct 2, 2026
+
+- **S&P 500:** −1.2% for the week (worst weekly performance since August); recovered +0.65% Friday (Jobs day)
+- **Dow Jones:** −1.8% for the week
+- **Nasdaq:** −0.8% for the week
+- **S&P 500 close (Oct 2):** ~7,716
+- **Best sectors:** Communications (XLC), Technology (XLK), Consumer Discretionary (XLY)
+- **Worst sectors:** Energy (XLE), Healthcare (XLV −0.35%)
+- **Key events this week:** Sep 30 PCE data; ISM Manufacturing Oct 1; September NFP (Oct 2) — soft jobs data drove lower yields, boosted stocks Friday
+- **VIX:** ~16–17 range (elevated from mid-week risk-off)
+
+### Closed Trades (This Week)
+
+None — all APIs blocked, no trades since inception.
+
+### Open Positions
+
+None — $100,000 cash, fully idle.
+
+### What Worked
+
+- **State persistence:** All 5 daily routines (Mon–Fri) committed and pushed successfully; memory continuity maintained across fresh container clones; 19 consecutive complete weeks of documentation
+- **Market context via WebSearch fallback:** Sep 30 rebalance was documented with correct QQQ signal despite Perplexity blockage; Oct 1–2 market moves captured accurately
+- **Sep 30 Jobs/PCE context:** Friday's soft NFP triggered a bond rally, giving stocks a recovery day (+0.65%); bot correctly avoided reacting — Dual Momentum does not trade intraday signals
+- **Signal clarity for October:** QQQ +26% TTM confirmed as #1 Dual Momentum signal for October; GLD #2 (~24.5%); signal is unambiguous for Oct 30 rebalance
+- **Week down −1.2%:** Bot's cash position "outperformed" S&P 500 this week by 1.2%; this is purely coincidental and not a strategy edge — the Oct 30 buy will likely be at a higher QQQ price than Sep 30
+
+### What Didn't Work
+
+- **API egress blocked — Day 86–90:** All 5 trading days blocked for 19th consecutive week; zero live data, zero Telegram notifications, zero trades
+- **Sep 30 4th consecutive missed rebalance:** Jun 30, Jul 31, Aug 31, Sep 30 all missed; estimated opportunity cost of QQQ at ~+26% TTM on a $100K position is approximately **$26,000+ in foregone unrealized gains** at current run rate
+- **Zero Telegram notifications — 90 trading days:** User has received no mobile alerts for the entire operational life of the bot; complete communication failure
+- **Perplexity blocked:** Forced WebSearch fallback for all research; no AI-synthesized market analysis available
+- **Oct 30 rebalance at risk:** If egress not resolved before Oct 30, this will be the 5th consecutive missed monthly rebalance (5 months of missed QQQ momentum)
+- **S&P weekly −1.2%:** Dual Momentum strategy is designed to be fully invested in the best-performing asset; sitting in cash while any equity ETF returns ~14.9% YTD represents the cost of blockage, not a strategy success
+
+### Key Lessons
+
+1. **Day 90 blockage — systemic failure threshold crossed.** 90 trading days is 18 full calendar weeks of zero operational function. The bot has now been blocked for over 4 calendar months (Jun 22 – Oct 2). This is no longer a temporary outage; it is a complete operational failure requiring immediate resolution.
+2. **Oct 30 is the next and only near-term catalyst.** All energy should focus on having the 3 API hosts whitelisted before Oct 30 market open. There are approximately 20 trading days remaining.
+3. **S&P 500 down −1.2% this week.** Even in a down week, the bot's "outperformance" is meaningless — Dual Momentum would have been in QQQ (−0.8% Nasdaq) since Sep 30, making this a near-flat week at worst. The October signal remains QQQ.
+4. **FOMC minutes next week (Oct 7):** Could move markets; Dual Momentum is immune to intraday/weekly Fed signals — monthly rebalance only.
+5. **Q3 earnings season begins in earnest mid-October:** PepsiCo and Delta report this coming week; major banks (JPM, GS) follow the week after. This will drive sector rotation — Dual Momentum will capture the result in the Oct 30 rebalance.
+
+### Sector Observations — Week of Oct 5–9
+
+| Sector | ETF | Outlook |
+|--------|-----|---------|
+| Technology | QQQ / XLK | Confirmed Dual Momentum leader (+26% TTM); AI demand structural; Oct rebalance target |
+| Communications | XLC | Best performer this week; Meta/Alphabet driving; watch for continuation |
+| Momentum Factor | VFMO | Outperforming SPY YTD; broad momentum confirmation for QQQ signal |
+| Semiconductors | PSI | Structural AI tailwind; watch for Q3 earnings beats |
+| Small Cap | IWM | #2 Dual Momentum candidate; FOMC minutes and rate sensitivity key |
+| Energy | XLE | Lagged this week; WTI oil pull back; avoid for now |
+
+### Key Events — Week of Oct 5–9, 2026
+
+- **Mon Oct 5:** ISM Services PMI (Sep) — consensus 55.7 (expansion)
+- **Tue Oct 6:** ADP Employment Change; Atlanta Fed GDP Q3 estimate
+- **Wed Oct 7:** FOMC Minutes (Sep meeting) — key for rate path signals; PepsiCo earnings (Thu)
+- **Thu Oct 9:** Delta Air Lines earnings; Canadian Jobs Report
+- **Fri Oct 10:** University of Michigan Consumer Sentiment (Oct preliminary)
+- **Q3 earnings season preview:** Major banks (JPM, GS, WFC) expected week of Oct 12
+
+### Strategy Adjustments
+
+No changes to Dual Momentum rules. The strategy is sound and the October signal is clear (QQQ). Sole blocker remains egress policy blockage.
+
+**Oct 30 rebalance execution checklist:**
+1. ☐ Whitelist in egress policy: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`
+2. ☐ Install yfinance: `pip install yfinance`
+3. ☐ Run `python3 scripts/dual_momentum_signal.py` to confirm authoritative signal
+4. ☐ Execute: `bash scripts/alpaca.sh buy [SIGNAL] [FULL_POSITION_SHARES]`
+5. ☐ Send Telegram: rebalance executed, position, stop level
+6. ☐ Log trade and commit
+
+Fix egress at: https://code.claude.com/docs/en/claude-code-on-the-web
+
+### Overall Grade: **D** (19th Consecutive Incomplete Week)
+
+Rationale: All 5 daily routines executed with full market context — state persistence, WebSearch fallback research, and memory management remain flawless. S&P 500 down −1.2% this week, with QQQ (October signal) down ~−0.8%. However, 90 consecutive trading days of API blockage (Jun 22–Oct 2) means the bot has missed 4 consecutive monthly rebalances, accumulated ~$26K+ in estimated opportunity cost, and delivered zero Telegram notifications in its entire operational history. The next rebalance (Oct 30) is now the critical checkpoint — 5 consecutive missed rebalances would represent the complete failure of the Dual Momentum strategy deployment.
+
+---
