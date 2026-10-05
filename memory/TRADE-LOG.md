@@ -2773,3 +2773,17 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 **Strategy status:** NOT a rebalance day. Next mandatory rebalance: **October 30, 2026** (18 trading days). Dual Momentum signal: QQQ (consistent for 4 consecutive months). No trades executed or planned today.
 
 **Action required before Oct 30:** Whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy.
+
+---
+
+## 2026-10-05 — EOD Snapshot (Monday, Day 93 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-10-05 (Monday, Day 93 of API blockage, Week 20 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 5, 2026). Today is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (19 trading days). Dual Momentum October signal: QQQ (consistent 4+ months). Morning premarket noted VIX ~15.31 (moderate), S&P 500 futures +0.15%, Asia rallying 1-2% on weak NFP (Sep +29K vs +90K expected) reducing Fed hiking fears. Action required before Oct 30: whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy.
+
