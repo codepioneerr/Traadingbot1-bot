@@ -2754,3 +2754,22 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 
 **Notes:** EOD routine ran 2026-10-02 (Friday, Day 90 of API blockage, Week 19 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` all returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Oct 2, 2026). Portfolio: $100,000 cash, no positions, no trades since inception. Today (Oct 2) was the September Jobs Report (NFP) — S&P 500 recovered +0.65% on the day but finished the week down -1.2% (worst weekly performance since August). Dow -1.8%, Nasdaq -0.8% for the week. Best sectors: Communications (XLC), Technology (XLK). Worst: Energy (XLE), Healthcare (XLV). This is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (20 trading days). Dual Momentum October signal: QQQ (confirmed consensus +26% TTM, #1 in universe). Action required before Oct 30: whitelist 3 API hosts in egress policy.
 
+
+---
+
+## 2026-10-05 — Morning Snapshot (Monday, Day 93 of API Blockage) ⚠️ WEEK 19 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran 2026-10-05 (Monday, Day 93 of API blockage, Week 19/20 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (000 timeout), and `api.perplexity.ai:443` (000 timeout). Portfolio: $100,000 cash, no positions, no trades since inception.
+
+**Market context (WebSearch):** VIX ~15.31 (moderate). Sep NFP +29K vs +90K expected (very weak); unemployment 4.2%. S&P 500 futures +0.15% at 7,789 premarket. Asia rallying 1-2% on weak jobs → reduced Fed hiking fears. Oil: Brent $101.75/bbl. FOMC minutes due Oct 7. QQQ TTM +24.33% (#1 in universe), IWM +16.54%, SPY +16.25%.
+
+**Strategy status:** NOT a rebalance day. Next mandatory rebalance: **October 30, 2026** (18 trading days). Dual Momentum signal: QQQ (consistent for 4 consecutive months). No trades executed or planned today.
+
+**Action required before Oct 30:** Whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy.

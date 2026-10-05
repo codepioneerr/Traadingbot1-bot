@@ -5,6 +5,72 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-05 — Pre-Market Research (Monday, Day 93 of API Blockage) ⚠️ WEEK 19 OF BLOCKAGE
+
+**API Status:** ALL BLOCKED — `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (000 timeout), `api.perplexity.ai:443` (000 timeout). Egress proxy blocking all three hosts since Jun 22, 2026.
+
+**Data Source:** WebSearch fallback (Perplexity unavailable)
+
+### Account Snapshot
+- **Portfolio:** $100,000.00 (last known — API BLOCKED)
+- **Cash:** $100,000.00 (100%)
+- **Positions:** 0 (no positions since inception)
+- **Weekly trades:** 0/5
+
+### Market Context
+- **VIX:** ~15.31 (as of Oct 2 close) → **MODERATE** sizing mode (if applicable)
+- **S&P 500 futures:** ~+0.15% at 7,789 (vs Friday close 7,777.25); pre-market cautious
+- **Jobs Report (released Friday Oct 3):** +29K payrolls vs +90K expected (very weak); unemployment rose to 4.2%
+- **Fed expectations:** October rate hike odds faded to ~20% (soft labor data = less Fed pressure)
+- **Oil:** Brent ~$101.75/bbl, slipped ~0.5% on Saudi price cuts
+- **Asia:** Nikkei +2%+ on weak US jobs → reduced Fed hiking fears
+
+### Key Events This Week
+- Oct 5: ISM Services PMI
+- Oct 6: Trade balance
+- Oct 7: FOMC minutes (2:00 PM ET) — key catalyst
+- Oct 8: Jobless claims, U of M consumer sentiment
+
+### Top Sectors (Sep 28–Oct 3)
+- **Leaders:** Technology, Healthcare, Industrials, Communication Services
+- **Laggard:** Financials (pressured by rising yields/capital costs)
+
+### Dual Momentum Signal Estimate
+**TTM returns (WebSearch):**
+| Rank | Ticker | TTM Return |
+|------|--------|-----------|
+| 1 | QQQ | +24.33% |
+| 2 | IWM | +16.54% |
+| 3 | SPY | +16.25% |
+| 4 | GLD | Unknown |
+| 5 | TLT | Likely negative (elevated yields) |
+
+**Signal estimate: QQQ** (confirmed for October — consistent with prior months)
+
+### Sizing Mode
+N/A — Dual Momentum: 100% equity in one asset, no VIX sizing, no stops.
+
+### Trade Ideas
+**NONE** — This is NOT a rebalance day. Strategy prohibits discretionary/intra-month trades.
+- Next mandatory rebalance: **October 30, 2026** (18 trading days)
+- Only action permitted: monthly rebalance on last trading day of October
+
+### Risk Factors
+- **🚨 API blockage continues** — Day 93. 4 consecutive missed rebalances (Jun 30, Jul 31, Aug 31, Sep 30)
+- **FOMC minutes Oct 7** — potential volatility catalyst
+- **Weak NFP (+29K vs +90K expected)** — could support equities short-term but signals economic slowdown
+- **QQQ signal strong** — TTM #1 at +24.33%; Oct 30 rebalance must buy QQQ at market open
+
+### Decision
+**NO TRADE** — Not a rebalance day. APIs blocked anyway. Strategy: hold cash until Oct 30 rebalance.
+
+**🚨 CRITICAL:** Oct 30 is next rebalance. Whitelist required before that date:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+---
+
 ## 2026-10-02 — Pre-Market Research (Friday, Day 90 of API Blockage) ⚠️ NOT REBALANCE DAY — NEXT: OCT 30 | 🔁 SIGNAL SHIFT ALERT: IWM NOW LEADS
 
 ### Account Snapshot
