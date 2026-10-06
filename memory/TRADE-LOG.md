@@ -2787,3 +2787,24 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 
 **Notes:** EOD routine ran 2026-10-05 (Monday, Day 93 of API blockage, Week 20 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 5, 2026). Today is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (19 trading days). Dual Momentum October signal: QQQ (consistent 4+ months). Morning premarket noted VIX ~15.31 (moderate), S&P 500 futures +0.15%, Asia rallying 1-2% on weak NFP (Sep +29K vs +90K expected) reducing Fed hiking fears. Action required before Oct 30: whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy.
 
+
+---
+
+## 2026-10-06 — Morning Snapshot (Tuesday, Day 94 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran 2026-10-06 (Tuesday, Day 94 of API blockage, Week 20 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (exit 56). Portfolio: $100,000 cash, no positions, no trades since inception.
+
+**Market context (WebSearch):** VIX ~15.31-15.52 (MODERATE, down 1.35%). S&P 500 +0.66% at 7,773.99 (closed Mon); Nasdaq +1.05% at 27,477 (record close). S&P futures +0.10% premarket. 10Y yield 5.31–5.35% (24-year high). Sep NFP +29K vs +90K expected (very weak); Fed rate-hike probability now ~78% hold. Nvidia record near $6T market cap. Energy sector leading YTD (+38.9%).
+
+**Dual Momentum signal estimate:** QQQ #1 (+24.33% TTM), GLD ~#2 (+17-20%), IWM #3 (+16.54%), SPY #4 (+16.25%), TLT #5 (negative). Signal: QQQ (5th consecutive month).
+
+**Strategy status:** NOT a rebalance day. Next mandatory rebalance: **October 30, 2026** (18 trading days). No trades executed or planned.
+
+**Action required before Oct 30:** Whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy.

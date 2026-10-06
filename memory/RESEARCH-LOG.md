@@ -5,6 +5,75 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-06 — Pre-Market Research (Tuesday, Day 94 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 94)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block, Day 94)
+     `api.telegram.org:443` → 403 (blocked)
+     `api.perplexity.ai:443` → exit 56 (blocked)
+Research conducted via WebSearch fallback (Perplexity unavailable).
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** ~15.31–15.52 (down ~1.35% on day) → **MODERATE** sizing mode (N/A for Dual Momentum)
+
+**S&P 500:** 7,782 (+0.10% / closed +0.66% at 7,773.99) | **Nasdaq:** 27,477 (+1.05%, record close)
+**S&P 500 futures premarket:** ~7,772 (+0.10%)
+**10-Year Yield:** 5.31–5.35% (24-year high)
+
+**Key Catalysts:**
+- Sep NFP: +29K vs +90K expected (very weak); unemployment 4.2% — reduced Fed rate-hike bets (~78% hold probability)
+- Nvidia hit record near $6T market cap; Nikkei +0.90% on tech/AI
+- Energy sector strong: Aramco warned oil stocks may take 2 years to rebuild, Hormuz diesel flows constrained
+- FOMC minutes due Oct 7
+
+**Sector Performance:**
+- YTD leaders: Energy (XLE +38.9%), Technology (XLK +35.1%), Health Care (XLV +10.6%)
+- Current momentum leaders: Energy (XLE), Consumer Staples (XLP), Industrials (XLI), Materials (XLB)
+- Lagging: Consumer Discretionary (-8.7% YTD)
+
+### Dual Momentum Signal Estimate (TTM returns via WebSearch)
+
+**Absolute filter (SPY 12m return):** PASSES → SPY +16.25% TTM → positive → proceed to ranking
+
+| Rank | Ticker | Est. TTM Total Return | Confidence |
+|------|--------|-----------------------|------------|
+| 1 | QQQ | +24.33% | Medium-High |
+| 2 | GLD | +17–20% | Medium |
+| 3 | IWM | +16.54% | Medium |
+| 4 | SPY | +16.25% | Medium |
+| 5 | TLT | −5.9% | High (negative) |
+
+**Signal estimate: QQQ** (consistent 5th consecutive month)
+⚠️ Rankings are estimates — must run `python3 scripts/dual_momentum_signal.py` on Oct 30 with live API data.
+
+### Sizing Mode
+N/A — Dual Momentum: 100% equity in one asset, no VIX sizing, no stops.
+
+### Trade Ideas
+**NONE** — strategy prohibits discretionary intra-month trades. Only permitted action: monthly rebalance on Oct 30.
+
+### Risk Factors
+- **🚨 APIs blocked Day 94** — `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`
+  - 5 consecutive missed rebalances: Jun 30, Jul 31, Aug 31, Sep 30, and now facing Oct 30 at risk
+- **10Y yield at 5.31–5.35% (24-year high)** — negative for TLT (confirms TLT excluded from signal)
+- **Weak labor market** — Sep NFP far below expectations; market interpretation: bullish (less Fed hiking)
+- **GLD vs IWM/SPY close in ranking** — GLD may be #2; won't affect signal (QQQ #1 remains)
+
+### Decision
+**NO TRADE TODAY** — not a rebalance day (next: October 30, 2026, 18 trading days)
+
+**🚨 ACTION REQUIRED BEFORE OCT 30:** Whitelist APIs in egress policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+See: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-10-05 — Pre-Market Research (Monday, Day 93 of API Blockage) ⚠️ WEEK 19 OF BLOCKAGE
 
 **API Status:** ALL BLOCKED — `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (000 timeout), `api.perplexity.ai:443` (000 timeout). Egress proxy blocking all three hosts since Jun 22, 2026.
