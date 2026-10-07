@@ -5,6 +5,46 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-07 — Pre-Market Research (Wednesday, Day 95 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None | **Weekly trades:** 0/5
+**API status:** ALL BLOCKED — `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked). Perplexity fallback used: WebSearch.
+
+### Market Context (via WebSearch — Perplexity blocked)
+- **VIX:** ~15–16 range (based on recent data; Jul 8 reading was 16.90; trend toward 15–16 through Sep 2026). Sizing mode: **MODERATE** (if strategy used VIX — it does NOT for Dual Momentum).
+- **S&P 500:** Closed ~7,774 (+0.66% Mon Oct 5). Futures mixed/flat premarket Oct 7.
+- **Key event today:** FOMC minutes from September 15–16 meeting released at **2:00 PM ET** — market-moving event; no action required by this strategy.
+- **10Y yield:** ~5.31–5.35% (24-year highs) — negative for TLT, confirms TLT excluded from signal.
+- **Energy sector:** Leading YTD (+38.9%). Nasdaq at record closes.
+- **Brent oil:** ~$101–$102/bbl (elevated geopolitical risk).
+
+### Dual Momentum Signal Estimate (October)
+| Rank | Ticker | Est. TTM Return | Notes |
+|------|--------|-----------------|-------|
+| 1 | QQQ | ~24–26% | Consistent #1 for 5+ months |
+| 2 | IWM | ~16–20% | Was 33% as of Jul, moderating |
+| 3 | SPY | ~12–16% | Positive, absolute filter passes |
+| 4 | GLD | ~14–20% | Strong, close contest with IWM |
+| 5 | TLT | ~−9% | Negative, excluded |
+| 6 | SHY | ~+5% | Cash proxy |
+
+**Absolute filter:** SPY TTM positive → proceed to ranking. **Signal: QQQ** (6th consecutive month estimate).
+
+### Strategy Status
+- **NOT a rebalance day.** Next mandatory rebalance: **October 30, 2026** (17 trading days).
+- **No positions.** No trades executed or planned today.
+- **Trade ideas:** NONE — Dual Momentum prohibits discretionary intra-month trades.
+- **Decision: HOLD** (strategy default on non-rebalance days).
+
+### Risk Factors
+- FOMC minutes at 2 PM ET — potential volatility; no action required
+- 10Y yields at 24-year highs — headwind for equities broadly; TLT confirmed weakest in universe
+- APIs blocked Day 95 — Oct 30 rebalance at risk if not unblocked before then
+- **Action required before Oct 30:** Whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy
+
+---
+
 ## 2026-10-06 — Pre-Market Research (Tuesday, Day 94 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
 
 ### Account Snapshot
