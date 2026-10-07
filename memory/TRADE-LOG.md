@@ -2821,3 +2821,24 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran 2026-10-06 (Tuesday, Day 94 of API blockage, Week 20 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 6, 2026). Today is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (17 trading days). Dual Momentum October signal: QQQ (5th consecutive month). S&P 500 was up ~0.66% yesterday (Oct 5); FOMC minutes due Oct 7 tomorrow. 10Y yield at 24-year highs (5.31–5.35%). Action required before Oct 30: whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy.
+
+---
+
+## 2026-10-07 — Morning Snapshot (Wednesday, Day 95 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran 2026-10-07 (Wednesday, Day 95 of API blockage, Week 20 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception.
+
+**Market context (WebSearch):** VIX ~15–16 (MODERATE range). S&P 500 ~7,774 (from Oct 6 close). Futures mixed/flat premarket. **Key event today: FOMC minutes from Sep 15–16 meeting released at 2:00 PM ET** — could move markets but requires no action from this strategy. 10Y yield 5.31–5.35% (24-year highs, confirmed TLT excluded from Dual Momentum signal). Brent oil ~$101–$102/bbl (geopolitical risk elevated). Nasdaq at record closes. Energy sector leading YTD (+38.9%).
+
+**Dual Momentum signal estimate:** QQQ #1 (~24–26% TTM), IWM #2 (~16–20%), GLD #3 (~14–20%), SPY #4 (+12–16%), TLT #5 (~−9%). Absolute filter: SPY TTM positive → signal: **QQQ** (6th consecutive month estimate).
+
+**Strategy status:** NOT a rebalance day. Next mandatory rebalance: **October 30, 2026** (17 trading days). No trades executed or planned.
+
+**Action required before Oct 30:** Whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy.
