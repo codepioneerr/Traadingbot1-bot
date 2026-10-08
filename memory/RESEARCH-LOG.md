@@ -5,6 +5,39 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-08 — Morning Snapshot (Thursday, Day 96 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran 2026-10-08 (Thursday, Day 96 of API blockage, Week 20 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception.
+
+**Market context (WebSearch — partial data):**
+- **VIX:** ~15–16 range (last known ~15.31-15.52 from prior days) — MODERATE sizing mode
+- **S&P 500:** Last known close ~7,666-7,774 (Oct 1-6 range). No Oct 8 premarket data available.
+- **Bonds:** 10Y Treasury yield remains elevated (~5.24-5.35%, near 24-year highs). Worst bond quarter this century per recent reports. Negative for TLT.
+- **Sectors YTD (as of mid-Aug 2026):** Energy +39.4% #1, Technology +32.1% #2, Industrials +20.6% #3. Communication Services worst at -3.8%.
+- **Dual Momentum signal estimate:** QQQ #1 (~24-26% TTM), IWM/GLD ~#2-3, SPY ~#4, TLT still negative (bonds bearish). SPY absolute filter: PASSES (positive TTM). Signal: **QQQ** (7th consecutive month estimate).
+
+**Strategy status:** NOT a rebalance day. Next mandatory rebalance: **October 30, 2026** (16 trading days). No trades executed or planned.
+
+**Trade Ideas:** NONE — Dual Momentum prohibits discretionary intra-month trades.
+
+**Risk Factors:**
+- API blockage now 96 consecutive trading days (Jun 22–Oct 8, 2026). Four monthly rebalances missed (Jun 30, Jul 31, Aug 31, Sep 30).
+- 10Y yield at 24-year highs — macro headwind for equities. QQQ signal may shift to GLD or SHY if yields keep rising.
+- October 30 rebalance deadline: **22 calendar days away**.
+
+**Decision:** NO TRADE — not a rebalance day. APIs blocked.
+
+**Action required before Oct 30:** Whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy at https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-10-07 — Pre-Market Research (Wednesday, Day 95 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
 
 ### Account Snapshot

@@ -2845,6 +2845,19 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 
 ---
 
+## 2026-10-08 — Morning Snapshot (Thursday, Day 96 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran 2026-10-08 (Thursday, Day 96 of API blockage, Week 20 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 8, 2026). Today is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (16 trading days). Dual Momentum signal estimate: QQQ (7th consecutive month estimate). VIX ~15-16 (MODERATE). S&P 500 last known ~7,666-7,774 (Oct 1-6). 10Y yield at ~5.24-5.35% (24-year highs). Action required before Oct 30: whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy.
+
+---
+
 ## 2026-10-07 — EOD Snapshot (Wednesday, Day 95 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
