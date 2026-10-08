@@ -2869,3 +2869,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 
 **Notes:** EOD routine ran 2026-10-07 (Wednesday, Day 95 of API blockage, Week 20 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 7, 2026). Today is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (17 trading days). Dual Momentum October signal: QQQ (6th consecutive month estimate). FOMC minutes from Sep 15–16 meeting were released today at 2:00 PM ET — market reaction unknown (APIs blocked). S&P 500 last known ~7,735–7,774 range. 10Y yield at 24-year highs (5.28–5.35%). Action required before Oct 30: whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy.
 
+
+---
+
+## 2026-10-08 — EOD Snapshot (Thursday, Day 96 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-10-08 (Thursday, Day 96 of API blockage, Week 20 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 8, 2026). Today is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (16 trading days). Dual Momentum signal estimate: QQQ (7th consecutive month estimate). Market context: FOMC minutes released yesterday (Oct 7), 10Y yield at ~5.28–5.35% (24-year highs), VIX ~15–16 (MODERATE). S&P 500 last known ~7,735–7,774. Action required before Oct 30: whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy.
