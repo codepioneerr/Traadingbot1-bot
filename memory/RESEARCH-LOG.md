@@ -5,6 +5,41 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-09 — Morning Snapshot (Friday, Day 97 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran 2026-10-09 (Friday, Day 97 of API blockage, Week 20 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 9, 2026). Today is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (15 trading days).
+
+**Market context (WebSearch fallback — Perplexity blocked):**
+- **VIX:** ~14-16 range estimated (MODERATE). Aug 17 report confirmed VIX at lowest of 2026 during record highs. Historically volatile mid-Aug to mid-Oct window closing.
+- **S&P 500:** ~7,797 near record highs per Reuters snapshot. Dow ~51,232.
+- **Key events THIS WEEK:** Delta Air Lines (DAL) earnings today; U of Mich preliminary consumer sentiment Oct.
+- **Key events NEXT WEEK:** September CPI Wed Oct 14 8:30 ET (forecast: headline 3.6-3.7% YoY, core ~2.4%). PPI Thu Oct 15. Bank earnings: JPMorgan, Goldman, Wells Fargo, Citi, UnitedHealth (Oct 13); BofA, Morgan Stanley, ASML (Oct 14).
+- **Fed:** FOMC meeting Oct 27-28. Rate hike probability ~21-26% for October (declining — two Fed officials signaled no urgency). Last hike was Sep 2026 (first since 2023).
+- **Bonds:** 10Y yield ~5.28-5.35% (24-year highs). TLT negative TTM — excluded from Dual Momentum signal.
+- **Oil:** Brent ~$101-102/bbl. Energy sector YTD leader (+38-39%).
+- **Dual Momentum signal estimate:** QQQ #1 (~24-26% TTM), GLD #2, IWM #3, SPY #4, TLT negative. SPY absolute filter: PASSES. Signal: **QQQ** (8th consecutive month estimate).
+
+**Strategy status:** NOT a rebalance day. Next mandatory rebalance: **October 30, 2026** (15 trading days). No trades executed or planned.
+
+**Trade Ideas:** NONE — Dual Momentum prohibits discretionary intra-month trades.
+
+**Risk Factors:**
+- 🚨 CRITICAL: All APIs still blocked (Day 97). Oct 30 rebalance is 15 trading days away.
+- CPI print Oct 14 could move QQQ materially ahead of rebalance — monitor but no action.
+- Fed meeting Oct 27-28 immediately precedes Oct 30 rebalance — potential for elevated volatility during execution.
+- Bank earnings season Oct 13+ could drive sector rotation.
+
+**Decision:** NO TRADE — not a rebalance day. Action required: whitelist APIs before Oct 30. See: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-10-08 — Morning Snapshot (Thursday, Day 96 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
