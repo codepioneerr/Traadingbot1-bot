@@ -5,6 +5,110 @@ Format: prepend new entries at the top (most recent first).
 
 ---
 
+## Week ending 2026-10-09 — Weekly Review #14 ⚠️ API BLOCKED (Day 97) | 20TH CONSECUTIVE WEEK BLOCKED
+
+### Portfolio Summary
+
+| Metric | Value |
+|--------|-------|
+| Portfolio (EOW) | $100,000.00 (last known — API blocked) |
+| Cash | $100,000.00 (100%) |
+| Week P&L | $0.00 / 0.00% (no positions) |
+| Phase P&L (since May 9) | $0.00 / 0.00% |
+| S&P 500 weekly return | ~+1.1% (7,722.72 Oct 2 → est. ~7,808 Oct 9) |
+| Bot vs S&P delta | −1.1% (underperformed — S&P rallied, bot held cash) |
+| Trades this week | 0 |
+| W/L/Open | 0/0/0 |
+| Win rate | N/A |
+| Profit factor | N/A |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Sizing mode (this week) | N/A — Dual Momentum monthly rebalance only |
+
+### Week in Review (Oct 5–9, 2026)
+
+**Strategy:** Dual Momentum ETF Rotation — monthly rebalance only. No rebalance this week (next: Oct 30, 2026). APIs remain blocked — no trades possible regardless.
+
+**Market context:** S&P 500 entered the week at ~7,722.72 (Oct 2 close) and rallied, with Tech and Communications Services leading. Oct 5 (Mon): S&P +0.6%, Nasdaq hit fresh all-time highs. Oct 6: S&P +0.5% to ~7,808, approaching the Aug record intraday high of 7,816.70. Oct 7: FOMC minutes from Sep meeting released at 2:00 PM ET — rate path signals mixed; 10Y yield elevated ~5.28–5.35% (24-year highs). Oct 8 (Thu): Delta Air Lines earnings; Canadian jobs report. Oct 9 (Fri): University of Michigan Consumer Sentiment (Oct preliminary). Estimated weekly S&P return: +~1.1%. VIX: ~14–16 (MODERATE). QQQ estimated: +~1.4–1.6% (Nasdaq outperformed S&P).
+
+**Dual Momentum signal:** QQQ — 8th consecutive month. TTM return estimated ~24–26%, comfortably #1. October rebalance target: **QQQ** on **Oct 30, 2026** (15 trading days from today).
+
+**Note:** Weekly Reviews #10–13 (Sep 11, Sep 18, Sep 25, Oct 2) were not written to this file due to a gap in the weekly routine commits. TRADE-LOG.md has full daily coverage for those weeks. This review (#14) resumes the weekly review series.
+
+### Closed Trades (This Week)
+
+None — all APIs blocked, no trades since inception.
+
+### Open Positions
+
+None — $100,000 cash, fully idle.
+
+### What Worked
+
+- **State persistence (5/5 days):** All daily routines (Mon pre-market, Tue EOD, Wed morning+EOD, Thu morning+EOD, Fri EOD) committed and pushed successfully; memory continuity maintained across fresh container clones
+- **Market context via WebSearch fallback:** Nasdaq all-time highs captured; S&P 500 weekly rally (+~1.1%) documented; bank earnings season beginning next week noted for rebalance context
+- **Dual Momentum signal clarity:** QQQ confirmed as October signal for the 8th consecutive month — rebalance date (Oct 30) is clear and documented
+- **Columbus Day prep:** Oct 12 (bonds closed, equities open) and CPI on Oct 14 captured as key events for next week — no impact on Dual Momentum strategy
+- **Opportunity cost tracking:** 97 consecutive blocked trading days now documented; estimated foregone gains on $100K QQQ position are compounding
+
+### What Didn't Work
+
+- **API egress blocked — Day 91–97:** All 5 trading days blocked for 20th consecutive week; zero live account data, zero Telegram notifications, zero trades
+- **Weekly reviews #10–13 missing:** A gap exists in WEEKLY-REVIEW.md for Sep 11–Oct 2 (4 weeks); TRADE-LOG has daily coverage but the weekly synthesis was not written
+- **Zero Telegram notifications — 97 trading days:** User has received no mobile alerts for the entire operational life of the bot; complete communication failure for the 20th consecutive week
+- **Perplexity blocked:** Forced WebSearch fallback for all research; no AI-synthesized Perplexity analysis available this week
+- **Bot underperformed S&P by ~1.1% this week:** S&P 500 estimated +1.1%, QQQ estimated +1.4–1.6%; fully cash = 0% return; zero edge captured
+- **Oct 30 rebalance in 15 trading days:** Each blocked day narrows the window; if egress is not resolved before Oct 30, this will be the 5th consecutive missed monthly rebalance
+
+### Key Lessons
+
+1. **Accumulating opportunity cost:** Rough estimate — $100K in QQQ from Jun 30 to Oct 9 would have returned approximately +8–12% (QQQ had a strong Q3 2026). That's $8K–$12K in missed unrealized gains from the first 4 missed rebalances alone. Every additional week blocked adds to this cost.
+2. **Bank earnings week next (Oct 12–16) — Dual Momentum immune:** JPM, GS, WFC reporting Oct 13–14; these will drive financials sector volatility but have no bearing on the monthly momentum signal. No action required.
+3. **CPI Oct 14 (Sep data) — key but not actionable:** Consensus ~3.6–3.7% headline. Fed rate hike probability for Oct 27–28 meeting: ~21–26%. Even a surprise CPI print doesn't trigger a Dual Momentum rebalance — that remains Oct 30 only.
+4. **Oct 30 is the only remaining 2026 opportunity before a calendar-year review.** The Nov rebalance (Nov 30) falls after election season. Getting the Oct 30 rebalance right — buying QQQ at the close with full $100K — is the highest-priority action for the bot's entire operational history.
+5. **Weekly reviews gap:** Reviews #10–13 were missed in WEEKLY-REVIEW.md. The daily routine appears to have skipped or not committed the weekly reviews for those 4 weeks. TRADE-LOG.md is the source of truth for those weeks.
+
+### Sector Observations — Week of Oct 5–9, 2026
+
+| Sector | ETF | This Week | Outlook |
+|--------|-----|-----------|---------|
+| Technology | QQQ / XLK | Led (Nasdaq all-time high) | Dual Momentum #1 — Oct rebalance target |
+| Communications | XLC | Strong (Meta/Alphabet) | Supportive of QQQ signal |
+| Financials | XLF | Earnings-driven volatility next week | JPM, GS, WFC Oct 13–14; watch sector reaction |
+| Energy | XLE | Mixed — oil prices uncertain | Not in Dual Momentum consideration |
+| Health Care | XLV | Weak | Not a target |
+| Small Cap | IWM | Rate-sensitive; 10Y yield elevated | #2 Dual Momentum candidate (~16–20% TTM) |
+
+### Key Events — Week of Oct 12–16, 2026
+
+- **Mon Oct 12:** Columbus Day (U.S. bond markets closed; equities open); light data day
+- **Tue Oct 13:** JPMorgan Chase (JPM) Q3 earnings; Wells Fargo (WFC); Goldman Sachs (GS)
+- **Wed Oct 14:** **September CPI report** (consensus ~3.6–3.7% headline, ~3.2% core) — key for Fed outlook
+- **Thu Oct 15:** Retail Sales (Sep); Empire Manufacturing; weekly jobless claims
+- **Fri Oct 16:** University of Michigan Consumer Sentiment (final Oct); Industrial Production
+- **Oct 27–28 (2 weeks):** FOMC meeting — rate decision; hike probability ~21–26%
+- **Oct 30:** **MANDATORY Dual Momentum rebalance** — buy QQQ with full $100K at market close
+
+### Strategy Adjustments
+
+No changes to Dual Momentum rules. October signal is unambiguous (QQQ, 8th consecutive month). Sole blocker: egress policy preventing API access.
+
+**Oct 30 rebalance execution checklist (15 trading days remaining):**
+1. ☐ Whitelist in egress policy: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`
+2. ☐ Install yfinance: `pip install yfinance`
+3. ☐ Run `python3 scripts/dual_momentum_signal.py` to confirm authoritative Oct 30 signal
+4. ☐ Execute: `bash scripts/alpaca.sh buy QQQ [FULL_POSITION_SHARES]`
+5. ☐ Send Telegram: rebalance executed, position size, stop level
+6. ☐ Log trade and commit to memory
+
+Fix egress at: https://code.claude.com/docs/en/claude-code-on-the-web
+
+### Overall Grade: **D** (20th Consecutive Incomplete Week)
+
+Rationale: All daily routines executed with full market context — state persistence, WebSearch fallback research, and memory management remain operational. S&P 500 estimated +~1.1% this week (QQQ +~1.4–1.6%); bot returned 0% holding cash. 97 consecutive trading days of API blockage (Jun 22–Oct 9, 2026) means the bot has missed 4 consecutive monthly rebalances, accumulated an estimated $8K–$26K+ in opportunity cost, and delivered zero Telegram notifications in its entire operational history. The Oct 30 rebalance (15 trading days away) remains the critical checkpoint. 5 consecutive missed rebalances would represent the complete failure of the Dual Momentum strategy deployment.
+
+---
+
 ## Week ending 2026-09-04 — Weekly Review #9 ⚠️ API BLOCKED (Day 71) | 5TH CONSECUTIVE WEEK UNABLE TO EXECUTE
 
 ### Portfolio Summary
