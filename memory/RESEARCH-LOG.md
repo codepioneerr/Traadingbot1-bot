@@ -5,6 +5,83 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-12 — Morning Snapshot (Monday, Day 98 of API Blockage) ⚠️ COLUMBUS DAY — BONDS CLOSED, EQUITIES OPEN
+
+### Account Snapshot
+$100,000.00 (last known — Day 0 baseline, 2026-05-09; API blocked Day 98)
+Cash: 100% | Positions: 0 | Open orders: 0
+APIs: `paper-api.alpaca.markets:443` → 403 connect_rejected (proxy policy block, Day 98)
+     `api.telegram.org:443` → 403 connect_rejected (fallback to DAILY-SUMMARY.md)
+     `api.perplexity.ai:443` → blocked (empty response)
+Research conducted via WebSearch fallback (all APIs blocked).
+
+### Market Context (via WebSearch — APIs blocked)
+
+**VIX:** ~16.88 (down ~1.3% — unverified date snapshot) → **MODERATE** sizing mode (N/A for Dual Momentum)
+
+**S&P 500:** Last confirmed close ~7,801.77 (Oct 7); approaching 7,816.70 all-time intraday high; 28th potential record close of 2026; Nasdaq in record territory.
+
+**Columbus Day (Oct 12):** US bond markets closed; equity markets OPEN. TLT volume/price data may be unreliable today.
+
+**Sector Performance (week of Oct 5–9, from LPL Research):**
+- Top sectors: Consumer Staples (+3.96%), Utilities (+3.88%), Energy (+3.71%), Consumer Discretionary (+3.13%), Health Care (+2.87%)
+- Weakest: Industrials (−0.32%), IT (−0.11%)
+- YTD leaders: Energy (+45.56%), IT (+30.05%)
+- YTD laggards: Utilities (−3.11%), Financials (−0.01%)
+
+**Key Events Week of Oct 12:**
+- Q3 Earnings Season unofficial start: bank earnings (JPM, GS, WFC) — Oct 13
+- CPI September report: Oct 14 (consensus ~3.6–3.7% headline)
+- Fed meeting: Oct 27–28 (hike probability ~21–26%)
+- 10Y yield: elevated ~5.2–5.35% (24-year highs confirm TLT excluded from signal)
+
+### Dual Momentum Signal Estimate (next rebalance Oct 30, 18 trading days)
+
+**Absolute filter (SPY 12m return):** PASSES — S&P 500 strongly positive TTM
+
+**12-Month TTM Returns (estimates — July 2026 data + extrapolation):**
+| Rank | Ticker | Est. TTM Return | Confidence |
+|------|--------|-----------------| -----------|
+| 1 | QQQ | ~28–33% | Medium — tech/Nasdaq at records |
+| 2 | IWM | ~28–34% | Medium — small caps recovered |
+| 3 | SPY | ~22–26% | Medium |
+| 4 | GLD | ~16–22% | Medium — gold elevated on geopolitics |
+| 5 | TLT | ~−9% to −5% | High — 10Y yield at 24-yr highs |
+| — | SHY | ~5–6% | High — short-term bill yield |
+
+**Best estimate:** SIGNAL = **QQQ** for October (9th consecutive month estimate).
+Must confirm with `python3 scripts/dual_momentum_signal.py` on Oct 30 with live API data.
+
+### Sizing Mode
+N/A — Dual Momentum: 100% equity in one asset, no VIX sizing, no stops.
+
+### Trade Ideas
+**NONE** — strategy prohibits discretionary/intra-month trades. Only action permitted: monthly rebalance on Oct 30, 2026.
+
+### Risk Factors
+- **🚨 CRITICAL: APIs blocked 98 consecutive trading days** — cannot execute Oct 30 rebalance without fix
+  - Jun 22–Oct 12, 2026: all APIs blocked via egress proxy (403 connect_rejected)
+  - 4 consecutive rebalances missed (Jun 30, Jul 31, Aug 31, Sep 30)
+  - Oct 30 rebalance is next — 18 trading days away
+- **Columbus Day:** Bond market closed; equity markets open; TLT data unreliable today
+- **Bank earnings (Oct 13):** JPM, GS, WFC — potential volatility tomorrow
+- **CPI Sep (Oct 14):** consensus 3.6–3.7%; if higher-than-expected, hawkish Fed risk
+- **10Y yield at 24-yr highs:** Confirms TLT is bottom of ranking — SHY or IWM may compete
+- **VIX ~16–17:** Moderate — no panic but slightly elevated
+
+### Decision
+**NO TRADE TODAY** — not a rebalance day. Oct 30 = next mandatory signal check.
+
+**🚨 ACTION REQUIRED BEFORE OCT 30:** Whitelist APIs in environment egress policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+See: https://code.claude.com/docs/en/claude-code-on-the-web
+**98 consecutive trading days blocked. 4 missed rebalances. Oct 30 = 5th consecutive miss if not fixed.**
+
+
+---
+
 ## 2026-10-09 — Morning Snapshot (Friday, Day 97 of API Blockage) ⚠️ WEEK 20 OF BLOCKAGE
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
