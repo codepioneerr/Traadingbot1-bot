@@ -2921,3 +2921,29 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran 2026-10-12 (Monday Columbus Day, Day 98 of API blockage, Week 21 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 12, 2026). Today is Columbus Day — bond markets closed, equity markets open. This is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (14 trading days). Dual Momentum October signal estimate: QQQ (9th consecutive month estimate). Key upcoming events this week: JPMorgan/GS/WFC earnings Oct 13; September CPI report Oct 14 (consensus 3.6–3.7%). Fed meeting Oct 27–28. Action required before Oct 30: whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy.
+
+---
+
+## 2026-10-13 — Morning Snapshot (Tuesday, Day 101 of API Blockage) ⚠️ WEEK 21 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran 2026-10-13 (Tuesday, Day 101 of API blockage, Week 21). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 13, 2026). Today is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (13 trading days). Dual Momentum October signal estimate: QQQ (10th consecutive month estimate). Key market events today: JPMorgan/GS/WFC earnings before open (bank earnings season starts). Sep CPI due tomorrow Oct 14. Fed meeting Oct 27–28. Action required before Oct 30: whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy.
+
+---
+
+## 2026-10-13 — EOD Snapshot (Tuesday, Day 101 of API Blockage) ⚠️ WEEK 21 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-10-13 (Tuesday, Day 101 of API blockage, Week 21 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 13, 2026). Today was bank earnings day: JPMorgan (JPM), Goldman Sachs (GS), Wells Fargo (WFC) all reported before open — market reaction unknown due to API blockage. Next major event: September CPI report tomorrow Oct 14 (consensus 3.6–3.7%). Fed meeting Oct 27–28. Today is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (13 trading days). **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
