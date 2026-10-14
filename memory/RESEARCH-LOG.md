@@ -5,6 +5,65 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-14 — Morning Research (Wednesday, Day 102 of API Blockage) ⚠️ WEEK 21 OF BLOCKAGE
+
+**Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+**Sizing mode:** N/A (Dual Momentum — monthly rebalance only, no VIX sizing)
+
+### API Status
+- `paper-api.alpaca.markets:443` — BLOCKED (403 connect_rejected, policy denial)
+- `api.telegram.org:443` — BLOCKED (403 connect_rejected, policy denial)
+- `api.perplexity.ai:443` — BLOCKED (403 connect_rejected, policy denial)
+
+All research via WebSearch fallback.
+
+### Market Context (via WebSearch — October 14, 2026)
+- **CPI September 2026 (8:30am ET release):** Headline 3.7% YoY (vs 3.6% consensus — HOT MISS), monthly +0.6%. Core CPI 2.6% vs 2.5% estimate. Hotter than expected.
+- **S&P 500:** Closed 7,805.45 Tuesday (Oct 13, -0.02%). Futures turned negative after hot CPI print (-0.24% at 8:33am ET).
+- **VIX:** Estimated ~15-17 (MODERATE) — based on hot CPI reaction and prior week data (~14-16).
+- **Bank Earnings today (pre-open):** BAC (consensus EPS $1.16 vs $1.06 YoY) and Morgan Stanley ($3.01-$3.01 consensus) reporting before open. Mixed signals.
+- **ASML results:** Weighed on chip sentiment this morning.
+- **Fed:** NY Fed President Williams (Oct 14) said Fed may need one more hike in 2026 but no hikes in 2027. Oct 27-28 meeting hike probability ~22%. Hot CPI slightly increases hike risk.
+- **10Y Treasury yield:** ~5.24-5.35% (24-year highs — persistent).
+- **Oil:** Elevated, WTI/Brent prices climbing this week.
+
+### Dual Momentum Signal (12-month returns as of Oct 9, 2026)
+- **SPY:** +19.2% → Absolute momentum POSITIVE → proceed to relative ranking
+- **QQQ:** +27.4% ← **#1 RANKED** (signal = QQQ)
+- **IWM:** +17.3%
+- **TLT:** -13.9%
+- **GLD:** ~+30% estimated (price ~$385, 12M return not confirmed)
+- **SHY:** N/A (safe haven, holds if SPY negative)
+
+**Current signal estimate: QQQ** (11th consecutive month) — UNCONFIRMED (APIs blocked, cannot run dual_momentum_signal.py)
+
+### Sector Context
+- **Leading:** Technology, Financials (earnings), Communications
+- **Lagging:** Utilities, REITs (rate-sensitive), Semiconductors (ASML pressure)
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trades. Only action permitted: monthly rebalance on October 30, 2026.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 102):** APIs remain blocked. 4 consecutive monthly rebalances missed (Jun 30, Jul 31, Aug 31, Sep 30). Oct 30 rebalance is 12 trading days away.
+- **Hot CPI print:** 3.7% vs 3.6% forecast — raises Fed hike probability slightly (~22% → higher). Market reaction negative pre-open.
+- **Bank earnings volatility:** BAC and MS reporting today — potential large sector moves.
+- **ASML weakness:** Semiconductor sector pressure; but QQQ diversified enough to absorb.
+- **Elevated 10Y yields (5.3%):** Ongoing headwind to growth/tech multiples.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 URGENT ACTION REQUIRED before Oct 30 (12 trading days):** Whitelist the following hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+See: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-10-12 — Morning Snapshot (Monday, Day 98 of API Blockage) ⚠️ COLUMBUS DAY — BONDS CLOSED, EQUITIES OPEN
 
 ### Account Snapshot
