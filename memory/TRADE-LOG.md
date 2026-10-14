@@ -2961,3 +2961,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Morning routine ran 2026-10-14 (Wednesday, Day 102 of API blockage, Week 21 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 14, 2026). **CPI DAY:** September 2026 CPI came in at 3.7% YoY (hotter than 3.6% consensus) + Core 2.6% vs 2.5% estimate. S&P 500 futures turned negative after print (-0.24%). BAC and Morgan Stanley reporting earnings before open. VIX estimated ~15-17 (MODERATE). S&P 500 last close: 7,805.45 (Oct 13). This is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (12 trading days). **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-14 — Market-Open Snapshot (Wednesday, Day 102 of API Blockage) ⚠️ WEEK 21 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Market-open routine ran 2026-10-14 at 9:30 AM ET (Wednesday, Day 102 of API blockage, Week 21 of blockage). Alpaca API BLOCKED at market open — no account data, no trades possible. Portfolio: $100,000 cash, no positions, no trades since inception. Strategy is Dual Momentum ETF rotation — today is NOT a rebalance day (rebalance only on last trading day of month). No trades executed. Key market context: Sep 2026 CPI 3.7% YoY (hotter than 3.6% forecast), S&P futures turned negative pre-open (-0.24%). BAC + Morgan Stanley earnings reporting before open. VIX est ~15-17. Next mandatory rebalance: **October 30, 2026** (12 trading days). **Action required:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy before Oct 30.
