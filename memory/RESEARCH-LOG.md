@@ -5,6 +5,61 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-15 — Morning Research (Thursday, Day 103 of API Blockage) ⚠️ WEEK 21 OF BLOCKAGE
+
+**Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+**Sizing mode:** N/A (Dual Momentum — monthly rebalance only, no VIX sizing)
+
+### API Status
+- `paper-api.alpaca.markets:443` — BLOCKED (403 connect_rejected, policy denial)
+- `api.telegram.org:443` — BLOCKED (403 curl 22 returned error 403)
+- `api.perplexity.ai:443` — BLOCKED (curl exit 56)
+
+All research below is from WebSearch fallback (Perplexity blocked).
+
+### Market Context (WebSearch fallback — live data unavailable via APIs)
+- **Date:** October 15, 2026 (Thursday) — Day 103 of API blockage
+- **S&P 500 Oct 14 close:** 7,718.94 (-1.08%) | Dow: 51,621.48 (-0.09%) | Nasdaq: -1.9%
+- **Catalyst for Oct 14 selloff:** September 2026 CPI = 3.7% YoY (hotter than 3.6% consensus) + Core ~2.6% vs 2.5% est. Fueled Fed rate hike fears. Tech led decline.
+- **Geopolitical:** War in Iran mentioned as ongoing risk supporting energy prices
+- **Sectors Oct 14:** Energy only sector up (oil prices elevated); 8 of 11 sectors lower; Tech/AI spending fears weighed on growth
+- **VIX:** Estimated ~16-19 (MODERATE) — elevated by inflation/macro uncertainty
+- **S&P futures Oct 15 pre-market:** Lower (second consecutive day of selling pressure)
+- **Earnings Today (Oct 15, before open):** Charles Schwab (SCHW, est EPS 1.67), U.S. Bancorp (USB, est 1.30), PNC Financial (PNC, est 4.91), Snap-on (SNA, est 4.97)
+- **10Y Treasury Yield:** ~5.24-5.35% (elevated, 24-year highs)
+- **Fed Meeting:** Oct 27-28; rate hike probability has risen after hot CPI
+- **Momentum ETF 12m returns (Jul 2026 data, estimated):** QQQ ~+31%, IWM ~+33%, SPY ~+22%, TLT likely negative (elevated yields), GLD moderate positive
+
+### Dual Momentum Signal Status
+- **Strategy:** Dual Momentum ETF Rotation (Antonacci)
+- **Universe:** SPY, QQQ, IWM, TLT, GLD, SHY
+- **Today:** NOT a rebalance day. Rebalance only on last trading day of each month.
+- **Next rebalance:** October 30, 2026 (11 trading days away)
+- **October signal estimate:** QQQ or IWM (high momentum; QQQ consecutive estimate for 10+ months — unconfirmed due to API blockage)
+- **Current position:** None (APIs blocked since Jun 22, 2026 — 5 consecutive rebalances missed: Jun 30, Jul 31, Aug 31, Sep 30, Oct 30 at risk)
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trades. Only permitted action: monthly rebalance on Oct 30.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 103):** APIs remain blocked. 5 consecutive monthly rebalances missed (Jun 30, Jul 31, Aug 31, Sep 30; Oct 30 = 11 trading days). Every day of delay means continued missed deployment of ~$100,000.
+- **Hot CPI (3.7%) + second tech selloff day:** Dual Momentum may shift signal if sustained tech bear develops
+- **Elevated 10Y yields (~5.3%):** TLT negative 12m; if SPY absolute momentum turns negative (SPY 12m < 0%), strategy would rotate to SHY — not currently the case
+- **Oct 30 rebalance window at risk** if APIs not whitelisted before that date
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 URGENT ACTION REQUIRED before Oct 30 (11 trading days):** Whitelist in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Docs: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-10-14 — Morning Research (Wednesday, Day 102 of API Blockage) ⚠️ WEEK 21 OF BLOCKAGE
 
 **Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
