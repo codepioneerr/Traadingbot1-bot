@@ -5466,3 +5466,56 @@ See: https://code.claude.com/docs/en/claude-code-on-the-web
 **87 consecutive trading days blocked. 3 overdue rebalances. Sep 30 = last chance before 4th consecutive miss.**
 
 ---
+
+---
+
+## 2026-10-13 — Morning Research (Tuesday, Day 101 of API Blockage) ⚠️ WEEK 21 OF BLOCKAGE
+
+**Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+**Sizing mode:** N/A (Dual Momentum — monthly rebalance only, no VIX sizing)
+
+### API Status
+- `paper-api.alpaca.markets:443` — BLOCKED (403 connect_rejected, policy denial)
+- `api.telegram.org:443` — BLOCKED (403 connect_rejected, policy denial)
+- `api.perplexity.ai:443` — BLOCKED (403 connect_rejected, policy denial)
+
+All research below is from training knowledge (no live data available).
+
+### Market Context (estimated from training knowledge)
+- **Date:** October 13, 2026 (Tuesday) — Columbus Day was yesterday (Oct 12, bond markets closed)
+- **Bank Earnings Season Starts Today:** JPMorgan Chase, Goldman Sachs, Wells Fargo all reporting before open today (Oct 13). Major earnings catalyst.
+- **September CPI Report:** Due tomorrow, Oct 14 (consensus estimate ~3.6–3.7% headline). High market sensitivity given elevated rates.
+- **S&P 500:** Last known ~7,810 (Oct 9 close). Expected bullish into earnings season.
+- **VIX:** Estimated ~14–16 range (MODERATE) — benign near-term volatility
+- **Fed Meeting:** October 27–28 — hike probability ~21–26%
+- **10Y Treasury Yield:** ~5.24–5.35% (24-year highs; persistently elevated)
+- **Sectors leading:** Technology, Financials (earnings catalyst), Communications
+- **Sectors lagging:** Utilities, REITs (rate-sensitive, hurt by high yields)
+
+### Dual Momentum Signal Status
+- **Strategy:** Dual Momentum ETF Rotation (Antonacci)
+- **Universe:** SPY, QQQ, IWM, TLT, GLD, SHY
+- **Today:** NOT a rebalance day. Rebalance only on last trading day of each month.
+- **Next rebalance:** October 30, 2026 (13 trading days away)
+- **October signal estimate:** QQQ (10th consecutive month estimate, unconfirmed due to API blockage)
+- **Current position:** None (APIs have been blocked since Jun 22, 2026 — 4 consecutive rebalances missed)
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trades. Only action permitted: monthly rebalance on Oct 30.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 101):** APIs remain blocked. 4 consecutive monthly rebalances missed (Jun 30, Jul 31, Aug 31, Sep 30). Oct 30 rebalance is 13 trading days away.
+- **Bank earnings volatility today:** JPM/GS/WFC reporting — potential large market moves
+- **CPI tomorrow (Oct 14):** High sensitivity; could reprice Fed expectations significantly
+- **Elevated yields (10Y ~5.3%):** Continues to weigh on growth/tech but Nasdaq still holding near highs
+- **October end-of-month rebalance at risk** if APIs not whitelisted before Oct 30
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 URGENT ACTION REQUIRED before Oct 30:** Whitelist the following hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`  
+- `api.perplexity.ai:443`
+
+Docs: https://code.claude.com/docs/en/claude-code-on-the-web
