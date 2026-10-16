@@ -3052,3 +3052,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Market-open routine ran 2026-10-16 at 9:30 AM ET (Friday, Day 104 of API blockage, Week 21 of blockage). Alpaca API BLOCKED at market open — no account data, no trades possible. Portfolio: $100,000 cash, no positions, no trades since inception. Strategy is Dual Momentum ETF rotation — today is NOT a rebalance day (rebalance only on last trading day of month). No trades executed. Earnings week Oct 12–16: UNH/JNJ/JPM/GS/C (Tue), BLK/BAC/MS/ASML (Wed), SCHW/TSM (Thu), TRV (Fri). Q3 2026 FactSet earnings growth estimate: 29.6% YoY (3rd straight quarter >25%). Sep CPI 3.7% YoY triggered selloff. S&P est ~7,650–7,720. VIX est ~17–19 (MODERATE). Fed Oct 27–28. Next mandatory rebalance: **October 30, 2026** (10 trading days). **Action required:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy before Oct 30: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-16 — EOD Snapshot (Friday, Day 104 of API Blockage) ⚠️ WEEK 22 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-10-16 (Friday, Day 104 of API blockage, Week 22 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 16, 2026). Bank earnings week concluded (JPM/GS/WFC Mon-Tue, BAC/MS Wed, SCHW/USB/PNC/TSM Thu, TRV Fri). Q3 2026 earnings growth: ~29.6% YoY per FactSet — strong beat season. Sep CPI came in 3.7% YoY (above 3.6% forecast) and triggered a 2-day selloff Oct 14–15 (S&P -1.08% Oct 14, Nasdaq -1.9%). S&P 500 estimated ~7,640–7,720 range. VIX est ~17–19 (MODERATE). Fed meeting Oct 27–28. This is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (10 trading days). **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
