@@ -3026,3 +3026,29 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran 2026-10-15 (Thursday, Day 103 of API blockage, Week 21 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 15, 2026). Earnings reported before open today: SCHW, USB, PNC, SNA (regional bank season). Market context: S&P 500 experienced second consecutive day of selling Wed Oct 14 (down -1.08%) following hot Sep CPI 3.7% YoY; Nasdaq -1.9% on Wed. VIX estimated ~17-19 (MODERATE). This is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (11 trading days). **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-16 — Morning Snapshot (Friday, Day 104 of API Blockage) ⚠️ WEEK 21 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran 2026-10-16 (Friday, Day 104 of API blockage, Week 21). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 16, 2026). Strategy is Dual Momentum ETF rotation — today is NOT a rebalance day (rebalance only on last trading day of month). No trades executed. Market context: S&P 500 estimated ~7,650–7,720 (post CPI selloff Oct 14–15); bank earnings week concluding (TRV reporting today); Q3 2026 earnings growth 29.6% YoY per FactSet. VIX est ~17–19 (MODERATE). Fed meeting Oct 27–28. Next mandatory rebalance: **October 30, 2026** (10 trading days). **Action required:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy before Oct 30: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-16 — Market-Open Snapshot (Friday, Day 104 of API Blockage) ⚠️ WEEK 21 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Market-open routine ran 2026-10-16 at 9:30 AM ET (Friday, Day 104 of API blockage, Week 21 of blockage). Alpaca API BLOCKED at market open — no account data, no trades possible. Portfolio: $100,000 cash, no positions, no trades since inception. Strategy is Dual Momentum ETF rotation — today is NOT a rebalance day (rebalance only on last trading day of month). No trades executed. Earnings week Oct 12–16: UNH/JNJ/JPM/GS/C (Tue), BLK/BAC/MS/ASML (Wed), SCHW/TSM (Thu), TRV (Fri). Q3 2026 FactSet earnings growth estimate: 29.6% YoY (3rd straight quarter >25%). Sep CPI 3.7% YoY triggered selloff. S&P est ~7,650–7,720. VIX est ~17–19 (MODERATE). Fed Oct 27–28. Next mandatory rebalance: **October 30, 2026** (10 trading days). **Action required:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy before Oct 30: https://code.claude.com/docs/en/claude-code-on-the-web

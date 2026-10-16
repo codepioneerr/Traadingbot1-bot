@@ -5,6 +5,59 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-16 — Morning Research (Friday, Day 104 of API Blockage) ⚠️ WEEK 21 OF BLOCKAGE
+
+**Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+**Sizing mode:** N/A (Dual Momentum — monthly rebalance only, no VIX sizing)
+
+### API Status
+- `paper-api.alpaca.markets:443` — BLOCKED (403 connect_rejected, policy denial)
+- `api.telegram.org:443` — BLOCKED (403 connect_rejected, policy denial)
+- `api.perplexity.ai:443` — BLOCKED (403 connect_rejected, policy denial)
+
+All research below is from WebSearch fallback (no Perplexity available).
+
+### Market Context (WebSearch fallback)
+- **Date:** October 16, 2026 (Friday) — end of bank earnings week
+- **S&P 500:** Last confirmed close ~7,801.77 (Oct 7); CPI hot print Oct 14 (3.7% YoY) triggered 2-day selloff (Oct 14 down -1.08%, Oct 15 continued lower). Current estimate ~7,650–7,720 range post-selloff.
+- **VIX:** Estimated ~17–19 (MODERATE) — elevated since CPI surprise; elevated yields persisting
+- **Earnings this week (Oct 12–16):** UNH, JNJ, JPM, GS, C (Tue); BLK, BAC, MS, ASML (Wed); SCHW, TSM (Thu); TRV (Fri today). Bank earnings season concluding.
+- **Q3 2026 earnings growth:** FactSet estimate 29.6% YoY — 3rd consecutive quarter above 25% growth
+- **Next earnings week (Oct 19–23):** ~215 companies reporting — busier week
+- **10Y Treasury yield:** ~5.0–5.3% (persistently elevated, weighing on rate-sensitive sectors)
+- **Fed meeting:** October 27–28 — hike probability ~20–25% given hot CPI
+- **Sectors leading:** Technology (strong earnings), Financials (strong bank beats), Healthcare
+- **Sectors lagging:** Utilities, REITs (rate-sensitive, high-yield pressure), Consumer Discretionary
+
+### Dual Momentum Signal Status
+- **Strategy:** Dual Momentum ETF Rotation (Antonacci)
+- **Universe:** SPY, QQQ, IWM, TLT, GLD, SHY
+- **Today:** NOT a rebalance day. Rebalance only on last trading day of each month.
+- **Next rebalance:** October 30, 2026 (10 trading days away)
+- **October signal estimate:** QQQ (11th consecutive month estimate, unconfirmed due to API blockage — tech still leading on 12-month basis despite recent pullback)
+- **Current position:** None (APIs blocked since Jun 22, 2026 — 4 consecutive rebalances missed)
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trades. Only action permitted: monthly rebalance on Oct 30.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 104):** APIs remain blocked. 4 consecutive monthly rebalances missed (Jun 30, Jul 31, Aug 31, Sep 30). Oct 30 rebalance is 10 trading days away — FINAL OPPORTUNITY this month.
+- **CPI surprise aftermath:** Sep 2026 CPI 3.7% YoY (above 3.6% estimate) — market pricing in Fed hawkishness; potential volatility at rebalance date
+- **Fed meeting Oct 27–28:** One day before rebalance; FOMC decision could move markets
+- **Elevated yields (10Y ~5.1–5.3%):** Continues to pressure TLT (would still be last in signal ranking)
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 URGENT ACTION REQUIRED before Oct 30 (10 trading days):** Whitelist the following hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Docs: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-10-15 — Morning Research (Thursday, Day 103 of API Blockage) ⚠️ WEEK 21 OF BLOCKAGE
 
 **Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
