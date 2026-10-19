@@ -5,6 +5,63 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-19 — Morning Research (Monday, Day 107 of API Blockage) ⚠️ WEEK 22 OF BLOCKAGE
+
+**Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+**Sizing mode:** N/A (Dual Momentum — monthly rebalance only, no VIX sizing)
+
+### API Status
+- `paper-api.alpaca.markets:443` — BLOCKED (403 connect_rejected, policy denial — confirmed 13:06 UTC)
+- `api.telegram.org:443` — BLOCKED (403 connect_rejected, policy denial — confirmed 13:06 UTC)
+- `api.perplexity.ai:443` — BLOCKED (403 connect_rejected, policy denial — confirmed 13:06 UTC)
+
+All research below is from WebSearch fallback (no Perplexity available). Seventh straight week of full API blockage.
+
+### Market Context (WebSearch fallback)
+- **Date:** October 19, 2026 (Monday) — heavy Big Tech earnings week begins
+- **S&P 500 (SPY):** Up ~+0.54% premarket ($767.33); recovering after worst week since early June (-1.95% WoW)
+- **QQQ (Nasdaq-100):** Up ~+1.09% premarket ($717.53); semiconductors leading (SMH +2.44%)
+- **VIX:** ~18.60–19.99 (MODERATE range) — spiked 21.45% on Oct 16 (close ~19.99) following hot CPI; easing today
+- **Last week:** S&P -1.95%, Nasdaq -4.5% — hot Sep CPI (3.7% YoY vs 3.6% est) triggered selloff
+- **Earnings this week (Oct 19–23):** TSLA, META (Wed), NFLX, IBM, airlines, GE — ~215 companies reporting
+- **Q3 2026 earnings growth est.:** 29.6% YoY (FactSet) — 3rd consecutive quarter of >25% growth
+- **Fed meeting:** Oct 27–28 — rate hike probability ~15–17%; hot CPI keeps some hike risk on table
+- **10Y Treasury:** ~5.0–5.3% (persistently elevated, valuation headwind)
+- **Oil:** WTI/Brent elevated (Mid-East tensions; prior session WTI ~$92–95)
+- **Sectors leading today:** Technology (earnings recovery bounce), Semiconductors
+- **Sectors lagging:** Utilities, REITs (rate-sensitive), Consumer Discretionary
+
+### Dual Momentum Signal Status
+- **Strategy:** Dual Momentum ETF Rotation (Antonacci)
+- **Universe:** SPY, QQQ, IWM, TLT, GLD, SHY
+- **Today:** NOT a rebalance day. Rebalance only on last trading day of each month.
+- **Next rebalance:** October 30, 2026 (9 trading days away) — **CRITICAL**
+- **October signal estimate:** QQQ (12th consecutive month estimate, unconfirmed due to API blockage — tech still leading 12-month momentum despite recent volatility)
+- **Current position:** None (APIs blocked since Jun 22, 2026 — 4 consecutive rebalances missed: Jun 30, Jul 31, Aug 31, Sep 30)
+- **Opportunity cost:** Running 100% cash since Jun 22; SPY +estimated 5–8% missed during blockage period
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trades. Only action permitted: monthly rebalance on Oct 30.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 107):** APIs remain blocked. 4 consecutive monthly rebalances missed. Oct 30 rebalance is 9 trading days away — last chance this month.
+- **Big Tech earnings volatility (this week):** TSLA/META/NFLX results could sharply move QQQ; if earnings disappoint, 12m momentum ranking could shift — need to run signal on Oct 30 with live data
+- **Fed meeting Oct 27–28:** One day before rebalance; FOMC decision could cause volatility
+- **Elevated yields (10Y ~5.1–5.3%):** Continues to pressure TLT; reduces equity upside
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 URGENT ACTION REQUIRED before Oct 30 (9 trading days):** Whitelist the following hosts in environment network policy or 5th consecutive rebalance will be missed:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Docs: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-10-16 — Morning Research (Friday, Day 104 of API Blockage) ⚠️ WEEK 21 OF BLOCKAGE
 
 **Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None

@@ -5,6 +5,37 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-10-19 — Market-Open Snapshot (Monday, Day 107 of API Blockage) ⚠️ OCT 30 REBALANCE IN 9 DAYS
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Pre-market + market-open routine ran 2026-10-19 (Monday, Day 107 of API blockage). All APIs remain blocked: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Oct 19, 2026). No account data, positions, or orders retrievable. Portfolio remains $100,000 cash — unchanged since last confirmed state. No trades executed; Dual Momentum strategy prohibits intra-month discretionary action. Next rebalance: Oct 30, 2026 (9 trading days).
+
+**Rule check (market-open):**
+- Rebalance day? NO — Oct 30 is next rebalance (confirmed via `python3 scripts/is_rebalance_day.py`). No order permitted.
+- API accessible? NO — Alpaca 403 connect_rejected. No order possible.
+- Result: **NO TRADE** (double-confirmed: strategy rule + API blockage)
+
+**Today's market context (APIs blocked — WebSearch fallback):**
+- **VIX:** ~18.60–19.99 (MODERATE range) — spiked 21% on Oct 16 post-hot CPI; easing today
+- **S&P 500 / SPY:** +0.54% premarket — bouncing after worst week since early June (-1.95% WoW)
+- **QQQ:** +1.09% premarket — semis leading (SMH +2.44%)
+- **Big Tech earnings this week:** TSLA, META (Wed), NFLX, IBM — ~215 companies reporting
+- **Fed:** Oct 27–28 FOMC; rate hike prob ~15–17%; hot Sep CPI (3.7%) adds risk
+- **10Y yield:** ~5.0–5.3% — elevated, equity headwind
+- **Dual Momentum est. signal:** QQQ (12m momentum, unconfirmed — need live data Oct 30)
+
+**Missed rebalances (API blockage):** Jun 30 ✗, Jul 31 ✗, Aug 31 ✗, Sep 30 ✗ | Oct 30 → CRITICAL (9 days)
+
+**⚠️ CRITICAL ACTION REQUIRED:** Oct 30 rebalance is 9 trading days away. This will be the 5th consecutive missed rebalance if APIs are not unblocked. Whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in remote execution environment egress policy NOW.
+
+---
+
 ## 2026-09-24 — Market-Open Snapshot (Thursday, Day 86 of API Blockage) ⚠️ SEP 30 REBALANCE IN 4 DAYS
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 | **Phase P&L:** $0.00 (0.00%)
