@@ -3109,3 +3109,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran 2026-10-19 (Monday, Day 107 of API blockage, Week 22 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 19, 2026). Market context: S&P 500 recovering today after worst week since early June (last week -1.95% WoW, Nasdaq -4.5%); SPY up ~+0.54% premarket as Big Tech earnings week begins (TSLA, META Wed; NFLX, IBM Thu; ~215 companies total). Semiconductors led (SMH +2.44%). VIX ~18.60–19.99 (MODERATE — spiked 21.45% on Oct 16 after hot Sep CPI 3.7% YoY, now easing). 10Y Treasury ~5.0–5.3%. Fed meeting Oct 27–28 (rate hike probability ~15–17%). This is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (9 trading days). **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-20 — Morning Snapshot (Tuesday, Day 108 of API Blockage) ⚠️ WEEK 22 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran 2026-10-20 (Tuesday, Day 108 of API blockage, Week 22). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 20, 2026). Strategy is Dual Momentum ETF rotation — today is NOT a rebalance day (rebalance only on last trading day of month). No trades executed. Earnings today (pre-market): KO, RTX, VZ, DHR, LMT, GM (~28 names before open); Netflix possibly reporting today (consensus EPS ~$0.82–0.84). Market context: S&P ~7,640–7,720, VIX est ~18–20 (MODERATE, easing from CPI spike), 10Y Treasury ~5.0–5.3%, Fed Oct 27–28. Big Tech earnings week: TSLA/META Wed, NFLX/IBM Thu. Q3 2026 earnings growth ~29.6% YoY. Energy leading YTD (+39.4%). Next mandatory rebalance: **October 30, 2026** (8 trading days). **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
