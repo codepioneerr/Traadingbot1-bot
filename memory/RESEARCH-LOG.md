@@ -5,6 +5,67 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-21 — Morning Research (Wednesday, Day 109 of API Blockage) ⚠️ WEEK 22 OF BLOCKAGE
+
+**Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+**Sizing mode:** N/A (Dual Momentum — monthly rebalance only, no VIX sizing)
+
+### API Status
+- `paper-api.alpaca.markets:443` — BLOCKED (403 connect_rejected, policy denial)
+- `api.telegram.org:443` — BLOCKED (403 connect_rejected, policy denial)
+- `api.perplexity.ai:443` — BLOCKED (403 connect_rejected, policy denial)
+
+All research below is from WebSearch fallback (Perplexity blocked).
+
+### Market Context (WebSearch — October 21, 2026)
+- **Date:** Wednesday, October 21, 2026 — Big Tech Earnings Night
+- **TSLA (Tesla):** Reports after close today (call at 5:30 PM ET). Q3 deliveries: 486,532. Focus on margins/profitability. SpaceX-Tesla merger committee formed — stocks up premarket.
+- **META (Meta):** Reports after close today (call at 4:30 PM ET). Consensus: ~$3.56–$6.76 EPS (sources vary), ~$63.3B revenue. CapEx +117% YoY to ~$41B for AI infra. Stock fell after last report on cash flow concerns.
+- **SpaceX:** Beat quarterly results; shares +8% premarket. AI infrastructure & cloud growth driver. Musk announced SpaceX-Tesla merger committee.
+- **S&P 500 futures:** Higher premarket on earnings optimism. S&P 500 last close ~7,659.44 (Oct 16, -1.95% WoW from tech rout). Estimated ~7,650–7,720 range.
+- **VIX:** Estimated ~18–21 (MODERATE) — spiked on Oct 16 CPI shock (21.45%), now easing. Monitoring closely.
+- **Tech rout (Oct 12–16):** XLK (Tech ETF) lost 7.70% last week; Nasdaq -4.48%. Hot Sep CPI (3.7% YoY vs. 3.6% est.) triggered the selloff.
+- **Sector rotation:** Defensives led last week — Consumer Staples (+5.02%), Energy (+4.86%), Health Care (+3.45%). Seven of 11 sectors positive last week despite S&P falling.
+- **YTD leaders:** Energy +45.56%, Information Technology +30.05% (as of Oct 9). Financials ~flat.
+- **Fed:** Oct 27–28 meeting. Hike probability ~15–17%. 10Y Treasury ~5.0–5.3%.
+- **Economic calendar:** No major data releases today; CPI already absorbed last week.
+
+### Dual Momentum Signal Status
+- **Strategy:** Dual Momentum ETF Rotation (Antonacci)
+- **Universe:** SPY, QQQ, IWM, TLT, GLD, SHY
+- **Today:** NOT a rebalance day. Rebalance only on last trading day of each month.
+- **Next rebalance:** **October 30, 2026** (7 trading days — CRITICAL)
+- **Signal estimate:** QQQ likely (#1 12-month momentum, unconfirmed due to API blockage)
+- **Current position:** None (APIs blocked since Jun 22, 2026 — 5 consecutive rebalances missed: Jun 30, Jul 31, Aug 31, Sep 30, Oct 30 at risk)
+
+### Top Sectors Watch
+- **Top momentum (YTD):** Energy (XLE), Technology (XLK), Communications (XLC)
+- **Top this past week:** Consumer Staples (XLP), Energy (XLE), Health Care (XLV)
+- **Avoid:** Technology near-term (XLK -7.70% last week), Utilities (rate-sensitive, 10Y ~5.3%)
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trades. Only action permitted: monthly rebalance on Oct 30.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 109):** APIs remain blocked. 5 consecutive monthly rebalances missed or at risk (Jun–Oct). Oct 30 rebalance is 7 trading days away.
+- **TSLA/META earnings tonight:** Large potential moves in QQQ — could shift 12-month momentum ranking
+- **VIX elevated (~18–21):** MODERATE zone; could shift to DEFENSIVE if spikes above 25 post-earnings
+- **Tech rout risk:** XLK down 7.70% last week; if TSLA/META disappoint tonight, QQQ could break significantly
+- **Oct 30 rebalance window closing:** Only 7 trading days. APIs must be whitelisted before then.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 URGENT ACTION REQUIRED before Oct 30 (7 trading days):** Whitelist in environment egress policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Docs: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-10-20 — Morning Research (Tuesday, Day 108 of API Blockage) ⚠️ WEEK 22 OF BLOCKAGE
 
 **Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None

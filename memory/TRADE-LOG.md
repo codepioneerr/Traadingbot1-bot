@@ -3148,3 +3148,29 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran 2026-10-20 (Tuesday, Day 108 of API blockage, Week 22 of blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 20, 2026). Market context: Big Tech earnings week underway — NFLX reported after-hours Oct 20 (est. Q3 EPS ~$0.82–0.84, subscribers ~280M); TSLA/META report Wed Oct 21, IBM/NFLX finalize Thu Oct 22. S&P 500 estimated ~7,640–7,720, VIX est ~18–19 (MODERATE, easing post-CPI spike). 10Y Treasury ~5.0–5.3%. Fed meeting Oct 27–28. KO, RTX, VZ, DHR, LMT, GM reported before open today (~28 names). This is NOT a rebalance day — next mandatory rebalance is **October 30, 2026** (8 trading days — CRITICAL). **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-21 — Morning Snapshot (Wednesday, Day 109 of API Blockage) ⚠️ WEEK 22 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran 2026-10-21 (Wednesday, Day 109 of API blockage, Week 22). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 21, 2026). Strategy is Dual Momentum ETF rotation — today is NOT a rebalance day (rebalance only on last trading day of month). No trades executed. Market context today: TSLA reports after close (call 5:30 PM ET; Q3 deliveries 486,532; focus on margins + SpaceX-Tesla merger); META reports after close (call 4:30 PM ET; consensus ~$63.3B revenue, +117% CapEx YoY for AI). SpaceX +8% premarket on strong Q results. S&P 500 futures higher premarket; last close ~7,659.44 (Oct 16). VIX est ~18–21 (MODERATE). 10Y Treasury ~5.0–5.3%. Fed meeting Oct 27–28. Sector rotation: defensives (Consumer Staples, Energy, Health Care) led last week as tech (XLK) fell -7.70%. Next mandatory rebalance: **October 30, 2026** (7 trading days — CRITICAL). **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-21 — Market-Open Snapshot (Wednesday, Day 109 of API Blockage) ⚠️ WEEK 22 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Market-open routine ran 2026-10-21 at 9:30 AM ET (Wednesday, Day 109 of API blockage, Week 22). Alpaca API BLOCKED at market open — no account data, no trades possible. Hard-check result: NO TRADE — not a rebalance day (Dual Momentum rebalances only on last trading day of month). Portfolio: $100,000 cash, no positions, no trades since inception. TSLA and META reporting after close tonight — major earnings catalyst for QQQ (could shift 12-month momentum signal for Oct 30 rebalance). S&P 500 ~7,650–7,720, VIX est ~18–21 (MODERATE). SpaceX surging premarket (+8%) on strong results + Tesla merger committee. Next mandatory rebalance: **October 30, 2026** (7 trading days — CRITICAL). **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
