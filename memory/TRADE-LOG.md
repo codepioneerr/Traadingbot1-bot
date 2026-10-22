@@ -3200,3 +3200,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Morning routine ran 2026-10-22 (Thursday, Day 110 of API blockage, Week 23). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), and `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 22, 2026). Strategy is Dual Momentum ETF rotation — today is NOT a rebalance day (rebalance only on last trading day of month). No trades executed. Market context: S&P 500 prior close 7,757.17 (+0.58% Oct 21); premarket futures DOWN ~1% on Asian chip stock selloff (Tokyo Electron, SK Hynix -6% overnight). Oil at 5-month high. TSLA and META reported after close Oct 21. 27 S&P 500 companies reporting today. VIX est ~19-22 (MODERATE). 10Y Treasury ~5.0-5.3%. Fed meeting Oct 27-28. Next mandatory rebalance: **October 30, 2026** (6 trading days — CRITICAL). **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-22 — Market-Open Snapshot (Thursday, Day 110 of API Blockage) ⚠️ WEEK 23 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Market-open routine ran 2026-10-22 at 9:31 AM ET (Thursday, Day 110 of API blockage, Week 23). Alpaca API BLOCKED at market open — no account data, no trades possible. Hard-check result: NO TRADE — not a rebalance day (Dual Momentum rebalances only on last trading day of month). Portfolio: $100,000 cash, no positions, no trades since inception. Market context: S&P 500 premarket futures were DOWN ~1% on Asian chip selloff (Tokyo Electron, SK Hynix -6% overnight) + oil at 5-month high. TSLA and META reported after close Oct 21 — results driving sentiment. 27 S&P 500 companies reporting today. VIX est ~19-22 (MODERATE). Fed meeting Oct 27-28. Next mandatory rebalance: **October 30, 2026** (6 trading days — CRITICAL). **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
