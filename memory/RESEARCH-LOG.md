@@ -5,6 +5,63 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-22 — Morning Research (Thursday, Day 110 of API Blockage) ⚠️ WEEK 23 OF BLOCKAGE
+
+**Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+**Sizing mode:** N/A (Dual Momentum — monthly rebalance only, no VIX sizing)
+
+### API Status
+- `paper-api.alpaca.markets:443` — BLOCKED (403 connect_rejected, policy denial)
+- `api.telegram.org:443` — BLOCKED (403 connect_rejected, policy denial)
+- `api.perplexity.ai:443` — BLOCKED (403 connect_rejected, policy denial)
+
+All research below is from WebSearch fallback (Perplexity blocked).
+
+### Market Context (Oct 22, 2026 — Thursday)
+- **S&P 500:** Prior close 7,757.17 (+0.58% Oct 21). Premarket futures DOWN ~1% due to Asian market selloff overnight.
+- **Chip stocks:** Asian chip names (Tokyo Electron, SK Hynix) fell ~6% overnight — spillover expected in US semis (NVDA, AMD, AVGO, SMH).
+- **Oil:** Surging to 5-month high — boosting Energy sector but weighing on growth/tech.
+- **VIX:** Estimated ~19-22 (MODERATE — elevated from chip selloff; 52-wk range ~13-60).
+- **Earnings focus:** TSLA and META reported after close Oct 21. Results drive QQQ momentum today.
+  - **TSLA Q3 2026:** Pre-release est. EPS $0.44, revenue $27.8B. Q2 was EPS miss ($0.33 vs $0.50 est) + revenue beat ($28.24B). Operating margin under pressure (Q3 est ~6.4%). Stock risk: down ~10% on prior earnings miss pattern.
+  - **META Q3 2026:** Revenue guidance $61-64B (consensus $63.28B), Q2 revenue $60.80B +28% YoY. Full-year capex $130-145B. Report possibly also Oct 21 or Oct 28 — results may not be official yet.
+- **27 S&P 500 companies reporting today** — broad earnings activity.
+- **Fed meeting:** Oct 27-28 (rate hike probability ~15-17%).
+- **10Y Treasury:** ~5.0-5.3% (elevated, weighing on growth names).
+- **S&P 500 52-week high:** 7,844.52 (set Oct 6, 2026).
+- **Sector context:** Chip/tech under pressure; Energy leading on oil surge; Defensives (Consumer Staples, Health Care) holding.
+
+### Dual Momentum Signal Status
+- **Strategy:** Dual Momentum ETF Rotation (Antonacci)
+- **Universe:** SPY, QQQ, IWM, TLT, GLD, SHY
+- **Today:** NOT a rebalance day. Rebalance only on last trading day of each month.
+- **Next rebalance:** October 30, 2026 (6 trading days away — CRITICAL)
+- **October signal estimate:** QQQ likely leading (strong 12-month returns despite recent tech pullback), but chip selloff + TSLA/META earnings could shift QQQ momentum. Cannot run `dual_momentum_signal.py` without Alpaca data.
+- **Current position:** None (APIs blocked since Jun 22, 2026 — 4+ consecutive rebalances missed)
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trades. Only action permitted: monthly rebalance on Oct 30.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 110):** APIs remain blocked. 4+ consecutive monthly rebalances missed (Jun 30, Jul 31, Aug 31, Sep 30). Oct 30 rebalance is 6 trading days away — FINAL WINDOW.
+- **Chip stock selloff:** If TSLA/META disappoints + chips continue lower, QQQ 12-month return could weaken before Oct 30 signal run — watch closely.
+- **Oil surge:** Energy sector leading, could boost GLD momentum (risk-off); TLT still pressured by 10Y ~5.3%.
+- **Fed Oct 27-28:** Rate decision could move markets sharply just before Oct 30 rebalance.
+- **🚨 API blockage:** Without live Alpaca data on Oct 30, signal calculation impossible and rebalance will be MISSED AGAIN.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 URGENT ACTION REQUIRED before Oct 30 (6 days):** Whitelist the following hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Docs: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-10-21 — Morning Research (Wednesday, Day 109 of API Blockage) ⚠️ WEEK 22 OF BLOCKAGE
 
 **Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
