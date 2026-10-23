@@ -5,6 +5,62 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-23 — Morning Research (Friday, Day 111 of API Blockage) ⚠️ WEEK 23 OF BLOCKAGE
+
+**Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+**Sizing mode:** N/A (Dual Momentum — monthly rebalance only, no VIX sizing)
+
+### API Status
+- `paper-api.alpaca.markets:443` — BLOCKED (403 connect_rejected, policy denial)
+- `api.telegram.org:443` — BLOCKED (403 connect_rejected, policy denial)
+- `api.perplexity.ai:443` — BLOCKED (403 connect_rejected, policy denial)
+
+All research below is from WebSearch fallback (no live Perplexity data available).
+
+### Market Context (2026-10-23, Friday)
+- **S&P 500 Futures:** Roughly flat to slightly down premarket (S&P ~+0.05%, Dow ~+0.07%); prior close ~7,750. S&P tracking slim weekly gain ~+0.1%; Nasdaq down ~-0.5% for week
+- **VIX:** ~19.1–19.7 (MODERATE sizing territory — up ~15% on Oct 22 spike amid AI/tech selloff)
+- **Oil:** Above $100/bbl (5-month high), driving Energy sector outperformance
+- **Geopolitical risk:** Reports US/Israel drawing up plans for renewed Iran attacks — oil bid, risk-off
+- **AI spending fears:** Ongoing selloff in semiconductor/AI names (NVDA, AMD down hard this week)
+- **Earnings today (Oct 23):** ~29 companies reporting (28 before open); AXP, SLB, GNTX key names. Robert Half +8.8% (beat), Deckers -8.4% (mixed), Kering -12%, SLM -4.6%
+- **Prior earnings:** TSLA -3% despite beat (heavy spending signal); Meta missed operating income ($9.9B legal charge); Spotify EPS missed but shares +11%
+- **Fed meeting:** Oct 27–28 (next week — major market event)
+- **10Y Treasury:** ~5.0–5.3% (persistently elevated)
+- **Sector performance (week Oct 12–16):** Consumer Staples +5.02%, Energy +4.86%, Health Care +3.45%; XLK (Tech) -7.70%, Nasdaq -4.48%, S&P -1.95%
+- **Current week (Oct 19–23):** Consumer Staples +3.11%, Utilities +1.98%; Energy leading YTD +54.6%; Communication Services YTD worst at -5.6%
+- **Crown Castle (CCI):** +7.5% premarket on SpaceX infrastructure talks
+
+### Dual Momentum Signal Status
+- **Strategy:** Dual Momentum ETF Rotation (Antonacci)
+- **Universe:** SPY, QQQ, IWM, TLT, GLD, SHY
+- **Today:** NOT a rebalance day. Rebalance only on last trading day of each month.
+- **Next rebalance:** October 30, 2026 (5 trading days — CRITICAL)
+- **Signal estimate:** QQQ likely #1 (tech momentum still leading 12-month basis despite recent selloff; unconfirmed without API)
+- **Current position:** None (API blocked since Jun 22, 2026 — 5 consecutive rebalances missed)
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trades. Only action permitted: monthly rebalance on Oct 30.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 111):** APIs remain blocked. 5 consecutive monthly rebalances missed (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30 incoming). Oct 30 rebalance is 5 trading days away.
+- **AI/tech selloff accelerating:** XLK -7.70% last week; could affect QQQ 12-month momentum ranking if sustained
+- **Oil above $100:** Energy strong — GLD and TLT could benefit from geopolitical risk-off
+- **Fed meeting Oct 27–28:** Potential rate decision could move all assets significantly
+- **VIX ~19.7:** Slightly elevated; MODERATE territory but trending higher
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 URGENT ACTION REQUIRED before Oct 30 (5 trading days):** Whitelist the following hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Docs: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-10-22 — Morning Research (Thursday, Day 110 of API Blockage) ⚠️ WEEK 23 OF BLOCKAGE
 
 **Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
