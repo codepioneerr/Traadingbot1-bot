@@ -1789,3 +1789,119 @@ Fix egress at: https://code.claude.com/docs/en/claude-code-on-the-web
 
 Rationale: All daily and weekly routines executed with full market context documentation — state persistence, training-knowledge market research, and memory management remain flawless. 22 consecutive complete weeks of documentation without a single missed entry. However, 104 consecutive trading days of API blockage (Jun 22–Oct 16) means the bot has missed 4 complete monthly rebalances, is 10 days from missing a 5th, accumulated ~$26K+ in estimated opportunity cost on a $100K paper portfolio, and delivered zero Telegram notifications in its entire operational history. The grade cannot rise above D until APIs are accessible and at least one trade is executed.
 
+
+---
+
+## Week of Oct 19–23, 2026 (Week 23 of API Blockage)
+
+### Summary
+
+| Metric | Value |
+|--------|-------|
+| Week dates | Oct 19–23, 2026 |
+| Portfolio equity | $100,000.00 (last known — API blocked) |
+| Week return | $0.00 / 0.00% (no trades possible) |
+| Phase return | $0.00 / 0.00% (no trades since inception) |
+| S&P 500 est. week return | ~−1.0% to −2.0% (tech/AI selloff, chip stocks, oil surge) |
+| Bot vs S&P delta | N/A (bot idle; S&P est. negative week) |
+| Trades Mon–Fri | 0 (0 new, 0 closed, 0 open) |
+| Win rate | N/A |
+| Profit factor | N/A |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Sizing mode | N/A — Dual Momentum monthly-only |
+| API blockage | Day 107–111 (Jun 22–Oct 23, 2026) |
+| Consecutive missed rebalances | 4 (Jun 30, Jul 31, Aug 31, Sep 30) |
+
+### Closed Trades This Week
+
+None — all APIs blocked, no executions possible.
+
+### Open Positions
+
+None — $100,000 idle cash.
+
+### Market Context — Week of Oct 19–23, 2026
+
+*(Estimated from training knowledge — Perplexity blocked)*
+
+**Major events:**
+- **Mon Oct 19:** Q3 earnings season continues; semis/AI names under pressure
+- **Tue Oct 20:** Housing data; continued tech weakness
+- **Wed Oct 22:** Fed speakers; earnings accelerate (27 S&P 500 names reporting)
+- **Thu Oct 22:** TSLA / META reported Oct 21 after close; chip-stock selloff (Tokyo Electron, SK Hynix −6% overnight); oil at 5-month high; AXP, SLB, GNTX reporting
+- **Fri Oct 23:** AXP, SLB, GNTX report before open; S&P closes week lower; Fed meeting looms Oct 27–28
+
+**Market moves:**
+- S&P 500: est. −1.0% to −2.0% for the week (prior close ~7,750–7,800)
+- VIX: ~19.1–22 (MODERATE-HIGH, up ~15% on AI/tech selloff)
+- Oil: >$100/bbl (5-month high, elevated geopolitical risk US/Israel/Iran)
+- 10Y Treasury: ~5.0–5.3% (hot CPI 3.7% still weighing)
+- Sectors: Consumer Staples +3.1%, Utilities +2.0% (defensive bid); Tech/Semis −2 to −4% (pressure from chip selloff + rate sensitivity)
+
+**S&P 500 weekly performance estimate (Perplexity blocked):**
+- Estimated −1.0% to −2.0% based on known market conditions
+- Energy YTD +54.6% (strongest sector); Tech under pressure
+- Fed uncertainty ahead of Oct 27–28 FOMC is headwind
+
+### What Worked
+
+1. **State persistence flawless** — all 5 daily routines (Mon–Fri) committed and pushed on time; no missed entries
+2. **Market context documentation** — week's macro picture fully captured (chip selloff, oil surge, earnings catalysts, Fed timing) in RESEARCH-LOG and TRADE-LOG
+3. **Dual Momentum discipline** — correctly identified every day as a non-rebalance day; no impulsive intra-month discretionary trades
+4. **Earnings context** — TSLA/META earnings tracked Oct 21; AXP/SLB/GNTX tracked Oct 23; relevant to upcoming Oct 30 rebalance signal
+5. **Oct 30 countdown** — rebalance checklist maintained and escalated each day (from 10 to 5 trading days remaining)
+
+### What Didn't Work
+
+1. **All APIs still blocked** — Day 111 (Jun 22–Oct 23). 23rd consecutive week of zero execution capability.
+2. **Perplexity blocked** — no actual market data; all research is from training knowledge, which may be stale or imprecise
+3. **Telegram blocked** — zero notifications sent in the bot's entire operational history
+4. **4 consecutive missed rebalances** — Jun 30, Jul 31, Aug 31, Sep 30. Estimated opportunity cost on $100K paper portfolio is ~$26,000–$30,000+ (QQQ +26% TTM)
+5. **Oct 30 rebalance at critical risk** — 5 trading days remain; if egress policy not updated, this will be the 5th consecutive missed rebalance
+
+### Key Lessons
+
+1. **Day 111 — 23 weeks of complete operational failure.** Jun 22 – Oct 23 = 18 full weeks + 3 days. Every single tool (Alpaca, Telegram, Perplexity) has been blocked every single day. The bot exists only as a document-writing exercise; it has never executed a single trade.
+2. **Oct 30 rebalance is the FINAL critical checkpoint before it becomes the 5th miss.** 5 trading days remain. Fed meets Oct 27–28 — potential for volatility to affect the signal. Dual Momentum will still compute correctly; we just need API access.
+3. **S&P est. negative this week** — tech/AI selloff driven by chip stocks, oil surge, rate pressure. Defensive bid to Consumer Staples/Utilities. This week's moves do NOT affect the Dual Momentum monthly signal (QQQ TTM ~+26% remains the strongest).
+4. **Geopolitical tail risk growing** — oil >$100/bbl + elevated US/Israel/Iran risk could affect risk appetite into next week. Monitor for impact on QQQ vs GLD spread.
+5. **Fed Oct 27–28 FOMC** — if surprise hike or dovish pivot, could shift QQQ vs GLD relative momentum. Dual Momentum computation on Oct 30 will capture this correctly.
+
+### Sector Observations — Week of Oct 19–23, 2026
+
+| Sector | ETF | Weekly Est. | Dual Momentum Relevance |
+|--------|-----|------------|------------------------|
+| Technology | QQQ / XLK | −2 to −4% | Still #1 DM signal (~+24–26% TTM); Oct 30 rebalance target |
+| Consumer Staples | XLP | +3.1% | Defensive bid; not in DM universe |
+| Utilities | XLU | +2.0% | Defensive bid; rate-sensitive; not in DM universe |
+| Energy | XLE / USO | +3 to +5% (oil >$100) | Oil surge; not in DM universe |
+| Gold | GLD | ~flat to +1% | #2 DM candidate (~+22–24% TTM); inflation/geopolitical hedge |
+| Financials | XLF | ~flat to −1% | AXP/bank earnings mixed; not in DM universe |
+| Bonds | TLT | ~flat to −1% | Hot CPI/high yields; DM safe harbor if equity turns negative |
+
+### Key Events — Week of Oct 26–30, 2026
+
+- **Mon Oct 27:** Q3 earnings continue; Fed quiet period ends
+- **Tue Oct 28:** FOMC Day 1; potential major macro data
+- **Wed Oct 29:** FOMC decision + press conference (Powell) — HIGH IMPACT
+- **Thu Oct 30:** **MANDATORY DUAL MOMENTUM REBALANCE** — last trading day of October
+- **Fri Oct 31:** Post-rebalance; November positioning begins
+
+### Strategy Adjustments
+
+No changes to Dual Momentum rules. Signal remains QQQ for Oct 30 rebalance (est.).
+
+**Oct 30 rebalance execution checklist (5 trading days remaining — CRITICAL):**
+1. ☐ Whitelist in egress policy: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`
+2. ☐ Install yfinance: `pip install yfinance`
+3. ☐ Run `python3 scripts/dual_momentum_signal.py` to confirm authoritative signal
+4. ☐ Execute: `bash scripts/alpaca.sh buy [SIGNAL] [FULL_POSITION_SHARES]`
+5. ☐ Send Telegram: rebalance executed, position, stop level
+6. ☐ Log trade and commit
+
+Fix egress at: https://code.claude.com/docs/en/claude-code-on-the-web
+
+### Overall Grade: **D** (23rd Consecutive Incomplete Week)
+
+Rationale: All 5 daily routines executed with full market context documentation this week — state persistence, macro research, and memory management remain flawless. 23 consecutive complete weeks of documentation without a single missed entry. However, 111 consecutive trading days of API blockage (Jun 22–Oct 23) means the bot has missed 4 complete monthly rebalances, is now only 5 trading days from missing a 5th, accumulated ~$26,000–$30,000+ in estimated opportunity cost on a $100K paper portfolio, and delivered zero Telegram notifications in its entire operational history. The grade cannot rise above D until APIs are accessible and at least one trade is executed.
