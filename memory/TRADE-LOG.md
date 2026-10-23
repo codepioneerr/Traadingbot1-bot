@@ -3252,3 +3252,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Market-open routine ran 2026-10-23 at 9:31 AM ET (Friday, Day 111 of API blockage, Week 23). Alpaca API BLOCKED at market open — no account data, no trades possible. Hard-check result: NO TRADE — not a rebalance day (Dual Momentum rebalances only on last trading day of month). Portfolio: $100,000 cash, no positions, no trades since inception. Market context: S&P 500 opened with tech/AI selloff continuing; VIX ~19.7 (MODERATE); oil >$100/bbl; geopolitical risk elevated (US/Israel/Iran). AXP, SLB, GNTX among 28 names reporting before open. Fed meeting Oct 27–28 next week. **Next mandatory rebalance: October 30, 2026 (5 trading days — CRITICAL).** **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-23 — EOD Snapshot (Friday, Day 111 of API Blockage) ⚠️ WEEK 23 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-10-23 (Friday, Day 111 of API blockage, Week 23). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 23, 2026). Strategy is Dual Momentum ETF rotation — today is NOT a rebalance day (rebalance only on last trading day of month). No trades executed. Market context: S&P 500 closed the week with tech/AI under continued pressure from chip-stock selloff; VIX ~19–22 (MODERATE-HIGH); oil above $100/bbl (5-month high); geopolitical risk elevated (US/Israel/Iran). Week's major events: TSLA/META earnings (Oct 21), Fed speakers ahead of Oct 27–28 FOMC, AXP/SLB/GNTX reporting today. 10Y Treasury ~5.0–5.3%. **Next mandatory rebalance: October 30, 2026 (5 trading days — CRITICAL).** **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
