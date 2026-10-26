@@ -3265,3 +3265,17 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran 2026-10-23 (Friday, Day 111 of API blockage, Week 23). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 23, 2026). Strategy is Dual Momentum ETF rotation — today is NOT a rebalance day (rebalance only on last trading day of month). No trades executed. Market context: S&P 500 closed the week with tech/AI under continued pressure from chip-stock selloff; VIX ~19–22 (MODERATE-HIGH); oil above $100/bbl (5-month high); geopolitical risk elevated (US/Israel/Iran). Week's major events: TSLA/META earnings (Oct 21), Fed speakers ahead of Oct 27–28 FOMC, AXP/SLB/GNTX reporting today. 10Y Treasury ~5.0–5.3%. **Next mandatory rebalance: October 30, 2026 (5 trading days — CRITICAL).** **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-26 — Morning Snapshot (Monday, Day 114 of API Blockage) ⚠️ WEEK 24 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran 2026-10-26 (Monday, Day 114 of API blockage, Week 24). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (exit 56). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 26, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. Confirmed via `is_rebalance_day.py`: 4 trading days until Oct 30 rebalance. Market context (WebSearch): FOMC meeting Oct 27–28 (volatility event, likely hold at 3.75–4.00%, 83.5% odds); QQQ leads 12-month momentum (~21.5% vs SPY ~17.3% as of Oct 15); major earnings week (VZ, WELL, KO, BA, UPS). **5th consecutive monthly rebalance (Oct 30, 2026) at risk if APIs not whitelisted — CRITICAL.** Whitelist required: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`. Docs: https://code.claude.com/docs/en/claude-code-on-the-web
+

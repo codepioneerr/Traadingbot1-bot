@@ -5859,3 +5859,50 @@ All research below is from training knowledge (no live data available).
 - `api.perplexity.ai:443`
 
 Docs: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-26 — Morning Research (Monday, Day 114 of API Blockage) ⚠️ WEEK 24 OF BLOCKAGE
+
+**Date:** 2026-10-26 | **Routine fired:** 13:11 UTC (9:11 AM ET)
+
+### Account State
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+- Alpaca API: BLOCKED (`paper-api.alpaca.markets:443` — 403 connect_rejected via egress proxy, Day 114)
+- Telegram: BLOCKED (api.telegram.org:443 — 403)
+- Perplexity: BLOCKED (api.perplexity.ai:443 — exit 56)
+
+### Market Context (via WebSearch fallback)
+- **VIX:** ~19–20 est (unconfirmed, elevated — MODERATE sizing zone)
+- **S&P 500 / QQQ:** Not confirmed. Prior close: S&P ~7,750 range; tech/semis under pressure
+- **FOMC Meeting:** October 27–28, 2026 — decision at 2:00 PM ET Wednesday (VOLATILITY EVENT)
+  - Market odds (as of Oct 7): Hold 83.5%, +25bp 15.5% — Fed rate currently 3.75–4.00%
+- **Major earnings this week:** Verizon (VZ), Welltower (WELL) today; Coca-Cola (KO), Boeing (BA), UPS tomorrow
+- **Momentum signal estimate (as of Oct 15):** QQQ 12-month +21.5% vs SPY +17.3% — QQQ leading
+
+### Dual Momentum Signal Status
+- **Strategy:** Dual Momentum ETF Rotation (Antonacci)
+- **Today:** NOT a rebalance day. `is_rebalance_day.py` confirmed: 4 trading days until Oct 30.
+- **Next rebalance:** October 30, 2026 (Friday — CRITICAL, last trading day of month)
+- **Signal estimate:** QQQ (pending official signal run on Oct 30)
+- **Current position:** None (APIs blocked since Jun 22, 2026 — 4 consecutive rebalances missed: Jun 30, Jul 31, Aug 31, Sep 30)
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: Oct 30 rebalance.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 114):** All APIs remain blocked. 5th consecutive monthly rebalance (Oct 30) at risk.
+- **FOMC Oct 28:** Rate decision could move markets significantly — hold most likely but hike remains possible
+- **10Y Treasury ~4.0% area** (after Sep hike to 3.75-4.00% range) — TLT likely weak momentum
+- **QQQ vs SPY:** QQQ leads 12-month momentum by ~4 percentage points as of mid-October
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 URGENT ACTION REQUIRED before Oct 30:** Whitelist hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Docs: https://code.claude.com/docs/en/claude-code-on-the-web
+
