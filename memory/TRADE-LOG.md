@@ -3292,3 +3292,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran 2026-10-26 (Monday, Day 114 of API blockage, Week 24). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 26, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **Next mandatory rebalance: October 30, 2026 (4 trading days — CRITICAL).** FOMC meeting Oct 27–28 this week. Market context: Week 24 of blockage continues; QQQ leads 12-month momentum vs SPY. **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-27 — Morning Snapshot (Tuesday, Day 115 of API Blockage) ⚠️ WEEK 24 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Morning routine ran 2026-10-27 at 9:17 AM ET (Tuesday, Day 115 of API blockage, Week 24). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (exit 0, no output). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 27, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. `is_rebalance_day.py`: 3 trading days until Oct 30 rebalance. Market context (WebSearch): S&P 500 +0.7% Mon Oct 26 (bouncing from 2-week losing streak); Anthropic IPO filing drove AI/tech rally; FOMC decision Oct 28 at 2:00 PM ET (~80% HOLD odds); GOOGL+MSFT earnings Oct 28 (high-impact). QQQ 12-month momentum ~+27.5% vs SPY ~+23.3% as of Aug 8 data — QQQ signal for Oct 30 rebalance expected to persist. **Next mandatory rebalance: October 30, 2026 (3 trading days — CRITICAL).** **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web

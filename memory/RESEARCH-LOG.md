@@ -5906,3 +5906,59 @@ Docs: https://code.claude.com/docs/en/claude-code-on-the-web
 
 Docs: https://code.claude.com/docs/en/claude-code-on-the-web
 
+
+---
+
+## 2026-10-27 — Morning Research (Tuesday, Day 115 of API Blockage) ⚠️ WEEK 24 OF BLOCKAGE
+
+**Date:** 2026-10-27 | **Routine fired:** 13:17 UTC (9:17 AM ET) | **Pre-market**
+
+### Account State
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+- Alpaca API: BLOCKED (`paper-api.alpaca.markets:443` — 403 connect_rejected via egress proxy, Day 115)
+- Telegram: BLOCKED (`api.telegram.org:443` — 403)
+- Perplexity: BLOCKED (`api.perplexity.ai:443` — exit 0, no output)
+
+### Rebalance Check
+- **`is_rebalance_day.py`:** NOT a rebalance day
+- **Next rebalance:** Friday, October 30, 2026 (3 trading days — CRITICAL)
+- **Upcoming volatility:** FOMC decision Oct 28 at 2:00 PM ET + GOOGL/MSFT earnings Oct 28
+
+### Market Context (via WebSearch fallback — Perplexity blocked)
+- **S&P 500:** +0.7% Monday Oct 26 close; Nasdaq +0.8% — bouncing from 2-week losing streak
+- **Catalyst for Mon rally:** Anthropic filed IPO prospectus → reignited AI trade
+- **VIX:** No direct reading available. Market rallying suggests ~18-20 est (MODERATE)
+- **FOMC Oct 27-28:** Decision at 2:00 PM ET tomorrow (Oct 28). Current Fed rate: 3.75-4.00% (hiked Sep 16)
+  - Market odds: ~80% HOLD, ~20% HIKE. Base case: hold with hawkish bias
+  - Warsh commentary may point to further hikes later in year
+- **Earnings this week (HIGH IMPACT):** GOOGL, MSFT reporting Wed Oct 28 — major AI spending readthrough
+- **Recent beats:** UPS (+1.6%), PayPal (earnings beat, raised guidance), Corning (+3%)
+- **Macro:** Fed rate at 3.75-4.00%. September CPI ~3.6-3.7% (elevated). Core ~2.4%
+
+### Dual Momentum Signal Estimate
+- **QQQ 12-month return:** ~+27.5% (as of Aug 8 data — most recent available)
+- **SPY 12-month return:** ~+23.3% (as of Aug 8 data)
+- **Signal estimate for Oct 30:** QQQ (leads SPY by ~4pp; sustained lead since mid-year)
+- **Note:** Official signal requires `dual_momentum_signal.py` which queries Alpaca — blocked until APIs unblocked
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times.**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: monthly rebalance on Oct 30, 2026.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 115):** All APIs remain blocked. 5th consecutive monthly rebalance at risk.
+- **FOMC Oct 28:** Rate decision could move markets significantly. Hold ~80% priced, but hawkish presser could spike VIX.
+- **GOOGL/MSFT Oct 28 earnings:** Major market-moving events. AI capex commentary will drive QQQ.
+- **QQQ vs SPY spread:** QQQ leads by ~4pp — Oct 30 signal expected to remain QQQ.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 URGENT ACTION REQUIRED before Oct 30 (3 trading days):** Whitelist hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
