@@ -3318,3 +3318,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Market-open routine ran 2026-10-27 at 9:30 AM ET (Tuesday, Day 115 of API blockage, Week 24). Alpaca API BLOCKED at market open — no account data, no trades possible. Hard-check result: NO TRADE — not a rebalance day (Dual Momentum rebalances only on last trading day of month; next rebalance Oct 30, 3 trading days away). Portfolio: $100,000 cash, no positions, no trades since inception. Market context: S&P 500 opened Oct 27 (FOMC day 1 of 2); FOMC rate decision tomorrow Oct 28 at 2:00 PM ET (~80% HOLD odds at 3.75-4.00%); GOOGL+MSFT earnings Oct 28 (high-impact). QQQ 12-month momentum leads SPY — Oct 30 signal: QQQ (est). **Next mandatory rebalance: October 30, 2026 (3 trading days — CRITICAL).** **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-27 — EOD Snapshot (Tuesday, Day 115 of API Blockage) ⚠️ WEEK 24 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-10-27 (Tuesday, Day 115 of API blockage, Week 24). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 27, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **Next mandatory rebalance: October 30, 2026 (2 trading days — CRITICAL).** FOMC rate decision tomorrow Oct 28 at 2:00 PM ET (~80% HOLD at 3.75–4.00%); GOOGL+MSFT earnings also Oct 28. **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
