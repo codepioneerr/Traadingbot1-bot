@@ -5,6 +5,61 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-28 — Morning Research (Wednesday, Day 116 of API Blockage) ⚠️ WEEK 24 OF BLOCKAGE
+
+**Date:** 2026-10-28 | **Routine fired:** ~13:25 UTC (9:25 AM ET) | **Pre-market + Market-Open combined**
+
+### Account State
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+- Alpaca API: BLOCKED (`paper-api.alpaca.markets:443` — exit 56, 403 connect_rejected via egress proxy, Day 116)
+- Telegram: BLOCKED (`api.telegram.org:443` — 403, fell back to DAILY-SUMMARY.md)
+- Perplexity: BLOCKED (`api.perplexity.ai:443` — exit 56)
+
+### Rebalance Check
+- **`is_rebalance_day.py`:** NOT a rebalance day (exit 1)
+- **Next rebalance:** Friday, October 30, 2026 (2 trading days — CRITICAL)
+- **Today's key event:** FOMC rate decision at 2:00 PM ET (high-impact volatility event)
+
+### Market Context (via WebSearch fallback — Perplexity blocked)
+- **FOMC Oct 27-28:** Rate decision today at 2:00 PM ET, press conference at 2:30 PM ET. NOT a projection meeting (no new dot plot). Current Fed rate: 3.75-4.00% (raised Sep 16, 2026, 12-0 vote). Pre-meeting odds: ~72% HOLD, ~28% HIKE. Base case: hold with hawkish bias. Outcome unknown at time of writing (pre-market).
+- **S&P 500:** No live futures data available (APIs blocked). Last known: +0.7% Mon Oct 26, +bounce from 2-week losing streak after Anthropic IPO filing. FOMC day typically cautious pre-decision.
+- **VIX:** No live reading available. Last estimate: ~18-22 (MODERATE range; elevated vs Q3 due to FOMC/geopolitical risk).
+- **QQQ momentum:** YTD as of Oct 23: QQQ +15.07%, GSPY +14.54%. Trailing 12-month: QQQ ~+26-27.5%, SPY ~+21-23%. QQQ leads by ~4-6pp across multiple sources — signal for Oct 30 rebalance strongly favors QQQ.
+- **Earnings today:** GOOGL, MSFT reporting (rescheduled/concurrent with FOMC — high AI capex readthrough for QQQ).
+- **Oil:** Elevated above $100/bbl (geopolitical risk, US/Israel/Iran). Energy sector bid.
+- **10Y Treasury:** ~5.0-5.3% (elevated; pressuring growth stocks pre-FOMC).
+
+### Dual Momentum Signal Estimate
+- **Absolute filter:** SPY 12-month return ~+21-23% > 0% → pass (invest, do not hold SHY)
+- **Relative ranking (est):** QQQ (~+26-27.5%) > SPY (~+21-23%) > GLD/IWM/TLT
+- **Signal for Oct 30:** QQQ (high confidence — sustained 4-6pp lead; FOMC HOLD would sustain tech leadership)
+- **Risk to signal:** FOMC HIKE surprise or hawkish presser could spike VIX and pressure QQQ vs TLT/GLD; but even in that scenario, QQQ 12-month lead is large enough to likely persist
+- **Note:** Official signal requires `dual_momentum_signal.py` which queries Alpaca — blocked until APIs unblocked
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times (100% QQQ if signal confirms on Oct 30).**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: monthly rebalance on Oct 30, 2026 (2 trading days).
+
+### Risk Factors
+- **🚨 CRITICAL (Day 116):** All APIs remain blocked. If not resolved by Oct 30, 5th consecutive monthly rebalance missed.
+- **FOMC today:** Rate decision 2:00 PM ET. A surprise HIKE (28% odds) or hawkish Warsh presser could spike VIX >25 and challenge QQQ signal.
+- **Oct 30 rebalance execution:** Even if APIs unblocked, need to: (1) run `dual_momentum_signal.py`, (2) verify current holding (SHY/cash), (3) buy QQQ at market with full equity.
+- **QQQ vs SPY spread:** ~4-6pp lead is robust but not immune to end-of-month factor rotation.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 URGENT ACTION REQUIRED before Oct 30 (2 trading days):** Whitelist hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-10-23 — Morning Research (Friday, Day 111 of API Blockage) ⚠️ WEEK 23 OF BLOCKAGE
 
 **Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
