@@ -3344,3 +3344,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Morning + Market-Open combined routine ran 2026-10-28 at ~9:25 AM ET (Wednesday, Day 116 of API blockage, Week 24). All APIs remain blocked: `paper-api.alpaca.markets:443` (exit 56, 403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (exit 56). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 28, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day (Oct 30 is next rebalance, 2 trading days). No trades executed. Key event: FOMC rate decision today at 2:00 PM ET (~72% HOLD odds at 3.75-4.00%). GOOGL+MSFT earnings today (AI capex readthrough for QQQ). Dual Momentum signal estimate for Oct 30: QQQ (leads SPY by ~4-6pp on 12-month basis). Market context via WebSearch (Perplexity blocked). **Next mandatory rebalance: October 30, 2026 (2 trading days — CRITICAL).** **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-28 — EOD Snapshot (Wednesday, Day 116 of API Blockage) ⚠️ WEEK 24 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-10-28 (Wednesday, Day 116 of API blockage, Week 24). All APIs remain blocked: `paper-api.alpaca.markets:443` (exit 56, 403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 28, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. Key market events today: FOMC rate decision at 2:00 PM ET (expected HOLD at 3.75-4.00%); GOOGL + MSFT earnings after close (AI capex readthrough for QQQ momentum signal). Dual Momentum signal estimate for Oct 30 rebalance: QQQ (leads SPY by ~4-6pp on 12-month basis). **Next mandatory rebalance: October 30, 2026 (2 trading days — CRITICAL).** **Action required before Oct 30:** whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy: https://code.claude.com/docs/en/claude-code-on-the-web
