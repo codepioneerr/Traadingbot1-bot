@@ -5,6 +5,68 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-29 — Morning Research (Thursday, Day 117 of API Blockage) ⚠️ PRE-REBALANCE DAY
+
+**Date:** 2026-10-29 | **Routine fired:** ~13:30 UTC (9:29 AM ET) | **Pre-market**
+
+### Account State
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+- Alpaca API: BLOCKED (`paper-api.alpaca.markets:443` — 403 connect_rejected via egress proxy, Day 117)
+- Telegram: BLOCKED (`api.telegram.org:443` — 403)
+- Perplexity: BLOCKED (`api.perplexity.ai:443` — exit 0, no output)
+- yfinance: NOT INSTALLED — dual_momentum_signal.py cannot run
+
+### Rebalance Check
+- **`is_rebalance_day.py`:** NOT a rebalance day (today is Oct 29)
+- **Next rebalance:** TOMORROW — Friday, October 30, 2026 (LAST TRADING DAY OF OCTOBER — CRITICAL)
+- **Oct 31 is Saturday** → Oct 30 is the last trading day of October 2026
+
+### Market Context (via WebSearch — all other sources blocked)
+- **S&P 500 (Oct 28 close):** +0.3% to 7,743.98 (third consecutive gain)
+- **Nasdaq Composite (Oct 28 close):** +0.27% to 26,549.85
+- **FOMC Result (Oct 28):** HELD rates unchanged at 3.75–4.00% (as expected, ~80% odds). Third straight gain post-FOMC.
+- **Earnings Oct 28:** Alphabet (GOOGL) MISSED Q3 estimates; Microsoft (MSFT) strong Azure beat. GOOGL miss caused Nasdaq futures to fall ~1.3% pre-open today.
+- **Today Oct 29 (intraday):** Nasdaq ~-0.03% to 26,470; S&P 500 ~+0.15% to 7,734. Market digesting GOOGL miss but recovering. Amazon and Intel report after close today.
+- **VIX estimate:** ~16-20 (MODERATE range) — based on late July reading of 19.20, current near-record highs suggest possible lower
+- **S&P 500 futures this morning:** Down ~0.4% pre-open (GOOGL/Alphabet miss) but market recovered
+
+### Dual Momentum Signal Estimate
+- **SPY 12-month return:** ~+17–23% (above 0% → absolute filter: PASS)
+- **QQQ 12-month return:** ~+25–32% (leads SPY by ~4–10pp)
+- **Signal estimate for Oct 30 rebalance:** **QQQ** (leads all assets on 12-month momentum)
+- **Note:** Official signal requires `dual_momentum_signal.py` → blocked (yfinance not installed + Alpaca API blocked)
+- **Action required to run official signal:** Install yfinance OR unblock Alpaca API before Oct 30 open
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. 100% equity in one asset at all times. No VIX sizing.**
+If APIs are unblocked by Oct 30: buy QQQ at 100% of equity (~$100,000 → ~N shares at market open price).
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading.
+Only permitted action: monthly rebalance on Oct 30, 2026.
+- If APIs unblocked by Oct 30 open: BUY QQQ at market (100% equity, ~$100k)
+- If APIs remain blocked: FIFTH consecutive missed rebalance — log and escalate
+
+### Risk Factors
+- **🚨 CRITICAL (Day 117):** All APIs remain blocked. Tomorrow is the 5th monthly rebalance attempt. If APIs unblocked by tomorrow, buy QQQ.
+- **Alphabet earnings miss:** GOOGL down after-hours; Nasdaq tech weighting could weigh on QQQ short-term. However, Dual Momentum signal is based on 252-day trailing return, not single-day moves.
+- **Amazon + Intel earnings (Oct 29 AH):** High-impact events tonight. Amazon particularly relevant to QQQ weighting (~8%). Strong AWS could reinforce QQQ momentum signal.
+- **FOMC HOLD confirmed:** No rate surprise. Market welcomed. Supports continued equity momentum.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY (today is Oct 29)**
+
+**🚨 URGENT — REBALANCE DAY TOMORROW (Oct 30):**
+Strategy requires buying QQQ at 100% equity on Oct 30, 2026 (last trading day of October).
+For this to execute, ALL of the following must be unblocked:
+- `paper-api.alpaca.markets:443` — to place the trade
+- `api.telegram.org:443` — to send trade confirmation
+- `api.perplexity.ai:443` — for research
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-10-28 — Morning Research (Wednesday, Day 116 of API Blockage) ⚠️ WEEK 24 OF BLOCKAGE
 
 **Date:** 2026-10-28 | **Routine fired:** ~13:25 UTC (9:25 AM ET) | **Pre-market + Market-Open combined**
