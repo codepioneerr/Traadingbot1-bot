@@ -3383,3 +3383,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran 2026-10-29 (Thursday, Day 117 of API blockage, Week 24). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 29, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **TOMORROW (Oct 30, 2026) IS THE MANDATORY REBALANCE DAY — last trading day of October 2026.** Signal estimate: BUY QQQ (leads SPY by ~4–10pp on 12-month basis; SPY absolute filter PASS). FOMC held rates at 3.75–4.00% on Oct 28. Amazon + Intel reported earnings tonight. **🚨 CRITICAL (5th missed rebalance imminent): Must unblock APIs before Oct 30 open.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-10-30 — MANDATORY REBALANCE DAY (Friday, Day 118 of API Blockage) ⚠️ 5TH MISSED REBALANCE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — 100% equity in one asset) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined morning + market-open routine ran 2026-10-30 at ~9:27 AM ET (Friday, Day 118 of API blockage, Week 24+). **THIS IS THE MANDATORY MONTHLY REBALANCE DAY — last trading day of October 2026.** All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (403). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Oct 30, 2026). **5th consecutive missed rebalance** (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30). Signal estimate for Oct 30: BUY QQQ (QQQ leads SPY on 12-month basis; SPY absolute filter PASS). Cannot execute — Alpaca API blocked. Market context (WebSearch): S&P 500 ~7,769 area (Oct 21 data), Amazon strong earnings (+$134B market cap Oct 29), Intel rebounded, FOMC held at 3.75–4.00% Oct 28, 10Y yield ~5.0%, WTI ~$101, Gold ~$4,328. QQQ YTD ~+15% (vs SPY ~+12%). **Next rebalance: November 30, 2026 (last trading day of November — 21 trading days).** **🚨 CRITICAL: Must whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE November 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web

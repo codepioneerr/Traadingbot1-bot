@@ -5,6 +5,59 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-10-30 — MANDATORY REBALANCE DAY (Friday, Day 118 of API Blockage) ⚠️ 5TH MISSED REBALANCE
+
+**Date:** 2026-10-30 | **Routine fired:** 13:27 UTC (9:27 AM ET) | **Pre-market**
+
+### Account State
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+- Alpaca API: BLOCKED (`paper-api.alpaca.markets:443` — 403 connect_rejected via egress proxy, Day 118)
+- Telegram: BLOCKED (`api.telegram.org:443` — 403 connect_rejected)
+- Perplexity: BLOCKED (`api.perplexity.ai:443` — 403 connect_rejected)
+
+### Rebalance Check
+- **TODAY IS THE MANDATORY REBALANCE DAY — last trading day of October 2026**
+- **`is_rebalance_day.py`:** CANNOT RUN (yfinance not installed; Alpaca API blocked)
+- **Signal estimate:** BUY QQQ (QQQ leads SPY by ~2–6pp on 12-month basis; SPY absolute filter PASS — positive returns)
+- **Status: 🚨 5TH CONSECUTIVE MISSED REBALANCE** (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30)
+
+### Market Context (via WebSearch — all paid APIs blocked)
+- **S&P 500:** ~7,769 as of Oct 21; Amazon +$134B market cap on Oct 29 earnings (strong beat); Intel also rebounded
+- **Tech/QQQ:** Strong — Amazon + tech earnings driving Nasdaq; AI capex spending beat expectations
+- **QQQ 12-month return:** ~+15.1–27.5% YTD/12-month (multiple sources, consistent lead over SPY)
+- **SPY 12-month return:** ~+12.0–23.3% (QQQ leads by ~2–6pp depending on source/timeframe)
+- **10-year yield:** ~5.0% (pressuring bond proxies; TLT likely weak)
+- **WTI crude:** ~$101 (elevated)
+- **Gold:** ~$4,328 (elevated — GLD momentum likely strong)
+- **FOMC:** Held rates at 3.75–4.00% on Oct 28 (as expected)
+- **VIX:** Est. MODERATE (18-22 range given market recovering from GOOGL miss Oct 28)
+
+### Dual Momentum Signal Estimate (Oct 30, 2026)
+- **Step 1 — Absolute filter:** SPY 12-month return >> 0% → PASS (proceed to Step 2)
+- **Step 2 — Relative ranking (estimated):**
+  1. **QQQ** ~+15–27% (estimated #1)
+  2. **GLD** ~+25–30% (strong gold run — may rival QQQ)
+  3. **SPY** ~+12–23%
+  4. **IWM** likely lower
+  5. **TLT** likely negative or flat (5% 10Y yield environment)
+- **Signal estimate:** BUY QQQ (or possibly GLD — cannot confirm without Alpaca price data)
+- ⚠️ Official signal requires `python3 scripts/dual_momentum_signal.py` → queries Alpaca data API → BLOCKED
+
+### Decision
+**NO TRADE — APIs BLOCKED. CANNOT EXECUTE REQUIRED REBALANCE.**
+**5TH CONSECUTIVE MONTHLY REBALANCE MISSED.**
+
+### Required Action
+**🚨 CRITICAL — Must whitelist these hosts in environment egress policy IMMEDIATELY:**
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+**Impact of blockage:** ~5 months of strategy drift. If QQQ had been bought at first rebalance (Jun 30), the position would be up ~15% YTD based on available data.
+
+---
+
 ## 2026-10-29 — Morning Research (Thursday, Day 117 of API Blockage) ⚠️ PRE-REBALANCE DAY
 
 **Date:** 2026-10-29 | **Routine fired:** ~13:30 UTC (9:29 AM ET) | **Pre-market**
