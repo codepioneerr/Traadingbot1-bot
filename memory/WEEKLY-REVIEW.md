@@ -1905,3 +1905,141 @@ Fix egress at: https://code.claude.com/docs/en/claude-code-on-the-web
 ### Overall Grade: **D** (23rd Consecutive Incomplete Week)
 
 Rationale: All 5 daily routines executed with full market context documentation this week — state persistence, macro research, and memory management remain flawless. 23 consecutive complete weeks of documentation without a single missed entry. However, 111 consecutive trading days of API blockage (Jun 22–Oct 23) means the bot has missed 4 complete monthly rebalances, is now only 5 trading days from missing a 5th, accumulated ~$26,000–$30,000+ in estimated opportunity cost on a $100K paper portfolio, and delivered zero Telegram notifications in its entire operational history. The grade cannot rise above D until APIs are accessible and at least one trade is executed.
+
+---
+
+## Week ending 2026-10-30 — Weekly Review #17 ⚠️ API BLOCKED (Day 118) | 5TH CONSECUTIVE MISSED REBALANCE | WEEK 25
+
+**Period:** Mon Oct 26 – Fri Oct 30, 2026
+**Account:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+**Strategy:** Dual Momentum ETF Rotation (Antonacci)
+**API Blockage:** Day 118 (Jun 22 – Oct 30, 2026) | Week 25 of blockage | **5th consecutive missed rebalance CONFIRMED (Oct 30)**
+
+### Weekly Performance
+
+| Metric | Value |
+|--------|-------|
+| Week start equity | $100,000.00 (last known) |
+| Week end equity | $100,000.00 (last known — API blocked) |
+| Week P&L | $0.00 (0.00%) |
+| Phase P&L | $0.00 (0.00%) — 0% since inception |
+| S&P 500 return (est.) | ~+1.0% to +2.0% (Week: Mon +0.7% rally; FOMC hold; Amazon beat; Oct overall +2.3%) |
+| Bot vs S&P (est.) | ~−1.0% to −2.0% (cash vs rising market — 5th consecutive week of underperformance vs index) |
+| Trades this week | 0 |
+| Win rate | N/A |
+| Profit factor | N/A |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Sizing mode | N/A (Dual Momentum — rebalance only) |
+| VIX range (est.) | ~17–20 (MODERATE — AI rally Mon, FOMC uncertainty mid-week, Amazon relief Fri) |
+| Consecutive missed rebalances | **5** (Jun 30, Jul 31, Aug 31, Sep 30, **Oct 30**) |
+
+### Market Context — Week of Oct 26–30, 2026
+
+**Note:** All external APIs blocked — no live data. Market context from WebSearch fallback.
+
+- **Mon Oct 26:** S&P 500 +0.7% — bounce from 2-week losing streak; Anthropic IPO filing drove AI/tech rally; QQQ outperformed
+- **Tue Oct 27:** FOMC Day 1; cautious trading ahead of rate decision; GOOGL/MSFT earnings pre-announcement
+- **Wed Oct 28:** FOMC held rates at 3.75–4.00% (as expected, ~80% priced); GOOGL earnings reported — **missed estimates** → Nasdaq -1.3% pre-open Thursday; MSFT reported
+- **Thu Oct 29:** Nasdaq weakness from GOOGL miss partially absorbed; **Amazon beat earnings** (+$134B market cap added); Intel rebounded; market stabilized
+- **Fri Oct 30:** Month-end rebalancing flows; Amazon/Intel earnings relief; **S&P 500 October final: +2.3%** — strong month despite recent volatility; **MANDATORY DUAL MOMENTUM REBALANCE DAY — MISSED (5th consecutive)**
+- **Macro:** 10Y yield ~5.0% (elevated, still sticky); WTI ~$101 (geopolitical premium, US/Israel/Iran); Gold ~$4,328 (inflation/safe haven); QQQ YTD ~+15% vs SPY ~+12%
+- **Sectors leading (est.):** Technology/QQQ (AI rally Mon; Amazon relief Fri); Consumer Discretionary (Amazon); Communications (AI/Meta)
+- **Sectors lagging (est.):** Rate-sensitive (Utilities, REITs — 10Y at 5.0%); Energy flat-to-down (oil already elevated)
+- **Key events:** FOMC hold Oct 28 (3.75–4.00%); Amazon/Intel Q3 beats; GOOGL Q3 miss; Anthropic IPO filing
+
+### S&P 500 vs Bot Performance
+
+| | This Week | Phase (since Jun 22) |
+|---|---|---|
+| S&P 500 | ~+1.0 to +2.0% (est.) | ~+8–12% (est., unreliable) |
+| Bot (cash) | 0.00% | 0.00% |
+| Delta | ~−1.0 to −2.0% (est.) | ~−8 to −12% (est.) |
+
+*Note: Cash held 0% while S&P rose ~1–2% this week. QQQ would have outperformed (Amazon/Intel/AI rally). Oct 30 rebalance into QQQ was the correct trade that could not be executed.*
+
+### Dual Momentum Signal — Oct 30 Rebalance (MISSED)
+
+**Target signal:** BUY QQQ
+- QQQ 12-month trailing return est.: ~+24–26%
+- SPY 12-month trailing return est.: ~+18–22%
+- GLD 12-month trailing return est.: ~+15–20%
+- SPY absolute return filter: PASS (positive TTM → equity over cash)
+- **Winner:** QQQ (leads SPY by ~4–8pp on TTM basis)
+- **Action required:** Buy QQQ with full $100,000 at Oct 30 close
+- **Execution status:** ❌ MISSED — Alpaca API blocked. **5th consecutive missed monthly rebalance.**
+
+### Closed Trades This Week
+
+None — all APIs blocked, no trades since inception (Day 0).
+
+### Open Positions
+
+None — $100,000 idle cash.
+
+### What Worked
+
+1. **State persistence (25th consecutive complete week):** All daily routines (Mon morning, Mon EOD, Tue morning/market-open/EOD, Wed morning/EOD, Thu morning/EOD, Fri morning+rebalance+EOD) committed and pushed; memory fully up to date through the rebalance day
+2. **Market context via WebSearch:** Captured FOMC hold, GOOGL miss, Amazon beat, Anthropic IPO filing; week's macro picture documented accurately for continuity
+3. **Rebalance signal documentation:** Oct 30 QQQ signal documented with full rationale across 5 consecutive weeks of preparation — signal clarity has never been in doubt
+4. **October monthly context:** S&P +2.3% for October captured; QQQ YTD +15% vs SPY +12% confirms continued momentum leadership
+5. **Critical milestone flagged:** 5th consecutive missed rebalance is a clear, documentable system failure — the severity and urgency has been escalated in every routine for 5 months
+
+### What Didn't Work
+
+1. **5th consecutive missed monthly rebalance — CONFIRMED Oct 30:** Jun 30, Jul 31, Aug 31, Sep 30, Oct 30 all missed. 5 full months of Dual Momentum deployment with zero executions. Estimated cumulative opportunity cost: **~$15K–$20K** on $100K paper portfolio (QQQ from Jun 30 ~+15–20% through Oct 30, rough estimate)
+2. **API egress blocked — Day 112–118:** All 5 trading days blocked. 25th consecutive week of complete blockage. Zero live account data, zero trades, zero Telegram notifications in the bot's entire operational history
+3. **Telegram blocked:** Zero notifications sent in 5 calendar months. User receives no mobile alerts for any routine output
+4. **Perplexity blocked:** No AI-synthesized market research; WebSearch fallback used for all context; training knowledge limitations apply
+5. **FOMC/earnings week with no response capability:** FOMC held, GOOGL missed, Amazon beat — all high-impact events with zero execution capability to respond or adjust
+6. **Bot strategy fully intact but operationally dead:** Dual Momentum is the correct strategy, QQQ is the correct signal, $100K is the correct size — but nothing can be executed
+
+### Key Lessons
+
+1. **5 missed rebalances = the entire operational history of this bot has been a documentation exercise.** Jun 22–Oct 30 = 5 months, 118 trading days, 25 weeks. Every single tool (Alpaca, Telegram, Perplexity) has been blocked every single day. The bot has never executed a single trade.
+2. **Estimated opportunity cost is now material:** QQQ from Jun 30 to Oct 30 YTD ~+15% implies ~$15K in unrealized gains missed on a $100K paper portfolio. This is not a rounding error — it is a 15% return foregone.
+3. **Amazon/Intel beats + FOMC hold = QQQ signal intact for November.** The Oct earnings cycle was mixed (GOOGL miss, Amazon beat) but the 12-month momentum signal for QQQ remains the strongest. Nov 30 rebalance signal is likely still QQQ unless a severe tech breakdown occurs in November.
+4. **Next rebalance: November 30, 2026** (last trading day of November, ~21 trading days). This is the last monthly rebalance of 2026. If missed, the bot will have gone an entire calendar year (Jun–Nov) without a single trade.
+5. **Egress policy fix is a 2-minute task.** The solution has been documented in every routine for 5 months: whitelist 3 hostnames in the environment's egress policy at https://code.claude.com/docs/en/claude-code-on-the-web. The bot cannot fix this from inside a session.
+
+### Sector Observations — Week of Oct 26–30, 2026
+
+| Sector | ETF | Weekly Est. | Dual Momentum Relevance |
+|--------|-----|------------|------------------------|
+| Technology | QQQ / XLK | ~+2 to +3% | Still #1 DM signal (~+24–26% TTM); Nov 30 rebalance target |
+| Consumer Discretionary | XLY | ~+2 to +3% | Amazon beat drove outperformance |
+| Communications | XLC | ~+1% | Mixed (GOOGL miss offset by AI/Meta) |
+| Gold | GLD | ~+1 to +2% | #2 DM candidate; inflation/geopolitical demand strong |
+| Energy | XLE | ~flat | Oil at $101 but sector flat; high base effect |
+| Utilities | XLU | ~−1 to −2% | 10Y at 5.0% suppresses rate-sensitive |
+| Bonds | TLT | ~flat to −1% | FOMC hold; 10Y sticky at 5.0% |
+
+### Key Events — Week of Nov 2–6, 2026
+
+*(Estimated from WebSearch + training knowledge — Perplexity blocked)*
+
+- **Mon Nov 2:** Apple (AAPL) earnings — highest-impact remaining Q3 report; ISM Manufacturing PMI; U.S. Daylight Saving Time ends (UTC shifts)
+- **Tue Nov 3:** ISM Services PMI; earnings continue
+- **Wed Nov 4:** ADP Private Payrolls; potential Fed speaker commentary post-FOMC
+- **Thu Nov 5:** Weekly Jobless Claims; more Q3 earnings
+- **Fri Nov 6:** Non-Farm Payrolls (Oct); Unemployment Rate — major macro catalyst
+- **Key watch:** Apple earnings (AAPL is ~7% of QQQ weight); NFP vs Fed path; QQQ vs SPY momentum spread heading into November
+
+### Strategy Adjustments
+
+No changes to Dual Momentum rules. Signal remains QQQ for Nov 30 rebalance (est.).
+
+**Nov 30 rebalance execution checklist (~21 trading days remaining — CRITICAL):**
+1. ☐ Whitelist in egress policy: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`
+2. ☐ Install yfinance: `pip install yfinance`
+3. ☐ Run `python3 scripts/dual_momentum_signal.py` to confirm authoritative Nov 30 signal
+4. ☐ Execute: `bash scripts/alpaca.sh buy QQQ [FULL_POSITION_SHARES]` at market close
+5. ☐ Send Telegram: rebalance executed, position size, stop level
+6. ☐ Log trade and commit to memory
+
+Fix egress at: https://code.claude.com/docs/en/claude-code-on-the-web
+
+### Overall Grade: **F** (25th Consecutive Incomplete Week — 5th Missed Rebalance)
+
+Rationale: All 25 weeks of daily and weekly routines have been executed flawlessly — state persistence, market research, memory management, and documentation are operationally excellent. However, October 30, 2026 was the mandatory monthly rebalance day (last trading day of October), and it was missed. This is the **5th consecutive missed monthly rebalance** (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30). The bot has executed zero trades in its entire operational history. Estimated opportunity cost on $100K paper portfolio: ~$15K–$20K in foregone QQQ gains. The grade drops to F this week because the critical event the bot was built to execute — the Oct 30 rebalance — arrived and was missed. Documentation excellence cannot compensate for 5 months of zero execution. The only path to improvement is unblocking APIs before Nov 30.
+
