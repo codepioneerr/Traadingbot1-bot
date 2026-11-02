@@ -5,6 +5,78 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-02 — Morning Research (Monday, Day 133 of API Blockage) ⚠️ MIDTERM ELECTION EVE
+
+**Date:** 2026-11-02 | **Routine fired:** ~13:09 UTC (9:09 AM ET) | **Pre-market + Market-Open combined**
+
+### Account State
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+- Alpaca API: BLOCKED (`paper-api.alpaca.markets:443` — 403 connect_rejected via egress proxy, Day 133)
+- Telegram: BLOCKED (`api.telegram.org:443` — 403)
+- Perplexity: BLOCKED (`api.perplexity.ai:443` — 403)
+
+### Rebalance Check
+- **Today:** NOT a rebalance day
+- **Next rebalance:** Monday, November 30, 2026 (last trading day of November — 19 trading days away)
+- **Signal status:** Cannot run `dual_momentum_signal.py` (Alpaca blocked); using WebSearch estimates
+
+### Market Context (via WebSearch fallback — all APIs blocked)
+- **VIX:** ~19.07 (Nov 2026 futures contract, Capital.com) → **MODERATE** (15–25 range)
+  - Note: Dual Momentum uses no VIX sizing; logged for context only
+- **S&P 500 / Futures:** No direct pre-market data for Nov 2 — prior close context only
+  - October 2026: S&P 500 ended roughly +2.3% for the month; SPY 12M total return ~+12.36%
+  - QQQ had a rough October: down ~-6.66% for the month, -9.11% from its Oct 6 peak
+- **QQQ vs SPY 12-month performance (through Oct 30, 2026):**
+  - PortfoliosLab / TotalRealReturns: QQQ ~+10.81%, SPY ~+12.36% (total return incl. dividends)
+  - ⚠️ **SIGNAL SHIFT WARNING:** If these figures are accurate, SPY now leads QQQ on 12-month return
+  - Previous estimates had QQQ leading (~+4-10pp gap) — October drawdown may have reversed the lead
+  - Official signal requires live API access on Nov 30; cannot confirm until then
+- **Macro Calendar this week:**
+  - **Nov 3 (tomorrow):** US Midterm Elections 2026 — Democrats favored to sweep House + Senate (Webull/prediction markets). Congress takes office Jan 2027 (no immediate policy shift).
+  - **Nov 5:** Weekly jobless claims (8:30 AM ET)
+  - **Nov 10:** US-China tariff reduction deadline expires — trade policy risk
+  - **No FOMC meeting this week** (FOMC held rates at 3.75-4.00% on Oct 28)
+- **Key sector/policy themes:**
+  - AI & energy: flagged by multiple strategists (Morgan Stanley, Ameriprise) as midterm-sensitive sectors
+  - Tech (QQQ) volatile amid AI investment cost concerns (AI compute capex headlines Oct 23)
+  - Fidelity ETF article (Nov 2, 2026): broader Nasdaq ETF (Fidelity) gaining vs pure QQQ — Apple-heavy
+
+### Dual Momentum Signal Estimate for Nov 30, 2026
+- **SPY absolute filter:** PASS — SPY 12M return ~+12.36% > 0%
+- **Relative ranking (est.):** SPY may now be #1 (~+12.36%) ahead of QQQ (~+10.81%)
+  - ⚠️ Previous estimate was QQQ; October weakness appears to have reversed the gap
+  - Other assets (IWM, TLT, GLD) need official data to rank
+  - This is a material signal change — confirm with live API run on Nov 30
+- **Estimated signal for Nov 30:** **SPY** (was QQQ; changed due to QQQ October underperformance)
+  - Cannot confirm without live Alpaca data on Nov 30
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times.**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: monthly rebalance on Nov 30, 2026.
+- No stops, no PDT tracking, no intra-month buys — strategy holds cash (SHY proxy) until rebalance
+
+### Risk Factors
+- **🚨 CRITICAL (Day 133):** All APIs remain blocked. 6th consecutive monthly rebalance (Nov 30) at risk.
+- **Midterm elections Nov 3:** Historical pattern — volatility often elevated around midterms. Post-midterm year tends to be strong (S&P 500 never negative in 12M post-midterm since 1938).
+- **QQQ signal shift:** SPY may now lead QQQ on 12-month return — monitor carefully. If confirmed Nov 30, execute SPY position instead of QQQ.
+- **China tariff deadline Nov 10:** Could introduce volatility, especially for tech (QQQ) names.
+- **Consecutive missed rebalances:** 5 missed (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30). Estimated opportunity cost ~$10K–$15K unrealized vs holding QQQ/SPY position.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 ACTION REQUIRED before Nov 30 (19 trading days):** Whitelist hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-10-30 — MANDATORY REBALANCE DAY (Friday, Day 118 of API Blockage) ⚠️ 5TH MISSED REBALANCE
 
 **Date:** 2026-10-30 | **Routine fired:** 13:27 UTC (9:27 AM ET) | **Pre-market**
