@@ -5,6 +5,55 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-03 — Morning Research (Monday, Day 134 of API Blockage) ⚠️ WEEK 26 OF BLOCKAGE
+
+**Date:** 2026-11-03 | **Routine fired:** ~9:25 AM ET | **Pre-market + Market-Open combined**
+
+### Account State
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+- Alpaca API: BLOCKED (`paper-api.alpaca.markets:443` — 403 connect_rejected via egress proxy, Day 134)
+- Telegram: BLOCKED (`api.telegram.org:443` — 403)
+- Perplexity: BLOCKED (`api.perplexity.ai:443` — no output)
+
+### Rebalance Check
+- **Today:** NOT a rebalance day (Nov 3 is 19+ trading days from end of month)
+- **Next rebalance:** Last trading day of November 2026 (est. Monday, Nov 30, 2026)
+- **Signal estimate:** QQQ likely still leads SPY on 12-month basis (no new data)
+- **Missed rebalances (consecutive):** 6 — Jun 30, Jul 31, Aug 31, Sep 30, Oct 30, and upcoming Nov 30 at risk
+
+### Market Context (WebSearch fallback — all primary APIs blocked)
+- **S&P 500 / Futures:** No live data available for Nov 3, 2026. Last known: S&P +2.3% in October 2026. Anthropic IPO filing Oct 26 reignited AI trade.
+- **VIX:** No live reading. Most recent via search: ~22.37 (March 17, 2026) → estimated MODERATE (15-25 range). Likely lower now given Oct rally.
+- **S&P 500 futures:** No pre-market data available.
+- **Recent macro context:** FOMC held at 3.75–4.00% (Oct 28). Amazon beat Q3 earnings (Oct 29). GOOGL missed (Oct 28). Intel rebounded. 10Y yield ~5.0% area. WTI ~$101.
+- **QQQ vs SPY:** QQQ YTD ~+15% vs SPY ~+12% as of Oct 30 data.
+
+### Sizing Mode
+**N/A — Dual Momentum strategy.** No VIX-based sizing. 100% equity in one asset when deployed. Not a rebalance day — no trades permitted.
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: monthly rebalance on last trading day of November 2026 (est. Nov 30).
+
+### Risk Factors
+- **🚨 CRITICAL (Day 134):** All APIs blocked since Jun 22, 2026. 5 consecutive missed rebalances. 6th (Nov 30) at risk.
+- **Estimated opportunity cost:** QQQ position on $100K from Jun 30 to Oct 30 → QQQ YTD ~+15% → ~$15K unrealized missed gain.
+- **10Y yield ~5.0%:** Creates competition for equities. Bond momentum could shift signal toward TLT if equity rally stalls.
+- **Fed path:** FOMC at 3.75–4.00%. No further hikes likely near-term (inflation falling toward 3%). Dovish pivot expected 2027.
+- **Next scheduled events:** Nov 30 rebalance (27 calendar days); Q3 earnings season winding down.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 URGENT ACTION REQUIRED before Nov 30 (est. 19 trading days):** Whitelist hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+- `data.alpaca.markets:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-02 — Morning Research (Monday, Day 133 of API Blockage) ⚠️ MIDTERM ELECTION EVE
 
 **Date:** 2026-11-02 | **Routine fired:** ~13:09 UTC (9:09 AM ET) | **Pre-market + Market-Open combined**
