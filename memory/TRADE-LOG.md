@@ -3422,3 +3422,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Combined morning + market-open routine ran 2026-11-03 at ~9:25 AM ET (Monday, Day 134 of API blockage, Week 26). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (no output). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 3, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **5 consecutive missed rebalances** (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30). Signal estimate: QQQ (leads SPY on 12-month basis; SPY absolute filter PASS). Cannot execute — Alpaca API blocked. Market context limited to WebSearch (most recent data from ~May 2026): FOMC held at 3.75–4.00% (Oct 28); Amazon beat earnings (Oct 29); GOOGL missed; S&P +2.3% in October; QQQ YTD ~+15%. Estimated opportunity cost of blockage: ~$15K unrealized on QQQ from Jun 30. **Next mandatory rebalance: last trading day of November 2026 (est. Nov 30 — 19 trading days away).** **🚨 CRITICAL: Must whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE November 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-11-03 — EOD Snapshot (Tuesday, Day 135 of API Blockage) ⚠️ WEEK 26 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-11-03 (Tuesday, Day 135 of API blockage, Week 26). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (403). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 3, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **5 consecutive missed rebalances** (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30). Signal estimate: QQQ (leads SPY on 12-month basis; SPY absolute filter PASS). Cannot execute — Alpaca API blocked. Estimated opportunity cost of blockage: ~$15K–$20K unrealized on QQQ from Jun 30. **Next mandatory rebalance: last trading day of November 2026 (est. Nov 28 — ~18 trading days away).** **🚨 CRITICAL: Must whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE November 28.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
