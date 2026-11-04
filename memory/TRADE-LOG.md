@@ -3435,3 +3435,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran 2026-11-03 (Tuesday, Day 135 of API blockage, Week 26). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (403). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 3, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **5 consecutive missed rebalances** (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30). Signal estimate: QQQ (leads SPY on 12-month basis; SPY absolute filter PASS). Cannot execute — Alpaca API blocked. Estimated opportunity cost of blockage: ~$15K–$20K unrealized on QQQ from Jun 30. **Next mandatory rebalance: last trading day of November 2026 (est. Nov 28 — ~18 trading days away).** **🚨 CRITICAL: Must whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE November 28.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-11-04 — Morning Snapshot (Wednesday, Day 136 of API Blockage) ⚠️ WEEK 26 OF BLOCKAGE
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined morning + market-open routine ran 2026-11-04 at ~9:30 AM ET (Wednesday, Day 136 of API blockage, Week 26). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (exit 56). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 4, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. `is_rebalance_day.py` ran successfully: next rebalance Monday November 30, 2026 (17 trading days). **5 consecutive missed rebalances** (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30). Signal estimate: QQQ leads SPY on 12-month basis (~24–28% vs ~21–25%); SPY absolute momentum filter PASS. Market context (WebSearch): QQQ ~$704–740, SPY ~$733–760 (Oct 26 close); VIX ~19–21 estimate; S&P +2.3% in October. Estimated opportunity cost of blockage: ~$15K–$20K unrealized on QQQ from Jun 30. **Next mandatory rebalance: November 30, 2026 (17 trading days).** **🚨 CRITICAL: Must whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE November 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web

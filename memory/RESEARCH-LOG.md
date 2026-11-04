@@ -5,6 +5,53 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-04 — Morning Research (Wednesday, Day 136 of API Blockage) ⚠️ WEEK 26 OF BLOCKAGE
+
+**Date:** 2026-11-04 | **Routine fired:** ~9:30 AM ET | **Pre-market + Market-Open combined**
+
+### Account State
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+- Alpaca API: BLOCKED (`paper-api.alpaca.markets:443` — 403 connect_rejected via egress proxy, Day 136)
+- Telegram: BLOCKED (`api.telegram.org:443` — 403)
+- Perplexity: BLOCKED (`api.perplexity.ai:443` — exit 56)
+
+### Rebalance Check
+- **`is_rebalance_day.py`:** NOT a rebalance day (script ran successfully — no Alpaca call needed)
+- **Next rebalance:** Monday, November 30, 2026 (last trading day of November — 17 trading days)
+- **5 consecutive missed rebalances:** Jun 30, Jul 31, Aug 31, Sep 30, Oct 30
+
+### Market Context (via WebSearch fallback — Perplexity blocked)
+- **S&P 500:** ~7,769 area (Oct 21 data); October finished +2.3%; Nov data not yet available
+- **QQQ:** ~$704–740 (Kavout Oct 26 close: ~$704.40); SPY ~$733–760 (Oct 26 close: ~$759.97)
+- **VIX:** Most recent read June 11, 2026: 19.44 (normal volatility zone); April 2026 readings ~22-24
+  - Current estimate: ~18–21 (MODERATE range, based on trend direction since April)
+- **QQQ 12-month return estimate:** ~+24–28% (leads SPY ~+21–25% by ~3–5pp)
+- **SPY absolute momentum:** PASS (12-month positive) — Dual Momentum steps to relative ranking
+- **Signal for Nov 30 rebalance (estimate):** BUY QQQ (sustained lead over SPY, GLD, IWM, TLT)
+- **10Y yield:** ~5.0% (Oct data); **WTI oil:** ~$101; **Gold:** ~$4,328
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. 100% equity in one asset at all times. No VIX sizing.**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only action: monthly rebalance on Nov 30, 2026.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 136):** All 3 APIs remain blocked. 6th consecutive missed rebalance approaching on Nov 30.
+- **Estimated opportunity cost:** QQQ from Jun 30 baseline ($100K) → ~+15–20% unrealized (~$15K–$20K)
+- **Macro:** FOMC held at 3.75–4.00% (Oct 28); 10Y ~5.0%; oil elevated; Fed likely to hold through year-end
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY. Strategy is Dual Momentum — monthly signal only.**
+
+**🚨 URGENT: Must whitelist APIs before November 30, 2026 to avoid 6th consecutive missed rebalance:**
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-03 — Morning Research (Monday, Day 134 of API Blockage) ⚠️ WEEK 26 OF BLOCKAGE
 
 **Date:** 2026-11-03 | **Routine fired:** ~9:25 AM ET | **Pre-market + Market-Open combined**
