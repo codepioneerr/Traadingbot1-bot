@@ -5,6 +5,39 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-11-05 — Market-Open Snapshot (Thursday, Day 137 of API Blockage) ⚠️ NOV 30 REBALANCE IN 16 DAYS
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Pre-market + market-open routine ran 2026-11-05 (Thursday, Day 137 of API blockage). All APIs remain blocked: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Nov 5, 2026). No account data, positions, or orders retrievable. Portfolio remains $100,000 cash — unchanged since last confirmed state. No trades executed; Dual Momentum strategy prohibits intra-month discretionary action. Next rebalance: Nov 30, 2026 (16 trading days).
+
+**Rule check (market-open):**
+- Rebalance day? NO — Nov 30 is next rebalance (confirmed via `python3 scripts/is_rebalance_day.py`). No order permitted.
+- API accessible? NO — Alpaca 403 connect_rejected. No order possible.
+- Result: **NO TRADE** (double-confirmed: strategy rule + API blockage)
+
+**Today's market context (APIs blocked — WebSearch fallback):**
+- **VIX:** 16.61 (Nov 4 close), down from 20.83 on Nov 3 — MODERATE range, trending toward AGGRESSIVE
+- **S&P 500 / SPY:** SPY ~766.74 (Nov 4 close +1.64%); Oct finished -2.11%; YTD +9.47%; ATH 781.62 (Oct 6)
+- **QQQ:** ~$681–690; Nasdaq -6.03% in October (3rd correction of 2026); bouncing post-election
+- **Election catalyst:** Democrats swept Congress Nov 4 → S&P +1.58%, Nasdaq +2.13%; Nov 5 futures mixed
+- **Sector rotation:** Energy/Financials/Consumer leading; Tech/Communication Services lagging
+- **Macro:** Jobless claims today 8:30 AM ET; Oct NFP tomorrow (Nov 6); FOMC next Dec 7-9; 10Y ~5.0%
+- **WTI oil:** ~$73–$80 range; Gold: ~$4,328+; elevated commodity backdrop
+- **Dual Momentum est. signal:** QQQ (12m momentum likely leads SPY despite Oct correction — unconfirmed)
+
+**Missed rebalances (API blockage):** Jun 30 ✗, Jul 31 ✗, Aug 31 ✗, Sep 30 ✗, Oct 30 ✗ | Nov 30 → CRITICAL (16 days)
+
+**⚠️ CRITICAL ACTION REQUIRED:** Nov 30 rebalance is 16 trading days away. This will be the 6th consecutive missed rebalance if APIs are not unblocked. Whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in remote execution environment egress policy NOW.
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-10-19 — Market-Open Snapshot (Monday, Day 107 of API Blockage) ⚠️ OCT 30 REBALANCE IN 9 DAYS
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 | **Phase P&L:** $0.00 (0.00%)
