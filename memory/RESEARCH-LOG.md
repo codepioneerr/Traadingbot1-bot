@@ -5,6 +5,70 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-05 — Morning Research (Thursday, Day 137 of API Blockage) ⚠️ WEEK 26 OF BLOCKAGE
+
+**Date:** 2026-11-05 | **Routine fired:** ~9:30 AM ET | **Pre-market + Market-Open combined**
+
+### Account State
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+- Alpaca API: BLOCKED (`paper-api.alpaca.markets:443` — 403 connect_rejected via egress proxy, Day 137)
+- Telegram: BLOCKED (`api.telegram.org:443` — 403, falling back to DAILY-SUMMARY.md)
+- Perplexity: BLOCKED (`api.perplexity.ai:443` — empty response, using WebSearch fallback)
+
+### Rebalance Check
+- **`is_rebalance_day.py`:** NOT a rebalance day (script ran successfully)
+- **Next rebalance:** Monday, November 30, 2026 (16 trading days away)
+- **Consecutive missed rebalances:** Jun 30, Jul 31, Aug 31, Sep 30, Oct 30 — 5 missed
+
+### Market Context (WebSearch fallback — all primary APIs blocked)
+- **VIX:** 16.61 (Nov 4 close), down sharply from 20.83 on Nov 3 — **MODERATE range (15-25)**; trending toward AGGRESSIVE
+- **S&P 500 / SPY:** SPY ~766.74 (Nov 4 close, +1.64% that day); ATH 781.62 on Oct 6; Oct finished -2.11% (S&P 500)
+- **QQQ:** ~$681–690 area; Nasdaq -6.03% in October (3rd correction of 2026); Nov 4: bouncing on election result
+- **Oct correction context:** QQQ -6.7% in October from Oct 6 ATH; SPY -3% from ATH — tech-led selloff
+- **Election catalyst (Nov 4):** Democrats won both chambers of Congress → market rally: S&P +1.58%, Nasdaq +2.13%
+- **Nov 5 premarket:** Futures mixed; rotation signal — away from tech toward consumer, financials, defensives
+- **WTI oil:** ~$73–$80 range (based on prediction market data); elevated but off recent highs
+- **10Y yield:** ~5.0% area (Oct data); Fed holding at 3.75–4.00% (last FOMC Oct 28)
+- **Economic events today:** Weekly Initial Jobless Claims at 8:30 AM ET; no FOMC, no major earnings
+- **Tomorrow (Nov 6):** October NFP/Jobs Report at 8:30 AM ET — key macro event pre-open
+
+### Sector Momentum
+**Leading sectors this week:**
+1. Energy (XLE) — YTD +39.4%, defensive bid; oil elevated
+2. Financials (XLF) — post-election rally; rate environment stable; consumer/financial rotation
+3. Consumer Discretionary (XLY) — led Nov 4 bounce; consumer resilient
+
+**Lagging / avoid:**
+1. Technology (XLK) — October correction -6%+; mixed rotation signal Nov 5 premarket
+2. Communication Services (XLC) — YTD laggard (-3.8%); Google missed earnings Oct 28
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. 100% equity in one asset at all times. No VIX sizing.**
+(For reference: VIX 16.61 → MODERATE threshold, but irrelevant for this strategy)
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading.
+Only permitted action: monthly rebalance signal on **Nov 30, 2026**.
+Estimated signal: QQQ (12-month momentum likely still leads, despite October correction; unconfirmed — need live Alpaca data)
+
+### Risk Factors
+- **🚨 CRITICAL (Day 137):** All 3 APIs remain blocked (Alpaca, Telegram, Perplexity). 6th consecutive missed rebalance approaching on Nov 30.
+- **Estimated opportunity cost:** QQQ from Jun 30 baseline ($100K) → ~$681/share area; magnitude depends on Jun 30 QQQ price (unavailable)
+- **Macro:** October tech selloff + strong YTD gains → mean-reversion risk; NFP tomorrow (Nov 6) — potential volatility
+- **Election aftermath:** Democratic sweep historically mixed signal; market digesting rotational implications
+- **Dual Momentum signal watch:** If Oct-Nov tech weakness narrows QQQ 12m momentum vs SPY significantly, Nov 30 rebalance could swing to SPY — monitor
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY. Strategy is Dual Momentum — monthly signal only.**
+
+**🚨 URGENT: Must whitelist APIs before November 30, 2026 to avoid 6th consecutive missed rebalance:**
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-04 — Morning Research (Wednesday, Day 136 of API Blockage) ⚠️ WEEK 26 OF BLOCKAGE
 
 **Date:** 2026-11-04 | **Routine fired:** ~9:30 AM ET | **Pre-market + Market-Open combined**
