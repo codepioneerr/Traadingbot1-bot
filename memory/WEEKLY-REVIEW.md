@@ -2043,3 +2043,73 @@ Fix egress at: https://code.claude.com/docs/en/claude-code-on-the-web
 
 Rationale: All 25 weeks of daily and weekly routines have been executed flawlessly — state persistence, market research, memory management, and documentation are operationally excellent. However, October 30, 2026 was the mandatory monthly rebalance day (last trading day of October), and it was missed. This is the **5th consecutive missed monthly rebalance** (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30). The bot has executed zero trades in its entire operational history. Estimated opportunity cost on $100K paper portfolio: ~$15K–$20K in foregone QQQ gains. The grade drops to F this week because the critical event the bot was built to execute — the Oct 30 rebalance — arrived and was missed. Documentation excellence cannot compensate for 5 months of zero execution. The only path to improvement is unblocking APIs before Nov 30.
 
+
+---
+
+## Week Ending 2026-11-06 (Week 26 of API Blockage)
+
+### Week Stats
+
+| Metric | Value |
+|--------|-------|
+| Portfolio (EOW) | $100,000.00 |
+| Portfolio (BOW) | $100,000.00 |
+| Week Return | $0.00 (0.00%) |
+| Phase Return | $0.00 (0.00%) |
+| vs S&P 500 | N/A (API + Perplexity blocked; S&P data unavailable) |
+| Trades | 0 (W:0 / L:0 / Open:0) |
+| Win Rate | N/A |
+| Profit Factor | N/A |
+| Best Trade | None |
+| Worst Trade | None |
+| Sizing Mode | N/A — Dual Momentum (no VIX sizing) |
+| Missed Rebalances | 5 (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30) |
+| Next Rebalance | Nov 30, 2026 (~16 trading days) |
+
+### Closed Trades This Week
+None — no trades since inception.
+
+### Open Positions
+None — $100,000 in cash.
+
+### What Worked (N/A — No Execution)
+- Routine infrastructure continues running flawlessly: memory writes, git commits, pushes
+- Day numbering, snapshot, and weekly review structure all consistent
+- Signal estimate stable: QQQ leads SPY on 12-month momentum basis
+- SPY absolute momentum filter continues to pass (risk-on environment)
+- Countdown to Nov 30 rebalance being tracked in every snapshot
+
+### What Didn't Work
+- **API blockage (Day 131–138 this week):** `paper-api.alpaca.markets`, `api.telegram.org`, `api.perplexity.ai` all returning 403 connect_rejected via egress proxy
+- **Zero trades executed:** 5 consecutive missed monthly rebalances; $15K–$20K estimated opportunity cost
+- **No market data:** Cannot confirm current QQQ/SPY prices or run authoritative signal
+- **No Telegram notifications:** All alerts falling back to `DAILY-SUMMARY.md` file writes
+- **No Perplexity research:** Weekly sector/macro context completely unavailable
+
+### Key Lessons
+- The egress proxy policy is the single point of failure for this entire system. All 26 weeks of documentation excellence are worthless without API access.
+- Nov 30 rebalance is now 16 trading days away. This is the last window to fix the blockage before another missed rebalance.
+- Signal estimate has been consistent for months: QQQ over SPY, risk-on. When APIs are unblocked, execution should be immediate.
+
+### Sector Observations (Estimated — No Live Data)
+- Unable to retrieve current sector data (Perplexity blocked)
+- Based on Oct data: Tech/QQQ remains leader; Fed at 3.75-4.00% supportive of risk-on
+- Election week (Nov 4, 2026) likely introduced volatility — specific outcomes unknown
+
+### Adjustments for Next Week
+No changes to Dual Momentum rules. Signal remains QQQ for Nov 30 rebalance (est.).
+
+**Nov 30 rebalance execution checklist (~16 trading days remaining — CRITICAL):**
+1. ☐ Whitelist in egress policy: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`
+2. ☐ Install yfinance: `pip install yfinance`
+3. ☐ Run `python3 scripts/dual_momentum_signal.py` to confirm authoritative Nov 30 signal
+4. ☐ Execute: `bash scripts/alpaca.sh buy QQQ [FULL_POSITION_SHARES]` at market close
+5. ☐ Send Telegram: rebalance executed, position size, stop level
+6. ☐ Log trade and commit to memory
+
+Fix egress at: https://code.claude.com/docs/en/claude-code-on-the-web
+
+### Overall Grade: **F** (26th Consecutive Incomplete Week — APIs Still Blocked)
+
+Rationale: Week 26 continues the same pattern. All routines executed correctly, all state persisted, documentation is thorough. But zero trades have been placed in 26 weeks of operation. The 5th consecutive missed rebalance (Oct 30) has not been remediated. Estimated opportunity cost on $100K paper portfolio: ~$15K–$20K in foregone QQQ gains since Jun 30. With Nov 30 only 16 trading days away, this is the final opportunity to unblock APIs and execute before the 6th consecutive miss. Grade remains F until the first real trade is placed.
+
