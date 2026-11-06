@@ -5,6 +5,40 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-11-06 — Market-Open Snapshot (Friday, Day 138 of API Blockage) ⚠️ NOV 30 REBALANCE IN 15 DAYS
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Pre-market + market-open routine ran 2026-11-06 (Friday, Day 138 of API blockage). All APIs remain blocked: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` returning 403 connect_rejected via egress proxy (blockage spanning Jun 22–Nov 6, 2026). No account data, positions, or orders retrievable. Portfolio remains $100,000 cash — unchanged since last confirmed state. No trades executed; Dual Momentum strategy prohibits intra-month discretionary action. Next rebalance: Nov 30, 2026 (15 trading days).
+
+**Rule check (market-open):**
+- Rebalance day? NO — Nov 30 is next rebalance (confirmed via `python3 scripts/is_rebalance_day.py`). No order permitted.
+- API accessible? NO — Alpaca 403 connect_rejected. No order possible.
+- Result: **NO TRADE** (double-confirmed: strategy rule + API blockage)
+
+**Today's market context (APIs blocked — WebSearch fallback):**
+- **VIX:** ~16.61 (Nov 4 close, most recent confirmed) — MODERATE range; stable since election rally
+- **S&P 500 / SPY:** ~755 area (indicative); premarket mixed ahead of October NFP release at 8:30 AM ET
+- **QQQ:** ~651–688 range; Nasdaq 4th straight losing session entering Friday; tech/AI spending narrative weighing
+- **TLT:** ~82 (consistent across sources — bonds stable)
+- **GLD:** ~374–377 (GLD ETF); gold elevated (~$3,940–$4,200 spot)
+- **Key event today:** October NFP at 8:30 AM ET — market-moving; futures mixed premarket (Benzinga Nov 2026 headline confirmed)
+- **November context:** Multiple sources describe November 2026 as "rough and historically atypical" vs typical seasonal strength
+- **Sector rotation:** Energy/Financials/Healthcare leading; Technology/Communication Services lagging
+- **Dual Momentum signal watch:** QQQ/SPY 12m race tightening on October QQQ weakness — monitor at Nov 30 rebalance
+
+**Missed rebalances (API blockage):** Jun 30 ✗, Jul 31 ✗, Aug 31 ✗, Sep 30 ✗, Oct 30 ✗ | Nov 30 → CRITICAL (15 days)
+
+**⚠️ CRITICAL ACTION REQUIRED:** Nov 30 rebalance is 15 trading days away. This will be the 6th consecutive missed rebalance if APIs are not unblocked. Whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in remote execution environment egress policy NOW.
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-05 — Market-Open Snapshot (Thursday, Day 137 of API Blockage) ⚠️ NOV 30 REBALANCE IN 16 DAYS
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 | **Phase P&L:** $0.00 (0.00%)

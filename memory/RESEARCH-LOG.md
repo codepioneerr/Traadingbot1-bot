@@ -5,6 +5,72 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-06 — Morning Research (Friday, Day 138 of API Blockage) ⚠️ WEEK 26 OF BLOCKAGE
+
+**Date:** 2026-11-06 | **Routine fired:** ~9:30 AM ET | **Pre-market + Market-Open combined**
+
+### Account State
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+- Alpaca API: BLOCKED (`paper-api.alpaca.markets:443` — 403 connect_rejected via egress proxy, Day 138)
+- Telegram: BLOCKED (`api.telegram.org:443` — 403, falling back to DAILY-SUMMARY.md)
+- Perplexity: BLOCKED (`api.perplexity.ai:443` — empty response, using WebSearch fallback)
+
+### Rebalance Check
+- **`is_rebalance_day.py`:** NOT a rebalance day (script ran — output: "15 trading day(s) until rebalance (Nov 30)")
+- **Next rebalance:** Monday, November 30, 2026 (15 trading days away)
+- **Consecutive missed rebalances:** Jun 30, Jul 31, Aug 31, Sep 30, Oct 30 — 5 missed
+
+### Market Context (WebSearch fallback — all primary APIs blocked)
+- **VIX:** ~16.61 (Nov 4 close, most recent confirmed) — **MODERATE range (15-25)**; trending toward AGGRESSIVE
+- **S&P 500 / SPY:** ~755 area (indicative, ranges 745–778 across sources); Nov premarket MIXED ahead of October NFP
+- **QQQ:** ~651–688 range (wide spread across sources); tech lagging — AI spending profitability doubts cited Nov 2
+- **TLT:** ~82 (most consistent across sources; Yahoo showed 82.01 at close)
+- **GLD:** ~374–377 (GLD ETF; spot gold ~$3,940–$4,202 — elevated commodity backdrop)
+- **IWM:** No specific data retrieved today; small-cap likely tracking mixed broader tape
+- **Key event today:** October NFP/Jobs Report at 8:30 AM ET — Benzinga headline: "Futures Trade Mixed Ahead of October's Jobs Report" (Nov 2026 article, confirmed from URL date)
+- **Post-election context:** Democrats swept Nov 4; S&P +1.58% / Nasdaq +2.13% on election day; Nov rotation toward Consumer/Financials, away from tech
+- **November 2026 tone:** Multiple sources describe November as "rough and historically atypical" — 4th consecutive down session noted mid-week
+- **Macro:** October NFP today (8:30 AM ET); Fed next meeting Dec; 10Y ~5.0% area; CPI/PPI TBD December
+- **Tech headwind:** AI spending profitability concerns weighed on Nasdaq Nov 2–5; Big Tech earnings mixed in prior week
+
+### Sector Momentum (WebSearch — approximate, no live data)
+**Leading sectors this week:**
+1. Energy (XLE) — Elevated oil backdrop; defensive bid persists
+2. Financials (XLF) — Post-election rally; stable rate environment
+3. Healthcare (XLV) — Defensive rotation as November weakness emerges
+
+**Lagging / avoid:**
+1. Technology (XLK) — AI spending doubts; Nasdaq fell on Nov 2; tech-led softness
+2. Communication Services (XLC) — YTD laggard; Google missed earnings Oct 28
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. 100% equity in one asset at all times. No VIX sizing.**
+(For reference: VIX ~16.61 → MODERATE threshold, but irrelevant for this strategy)
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading.
+Only permitted action: monthly rebalance signal on **Nov 30, 2026**.
+Estimated signal: QQQ or SPY (12-month momentum race narrowing given October tech selloff; unconfirmed — need live Alpaca data at rebalance)
+
+### Risk Factors
+- **🚨 CRITICAL (Day 138):** All 3 APIs remain blocked. 6th consecutive missed rebalance approaching on Nov 30 — now 15 trading days away
+- **October NFP today:** Surprise beat or miss could spike volatility (VIX was 20.83 on Nov 3, dropped to 16.61 on Nov 4 — still reactive market)
+- **Tech fragility:** AI-capex narrative could accelerate if earnings guidance disappoints; affects QQQ signal
+- **November weakness:** Market struggling with unusual November decline; mean-reversion risk elevated
+- **12M momentum signal watch:** QQQ/SPY race narrowing. If November extends October's -6% QQQ decline, Nov 30 signal could shift to SPY — monitor closely
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY. Strategy is Dual Momentum — monthly signal only.**
+
+**🚨 URGENT: Must whitelist APIs before November 30, 2026 to avoid 6th consecutive missed rebalance:**
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-11-05 — Morning Research (Thursday, Day 137 of API Blockage) ⚠️ WEEK 26 OF BLOCKAGE
 
 **Date:** 2026-11-05 | **Routine fired:** ~9:30 AM ET | **Pre-market + Market-Open combined**
