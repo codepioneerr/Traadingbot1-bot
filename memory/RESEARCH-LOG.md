@@ -5,6 +5,68 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-09 — Morning Research (Monday, Day 140 of API Blockage) ⚠️ POST AI-SELLOFF RECOVERY
+
+### Account State
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+- Alpaca API: BLOCKED (`paper-api.alpaca.markets:443` — 403 connect_rejected via egress proxy, Day 140)
+- Telegram: BLOCKED (`api.telegram.org:443` — 403)
+- Perplexity: BLOCKED (`api.perplexity.ai:443` — 403)
+
+### Rebalance Check
+- **Status:** NOT a rebalance day
+- **Next rebalance:** Monday, November 30, 2026 (~15 trading days)
+- **Missed rebalances:** 6 consecutive (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30 — all blocked)
+
+### Market Context (via WebSearch fallback — all APIs blocked)
+- **Major event (Nov 5):** AI-led tech selloff — worst day since April 2025
+  - S&P 500: -4.36% | Nasdaq Composite: -5.52% | Nasdaq-100 estimated -6.36%
+  - Trigger: Post-midterm results (Democrats won Senate + House) → AI regulation fears, data center construction restrictions concerns
+  - Nvidia: -9.26% | AI sector lost ~$1.45T market cap in one session
+  - VIX spiked: 16.61 → 28.18 (3rd largest one-day % spike since 1990; +~70%)
+- **Nov 6 partial recovery:** S&P 500 +0.31% → 7,376.86 | Nasdaq Composite +1.09% → 24,579.42
+- **Mon Nov 9 pre-market:** SPY +0.3%, QQQ +1.4% (recovery continues; Dow futures +~500pts)
+  - Oil prices dropped sharply → boosting sentiment
+- **VIX estimate:** ~22-26 (recovering from 28.18 spike; still elevated) → **MODERATE/borderline DEFENSIVE**
+- **S&P 500 level:** ~7,376 (Nov 6 close) | Nasdaq ~12% below October all-time highs
+- **QQQ estimate:** ~$680-700 (down from $704-740 Oct range due to selloff + partial recovery)
+- **SPY estimate:** ~$735-745 (down from ~$760 Oct range)
+- **WTI crude:** ~$89-105 est (DailyForex Nov forecast range; down from prior $101 reading)
+- **KEY TOMORROW:** CPI (Oct 2026) drops Nov 10 at 8:30 AM ET — market-moving inflation print
+- **FOMC context:** Next FOMC: December 9, 2026. Fed rate: 3.75-4.00% (held Oct 28)
+
+### Dual Momentum Signal Estimate
+- **QQQ 12-month return:** ~+18-22% est (down from +24-28%; Nasdaq -12% from Oct highs reduces TTM)
+- **SPY 12-month return:** ~+16-20% est (similar compression from selloff)
+- **Signal estimate for Nov 30:** QQQ (likely still leads SPY; gap may have narrowed but maintained)
+- **SPY absolute momentum filter:** PASS (SPY still well above 12-month ago level)
+- **Note:** Official signal requires `dual_momentum_signal.py` querying Alpaca — still blocked
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. 100% equity in one ETF (QQQ signal). No intra-month trading.**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Next permitted action: Nov 30 rebalance.
+
+### Risk Factors
+1. **🚨 CRITICAL (Day 140):** 6th consecutive monthly rebalance approaching (Nov 30). APIs still blocked.
+2. **CPI Nov 10 (TOMORROW):** Inflation print could spike VIX again if hotter than expected. Watch for 2nd leg down in tech.
+3. **AI regulation risk:** Post-midterm Democratic majority → potential AI/data center legislation. Overhang for QQQ.
+4. **Nvidia contagion:** -9.26% on Nov 5; further earnings disappointment risk could extend the selloff.
+5. **Opportunity cost:** 6 missed rebalances = estimated $15K-$20K+ in unrealized QQQ gains from Jun 30.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY. Strategy: Dual Momentum, monthly rebalance only.**
+
+**🚨 URGENT ACTION REQUIRED before November 30 (15 trading days):** Whitelist in environment egress policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-06 — Morning Research (Friday, Day 138 of API Blockage) ⚠️ WEEK 26 OF BLOCKAGE
 
 **Date:** 2026-11-06 | **Routine fired:** ~9:30 AM ET | **Pre-market + Market-Open combined**
