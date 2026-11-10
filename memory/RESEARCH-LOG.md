@@ -5,6 +5,60 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-10 — Morning Research (Tuesday, Day 141 of API Blockage) ⚠️ CPI DAY — WEEK 27
+
+**Date:** 2026-11-10 | **Routine fired:** pre-market + market-open combined | **Day:** Tuesday
+
+### Account State
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Positions:** None
+- Alpaca API: BLOCKED (`paper-api.alpaca.markets:443` — 403 connect_rejected via egress proxy, Day 141)
+- Telegram: BLOCKED (`api.telegram.org:443` — 403)
+- Perplexity: BLOCKED (`api.perplexity.ai:443` — 403)
+
+### Rebalance Check
+- **`is_rebalance_day.py`:** NOT a rebalance day
+- **Next rebalance:** Monday, November 30, 2026 (13 trading days)
+
+### Market Context (via WebSearch fallback — all APIs blocked)
+- **CPI Release:** October 2026 CPI data released today 8:30 AM ET. Expectations: headline +0.3% MoM (down from Sept's hot +0.6%), core +0.2% MoM. Prior September: headline +0.6% MoM, +3.7% YoY; core +0.3% MoM, +2.6% YoY. If expectations met → inflation deceleration narrative, dovish relief rally likely.
+- **Pre-market (before CPI):** Dow futures +0.4%, Nasdaq-100 futures -0.4%, S&P 500 futures flat — cautious mixed setup ahead of print.
+- **Monday Nov 9 close:** Dow +2.15%, S&P +2.35%, Nasdaq +2.74% — strong recovery from post-AI-selloff lows (Nov 5 saw Nasdaq -5.52%, S&P -4.36%).
+- **Oil:** Brent crude fell >1.5%, briefly below $90/bbl — first time since late August. Eases energy-driven inflation pressure.
+- **VIX estimate:** Spiked 16.61→28.18 on Nov 5 (AI regulation panic post-midterms). After Monday's +2.35% S&P recovery, estimated pull-back to ~20-23 range → MODERATE sizing mode.
+- **Fed:** Governor Waller flagged possible 50bp hike if inflation stays elevated. Hot CPI would be hawkish shock; cool CPI (consensus) supports rally.
+- **QQQ/SPY prices (est.):** QQQ ~$704-740 (Oct 26 close $704.40); SPY ~$733-760. Full recovery above post-selloff lows expected if CPI cooperates.
+
+### Dual Momentum Signal Estimate
+- **12-month returns (est.):** QQQ ~+24-28%, SPY ~+21-25% → QQQ leads by ~3-5pp
+- **SPY absolute momentum:** POSITIVE (12-month return > 0%) → absolute filter PASS
+- **Signal estimate:** QQQ (unchanged from prior months — sustained lead)
+- **Official signal:** Cannot compute — Alpaca data API blocked
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times.**
+(If active-trading rules applied, VIX ~20-23 would be MODERATE: 20% per position, 75-85% deployed)
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: monthly rebalance on November 30, 2026.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 141):** All APIs remain blocked. 6 consecutive missed rebalances. Nov 30 rebalance at risk.
+- **CPI Hot Print Risk:** If Oct CPI > consensus (+0.4%+ headline), Fed hike fears spike VIX above 25, QQQ could drop 2-4% intraday.
+- **VIX trajectory:** Post-AI-selloff bounce still fragile; VIX ~20-23, elevated from pre-selloff ~16.6 level.
+- **Rebalance window tightening:** 13 trading days. If APIs not unblocked by Nov 28, 7th consecutive miss.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY**
+
+**🚨 URGENT ACTION REQUIRED before November 30 (13 trading days):** Whitelist in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-11-09 — Morning Research (Monday, Day 140 of API Blockage) ⚠️ POST AI-SELLOFF RECOVERY
 
 ### Account State
