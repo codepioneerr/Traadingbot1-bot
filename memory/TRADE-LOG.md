@@ -3606,3 +3606,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran 2026-11-10 (Tuesday, CPI Day, Day 141 of API blockage, Week 27). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403 expected), `api.perplexity.ai:443` (403 expected). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 10, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **6 consecutive missed rebalances** (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30, with Nov 30 approaching). CPI Day: October 2026 CPI released 8:30 AM ET — API blocked, outcome unknown to bot. Market Monday: S&P +2.35% recovery from AI-selloff lows; VIX estimated ~20–23. Signal estimate: QQQ leads SPY on 12-month basis. Estimated opportunity cost of blockage: ~$15K–$20K unrealized on QQQ from Jun 30. **Next mandatory rebalance: November 30, 2026 (~13 trading days).** **🚨 CRITICAL: Must whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE November 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-11-11 — EOD Snapshot (Wednesday, Day 142 of API Blockage) ⚠️ WEEK 27
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-11-11 (Wednesday, Veterans Day, Day 142 of API blockage, Week 27). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403 expected), `api.perplexity.ai:443` (403 expected). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 11, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. Note: US bond markets closed for Veterans Day; equities markets open. **6 consecutive missed rebalances** (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30, with Nov 30 approaching). Signal estimate: QQQ leads SPY on 12-month basis; CPI released yesterday (Nov 10), outcome unknown to bot (API blocked). **Next mandatory rebalance: November 30, 2026 (~12 trading days).** **🚨 CRITICAL: Must whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE November 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
