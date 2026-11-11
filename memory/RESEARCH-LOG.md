@@ -6546,3 +6546,42 @@ Docs: https://code.claude.com/docs/en/claude-code-on-the-web
 - `api.perplexity.ai:443`
 
 Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-11-11 — Pre-Market Research (Wednesday, Day 142 of API Blockage) ⚠️ WEEK 27
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%)
+**Positions:** None | **Weekly trades:** 0
+
+### Market Context
+**ALL APIS BLOCKED** — paper-api.alpaca.markets:443 (403 connect_rejected via egress proxy), api.telegram.org:443 (403), api.perplexity.ai:443 (403). Cannot retrieve live data.
+
+**Context from prior research log:**
+- Post-AI selloff recovery: S&P +2.35% Monday Nov 9; Nov 10 CPI data (outcome unknown to bot)
+- VIX estimate: ~20-23 (post-selloff elevated range)
+- QQQ estimated leads SPY on 12-month basis (~4pp spread as of late Oct estimates)
+- Next mandatory rebalance: **November 30, 2026 (13 trading days remaining)**
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times.**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: monthly rebalance on November 30, 2026.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 142):** All APIs remain blocked. 6 consecutive missed rebalances. Nov 30 rebalance at serious risk.
+- Today is NOT a rebalance day.
+- Nov 30 deadline approaching — only 13 trading days to fix network policy.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY + APIs BLOCKED**
+
+**🚨 URGENT ACTION REQUIRED before Nov 30 (13 trading days):** Whitelist hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `data.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
