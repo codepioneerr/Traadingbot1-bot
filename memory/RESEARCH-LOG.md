@@ -6549,6 +6549,63 @@ Fix: https://code.claude.com/docs/en/claude-code-on-the-web
 
 ---
 
+## 2026-11-12 — Pre-Market Research (Thursday, Day 143 of API Blockage) ⚠️ NVIDIA CEO RISK — WEEK 27
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%)
+**Positions:** None | **Weekly trades:** 0
+
+### Market Context (WebSearch fallback — Perplexity blocked)
+**ALL APIS BLOCKED** — paper-api.alpaca.markets:443 (403 connect_rejected), api.telegram.org:443 (403), api.perplexity.ai:443 (403 exit 56).
+
+**Wednesday Nov 11 close:** S&P 500 +1.3% → ~7,619 | Nasdaq +1.6% → ~25,466 | Dow +0.5% → ~52,486 | Russell 2000 +0.88% → ~2,846
+- **Driver:** CoreWeave strong Q3 earnings revived AI spending confidence; Nvidia rebounded from 2-session selloff
+- **Context:** S&P within ~2.6% of all-time high at Wed close
+
+**Thursday Nov 12 pre-market (NOW — 8:00 AM ET):**
+- **🚨 Nvidia CEO risk:** Reports that Nvidia's board is weighing ouster of CEO Jensen Huang sent NVDA down ~8% after hours; Nasdaq 100 E-minis -0.79% (-226 pts); S&P 500 E-minis -0.38% (-29 pts)
+- **Futures direction:** Lower — tech/AI drag from Nvidia headline
+- **S&P 500 E-minis:** ~7,590 est pre-market (down 0.38%)
+- **Nasdaq 100 E-minis:** ~28,500 est pre-market (down 0.79%)
+
+**VIX estimate:** ~19–22 (recovery from post-AI selloff spike of 28.18 on Nov 5; Nvidia news adds some fear premium today)
+
+**Economic calendar today (Nov 12):**
+- Initial Jobless Claims 8:30 AM ET — consensus 195K
+**Tomorrow (Nov 13):** PPI 8:30 AM ET
+
+**Sector momentum (best recent data — week of Sept 7, 2026):**
+- **Leading:** Technology (AI recovery), Energy, Utilities
+- **Lagging:** Most defensive sectors in that period; today AI/tech faces headwind from Nvidia CEO news
+
+**QQQ/SPY estimates:** QQQ ~$736 est; SPY ~$756 est (undated trade-ideas ref; actual price not retrievable due to API blockage)
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times.**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: monthly rebalance on **November 30, 2026** (last trading day of November = 12 trading days).
+
+### Risk Factors
+- **🚨 Nvidia CEO ouster rumor:** Board weighing removal of Jensen Huang. NVDA -8% after hours. QQQ heavily weighted in NVDA (~9% weight). Could pressure QQQ vs SPY 12-month spread if sustained.
+- **🚨 CRITICAL (Day 143):** All APIs remain blocked. 6 consecutive missed rebalances. Nov 30 rebalance at serious risk.
+- Today is NOT a rebalance day.
+- **Nov 30 deadline:** 12 trading days to fix network policy before next mandatory rebalance.
+- **Dual Momentum signal estimate:** QQQ leads SPY on 12-month basis. Nvidia selloff could narrow the spread but unlikely to flip signal in 12 trading days unless sustained -20%+ on QQQ.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY + APIs BLOCKED**
+
+**🚨 URGENT ACTION REQUIRED before Nov 30 (12 trading days):** Whitelist hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `data.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-11 — Pre-Market Research (Wednesday, Day 142 of API Blockage) ⚠️ WEEK 27
 
 ### Account Snapshot
