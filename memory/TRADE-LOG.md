@@ -3609,6 +3609,19 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 
 ---
 
+## 2026-11-12 — Morning Snapshot (Thursday, Day 143 of API Blockage) ⚠️ NVIDIA CEO RISK — WEEK 27
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — 100% equity in one asset) | **Weekly trades:** 0
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined morning + market-open routine ran 2026-11-12 at ~9:30 AM ET (Thursday, Day 143 of API blockage, Week 27). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (403), `api.perplexity.ai:443` (403 exit 56). Portfolio: $100,000 cash, no positions. Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **6 consecutive missed rebalances** (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30 — all blocked; Nov 30 approaching). **Key market catalyst today:** Nvidia CEO Jensen Huang ouster rumor — NVDA -8% after hours; Nasdaq 100 E-minis -0.79% pre-market; S&P E-minis -0.38%. Wednesday Nov 11 close: S&P 500 +1.3% → ~7,619; Nasdaq +1.6% → ~25,466 (driven by CoreWeave beat). Initial Jobless Claims at 8:30 AM ET (consensus 195K). PPI tomorrow Nov 13. VIX estimate ~20–22. Signal estimate: QQQ leads SPY on 12-month basis; Nvidia selloff could narrow spread but unlikely to flip signal. **Next mandatory rebalance: November 30, 2026 (12 trading days).** **🚨 CRITICAL: Must whitelist `paper-api.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE November 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-11 — EOD Snapshot (Wednesday, Day 142 of API Blockage) ⚠️ WEEK 27
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
