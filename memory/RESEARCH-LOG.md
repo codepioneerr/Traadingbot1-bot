@@ -5,6 +5,51 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-13 — Pre-Market Research (Friday, Day 144 of API Blockage) ⚠️ PPI DAY — WEEK 27
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%)
+**Positions:** None | **Weekly trades:** 0
+
+### Market Context
+**ALL APIS BLOCKED** — paper-api.alpaca.markets:443 (403 connect_rejected via egress proxy), api.telegram.org:443 (403), api.perplexity.ai:443 (no output). Using WebSearch fallback.
+
+**Market data via WebSearch:**
+- **VIX estimate:** ~18-20 (down from 28.18 on Nov 5 AI selloff spike; was 19.92 on Nov 9)
+- **S&P 500 / Nasdaq:** Recovering from Nov 5 selloff (-4.4% S&P, -5.5% Nasdaq). Nov 9: S&P +2.35%. Nov 12: Nvidia CEO Jensen Huang ouster rumor → NVDA -8% afterhours → Nasdaq pressure.
+- **Today's catalyst (8:30 AM ET):** October 2026 PPI release. Prior September PPI was very hot (+1.3% MoM, +6.3% YoY vs +2.7% expected). If October cooler → market rally potential; if hot again → bond yields up, equities pressure.
+- **Nvidia:** CEO Jensen Huang ouster rumor unresolved. NVDA heavily weighted in QQQ (~9%). If confirmed, could narrow QQQ vs SPY 12-month spread but unlikely to flip signal.
+- **QQQ YTD:** ~+21-22% as of early October; SPY YTD ~+13% → QQQ leads by ~8-9pp. Dual Momentum signal: QQQ remains #1.
+- **Oil:** Brent crude below $90/bbl (as of prior week); mild energy deflation backdrop.
+- **Bonds:** TLT and GLD both lag QQQ/SPY on 12-month basis based on trajectory.
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times.**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: monthly rebalance on the **last trading day of November 2026 (~Nov 28, Black Friday, 11 trading days away)**.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 144):** All APIs remain blocked. 7 consecutive missed rebalances (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30, and now approaching Nov 28).
+- **PPI risk:** September PPI was hot (+6.3% YoY). If October is also hot, could spike yields and compress equities. VIX could rise back toward 23-25.
+- **Nvidia CEO risk:** Sustained -15%+ NVDA move could narrow QQQ/SPY spread. At current margin (~8-9pp YTD lead), signal would need a dramatic shift to flip.
+- Today is NOT a rebalance day.
+- **Nov 28 deadline:** 11 trading days to fix network policy before next mandatory rebalance.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY + APIs BLOCKED**
+
+**🚨 URGENT ACTION REQUIRED before Nov 28 (11 trading days):** Whitelist hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `data.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-11-10 — Morning Research (Tuesday, Day 141 of API Blockage) ⚠️ CPI DAY — WEEK 27
 
 **Date:** 2026-11-10 | **Routine fired:** pre-market + market-open combined | **Day:** Tuesday
