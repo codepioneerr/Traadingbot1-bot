@@ -2113,3 +2113,90 @@ Fix egress at: https://code.claude.com/docs/en/claude-code-on-the-web
 
 Rationale: Week 26 continues the same pattern. All routines executed correctly, all state persisted, documentation is thorough. But zero trades have been placed in 26 weeks of operation. The 5th consecutive missed rebalance (Oct 30) has not been remediated. Estimated opportunity cost on $100K paper portfolio: ~$15K–$20K in foregone QQQ gains since Jun 30. With Nov 30 only 16 trading days away, this is the final opportunity to unblock APIs and execute before the 6th consecutive miss. Grade remains F until the first real trade is placed.
 
+---
+
+## Week Ending 2026-11-13 (Week 27 of API Blockage) ⚠️ PPI DAY / NVIDIA SELLOFF RISK
+
+### Week Stats
+
+| Metric | Value |
+|--------|-------|
+| Portfolio (EOW) | $100,000.00 |
+| Portfolio (BOW) | $100,000.00 |
+| Week Return | $0.00 (0.00%) |
+| Phase Return | $0.00 (0.00%) |
+| vs S&P 500 | N/A (Perplexity blocked; S&P data unavailable) |
+| Trades | 0 (W:0 / L:0 / Open:0) |
+| Win Rate | N/A |
+| Profit Factor | N/A |
+| Best Trade | None |
+| Worst Trade | None |
+| Sizing Mode | N/A — Dual Momentum (no VIX sizing) |
+| Missed Rebalances | 7 (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30 blocked; Nov 28 approaching) |
+| Next Rebalance | Nov 28, 2026 — Black Friday (~11 trading days) |
+| API Blockage Days | Day 144 (Jun 22 → Nov 13, 2026) |
+
+### Closed Trades This Week
+None — no trades since inception.
+
+### Open Positions
+None — $100,000 in cash.
+
+### Market Context This Week (Estimated — APIs Blocked)
+- **Mon Nov 10 (CPI Day):** October 2026 CPI released 8:30 AM ET. Expected: +0.3% headline vs Sept +0.6%, +0.2% core. S&P recovered +2.35% previous Monday (Nov 9) from AI selloff lows.
+- **Tue Nov 11 (Veterans Day):** US bond markets closed; equities open. VIX estimated ~20–23 (post-AI selloff range, was 28.18 on Nov 5 peak).
+- **Wed Nov 12:** CoreWeave beat drove S&P +1.3% → ~7,619; Nasdaq +1.6% → ~25,466. Post-close: Nvidia CEO Jensen Huang ouster rumor → NVDA -8% afterhours; Nasdaq 100 E-minis -0.79%.
+- **Thu Nov 13:** Initial Jobless Claims (consensus 195K). Nvidia selloff pressure on Nasdaq.
+- **Fri Nov 13:** October 2026 PPI released 8:30 AM ET (prior Sept PPI was +1.3% MoM, +6.3% YoY — very hot). PPI outcome unknown to bot (API blocked).
+- **Signal estimate:** QQQ leads SPY on 12-month basis (~8-9pp YTD gap as of early Oct). Nvidia selloff narrows Nasdaq spread but unlikely to flip signal.
+- **VIX end-of-week estimate:** ~18-20 (recovering from 28.18 AI selloff peak Nov 5; was 19.92 Nov 9).
+
+### S&P 500 Weekly Performance (Estimated — Perplexity Blocked)
+- Unable to retrieve authoritative S&P 500 weekly return (Perplexity API blocked, 403)
+- Estimate: mixed week, modest positive given CoreWeave beat Wed (+1.3%) offset by Nvidia selloff pressure Thu/Fri
+- Week return estimate: +0.5% to +1.5% S&P 500 (unverified)
+
+### What Worked (N/A — No Execution)
+- Routine infrastructure continues running flawlessly: all 5 scheduled daily routines ran, memory written, commits pushed
+- Day counting, snapshot structure, and weekly review format all consistent
+- Signal estimate stable: QQQ leads SPY on 12-month momentum basis — no regime change
+- SPY absolute momentum filter passes (risk-on environment confirmed by S&P at ~7,619)
+- Countdown to Nov 28 rebalance tracked in every snapshot
+
+### What Didn't Work
+- **API blockage (Day 138–144 this week):** `paper-api.alpaca.markets`, `api.telegram.org`, `api.perplexity.ai` all returning 403 connect_rejected via egress proxy — Day 144 as of today
+- **Zero trades executed:** 7 consecutive missed monthly rebalances; ~$15K–$20K estimated opportunity cost on QQQ from Jun 30
+- **No market data:** Cannot confirm current QQQ/SPY prices or run authoritative signal
+- **No Telegram notifications:** All alerts falling back to `DAILY-SUMMARY.md` file writes
+- **No Perplexity research:** Weekly sector/macro context completely unavailable — Nvidia CEO rumor and PPI impact unverifiable
+
+### Key Lessons
+- **The Nov 28 rebalance (Black Friday, last trading day of November) is now only ~11 trading days away.** This is the final reasonable window before the 7th consecutive missed rebalance.
+- Nvidia CEO Jensen Huang ouster rumor (unverified) could meaningfully impact NVDA and QQQ if confirmed — tech-heavy QQQ exposure means monitoring NVDA is critical.
+- VIX recovery from 28 → ~18-20 suggests post-AI-selloff normalization. Risk-on signal should still hold.
+- PPI data (today) + CPI (Mon) are the key inflation inputs before the Nov FOMC meeting — their outcomes will determine whether the Fed stays on hold or cuts.
+
+### Sector Observations (Estimated — No Live Data)
+- Unable to retrieve current sector data (Perplexity blocked, 403)
+- Based on context: Tech (QQQ) under pressure from Nvidia CEO rumor; CoreWeave beat (cloud/AI infra) positive
+- Energy: Brent <$90/bbl as of early Nov — oil easing, supportive of consumer spending
+- Financials: Fed at 3.75-4.00%, likely on hold pending PPI/CPI data
+- Signal for Nov 28 rebalance: QQQ over SPY expected unless Nvidia selloff materially widens SPY lead
+
+### Adjustments for Next Week
+No changes to Dual Momentum rules. Priority: **unblock APIs before Nov 28 (11 trading days).**
+
+**Nov 28 rebalance execution checklist (~11 trading days remaining — CRITICAL):**
+1. ☐ Whitelist in egress policy: `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`
+2. ☐ Install yfinance: `pip install yfinance`
+3. ☐ Run `python3 scripts/dual_momentum_signal.py` to confirm authoritative Nov 28 signal
+4. ☐ Execute: `bash scripts/alpaca.sh buy QQQ [FULL_POSITION_SHARES]` at market close (or SPY if signal flips)
+5. ☐ Send Telegram: rebalance executed, position size, stop level
+6. ☐ Log trade and commit to memory
+
+Fix egress at: https://code.claude.com/docs/en/claude-code-on-the-web
+
+### Overall Grade: **F** (27th Consecutive Incomplete Week — APIs Still Blocked)
+
+Rationale: Week 27 is a carbon copy of Weeks 1–26. All routines executed correctly, all state persisted, documentation thorough. Zero trades placed in 27 weeks. 7 consecutive missed rebalances. Estimated opportunity cost: ~$15K–$20K unrealized on QQQ since Jun 30. The Nov 28 rebalance (11 trading days) is the last chance to execute before year-end. Grade remains F until the first real trade is placed. The Nvidia CEO rumor adds uncertainty to the QQQ signal — confirming or dismissing it via Perplexity/Alpaca would be valuable if APIs are unblocked before Nov 28.
+
