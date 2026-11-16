@@ -5,6 +5,56 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-16 — Pre-Market Research (Monday, Day 147 of API Blockage) ⚠️ PRE-NVDA EARNINGS — WEEK 28
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%)
+**Positions:** None | **Weekly trades:** 0
+**APIs blocked since:** June 22, 2026 (Day 147)
+
+### Market Context
+**ALL APIS BLOCKED** — paper-api.alpaca.markets:443 (403 connect_rejected via egress proxy), api.telegram.org:443 (403), api.perplexity.ai:443 (blocked/no output). Using WebSearch fallback.
+
+**WebSearch-derived context (Nov 16, 2026):**
+- **VIX:** Estimated ~17–19 (Nov 9 close: 19.92; down sharply from Nov 5 spike of 28.18; "new VIX low suggests investors are relaxed" per forex.com)
+- **S&P 500:** ~7,500–7,550 range; last confirmed close Nov 10 ~7,520–7,549; futures pointing roughly flat (one source noted ~7,692 on a premarket page, may reflect recent recovery)
+- **QQQ:** $679.35 close on Nov 9; Nasdaq-100 ~10.6% below Oct 6 record high; best day since May 2025 on Nov 9 (+3.54%)
+- **Major catalyst TOMORROW:** NVIDIA earnings November 17, 2026 — the most critical catalyst for QQQ/tech momentum this month
+- **Applied Materials:** reported November 12 (after last bot run)
+- **Oil:** Brent crude continues sliding; "oil slide cools inflation worries" (Wall Street rally earlier this week)
+- **Sector context:** Wall Street jumped as oil slide eased inflation concerns; Nvidia remains key overhang for tech
+
+### Dual Momentum Signal Estimate
+- SPY 12-month return: Positive (approximate) → absolute momentum filter PASSES
+- QQQ vs SPY 12-month: QQQ leads SPY by ~8–9pp (as of late October est.); QQQ remains #1 ranked asset
+- **Estimated signal: Hold QQQ** (pending official Nov 28 rebalance run)
+- NVDA earnings tomorrow could affect QQQ near-term but unlikely to flip 12-month signal
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times.**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: monthly rebalance on **November 28, 2026 (Black Friday — last trading day of November, ~8 trading days away)**.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 147):** All APIs remain blocked. 7 consecutive missed rebalances. Nov 28 rebalance at serious risk (only ~8 trading days).
+- **NVIDIA earnings Nov 17:** Major event for QQQ/Nasdaq. If massive beat → QQQ surges, confirms signal. If miss → QQQ could drop sharply, may affect signal margin.
+- Today is NOT a rebalance day.
+- Nov 28 deadline approaching — must fix network policy BEFORE that date.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY + APIs BLOCKED**
+
+**🚨 URGENT ACTION REQUIRED before Nov 28 (Black Friday, ~8 trading days):** Whitelist hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `data.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-13 — Pre-Market Research (Friday, Day 144 of API Blockage) ⚠️ PPI DAY — WEEK 27
 
 ### Account Snapshot

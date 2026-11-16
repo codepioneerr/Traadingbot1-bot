@@ -3671,3 +3671,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran 2026-11-13 (Friday, PPI Day, end of Week 27, Day 144 of API blockage). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403 expected), `api.perplexity.ai:443` (blocked/no output). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 13, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. Week 27 ends with 0 trades. **7 consecutive missed rebalances** (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30 — all blocked; Nov 28, Black Friday, is the next rebalance in ~11 trading days). PPI Day: October 2026 PPI released 8:30 AM ET — API blocked, outcome unknown. VIX estimate ~18-20 post-AI-selloff recovery. Signal estimate: QQQ continues to lead SPY on 12-month basis. Estimated opportunity cost of blockage: ~$15K–$20K unrealized on QQQ from Jun 30. **Next mandatory rebalance: November 28, 2026 (Black Friday, ~11 trading days). 🚨 CRITICAL: Must whitelist `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE Nov 28.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-11-16 — Morning Snapshot (Monday, Day 147 of API Blockage) ⚠️ PRE-NVDA EARNINGS — WEEK 28
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — 100% equity in one asset) | **Weekly trades:** 0
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined morning + market-open routine ran 2026-11-16 at ~9:03 AM ET (Monday, Day 147 of API blockage, Week 28). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (403), `api.perplexity.ai:443` (no output). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 16, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **7 consecutive missed rebalances** (Jun 30, Jul 31, Aug 31, Sep 30, Oct 30 — all blocked; **Nov 28, Black Friday, is the NEXT rebalance in ~8 trading days**). Key market context: NVIDIA earnings tomorrow (Nov 17) — major catalyst for QQQ; VIX estimated ~17–19 (down from Nov 5 spike of 28.18, Nov 9 close 19.92); S&P 500 ~7,500–7,550 range; QQQ $679.35 (Nov 9 close), Nasdaq-100 ~10.6% below Oct 6 record. Signal estimate: QQQ leads SPY on 12-month basis; estimated signal is HOLD QQQ. Opportunity cost of blockage: ~$15K–$20K unrealized. **Next mandatory rebalance: November 28, 2026 (Black Friday, ~8 trading days). 🚨 CRITICAL: Must whitelist `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE Nov 28.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
