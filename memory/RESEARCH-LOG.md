@@ -5,6 +5,76 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-17 — Pre-Market Research (Tuesday, Day 148 of API Blockage) ⚠️ NVIDIA EARNINGS DAY — WEEK 28
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%)
+**Positions:** None | **Weekly trades:** 0
+**APIs blocked:** `paper-api.alpaca.markets:443` (403), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked)
+*Research via WebSearch fallback — Perplexity unreachable*
+
+### Market Context
+**S&P 500 futures:** Slightly lower (Dow -0.3%, Nasdaq-100 +0.3%) — mixed going into NVIDIA earnings day
+**VIX estimate:** ~17–19 (recovering from Nov 5 AI-selloff peak of 28.18; last confirmed reading July 2026: 16.73)
+
+**🚨 NVIDIA EARNINGS DAY — CRITICAL EVENT:**
+- Jensen Huang resigned as CEO on Nov 12, 2026 (confirmed via SEC 8-K) amid affair scandal with espionage implications
+- Colette Kress (CFO) is interim CEO; Harvey C. Jones is first-ever board chair
+- NVDA has lost ~$410–$600B market cap since investigation announcement (Nov 8)
+- **Q3 FY2027 earnings report due AFTER THE CLOSE today (~1:20 PM PT / 4:20 PM ET)**
+- Revenue guided: ~$108–109B (±2%), gross margin 74%, EPS consensus $2.47
+- UBS pricing in ~7.8% implied move on earnings
+- NVDA is ~9% of QQQ — today's result will heavily influence QQQ vs SPY 12-month spread and the Nov 28 rebalance signal
+
+**Economic Data today (8:30 AM ET):**
+- October Retail Sales (prior Sept: +0.8%, forecast: +0.2% m/m)
+- October Housing Starts & Building Permits
+
+**Week catalysts:**
+- FOMC Minutes released this week
+- APEC Summit ongoing
+- Anthropic IPO (confirmed this week per search results)
+
+**Price reference (Nov 8/9, 2026):**
+- SPY: ~$736.33 (Nov 8)
+- QQQ: ~$679 (Nov 9 close); QQQ +3.54% on Nov 9 alone (best single day since March 2026)
+- 12-month return estimate: QQQ ~+37% | SPY ~+24% → **QQQ leads SPY on absolute + relative basis**
+- SPY 12-month clearly positive → NO SHY signal
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times.**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. The only permitted action is the monthly rebalance on **November 28, 2026** (Black Friday, last trading day of November — ~7 trading days).
+
+### Signal Estimate (for Nov 28 rebalance)
+- **Absolute momentum (SPY 12-month):** Strongly positive (~+24%) → proceed to relative ranking
+- **Relative leader:** QQQ leads SPY (~+37% vs ~+24% 12-month)
+- **Signal estimate: QQQ** (assuming earnings tonight don't cause sustained NVDA collapse)
+- **Risk to signal:** If NVIDIA misses badly AND NVDA -20%+ sustained over next 7 trading days, QQQ 12-month lead could narrow significantly. Watching closely.
+
+### Risk Factors
+- **🚨 Day 148 (8 consecutive missed rebalances):** Jun 30, Jul 31, Aug 29, Sep 30, Oct 30, and Nov 28 approaching
+- **🚨 CRITICAL: Nov 28 rebalance 7 trading days away — APIs MUST be unblocked**
+- NVIDIA earnings tonight: beat → QQQ rallies, signal confirmed; miss → QQQ pressure, signal may weaken (unlikely to flip in 7 days unless -20%+)
+- Interim leadership at NVDA creates uncertainty over medium term
+- Hot CPI/PPI data released Nov 10/13 (outcome unknown to bot — API blocked); Fed trajectory uncertain
+- Opportunity cost of blockage: estimated ~$15K–$20K unrealized (QQQ +37% from Jun 30)
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY + APIs BLOCKED**
+
+**🚨 URGENT ACTION REQUIRED before Nov 28 (7 trading days):** Whitelist in environment egress policy:
+- `paper-api.alpaca.markets:443`
+- `data.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-11-16 — Pre-Market Research (Monday, Day 147 of API Blockage) ⚠️ PRE-NVDA EARNINGS — WEEK 28
 
 ### Account Snapshot
