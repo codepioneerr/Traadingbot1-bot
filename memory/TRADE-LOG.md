@@ -5,6 +5,40 @@ Format: append only — never edit past entries.
 
 ---
 
+## 2026-11-18 — Market-Open Snapshot (Wednesday, Day 149 of API Blockage) ⚠️ NOV 30 REBALANCE IN 7 DAYS
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Pre-market + market-open routine ran 2026-11-18 (Wednesday, Day 149 of API blockage). All APIs remain blocked: `paper-api.alpaca.markets:443`, `api.telegram.org:443`, and `api.perplexity.ai:443` returning 403 connect_rejected via egress proxy. No account data, positions, or orders retrievable. Portfolio remains $100,000 cash — unchanged since last confirmed state. No trades executed; Dual Momentum strategy prohibits intra-month discretionary action. Next rebalance: Nov 30, 2026 (7 trading days).
+
+**Rule check (market-open):**
+- Rebalance day? NO — Nov 30 is next rebalance (confirmed via `python3 scripts/is_rebalance_day.py`). No order permitted.
+- API accessible? NO — Alpaca 403 connect_rejected. No order possible.
+- Result: **NO TRADE** (double-confirmed: strategy rule + API blockage)
+
+**Today's market context (APIs blocked — WebSearch fallback):**
+- **NVDA Q3 FY2027 (after close Nov 17):** Revenue $115.8B (+103% YoY), EPS $2.70 vs $2.47 est — BEAT + RAISE ($130B Q4 guidance). Stock +3% premarket (~$160). First earnings since CEO Huang resigned Nov 12.
+- **QQQ:** Prior close $656.95; premarket +0.98% → ~$663.36
+- **S&P 500 / SPY:** Futures +0.40%; first gain in 5 sessions on NVDA beat
+- **Nasdaq futures:** +0.90%
+- **VIX:** ~17–19 est. (down from 28.18 Nov 5 spike → 19.30 Nov 13 → lower today post-NVDA) — MODERATE range
+- **Anthropic IPO (ANT):** Pricing today on Nasdaq at $70–$78/share (~$1.5T valuation); software stocks selling off on competition fears
+- **FOMC Minutes:** Oct 27-28 meeting released 2 PM ET today; rate held at 3.50–3.75%; next meeting Dec 8-9
+- **Sector:** Semis leading (NVDA/AMD/AVGO); Software/SaaS lagging (Anthropic threat)
+- **Dual Momentum signal watch:** QQQ 12m ~+37% vs SPY ~+24% → QQQ leads. NVDA beat reinforces signal. **Nov 30 estimate: BUY QQQ**
+
+**Missed rebalances (API blockage):** Jun 30 ✗, Jul 31 ✗, Aug 29 ✗, Sep 30 ✗, Oct 30 ✗ | Nov 30 → CRITICAL (7 days)
+
+**⚠️ CRITICAL ACTION REQUIRED:** Nov 30 rebalance is 7 trading days away. This will be the 6th consecutive missed rebalance if APIs are not unblocked. Est. opportunity cost: ~$37,000 (QQQ +37% from Jun 30). Whitelist `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in remote execution environment egress policy NOW.
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-06 — Market-Open Snapshot (Friday, Day 138 of API Blockage) ⚠️ NOV 30 REBALANCE IN 15 DAYS
 
 **Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 | **Phase P&L:** $0.00 (0.00%)

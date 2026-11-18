@@ -5,6 +5,82 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-18 — Pre-Market Research (Wednesday, Day 149 of API Blockage) ⚠️ POST-NVDA EARNINGS — 7 DAYS TO REBALANCE
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%)
+**Positions:** None | **Weekly trades:** 0
+**APIs blocked:** `paper-api.alpaca.markets:443` (403), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked)
+*Research via WebSearch fallback — Perplexity unreachable*
+
+### Market Context
+**S&P 500 futures:** +0.4% premarket | **Nasdaq 100 futures:** +0.9% premarket
+**VIX estimate:** ~17–19 (trending down from 28.18 Nov 5 spike → 19.92 Nov 9 → 19.30 Nov 13; NVDA beat likely driving it lower today)
+
+**🟢 NVIDIA Q3 FY2027 EARNINGS — BEAT + RAISE (after close Nov 17):**
+- **Revenue:** $115.8B (+103% YoY, +20% QoQ) — beat $109.1B consensus
+- **EPS:** $2.70 GAAP / $2.68 non-GAAP — beat $2.47 estimate
+- **Q4 guidance:** $130B ±3% (ahead of estimates), gross margin guided 71–72%
+- **Capital return:** $150B additional buyback authorized; $28.1B returned in Q3
+- **Leadership:** First earnings report since Jensen Huang resigned as CEO (Nov 12); Colette Kress serves as interim CEO
+- **NVDA stock:** +2.81–3.1% premarket (~$160 range, from $155.46 prior close); extended-hours +~5%
+- **Signal impact:** NVDA (~9% of QQQ) beat confirms QQQ 12-month momentum lead over SPY intact
+
+**QQQ / SPY:**
+- QQQ prior close: $656.95 (down 0.73% session); premarket +0.98% → ~$663.36
+- SPY: S&P futures +0.4% — market on course for first gain in five sessions
+- **12-month estimate:** QQQ ~+37% | SPY ~+24% — QQQ leads on both absolute and relative basis
+
+**🟡 Anthropic IPO (ANT) — Pricing today Nov 18:**
+- Range: $70–$78/share; bankers expect pricing above $78 → implied $1.5T+ valuation
+- Lists on Nasdaq as ANT
+- **Market impact:** Software stocks (SaaS/cloud) selling off on Anthropic competition fears
+- Net effect: mixed for QQQ (NVDA/semis up, software down)
+
+**FOMC Minutes — Oct 27-28 meeting released at 2 PM ET today:**
+- Fed rate held at 3.50–3.75%
+- Next FOMC: December 8–9, 2026
+- Market watching for commentary on rate trajectory into year-end
+
+**Sector picture:**
+- **Leading:** Semiconductors (NVDA beat lifting AMD, AVGO, QCOM), Energy, Financials
+- **Lagging:** Software/SaaS (Anthropic IPO threat), Communication Services
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. 100% equity in one asset at all times. No VIX-based sizing.**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only action: monthly rebalance on **November 30, 2026** (7 trading days away).
+
+### Signal Estimate (for Nov 30 rebalance)
+- **Absolute momentum (SPY 12-month):** Strongly positive (~+24%) → proceed to relative ranking
+- **Relative leader:** QQQ leads SPY (~+37% vs ~+24% 12-month)
+- **NVDA earnings:** Beat + raise — reinforces QQQ maintaining momentum lead through Nov 30
+- **Signal estimate: QQQ** (high confidence — only extreme NVDA collapse could change this, which the beat makes very unlikely)
+- **Action required Nov 30:** Buy QQQ with 100% of equity (~$100,000 / ~$663 = ~150 shares)
+
+### Risk Factors
+- **🚨 Day 149 (8 consecutive missed rebalances):** Jun 30, Jul 31, Aug 29, Sep 30, Oct 30, Nov 30 approaching
+- **🚨 CRITICAL: Nov 30 rebalance 7 trading days away — APIs MUST be unblocked**
+- Opportunity cost of blockage: estimated ~$37,000 (QQQ up ~37% from Jun 30 start of blockage)
+- Software selloff (Anthropic effect) is a drag but small relative to semis weight in QQQ
+- FOMC minutes at 2 PM ET could introduce midday volatility
+- Anthropic IPO pricing/listing could drive broad tech volatility today
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY + APIs BLOCKED**
+
+**🚨 URGENT ACTION REQUIRED before Nov 30 (7 trading days):** Whitelist in environment egress policy:
+- `paper-api.alpaca.markets:443`
+- `data.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-11-17 — Pre-Market Research (Tuesday, Day 148 of API Blockage) ⚠️ NVIDIA EARNINGS DAY — WEEK 28
 
 ### Account Snapshot
