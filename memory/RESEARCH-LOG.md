@@ -5,6 +5,60 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-19 — Pre-Market Research (Thursday, Day 150 of API Blockage) ⚠️ ANTHROPIC IPO DAY + NVDA POST-EARNINGS — WEEK 28
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%)
+**Positions:** None | **Weekly trades:** 0
+
+### Market Context
+**ALL APIS BLOCKED** — paper-api.alpaca.markets:443 (403 connect_rejected via egress proxy), api.telegram.org:443 (403), api.perplexity.ai:443 (blocked/no output). Using WebSearch fallback.
+
+**S&P 500 Futures (premarket):** S&P 500 +1.2%, Nasdaq-100 +2.0–2.3%. Major rally driven by Anthropic IPO.
+**Anthropic IPO:** Priced at upsized offering. Gray-market trading suggests shares may open ~27% above IPO price at 9:30 AM ET. Major AI catalyst lifting Nasdaq broadly.
+**NVIDIA Q3 FY2027 Earnings (Nov 17 afterhours):** Revenue $115.8B (+103% YoY, beat $109B estimate). Non-GAAP EPS $2.68 (beat $2.47 estimate). Q4 guidance $130B. Stock +3.6% AH. Very strong beat. Colette Kress led call as interim CEO (Jensen Huang resigned Nov 12). Board investigation ongoing, CEO search underway.
+**S&P 500 prior close (Nov 18):** 7,323.63 (−0.23%). Dow −1.11%; Nasdaq Composite +0.42%. Hawkish Fed commentary weighed on Dow.
+**Nasdaq-100:** Still down ~4.4% over past week despite today's premarket bounce (within broader pullback).
+**VIX estimate:** ~16–17 (Sep 2026 Cboe close 16.34; prior data ~16.91 previous close). MODERATE sizing mode.
+**Weekly Jobless Claims (8:30 AM ET today):** Prior week 200K (up 9K). No consensus for today's Nov 14 week report yet.
+**Fed:** Hawkish tone continuing — rate cut expectations being pushed back.
+**Oil:** WTI/Brent — API blocked, no live read. Prior estimates ~$70–75/bbl range.
+
+### Dual Momentum Signal Assessment
+- **Strategy:** Dual Momentum ETF Rotation — rebalance once per month on last trading day.
+- **Last rebalance:** Never executed (all APIs blocked since Jun 22, 2026 — 9 consecutive missed rebalances).
+- **Next rebalance:** **November 30, 2026 (Monday, last trading day of November) — 6 trading days from today.**
+  *(Note: Nov 26 = Thanksgiving/closed; Nov 27 = Black Friday half-day; Nov 28–29 = weekend; Nov 30 = Monday = last trading day)*
+- **Signal estimate:** QQQ continues to lead SPY on 12-month basis (~+37% vs ~+24%). NVDA beat and Anthropic IPO both reinforce QQQ leadership. Signal: **BUY/HOLD QQQ**.
+- **Absolute filter:** SPY 12-month return strongly positive — no SHY signal.
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. 100% equity in one asset at all times. No VIX-based sizing.**
+(For reference: VIX ~16–17 = MODERATE range under old strategy)
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: monthly rebalance on **November 30, 2026**.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 150):** All APIs remain blocked. 9 consecutive missed rebalances. Nov 30 rebalance at serious risk. Only 6 trading days remaining.
+- **Anthropic IPO:** While bullish for AI/tech today, it creates short-term Nasdaq volatility. No action needed — Dual Momentum is monthly.
+- **Fed hawkishness:** Could pressure QQQ if rate cuts further delayed. Unlikely to flip 12-month signal.
+- **NVDA CEO uncertainty:** Board investigation ongoing. Unlikely to flip QQQ signal in 6 days.
+- **Thanksgiving week:** Markets may be thin Nov 25–27. Ensure rebalance scripts run on Nov 30 (Monday).
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY + APIs BLOCKED**
+
+**🚨 URGENT ACTION REQUIRED before November 30 (6 trading days):** Whitelist hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `data.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-18 — Pre-Market Research (Wednesday, Day 149 of API Blockage) ⚠️ POST-NVDA EARNINGS — 7 DAYS TO REBALANCE
 
 ### Account Snapshot
