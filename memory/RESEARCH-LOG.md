@@ -5,6 +5,74 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-20 — Pre-Market Research (Thursday, Day 151 of API Blockage) ⚠️ POST-NVDA EARNINGS / REBALANCE IN 5 TRADING DAYS — WEEK 29
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%)
+**Positions:** None | **Weekly trades:** 0
+
+### Market Context
+**ALL APIS BLOCKED** — paper-api.alpaca.markets:443 (403 connect_rejected via egress proxy), api.telegram.org:443 (403), api.perplexity.ai:443 (blocked/no output). Using WebSearch fallback.
+
+**S&P 500:** 7,323.63 close Nov 18 (down 0.2% that day, down from ~7,600 peak); YTD +7%
+**Nasdaq Composite:** 24,429.88 close Nov 18 (up 0.4% that day); YTD +5.1%
+**Dow:** 50,198.17 close Nov 18 (down 1.1% that day)
+**VIX:** ~17–19 est (last confirmed close: 19.30 on Nov 13; trending down from 28.18 spike on Nov 5; NVDA earnings beat likely mildly suppressive to volatility)
+**S&P 500 futures (Nov 18 premarket context):** Dow futures -51 pts, S&P futures modestly higher, Nasdaq futures +~200 pts on NVDA beat
+**QQQ/SPY 12-month estimate:** QQQ ~+37% vs SPY ~+24% (as of early-Nov estimates); NVDA beat further supports QQQ lead
+
+**NVIDIA Q3 FY2027 Earnings (released Nov 17 after close):**
+- Revenue: $115.8B (+103% YoY) vs $109B consensus — massive beat
+- Non-GAAP EPS: $2.68 vs $2.47 consensus
+- Data Center: $107.6B (+110% YoY)
+- Q4 guidance: ~$130B revenue (excl. China data center compute)
+- Gross margin guided: 71–72% (lower due to Vera Rubin ramp costs)
+- NVDA stock reaction: +5% AH, ~+2.5% next day to $159.86; had fallen from $186 (Nov 6) to $155 close
+- CEO: Colette Kress (interim); board investigation ongoing; permanent CEO search underway
+
+**Economic Calendar Nov 20:**
+- 8:25 AM ET: Fed Governor Waller (welcoming remarks)
+- 10:00 AM ET: State Employment & Unemployment (October)
+- 12:15 PM ET: Fed Governor Cook (US economy)
+- Note: Jobless claims were yesterday (Nov 19); consensus ~197K vs prior 200K
+
+**Sector momentum (estimated, Web sources):**
+- **Leading:** Technology/AI (NVDA beat; Vera Rubin demand "explosive" per mgmt), Semiconductors
+- **Lagging:** Consumer Discretionary, Industrials (Dow -1.1% Nov 18)
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times.**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading.
+Only permitted action: monthly rebalance on **November 28, 2026** (last trading day of November = 5 trading days: Nov 21, 24, 25, 26, 28).
+
+### Signal Estimate
+QQQ leads SPY on 12-month basis (~+13pp spread est.). NVDA earnings beat further reinforces QQQ dominance over SPY. If rebalance ran today: **BUY QQQ** (~519 shares at ~$193 est = ~$100K). SPY 12-month return remains positive → absolute momentum pass → proceed to relative ranking.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 151):** All APIs remain blocked. 9 consecutive missed rebalances. Nov 28 rebalance at CRITICAL risk.
+- Nov 28 is 5 trading days away (Nov 21, 24, 25, 26, 28) — Thanksgiving Thursday Nov 27 market CLOSED.
+- Black Friday (Nov 28) market closes at 1:00 PM ET — routine must run early.
+- NVDA CEO instability: board investigation ongoing; any negative headline could pressure QQQ.
+- Vera Rubin chip ramp: gross margin compression Q4 (71–72%); execution risk for Blackwell successor.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY + APIs BLOCKED**
+
+**Perplexity fallback:** WebSearch used for all research. Data quality: good for market context, estimated for intraday prices.
+
+**🚨 CRITICAL ACTION REQUIRED before Nov 28 (5 trading days):** Whitelist hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `data.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+
+---
+
 ## 2026-11-19 — Pre-Market Research (Thursday, Day 150 of API Blockage) ⚠️ ANTHROPIC IPO DAY + NVDA POST-EARNINGS — WEEK 28
 
 ### Account Snapshot
