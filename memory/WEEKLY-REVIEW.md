@@ -2200,3 +2200,100 @@ Fix egress at: https://code.claude.com/docs/en/claude-code-on-the-web
 
 Rationale: Week 27 is a carbon copy of Weeks 1–26. All routines executed correctly, all state persisted, documentation thorough. Zero trades placed in 27 weeks. 7 consecutive missed rebalances. Estimated opportunity cost: ~$15K–$20K unrealized on QQQ since Jun 30. The Nov 28 rebalance (11 trading days) is the last chance to execute before year-end. Grade remains F until the first real trade is placed. The Nvidia CEO rumor adds uncertainty to the QQQ signal — confirming or dismissing it via Perplexity/Alpaca would be valuable if APIs are unblocked before Nov 28.
 
+
+---
+
+## Week 28 Review — Week Ending 2026-11-20 (Friday)
+
+### Week Summary
+**Period:** November 16–20, 2026 | **Day count:** Days 147–151 of API blockage | **Bot operational days:** 5/5
+
+### Portfolio Performance
+- **Starting equity (phase):** $100,000.00 (inception)
+- **Ending equity:** $100,000.00 (API BLOCKED — last confirmed)
+- **Week return:** $0.00 (0.00%) — APIs blocked, no trades
+- **Phase return:** $0.00 (0.00%)
+
+### vs S&P 500 (Estimated — Perplexity/Alpaca Blocked)
+- **S&P 500 estimated week return:** Positive, likely +1.5%–2.5% (NVDA beat Nov 17 + Anthropic IPO Nov 19 euphoria; S&P was 7,323.63 on Nov 18 after a brief -0.2% consolidation day)
+- **Bot vs S&P delta:** Approximately −1.5% to −2.5% (bot: 0%, market: +1.5–2.5%)
+- **Cumulative underperformance:** ~28 weeks of 0% vs estimated ~15–25% S&P gains since inception
+
+### Trade Summary
+- **Total trades this week:** 0
+- **Wins / Losses / Open:** 0 / 0 / 0
+- **Win rate:** N/A | **Profit factor:** N/A
+- **Best trade:** N/A | **Worst trade:** N/A
+- **Sizing mode this week:** N/A (Dual Momentum — monthly rebalance only)
+
+### Open Positions
+None — $100,000.00 in cash.
+
+### Market Context This Week (Estimated — APIs Blocked)
+- **Mon Nov 16 (Day 147):** Pre-NVDA earnings day. VIX estimated ~17–19. S&P 500 ~7,400–7,500 range. Jensen Huang CEO resignation confirmed via SEC 8-K (Nov 12); Colette Kress interim CEO.
+- **Tue Nov 17 (Day 148):** NVIDIA Q3 FY2027 earnings after close (~4:20 PM ET). Revenue $115.8B vs $109B consensus (+103% YoY), EPS $2.68 vs $2.47, Q4 guided $130B — massive beat. NVDA +5% AH. Additionally: Oct Retail Sales and Oct Housing Starts released 8:30 AM ET (outcomes unknown due to blockage).
+- **Wed Nov 18 (Day 149):** Post-NVDA rally. S&P 500 closed 7,323.63 (-0.2% consolidation); Nasdaq 24,429.88 (+0.4%). NVDA +2.5% on earnings follow-through. Market digesting NVDA beat in context of Jensen Huang resignation uncertainty.
+- **Thu Nov 19 (Day 150):** Anthropic IPO day. Gray market priced ~+27% above issue price. Nasdaq-100 futures +2.0–2.3% premarket. Weekly jobless claims released. AI/tech sector euphoria.
+- **Fri Nov 20 (Day 151):** End of Week 28. Options expiration (monthly/weekly). VIX estimated ~15–17 (compressed by NVDA beat + Anthropic IPO sentiment; down from 19.30 on Nov 13).
+- **Signal estimate:** QQQ continues to lead SPY strongly on 12-month momentum basis. AI/tech tailwinds (NVDA beat, Anthropic IPO) reinforce QQQ over SPY. No signal flip expected. Absolute momentum (SPY positive YTD) confirms risk-on.
+
+### S&P 500 Weekly Performance (Estimated — Perplexity Blocked)
+- Unable to retrieve authoritative S&P 500 weekly return (Perplexity API blocked, 403)
+- Estimate: strong positive week given NVDA beat (Tue) + Anthropic IPO (Thu); likely +1.5%–2.5% S&P 500 for the week
+- Tech/AI sectors likely outperformed broad market
+
+### What Worked (N/A — No Execution)
+- Routine infrastructure: all 5 scheduled daily routines ran, memory written, commits pushed
+- Day/week counting and snapshot structure consistent throughout Week 28
+- Signal estimate stable and reinforced: NVDA massive beat + Anthropic IPO = QQQ leads SPY more strongly than ever
+- SPY absolute momentum filter clearly passes (risk-on confirmed)
+- Rebalance date corrected: Nov 30 (Monday, last trading day of November) — not Nov 28 as prior entries incorrectly stated
+
+### What Didn't Work
+- **API blockage (Days 147–151 this week):** `paper-api.alpaca.markets`, `api.telegram.org`, `api.perplexity.ai` all returning 403 connect_rejected via egress proxy — Day 151 as of today
+- **Zero trades executed:** 9 consecutive missed monthly rebalances; ~$15K–$25K estimated opportunity cost on QQQ from Jun 30
+- **No market data:** Cannot confirm actual QQQ/SPY prices or run authoritative signal computation
+- **No Telegram notifications:** All alerts falling back to `DAILY-SUMMARY.md` file writes
+- **No Perplexity research:** Sector/macro context entirely estimated; Anthropic IPO day detail unverifiable
+- **Morning routine date error (Nov 20):** Labeled "Thursday, Week 29" — correct label is Friday, Week 28
+
+### Key Lessons
+- **The Nov 30 rebalance (Monday, last trading day of November) is now only ~7 trading days away.** This is the absolute final window before the 10th consecutive missed rebalance. Thanksgiving week: Nov 26 closed, Nov 27 (Black Friday) closes 1pm ET, Nov 30 is the target.
+- NVDA's massive beat ($115.8B revenue, Q4 guidance $130B) with Jensen Huang resigned as CEO shows the company separated fundamentals from founder dependence — net QQQ bullish.
+- Anthropic's IPO pricing at a large premium confirms AI sector remains in bull phase — reinforces QQQ signal.
+- The bot has been fully operational for 151 days with 100% routine compliance but 0% trade execution. The issue is infrastructure (egress policy), not strategy or code.
+- VIX compression from 28.18 (Nov 5 AI selloff) to estimated ~15–17 this week confirms post-selloff normalization.
+
+### Sector Observations (Estimated — No Live Data)
+- **Technology/AI (QQQ, XLK, SOXX):** Strongly bullish — NVDA beat + Anthropic IPO; QQQ signal over SPY strongly confirmed
+- **Consumer Discretionary:** Oct Retail Sales (Nov 17) likely positive given strong labor market
+- **Financials:** Fed at 3.75-4.00%, likely on hold; credit spreads likely tightening given risk-on
+- **Industrials:** Pre-Thanksgiving seasonal strength, reshoring themes
+- **Energy:** Brent likely stable <$90, supportive of consumer spending
+- **Signal for Nov 30 rebalance:** QQQ over SPY highly likely; SPY absolute momentum passes (risk-on)
+
+### Adjustments for Next Week
+No changes to Dual Momentum rules. Priority: **unblock APIs before Nov 30 (7 trading days) — CRITICAL FINAL DEADLINE.**
+
+**Nov 30 rebalance execution checklist (~7 trading days remaining):**
+1. ☐ Whitelist in egress policy: `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`
+2. ☐ Verify yfinance installed: `pip install yfinance`
+3. ☐ Run `python3 scripts/dual_momentum_signal.py` on Nov 30 to confirm authoritative signal
+4. ☐ Execute: `bash scripts/alpaca.sh buy QQQ [FULL_POSITION_SHARES]` at or near Nov 30 market close
+5. ☐ Place trailing stop immediately after fill
+6. ☐ Send Telegram: rebalance executed, position size, stop level
+7. ☐ Log trade and commit to memory
+
+**Thanksgiving week schedule:**
+- Mon Nov 23: Normal trading
+- Tue Nov 24: Normal trading
+- Wed Nov 25: Normal trading (possible early close 1pm ET)
+- Thu Nov 26: **THANKSGIVING — MARKET CLOSED**
+- Fri Nov 27: **BLACK FRIDAY — SHORT SESSION (closes 1pm ET)**
+- Mon Nov 30: **REBALANCE DAY — last trading day of November**
+
+Fix egress at: https://code.claude.com/docs/en/claude-code-on-the-web
+
+### Overall Grade: **F** (28th Consecutive Incomplete Week — APIs Still Blocked)
+
+Rationale: Week 28 is structurally identical to Weeks 1–27. All routines ran, state persisted, documentation thorough. Zero trades executed in 28 weeks. 9 consecutive missed rebalances. Estimated opportunity cost: ~$15K–$25K unrealized on QQQ since Jun 30. The Nov 30 rebalance (7 trading days) is the absolute last chance before the 10th miss. This week saw the two most significant AI-sector catalysts of the year (NVDA massive beat + Anthropic IPO) — both strongly confirming the QQQ signal the bot cannot execute. Grade remains F until the first real trade is placed.
