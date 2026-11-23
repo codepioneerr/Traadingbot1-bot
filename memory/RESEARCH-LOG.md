@@ -5,6 +5,74 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-23 — Pre-Market Research (Monday, Day 154 of API Blockage) ⚠️ THANKSGIVING WEEK — REBALANCE IN 5 TRADING DAYS — WEEK 30
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%)
+**Positions:** None | **Weekly trades:** 0
+**APIs:** ALL BLOCKED — paper-api.alpaca.markets:443 (403 connect_rejected), api.telegram.org:443 (403), api.perplexity.ai:443 (403). WebSearch fallback used.
+
+### Market Context
+**S&P 500:** ~7,323 (Nov 18 close); ~7,440 (Nov 16 E-mini futures close). Last confirmed data Nov 18.
+**QQQ:** ~$679 area (Nov 9 last confirmed close). YTD +7.32% as of Nov 17 vs SPY +8.22% — SPY marginally ahead YTD.
+**VIX:** 24.52 (Nov 18 close); prior: 19.30 (Nov 13), 19.92 (Nov 9). Best estimate today: ~20–23 (holiday week vol suppression expected; still elevated from early-Nov spike).
+**S&P 500 futures (premarket):** No live data available. Last week's context: Dow futures modestly lower, Nasdaq futures positive after NVDA earnings beat.
+
+**Key events this week (Thanksgiving Week):**
+- **Nov 26 (Thu):** Thanksgiving — market CLOSED
+- **Nov 27 (Fri):** Black Friday — early close at 1:00 PM ET
+- **Nov 30 (Mon):** Last trading day of November = **MANDATORY REBALANCE DAY**
+- Thin liquidity week; historically bullish (+0.76% median S&P 500 since 1945)
+- 30-year mortgage rate 7.35% — elevated (rate hike speculation)
+- Retail earnings in focus; consumer spending data likely a catalyst
+
+**NVIDIA (Nov 17 Q3 FY2027 earnings):**
+- Revenue: $115.8B (+103% YoY) vs $109B exp — massive beat
+- EPS: $2.68 vs $2.47; Q4 guided ~$130B
+- Stock: +4–5% AH → fell -2.9% Nov 18; down ~19% from Nov 6 high of $186.64 to ~$155–159 range
+- Jensen Huang not being reinstated; board confirmed; Colette Kress interim CEO
+
+**Anthropic IPO (Nov 19):** Gray market priced +27% above issue; Nasdaq futures +2.0–2.3% premarket that day — AI tailwind for QQQ.
+
+**Sector leadership 2026 YTD (from search):**
+- Industrials (XLI): +16%+ YTD — leading broad-market sectors
+- Energy (VDE): +16% YTD (as of Q1 2026 — may have changed)
+- Consumer Discretionary: +6.5% (early Nov spike); Cybersecurity ETF +57.8% YTD
+- Weakness: QQQ/tech in correction (-10%+ from Oct peak); NVDA -19% from Nov 6 high
+
+### Dual Momentum Signal Estimate
+**12-month lookback (252 trading days) — APIs blocked, estimated only:**
+- QQQ YTD +7.32% vs SPY +8.22% as of Nov 17 (SPY marginally ahead on YTD)
+- Note: YTD ≠ 12-month return; signal uses 252-day return (back to ~Nov 2025)
+- Prior signal estimate: QQQ leads SPY on 12-month basis; NVDA -19% from peak may have narrowed the gap
+- **Signal is UNCERTAIN until Nov 30 live data is available — APIs must be working on Nov 30**
+- Absolute momentum (SPY 12-month): S&P ~+8% 12M → positive → proceed to relative ranking
+
+### Sizing Mode
+**N/A** — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times.
+VIX ~20–23 noted for context only (MODERATE range: 15–25).
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: monthly rebalance on **November 30, 2026** (last trading day of November = 5 trading days: Nov 23, 24, 25, 27, 30).
+
+### Risk Factors
+- **🚨 CRITICAL (Day 154):** All APIs blocked for 154 consecutive days. 9+ consecutive missed rebalances.
+- **⏰ Nov 30 rebalance = 5 trading days away (Nov 23, 24, 25, 27, 30).** Nov 26 Thanksgiving = CLOSED.
+- **Dual Momentum signal uncertainty:** QQQ vs SPY 12-month gap may have narrowed due to NVDA selloff and tech correction. Live `python3 scripts/dual_momentum_signal.py` on Nov 30 is essential.
+- **Thin liquidity:** Thanksgiving week — reduced volume amplifies slippage risk on Nov 27 (Black Friday early close). Prefer Nov 30 (Monday) for rebalance — which is the correct date anyway.
+- VIX ~20–23: elevated; not a concern for Dual Momentum (no stop management needed).
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY + APIs BLOCKED**
+
+**🚨 URGENT — NEXT REBALANCE: November 30, 2026 (5 trading days).** To execute:
+1. Whitelist in environment network policy: `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`
+2. Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+3. Run: `python3 scripts/dual_momentum_signal.py` on Nov 30 to get live signal
+4. Execute rebalance: close current position (none), open signal position with 100% equity
+
+---
+
 ## 2026-11-20 — Pre-Market Research (Thursday, Day 151 of API Blockage) ⚠️ POST-NVDA EARNINGS / REBALANCE IN 5 TRADING DAYS — WEEK 29
 
 ### Account Snapshot
