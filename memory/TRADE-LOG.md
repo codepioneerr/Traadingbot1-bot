@@ -3835,3 +3835,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Combined morning + market-open routine ran 2026-11-23 at ~9:31 AM ET (Monday, Day 154 of API blockage, Thanksgiving Week, Week 30). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked/no output). WebSearch fallback used for research. Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 23, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **9+ consecutive missed rebalances.** Market context (WebSearch): S&P 500 ~7,323 (Nov 18 close); VIX 24.52 (Nov 18 close — elevated, trending from 28.18 spike on Nov 5); QQQ YTD +7.32% vs SPY YTD +8.22% (SPY marginally ahead YTD as of Nov 17 — 12-month signal uncertain until live data available on Nov 30); Industrials (XLI) leading sectors at +16% YTD; NVDA -19% from Nov 6 high of $186.64 to ~$155–159 range post-Q3 earnings beat. **Thanksgiving week schedule: Nov 26 (Thu) CLOSED, Nov 27 (Fri) early close 1pm ET.** No trades executed — not a rebalance day. **CRITICAL: Next mandatory rebalance: November 30, 2026 (Monday, last trading day of November) — 5 trading days: Nov 23, 24, 25, 27, 30. 🚨 MUST whitelist `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE Nov 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-11-23 — EOD Snapshot (Monday, Day 154 of API Blockage) ⚠️ THANKSGIVING WEEK — REBALANCE IN 5 TRADING DAYS — WEEK 30
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-11-23 (Monday, Day 154 of API blockage, Thanksgiving Week, Week 30). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked/no output). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 23, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **9+ consecutive missed rebalances.** This week is Thanksgiving week: Nov 26 (Thu) CLOSED, Nov 27 (Fri) early close 1pm ET; trading days this week: Nov 23 (Mon), 24, 25, 27. **CRITICAL: Next mandatory rebalance: November 30, 2026 (Monday, last trading day of November) — 5 trading days remaining: Nov 24, 25, 27, 28(?), 30. 🚨 MUST whitelist `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE Nov 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
