@@ -3848,3 +3848,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran 2026-11-23 (Monday, Day 154 of API blockage, Thanksgiving Week, Week 30). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked/no output). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 23, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **9+ consecutive missed rebalances.** This week is Thanksgiving week: Nov 26 (Thu) CLOSED, Nov 27 (Fri) early close 1pm ET; trading days this week: Nov 23 (Mon), 24, 25, 27. **CRITICAL: Next mandatory rebalance: November 30, 2026 (Monday, last trading day of November) — 5 trading days remaining: Nov 24, 25, 27, 28(?), 30. 🚨 MUST whitelist `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE Nov 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-11-24 — Morning Snapshot (Tuesday, Day 155 of API Blockage) ⚠️ THANKSGIVING WEEK — REBALANCE IN 4 TRADING DAYS — WEEK 30
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — 100% equity in one asset) | **Weekly trades:** 0
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined morning + market-open routine ran 2026-11-24 at ~pre-market ET (Tuesday, Day 155 of API blockage, Thanksgiving Week, Week 30). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked/no output). WebSearch fallback used. Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 24, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **10 consecutive missed rebalances.** 🚨 **MAJOR MARKET EVENT:** Jensen Huang REINSTATED as NVIDIA CEO by board (Nov 23 announcement). NVDA +31% Monday Nov 23 — best single day on record. S&P 500 +4.73% (7,237.17), Nasdaq +6.51% (24,089.56). VIX: closed Mon at 26.62 (down from 35.89/~40 spike on Fri); early Tue ~28-29. Market came off correction (-10% from highs after Fri's -3.7%). **Critical signal update:** As of Nov 20, SPY +6.85% 12M vs QQQ +4.38% 12M — SPY leads. NVDA +31% boost adds ~2.5% to QQQ, making the signal razor-thin. Must run live signal script on Nov 30. **Thanksgiving week: Nov 25 (today, open), Nov 26 (Wed, open), Nov 27 (Thu, CLOSED), Nov 28 (Fri, early 1pm close), Nov 30 (Mon, REBALANCE DAY).** No trades executed — not a rebalance day. **CRITICAL: Next mandatory rebalance: November 30, 2026 (Monday, last trading day of November) — 4 trading days remaining. 🚨 MUST whitelist `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE Nov 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web

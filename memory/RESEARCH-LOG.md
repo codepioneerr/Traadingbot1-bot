@@ -5,6 +5,80 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-24 — Pre-Market Research (Tuesday, Day 155 of API Blockage) ⚠️ THANKSGIVING WEEK — REBALANCE IN 4 TRADING DAYS — WEEK 30
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%)
+**Positions:** None | **Weekly trades:** 0
+
+### API Status
+**ALL APIS BLOCKED** — paper-api.alpaca.markets:443 (403 connect_rejected), api.telegram.org:443 (403), api.perplexity.ai:443 (blocked/no output). WebSearch fallback used.
+
+### Market Context (WebSearch)
+**🚨 MAJOR DEVELOPMENT: Jensen Huang REINSTATED as NVIDIA CEO** — Board reversed the Nov 12 ouster. NVDA +31% Monday Nov 23 — best day on record. NVDA is ~8% of QQQ, adding ~2.5% to QQQ performance.
+
+**Monday Nov 23 close (day before today):**
+- S&P 500: 7,237.17 (+4.73%) — best single-day gain since April 2025
+- Nasdaq Composite: 24,089.56 (+6.51%)
+- Dow: 49,595.31 (+3.01%)
+- Context: Monday's rally followed a steep -3.7% S&P 500 drop Friday (Nov 21) which pushed the index into correction territory (-10% from highs). Monday's bounce was driven entirely by NVDA reinstatement.
+
+**VIX (key):**
+- Friday Nov 21 spike: ~40 (correction-driven fear)
+- Monday Nov 23 close: 26.62 (down from 35.89 prior close, -9.3%)
+- Tuesday Nov 24 early trading: ~28-29 (up ~9% from Monday close as caution returns)
+- 52-week range: 13.38 – 40.03
+
+**Tuesday Nov 24 premarket:**
+- S&P 500 futures: mixed (~7,277 +0.3% early, then pulled back)
+- Catalyst for pullback: Scott Bessent announced fresh Iran sanctions + Hormuz warnings → energy/geopolitical concern
+- JPMorgan lowered 2027 Brent oil forecast
+
+**QQQ vs SPY 12-month signal (CRITICAL for Nov 30 rebalance):**
+- As of Nov 20: SPY +6.85% YoY, QQQ +4.38% YoY → **SPY leads QQQ**
+- After NVDA +31% on Nov 23 (QQQ ~8% NVDA): QQQ received ~2.5% boost
+- Updated estimate: QQQ ~6.5-7% 12M return vs SPY ~7-9% 12M return
+- **Signal is EXTREMELY CLOSE — SPY may still lead or signal has flipped to QQQ**
+- With Nov 24 possibly reversing some of Monday's gains, signal remains uncertain
+- **Must run live script Nov 30 to get actual signal — no premature assumptions**
+
+**Thanksgiving Week Schedule:**
+- Nov 24 (Mon): open ✅ (yesterday, +4.73%)
+- Nov 25 (Tue): open ✅ TODAY
+- Nov 26 (Wed): open (early close possible, verify)
+- Nov 27 (Thu): **CLOSED — Thanksgiving**
+- Nov 28 (Fri): **early close 1pm ET — Black Friday**
+- Nov 30 (Mon): REBALANCE DAY — last trading day of November
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times.**
+(If using old framework: VIX ~28 → DEFENSIVE mode — but irrelevant for this strategy.)
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: monthly rebalance on **November 30, 2026** (4 trading days: Nov 25, 27, 28, 30).
+
+Wait — Thanksgiving week: **Nov 25 (today), Nov 26, Nov 28 (early close), Nov 30**. That's 4 more trading days.
+
+### Risk Factors
+- **🚨 CRITICAL (Day 155):** All APIs remain blocked. 10 consecutive missed rebalances. Nov 30 rebalance imminent.
+- **Signal uncertainty:** SPY vs QQQ 12-month spread is razor-thin after NVDA reinstatement (+31%). Live data critical on Nov 30.
+- **Market volatility:** VIX ~28 (elevated). S&P 500 in a wide 7,000–7,800 range. NVDA CEO drama creating noise.
+- **Geopolitical:** Iran sanctions + Hormuz tension from Scott Bessent → energy/oil volatility.
+- **If APIs remain blocked on Nov 30:** 10th consecutive missed rebalance. Must escalate.
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY + APIs BLOCKED**
+
+**🚨 URGENT — 4 TRADING DAYS TO REBALANCE (Nov 30):** Whitelist in environment egress policy:
+- `paper-api.alpaca.markets:443`
+- `data.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-23 — Pre-Market Research (Monday, Day 154 of API Blockage) ⚠️ THANKSGIVING WEEK — REBALANCE IN 5 TRADING DAYS — WEEK 30
 
 ### Account Snapshot
