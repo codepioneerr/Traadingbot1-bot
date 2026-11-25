@@ -5,6 +5,63 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-25 — Morning Snapshot (Wednesday, Day 156 of API Blockage) ⚠️ THANKSGIVING EVE — AI CHIP SELLOFF — REBALANCE IN 3 TRADING DAYS — WEEK 30
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%)
+**Positions:** None | **Weekly trades:** 0
+
+### Market Context
+**ALL APIS BLOCKED** — paper-api.alpaca.markets:443 (403 connect_rejected), api.telegram.org:443 (403), api.perplexity.ai:443 (403). WebSearch fallback used.
+
+**Pre-market data (WebSearch — Nov 25, 2026):**
+- **S&P 500 futures:** -1.7–1.9% (~7,100 area implied)
+- **Nasdaq 100 futures:** -2.6–2.8% (below 26,000)
+- **Dow futures:** -1.1–1.3% (~49,500)
+- **VIX:** 30.79, +16.82% — ELEVATED
+- **Driver:** AI chip selloff deepening on tariff fears + fresh trade policy concerns
+- **NVDA:** -4.9% premarket (after +31% surge on Nov 23 when Jensen Huang reinstated; Senate Banking Committee scrutiny continues)
+- **AMD:** -6.0% | **MSFT:** -2.5% | **Tesla:** -2.6% | **Amazon:** -3.5% | **Alphabet:** -3.2%
+- **Dell (DELL):** -6.01% despite record $132.3B AI backlog
+- **Asia:** SK Hynix -9.1%, Samsung -9.3%, Kioxia -15%
+- **Data today:** Core PCE + preliminary GDP at 8:30 AM ET
+- **Calendar:** Nov 26 (Thu) = Thanksgiving CLOSED; Nov 27 (Fri) = early close 1pm ET; Nov 30 (Mon) = REBALANCE DAY
+
+**NVDA context:** Q3 FY2027 earnings (Nov 17): $115.8B revenue (+103% YoY), EPS $2.68 vs $2.47 exp — beat. Jensen Huang reinstated Nov 23 → NVDA +31%; board investigation + Senate hearing ongoing → renewed selling today.
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times.**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: monthly rebalance on **November 30, 2026** (3 trading days: Nov 25, 27, 30).
+
+### Signal Estimate (for Nov 30 rebalance)
+- SPY 12M: ~+3–6% (Sep 24 snapshot: +10.5%; down from ~7,640 → ~7,100 area today)
+- QQQ 12M: uncertain — NVDA surge Nov 23 added ~2.5%, AI selloff today partially offsets
+- GLD: LSEG Nov 2026 report: GLD -6.8% in November, YTD -10.2% — likely weakest signal
+- TLT: yields retreating from multi-year highs (TLT likely positive)
+- Signal cannot be determined without live data — MUST run `python3 scripts/dual_momentum_signal.py` on Nov 30
+
+### Risk Factors
+- **🚨 CRITICAL (Day 156):** All APIs remain blocked. 11 consecutive missed rebalances.
+- **AI chip selloff:** VIX 30.79, Nasdaq futures -2.7% — could shift 12M signal SPY vs QQQ
+- **Tariff risks:** Fresh U.S. tariff plans hitting semiconductor supply chain
+- **Nov 30 deadline:** Only 3 trading days (Nov 25, 27, 30) to fix network policy
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY + APIs BLOCKED**
+
+**🚨 URGENT — REBALANCE IN 3 TRADING DAYS (November 30, 2026):**
+Must whitelist in environment network policy IMMEDIATELY:
+- `paper-api.alpaca.markets:443`
+- `data.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-24 — Pre-Market Research (Tuesday, Day 155 of API Blockage) ⚠️ THANKSGIVING WEEK — REBALANCE IN 4 TRADING DAYS — WEEK 30
 
 ### Account Snapshot

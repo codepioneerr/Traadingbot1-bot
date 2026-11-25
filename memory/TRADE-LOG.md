@@ -3874,3 +3874,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** EOD routine ran 2026-11-24 (Tuesday, Day 155 of API blockage, Thanksgiving Week, Week 30). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (blocked/no output). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 24, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **10 consecutive missed rebalances.** Market context from morning routine: Jensen Huang reinstated as NVIDIA CEO (Nov 23 announcement); NVDA +31% Monday Nov 23; S&P 500 +4.73% (7,237.17 close Mon); Nasdaq +6.51% (24,089.56); VIX ~26-29 (elevated). SPY 12M +6.85% vs QQQ 12M +4.38% as of Nov 20 — SPY leads, signal razor-thin with NVDA surge. **Thanksgiving week: Nov 26 (Wed, open), Nov 27 (Thu, CLOSED), Nov 28 (Fri, early close 1pm ET), Nov 30 (Mon, REBALANCE DAY).** **CRITICAL: Next mandatory rebalance: November 30, 2026 — 4 trading days remaining (Nov 25, 26, 28, 30). 🚨 MUST whitelist `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE Nov 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-11-25 — Morning Snapshot (Wednesday, Day 156 of API Blockage) ⚠️ AI CHIP SELLOFF — THANKSGIVING EVE — WEEK 30
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — 100% equity in one asset) | **Weekly trades:** 0
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** Combined morning + market-open routine ran 2026-11-25 (Wednesday, Day 156 of API blockage, Thanksgiving Eve, Week 30). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (403), `api.perplexity.ai:443` (403). WebSearch fallback used. Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 25, 2026). Strategy is Dual Momentum ETF Rotation — today is NOT a rebalance day. **11 consecutive missed rebalances.** Market context (WebSearch): AI chip selloff deepening premarket — S&P 500 futures -1.7–1.9%, Nasdaq 100 futures -2.6–2.8%, VIX 30.79 (+16.82%); NVDA -4.9% premarket (Huang reinstatement gains partially reversed); AMD -6.0%, MSFT -2.5%; tariff fears + Core PCE/GDP data at 8:30 ET. **Thanksgiving week: Nov 26 (Thu) CLOSED; Nov 27 (Fri) early close 1pm ET; Nov 30 (Mon) = REBALANCE DAY.** Signal estimate: SPY 12M vs QQQ 12M razor-thin — AI selloff today slightly favors SPY; GLD weakest (LSEG: -6.8% Nov, YTD -10.2%). Must run signal script live on Nov 30. **CRITICAL: Next mandatory rebalance: November 30, 2026 — 3 trading days remaining (Nov 25, 27, 30). 🚨 MUST whitelist APIs in environment egress policy BEFORE Nov 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
