@@ -5,6 +5,53 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-26 — Thanksgiving Day (MARKET CLOSED) — Day 157 of API Blockage — REBALANCE IN 2 TRADING DAYS
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** 100% | **Positions:** 0
+
+### Market Context
+**ALL APIS BLOCKED** — paper-api.alpaca.markets:443 (403 connect_rejected via egress proxy), api.telegram.org:443 (403), api.perplexity.ai:443 (403). WebSearch fallback used.
+
+**🦃 MARKET CLOSED TODAY — Thanksgiving Day, November 26, 2026**
+**Next trading day: November 27, 2026 (Friday, Black Friday — early close 1pm ET)**
+**Next rebalance day: November 30, 2026 (Monday, last trading day of November) — 2 TRADING DAYS AWAY**
+
+**Context from prior sessions + WebSearch estimates:**
+- S&P 500 Nov 25 close: ~7,200–7,250 range (AI chip selloff on Wed)
+- Nasdaq Nov 25 close: ~24,000 range (Nasdaq -2.6–2.8% futures premarket on 11/25)
+- VIX Nov 25: ~30-32 (elevated — AI/tariff fears; 30.79 reading on 11/25 morning)
+- NVDA: ~$147–152 range after selloff (down from +31% spike on 11/23 post-Jensen reinstatement)
+- SPY 12M return: ~+6–8% (leads QQQ as of Nov 20 data)
+- QQQ 12M return: ~+4–6% (razor-thin vs SPY; AI selloff slight drag on QQQ)
+- Signal estimate: **SPY leads QQQ** on 12-month basis — if confirmed on Nov 30, hold/buy SPY
+
+### Sizing Mode
+**N/A — Dual Momentum strategy. No VIX-based sizing. 100% equity in one asset at all times.**
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Market is CLOSED today.
+**Nov 30 rebalance**: Run `python3 scripts/dual_momentum_signal.py` live. Expected signal: SPY (leads QQQ 12M).
+
+### Risk Factors
+- **🚨 CRITICAL (Day 157):** All APIs remain blocked. 11 consecutive missed rebalances.
+- **🚨 CRITICAL: Nov 30 rebalance is 2 trading days away (Nov 27 Black Friday + Nov 30 Monday)**
+- Market closed today; Black Friday (Nov 27) early close 1pm ET
+- VIX ~30-32 elevated — AI chip selloff + tariff fears
+
+### Decision
+**NO TRADE — MARKET CLOSED (Thanksgiving) + APIs BLOCKED**
+
+**🚨 URGENT ACTION REQUIRED BEFORE NOV 30 (2 TRADING DAYS):** Whitelist hosts in environment network policy:
+- `paper-api.alpaca.markets:443`
+- `data.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-25 — Morning Snapshot (Wednesday, Day 156 of API Blockage) ⚠️ THANKSGIVING EVE — AI CHIP SELLOFF — REBALANCE IN 3 TRADING DAYS — WEEK 30
 
 ### Account Snapshot
