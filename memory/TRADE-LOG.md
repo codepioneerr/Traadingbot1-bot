@@ -3913,3 +3913,16 @@ Signal script (`dual_momentum_signal.py`) also fails: `yfinance` module not inst
 | — | — | — | — | — | — | — | — |
 
 **Notes:** Morning routine ran 2026-11-26 (Thursday — Thanksgiving Day, Day 157 of API blockage, Week 30). Market is CLOSED today. All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected), `api.telegram.org:443` (403), `api.perplexity.ai:443` (403). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 26, 2026). Strategy is Dual Momentum ETF Rotation — market CLOSED today, NOT a rebalance day. **11 consecutive missed rebalances.** Market context (WebSearch estimates): S&P 500 ~7,200–7,250 range (AI chip selloff on 11/25); VIX ~30-32 (elevated); NVDA ~$147–152 (down from +31% spike on 11/23); SPY 12M leads QQQ 12M (signal estimate: SPY). **Schedule: Nov 27 (Fri) early close 1pm ET; Nov 30 (Mon) = REBALANCE DAY — 2 trading days away.** 🚨 **CRITICAL: Must whitelist `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE Nov 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
+## 2026-11-26 — EOD Snapshot (Thursday — Thanksgiving Day, Day 157 of API Blockage) — MARKET CLOSED — REBALANCE IN 2 TRADING DAYS — WEEK 30
+
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (N/A — market closed) | **Phase P&L:** $0.00 (0.00%)
+**Sizing mode today:** N/A (Dual Momentum — monthly rebalance only) | **Weekly trades:** 0/5
+
+| Ticker | Type | Shares | Entry | Close | Day Chg | Unrealized P&L | Stop |
+|--------|------|--------|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — | — |
+
+**Notes:** EOD routine ran 2026-11-26 (Thursday — Thanksgiving Day, Day 157 of API blockage, Week 30). Market is CLOSED today (Thanksgiving). All APIs remain blocked: `paper-api.alpaca.markets:443` (403 connect_rejected via egress proxy), `api.telegram.org:443` (403), `api.perplexity.ai:443` (403). Portfolio: $100,000 cash, no positions, no trades since inception (blockage spanning Jun 22–Nov 26, 2026). Strategy is Dual Momentum ETF Rotation — market CLOSED today, NOT a rebalance day. **12 consecutive missed rebalances (would-be rebalances: Jun 2, Jun 30, Jul 28, Aug 25, Sep 29, Oct 27, Nov 3, Nov 10, Nov 17, Nov 24, Nov 25, Nov 26 — all missed due to API blockage).** Market context: AI chip selloff deepened pre-Thanksgiving; S&P 500 ~7,100–7,200 range (down from 7,237 high on 11/23); NVDA partially reversed post-Huang-reinstatement gains; VIX ~30-32 (elevated). SPY 12M vs QQQ 12M razor-thin (SPY leads marginally). **Schedule: Nov 27 (Fri) early close 1pm ET; Nov 30 (Mon) = MANDATORY REBALANCE DAY — 2 trading days away (Nov 27 + Nov 30).** 🚨 **CRITICAL: Must whitelist `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443` in environment egress policy BEFORE Nov 30.** Fix: https://code.claude.com/docs/en/claude-code-on-the-web
