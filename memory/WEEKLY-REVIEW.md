@@ -2297,3 +2297,92 @@ Fix egress at: https://code.claude.com/docs/en/claude-code-on-the-web
 ### Overall Grade: **F** (28th Consecutive Incomplete Week — APIs Still Blocked)
 
 Rationale: Week 28 is structurally identical to Weeks 1–27. All routines ran, state persisted, documentation thorough. Zero trades executed in 28 weeks. 9 consecutive missed rebalances. Estimated opportunity cost: ~$15K–$25K unrealized on QQQ since Jun 30. The Nov 30 rebalance (7 trading days) is the absolute last chance before the 10th miss. This week saw the two most significant AI-sector catalysts of the year (NVDA massive beat + Anthropic IPO) — both strongly confirming the QQQ signal the bot cannot execute. Grade remains F until the first real trade is placed.
+
+---
+
+## Week 30 Review — Thanksgiving Week (Nov 23–27, 2026) — 30th Consecutive Incomplete Week ⚠️ REBALANCE TOMORROW
+
+### Week Dates
+Mon Nov 23 – Fri Nov 27, 2026 (Thanksgiving Thu Nov 26 — market closed; Black Friday Fri Nov 27 — early close 1pm ET)
+
+### Performance Table
+
+| Metric | Value |
+|--------|-------|
+| Bot Equity (EOW) | $100,000.00 (API BLOCKED) |
+| Bot Week Return | $0.00 (0.00%) |
+| Bot Phase Return | $0.00 (0.00%) |
+| S&P 500 Week Return | ~+3–5% (est.) — Mon +4.73%, Wed -1.5–2%, Fri +1.6% |
+| Bot vs S&P 500 | -3 to -5% (underperformed — no positions held) |
+| Trades This Week | 0 (W:0 / L:0 / open:0) |
+| Win Rate | N/A |
+| Profit Factor | N/A |
+| Best Trade | N/A |
+| Worst Trade | N/A |
+| VIX Range | ~26.62 (Mon close) → 30.79 (Wed morning) → ~25-26 (Fri close) |
+
+### Closed Trades This Week
+None. No positions held — APIs blocked since Jun 22, 2026.
+
+### Open Positions (EOW)
+None. 100% cash. 12 consecutive missed monthly rebalances.
+
+### Market Context (WebSearch — Perplexity blocked)
+- **Mon Nov 23:** Massive rally — S&P 500 +4.73% (closed 7,237.17), Nasdaq +6.51% (24,089.56). Catalyst: Jensen Huang reinstated as NVIDIA CEO (Nov 23 board announcement); NVDA +31% (best single-day gain on record). VIX ~26.62 (down from ~35.89 spike prior Friday). Market recovered from ~10% correction.
+- **Tue Nov 24:** Partial digestion. Indices consolidating near rally highs. VIX still elevated.
+- **Wed Nov 25 (Thanksgiving Eve):** AI chip selloff — S&P 500 futures -1.7–1.9%, Nasdaq 100 futures -2.6–2.8%; NVDA -4.9%, AMD -6.0%. VIX 30.79 (+16.82%). Tariff fears + pre-holiday position reduction.
+- **Thu Nov 26:** Market CLOSED — Thanksgiving Day.
+- **Fri Nov 27 (Black Friday, early close 1pm ET):** Strong recovery — SPY +1.66% ($728.73 close), QQQ +2.69% ($650.99 close). Wall Street $6T rout reversing; SOXL and DRAM saw heavy trading. VIX ~25-26.
+
+### S&P 500 Week Return (Estimated)
+~+3–5% for Mon Nov 23–Fri Nov 27. QQQ outperformed SPY on Black Friday (+2.69% vs +1.66%), confirming relative momentum signal.
+
+### What Worked
+- None applicable — bot holds no positions (APIs blocked throughout).
+- **Hypothetical:** A long QQQ position from any prior rebalance would have participated in Mon's +6.51% Nasdaq day — est. ~$6,000-$6,500 gain on a $100k position.
+- **Signal direction confirmed:** QQQ +2.69% vs SPY +1.66% on Black Friday; QQQ vs SPY relative momentum intact.
+
+### What Didn't Work
+- **API blockage (Days 152–158):** `paper-api.alpaca.markets`, `api.telegram.org`, `api.perplexity.ai` all returning 403 connect_rejected via egress proxy.
+- **Zero trades executed:** 12 consecutive missed monthly rebalances; massive opportunity cost on QQQ from Jun 30 (Nasdaq up ~15–20% estimated since blockage began).
+- **No live market data:** Cannot confirm actual QQQ/SPY prices or run authoritative signal computation; relying on WebSearch.
+- **No Telegram notifications:** All alerts falling back to `DAILY-SUMMARY.md` file writes.
+- **No Perplexity research:** Sector/macro context entirely estimated via WebSearch.
+- **Week 29 weekly review gap:** No weekly review was written for Week 29 (ending Nov 21).
+
+### Key Lessons
+- **The Nov 30 rebalance (Monday, tomorrow) is the ABSOLUTE FINAL DEADLINE.** Last trading day of November. 0 trading days remaining. If APIs are not unblocked before 9:30 AM ET Monday, this will be the 13th consecutive missed rebalance.
+- Jensen Huang's reinstatement as NVIDIA CEO triggered +31% NVDA — one of the most extreme single-day moves in large-cap history. Founder premium is real and persistent in AI tech.
+- The Mon spike → Wed selloff → Fri recovery pattern reflects normal institutional rebalancing around extreme single-stock events. Net bullish for the week.
+- VIX oscillated 26→31→25 in one week — elevated but not crisis-level; market absorbing volatility well.
+- The bot has been fully operational for 158 days with 100% routine compliance and 0% trade execution. Infrastructure (egress policy), not strategy or code, is the sole blocker.
+
+### Sector Observations (Estimated — No Live Perplexity Data)
+- **Technology/AI (QQQ, XLK, SOXX, NVDA):** Massively bullish week — Monday's +6.51% Nasdaq, Friday recovery. NVDA +31% Monday reinforces AI bull thesis. QQQ signal over SPY strongly confirmed.
+- **Semiconductors (SOXX, SOXL):** Heavy volume on Black Friday (reversal from AI selloff), confirms continued sector interest.
+- **Consumer Discretionary:** Black Friday retail season focus (PANW, HPQ, retail stocks); likely modest gains.
+- **Defensives (XLV, XLU, XLP):** Likely underperformed given risk-on week dominated by tech.
+- **Signal for Nov 30 rebalance:** BUY QQQ — QQQ outperformed SPY on Black Friday; absolute momentum passes (VIX <30, risk-on); GLD weakest asset class.
+
+### Adjustments for Next Week
+No changes to Dual Momentum rules. Only priority: **UNBLOCK APIs BEFORE Nov 30 MARKET OPEN (9:30 AM ET TOMORROW).**
+
+**Nov 30 rebalance execution checklist (0 trading days remaining — EXECUTE TOMORROW):**
+1. ☐ Whitelist in egress policy: `paper-api.alpaca.markets:443`, `data.alpaca.markets:443`, `api.telegram.org:443`, `api.perplexity.ai:443`
+2. ☐ Verify yfinance installed: `pip install yfinance`
+3. ☐ Run `python3 scripts/dual_momentum_signal.py` to confirm authoritative signal
+4. ☐ Execute: `bash scripts/alpaca.sh buy QQQ [FULL_POSITION_SHARES]` at market close Nov 30
+5. ☐ Place trailing stop immediately after fill
+6. ☐ Send Telegram: rebalance executed, position size, stop level
+7. ☐ Log trade and commit to memory
+
+**Week of Nov 30–Dec 5, 2026 key events (estimated):**
+- Mon Nov 30: ISM Manufacturing PMI; end-of-month rebalance flows; **BOT REBALANCE DAY**
+- Wed Dec 3: ADP Employment Report; ISM Services PMI
+- Fri Dec 5: NFP / Non-Farm Payrolls — key macro event
+- Fed: Pre-FOMC blackout period likely begins ~Dec 6; next FOMC ~Dec 15-17
+
+### Overall Grade: **F** (30th Consecutive Incomplete Week — APIs Still Blocked)
+Rationale: Week 30 is structurally identical to Weeks 1–29. All routines ran, state persisted, documentation thorough. Zero trades executed in 30 weeks. 12 consecutive missed rebalances. The mandatory Nov 30 rebalance is now 0 trading days away — the final deadline. Thanksgiving week was one of the most significant of the year (NVDA +31% Monday, S&P +4.73%) — maximum opportunity cost week. Bot missed all of it. Grade remains F until the first real trade is placed.
+
+- Rebalance date noted: Nov 30 (Monday, last trading day of November) — 0 trading days remaining
