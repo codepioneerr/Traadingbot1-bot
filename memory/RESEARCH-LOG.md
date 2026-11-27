@@ -5,6 +5,56 @@ Format: prepend new entries at the top (most recent first)
 
 ---
 
+## 2026-11-27 — Pre-Market Research (Friday, Black Friday — Early Close 1pm ET, Day 158 of API Blockage) ⚠️ REBALANCE IN 1 TRADING DAY — WEEK 30
+
+### Account Snapshot
+**Portfolio:** $100,000.00 (last known — API BLOCKED) | **Cash:** $100,000.00 (100%)
+**Positions:** None | **Weekly trades:** 0
+**API status:** ALL BLOCKED — paper-api.alpaca.markets:443 (403 connect_rejected), api.telegram.org:443 (403), api.perplexity.ai:443 (blocked). WebSearch fallback used.
+
+### Market Context (WebSearch — no live API data)
+- **Today:** Friday Nov 27, 2026 — Black Friday, shortened session, NYSE/Nasdaq close at 1:00 PM ET
+- **S&P 500 futures:** Near 7,300, +1.6% pre-market; SPY pre-market ~$730.97 (+1.98%)
+- **Nasdaq-100 futures:** +2.2% pre-market; QQQ pre-market ~$651.90 (+2.83%)
+- **VIX:** ~25.45–26.80 (down from 30.79 on Nov 25 — AI chip selloff partially reversed); still ELEVATED
+- **Post-Thanksgiving recovery:** Markets rebounding sharply after Wednesday's AI chip selloff (NVDA -5%, AMD -6%). S&P 500 futures topped 7,300 overnight.
+- **Stocks in focus:** SPCX, PANW, HPQ per Benzinga; Nvidia recovery bid
+- **Context:** Market digesting Thanksgiving week volatility (NVDA +31% Mon, selloff Wed). Holiday-shortened week, light volume expected Friday.
+
+### Sizing Mode
+**N/A — Dual Momentum ETF Rotation strategy. No VIX sizing. 100% equity in one asset at all times. VIX ~26 (MODERATE range) for reference only.**
+
+### ETF Signal Estimate (pre-rebalance — will run live script on Nov 30)
+- **SPY 12M return:** Estimated +8–10% (last confirmed +6.85% as of Nov 20; this week's recovery adds ~1–2%)
+- **QQQ 12M return:** Estimated +7–9% (last confirmed +4.38% as of Nov 20; NVDA surge + this week's rebound adds ~3–4%)
+- **Signal estimate:** SPY vs QQQ razor-thin — likely SPY leads, but must run `python3 scripts/dual_momentum_signal.py` live on Nov 30
+- **GLD:** Weak month (estimated -6–8% Nov); TLT: mixed; IWM: lagging
+- **Absolute filter:** SPY 12M > 0% — will NOT rotate to SHY barring extreme selloff before Nov 30
+
+### Trade Ideas
+**NONE** — Dual Momentum prohibits intra-month discretionary trading. Only permitted action: mandatory rebalance on **November 30, 2026** (last trading day of November = 1 trading day away).
+
+### Risk Factors
+- **🚨 CRITICAL (Day 158):** All APIs remain blocked. 12 consecutive missed rebalances. Nov 30 rebalance critically at risk.
+- **Today is NOT a rebalance day** (Black Friday, partial session)
+- **Nov 30 deadline:** 1 trading day away — if APIs remain blocked on Monday morning, the 13th consecutive rebalance will be missed
+- **Low volume:** Black Friday typically light volume; not meaningful for signal
+- **VIX still elevated (~26):** Market not fully calmed despite recovery bid
+
+### Decision
+**NO TRADE — NOT A REBALANCE DAY + APIs BLOCKED**
+
+**🚨 URGENT — NEXT REBALANCE: November 30, 2026 (MONDAY, 1 TRADING DAY AWAY)**
+Whitelist required BEFORE Monday open:
+- `paper-api.alpaca.markets:443`
+- `data.alpaca.markets:443`
+- `api.telegram.org:443`
+- `api.perplexity.ai:443`
+
+Fix: https://code.claude.com/docs/en/claude-code-on-the-web
+
+---
+
 ## 2026-11-26 — Thanksgiving Day (MARKET CLOSED) — Day 157 of API Blockage — REBALANCE IN 2 TRADING DAYS
 
 ### Account Snapshot
